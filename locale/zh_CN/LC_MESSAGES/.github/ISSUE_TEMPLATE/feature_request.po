@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo Sphinx \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"POT-Creation-Date: 2021-10-22 17:49+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../.github/ISSUE_TEMPLATE/feature_request.md:7
+#: ../../.github/ISSUE_TEMPLATE/feature_request.md:6
+msgid "Feature request"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/feature_request.md:8
 msgid ""
 "**Is your feature request related to a problem? Please describe.** A "
 "clear and concise description of what the problem is. Ex. I'm always "
 "frustrated when [...]"
 msgstr ""
 
-#: ../../.github/ISSUE_TEMPLATE/feature_request.md:10
+#: ../../.github/ISSUE_TEMPLATE/feature_request.md:11
 msgid ""
 "**Describe the solution you'd like** A clear and concise description of "
 "what you want to happen."
 msgstr ""
 
-#: ../../.github/ISSUE_TEMPLATE/feature_request.md:13
+#: ../../.github/ISSUE_TEMPLATE/feature_request.md:14
 msgid ""
 "**Describe alternatives you've considered** A clear and concise "
 "description of any alternative solutions or features you've considered."
 msgstr ""
 
-#: ../../.github/ISSUE_TEMPLATE/feature_request.md:16
+#: ../../.github/ISSUE_TEMPLATE/feature_request.md:17
 msgid ""
 "**Additional context** Add any other context or screenshots about the "
 "feature request here."

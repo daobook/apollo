@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo Sphinx \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"POT-Creation-Date: 2021-10-22 18:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,14 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: ../../README.md:1
-msgid "![](docs/demo_guide/images/Apollo_logo.png)"
+msgid "Apollo Auto"
 msgstr ""
 
 #: ../../README.md:3
+msgid "![](docs/demo_guide/images/Apollo_logo.png)"
+msgstr ""
+
+#: ../../README.md:5
 msgid ""
 "[![Build "
 "Status](http://180.76.142.62:8111/app/rest/builds/buildType:Apollo_Build/statusIcon)](http://180.76.142.62:8111/viewType.html?buildTypeId=Apollo_Build&guest=1)"
@@ -31,68 +35,40 @@ msgid ""
 "/daily-build/public)"
 msgstr ""
 
-#: ../../README.md:3
+#: ../../README.md:5
 msgid "Build Status"
 msgstr ""
 
-#: ../../README.md:3
+#: ../../README.md:5
 msgid "Simulation Status"
 msgstr ""
 
-#: ../../README.md:16
-msgid "Welcome to Apollo's GitHub page!"
-msgstr ""
-
 #: ../../README.md:18
+msgid "Welcome to Apollo's GitHub page!"
+msgstr "欢迎来到 Apollo 的 GitHub 页面！"
+
+#: ../../README.md:20
 msgid ""
 "[Apollo](http://apollo.auto) is a high performance, flexible architecture"
 " which accelerates the development, testing, and deployment of Autonomous"
 " Vehicles."
-msgstr ""
+msgstr "[Apollo](http://apollo.auto) 是一个高性能、灵活的架构，它加速了自动驾驶的开发、测试和部署。"
 
-#: ../../README.md:20
+#: ../../README.md:22
 msgid ""
 "For business and partnership, please visit [our "
 "website](http://apollo.auto)."
-msgstr ""
+msgstr "关于业务和伙伴关系请访问 [我们的网站](http://apollo.auto)。"
 
-#: ../../README.md:22
-msgid "Table of Contents"
-msgstr ""
-
-#: ../../README.md:24
-msgid "[Introduction](#introduction)"
-msgstr ""
-
-#: ../../README.md:25
-msgid "[Prerequisites](#prerequisites)"
-msgstr ""
-
-#: ../../README.md:26
-msgid "[Individual Versions](#individual-versions)"
+#: ../../README.md:23
+msgid "目录"
 msgstr ""
 
 #: ../../README.md:27
-msgid "[Architecture](#architecture)"
-msgstr ""
-
-#: ../../README.md:28
-msgid "[Installation](#installation)"
-msgstr ""
+msgid "Introduction"
+msgstr "简介"
 
 #: ../../README.md:29
-msgid "[Quick Starts](#quick-starts)"
-msgstr ""
-
-#: ../../README.md:30
-msgid "[Documents](#documents)"
-msgstr ""
-
-#: ../../README.md:32
-msgid "Introduction"
-msgstr ""
-
-#: ../../README.md:34
 msgid ""
 "Apollo is loaded with new modules and features but needs to be calibrated"
 " and configured perfectly before you take it for a spin. Please review "
@@ -101,84 +77,103 @@ msgid ""
 "Apollo's architecture overview for a greater understanding of Apollo's "
 "core technology and platforms."
 msgstr ""
+"Apollo 加载了新的模块和功能，但在使用它之前需要进行完美的校准和配置。"
+"请详细查看先决条件和安装步骤，以确保你有足够的能力建立和启动阿波罗。"
+"你也可以查看 Apollo 的架构概述，以进一步了解 Apollo 的核心技术和平台。"
 
-#: ../../README.md:36
+#: ../../README.md:31
 msgid "Prerequisites"
-msgstr ""
+msgstr "先决条件"
 
-#: ../../README.md:38
+#: ../../README.md:33
 msgid ""
 "**[New 2021-01]** The Apollo platform (stable version) is now upgraded "
 "with software packages and library dependencies of newer versions "
 "including:"
 msgstr ""
+"**[更新 2021-01]** Apollo 平台（稳定版）现在升级了"
+"较新版本的软件包和库依赖，包括："
 
-#: ../../README.md:41
+#: ../../README.md:36
 msgid ""
 "CUDA upgraded to version 11.1 to support Nvidia Ampere (30x0 series) "
 "GPUs, with NVIDIA driver >= 455.32"
 msgstr ""
+"CUDA 升级至 11.1 版本，以支持 Nvidia Ampere（30x0 系列）GPU，"
+"NVIDIA 驱动程序 >=455.32"
 
-#: ../../README.md:43
+#: ../../README.md:38
 msgid "LibTorch (both CPU and GPU version) bumped to version 1.7.0 accordingly."
-msgstr ""
+msgstr "LibTorch（包括 CPU 和 GPU 版本）相应地升至 1.7.0 版本。"
 
-#: ../../README.md:45
+#: ../../README.md:40
 msgid ""
 "We do not expect a disruption to your current work, but to ease your life"
 " of migratation, you would need to:"
 msgstr ""
+"我们不期望你目前的工作受到干扰，但为了缓解你的迁移生活，你需要："
 
-#: ../../README.md:48
+#: ../../README.md:43
 msgid ""
 "Update NVIDIA driver on your host to version >= 455.32. ([Web "
 "link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
 msgstr ""
+"将主机上的 NVIDIA 驱动程序更新为 >=455.32 版本。"
+"（[网络链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)）"
 
-#: ../../README.md:50
+#: ../../README.md:45
 msgid ""
 "Pull latest code and run the following commands after restarting and "
 "logging into Apollo Development container:"
 msgstr ""
+"拉取最新的代码，在重启并登录到 Apollo 开发容器后运行以下命令："
 
-#: ../../README.md:63
+#: ../../README.md:58
 msgid ""
 "The vehicle equipped with the by-wire system, including but not limited "
 "to brake-by-wire, steering-by-wire, throttle-by-wire and shift-by-wire "
 "(Apollo is currently tested on Lincoln MKZ)"
 msgstr ""
+"配备了线控系统的车辆，包括但不限于线控刹车、线控转向、线控油门和"
+"线控换挡（Apollo目前在林肯 MKZ 上测试）"
 
-#: ../../README.md:65
+#: ../../README.md:60
 msgid "A machine with a 8-core processor and 16GB memory minimum"
-msgstr ""
+msgstr "一台配备 8 核处理器和至少有 16GB 内存的机器"
 
-#: ../../README.md:67
+#: ../../README.md:62
 msgid "NVIDIA Turing GPU is strongly recommended"
-msgstr ""
+msgstr "强烈建议使用英伟达图灵 GPU"
 
-#: ../../README.md:69
+#: ../../README.md:64
 msgid "Ubuntu 18.04"
 msgstr ""
 
-#: ../../README.md:71
+#: ../../README.md:66
 msgid ""
 "NVIDIA driver version 455.32.00 and above ([Web "
 "link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
 msgstr ""
+"NVIDIA 驱动程序版本 455.32.00 及以上（[网络"
+"链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)"
 
-#: ../../README.md:73
+#: ../../README.md:68
 msgid ""
 "Docker-CE version 19.03 and above ([Official "
 "doc](https://docs.docker.com/engine/install/ubuntu/))"
 msgstr ""
+"Docker-CE 19.03 版及以上"
+"（[官方文档](https://docs.docker.com/engine/install/ubuntu/)）"
 
-#: ../../README.md:75
+#: ../../README.md:70
 msgid ""
 "NVIDIA Container Toolkit ([Official doc](https://github.com/NVIDIA"
 "/nvidia-docker))"
 msgstr ""
+"NVIDIA 容器工具包（[官方文档](https://github.com/NVIDIA"
+"/nvidia-docker)）"
 
-#: ../../README.md:77
+#: ../../README.md:72
 msgid ""
 "**Please note**, it is recommended that you install the versions of "
 "Apollo in the following order: **1.0 -> whichever version you would like "
@@ -188,28 +183,32 @@ msgid ""
 "progressing to a higher and more capable version for your safety and the "
 "safety of those around you."
 msgstr ""
+"**请注意**，建议你按照以下顺序安装阿波罗的各个版本。**1.0 -> 你想测试的那个版本**。"
+"这个建议背后的原因是，为了你和你周围人的安全，"
+"你需要确认个别硬件组件和模块是否正常运行，"
+"并在进展到更高和更有能力的版本之前清除各种版本测试案例。"
 
-#: ../../README.md:79
+#: ../../README.md:74
 msgid "Individual Versions:"
-msgstr ""
+msgstr "独立版本："
 
-#: ../../README.md:81
+#: ../../README.md:76
 msgid ""
 "The following diagram highlights the scope and features of each Apollo "
 "release:"
-msgstr ""
+msgstr "下图强调了每个 Apollo 版本的范围和功能："
 
-#: ../../README.md:83
+#: ../../README.md:78
 msgid "![](docs/demo_guide/images/Apollo_Roadmap_6_0.png)"
 msgstr ""
 
-#: ../../README.md:85
+#: ../../README.md:80
 msgid ""
 "[**Apollo "
 "1.0:**](docs/quickstart/apollo_1_0_hardware_system_installation_guide.md)"
 msgstr ""
 
-#: ../../README.md:87
+#: ../../README.md:82
 msgid ""
 "Apollo 1.0, also referred to as the Automatic GPS Waypoint Following, "
 "works in an enclosed venue such as a test track or parking lot. This "
@@ -217,17 +216,17 @@ msgid ""
 " vehicle. The diagram below lists the various modules in Apollo 1.0."
 msgstr ""
 
-#: ../../README.md:89
+#: ../../README.md:84
 msgid "![](docs/demo_guide/images/Apollo_1.png)"
 msgstr ""
 
-#: ../../README.md:91
+#: ../../README.md:86
 msgid ""
 "[**Apollo "
 "1.5:**](docs/quickstart/apollo_1_5_hardware_system_installation_guide.md)"
 msgstr ""
 
-#: ../../README.md:93
+#: ../../README.md:88
 msgid ""
 "Apollo 1.5 is meant for fixed lane cruising. With the addition of LiDAR, "
 "vehicles with this version now have better perception of its surroundings"
@@ -236,18 +235,18 @@ msgid ""
 "Yellow are additions or upgrades for version 1.5."
 msgstr ""
 
-#: ../../README.md:95
+#: ../../README.md:90
 msgid "![](docs/demo_guide/images/Apollo_1_5.png)"
 msgstr ""
 
-#: ../../README.md:97
+#: ../../README.md:92
 msgid ""
 "[**Apollo "
 "2.0:**](docs/quickstart/apollo_2_0_hardware_system_installation_guide_v1.md"
 "#key-hardware-components)"
 msgstr ""
 
-#: ../../README.md:99
+#: ../../README.md:94
 msgid ""
 "Apollo 2.0 supports vehicles autonomously driving on simple urban roads. "
 "Vehicles are able to cruise on roads safely, avoid collisions with "
@@ -256,32 +255,32 @@ msgid ""
 "additions or upgrades for version 2.0."
 msgstr ""
 
-#: ../../README.md:101
+#: ../../README.md:96
 msgid "![](docs/demo_guide/images/Apollo_2.png)"
 msgstr ""
 
-#: ../../README.md:103
+#: ../../README.md:98
 msgid ""
 "[**Apollo "
 "2.5:**](docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md)"
 msgstr ""
 
-#: ../../README.md:105
+#: ../../README.md:100
 msgid ""
 "Apollo 2.5 allows the vehicle to autonomously run on geo-fenced highways "
 "with a camera for obstacle detection. Vehicles are able to maintain lane "
 "control, cruise and avoid collisions with vehicles ahead of them."
 msgstr ""
 
-#: ../../README.md:113
+#: ../../README.md:108
 msgid "![](docs/demo_guide/images/Apollo_2_5.png)"
 msgstr ""
 
-#: ../../README.md:115
+#: ../../README.md:110
 msgid "[**Apollo 3.0:**](docs/quickstart/apollo_3_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:117
+#: ../../README.md:112
 msgid ""
 "Apollo 3.0's primary focus is to provide a platform for developers to "
 "build upon in a closed venue low-speed environment. Vehicles are able to "
@@ -289,15 +288,15 @@ msgid ""
 " them."
 msgstr ""
 
-#: ../../README.md:119
+#: ../../README.md:114
 msgid "![](docs/demo_guide/images/Apollo_3.0_diagram.png)"
 msgstr ""
 
-#: ../../README.md:121
+#: ../../README.md:116
 msgid "[**Apollo 3.5:**](docs/quickstart/apollo_3_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:123
+#: ../../README.md:118
 msgid ""
 "Apollo 3.5 is capable of navigating through complex driving scenarios "
 "such as residential and downtown areas. The car now has 360-degree "
@@ -308,15 +307,15 @@ msgid ""
 " areas and roads with stop signs."
 msgstr ""
 
-#: ../../README.md:125
+#: ../../README.md:120
 msgid "![](docs/demo_guide/images/Apollo_3_5_Architecture.png)"
 msgstr ""
 
-#: ../../README.md:127
+#: ../../README.md:122
 msgid "[**Apollo 5.0:**](docs/quickstart/apollo_3_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:129
+#: ../../README.md:124
 msgid ""
 "Apollo 5.0 is an effort to support volume production for Geo-Fenced "
 "Autonomous Driving. The car now has 360-degree visibility, along with "
@@ -326,15 +325,15 @@ msgid ""
 " like pull over and crossing bare intersections."
 msgstr ""
 
-#: ../../README.md:132
+#: ../../README.md:127
 msgid "![](docs/demo_guide/images/Apollo_5_0_diagram1.png)"
 msgstr ""
 
-#: ../../README.md:134
+#: ../../README.md:129
 msgid "[**Apollo 5.5:**](docs/quickstart/apollo_5_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:136
+#: ../../README.md:131
 msgid ""
 "Apollo 5.5 enhances the complex urban road autonomous driving "
 "capabilities of previous Apollo releases, by introducing curb-to-curb "
@@ -345,15 +344,15 @@ msgid ""
 "road and junction scenarios, making the car more secure and aware."
 msgstr ""
 
-#: ../../README.md:138
+#: ../../README.md:133
 msgid "![](docs/demo_guide/images/Apollo_5_5_Architecture.png)"
 msgstr ""
 
-#: ../../README.md:140
+#: ../../README.md:135
 msgid "[**Apollo 6.0:**](docs/quickstart/apollo_6_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:142
+#: ../../README.md:137
 msgid ""
 "Apollo 6.0 incorporates new deep learning models to enhance the "
 "capabilities for certain Apollo modules. This version works seamlessly "
@@ -363,160 +362,160 @@ msgid ""
 "experimentation efforts towards driverless technology."
 msgstr ""
 
-#: ../../README.md:144
+#: ../../README.md:139
 msgid "![](docs/demo_guide/images/Apollo_6_0.png)"
 msgstr ""
 
-#: ../../README.md:146
+#: ../../README.md:141
 msgid "Architecture"
 msgstr ""
 
-#: ../../README.md:148
+#: ../../README.md:143
 msgid "**Hardware/ Vehicle Overview**"
 msgstr ""
 
-#: ../../README.md:150
+#: ../../README.md:145
 msgid "![](docs/demo_guide/images/Hardware_overview_3_5.png)"
 msgstr ""
 
-#: ../../README.md:152
+#: ../../README.md:147
 msgid "**Hardware Connection Overview**"
 msgstr ""
 
-#: ../../README.md:154
+#: ../../README.md:149
 msgid "![](docs/demo_guide/images/Hardware_connection_3_5_1.png)"
 msgstr ""
 
-#: ../../README.md:156
+#: ../../README.md:151
 msgid "**Software Overview**"
 msgstr ""
 
-#: ../../README.md:158
+#: ../../README.md:153
 msgid "![](docs/demo_guide/images/Apollo_3_5_software_architecture.png)"
 msgstr ""
 
-#: ../../README.md:160
+#: ../../README.md:155
 msgid "Installation"
 msgstr ""
 
-#: ../../README.md:162
+#: ../../README.md:157
 msgid ""
 "[Hardware installation "
 "guide](docs/quickstart/apollo_3_5_hardware_system_installation_guide.md)"
 msgstr ""
 
-#: ../../README.md:163
+#: ../../README.md:158
 msgid ""
 "[Software installation "
 "guide](docs/quickstart/apollo_software_installation_guide.md) - **This "
 "step is required**"
 msgstr ""
 
-#: ../../README.md:164
+#: ../../README.md:159
 msgid "[Launch and run Apollo](docs/howto/how_to_launch_and_run_apollo.md)"
 msgstr ""
 
-#: ../../README.md:166
+#: ../../README.md:161
 msgid ""
 "Congratulations! You have successfully built out Apollo without Hardware."
 " If you do have a vehicle and hardware setup for a particular version, "
 "please pick the Quickstart guide most relevant to your setup:"
 msgstr ""
 
-#: ../../README.md:168
+#: ../../README.md:163
 msgid "Quick Starts:"
 msgstr ""
 
-#: ../../README.md:170
+#: ../../README.md:165
 msgid "[Apollo 6.0 QuickStart Guide](docs/quickstart/apollo_6_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:172
+#: ../../README.md:167
 msgid "[Apollo 5.5 QuickStart Guide](docs/quickstart/apollo_5_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:174
+#: ../../README.md:169
 msgid "[Apollo 5.0 QuickStart Guide](docs/quickstart/apollo_5_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:176
+#: ../../README.md:171
 msgid "[Apollo 3.5 QuickStart Guide](docs/quickstart/apollo_3_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:178
+#: ../../README.md:173
 msgid "[Apollo 3.0 QuickStart Guide](docs/quickstart/apollo_3_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:180
+#: ../../README.md:175
 msgid "[Apollo 2.5 QuickStart Guide](docs/quickstart/apollo_2_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:182
+#: ../../README.md:177
 msgid "[Apollo 2.0 QuickStart Guide](docs/quickstart/apollo_2_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:184
+#: ../../README.md:179
 msgid "[Apollo 1.5 QuickStart Guide](docs/quickstart/apollo_1_5_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:186
+#: ../../README.md:181
 msgid "[Apollo 1.0 QuickStart Guide](docs/quickstart/apollo_1_0_quick_start.md)"
 msgstr ""
 
-#: ../../README.md:188
+#: ../../README.md:183
 msgid "Documents"
 msgstr ""
 
-#: ../../README.md:190
+#: ../../README.md:185
 msgid ""
 "[Technical Tutorials](docs/technical_tutorial/README.md): Everything you "
 "need to know about Apollo. Written as individual versions with links to "
 "every document related to that version."
 msgstr ""
 
-#: ../../README.md:192
+#: ../../README.md:187
 msgid ""
 "[How-To Guides](docs/howto/README.md): Brief technical solutions to "
 "common problems that developers face during the installation and use of "
 "the Apollo platform"
 msgstr ""
 
-#: ../../README.md:194
+#: ../../README.md:189
 msgid ""
 "[Specs](docs/specs/README.md): A Deep dive into Apollo's Hardware and "
 "Software specifications (only recommended for expert level developers "
 "that have successfully installed and launched Apollo)"
 msgstr ""
 
-#: ../../README.md:196
+#: ../../README.md:191
 msgid "[FAQs](docs/FAQs/README.md)"
 msgstr ""
 
-#: ../../README.md:198
+#: ../../README.md:193
 msgid "Questions"
 msgstr ""
 
-#: ../../README.md:200
+#: ../../README.md:195
 msgid ""
 "You are welcome to submit questions and bug reports as [GitHub "
 "Issues](https://github.com/ApolloAuto/apollo/issues)."
 msgstr ""
 
-#: ../../README.md:202
+#: ../../README.md:197
 msgid "Copyright and License"
 msgstr ""
 
-#: ../../README.md:204
+#: ../../README.md:199
 msgid ""
 "Apollo is provided under the [Apache-2.0 "
 "license](https://github.com/ApolloAuto/apollo/blob/master/LICENSE)."
 msgstr ""
 
-#: ../../README.md:206
+#: ../../README.md:201
 msgid "Disclaimer"
 msgstr ""
 
-#: ../../README.md:208
+#: ../../README.md:203
 msgid ""
 "Apollo open source platform only has the source code for models, "
 "algorithms and processes, which will be integrated with cybersecurity "
@@ -524,41 +523,77 @@ msgid ""
 "productization."
 msgstr ""
 
-#: ../../README.md:210
+#: ../../README.md:205
 msgid ""
 "Please refer to the Disclaimer of Apollo in [Apollo's official "
 "website](http://apollo.auto/docs/disclaimer.html)."
 msgstr ""
 
-#: ../../README.md:212
+#: ../../README.md:207
 msgid "Connect with us"
 msgstr ""
 
-#: ../../README.md:213
+#: ../../README.md:208
 msgid ""
 "[Have suggestions for our GitHub "
 "page?](https://github.com/ApolloAuto/apollo/issues)"
 msgstr ""
 
-#: ../../README.md:214
+#: ../../README.md:209
 msgid "[Twitter](https://twitter.com/apolloplatform)"
 msgstr ""
 
-#: ../../README.md:215
+#: ../../README.md:210
 msgid "[YouTube](https://www.youtube.com/channel/UC8wR_NX_NShUTSSqIaEUY9Q)"
 msgstr ""
 
-#: ../../README.md:216
+#: ../../README.md:211
 msgid "[Blog](https://www.medium.com/apollo-auto)"
 msgstr ""
 
-#: ../../README.md:217
+#: ../../README.md:212
 msgid "[Newsletter](http://eepurl.com/c-mLSz)"
 msgstr ""
 
-#: ../../README.md:218
+#: ../../README.md:213
 msgid ""
 "Interested in our turnKey solutions or partnering with us Mail us at: "
 "apollopartner@baidu.com"
 msgstr ""
+
+#~ msgid "Build Status"
+#~ msgstr "构建状态"
+
+#~ msgid "Simulation Status"
+#~ msgstr "仿真状态"
+
+#~ msgid "构建状态"
+#~ msgstr ""
+
+#~ msgid "仿真状态"
+#~ msgstr ""
+
+#~ msgid "Table of Contents"
+#~ msgstr "目录"
+
+#~ msgid "[Introduction](#introduction)"
+#~ msgstr ""
+
+#~ msgid "[Prerequisites](#prerequisites)"
+#~ msgstr ""
+
+#~ msgid "[Individual Versions](#individual-versions)"
+#~ msgstr ""
+
+#~ msgid "[Architecture](#architecture)"
+#~ msgstr ""
+
+#~ msgid "[Installation](#installation)"
+#~ msgstr ""
+
+#~ msgid "[Quick Starts](#quick-starts)"
+#~ msgstr ""
+
+#~ msgid "[Documents](#documents)"
+#~ msgstr ""
 

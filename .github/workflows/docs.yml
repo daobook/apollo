@@ -37,8 +37,8 @@ jobs:
 
       - name: 构建 Sphinx 文档
         run: |
-          make -e SPHINXOPTS="-Dlanguage='zh_CN'" html/zh_CN
-          make -e SPHINXOPTS="-Dlanguage='en'" html/en
+          sphinx-build -D language=zh_CN -b html ./ _build/zh_CN
+          sphinx-build -D language=en -b html ./ _build/en
 
       # 部署 HTML 到 gh-pages 分支
       - name: GitHub Pages action

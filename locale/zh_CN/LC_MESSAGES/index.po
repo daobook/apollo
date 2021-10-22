@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo Sphinx \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"POT-Creation-Date: 2021-10-22 18:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: ../../index.rst:4
+#: ../../index.md:6 ../../toctree.txt:3
 msgid "Apollo Auto"
 msgstr ""
 
-#: ../../index.rst:18
+#: ../../toctree.txt:19
 msgid "Docker"
 msgstr ""
 
-#: ../../index.rst:25
+#: ../../toctree.txt:28
 msgid "cyber"
 msgstr ""
 
-#: ../../index.rst:37
+#: ../../toctree.txt:41 ../../toctree.txt:51
 msgid "other"
+msgstr "其他"
+
+#: ../../index.md:1
+msgid "Apollo Auto 文档"
 msgstr ""
 
-#: ../../index.rst:45
-msgid "编写"
+#: ../../index.md:4
+msgid "切换中英文版本：[{guilabel}`中`](https://daobook.github.io/apollo/zh_CN/)/[{guilabel}`英`](https://daobook.github.io/apollo/en/)。"
 msgstr ""
 
-#: ../../index.rst:2
-msgid "Apollo Auto 目录"
-msgstr ""
+#~ msgid "编写"
+#~ msgstr ""
+
+#~ msgid "Apollo Auto 目录"
+#~ msgstr ""
 

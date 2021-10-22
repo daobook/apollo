@@ -58,7 +58,6 @@ language = 'zh_CN'
 # 这个模式也会影响 html_static_path 和 html_extra_path。
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
 # --  HTML 输出的选项  -------------------------------------------------
 
 # 用于 HTML 和 HTML 帮助页面的主题。参见文档中的内置主题的列表。
@@ -70,12 +69,13 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     # 如果指定，Google Analytics 的 `gtag.js`_ 就会包含在你的页面中。
     ## 将该值设置为谷歌提供给你的 ID（如 UA-XXXXXXX 或 G-XXXXXXXXXX）。
-    'analytics_id': 'G-XXXXXXXXXX',  #  由谷歌在你的仪表板上提供
+    # 'analytics_id': 'G-XXXXXXXXXX',  #  由谷歌在你的仪表板上提供
     # 在谷歌分析中对访问者的 IP 地址进行匿名处理。
-    'analytics_anonymize_ip': False,
+    # 'analytics_anonymize_ip': False,
     # 显示 :guilabel:`Next` 和 :guilabel:`Previous` 按钮的位置。
     ## 这可以是 ``bottom``，``top``，``both``，或 ``None``。
     'prev_next_buttons_location': 'bottom',
+    'navigation_depth': 1, # 目录深度
     # 在外部链接旁边添加一个图标。
     'style_external_links': False,
     # "改变了使用 ``display_github``, ``display_gitlab`` 等文件时的查看方式。
@@ -88,7 +88,7 @@ html_theme_options = {
     'style_nav_header_background': 'skyblue',
     # 指定导航是否包括隐藏的内容目录
     ##（任何被标记为 ``:hidden:`` 选项的 :rst:dir:`sphinx:toctree` 指令。）。
-    'includehidden': True, 
+    'includehidden': False, 
     # 启用后，页面小标题不包括在导航中。
     'titles_only': False
 }
@@ -109,11 +109,14 @@ gitlab_url = ''
 # 相对于这个目录，添加任何包含自定义静态文件（如样式表）的路径，。
 ## 它们被复制到内置的静态文件之后，
 ## 所以一个名为 ``default.css`` 的文件将覆盖内置的 ``default.css``。
+breathe_projects = {'Cyber RT Documents': 'cyber/doxy-docs/xml'}
+templates_path = ['_templates', 'cyber/doxy-docs/_templates']
 html_static_path = ['_static']
 
 # ==============================
 # 自定义
 # ==============================
+# root_doc = 'README'
 import re
 
 source_suffix = {
@@ -169,6 +172,7 @@ def setup(app):
     from sphinx.ext.autodoc import cut_lines
     from sphinx.util.docfields import GroupedField
     app.connect('autodoc-process-docstring', cut_lines(4, what=['module']))
+    app.add_css_file("cyber/doxy-docs/source/main_stylesheet.css")
     app.add_object_type('confval', 'confval',
                         objname='configuration value',
                         indextemplate='pair: %s; configuration value')
@@ -194,3 +198,4 @@ extlinks = {
     'images': ('http://apollo.auto', 'images'),
     'params': ('http://apollo.auto', 'params'),
 }
+

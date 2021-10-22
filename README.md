@@ -1,3 +1,5 @@
+# Apollo Auto
+
 ![](docs/demo_guide/images/Apollo_logo.png)
 
 [![Build Status](http://180.76.142.62:8111/app/rest/builds/buildType:Apollo_Build/statusIcon)](http://180.76.142.62:8111/viewType.html?buildTypeId=Apollo_Build&guest=1)
@@ -19,15 +21,8 @@ Welcome to Apollo's GitHub page!
 
 For business and partnership, please visit [our website](http://apollo.auto).
 
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [Individual Versions](#individual-versions)
-4. [Architecture](#architecture)
-5. [Installation](#installation)
-6. [Quick Starts](#quick-starts)
-7. [Documents](#documents)
+```{contents}
+```
 
 ## Introduction
 

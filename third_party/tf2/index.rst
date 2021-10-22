@@ -6,7 +6,7 @@ This is the Python API reference of the tf2 package.
 .. toctree::
     :maxdepth: 2
 
-    tf2
+    README
 
 Indices and tables
 ==================
