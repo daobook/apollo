@@ -116,8 +116,6 @@ html_static_path = ['_static']
 # ==============================
 import re
 
-root_doc = 'contents'
-
 source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
