@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何标定车辆油门和制动 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to use Apollo 2.5 navigation mode" href="how_to_use_apollo_2.5_navigation_mode.html" />
+    <link rel="prev" title="How to Update Vehicle Calibration for Throttle and Brakes" href="how_to_update_vehicle_calibration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何标定车辆油门和制动</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_update_vehicle_calibration_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>如何标定车辆油门和制动<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<section id="id2">
+<h2>介绍<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>车辆校准的目的是找到准确产生从控制模块请求的加速量的油门和制动命令</p>
+</section>
+<section id="id3">
+<h2>准备<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>按如下顺序完成准备工作:</p>
+<ul class="simple">
+<li><p>访问相关代码</p></li>
+<li><p>改变驾驶模式</p></li>
+<li><p>选择测试地点</p></li>
+</ul>
+<section id="id4">
+<h3>访问相关代码<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>Canbus, 包括以下模块:</p>
+<ul>
+<li><p>GPS 驱动</p></li>
+<li><p>定位</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h3>改变驾驶模式<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<p>在<code class="docutils literal notranslate"><span class="pre">modules/canbus/conf/canbus_conf.pb.txt</span></code>中，设置驾驶模式为 <code class="docutils literal notranslate"><span class="pre">AUTO_SPEED_ONLY</span></code>.</p>
+</section>
+<section id="id6">
+<h3>选择测试地点<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<p>理想的测试地点是平坦的长直路</p>
+</section>
+</section>
+<section id="id7">
+<h2>更新车辆标定<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<p>以上准备工作完成后, 在<code class="docutils literal notranslate"><span class="pre">modules/tools/vehicle_calibration</span></code>中按顺序完成如下工作</p>
+<ul class="simple">
+<li><p>采集数据</p></li>
+<li><p>处理数据</p></li>
+<li><p>绘制结果</p></li>
+<li><p>转换结果为<code class="docutils literal notranslate"><span class="pre">protobuf</span></code>格式</p></li>
+</ul>
+<section id="id8">
+<h3>采集数据<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>运行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">data_collector.py</span></code>,参数如 x y z, x 代表了加速的控制指令, y 代表了限制速度(mps), z 是减速指令,正值标识油门量，负值标识刹车量.且每条命令运行多次，其中 <code class="docutils literal notranslate"><span class="pre">data_collector.py</span></code>在modules/tools/vehicle_calibration/</p></li>
+<li><p>根据车辆反应情况，调整命令脚本</p></li>
+<li><p>运行 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">plot_data.py</span> </code> 使采集到的数据可视化</p></li>
+</ol>
+<p>比如输出指令 <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">5.2</span> <span class="pre">-10</span></code>,将会生成名为<code class="docutils literal notranslate"><span class="pre">t15b-10r0.csv</span></code>的文件。</p>
+</section>
+<section id="id9">
+<h3>处理数据<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+<p>对每个记录的日志分别运行<code class="docutils literal notranslate"><span class="pre">process_data.sh</span> <span class="pre">{dir}</span></code>，其中dir为<code class="docutils literal notranslate"><span class="pre">t15b-10r0.csv</span></code>所在的目录。每个数据日志被处理成<code class="docutils literal notranslate"><span class="pre">t15b-10r0.csv.result</span></code>。</p>
+</section>
+<section id="id10">
+<h3>绘制结果<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<p>通过运行<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">plot_results.py</span> <span class="pre">t15b-10r0.csv</span></code>得到可视化最终结果，检查是否有异常</p>
+</section>
+<section id="protobuf">
+<h3>转换结果为<code class="docutils literal notranslate"><span class="pre">protobuf</span></code>格式<a class="headerlink" href="#protobuf" title="永久链接至标题"></a></h3>
+<p>如果一切正常，运行<code class="docutils literal notranslate"><span class="pre">result2pb.sh</span></code>，把校准结果result.csv转换成控制模块定义的<code class="docutils literal notranslate"><span class="pre">protobuf</span></code>格式</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_update_vehicle_calibration.html" class="btn btn-neutral float-left" title="How to Update Vehicle Calibration for Throttle and Brakes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_use_apollo_2.5_navigation_mode.html" class="btn btn-neutral float-right" title="How to use Apollo 2.5 navigation mode" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

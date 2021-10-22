@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENERATE COARSE TRAJECTORY IN THE OPEN SPACE &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="JOINTLY PREDICTION PLANNING EVALUATOR" href="jointly_prediction_planning_evaluator.html" />
+    <link rel="prev" title="Technical Docunments" href="README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>GENERATE COARSE TRAJECTORY IN THE OPEN SPACE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_documents/hybrid_a_star_en.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="generate-coarse-trajectory-in-the-open-space">
+<h1>GENERATE COARSE TRAJECTORY IN THE OPEN SPACE<a class="headerlink" href="#generate-coarse-trajectory-in-the-open-space" title="永久链接至标题"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<p>The goal of htbrid_a_star is to generate the coarse trajectory in the open space. Hybrid_a_star contains node3d， grid_search， reeds_shepp_path and hybrid_a_star. hybrid_a_star is the most important component generating the coarse trajectory and call the grid_search and reeds_shepp_path.</p>
+</section>
+<section id="where-is-the-code">
+<h2>Where is the code<a class="headerlink" href="#where-is-the-code" title="永久链接至标题"></a></h2>
+<p>Please refer to <a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/master/modules/planning/open_space/coarse_trajectory_generator/hybrid_a_star.cc">hybrid a star.cc</a></p>
+</section>
+<section id="code-reading">
+<h2>Code Reading<a class="headerlink" href="#code-reading" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>Input: current point(planned start point), goal point(planned end point), ROI_xy_boundary(the maximum and minimum boundary value of x and y), obstacles vertices vector(the corner position information). The function is follow:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">     </span><span class="kt">bool</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">Plan</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">sx</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sy</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sphi</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                           </span><span class="kt">double</span><span class="w"> </span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ey</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ephi</span><span class="p">,</span><span class="w"></span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">XYbounds</span><span class="p">,</span><span class="w"></span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">obstacles_vertices_vec</span><span class="p">,</span><span class="n">HybridAStartResult</span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The input HybridAStar::Plan() is called by the open_space_trajectory_provider.cc, please refer to <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/tasks/optimizers/open_space_trajectory_generation/open_space_trajectory_provider.cc">open_space_trajectory_provider.cc</a></p>
+<ol>
+<li><p>Construct obstacles_linesegment_vector. The main method is to form a line segment from a single obstacle point in order; then, each obstacle line segment is stored in obstacles_linesegment_vector that will be used to generate the DP map.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">LineSegment2d</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">obstacles_linesegments_vec</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">obstacle_vertices</span> <span class="p">:</span><span class="w"> </span><span class="n">obstacles_vertices_vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">size_t</span><span class="w"> </span><span class="n">vertices_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obstacle_vertices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">LineSegment2d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">obstacle_linesegments</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">vertices_num</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">LineSegment2d</span><span class="w"> </span><span class="n">line_segment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">LineSegment2d</span><span class="p">(</span><span class="w"></span>
+<span class="w">            </span><span class="n">obstacle_vertices</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="w"> </span><span class="n">obstacle_vertices</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"></span>
+<span class="w">        </span><span class="n">obstacle_linesegments</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">line_segment</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="n">obstacles_linesegments_vec</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">obstacle_linesegments</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">obstacles_linesegments_vec_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">obstacles_linesegments_vec</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Construct the planned point same as Node3d, please refer to <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/open_space/coarse_trajectory_generator/node3d.h">node3d.h</a>. The planned starting point and the ending point are constructed in the form of Node3d that will be save to open set and will be checked by the ValidityCheck() function.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="n">start_node_</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Node3d</span><span class="p">({</span><span class="n">sx</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">sy</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">sphi</span><span class="p">},</span><span class="w"> </span><span class="n">XYbounds_</span><span class="p">,</span><span class="w"> </span><span class="n">planner_open_space_config_</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">end_node_</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Node3d</span><span class="p">({</span><span class="n">ex</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ey</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="n">ephi</span><span class="p">},</span><span class="w"> </span><span class="n">XYbounds_</span><span class="p">,</span><span class="w"> </span><span class="n">planner_open_space_config_</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Enter the main while loop to get a set of nodes.</p>
+<ol>
+<li><p>Exit trajectory generation when open_pq_ is empty. The open_pq_ is a std::priority_queue type that the first element represents the order of nodes in the open set, the second element represents the cost of nodes which storage in descending order.</p></li>
+<li><p>Use AnalyticExpansion() function to determine whether there is a collision free trajectory that based on the reeds_shepp_path from current point to target end point. if it exists, exit the while loop search.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">AnalyticExpansion</span><span class="p">(</span><span class="n">current_node</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Store the current point in the close set and Expand the next node according to the bicycle kinematics model. The number of nodes is a parameter. Generate the next node by Next_node_generator() function and use ValidityCheck() function to detect this node.</p></li>
+</ol>
+</li>
+<li><p>Generate the coarse trajectory by nodes. The GetResult() function is used to generate the coarse trajectory.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">GetResult</span><span class="p">(</span><span class="n">HybridAStartResult</span><span class="o">*</span><span class="w"> </span><span class="n">result</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Output: The optput is partial trajectory information, which include x,y,phi,v,a,steer,s.</p></li>
+</ol>
+</section>
+<section id="algorithm-detail">
+<h2>Algorithm Detail<a class="headerlink" href="#algorithm-detail" title="永久链接至标题"></a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">ValidityCheck</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node3d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">node</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The detection method is based on boundary range judgment and boundary overlap judgment.</p>
+<ol>
+<li><p>Parameter: the input parameter is node which same as node3d.</p></li>
+<li><p>Introduction: the function is used to check for collisions.</p></li>
+<li><p>Process detail:</p>
+<ol class="simple">
+<li><p>Boundary range judgment. If the x and y of node exceed the range of the corresponding x and y of boundary, then return false,         reprents invalid.</p></li>
+<li><p>Boundary overlap judgment. If the bounding box of vehicle overlaps any line segment, then return false. Judge the overlap by          whether the line and box intersect.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">GridSearch</span><span class="o">::</span><span class="n">GenerateDpMap</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ex</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">ey</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                               </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">XYbounds</span><span class="p">,</span><span class="w"></span>
+<span class="w">                               </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">LineSegment2d</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">obstacles_linesegments_vec</span><span class="p">)</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>the function is used to generate dp map by dynamic programming, please refer (<a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/open_space/coarse_trajectory_generator/grid_search.cc">https://github.com/ApolloAuto/apollo/blob/master/modules/planning/open_space/coarse_trajectory_generator/grid_search.cc</a>)</p>
+</li>
+<li><p>Parameter: ex and ey are the postion of goal point, XYbounds_ is the boundary of x and y, obstacles_linesegments_ is the line            segments which is composed of boundary point.</p></li>
+<li><p>Introduction: the function is used to generate the dp map</p></li>
+<li><p>Process detail:</p>
+<ol class="simple">
+<li><p>Grid the XYbounds_ according to grid resolution, then get the max grid.</p></li>
+<li><p>Dp map store the cost of node.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">AnalyticExpansion</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node3d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">current_node</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The function is used to check if an analystic curve could be connected from current configuration to the end configuration without collision. if so, search ends.</p>
+</li>
+<li><p>Parameter: current node is start point of planning.</p></li>
+<li><p>introduction: the function based on the reeds shepp method which is a geometric algorithm composed of arc and line. Reeds shepp is       used for search acceleration.</p></li>
+<li><p>Process detail:</p>
+<ol class="simple">
+<li><p>Generate the reeds shepps path by the ShortestRSP() function. The length is optimal and shortest.</p></li>
+<li><p>Check the path is collision free by the RSPCheck() function which call the ValidityCheck() function.</p></li>
+<li><p>Load the whole reeds shepp path as nodes and add nodes to the close set.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">AnalyticExpansion</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node3d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">current_node</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The funtion is used to generate next node based on the current node.</p>
+</li>
+<li><p>Parameter: the current node of the search and the next node serial number</p></li>
+<li><p>Introduction: the next node is calculated based on steering wheel uniform sampling and vehicle kinematics.</p></li>
+<li><p>Process detail:</p>
+<ol class="simple">
+<li><p>The steering angle is calculated according to the number and order of sampling points.</p></li>
+<li><p>Generate the next node according to the kinematic model.</p></li>
+<li><p>Check if the next node runs outside of XY boundary.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">HybridAStar</span><span class="o">::</span><span class="n">CalculateNodeCost</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node3d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">current_node</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node3d</span><span class="o">&gt;</span><span class="w"> </span><span class="n">next_node</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The function is used to calculate the cost of node.</p>
+</li>
+<li><p>Parameter: current node(vehicle position) and next node.</p></li>
+<li><p>Introduction: the calculated cost include trajectory cost and heuristic cost considering obstacles based on holonomic.</p></li>
+<li><p>Process detail:</p>
+<ol class="simple">
+<li><p>the trajectory cost include the current node’s trajectory cost and the trajectory cost from current node to next node.</p></li>
+<li><p>trajectory cost is determined by the sampling distance, the gear change between them and the steering change rate.</p></li>
+<li><p>heuristic cost is get from the dp map.</p></li>
+</ol>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="README.html" class="btn btn-neutral float-left" title="Technical Docunments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="jointly_prediction_planning_evaluator.html" class="btn btn-neutral float-right" title="JOINTLY PREDICTION PLANNING EVALUATOR" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

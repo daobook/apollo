@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 6.0 快速入门指南 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Apollo Software Installation Guide" href="apollo_software_installation_guide.html" />
+    <link rel="prev" title="Apollo 6.0 Quick Start Guide" href="apollo_6_0_quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo 6.0 快速入门指南</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/quickstart/apollo_6_0_quick_start_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-6-0">
+<h1>Apollo 6.0 快速入门指南<a class="headerlink" href="#apollo-6-0" title="永久链接至标题"></a></h1>
+<p>以下指南是用于在车辆上启动Apollo软硬件套件的用户手册， 整体内容与Apollo 5.5类似。本快速入门指南重点介绍新功能，对于 Apollo 的一般概念，请参阅<a class="reference internal" href="apollo_5_5_quick_start.html"><span class="doc std std-doc">Apollo 5.5 快速入门指南</span></a></p>
+<section id="id1">
+<h2>内容<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#apollo-60-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97">Apollo 6.0 快速入门指南</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E5%86%85%E5%AE%B9">内容</a></p></li>
+<li><p><a class="reference external" href="#%E7%B4%A7%E6%80%A5%E8%BD%A6%E8%BE%86%E9%9F%B3%E9%A2%91%E6%A3%80%E6%B5%8B">紧急车辆音频检测</a></p></li>
+<li><p><a class="reference external" href="#%E7%A1%AC%E4%BB%B6%E5%92%8C%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85">硬件和软件安装</a></p></li>
+<li><p><a class="reference external" href="#dreamview%E7%9A%84%E4%BD%BF%E7%94%A8">Dreamview的使用</a></p></li>
+<li><p><a class="reference external" href="#%E4%B8%8A%E8%BD%A6%E6%B5%8B%E8%AF%95">上车测试</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h2>紧急车辆音频检测<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>Apollo目前通过音频设备集成了紧急车辆检测功能。在自动驾驶车辆上安装麦克风采集周围的音频信号，并对记录的音频进行分析和处理，以检测周围的紧急车辆。模块详细信息在<span class="xref myst">这里</span>。</p>
+<p>Apollo集成了新的深度学习模型，包括使用PointPillars进行障碍物检测、使用语义地图进行行人预测以及基于学习的轨迹规划。请在对应的模块中寻找详细的信息。</p>
+</section>
+<section id="id3">
+<h2>硬件和软件安装<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>Apollo 6.0的硬件设置与Apollo 3.5相同，请参阅<a class="reference internal" href="apollo_3_5_hardware_system_installation_guide.html"><span class="doc std std-doc">Apollo 3.5 硬件与系统安装指南</span></a>获取安装硬件组件的步骤，参阅<a class="reference internal" href="apollo_software_installation_guide_cn.html"><span class="doc std std-doc">Apollo软件安装指南</span></a>获取软件安装步骤。</p>
+</section>
+<section id="dreamview">
+<h2>Dreamview的使用<a class="headerlink" href="#dreamview" title="永久链接至标题"></a></h2>
+<p>关于Dreamview图标的问题，请参考<a class="reference internal" href="../specs/dreamview_usage_table_cn.html"><span class="doc std std-doc">Dreamview用法介绍</span></a>。关于Dreamland和场景编辑器的问题，请参考<a class="reference internal" href="../specs/Dreamland_introduction.html"><span class="doc std std-doc">Dreamland简介</span></a>。</p>
+</section>
+<section id="id4">
+<h2>上车测试<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>将一个外部磁盘驱动器接入主机任一可用USB接口。</p></li>
+<li><p>首先启动车辆，然后启动主机。</p></li>
+<li><p>启动Dev版本的Docker容器。</p></li>
+<li><p>启动Dreamview。</p>
+<p>打开浏览器（譬如Chrome）然后在地址栏输入 <a class="reference external" href="http://localhost:8888">http://localhost:8888</a></p>
+<p><img alt="launch_dreamview" src="../../_images/dreamview_2_5.png" /></p>
+</li>
+<li><p>选择模式、车辆和地图。</p>
+<p><img alt="select_mode" src="../../_images/dreamview_2_5_setup_profile.png" /></p>
+<p>附注: 在进行任何测试前会要求使用者设置参数。点击下拉列表并选择想要使用的导航模式，高清地图和车辆。该列表数据在<span class="xref myst">HMI配置文件目录</span>中定义。</p>
+<p>附注: 允许使用者在HMI的右侧面板中更改参数，但是需要点击右上角的<code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">All</span></code>按钮重启该系统以使参数生效。</p>
+</li>
+<li><p>启动模块。</p>
+<p>点击<code class="docutils literal notranslate"><span class="pre">Setup</span></code>按钮</p>
+<p><img alt="start_module" src="../../_images/dreamview_2_5_setup.png" /></p>
+<p>进入<strong>Module Controller</strong> 面板，检查是否所有的模块和硬件已经准备好（在离线环境中，某些硬件模块如GPS、CANBus、Velodyne、Camera和Radar不会显示）（为了获得良好的GPS信号，可能需要车辆运行一段距离。）</p>
+<p><img alt="module_controller" src="../../_images/dreamview_2_5_module_controller.png" /></p>
+</li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Routing</span></code>中选择期望的路线。</p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">Tasks</span></code>面板中，点击<code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Auto</span></code>。（将要进入自动驾驶模式时需要十分小心谨慎）。</p>
+<p><img alt="start_auto" src="../../_images/dreamview_2_5_start_auto.png" /></p>
+</li>
+<li><p>自动驾驶测试结束后，在<code class="docutils literal notranslate"><span class="pre">Tasks</span></code>面板中点击<code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">All</span></code>，关闭所有窗口，关闭主机。</p></li>
+<li><p>移除磁盘驱动器。</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_6_0_quick_start.html" class="btn btn-neutral float-left" title="Apollo 6.0 Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo_software_installation_guide.html" class="btn btn-neutral float-right" title="Apollo Software Installation Guide" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

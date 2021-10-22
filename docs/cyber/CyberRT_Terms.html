@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo Cyber RT Terminologies &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="" href="README.html" />
+    <link rel="prev" title="Cyber RT 调度" href="CyberRT_Scheduler_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo Cyber RT Terminologies</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/cyber/CyberRT_Terms.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-cyber-rt-terminologies">
+<h1>Apollo Cyber RT Terminologies<a class="headerlink" href="#apollo-cyber-rt-terminologies" title="永久链接至标题"></a></h1>
+<p>This page describes the definitions of the most commonly used terminologies in Cyber RT.</p>
+<section id="component">
+<h2>Component<a class="headerlink" href="#component" title="永久链接至标题"></a></h2>
+<p>In an autonomous driving system, modules(like perception, localization, control systems…) exist in the form of components under Cyber RT. Each component communicates with the others through Cyber channels. The component concept not only decouples modules but also provides the flexibility for modules to be divided into components based individual module design.</p>
+</section>
+<section id="channel">
+<h2>Channel<a class="headerlink" href="#channel" title="永久链接至标题"></a></h2>
+<p>Channels are used to manage data communication in Cyber RT. Users can publish/subscribe to the same channel to achieve p2p communication.</p>
+</section>
+<section id="task">
+<h2>Task<a class="headerlink" href="#task" title="永久链接至标题"></a></h2>
+<p>Task is the abstract description of an asynchronous computation task in Cyber RT.</p>
+</section>
+<section id="node">
+<h2>Node<a class="headerlink" href="#node" title="永久链接至标题"></a></h2>
+<p>Node is the fundamental building block of Cyber RT; every module contains and communicates through the node. A module can have different types of communication by defining read/write and/or service/client in a node.</p>
+</section>
+<section id="reader-writer">
+<h2>Reader/Writer<a class="headerlink" href="#reader-writer" title="永久链接至标题"></a></h2>
+<p>Message read/write class from/to channel. Reader/Writer are normally created within a node as the major message transfer interface in Cyber RT.</p>
+</section>
+<section id="service-client">
+<h2>Service/Client<a class="headerlink" href="#service-client" title="永久链接至标题"></a></h2>
+<p>Besides Reader/writer, Cyber RT also provides service/client pattern for module communication. It supports two-way communication between nodes. A client node will receive a response when a request is made to a service.</p>
+</section>
+<section id="parameter">
+<h2>Parameter<a class="headerlink" href="#parameter" title="永久链接至标题"></a></h2>
+<p>Parameter service provides a global parameter access interface in Cyber RT. It’s built based on the service/client pattern.</p>
+</section>
+<section id="service-discovery">
+<h2>Service discovery<a class="headerlink" href="#service-discovery" title="永久链接至标题"></a></h2>
+<p>As a decentralized design framework, Cyber RT does not have a master/central node for service registration. All nodes are treated equally and can find other service nodes through <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">discovery</span></code>. <code class="docutils literal notranslate"><span class="pre">UDP</span></code> is used in Service discovery.</p>
+</section>
+<section id="croutine">
+<h2>CRoutine<a class="headerlink" href="#croutine" title="永久链接至标题"></a></h2>
+<p>Referred to as Coroutine concept, Cyber RT implemented CRoutine to optimize thread usage and system resource allocation.</p>
+</section>
+<section id="scheduler">
+<h2>Scheduler<a class="headerlink" href="#scheduler" title="永久链接至标题"></a></h2>
+<p>To better support autonomous driving scenarios, Cyber RT provides different kinds of resource scheduling algorithms for developers to choose from.</p>
+</section>
+<section id="message">
+<h2>Message<a class="headerlink" href="#message" title="永久链接至标题"></a></h2>
+<p>Message is the data unit used in Cyber RT for data transfer between modules.</p>
+</section>
+<section id="dag-file">
+<h2>Dag file<a class="headerlink" href="#dag-file" title="永久链接至标题"></a></h2>
+<p>Dag file is the config file of module topology. You can define components used and upstream/downstream channels in the dag file.</p>
+</section>
+<section id="launch-files">
+<h2>Launch files<a class="headerlink" href="#launch-files" title="永久链接至标题"></a></h2>
+<p>The Launch file provides an easy way to start modules. By defining one or multiple dag files in the launch file, you can start multiple modules at the same time.</p>
+</section>
+<section id="record-file">
+<h2>Record file<a class="headerlink" href="#record-file" title="永久链接至标题"></a></h2>
+<p>The Record file is used to record messages sent/received to/from channels in Cyber RT. Reply record files can help reproduce the behavior of previous operations of Cyber RT.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CyberRT_Scheduler_cn.html" class="btn btn-neutral float-left" title="Cyber RT 调度" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="README.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

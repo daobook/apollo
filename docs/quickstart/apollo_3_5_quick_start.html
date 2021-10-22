@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 3.5 Quick Start Guide &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Apollo 5.0 Quick Start Guide" href="apollo_5_0_quick_start.html" />
+    <link rel="prev" title="Apollo 3.5 Map Collection Guide" href="apollo_3_5_map_collection_guidelines.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo 3.5 Quick Start Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/quickstart/apollo_3_5_quick_start.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-3-5-quick-start-guide">
+<h1>Apollo 3.5 Quick Start Guide<a class="headerlink" href="#apollo-3-5-quick-start-guide" title="永久链接至标题"></a></h1>
+<p>The following guide serves as a user manual for launching the Apollo 3.5
+software and hardware stack on vehicle.</p>
+<p>The Apollo 3.5 Quick Start Guide focuses on new features available in Apollo
+3.5. For general Apollo concepts, please refer to
+<a class="reference internal" href="apollo_1_0_quick_start.html"><span class="doc std std-doc">Apollo 1.0 Quick Start</span></a>.</p>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="#calibration-guide">Calibration Guide</a></p></li>
+<li><p><a class="reference external" href="#hardware-and-software-installation">Hardware and Software Installation</a></p></li>
+<li><p><a class="reference external" href="#dreamview-usage-table">Dreamview Usage Table</a></p></li>
+<li><p><a class="reference external" href="#onboard-test">Onboard Test</a></p></li>
+</ul>
+</section>
+<section id="calibration-guide">
+<h2>Calibration Guide<a class="headerlink" href="#calibration-guide" title="永久链接至标题"></a></h2>
+<p>For the vehicle’s onboard testing make sure you have calibrated all the sensors.
+For sensor calibration, please refer to
+<a class="reference internal" href="apollo_2_0_sensor_calibration_guide.html"><span class="doc std std-doc">Apollo 2.0 Sensor Calibration Guide</span></a>
+before you proceed.</p>
+</section>
+<section id="hardware-and-software-installation">
+<h2>Hardware and Software Installation<a class="headerlink" href="#hardware-and-software-installation" title="永久链接至标题"></a></h2>
+<p>Please refer to
+<a class="reference internal" href="apollo_3_5_hardware_system_installation_guide.html"><span class="doc std std-doc">Apollo 3.5 Hardware and System Installation Guide</span></a>
+for the steps to install the hardware components and the system software, as
+well as
+<a class="reference internal" href="apollo_software_installation_guide.html"><span class="doc std std-doc">Apollo Software Installation Guide</span></a>.</p>
+</section>
+<section id="dreamview-usage-table">
+<h2>Dreamview Usage Table<a class="headerlink" href="#dreamview-usage-table" title="永久链接至标题"></a></h2>
+<p>For questions regarding Dreamview icons refer to the
+<a class="reference internal" href="../specs/dreamview_usage_table.html"><span class="doc std std-doc">Dreamview Usage Table</span></a>.</p>
+</section>
+<section id="onboard-test">
+<h2>Onboard Test<a class="headerlink" href="#onboard-test" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>Plug-in an external hard-drive to any available USB port in the host machine.</p></li>
+<li><p>Turn on the vehicle, and then the host machine.</p></li>
+<li><p>Launch Docker Release Container.</p></li>
+<li><p>Launch DreamView.</p>
+<p>Note: Use your favorite browser to access Dreamview web service in your host
+machine browser with URL <a class="reference external" href="http://localhost:8888">http://localhost:8888</a>.</p>
+<p><img alt="launch_dreamview" src="../../_images/dreamview_2_5.png" /></p>
+</li>
+<li><p>Select Mode, Vehicle and Map.</p>
+<p><img alt="setup_profile" src="../../_images/dreamview_2_5_setup_profile.png" /></p>
+<p>Note: You’ll be required to setup profile before doing anything else. Click
+the dropdown menu to select <strong>Navigation</strong> mode, the HDMap and vehicle you
+want to use. The lists are defined in
+<a class="reference external" href="https://raw.githubusercontent.com/ApolloAuto/apollo/r3.0.0/modules/dreamview/conf/hmi.conf">HMI config file</a>.</p>
+<p>Note: It’s also possible to change the profile on the right panel of the
+HMI, but just remember to click <code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">All</span></code> on the top-right corner to
+restart the system.</p>
+</li>
+<li><p>Start the Modules.</p>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Setup</span></code> button.</p>
+<p><img alt="start_modules" src="../../_images/dreamview_2_5_setup.png" /></p>
+<p>Go to <strong>Module Controller</strong> tab, check if all modules and hardware are ready.
+(Note: In your offline environment, the hardware modules such as GPS,
+CANBus, Velodyne, Camera and Radar cannot be brought up.) (Note: You may
+need to drive around a bit to get a good GPS signal.)</p>
+<p><img alt="controller" src="../../_images/dreamview_2_5_module_controller.png" /></p>
+</li>
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Routing</span></code> select your desired route.</p></li>
+<li><p>Under Tasks click <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Auto</span></code>. (Note: Be cautious when starting the
+autonomous driving, you should now be in autonomous mode.)</p>
+<p><img alt="start_auto" src="../../_images/dreamview_2_5_start_auto.png" /></p>
+</li>
+<li><p>After the autonomous testing is complete, under Tasks click <code class="docutils literal notranslate"><span class="pre">Reset</span> <span class="pre">All</span></code>,
+close all windows and shutdown the machine.</p></li>
+<li><p>Remove the hard drive.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_3_5_map_collection_guidelines.html" class="btn btn-neutral float-left" title="Apollo 3.5 Map Collection Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo_5_0_quick_start.html" class="btn btn-neutral float-right" title="Apollo 5.0 Quick Start Guide" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

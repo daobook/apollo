@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navi Config &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/tabs.js"></script>
+        <script src="../../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../search.html" />
+    <link rel="next" title="" href="../../navigator/README.html" />
+    <link rel="prev" title="MapViewers" href="../../mapviewers/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Navi Config</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/tools/navigation/config/README.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="navi-config">
+<h1>Navi Config<a class="headerlink" href="#navi-config" title="永久链接至标题"></a></h1>
+<p>Navi Config is a tool to set parameters and flags in various modules for navigation mode.</p>
+<section id="usage">
+<h2>usage<a class="headerlink" href="#usage" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">navi_config</span><span class="o">.</span><span class="n">py</span> <span class="n">default</span><span class="o">.</span><span class="n">ini</span>
+</pre></div>
+</div>
+<p><em>default.ini</em> file is the default navigation mode configuration, with following content:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">PerceptionConf</span><span class="p">]</span>
+<span class="c1"># three perception solutions: MOBILEYE, CAMERA, and VELODYNE64</span>
+<span class="n">perception</span> <span class="o">=</span> <span class="n">CAMERA</span>
+
+
+<span class="p">[</span><span class="n">LocalizationConf</span><span class="p">]</span>
+<span class="n">utm_zone</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="p">[</span><span class="n">PlanningConf</span><span class="p">]</span>
+<span class="c1"># three planners are available: EM, LATTICE, NAVI</span>
+<span class="n">planner_type</span> <span class="o">=</span> <span class="n">EM</span>
+
+<span class="c1"># highest speed for planning algorithms, unit is meter per second</span>
+<span class="n">speed_limit</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>In <strong>PerceptionConf</strong> section, the <em>perception</em> parameter is to specify the perception  solution. Currently there are three supported in Apollo Navigation Mode: mobileye based, camera based and lidar based.</p>
+<p>In the <strong>LocalizationConf</strong> section, utm_zone need to be specified based on  location of the road test.</p>
+<p>In the <strong>PlanningConf</strong> section,   three planner are supported: EM, Lattice, and Navi. Select one for the planner_type parameter. speed_limt, which is the planner upper speed limit, is also configurable in this seciton, which unit is meter per second.</p>
+<p>Developers could create differet ini files for  different test scenarios/purposes or modified the default.ini based on needs.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../mapviewers/README.html" class="btn btn-neutral float-left" title="MapViewers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../../navigator/README.html" class="btn btn-neutral float-right" title="" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

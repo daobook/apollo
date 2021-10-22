@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo安全更新SDK &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Bazel in Apollo" href="bazel_in_apollo_an_overview.html" />
+    <link rel="prev" title="Apollo Secure Upgrade SDK" href="apollo_secure_upgrade_user_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo安全更新SDK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/apollo_secure_upgrade_user_guide_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollosdk">
+<h1>Apollo安全更新SDK<a class="headerlink" href="#apollosdk" title="永久链接至标题"></a></h1>
+<p>当前大部分的软件更新过程并没有被安全的保护起来，因此在更新过程中设备将被暴露在诸多的安全威胁下。Apollo安全更新SDK提供了多种保护更新安全的特性，并且能够很容易的被集成以使更新流程更加安全可靠。</p>
+<section id="id1">
+<h2>特性<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ol class="simple">
+<li><p>在储存和传输阶段，更新包被加密和签名保护。</p></li>
+<li><p>服务器和设备可以互相鉴定</p></li>
+<li><p>加密信息被安全合理的保护</p></li>
+<li><p>服务器针对不同的设备提供不同的授权</p></li>
+<li><p>防止攻击者利用服务器的应答对设备实施重传攻击</p></li>
+<li><p>支持多个平台（Ubuntu 14, Centos 6, Centos 7 and Andorid）</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>更新流程<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>一种典型的更新流程如下图所示：</p>
+<p><img alt="" src="../../_images/apollo_unsecure_upgrade_procedure.jpg" /></p>
+<ol class="simple">
+<li><p>更新服务器生成更新包</p></li>
+<li><p>更新包上传至存储服务器</p></li>
+<li><p>存储服务器将更新包的url地址发送给更新服务器</p></li>
+<li><p>设备发送更新请求到更新服务器</p></li>
+<li><p>更新服务器将更新包的url回复给设备</p></li>
+<li><p>设备从存储服务器请求下载更新包</p></li>
+<li><p>更新包下载到设备上</p></li>
+<li><p>设备安装更新包</p></li>
+</ol>
+<p>在集成Apollo安全更新SDK后，更新流程修改为：</p>
+<p><img alt="" src="../../_images/apollo_secure_upgrade_procedure.jpg" /></p>
+<ol class="simple">
+<li><p>更新服务器生成安全更新包和更新包的token</p></li>
+<li><p>安全更新包和更新包token上传至存储服务器</p></li>
+<li><p>存储服务器将安全更新包的url和更新包token的url发送给更新服务器</p></li>
+<li><p>设备生成设备token并发送到更新服务器</p></li>
+<li><p>更新服务器生成授权token并将该token连同安全更新包的url一起发送给设备</p></li>
+<li><p>设备向存储服务器请求安全更新包</p></li>
+<li><p>安全更新包下载到设备上</p></li>
+<li><p>设备使用授权token验证安全更新包，并生成原始更新包</p></li>
+<li><p>设备安装更新包</p></li>
+</ol>
+</section>
+<section id="id3">
+<h2>用户指南<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<section id="sdk">
+<h3>1. SDK文件布局<a class="headerlink" href="#sdk" title="永久链接至标题"></a></h3>
+<p>SDK包含4个目录：</p>
+<ol class="simple">
+<li><p>python API: python接口</p></li>
+<li><p>config: SDK根配置文件，日志文件</p></li>
+<li><p>certificate: 证书文件</p></li>
+<li><p>depend_lib: 依赖库</p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>2. 接口<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<section id="a">
+<h4>a) 初始化<a class="headerlink" href="#a" title="永久链接至标题"></a></h4>
+<p>该函数应当在使用安全更新API前调用</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">init_secure_upgrade</span><span class="p">(</span><span class="n">root_config_path</span><span class="p">)</span>
+<span class="nb">input</span> <span class="n">para</span><span class="p">:</span>
+  <span class="n">root_config_path</span>  <span class="n">root</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">path</span>
+</pre></div>
+</div>
+</section>
+<section id="b-token">
+<h4>b) 设备token生成<a class="headerlink" href="#b-token" title="永久链接至标题"></a></h4>
+<p>该函数用于生成设备token</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sec_upgrade_get_device_token</span><span class="p">()</span>
+<span class="n">Output</span> <span class="n">para</span><span class="p">:</span>
+  <span class="k">return</span> <span class="n">code</span><span class="p">:</span> <span class="n">true</span>    <span class="n">generating</span> <span class="n">device</span> <span class="n">token</span> <span class="n">successfully</span>
+               <span class="n">false</span>    <span class="n">generating</span> <span class="n">device</span> <span class="n">token</span> <span class="n">failed</span>
+  <span class="n">Device_token</span><span class="p">:</span> <span class="n">device</span> <span class="n">token</span> <span class="p">(</span><span class="n">string</span> <span class="nb">format</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="c">
+<h4>c) 更新包生成<a class="headerlink" href="#c" title="永久链接至标题"></a></h4>
+<p>该函数用于生成安全更新包和更新包token</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sec_upgrade_get_package</span><span class="p">(</span><span class="n">original_package_path</span><span class="p">,</span>
+                        <span class="n">secure_package_path</span><span class="p">,</span>
+                        <span class="n">package_token_path</span><span class="p">)</span>
+<span class="nb">input</span> <span class="n">para</span><span class="p">:</span>
+    <span class="n">original_package_path</span>    <span class="n">original</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">file</span> <span class="n">path</span>
+    <span class="n">secure_package_path</span>    <span class="n">secure</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">file</span> <span class="n">path</span>
+    <span class="n">package_token_path</span>    <span class="n">secure</span> <span class="n">package</span> <span class="n">token</span> <span class="n">file</span>     
+<span class="n">output</span> <span class="n">para</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">code</span><span class="p">:</span>
+        <span class="n">true</span>    <span class="n">generating</span> <span class="n">secure</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">successfully</span>
+        <span class="n">false</span>    <span class="n">generating</span> <span class="n">secure</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">failed</span>
+</pre></div>
+</div>
+</section>
+<section id="d-token">
+<h4>d) 授权token生成<a class="headerlink" href="#d-token" title="永久链接至标题"></a></h4>
+<p>该函数基于设备token和更新包token生成设备的授权token</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sec_upgrade_get_authorization_token</span><span class="p">(</span><span class="n">package_token_path</span><span class="p">,</span>
+                                    <span class="n">device_token_path</span><span class="p">)</span>
+<span class="nb">input</span> <span class="n">para</span><span class="p">:</span>
+    <span class="n">package_token_path</span>    <span class="n">secure</span> <span class="n">package</span> <span class="n">token</span> <span class="n">file</span> <span class="n">path</span>
+	<span class="n">device_token_path</span>    <span class="n">device</span> <span class="n">token</span> <span class="n">file</span> <span class="n">path</span>
+<span class="n">output_para</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">code</span><span class="p">:</span>
+        <span class="n">true</span>    <span class="n">generating</span> <span class="n">authorization</span> <span class="n">token</span> <span class="n">successfully</span>
+        <span class="n">false</span>    <span class="n">generating</span> <span class="n">authorization</span> <span class="n">token</span> <span class="n">failed</span>
+        <span class="n">authorization_token</span> <span class="n">authorization</span> <span class="n">token</span> <span class="n">buffer</span><span class="p">(</span><span class="n">string</span> <span class="n">formate</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="e-token">
+<h4>e) 授权token和更新包检验<a class="headerlink" href="#e-token" title="永久链接至标题"></a></h4>
+<p>该函数使用授权token检验下载的安全更新包并生成原始更新包</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sec_upgrade_verify_package</span><span class="p">(</span><span class="n">authorization_token_buffer</span><span class="p">,</span>
+                           <span class="n">secure_package_path</span><span class="p">)</span>
+<span class="nb">input</span> <span class="n">para</span><span class="p">:</span>
+    <span class="n">authorization_token_buffer</span>    <span class="n">authorization</span> <span class="n">token</span> <span class="n">buffer</span><span class="p">(</span><span class="n">string</span> <span class="nb">format</span><span class="p">)</span>
+    <span class="n">secure_package_path</span>    <span class="n">secure</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">file</span> <span class="n">path</span>
+<span class="n">output</span> <span class="n">para</span><span class="p">:</span>
+    <span class="n">original_package_path</span>    <span class="n">original</span> <span class="n">upgrade</span> <span class="n">package</span> <span class="n">file</span> <span class="n">path</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h3>3. 附加信息<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>SDK使用标准的PEM证书</p></li>
+<li><p>在使用SDK前，使用者需要为服务器和设备生成两个不同的证书串</p></li>
+<li><p>服务器证书串中的证书配置给服务器，请确保其不能对其他证书进行签名</p></li>
+<li><p>设备证书串中的证书配置给设备，请确保其不能对其他证书进行签名</p></li>
+<li><p>根密钥不应当配置给服务器和设备</p></li>
+<li><p>使用者应当具有<code class="docutils literal notranslate"><span class="pre">config</span></code>文件夹的读写权限和<code class="docutils literal notranslate"><span class="pre">certificate</span></code>文件夹的读权限</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_secure_upgrade_user_guide.html" class="btn btn-neutral float-left" title="Apollo Secure Upgrade SDK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="bazel_in_apollo_an_overview.html" class="btn btn-neutral float-right" title="Bazel in Apollo" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

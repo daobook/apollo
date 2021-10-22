@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>封闭园区自动驾驶搭建–规划适配 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="基于激光雷达的封闭园区自动驾驶搭建–感知设备标定" href="sensor_calibration_cn.html" />
+    <link rel="prev" title="基于激光雷达的封闭园区自动驾驶搭建–感知适配" href="perception_configuration_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>封闭园区自动驾驶搭建–规划适配</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/D-kit/Lidar_Based_Auto_Driving/planning_configuration_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>封闭园区自动驾驶搭建–规划适配<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#%E5%B0%81%E9%97%AD%E5%9B%AD%E5%8C%BA%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E6%90%AD%E5%BB%BA--%E8%A7%84%E5%88%92%E9%80%82%E9%85%8D">封闭园区自动驾驶搭建–规划适配</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E6%A6%82%E8%A7%88">概览</a></p></li>
+<li><p><a class="reference external" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></p></li>
+<li><p><a class="reference external" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">配置文件的修改</a></p></li>
+<li><p><a class="reference external" href="#%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B">启动流程</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E6%8B%8D%E4%B8%8B%E8%BD%A6%E8%BE%86%E5%B0%BE%E9%83%A8%E7%9A%84%E6%80%A5%E5%81%9C%E5%BC%80%E5%85%B3">1. 拍下车辆尾部的急停开关</a></p></li>
+<li><p><a class="reference external" href="#2-%E5%90%AF%E5%8A%A8%E6%84%9F%E7%9F%A5">2. 启动感知</a></p></li>
+<li><p><a class="reference external" href="#3-%E5%90%AF%E5%8A%A8-planningpredictionroutingcontrol%E6%A8%A1%E5%9D%97">3. 启动 Planning、Prediction、Routing、Control模块</a></p></li>
+<li><p><a class="reference external" href="#4-%E9%AA%8C%E8%AF%81planningpredictionroutingcontrol%E6%A8%A1%E5%9D%97%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8%E6%88%90%E5%8A%9F">4. 验证Planning、Prediction、Routing、Control模块是否启动成功</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#next">NEXT</a></p></li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h2>概览<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>该用户手册旨在帮助用户完成规划模块的配置和开环验证。规划模块需要上游的感知数据，目前有Lidar感知和Camera感知两种方案，用户可以选择其中任意一种感知方案。</p>
+<section id="id3">
+<h3>前提条件<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>完成了<a class="reference internal" href="perception_configuration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知适配</span></a>或<a class="reference internal" href="../Camera_Based_Auto_Driving/perception_configuration_cn.html"><span class="doc std std-doc">基于摄像头的封闭园区自动驾驶搭建–感知适配</span></a></p></li>
+<li><p>完成了<a class="reference internal" href="virtual_lane_generation_cn.html"><span class="doc std std-doc">封闭园区自动驾驶搭建–虚拟车道线制作</span></a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>配置文件的修改<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>对<code class="docutils literal notranslate"><span class="pre">/apollo/modules/planning/conf/planning.conf</span></code>和<code class="docutils literal notranslate"><span class="pre">/apollo/modules/planning/conf/planning_config.pb.txt</span></code>两个配置文件进行以下修改：</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>修改文件名称</p></th>
+<th class="head"><p>修改内容</p></th>
+<th class="head"><p>对应的gflag参数</p></th>
+<th class="head"><p>单位</p></th>
+<th class="head"><p>作用</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">default_cruise_speed</span></code>数值</p></td>
+<td><p>比如1.5</p></td>
+<td><p>m/s</p></td>
+<td><p>默认巡航速度</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">planning_upper_speed_limit</span></code>数值</p></td>
+<td><p>比如1.5</p></td>
+<td><p>m/s</p></td>
+<td><p>车planning最大速度</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">planning_lower_speed_limit</span></code>数值</p></td>
+<td><p>比如0.5</p></td>
+<td><p>m/s</p></td>
+<td><p>车planning最小速度</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">speed_upper_bound</span></code>数值</p></td>
+<td><p>比如1.5</p></td>
+<td><p>m/s</p></td>
+<td><p>车最大速度</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">max_stop_distance_obstacle</span></code>数值</p></td>
+<td><p>比如10</p></td>
+<td><p>m</p></td>
+<td><p>障碍物最大停止距离</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">min_stop_distance_obstacle</span></code>数值</p></td>
+<td><p>比如5</p></td>
+<td><p>m</p></td>
+<td><p>障碍物最小停止距离</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">destination_check_distance</span></code>数值</p></td>
+<td><p>比如1.0</p></td>
+<td><p>m</p></td>
+<td><p>认为车已经到达目的地时，车与目的地距离</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">lon_collision_buffer</span></code>数值</p></td>
+<td><p>比如0.3</p></td>
+<td><p>m</p></td>
+<td><p>车与障碍物的默认碰撞距离</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning.conf</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">enable_scenario_park_and_go</span></code>配置项</p></td>
+<td><p>false</p></td>
+<td><p></p></td>
+<td><p>使起步停车场景失效</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning_config.pb.txt</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">total_time</span></code>数值</p></td>
+<td><p>比如15.0</p></td>
+<td><p>s</p></td>
+<td><p>planning规划多长时间的路线</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning_config.pb.txt</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">max_acceleration</span></code>数值</p></td>
+<td><p>比如1.0</p></td>
+<td><p>m/s^2</p></td>
+<td><p>车辆最大加速度</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning_config.pb.txt</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">lowest_speed</span></code>数值</p></td>
+<td><p>比如0.5</p></td>
+<td><p>m/s</p></td>
+<td><p>planning时车的最低速度</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">planning_config.pb.txt</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">max_speed_forward</span></code>数值</p></td>
+<td><p>比如1.5</p></td>
+<td><p>m/s</p></td>
+<td><p>车前进的最大速度</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">planning_config.pb.txt</span></code></p></td>
+<td><p>修改<code class="docutils literal notranslate"><span class="pre">max_acceleration_forward</span></code>数值</p></td>
+<td><p>比如1.0</p></td>
+<td><p>m/s^2</p></td>
+<td><p>车前进的最大加速度</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意</strong>：这些配置重新启动planning模块即可生效。为了安全起见，车planning速度一定要设置得比较小，建议按照上面的给出的值来设置相应的配置参数。</p>
+</section>
+</section>
+<section id="id5">
+<h2>启动流程<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>把车辆开到户外，手动控制车辆，在感知有障碍物信息显示的情况下添加routing点并查看是否有planning轨迹线信息。</p>
+<section id="id6">
+<h3>1. 拍下车辆尾部的急停开关<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<p>本文档目的是进行规划的适配，并完规划模块的开环验证，不需要车辆行驶，为了安全起见，将车开到室外调试场后，请全程确保急停开关处于按下状态</p>
+</section>
+<section id="id7">
+<h3>2. 启动感知<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>如果用户使用Lidar感知方案，请参照<a class="reference internal" href="perception_configuration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知适配</span></a>启动Lidar感知</p></li>
+<li><p>如果用户使用Camera感知方案，请参照<a class="reference internal" href="../Camera_Based_Auto_Driving/perception_configuration_cn.html"><span class="doc std std-doc">基于摄像头的封闭园区自动驾驶搭建–感知适配</span></a>启动Camera感知</p></li>
+</ul>
+</section>
+<section id="planningpredictionroutingcontrol">
+<h3>3. 启动 Planning、Prediction、Routing、Control模块<a class="headerlink" href="#planningpredictionroutingcontrol" title="永久链接至标题"></a></h3>
+<p>确保感知模块启动成功后，在Module Controller标签页启动Planning、Prediction、Routing、Control模块。</p>
+<ul class="simple">
+<li><p>对于Lidar感知方案，DreamView上显示启动的模块如下图所示：
+<img alt="lidar_adaptation_dreamview1" src="../../../_images/lidar_adaptation_dreamview7_debug.png" /></p></li>
+<li><p>对于Camera感知方案，DreamView上显示启动的模块如下图所示：
+<img alt="camera_demonstration_dreamview" src="../../../_images/camera_demonstration_dreamview.png" /></p></li>
+</ul>
+<p>在Routing Editor标签中点击Add Point of Interest按钮添加一个point, 然后选择Send Routing Request按钮发送添加的routing点
+<img alt="lidar_adaptation_dreamview6" src="../../../_images/lidar_adaptation_dreamview6.png" /></p>
+</section>
+<section id="id8">
+<h3>4. 验证Planning、Prediction、Routing、Control模块是否启动成功<a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<p>从DreamView中查看会出现一个蓝色的线 以及一个红色的stop标志。如下图所示：
+<img alt="lidar_demonstration_routing1" src="../../../_images/lidar_demonstration_routing1.png" />
+在车前方存在人或者自行车（车上有人）时，在task标签页查看planning轨迹线，正常情况下planning会重新规划轨迹，如下图所示：</p>
+<p><img alt="lidar_demonstration_routing2" src="../../../_images/lidar_demonstration_routing2.png" /></p>
+<p>在docker环境中输入命令<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>并查看planning channel信息：</p>
+<p><img alt="lidar_demonstration_channel" src="../../../_images/lidar_demonstration_channel.png" /></p>
+<p>如果出现上图所示轨迹线和topic信息，表示规划模块适配和开环测试通过，否则继续查看log信息进行调试。</p>
+</section>
+</section>
+<section id="next">
+<h2>NEXT<a class="headerlink" href="#next" title="永久链接至标题"></a></h2>
+<p>现在，您已经完成规划适配，根据您适配的是Lidar感知方案还是Camera感知方案，接下来可以开始<a class="reference internal" href="start_auto_driving_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–自动驾驶演示</span></a>或<a class="reference internal" href="../Camera_Based_Auto_Driving/start_auto_driving_cn.html"><span class="doc std std-doc">基于摄像头的封闭园区自动驾驶搭建–自动驾驶演示</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="perception_configuration_cn.html" class="btn btn-neutral float-left" title="基于激光雷达的封闭园区自动驾驶搭建–感知适配" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="sensor_calibration_cn.html" class="btn btn-neutral float-right" title="基于激光雷达的封闭园区自动驾驶搭建–感知设备标定" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

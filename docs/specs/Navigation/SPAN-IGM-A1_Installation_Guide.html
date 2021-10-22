@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation Guide of SPAN-IGM-A1 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="SPAN-IGM-A1安装指南" href="SPAN-IGM-A1_Installation_Guide_cn.html" />
+    <link rel="prev" title="Apollo导航" href="README_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation Guide of SPAN-IGM-A1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installation-guide-of-span-igm-a1">
+<h1>Installation Guide of SPAN-IGM-A1<a class="headerlink" href="#installation-guide-of-span-igm-a1" title="永久链接至标题"></a></h1>
+<p>The NovAtel SPAN-IGM-A1 is an integrated, single-box solution that offers tightly coupled Global Navigation Satellite System (GNSS) positioning and inertial navigation featuring the NovAtel OEM615 receiver.</p>
+<p><img alt="novatel_imu" src="../../../_images/Novatel_imu1.png" /></p>
+<p>The GPS Receiver/Antenna used with the GPS-IMU component is the <strong>NovAtel GPS-703-GGG-HV</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">GPS</span> <span class="n">NovAtelGPS</span><span class="o">-</span><span class="mi">703</span><span class="o">-</span><span class="n">GGG</span><span class="o">-</span><span class="n">HV</span> <span class="n">works</span> <span class="k">with</span> <span class="n">either</span> <span class="n">model</span> <span class="n">of</span> <span class="n">the</span> <span class="n">two</span> <span class="n">GPS</span><span class="o">-</span><span class="n">IMU</span> <span class="n">options</span> <span class="p">(</span><span class="n">SPAN</span><span class="o">-</span><span class="n">IGM</span><span class="o">-</span><span class="n">A1</span> <span class="ow">and</span> <span class="n">Propak6</span><span class="p">),</span> <span class="n">Global</span> <span class="n">Positioning</span> <span class="n">System</span> <span class="p">(</span><span class="n">GPS</span><span class="p">)</span> <span class="ow">and</span> <span class="n">Inertial</span> <span class="n">Measurement</span> <span class="n">Unit</span> <span class="p">(</span><span class="n">IMU</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><img alt="gps_receiver" src="../../../_images/gps_receiver1.png" /></p>
+<section id="installing-the-gps-receiver-and-antenna">
+<h2>Installing the GPS Receiver and Antenna<a class="headerlink" href="#installing-the-gps-receiver-and-antenna" title="永久链接至标题"></a></h2>
+<p>The installation instructions describe the procedure to mount, connect, and take the lever arm measurements for the GPS-IMU NovAtel SPAN-IGM-A1.</p>
+<section id="mounting">
+<h3>Mounting<a class="headerlink" href="#mounting" title="永久链接至标题"></a></h3>
+<p>You can place the GPS-IMU NovAtel SPAN-IGM-A1 in most places in the vehicle but it is suggested that you follow these recommendations:</p>
+<ul class="simple">
+<li><p>Place and secure the NovAtel SPAN-IGM-A1 inside the trunk with the Y-axis pointing forward.</p></li>
+<li><p>Mount the NovAtel GPS-703-GGG-HV antenna in an unobstructed location on top of the vehicle.</p></li>
+</ul>
+</section>
+<section id="wiring">
+<h3>Wiring<a class="headerlink" href="#wiring" title="永久链接至标题"></a></h3>
+<p>There are three cables that need to be connected</p>
+<ul class="simple">
+<li><p>The antenna cable connects the GNSS antenna to the antenna port of the SPAN-IGM-A1</p></li>
+<li><p>The main cable:</p>
+<ul>
+<li><p>Connect the 15-pin end to the SPAN-IGM-A1</p></li>
+<li><p>Connect the power wires to a power supply of 10-to-30V DC</p></li>
+<li><p>Connects the user port to the IPC.</p></li>
+<li><p>If the power comes from a vehicle battery, add an auxiliary battery (recommended).</p></li>
+</ul>
+</li>
+<li><p>The AUX cable:</p>
+<ul>
+<li><p>Connect the AUX cable to the 15-pin Aux port</p></li>
+<li><p>Connect the USB cable to the IPC, if the USB port is used for data transferring.</p></li>
+</ul>
+</li>
+</ul>
+<p>Refer to the diagram below for reference:</p>
+<p><img alt="imu_main_cable_connection" src="../../../_images/imu_main_cable_connection1.png" /></p>
+<p>For additional information, visit Page 3 of <a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">the SPAN-IGM™ Quick Start Guide</a> to view the detailed diagram.</p>
+</section>
+<section id="taking-the-lever-arm-measurement">
+<h3>Taking the Lever Arm Measurement<a class="headerlink" href="#taking-the-lever-arm-measurement" title="永久链接至标题"></a></h3>
+<p>When the SPAN-IGM-A1 and the GPS Antenna are in position, the distance from the SPAN-IGM-A1 to the GPS Antenna must be measured. The distance should be measured as: X offset, Y offset, and Z offset.</p>
+<p>The center of the IMU and the center of the antenna are labeled on the exterior of the devices.</p>
+<p>For additional information, visit Page 5 of <a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">the SPAN-IGM™ Quick Start Guide</a> to view the detailed diagram.</p>
+</section>
+</section>
+<section id="configuring-the-gps-and-imu">
+<h2>Configuring the GPS and IMU<a class="headerlink" href="#configuring-the-gps-and-imu" title="永久链接至标题"></a></h2>
+<p>Configure the SPAN-IGM-A1 as shown below. The setting can be configured by keying in the following command or loading a batch file in Novatel Connect:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span> <span class="n">STATE</span> <span class="n">OFF</span>
+<span class="n">UNLOGALL</span> <span class="n">THISPORT</span>
+<span class="n">INSCOMMAND</span> <span class="n">ENABLE</span>
+<span class="n">SETIMUORIENTATION</span> <span class="mi">5</span>
+<span class="n">ALIGNMENTMODE</span> <span class="n">AUTOMATIC</span>  
+<span class="n">VEHICLEBODYROTATION</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">COM</span> <span class="n">COM1</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">COM</span> <span class="n">COM2</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">INTERFACEMODE</span> <span class="n">COM1</span> <span class="n">NOVATEL</span> <span class="n">NOVATEL</span> <span class="n">ON</span>
+<span class="n">PPSCONTROL</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mf">1.0</span> <span class="mi">10000</span>
+<span class="n">MARKCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span>
+<span class="n">EVENTINCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">0</span> <span class="mi">2</span>
+<span class="n">interfacemode</span> <span class="n">usb2</span> <span class="n">rtcmv3</span> <span class="n">none</span> <span class="n">off</span>
+<span class="n">rtksource</span> <span class="n">auto</span> <span class="nb">any</span>
+<span class="n">psrdiffsource</span> <span class="n">auto</span> <span class="nb">any</span>
+
+<span class="n">SETIMUTOANTOFFSET</span> <span class="mf">0.00</span> <span class="mf">1.10866</span> <span class="mf">1.14165</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+<span class="n">SETINSOFFSET</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK2</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">999999990</span> <span class="mi">10</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">500000000</span> <span class="mi">500000000</span>
+
+
+<span class="n">LOG</span> <span class="n">COM2</span> <span class="n">GPRMC</span> <span class="n">ONTIME</span> <span class="mf">1.0</span> <span class="mf">0.25</span>
+<span class="n">LOG</span> <span class="n">USB1</span> <span class="n">GPGGA</span> <span class="n">ONTIME</span> <span class="mf">1.0</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssvelb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVAXB</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">CORRIMUDATASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">RAWIMUSXB</span> <span class="n">onnew</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">mark1pvab</span> <span class="n">onnew</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">rangeb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">imutoantoffsetsb</span> <span class="n">once</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">vehiclebodyrotationb</span> <span class="n">onchanged</span>
+ 
+<span class="n">SAVECONFIG</span>
+</pre></div>
+</div>
+<p><strong><img alt="warning_icon" src="../../../_images/warning_icon3.png" /> WARNING:</strong> Modify the <strong><u>SETIMUTOANTOFFSET</u></strong> line based on the actual measurement (of the antenna and the SPAN-IGM-A1 offset).</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SETIMUTOANTOFFSET</span> <span class="o">-</span><span class="mf">0.05</span> <span class="mf">0.5</span> <span class="mf">0.8</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+</pre></div>
+</div>
+<p>The first 3 numbers indicate the result of the lever arm distance measurement. The last 3 numbers are the uncertainty of the measurement.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="永久链接至标题"></a></h2>
+<p>For additional information on the NovAtel SPAN-IGM-A1:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.novatel.com/products/span-gnss-inertial-systems/span-combined-systems/span-igm-a1/">NovAtel SPAN-IGM-A1 Product Page</a></p></li>
+<li><p><a class="reference external" href="https://www.novatel.com/products/gnss-antennas/high-performance-gnss-antennas/gps-703-ggg-hv/">NovAtel GPS-703-GGG-HV Product page</a></p></li>
+<li><p><a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">SPAN-IGM™ Quick Start Guide</a></p></li>
+<li><p><a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf">SPAN-IGM™ User Manual</a></p></li>
+</ul>
+</section>
+<section id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="永久链接至标题"></a></h2>
+<p>This device is <code class="docutils literal notranslate"><span class="pre">Apollo</span> <span class="pre">Platform</span> <span class="pre">Supported</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="README_cn.html" class="btn btn-neutral float-left" title="Apollo导航" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="SPAN-IGM-A1_Installation_Guide_cn.html" class="btn btn-neutral float-right" title="SPAN-IGM-A1安装指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

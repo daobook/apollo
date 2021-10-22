@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何添加新的fusion融合系统 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to add a new lidar detector algorithm" href="how_to_add_a_new_lidar_detector_algorithm.html" />
+    <link rel="prev" title="How to add a new fusion system" href="how_to_add_a_new_fusion_system.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何添加新的fusion融合系统</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_add_a_new_fusion_system_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="fusion">
+<h1>如何添加新的fusion融合系统<a class="headerlink" href="#fusion" title="永久链接至标题"></a></h1>
+<p>Perception中的详细模型结构如下：
+<img alt="" src="../../_images/Fusion_overview.png" /></p>
+<p>本篇文档所介绍的fusion融合系统位于图中的Fusion Component中。当前Fusion Component的架构如下：
+<img alt="fusion component" src="../../_images/fusion.png" /></p>
+<p>从以上结构中可以清楚地看到fusion融合系统是位于Fusion Component的 <code class="docutils literal notranslate"><span class="pre">ObstacleMultiSensorFusion</span></code> 中的抽象成员类 <code class="docutils literal notranslate"><span class="pre">BaseFusionSystem</span></code> 的派生类。下面将详细介绍如何基于当前结构添加新的fusion融合系统。</p>
+<p>Apollo默认提供了1种fusion融合系统 – Probabilistic Fusion，它可以轻松更改或替换为不同的系统。每种系统的输入都是各传感器检测匹配跟踪后的目标级障碍物信息，输出都是融合匹配跟踪后的目标级障碍物信息。本篇文档将介绍如何引入新的fusion融合系统，添加新系统的步骤如下：</p>
+<ol class="simple">
+<li><p>定义一个继承基类 <code class="docutils literal notranslate"><span class="pre">base_fusion_system</span></code> 的类</p></li>
+<li><p>实现新类 <code class="docutils literal notranslate"><span class="pre">NewFusionSystem</span></code></p></li>
+<li><p>为新类 <code class="docutils literal notranslate"><span class="pre">NewFusionSystem</span></code> 配置config的proto文件</p></li>
+<li><p>更新config文件使新的系统生效</p></li>
+</ol>
+<p>为了更好的理解，下面对每个步骤进行详细的阐述:</p>
+<section id="base-fusion-system">
+<h2>定义一个继承基类 <code class="docutils literal notranslate"><span class="pre">base_fusion_system</span></code> 的类<a class="headerlink" href="#base-fusion-system" title="永久链接至标题"></a></h2>
+<p>所有的fusion融合系统都必须继承基类 <code class="docutils literal notranslate"><span class="pre">base_fusion_system</span></code>，它定义了融合系统的基础成员及其接口。 以下是融合系统继承基类的示例:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">apollo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">perception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">fusion</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="k">class</span> <span class="nc">NewFusionSystem</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BaseFusionSystem</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">NewFusionSystem</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="o">~</span><span class="n">NewFusionSystem</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">NewFusionSystem</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NewFusionSystem</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">NewFusionSystem</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">NewFusionSystem</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FusionInitOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">init_options</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Fuse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FusionOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">base</span><span class="o">::</span><span class="n">FrameConstPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sensor_frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">base</span><span class="o">::</span><span class="n">ObjectPtr</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">fused_objects</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">Name</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="p">};</span><span class="w">  </span><span class="c1">// class NewFusionSystem</span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace fusion</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace perception</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace apollo</span>
+</pre></div>
+</div>
+<p>基类 <code class="docutils literal notranslate"><span class="pre">base_fusion_system</span></code> 已定义好各虚函数签名，接口信息如下：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="nc">FusionInitOptions</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">main_sensors</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">struct</span> <span class="nc">FusionOptions</span><span class="w"> </span><span class="p">{};</span><span class="w"></span>
+
+<span class="k">struct</span> <span class="nc">alignas</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="n">Frame</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span><span class="w"></span>
+
+<span class="w">  </span><span class="nf">Frame</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sensor2world_pose</span><span class="p">.</span><span class="n">setIdentity</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">objects</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">sensor2world_pose</span><span class="p">.</span><span class="n">setIdentity</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">sensor_info</span><span class="p">.</span><span class="n">Reset</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">lidar_frame_supplement</span><span class="p">.</span><span class="n">Reset</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">radar_frame_supplement</span><span class="p">.</span><span class="n">Reset</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">camera_frame_supplement</span><span class="p">.</span><span class="n">Reset</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// @brief sensor information</span>
+<span class="w">  </span><span class="n">SensorInfo</span><span class="w"> </span><span class="n">sensor_info</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">objects</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Affine3d</span><span class="w"> </span><span class="n">sensor2world_pose</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// sensor-specific frame supplements</span>
+<span class="w">  </span><span class="n">LidarFrameSupplement</span><span class="w"> </span><span class="n">lidar_frame_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">RadarFrameSupplement</span><span class="w"> </span><span class="n">radar_frame_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">CameraFrameSupplement</span><span class="w"> </span><span class="n">camera_frame_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">UltrasonicFrameSupplement</span><span class="w"> </span><span class="n">ultrasonic_frame_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Frame</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FramePtr</span><span class="p">;</span><span class="w"></span>
+<span class="k">typedef</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Frame</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FrameConstPtr</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">struct</span> <span class="nc">alignas</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span><span class="w"></span>
+<span class="w">  </span><span class="nf">Object</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">ToString</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">Reset</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">PointCloud</span><span class="o">&lt;</span><span class="n">PointD</span><span class="o">&gt;</span><span class="w"> </span><span class="n">polygon</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">theta_variance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix3f</span><span class="w"> </span><span class="n">center_uncertainty</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="w"> </span><span class="n">size_variance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">anchor_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ObjectType</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ObjectType</span><span class="o">::</span><span class="n">UNKNOWN</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">type_probs</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ObjectSubType</span><span class="w"> </span><span class="n">sub_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ObjectSubType</span><span class="o">::</span><span class="n">UNKNOWN</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sub_type_probs</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">track_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="w"> </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix3f</span><span class="w"> </span><span class="n">velocity_uncertainty</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">velocity_converged</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">velocity_confidence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="w"> </span><span class="n">acceleration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3f</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix3f</span><span class="w"> </span><span class="n">acceleration_uncertainty</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">tracking_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">latest_tracked_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">MotionState</span><span class="w"> </span><span class="n">motion_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MotionState</span><span class="o">::</span><span class="n">UNKNOWN</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="o">&gt;</span><span class="w"> </span><span class="n">drops</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">drop_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">b_cipv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">CarLight</span><span class="w"> </span><span class="n">car_light</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">LidarObjectSupplement</span><span class="w"> </span><span class="n">lidar_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">RadarObjectSupplement</span><span class="w"> </span><span class="n">radar_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">CameraObjectSupplement</span><span class="w"> </span><span class="n">camera_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">FusionObjectSupplement</span><span class="w"> </span><span class="n">fusion_supplement</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">ObjectPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">ObjectConstPtr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Object</span><span class="o">&gt;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="newfusionsystem">
+<h2>实现新类 <code class="docutils literal notranslate"><span class="pre">NewFusionSystem</span></code><a class="headerlink" href="#newfusionsystem" title="永久链接至标题"></a></h2>
+<p>为了确保新的融合系统能顺利工作， <code class="docutils literal notranslate"><span class="pre">NewFusionSystem</span></code> 至少需要重写 <code class="docutils literal notranslate"><span class="pre">base_fusion_system</span></code> 中定义的接口Init(), Fuse()和Name()函数。其中Init()函数负责完成加载配置文件，初始化类成员等工作；而Fuse()函数则负责实现系统的主体流程。一个具体的<code class="docutils literal notranslate"><span class="pre">NewFusionSystem.cc</span></code>实现示例如下：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">apollo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">perception</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">fusion</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">NewFusionSystem::Init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FusionInitOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">init_options</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    你的系统初始化部分</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">NewFusionSystem::Fuse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">FusionOptions</span><span class="o">&amp;</span><span class="w"> </span><span class="n">options</span><span class="p">,</span><span class="w"></span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">base</span><span class="o">::</span><span class="n">FrameConstPtr</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sensor_frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                           </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">base</span><span class="o">::</span><span class="n">ObjectPtr</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">fused_objects</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    你的系统实现部分</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">NewFusionSystem::Name</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/*</span>
+<span class="cm">    返回你的融合系统名称</span>
+<span class="cm">    */</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">FUSION_REGISTER_FUSIONSYSTEM</span><span class="p">(</span><span class="n">NewFusionSystem</span><span class="p">);</span><span class="w"> </span><span class="c1">//注册新的fusion_system</span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace fusion</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace perception</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace apollo</span>
+</pre></div>
+</div>
+</section>
+<section id="newfusionsystem-configproto">
+<h2>为新类 <code class="docutils literal notranslate"><span class="pre">NewFusionSystem</span></code> 配置config的proto文件<a class="headerlink" href="#newfusionsystem-configproto" title="永久链接至标题"></a></h2>
+<p>按照下面的步骤添加新fusion融合系统的配置信息:</p>
+<ol>
+<li><p>根据系统要求为新fusion融合系统配置config的<code class="docutils literal notranslate"><span class="pre">proto</span></code>文件。作为示例，可以参考以下位置的<code class="docutils literal notranslate"><span class="pre">probabilistic_fusion_config</span></code>的<code class="docutils literal notranslate"><span class="pre">proto</span></code>定义：<code class="docutils literal notranslate"><span class="pre">modules/perception/proto/probabilistic_fusion_config.proto</span></code>.</p></li>
+<li><p>定义新的<code class="docutils literal notranslate"><span class="pre">proto</span></code>之后，例如<code class="docutils literal notranslate"><span class="pre">newfusionsystem_config.proto</span></code>，在文件头部输入以下内容：</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="k">syntax</span> <span class="o">=</span> <span class="s">&quot;proto2&quot;</span><span class="p">;</span>
+<span class="kn">package</span> <span class="nn">apollo</span><span class="o">.</span><span class="n">perception.fusion</span><span class="p">;</span>
+
+<span class="kd">message</span> <span class="nc">NewFusionSystemConfig</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="na">parameter1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int32</span> <span class="na">parameter2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>参考如下内容更新 <code class="docutils literal notranslate"><span class="pre">modules/perception/production/conf/perception/fusion/config_manager.config</span></code>文件:</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="n">model_config_path</span><span class="o">:</span> <span class="s">&quot;./conf/perception/fusion/modules/newfusionsystem.config&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>参考同级别目录下 <code class="docutils literal notranslate"><span class="pre">modules/probabilistic_fusion.config</span></code> 内容创建 <code class="docutils literal notranslate"><span class="pre">newfusionsystem.config</span></code>:</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span>model_configs {
+    # NewFusionSystem model.
+    name: &quot;NewFusionSystem&quot;
+    version: &quot;1.0.0&quot;
+    string_params {
+        name: &quot;root_dir&quot;
+        value: &quot;./data/perception/fusion/&quot;
+    }
+    string_params {
+        name: &quot;config_file&quot;
+        value: &quot;newfusionsystem.pt&quot;
+    }
+}
+</pre></div>
+</div>
+</li>
+<li><p>参考 <code class="docutils literal notranslate"><span class="pre">probabilistic_fusion.pt</span></code> 在目录 <code class="docutils literal notranslate"><span class="pre">modules/perception/production/data/perception/fusion/</span></code> 中创建 <code class="docutils literal notranslate"><span class="pre">newfusionsystem.pt</span></code> 文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>注意：此处 &quot;*.pt&quot; 文件应对应步骤1，2中的proto文件格式.
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="config">
+<h2>更新config文件使新的系统生效<a class="headerlink" href="#config" title="永久链接至标题"></a></h2>
+<p>要使用Apollo系统中的新fusion融合系统，需要将 <code class="docutils literal notranslate"><span class="pre">modules/perception/production/data/perception/fusion/fusion_component_conf.pb.txt</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">fusion_method</span></code> 字段值改为 “NewFusionSystem”。</p>
+<p>在完成以上步骤后，您的新fusion融合系统便可在Apollo系统中生效。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_add_a_new_fusion_system.html" class="btn btn-neutral float-left" title="How to add a new fusion system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_add_a_new_lidar_detector_algorithm.html" class="btn btn-neutral float-right" title="How to add a new lidar detector algorithm" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

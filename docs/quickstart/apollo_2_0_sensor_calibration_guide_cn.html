@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 2.0 传感器标定方法使用指南 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Apollo 2.5 Hardware and System Installation Guide" href="apollo_2_5_hardware_system_installation_guide_v1.html" />
+    <link rel="prev" title="Apollo 2.0 Sensor Calibration Guide" href="apollo_2_0_sensor_calibration_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo 2.0 传感器标定方法使用指南</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/quickstart/apollo_2_0_sensor_calibration_guide_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-2-0">
+<h1>Apollo 2.0 传感器标定方法使用指南<a class="headerlink" href="#apollo-2-0" title="永久链接至标题"></a></h1>
+<p>欢迎使用Apollo传感器标定服务。本文档提供在Apollo 2.0中新增的3项传感器标定程序的使用流程说明，分别为：相机到相机的标定，相机到多线激光雷达的标定，以及毫米波雷达到相机的标定。</p>
+<section id="id1">
+<h2>文档概览<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>概述</p></li>
+<li><p>准备工作</p></li>
+<li><p>标定流程</p></li>
+<li><p>标定结果获取</p></li>
+<li><p>标定结果验证</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>在Apollo 2.0中，我们新增了3项标定功能：相机到相机的标定，相机到多线激光雷达的标定，以及毫米波雷达到相机的标定。对于多线激光雷达到组合惯导的标定，请参考多线激光雷达-组合惯导标定说明。Velodyne HDL64用户还可以使用Apollo 1.5提供的标定服务平台。标定工具均以车载可执行程序的方式提供。用户仅需要启动相应的标定程序，即可实时完成标定工作并进行结果验证。标定结果以 <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> 文件形式返回。</p>
+</section>
+<section id="id3">
+<h2>准备工作<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>下载<a class="reference external" href="https://github.com/ApolloAuto/apollo/releases/download/v2.0.0/calibration.tar.gz">标定工具</a>，并解压缩到<code class="docutils literal notranslate"><span class="pre">$APOLLO_HOME/modules/calibration</span></code>目录下。（APOLLO_HOME是apollo代码的根目录）</p></li>
+<li><p>相机内参文件</p>
+<p>内参包含相机的焦距、主点和畸变系数等信息，可以通过一些成熟的相机标定工具来获得，例如 <a class="reference external" href="http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration">ROS Camera Calibration Tools</a> 和 <a class="reference external" href="http://www.vision.caltech.edu/bouguetj/calib_doc/">Camera Calibration Toolbox for Matlab</a>。内参标定完成后，需将结果转换为 <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> 格式的文件。下面是一个正确的内参文件样例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>header: 
+  seq: <span class="m">0</span>
+  stamp: 
+    secs: <span class="m">0</span>
+    nsecs: <span class="m">0</span>
+  frame_id: short_camera
+height: <span class="m">1080</span>
+width: <span class="m">1920</span>
+distortion_model: plumb_bob
+D: <span class="o">[</span>-0.535253, <span class="m">0</span>.259291, <span class="m">0</span>.004276, -0.000503, <span class="m">0</span>.0<span class="o">]</span>
+K: <span class="o">[</span><span class="m">1959</span>.678185, <span class="m">0</span>.0, <span class="m">1003</span>.592207, <span class="m">0</span>.0, <span class="m">1953</span>.786100, <span class="m">507</span>.820634, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">1</span>.0<span class="o">]</span>
+R: <span class="o">[</span><span class="m">1</span>.0, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">1</span>.0, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">1</span>.0<span class="o">]</span>
+P: <span class="o">[</span><span class="m">1665</span>.387817, <span class="m">0</span>.0, <span class="m">1018</span>.703332, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">1867</span>.912842, <span class="m">506</span>.628623, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">0</span>.0, <span class="m">1</span>.0, <span class="m">0</span>.0<span class="o">]</span>
+binning_x: <span class="m">0</span>
+binning_y: <span class="m">0</span>
+roi: 
+  x_offset: <span class="m">0</span>
+  y_offset: <span class="m">0</span>
+  height: <span class="m">0</span>
+  width: <span class="m">0</span>
+  do_rectify: False
+</pre></div>
+</div>
+<p>我们建议每一只相机都需要单独进行内参标定，而不是使用统一的内参结果。这样可以提高外参标定的准确性。</p>
+</li>
+<li><p>初始外参文件</p>
+<p>本工具需要用户提供初始的外参值作为参考。一个良好的初始值可以帮助算法得到更精确的结果。下面是一个正确的相机到激光雷达的初始外参文件样例，其中translation为相机相对激光雷达的平移距离关系，rotation为旋转矩阵的四元数表达形式：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>header:
+  seq: <span class="m">0</span>
+  stamp:
+    secs: <span class="m">0</span>
+    nsecs: <span class="m">0</span>
+  frame_id: velodyne64
+child_frame_id: short_camera
+transform:
+  rotation:
+    y: <span class="m">0</span>.5
+    x: -0.5
+    w: <span class="m">0</span>.5
+    z: -0.5
+  translation:
+    x: <span class="m">0</span>.0
+    y: <span class="m">1</span>.5
+    z: <span class="m">2</span>.0
+</pre></div>
+</div>
+<p>注意：相机到激光雷达的标定方法比较依赖于初始外参值的选取，一个偏差较大的外参，有可能导致标定失败。所以，请在条件允许的情况下，尽可能提供更加精准的初始外参值。</p>
+</li>
+<li><p>标定场地</p>
+<p>我们的标定方法是基于自然场景的，所以一个理想的标定场地可以显著地提高标定结果的准确度。我们建议选取一个纹理丰富的场地，如有树木，电线杆，路灯，交通标志牌，静止的物体和清晰车道线。图1是一个较好的标定环境示例：</p>
+<p><img alt="" src="../../_images/calibration_place.png" /></p>
+ <p align="center"> 图1 一个良好的标定场地 </p>
+</li>
+<li><p>所需Topics</p>
+<p>确认程序所需传感器数据的topics均有输出。如何查看传感器有数据输出？</p>
+<p>各个程序所需的topics如下表1-表3所示：</p>
+<p>表1. 相机到相机标定所需topics</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>传感器</p></th>
+<th class="head"><p>Topic名称</p></th>
+<th class="head"><p>Topic发送频率（Hz）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Short_Camera</p></td>
+<td><p>/apollo/sensor/camera/traffic/image_short</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>Long_Camera</p></td>
+<td><p>/apollo/sensor/camera/traffic/image_long</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/odometry</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/ins_stat</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>表2. 相机到64线激光雷达标定所需topics</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>传感器</p></th>
+<th class="head"><p>Topic名称</p></th>
+<th class="head"><p>Topic发送频率（Hz）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Short_Camera</p></td>
+<td><p>/apollo/sensor/camera/traffic/image_short</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>LiDAR</p></td>
+<td><p>/apollo/sensor/velodyne64/compensator/PointCloud2</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/odometry</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/ins_stat</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+<p>表3. 毫米波雷达到相机标定所需topics</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>传感器</p></th>
+<th class="head"><p>Topic名称</p></th>
+<th class="head"><p>Topic发送频率（Hz）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Short_Camera</p></td>
+<td><p>/apollo/sensor/camera/traffic/image_short</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-odd"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/odometry</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-even"><td><p>INS</p></td>
+<td><p>/apollo/sensor/gnss/ins_stat</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</section>
+<section id="id4">
+<h2>标定流程<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>所有标定程序需要用到车辆的定位结果。请确认车辆定位状态为56，否则标定程序不会开始采集数据。输入以下命令可查询车辆定位状态：</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>```bash
+rostopic echo /apollo/sensor/gnss/ins_stat
+```
+</pre></div>
+</div>
+<section id="id5">
+<h3>相机到相机<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>运行方法</p>
+<p>使用以下命令来启动标定工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /apollo/scripts
+bash sensor_calibration.sh camera_camera
+</pre></div>
+</div>
+</li>
+<li><p>采集标定数据</p>
+<ul class="simple">
+<li><p>由于两个相机的成像时间无法完全同步，所以在录制数据的时候，尽量将车辆进行慢速行驶，可以有效地缓解因时间差异所引起的图像不匹配问题。</p></li>
+<li><p>两个相机需有尽量大的图像重叠区域，否则该工具将无法进行外参标定运算。</p></li>
+</ul>
+</li>
+<li><p>配置参数</p>
+<p>配置文件保存在以下路径，详细说明请参照表4。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/apollo/modules/calibration/camera_camera_calibrator/conf/camera_camera_calibrtor.conf
+</pre></div>
+</div>
+<p>表4. 相机到相机标定程序配置项说明</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>配置项</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>long_image_topic</p></td>
+<td><p>长焦相机的图像topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>short_image_topic</p></td>
+<td><p>广角相机的图像topic</p></td>
+</tr>
+<tr class="row-even"><td><p>odometry_topic</p></td>
+<td><p>车辆定位topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>ins_stat_topic</p></td>
+<td><p>车辆定位状态topic</p></td>
+</tr>
+<tr class="row-even"><td><p>long_camera_intrinsics_filename</p></td>
+<td><p>长焦相机的内参文件路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>short_camera_intrinsics_filename</p></td>
+<td><p>广角相机的内参文件路径</p></td>
+</tr>
+<tr class="row-even"><td><p>init_extrinsics_filename</p></td>
+<td><p>初始外参文件路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_path</p></td>
+<td><p>标定结果输出路径</p></td>
+</tr>
+<tr class="row-even"><td><p>max_speed_kmh</p></td>
+<td><p>最大车速限制，单位km/h</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>输出内容</p>
+<ul class="simple">
+<li><p>外参文件： 长焦相机到广角相机的外参文件。</p></li>
+<li><p>验证参考图片：包括一张长焦相机图像、一张广角相机图像及一张长焦相机依据标定后的外参投影到广角相机的去畸变融合图像。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3>相机到多线激光雷达<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>运行方法</p>
+<p>使用以下命令来启动标定工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /apollo/scripts
+bash sensor_calibration.sh lidar_camera
+</pre></div>
+</div>
+</li>
+<li><p>采集标定数据</p>
+<ul class="simple">
+<li><p>为避免时间戳不同步，在录制数据的时候，尽量将车辆进行慢速行驶，可以有效地缓解因时间差异所引起的标定问题。</p></li>
+<li><p>相机中需看到一定数量的投影点云，否则该工具将无法进行外参标定运算。因此，我们建议使用短焦距相机来进行相机-激光雷达的标定。</p></li>
+</ul>
+</li>
+<li><p>配置参数</p>
+<p>配置文件保存在以下路径，详细说明请参照表5。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/apollo/modules/calibration/lidar_camera_calibrator/conf/lidar_camera_calibrtor.conf
+</pre></div>
+</div>
+<p>表5. 相机到多线激光雷达标定程序配置项说明</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>配置项</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>image_topic</p></td>
+<td><p>相机的图像topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>lidar_topic</p></td>
+<td><p>LiDAR的点云topic</p></td>
+</tr>
+<tr class="row-even"><td><p>odometry_topic</p></td>
+<td><p>车辆定位topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>ins_stat_topic</p></td>
+<td><p>车辆定位状态topic</p></td>
+</tr>
+<tr class="row-even"><td><p>camera_intrinsics_filename</p></td>
+<td><p>相机的内参文件路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>init_extrinsics_filename</p></td>
+<td><p>初始外参文件路径</p></td>
+</tr>
+<tr class="row-even"><td><p>output_path</p></td>
+<td><p>标定结果输出路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>calib_stop_count</p></td>
+<td><p>标定所需截取的数据站数</p></td>
+</tr>
+<tr class="row-even"><td><p>max_speed_kmh</p></td>
+<td><p>最大车速限制，单位km/h</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>输出内容</p>
+<ul class="simple">
+<li><p>外参文件：相机到多线激光雷达的外参文件。</p></li>
+<li><p>验证参考图片：两张激光雷达点云利用标定结果外参投影到相机图像上的融合图像，分别是依据点云深度渲染的融合图像，和依据点云反射值渲染的融合图像。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3>毫米波雷达到相机<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<ol>
+<li><p>运行方法</p>
+<p>使用以下命令来启动标定工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /apollo/scripts
+bash sensor_calibration.sh radar_camera
+</pre></div>
+</div>
+</li>
+<li><p>采集标定数据</p>
+<ul class="simple">
+<li><p>请将车辆进行低速直线行驶，标定程序仅会在该条件下开始采集数据。</p></li>
+</ul>
+</li>
+<li><p>配置参数</p>
+<p>配置文件保存在以下路径，详细说明请参照表6。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/apollo/modules/calibration/radar_camera_calibrator/conf/radar_camera_calibrtor.conf
+</pre></div>
+</div>
+<p>表6. 相机到毫米波雷达标定程序配置项说明</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>配置项</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>image_topic</p></td>
+<td><p>相机的图像topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>radar_topic</p></td>
+<td><p>Radar的数据topic</p></td>
+</tr>
+<tr class="row-even"><td><p>odometry_topic</p></td>
+<td><p>车辆定位topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>ins_stat_topic</p></td>
+<td><p>车辆定位状态topic</p></td>
+</tr>
+<tr class="row-even"><td><p>camera_intrinsics_filename</p></td>
+<td><p>相机的内参文件路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>init_extrinsics_filename</p></td>
+<td><p>初始外参文件路径</p></td>
+</tr>
+<tr class="row-even"><td><p>output_path</p></td>
+<td><p>标定结果输出路径</p></td>
+</tr>
+<tr class="row-odd"><td><p>max_speed_kmh</p></td>
+<td><p>最大车速限制，单位km/h</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>输出内容</p>
+<ul class="simple">
+<li><p>外参文件：毫米波雷达到短焦相机的外参文件。</p></li>
+<li><p>验证参考图片：将毫米波雷达投影到激光雷达坐标系的结果，需运行 <code class="docutils literal notranslate"><span class="pre">radar_lidar_visualizer</span></code> 工具。具体方法可参阅 <code class="docutils literal notranslate"><span class="pre">标定结果验证</span></code> 章节。</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="id8">
+<h2>标定结果获取<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<p>所有标定结果均保存在配置文件中所设定的 <code class="docutils literal notranslate"><span class="pre">output</span></code> 路径下，标定后的外参以 <code class="docutils literal notranslate"><span class="pre">yaml</span></code> 格式的文件提供。此外，根据传感器的不同，标定结果会保存在 <code class="docutils literal notranslate"><span class="pre">output</span></code> 目录下的不同文件夹中，具体如表7所示：</p>
+<p>表7. 标定结果保存路径</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>传感器</p></th>
+<th class="head"><p>外参保存路径</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Short_Camera</p></td>
+<td><p>[output]/camera_params</p></td>
+</tr>
+<tr class="row-odd"><td><p>Long_Camera</p></td>
+<td><p>[output]/camera_params</p></td>
+</tr>
+<tr class="row-even"><td><p>Radar</p></td>
+<td><p>[output]/radar_params</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id9">
+<h2>标定结果验证<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<p>当标定完成后，会在 <code class="docutils literal notranslate"><span class="pre">[output]/validation</span></code> 目录下生成相应的标定结果验证图片。下面会详细介绍每一类验证图片的基本原理和查看方法。</p>
+<section id="id10">
+<h3>相机到相机标定<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>基本方法：根据长焦相机投影到短焦相机的融合图像进行判断，绿色通道为短焦相机图像，红色和蓝色通道是长焦投影后的图像，目视判断检验对齐情况。在融合图像中的融合区域，选择场景中距离较远处（50米以外）的景物进行对齐判断，能够重合则精度高，出现粉色或绿色重影（错位），则存在误差，当误差大于一定范围时（范围依据实际使用情况而定），标定失败，需重新标定（正常情况下，近处物体因受视差影响，在水平方向存在错位，且距离越近错位量越大，此为正常现象。垂直方向不受视差影响）。</p></li>
+<li><p>结果示例：如下图所示，图2为满足精度要求外参效果，图3为不满足精度要求的现象，请重新进行标定过程。</p></li>
+</ul>
+<p><img alt="" src="../../_images/cam_cam_good.png" /></p>
+<p align="center"> 图2 良好的相机到相机标定结果 </p>
+<p><img alt="" src="../../_images/cam_cam_error.png" /></p>
+<p align="center"> 图3 错误的相机到相机标定结果 </p>
+</section>
+<section id="id11">
+<h3>相机到多线激光雷达标定<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>基本方法：在产生的点云投影图像内，可寻找其中具有明显边缘的物体和标志物，查看其边缘轮廓对齐情况。如果50米以内的目标，点云边缘和图像边缘能够重合，则可以证明标定结果的精度很高。反之，若出现错位现象，则说明标定结果存在误差。当误差大于一定范围时（范围依据实际使用情况而定），该外参不可用。</p></li>
+<li><p>结果示例：如下图所示，图4为准确外参的点云投影效果，图5为有偏差外参的点云投影效果</p></li>
+</ul>
+<p><img alt="" src="../../_images/cam_lidar_good.png" /></p>
+<p align="center"> 图4 良好的相机到多线激光雷达标定结果 </p>
+<p><img alt="" src="../../_images/cam_lidar_error.png" /></p>
+<p align="center"> 图5 错误的相机到多线激光雷达标定结果 </p>
+</section>
+<section id="id12">
+<h3>毫米波雷达到相机<a class="headerlink" href="#id12" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>基本方法：为了更好地验证毫米波雷达与相机间外参的标定结果，引入激光雷达作为桥梁，通过同一系统中毫米波雷达与相机的外参和相机与激光雷达的外参，计算得到毫米波雷达与激光雷达的外参，将毫米波雷达数据投影到激光雷达坐标系中与激光点云进行融合，并画出相应的鸟瞰图进行辅助验证。在融合图像中，白色点为激光雷达点云，绿色实心圆为毫米波雷达目标，通过图中毫米波雷达目标是否与激光雷达检测目标是否重合匹配进行判断，如果大部分目标均能对应匹配，则满足精度要求，否则不满足，需重新标定。</p></li>
+<li><p>结果示例：如下图所示，图6为满足精度要求外参效果，图7为不满足精度要求外参效果。</p></li>
+</ul>
+<p><img alt="" src="../../_images/radar_cam_good.png" /></p>
+<p align="center"> 图6 良好的毫米波雷达到激光雷达投影结果 </p>
+<p><img alt="" src="../../_images/radar_cam_error.png" /></p>
+<p align="center"> 图7 错误的毫米波雷达到激光雷达投影结果 </p>
+<ul>
+<li><p>注意事项：</p>
+<ul>
+<li><p>为了得到毫米波雷达目标和激光雷达点云融合的验证图像，系统会自动或手动调用毫米波雷达到激光雷达的投影工具（<code class="docutils literal notranslate"><span class="pre">radar_lidar_visualizer</span></code>）进行图像绘制和生成过程。该投影工具在启动时会自动载入毫米波雷达与相机的外参文件及相机与激光雷达的外参文件，因此在启动之前，需要先进行相应的标定工具或将两文件以特定的文件名放在相应路径中，以备工具调用。</p></li>
+<li><p>使用以下命令来启动 <code class="docutils literal notranslate"><span class="pre">radar_lidar_visualizer</span></code> 工具：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /apollo/scripts
+bash sensor_calibration.sh visualizer
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radar_lidar_visualizer</span></code> 工具的配置文件在以下路径，详细说明请参照表8。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/apollo/modules/calibration/radar_lidar_visualizer/conf/radar_lidar_visualizer.conf
+</pre></div>
+</div>
+<p>表8. 毫米波雷达到激光雷达投影工具配置项说明</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>配置项</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>radar_topic</p></td>
+<td><p>Radar的数据topic</p></td>
+</tr>
+<tr class="row-odd"><td><p>lidar_topic</p></td>
+<td><p>LiDAR的点云topic</p></td>
+</tr>
+<tr class="row-even"><td><p>radar_camera_extrinsics_filename</p></td>
+<td><p>毫米波雷达到相机的外参文件</p></td>
+</tr>
+<tr class="row-odd"><td><p>camera_lidar_extrinsics_filename</p></td>
+<td><p>相机到激光雷达的外参文件</p></td>
+</tr>
+<tr class="row-even"><td><p>output_path</p></td>
+<td><p>标定结果输出路径</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>验证图片同样保存在 <code class="docutils literal notranslate"><span class="pre">[output]/validation</span></code> 目录下。</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_2_0_sensor_calibration_guide.html" class="btn btn-neutral float-left" title="Apollo 2.0 Sensor Calibration Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo_2_5_hardware_system_installation_guide_v1.html" class="btn btn-neutral float-right" title="Apollo 2.5 Hardware and System Installation Guide" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

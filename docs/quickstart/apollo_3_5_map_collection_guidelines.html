@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 3.5 Map Collection Guide &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Apollo 3.5 Quick Start Guide" href="apollo_3_5_quick_start.html" />
+    <link rel="prev" title="Apollo 3.5 Hardware and System Installation Guide" href="apollo_3_5_hardware_system_installation_guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo 3.5 Map Collection Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/quickstart/apollo_3_5_map_collection_guidelines.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-3-5-map-collection-guide">
+<h1>Apollo 3.5 Map Collection Guide<a class="headerlink" href="#apollo-3-5-map-collection-guide" title="永久链接至标题"></a></h1>
+<p>This guide describes the process of map data collection and best practices for Apollo 3.5.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="永久链接至标题"></a></h2>
+<section id="hardware-requirements">
+<h3>Hardware requirements<a class="headerlink" href="#hardware-requirements" title="永久链接至标题"></a></h3>
+<p>Hardware installed as mentioned in this guide - [<a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_5_hardware_system_installation_guide.md">https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_5_hardware_system_installation_guide.md</a>]
+In order to proceed with Data collection, we need to use a single 16-Line LiDAR for traffic light detection placed on top of the car, tilted upwards as described below:</p>
+<section id="installation-of-vlp-16-lidar">
+<h4>Installation of VLP-16 lidar<a class="headerlink" href="#installation-of-vlp-16-lidar" title="永久链接至标题"></a></h4>
+<p>In Apollo 2.5, map creation services became a part of Apollo Open Source project. To acquire the data necessary for map creation, one would need to install an additional VLP-16 LiDAR on the vehicle. The purpose of this LiDAR is to collect point cloud information for objects above the FOV of the HDL-64 S3 LiDAR, such as traffic lights and signs. It requires a customized rack to mount the VLP-16 Lidar on top of the vehicle. The figure below shows one of the possible configurations: <img alt="VLP_16_installation" src="../../_images/lidar_mount1.jpeg" /></p>
+<p>Another possible mounting is:</p>
+<p><img alt="VLP_16_installation" src="../../_images/lidar_mount.jpeg" /></p>
+<p>In this specific configuration, the VLP-16 LiDAR is mounted with an upward tilt of <strong>20±2°</strong>. The power cable of the VLP-16 is connected to the DataSpeed power panel. The ethernet connection is connected to the IPC (possibly through an ethernet switch). Similar to HDL-64 S3 LiDAR, the VLP-16 GPRMC and PPS receive input from the GPS receiver. Ideally, additional hardware should be installed to duplicate the GPRMC and PPS signal from the GPS receiver sent to HDL-64 and VLP-16 respectively. However, a simple Y-split cable may also provide adequate signal for both LiDARs. To distinguish from the HDL-64 S3 LiDAR, please follow the VLP-16 manual and configure the IP of VLP-16 to <strong>192.168.20.14</strong>, the data port to <strong>2369</strong>, and the telemetry port to <strong>8309</strong>. The pinout for the signal input from GPS receiver can also be found in the manual if you need customized cable.</p>
+<p>For additional reference, please visit: <a class="reference external" href="http://velodynelidar.com/vlp-16.htmll">http://velodynelidar.com/vlp-16.html</a></p>
+</section>
+</section>
+<section id="software-requirements">
+<h3>Software requirements<a class="headerlink" href="#software-requirements" title="永久链接至标题"></a></h3>
+<p>Apollo 3.5 installed without any errors - <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/docs/howto/how_to_build_and_release.md">How to Build Apollo</a></p>
+</section>
+<section id="calibration-requirement">
+<h3>Calibration requirement<a class="headerlink" href="#calibration-requirement" title="永久链接至标题"></a></h3>
+<p>Refer to the <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/multiple_lidar_gnss_calibration_guide.md">Apollo Sensor Calibration Guide</a>
+for Sensor Calibration information.</p>
+</section>
+<section id="additional-requirements">
+<h3>Additional requirements<a class="headerlink" href="#additional-requirements" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p><strong>NVMe SSD Installation:</strong> In order to avoid possible data loss caused by IO bottleneck, it is recommended to install NVME SSD hard disk in IPC.</p></li>
+<li><p><strong>Satellite Base Station:</strong> In order to get accurate mapping results, satellite base stations are needed to be set up to ensure the RTK can work properly.</p></li>
+</ol>
+</section>
+</section>
+<section id="good-to-know-data-collection">
+<h2>Good to know - Data Collection<a class="headerlink" href="#good-to-know-data-collection" title="永久链接至标题"></a></h2>
+<ol class="simple">
+<li><p><strong>Weather condition:</strong> Do not collect data when it is either raining or snowing. Please wait for the road to be as clean and dry as possible. You could collect data when there is a slight drizzle as the reflectance of the road would not change too much but it is still highly recommended to collect data in clear weather conditions.</p></li>
+<li><p>Please make sure that the camera lens’ are clean.</p></li>
+<li><p><strong>Driving speed:</strong> Try to keep you speed below 60 km/h (~ 37 mph). For roads with a higher speed limit, drive additional laps of the route (at least 2 or 3 more) to ensure accurate data collection.</p></li>
+</ol>
+</section>
+<section id="data-collection-steps">
+<h2>Data Collection Steps<a class="headerlink" href="#data-collection-steps" title="永久链接至标题"></a></h2>
+<p>Once all the prerequisites are met, follow the steps below:</p>
+<ol class="simple">
+<li><p>Inside the Dreamview environment, Choose <strong>Module Control</strong> tab, select [Map Collection] mode, and switch on [GPS]、[Camera]、[Velodyne]、[Velodyne16].</p></li>
+</ol>
+<p><img alt="" src="../../_images/map_collection_sensor_open.png" /></p>
+<p>Confirm whether the sensors are ready. The button should be <code class="docutils literal notranslate"><span class="pre">Green</span></code></p>
+<p><img alt="" src="../../_images/map_collection_sensor_check.png" /></p>
+<p>The only special case is that the additional front lidar 16 (which is facing upwards) which is installed for traffic lights, is not Green – this can be ignored when traffic light information is not being collected</p>
+<p><img alt="" src="../../_images/map1.png" /></p>
+<ol>
+<li><p>Go into your terminal,</p>
+<ul>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">dev_docker</span></code> on your terminal and type <code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code></p></li>
+<li><p>If all the topics are green, then they are working correctly</p></li>
+<li><p>Once inspected, go to the next page, shortcut <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">+</span> <span class="pre">up/down</span> <span class="pre">arrow</span> <span class="pre">key</span></code></p></li>
+<li><p>Verify that all necessary topics are green</p>
+<p>Topic list for mapping:</p>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">monitor</span><span class="o">/</span><span class="n">system_status</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">best_pose</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">gnss_status</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">imu</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">ins_stat</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">odometry</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">raw_data</span>
+ <span class="o">/</span><span class="n">tf</span>
+ <span class="o">/</span><span class="n">tf_static</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">camera</span><span class="o">/</span><span class="n">front_12mm</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">compressed</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">camera</span><span class="o">/</span><span class="n">front_6mm</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">compressed</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">lidar16</span><span class="o">/</span><span class="n">front</span><span class="o">/</span><span class="n">up</span><span class="o">/</span><span class="n">Scan</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">lidar16</span><span class="o">/</span><span class="n">front</span><span class="o">/</span><span class="n">up</span><span class="o">/</span><span class="n">compensator</span><span class="o">/</span><span class="n">PointCloud2</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">lidar128</span><span class="o">/</span><span class="n">Scan</span>
+ <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">lidar128</span><span class="o">/</span><span class="n">compensator</span><span class="o">/</span><span class="n">PointCloud2</span>
+</pre></div>
+</div>
+</li>
+<li><p>Sync Localization module with your GPS signal,</p>
+<ul>
+<li><p>Go outside the garage where the GPS signal is good, you can confirm that the strength of the GPS signal is good when it turns green in Dreamview as mentioned in Step 1.</p></li>
+<li><p>Once you see the topic <code class="docutils literal notranslate"><span class="pre">gnss/best_pose</span></code> in cyber_monitor, then you know GPS is working. Inside the topic gnss/best_pose: click on it, if the <code class="docutils literal notranslate"><span class="pre">sol_type</span></code> specifies <code class="docutils literal notranslate"><span class="pre">narrow</span> <span class="pre">int</span></code> then it confirms that the signal is good enough to use</p></li>
+<li><p>Check for topic called <code class="docutils literal notranslate"><span class="pre">tf</span></code> in cyber_monitor to see if the Localization module is up and running</p></li>
+<li><p>Note, Localization takes time to warm up</p></li>
+<li><p>If the map in Dreamview has jiggly lines as seen in the image below, please restart dreamview or rebuild Apollo</p>
+<p><img alt="" src="../../_images/map3.png" /></p>
+</li>
+</ul>
+</li>
+<li><p>Data collection,</p>
+<p>Once the localization module has warmed up and you see the topic <code class="docutils literal notranslate"><span class="pre">tf</span></code> in cyber_monitor, you are now ready for map data collection.</p>
+<ul>
+<li><p>After confirming GPS is working, you can start the data collection process, click on the <code class="docutils literal notranslate"><span class="pre">Recorder</span></code> button as seen in the image below</p>
+<p><img alt="" src="../../_images/map2.png" /></p>
+</li>
+<li><p><strong>[IMPORTANT]</strong> Stay stationary for 3~5 minutes for the GPS signal to sync</p></li>
+<li><p>Drive around in figure 8 shape to warm up the localization module.</p></li>
+<li><p>While collecting map date, we should ensure the same route can be covered more than five times in the speed under 60KM/h. Try to include as many lanes as possible while covering the route.</p></li>
+<li><p>You do not need to stop at any intersections, you can pass it slowly. But remember that at the intersection, it is necessary to collect at least 50m of all the lanes that enter the intersection in all directions to ensure the traffic lights and lane lines in all directions are captured completely and clearly.</p></li>
+</ul>
+</li>
+<li><p>Once you are done with data collection,</p>
+<ul>
+<li><p>Go to an area where the GPS signal is good</p></li>
+<li><p><strong>[IMPORTANT]</strong> Stay stationary for 3~5 minutes</p></li>
+<li><p>Shut down the <code class="docutils literal notranslate"><span class="pre">Recorder</span></code> button and close sensor types like Lidar, Camera, GPS</p>
+<p><img alt="" src="../../_images/map_collection_sensor_stop_record.png" /></p>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="data-verification">
+<h2>Data Verification<a class="headerlink" href="#data-verification" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Check if the point cloud of VLS 128 covers all obstacles surrounding the vehicle like trees, other vehicles - <code class="docutils literal notranslate"><span class="pre">cyber_visualizer</span></code></p></li>
+<li><p>Check that the framerate of VLS 128 is at least 10Hz <code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code></p></li>
+<li><p>Check that the LiDAR’s generated noise is moderate (not to high) <code class="docutils literal notranslate"><span class="pre">cyber_visualizer</span></code></p></li>
+<li><p>Check whether the IMU coordinates are correct and not rotated on a different axis <code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code></p></li>
+<li><p><strong>[IMPORTANT]</strong> If data is collected for the first time, or the extrinsic parameters between multiple-lidars and GNSS are changed or if a new vehicle is used to install Apollo 3.5 and data is being collected on this new vehicle, we would need to verify your map data. In order to verify your data, we would need you to collect the data of a small route and upload it as mentioned in the steps above.</p></li>
+</ul>
+</section>
+<section id="data-size-management">
+<h2>Data Size Management<a class="headerlink" href="#data-size-management" title="永久链接至标题"></a></h2>
+<ol class="simple">
+<li><p>Set your camera frame rate to 10Hz (this will drastically lower the data size)</p></li>
+<li><p>For Lidar topics:</p>
+<ul class="simple">
+<li><p>For the vehicles that are needed for map data verification, all the LiDAR related point cloud topics (velodynescan, pointcloud2, compenstator/pointcloud2) must be saved and sent to us</p></li>
+<li><p>After the vehicle passes the map verification, only velodynescan &amp; pointcloud2 are needed for map creation</p></li>
+</ul>
+</li>
+<li><p>In order to ensure a smooth upload process:</p>
+<ul class="simple">
+<li><p>If you are currently collecting data on Apollo 3.5, then Apollo Cyber will take care of reducing the size of the data files via a splitter</p></li>
+<li><p>If you are currently collecting data on Apollo 3.0 or lower based on ROS, you could split the file to a maximum size of 4GB per file. Please refer to the following <a class="reference external" href="http://wiki.ros.org/rosbag/Commandline">ROS guide</a> and look for the keyword –split to learn how to split your bag.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="data-upload">
+<h2>Data Upload<a class="headerlink" href="#data-upload" title="永久链接至标题"></a></h2>
+<p>The collected map data is placed in the <em>/apollo/data/bag/(start time of collection, e.g.,2018-04-14-21-20-24)</em> directory by default, package the data as tar.gz compressed file and contact the team (<a class="reference external" href="mailto:wuzhenni01&#37;&#52;&#48;baidu&#46;com">wuzhenni01<span>&#64;</span>baidu<span>&#46;</span>com</a>) to learn how to mail/upload your data to us for map generation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Note</span><span class="p">:</span>
+<span class="n">Please</span> <span class="n">follow</span> <span class="n">the</span> <span class="n">aforementioned</span> <span class="n">data</span> <span class="n">collection</span> <span class="n">guide</span> <span class="n">to</span> <span class="n">acquire</span> <span class="n">data</span> <span class="k">for</span> <span class="n">a</span> <span class="n">small</span> <span class="n">area</span> <span class="ow">and</span> <span class="n">upload</span> <span class="n">it</span> <span class="n">to</span> <span class="n">use</span> <span class="k">for</span> <span class="n">verification</span> <span class="n">purposes</span><span class="o">.</span> <span class="n">This</span> <span class="n">step</span> <span class="ow">is</span> <span class="n">vital</span> <span class="n">to</span> <span class="n">understand</span> <span class="k">if</span> <span class="n">your</span> <span class="n">sensors</span> <span class="n">have</span> <span class="n">captured</span> <span class="n">the</span> <span class="n">right</span> <span class="n">data</span> <span class="k">for</span> <span class="n">our</span> <span class="nb">map</span> <span class="n">generation</span> <span class="n">process</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="faqs">
+<h2>FAQs<a class="headerlink" href="#faqs" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>If localization doesn’t warm up and if the topic <code class="docutils literal notranslate"><span class="pre">tf</span></code> is not visible, then the best way to kickstart the module is by going to an area where you already have a map and start driving through it.
+Note: this will not work if you are collecting data for the first time. If you are collecting for the first time, keep driving in a loop in an area with good GPS signal</p></li>
+<li><p>If the map has jiggly lines, restart Dreamview or rebuild Apollo</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_3_5_hardware_system_installation_guide.html" class="btn btn-neutral float-left" title="Apollo 3.5 Hardware and System Installation Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo_3_5_quick_start.html" class="btn btn-neutral float-right" title="Apollo 3.5 Quick Start Guide" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

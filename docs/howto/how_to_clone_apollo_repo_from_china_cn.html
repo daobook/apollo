@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>国内环境下如何克隆 Apollo 仓库 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to Create a Pull Request" href="how_to_create_pull_request.html" />
+    <link rel="prev" title="How to Clone Apollo Repository from China" href="how_to_clone_apollo_repo_from_china.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>国内环境下如何克隆 Apollo 仓库</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_clone_apollo_repo_from_china_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo">
+<h1>国内环境下如何克隆 Apollo 仓库<a class="headerlink" href="#apollo" title="永久链接至标题"></a></h1>
+<p>本文档描述了在国内环境下既快又好地克隆Apollo 仓库的方法。</p>
+<section id="id1">
+<h2>必要前提/准备<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>假设你已经 「fork」 了GitHub上的Apollo 代码库。这可以通过点击<a class="reference external" href="https://github.com/ApolloAuto/apollo.git">GitHub上的 Apollo</a> 页面右上角的「Fork」按钮并遵照随后的提示来完成。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>首先，从码云上克隆 Apollo 仓库<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p><a class="reference external" href="https://gitee.com/ApolloAuto/apollo.git">码云上的 Apollo仓库</a> 通常比<a class="reference external" href="https://github.com/ApolloAuto/apollo.git">GitHub上的 Apollo仓库</a> 更新晚一天。</p>
+<p>我们可以以它为起点，克隆码云上的Apollo 仓库。</p>
+<p>执行命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://gitee.com/ApolloAuto/apollo.git
+</pre></div>
+</div>
+<p>这一步通常很快，只需十数分钟。在本文作者所在的百度内部，下载速度可达 10 多 MiB/s，终端输出如下：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Cloning into &#39;apollo&#39;...
+remote: Enumerating objects: 313277, done.
+remote: Counting objects: 100% (313277/313277), done.
+remote: Compressing objects: 100% (66199/66199), done.
+remote: Total 313277 (delta 245822), reused 310653 (delta 243198), pack-reused 0
+Receiving objects: 100% (313277/313277), 2.19 GiB | 11.10 MiB/s, done.
+Resolving deltas: 100% (245822/245822), done.
+Checking out files: 100% (9124/9124), done.
+</pre></div>
+</div>
+<p><strong>注意：</strong> 以下步骤可选。</p>
+</section>
+<section id="origin">
+<h2>重置远程分支origin<a class="headerlink" href="#origin" title="永久链接至标题"></a></h2>
+<p>上述步骤完成后，就可以「过河拆桥」，将远程分支 origin 重置为你刚 「fork」的GitHub 分支。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote set-url origin git@github.com:&lt;你的GitHub 用户名&gt;/apollo.git
+</pre></div>
+</div>
+</section>
+<section id="github-apollo-upstream">
+<h2>将 GitHub 上的 Apollo 仓库设为远程分支upstream<a class="headerlink" href="#github-apollo-upstream" title="永久链接至标题"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 采用SSH的方式</span>
+git remote add upstream git@github.com:ApolloAuto/apollo.git
+
+<span class="c1"># 采用HTTPS的方式</span>
+git remote add upstream https://github.com/ApolloAuto/apollo.git
+</pre></div>
+</div>
+<p>你可以运行如下命令来确认远程分支 origin 和 upstream 已被正确设置：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote -v
+</pre></div>
+</div>
+<p>如果之前的操作正确，它将列出如下的远端分支：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>origin	git@github.com:&lt;你的GitHub 用户名&gt;/apollo.git (fetch)
+origin	git@github.com:&lt;你的GitHub 用户名&gt;/apollo.git (push)
+upstream	git@github.com:ApolloAuto/apollo.git (fetch)
+upstream	git@github.com:ApolloAuto/apollo.git (push)
+</pre></div>
+</div>
+</section>
+<section id="github-upstream">
+<h2>现在，从 GitHub 远程分支upstream 拉取最新的「增量」代码<a class="headerlink" href="#github-upstream" title="永久链接至标题"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull --rebase upstream master
+</pre></div>
+</div>
+<p>如果遇到问题，你可以参考这篇文档：<a class="reference internal" href="how_to_solve_slow_pull_from_cn.html"><span class="doc std std-doc">国内环境拉取GitHub仓库慢的缓解方案</span></a>.</p>
+</section>
+<section id="id3">
+<h2>结语<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>恭喜你成功地克隆了 Apollo Gitee/GitHub 仓库，并由此开启你的 Apollo 自动驾驶之旅！</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_clone_apollo_repo_from_china.html" class="btn btn-neutral float-left" title="How to Clone Apollo Repository from China" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_create_pull_request.html" class="btn btn-neutral float-right" title="How to Create a Pull Request" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何使用 Cyber RT 创建新的组件 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Cyber RT 调度" href="CyberRT_Scheduler_cn.html" />
+    <link rel="prev" title="How to Create and Run a new Component in Cyber RT" href="CyberRT_Quick_Start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何使用 Cyber RT 创建新的组件</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/cyber/CyberRT_Quick_Start_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="cyber-rt">
+<h1>如何使用 Cyber RT 创建新的组件<a class="headerlink" href="#cyber-rt" title="永久链接至标题"></a></h1>
+<p>Apollo 的 Cyber RT 框架是基于组件概念来构建的。每个组件都是 Cyber RT 框架的一个
+特定的算法模块， 处理一组输入并产生其输出数椐。</p>
+<p>要创建并启动一个算法组件，需要通过以下 4 个步骤：</p>
+<ul class="simple">
+<li><p>初如化组件的目录结构</p></li>
+<li><p>实现组件类</p></li>
+<li><p>设置配置文件</p></li>
+<li><p>启动组件</p></li>
+</ul>
+<p>下面的例子展示了如何创建、编译和运行一个组件。想更深入地探索 Cyber RT 框架，了解
+其各种功能，可参考<code class="docutils literal notranslate"><span class="pre">cyber/examples/</span></code>目录下的更多示例。</p>
+<p><em>Note: 这些例子必须运行在 Apollo Docker 环境内， 且需要通过 Bazel 来编译。</em></p>
+<section id="id1">
+<h2>初始化组件的目录结构<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>以<code class="docutils literal notranslate"><span class="pre">cyber/examples/common_component_example/</span></code>目录下的样例程序为例：</p>
+<ul class="simple">
+<li><p>C++头文件: common_component_example.h</p></li>
+<li><p>C++源文件: common_component_example.cc</p></li>
+<li><p>Bazel 构建文件: BUILD</p></li>
+<li><p>DAG 文件: common.dag</p></li>
+<li><p>Launch 文件: common.launch</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>实现组件类<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<section id="id3">
+<h3>头文件<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>如何实现<code class="docutils literal notranslate"><span class="pre">common_component_example.h</span></code>:</p>
+<ul class="simple">
+<li><p>继承 Component 类</p></li>
+<li><p>定义自己的 <code class="docutils literal notranslate"><span class="pre">Init</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Proc</span></code> 函数。Proc 需要指定输入数椐类型。</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">CYBER_REGISTER_COMPONENT</span></code>宏定义把组件类注册成全局可用。</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/component/component.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/examples/proto/examples.pb.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span><span class="w"> </span><span class="n">apollo</span><span class="o">::</span><span class="n">cyber</span><span class="o">::</span><span class="n">Component</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">apollo</span><span class="o">::</span><span class="n">cyber</span><span class="o">::</span><span class="n">ComponentBase</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="n">apollo</span><span class="o">::</span><span class="n">cyber</span><span class="o">::</span><span class="n">examples</span><span class="o">::</span><span class="n">proto</span><span class="o">::</span><span class="n">Driver</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">class</span> <span class="nc">CommonComponentSample</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Component</span><span class="o">&lt;</span><span class="n">Driver</span><span class="p">,</span><span class="w"> </span><span class="n">Driver</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">Init</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="nf">Proc</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg0</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg1</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="n">CYBER_REGISTER_COMPONENT</span><span class="p">(</span><span class="n">CommonComponentSample</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>源文件<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>对于源文件 <code class="docutils literal notranslate"><span class="pre">common_component_example.cc</span></code>, <code class="docutils literal notranslate"><span class="pre">Init</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Proc</span></code> 这两个函数需要实现。</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/examples/common_component_example/common_component_example.h&quot;</span><span class="cp"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">CommonComponentSample::Init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Commontest component init&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">CommonComponentSample::Proc</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg0</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                 </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Driver</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">msg1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Start common component Proc [&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">msg0</span><span class="o">-&gt;</span><span class="n">msg_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;] [&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">msg1</span><span class="o">-&gt;</span><span class="n">msg_id</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;]&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="build">
+<h3>创建 BUILD 文件<a class="headerlink" href="#build" title="永久链接至标题"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;@rules_cc//cc:defs.bzl&quot;</span><span class="p">,</span> <span class="s2">&quot;cc_binary&quot;</span><span class="p">,</span> <span class="s2">&quot;cc_library&quot;</span><span class="p">)</span>
+<span class="n">load</span><span class="p">(</span><span class="s2">&quot;//tools:cpplint.bzl&quot;</span><span class="p">,</span> <span class="s2">&quot;cpplint&quot;</span><span class="p">)</span>
+
+<span class="n">package</span><span class="p">(</span><span class="n">default_visibility</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//visibility:public&quot;</span><span class="p">])</span>
+
+<span class="n">cc_binary</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;libcommon_component_example.so&quot;</span><span class="p">,</span>
+    <span class="n">linkshared</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">linkstatic</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;:common_component_example_lib&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">cc_library</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;common_component_example_lib&quot;</span><span class="p">,</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;common_component_example.cc&quot;</span><span class="p">],</span>
+    <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;common_component_example.h&quot;</span><span class="p">],</span>
+    <span class="n">visibility</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//visibility:private&quot;</span><span class="p">],</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;//cyber&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;//cyber/examples/proto:examples_cc_proto&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="n">cpplint</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>设置配置文件<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<section id="dag">
+<h3>配置 DAG 文件<a class="headerlink" href="#dag" title="永久链接至标题"></a></h3>
+<p>在 DAG 依赖配置文件 （例如 common.dag) 中配置如下项：</p>
+<ul class="simple">
+<li><p>Channel names: 输入 Channel 的名称</p></li>
+<li><p>Library path: 该组件生成的共享库路径</p></li>
+<li><p>Class name: 此组件类的名称</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define all components in DAG streaming.</span>
+module_config <span class="o">{</span>
+module_library : <span class="s2">&quot;/apollo/bazel-bin/cyber/examples/common_component_example/libcommon_component_example.so&quot;</span>
+components <span class="o">{</span>
+    class_name : <span class="s2">&quot;CommonComponentSample&quot;</span>
+    config <span class="o">{</span>
+        name : <span class="s2">&quot;common&quot;</span>
+        readers <span class="o">{</span>
+            channel: <span class="s2">&quot;/apollo/prediction&quot;</span>
+        <span class="o">}</span>
+        readers <span class="o">{</span>
+            channel: <span class="s2">&quot;/apollo/test&quot;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="launch">
+<h3>配置 Launch 启动文件<a class="headerlink" href="#launch" title="永久链接至标题"></a></h3>
+<p>在 launch 启动文件中 (<code class="docutils literal notranslate"><span class="pre">common.launch</span></code>), 配置下面的项：</p>
+<ul class="simple">
+<li><p>组件的名字</p></li>
+<li><p>上一步配置的 DAG 文件路径</p></li>
+<li><p>运行组件时的进程名</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cyber&gt;</span>
+    <span class="nt">&lt;component&gt;</span>
+        <span class="nt">&lt;name&gt;</span>common<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;dag_conf&gt;</span>/apollo/cyber/examples/common_component_example/common.dag<span class="nt">&lt;/dag_conf&gt;</span>
+        <span class="nt">&lt;process_name&gt;</span>common<span class="nt">&lt;/process_name&gt;</span>
+    <span class="nt">&lt;/component&gt;</span>
+<span class="nt">&lt;/cyber&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>启动这个组件<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>通过下面的命令来编译组件：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /apollo
+bash apollo.sh build
+</pre></div>
+</div>
+<p>然后配置环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> cyber/setup.bash
+<span class="c1"># 从终端观察输出</span>
+<span class="nb">export</span> <span class="nv">GLOG_alsologtostderr</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>有两种方法来启动组件：</p>
+<ul class="simple">
+<li><p>使用 Launch 文件启动（推荐）</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cyber_launch start cyber/examples/common_component_example/common.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>使用 DAG 文件启动</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mainboard -d cyber/examples/common_component_example/common.dag
+</pre></div>
+</div>
+<section id="id7">
+<h3>提供通道数据给组件处理<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<p>打开另一终端, 运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> cyber/setup.bash
+<span class="nb">export</span> <span class="nv">GLOG_alsologtostderr</span><span class="o">=</span><span class="m">1</span>
+/apollo/bazel-bin/cyber/examples/common_component_example/channel_test_writer
+</pre></div>
+</div>
+<p>再打开一个终端并运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> cyber/setup.bash
+<span class="nb">export</span> <span class="nv">GLOG_alsologtostderr</span><span class="o">=</span><span class="m">1</span>
+/apollo/bazel-bin/cyber/examples/common_component_example/channel_prediction_writer
+</pre></div>
+</div>
+<p>这时，如果成功，你会看到第一个终端有如下的输出：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I0331</span> <span class="mi">16</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">34.736016</span> <span class="mi">1774773</span> <span class="n">common_component_example</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span> <span class="p">[</span><span class="n">mainboard</span><span class="p">]</span><span class="n">Start</span> <span class="n">common</span> <span class="n">component</span> <span class="n">Proc</span> <span class="p">[</span><span class="mi">1094</span><span class="p">]</span> <span class="p">[</span><span class="mi">766</span><span class="p">]</span>
+<span class="n">I0331</span> <span class="mi">16</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">35.069005</span> <span class="mi">1774775</span> <span class="n">common_component_example</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span> <span class="p">[</span><span class="n">mainboard</span><span class="p">]</span><span class="n">Start</span> <span class="n">common</span> <span class="n">component</span> <span class="n">Proc</span> <span class="p">[</span><span class="mi">1095</span><span class="p">]</span> <span class="p">[</span><span class="mi">767</span><span class="p">]</span>
+<span class="n">I0331</span> <span class="mi">16</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">35.402289</span> <span class="mi">1774783</span> <span class="n">common_component_example</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span> <span class="p">[</span><span class="n">mainboard</span><span class="p">]</span><span class="n">Start</span> <span class="n">common</span> <span class="n">component</span> <span class="n">Proc</span> <span class="p">[</span><span class="mi">1096</span><span class="p">]</span> <span class="p">[</span><span class="mi">768</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>此即验证第一个样例组件已经跑通。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CyberRT_Quick_Start.html" class="btn btn-neutral float-left" title="How to Create and Run a new Component in Cyber RT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="CyberRT_Scheduler_cn.html" class="btn btn-neutral float-right" title="Cyber RT 调度" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

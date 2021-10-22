@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo Best Coding Practice &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Apollo 编码最佳实践" href="apollo_best_coding_practice_cn.html" />
+    <link rel="prev" title="Apollo 5.5 Technical Tutorial" href="apollo_5.5_technical_tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo Best Coding Practice</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_tutorial/apollo_best_coding_practice.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-best-coding-practice">
+<h1>Apollo Best Coding Practice<a class="headerlink" href="#apollo-best-coding-practice" title="永久链接至标题"></a></h1>
+<ol>
+<li><p>Always build, test, and lint all.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./apollo.sh check
+</pre></div>
+</div>
+</li>
+<li><p>Always write unit tests and put them along with the source files.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>foobar.h
+foobar.cc
+foobar_test.cc
+</pre></div>
+</div>
+</li>
+<li><p>A Bazel target should contain at most one header and one source file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cc_library</span><span class="p">(</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+  <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foobar.h&quot;</span><span class="p">],</span>
+  <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foobar.cc&quot;</span><span class="p">],</span>
+  <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+  <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">cc_test</span><span class="p">(</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foobar_test&quot;</span><span class="p">,</span>
+  <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foobar_test.cc&quot;</span><span class="p">],</span>
+  <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;:foobar&quot;</span><span class="p">,</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">format</span> <span class="pre">&lt;path/to/BUILD&gt;</span></code> to fix BUILD file style
+issues.</p>
+</li>
+<li><p>In general, Apollo follows
+<a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google C++ coding style</a>.
+You should run <code class="docutils literal notranslate"><span class="pre">scripts/clang_format.sh</span> <span class="pre">&lt;path/to/cpp/dirs/or/files&gt;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">format</span> <span class="pre">-c</span> <span class="pre">&lt;path/to/cpp/dirs/or/files&gt;</span></code> to fix C++ style issues.</p></li>
+<li><p>Simple and unified function signature.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1. For input objects, const reference guarantes that it is valid, while</span>
+<span class="c1">//    pointers might be NULL or wild. Don&#39;t give others the chance to break</span>
+<span class="c1">//    you.</span>
+<span class="c1">// 2. For input scalars, just pass by value, which gives better locality and</span>
+<span class="c1">//    thus performance.</span>
+<span class="c1">// 3. For output, it&#39;s the caller&#39;s responsibility to make sure the pointer</span>
+<span class="c1">//    is valid. No need to do sanity check or mark it as &quot;OutputType* const&quot;,</span>
+<span class="c1">//    as pointer redirection is never allowed.</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">FooBar</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">InputObjectType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">input1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">InputScalaType</span><span class="w"> </span><span class="n">input2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"></span>
+<span class="w">            </span><span class="n">OutputType</span><span class="o">*</span><span class="w"> </span><span class="n">output1</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span><span class="w"></span>
+
+<span class="c1">// RVO machanism will help you avoid unnecessary object copy.</span>
+<span class="c1">// See https://en.wikipedia.org/wiki/Copy_elision#Return_value_optimization</span>
+<span class="n">OutputType</span><span class="w"> </span><span class="nf">FooBar</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">InputType</span><span class="o">&amp;</span><span class="w"> </span><span class="n">input</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Use const whenever possible.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variables that don&#39;t change.</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">current_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="c1">// Functions that have no side effect.</span>
+<span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">name</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Prefer C++ headers over C headers.</p>
+<p>We prefer using <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;ctime&gt;</span></code> over <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;time.h&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code> over
+<code class="docutils literal notranslate"><span class="pre">&lt;math.h&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cstdio&gt;</span></code> over <code class="docutils literal notranslate"><span class="pre">&lt;stdio.h&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;cstring&gt;</span></code> over <code class="docutils literal notranslate"><span class="pre">&lt;string.h&gt;</span></code>, etc.</p>
+</li>
+<li><p>Include necessary headers <strong>only</strong>. No more, no less.</p>
+<p>Please also pay attention to header orders. Again, you can use
+<code class="docutils literal notranslate"><span class="pre">apollo.sh</span> <span class="pre">format</span> <span class="pre">-c</span></code> or <code class="docutils literal notranslate"><span class="pre">scripts/clang_format.sh</span></code> to fix header order
+issues.</p>
+</li>
+<li><p>List only direct dependencies in <code class="docutils literal notranslate"><span class="pre">deps</span></code> section of a Bazel target.</p>
+<p>Generally, only targets to which the included headers belongs should be
+listed as a dependency.</p>
+<p>For example, suppose <code class="docutils literal notranslate"><span class="pre">sandwich.h</span></code> includes <code class="docutils literal notranslate"><span class="pre">bread.h</span></code> which in turn includes
+<code class="docutils literal notranslate"><span class="pre">flour.h</span></code>. Since <code class="docutils literal notranslate"><span class="pre">sandwich.h</span></code> doesn’t include <code class="docutils literal notranslate"><span class="pre">flour.h</span></code> directly (who wants
+flour in their sandwich?), the BUILD file would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cc_library</span><span class="p">(</span>
+ <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sandwich&quot;</span><span class="p">,</span>
+ <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sandwich.cc&quot;</span><span class="p">],</span>
+ <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sandwich.h&quot;</span><span class="p">],</span>
+ <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+     <span class="s2">&quot;:bread&quot;</span><span class="p">,</span>
+     <span class="c1"># BAD practice to uncomment the line below</span>
+     <span class="c1"># &quot;:flour&quot;,</span>
+ <span class="p">],</span>
+<span class="p">)</span>
+
+ <span class="n">cc_library</span><span class="p">(</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;bread&quot;</span><span class="p">,</span>
+     <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bread.cc&quot;</span><span class="p">],</span>
+     <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bread.h&quot;</span><span class="p">],</span>
+     <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;:flour&quot;</span><span class="p">],</span>
+ <span class="p">)</span>
+
+ <span class="n">cc_library</span><span class="p">(</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;flour&quot;</span><span class="p">,</span>
+     <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flour.cc&quot;</span><span class="p">],</span>
+     <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flour.h&quot;</span><span class="p">],</span>
+ <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Conform to the DRY principle.</p>
+<p>Don’t repeat yourself, in any way. Avoid duplicate classes, functions, const
+variables, or a simple piece of code. Some examples:</p>
+<ul class="simple">
+<li><p>It’s fine to refer a name with full path once, like
+<code class="docutils literal notranslate"><span class="pre">apollo::common::util::Type</span></code>, but better to make a short alias if you need
+to use twice or more: <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">apollo::common::util::Type;</span></code>.</p></li>
+<li><p>It’s fine to access a sub-field of proto once in cascade style, like
+<code class="docutils literal notranslate"><span class="pre">a_proto.field_1().field_2().field_3()</span></code>, but better to save the reference
+of a common part first if you need to access it twice or more:
+<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">auto&amp;</span> <span class="pre">field_2</span> <span class="pre">=</span> <span class="pre">a_proto.field_1().field_2();</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo_5.5_technical_tutorial.html" class="btn btn-neutral float-left" title="Apollo 5.5 Technical Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo_best_coding_practice_cn.html" class="btn btn-neutral float-right" title="Apollo 编码最佳实践" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

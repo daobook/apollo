@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning Component Introduction &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Planning Piecewise Jerk Nonlinear Speed Optimizer Introduction" href="planning_piecewise_jerk_nonlinear_speed_optimizer.html" />
+    <link rel="prev" title="PARKING SCENARIO" href="parking_scenario.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Planning Component Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_documents/planning_component.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="planning-component-introduction">
+<h1>Planning Component Introduction<a class="headerlink" href="#planning-component-introduction" title="永久链接至标题"></a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h1>
+<p>This article describes the architecture of planning module. It mainly consists of the following parts:</p>
+<ol class="simple">
+<li><p>Cyber component related knowledge</p></li>
+<li><p>How the messages are received and sent</p></li>
+<li><p>How the trajectory is arranged and made up</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="where-is-the-code">
+<h1>Where is the code<a class="headerlink" href="#where-is-the-code" title="永久链接至标题"></a></h1>
+<p>Please refer to <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/planning_component.h">code</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-reading">
+<h1>Code Reading<a class="headerlink" href="#code-reading" title="永久链接至标题"></a></h1>
+<section id="cyber-component-related-knowledge">
+<h2>Cyber component related knowledge<a class="headerlink" href="#cyber-component-related-knowledge" title="永久链接至标题"></a></h2>
+<p>Please refer to <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/docs/cyber/CyberRT_Terms.md">Cyber</a>.</p>
+</section>
+<section id="how-the-messages-are-received-and-sent">
+<h2>How the messages are received and sent<a class="headerlink" href="#how-the-messages-are-received-and-sent" title="永久链接至标题"></a></h2>
+<p><img alt="Diagram" src="../../_images/planning_component_api.png" /></p>
+<ol class="simple">
+<li><p>Input
+Messages are partially input from readers, which are defined in PlanningComponent::Init(). For Planning component, readers receive message types of RoutingResponse/TrafficLightDetection/PadMessage/Stories/MapMsg and store them in local for processing afterward.
+Another part of input messages are defined in PlanningComponent::Proc(), where the planning process is called when new messages arrives.</p></li>
+<li><p>Process. PlanningComponent::Proc() function works like Reader’s callback function. Each time there are new messages of prediction::PredictionObstacles/canbus::Chassis/localization::LocalizationEstimate, this process is implemented till the end of this function.</p></li>
+<li><p>Output. PlanningComponent output the message by the following line <code class="docutils literal notranslate"><span class="pre">planning_writer_-&gt;Write(adc_trajectory_pb)</span></code>, in which the writer send the final adc_trajectory_pb message to the cyber system. The writer is initialized in PlanningComponent::Init(), just after the readers are initialized.</p></li>
+</ol>
+</section>
+<section id="how-the-trajectory-as-planning-component-output-is-produced">
+<h2>How the trajectory as planning component output is produced<a class="headerlink" href="#how-the-trajectory-as-planning-component-output-is-produced" title="永久链接至标题"></a></h2>
+<p>Now we know how messages are input to and output from the planning component. The work of planning module is basically processing the input messages and producing an appropriate trajectory for the ADC. The final goal of this is to ensure safety, comfort and passability. And different algorithms are explored in Apollo in order to achieve or get closer to this goal.</p>
+<ul class="simple">
+<li><p>The basic and more mature algorithm is rule-based planning, where we use a two-layer state machine to manage the path in different scenarios. For details, please refer <a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/master/modules/planning/conf/scenario">scenarios</a>.</p></li>
+<li><p>The learning based algorithms including Hybrid Mode are under exploration, which can be enabled in <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/conf/planning_config.pb.txt">planning_config</a>. The E2E mode outputs a planning trajectory when inputting a birdview image centered by the vehicle pose and current velocity. Note E2E methods are not tested on road, while it’s encouraged to do experiments in simulation for research purposes.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="parking_scenario.html" class="btn btn-neutral float-left" title="PARKING SCENARIO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="planning_piecewise_jerk_nonlinear_speed_optimizer.html" class="btn btn-neutral float-right" title="Planning Piecewise Jerk Nonlinear Speed Optimizer Introduction" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

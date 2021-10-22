@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ff &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to Prepare Bazel Distribution Directory" href="how_to_prepare_bazel_dist_dir.html" />
+    <link rel="prev" title="rf" href="how_to_monitor_perf_with_oprofile_on_tx2.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ff</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ff">
+<h1>ff<a class="headerlink" href="#ff" title="永久链接至标题"></a></h1>
+<p>oprofile是运行在linux系统上对应用程序进行性能测试的工具。linux系统中已经自带了oprofile的相关工具，但是oprofile module在arm平台没有支持，所以我们需要手动安装oprofile。</p>
+<p>oprofile对多线程支持良好，可以对函数调用次数及源码进行分析，所以非常适合在TX2上使用。</p>
+<section id="id1">
+<h2>下载<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>下载最新版本的oprofile</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ wget http://prdownloads.sourceforge.net/oprofile/oprofile-1.4.0.tar.gz
+$ tar zxvf oprofile-1.4.0.tar.gz
+$ <span class="nb">cd</span> oprofile-1.4.0
+</pre></div>
+</div>
+</section>
+<section id="oprofile">
+<h2>安装oprofile<a class="headerlink" href="#oprofile" title="永久链接至标题"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install libpopt-dev libiberty-dev binutils-dev
+$ ./configure
+$ make -j4
+$ sudo make install
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>测试<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>安装好后，执行<code class="docutils literal notranslate"><span class="pre">operf</span></code>命令查看能否正常获取cpu信息。如果出现如下报错：</p>
+<p><code class="docutils literal notranslate"><span class="pre">unable</span> <span class="pre">to</span> <span class="pre">open</span> <span class="pre">/sys/devices/system/cpu/cpu0/online</span></code></p>
+<p>这是因为默认TX2只开启了4个CPU，有2个CPU处于未开启状态。
+执行如下命令开启额外的两个CPU：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo nvpmodel -m <span class="m">0</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>使用方法<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>oprofile提供了多种命令，通常情况下我们使用比较多的是<code class="docutils literal notranslate"><span class="pre">operf</span></code>，<code class="docutils literal notranslate"><span class="pre">opreport</span></code>和<code class="docutils literal notranslate"><span class="pre">opannotate</span></code>。
+以测试perception模块为例。</p>
+<ul class="simple">
+<li><p>1.修改<code class="docutils literal notranslate"><span class="pre">script/apollo_bash.sh</span></code>脚本，文件第239行的<code class="docutils literal notranslate"><span class="pre">nohup</span></code>后面增加<code class="docutils literal notranslate"><span class="pre">operf</span></code>指令，如图：</p></li>
+</ul>
+<p><img alt="operf_command" src="../../_images/operf_command.png" /></p>
+<ul class="simple">
+<li><p>2.使用脚本如<code class="docutils literal notranslate"><span class="pre">./script/perception.sh</span></code>启动perception模块</p></li>
+</ul>
+<p>这样operf就会进行perception进程的运行数据统计。使用任意方法停止perception进程即可停止数据收集。</p>
+</section>
+<section id="id4">
+<h2>测试数据查看<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>停止perception进程后，在当前文件夹下将生成文件夹oprofile_data。
+使用指令<code class="docutils literal notranslate"><span class="pre">opreport</span></code>查看模块的总体占比：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opreport
+</pre></div>
+</div>
+<p>结果示例为：</p>
+<p><img alt="opreport_" src="../../_images/opreport_.png" /></p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">opreport</span></code>查看函数占比：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opreport -l bazel-bin/modules/perception/perception 
+</pre></div>
+</div>
+<p>因为输出信息很多，所以需要将上述结果保存为文本文件</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opreport -l bazel-bin/modules/perception/perception &gt; perception_op_funcs.md
+</pre></div>
+</div>
+<p>结果示例为：</p>
+<p><img alt="opreport_file" src="../../_images/opreport_file.png" /></p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">opannotate</span></code>查看详细的源码数据统计：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ opannotate -s bazel-bin/modules/perception/perception &gt; perception_op_details.md
+</pre></div>
+</div>
+<p>注意事项：同时只能运行一个operf进程，所以对perception进行数据统计时无法再用operf启动其他模块。</p>
+<p>oprofile官方网站：
+<a class="reference external" href="http://oprofile.sourceforge.net/news/">http://oprofile.sourceforge.net/news/</a></p>
+<p>oprofile用户手册：
+<a class="reference external" href="http://oprofile.sourceforge.net/doc/index.html">http://oprofile.sourceforge.net/doc/index.html</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_monitor_perf_with_oprofile_on_tx2.html" class="btn btn-neutral float-left" title="rf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_prepare_bazel_dist_dir.html" class="btn btn-neutral float-right" title="How to Prepare Bazel Distribution Directory" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

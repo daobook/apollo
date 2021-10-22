@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPEN SPACE DECIDER &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="OPTIMIZE COARSE TRAJECTORY" href="open_space_trajectory_optimizer_en.html" />
+    <link rel="prev" title="预测规划交互评估器" href="jointly_prediction_planning_evaluator_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>OPEN SPACE DECIDER</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_documents/open_space_decider.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="open-space-decider">
+<h1>OPEN SPACE DECIDER<a class="headerlink" href="#open-space-decider" title="永久链接至标题"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<p>Apollo planning is scenario based, where each driving case is treated as a different driving scenario.</p>
+<p>Open space decider is used to process related infomation and provide information for subsequent optimizers.</p>
+</section>
+<section id="where-is-the-code">
+<h2>Where is the code<a class="headerlink" href="#where-is-the-code" title="永久链接至标题"></a></h2>
+<p>Please refer <a class="reference external" href="https://github.com/ApolloAuto/apollo/modules/planning/tasks/deciders/open_space_decider/open_space_roi_decider.cc">open space decider</a>.</p>
+</section>
+<section id="code-reading">
+<h2>Code Reading<a class="headerlink" href="#code-reading" title="永久链接至标题"></a></h2>
+<section id="open-space-roi-decider">
+<h3>Open space roi decider<a class="headerlink" href="#open-space-roi-decider" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>Input : obstacles info \ vehicle info \ road info \ parking space info.</p></li>
+</ol>
+<ul>
+<li><p>IN PARKING STAGE (roi_type == OpenSpaceRoiDeciderConfig::PARKING)</p>
+<ol class="simple">
+<li><p>Check parking space id and parking space boundary, then get parking spot.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">GetParkingSpot</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">vertices</span><span class="p">,</span><span class="w"></span>
+<span class="w">                        </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">*</span><span class="n">nearby_path</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Search target parking spot on path and check whether the distance between ADC and target parking spot is appropriate.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">SearchTargetParkingSpotOnPath</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">hdmap</span><span class="o">::</span><span class="n">ParkingSpaceInfoConstPtr</span><span class="w"> </span><span class="o">*</span><span class="n">target_parking_spot</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Set ADC origin state, include ADC position and heading.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetOrigin</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vertices</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Get parking spot(left top \ left down \ right down \ right top) points info, convert parking spot points coordinates to vehicle coorinates, according to the relative position and parking direction(inward or outward) to set parking end pose.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetParkingSpotEndPose</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vertices</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Get parking boundary: convert parking spot points coordinates to vehicle coorinates and get points’ projections on reference line.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">GetParkingBoundary</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vertices</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">                            </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">roi_parking_boundary</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol>
+<li><p>Get road boundary: it starts from parking space center line(center_line_s) and extends a distance(roi longitudinal range) to both sides along the s direction to get start_s and end_s.</p>
+<p>Search key points(the point on the left/right lane boundary is close to a curb corner) and anchor points(a start/end point or the point on path with large curvatures) in this roi range.</p>
+<p>Those key points and anchor points are called boundary points. The line segements between those points are called roi parking boundarys.</p>
+</li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">GetRoadBoundary</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">center_line_s</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="w"> </span><span class="o">&amp;</span><span class="n">origin_point</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">origin_heading</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">left_lane_boundary</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">right_lane_boundary</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">center_lane_boundary_left</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">center_lane_boundary_right</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">center_lane_s_left</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">center_lane_s_right</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">left_lane_road_width</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">right_lane_road_width</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Fuse line segements: remove repeat points of roi parking boundary to meet the requirements of open space algorithm.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">FuseLineSegments</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">*</span><span class="n">line_segments_vec</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>IN PULL OVER STAGE (roi_type == OpenSpaceRoiDeciderConfig::PULL_OVER)</p>
+<ol class="simple">
+<li><p>The main process is same as parking stage, get pull over spot -&gt; set origin -&gt; set pull over spot end pose -&gt; get pull over boundary.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetPullOverSpotEndPose</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="nf">GetPullOverBoundary</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">vertices</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">                                </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">roi_parking_boundary</span><span class="p">);</span><span class="w">  </span>
+</pre></div>
+</div>
+</li>
+<li><p>IN PARK AND GO STAGE (roi_type == OpenSpaceRoiDeciderConfig::PARK_AND_GO)</p>
+<ol class="simple">
+<li><p>The main process is same as parking stage, set orgin from adc -&gt; set park and go end pose -&gt; get park and go boundary.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetOriginFromADC</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetParkAndGoEndPose</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="nf">GetParkAndGoBoundary</span><span class="p">(</span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">hdmap</span><span class="o">::</span><span class="n">Path</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nearby_path</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="w">                            </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">roi_parking_boundary</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="simple">
+<li><p>By calling <code class="docutils literal notranslate"><span class="pre">formulateboundaryconstraints()</span></code> to gather vertice needed by warm start and distance approach, then transform vertices into the form of Ax &gt; b.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">FormulateBoundaryConstraints</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Vec2d</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">roi_parking_boundary</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="n">Frame</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Return process status.</p></li>
+<li><p>Output: open space roi boundary and boundary constraints</p></li>
+</ol>
+</section>
+<section id="open-space-pre-stop-decider">
+<h3>Open space pre stop decider<a class="headerlink" href="#open-space-pre-stop-decider" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>Input: obstacles info \ vehicle info \ road info \ parking space info</p></li>
+</ol>
+<ul>
+<li><p>IN PARKING STAGE (OpenSpacePreStopDeciderConfig::PARKING)</p>
+<ol>
+<li><p>Check parking space info(parking spot id and parking spot points), fill those info into target_parking_spot_ptr.</p>
+<p>Take the s info of parking space center line as target_s.</p>
+</li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">CheckParkingSpotPreStop</span><span class="p">(</span><span class="n">Frame</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="n">ReferenceLineInfo</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">reference_line_info</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">target_s</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Base on ADC position, stop distance to target parking space and obstacle positon to set stop fence.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetParkingSpotStopFence</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">target_s</span><span class="p">,</span><span class="w"> </span><span class="n">Frame</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                </span><span class="n">ReferenceLineInfo</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">reference_line_info</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>IN PULL OVER STAGE (OpenSpacePreStopDeciderConfig::PULL_OVER)</p>
+<ol class="simple">
+<li><p>Same with parking stage, check pull over pre stop -&gt; set pull over stop fence.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">CheckPullOverPreStop</span><span class="p">(</span><span class="n">Frame</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                              </span><span class="n">ReferenceLineInfo</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">reference_line_info</span><span class="p">,</span><span class="w"></span>
+<span class="w">                              </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">target_s</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetPullOverStopFence</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">target_s</span><span class="p">,</span><span class="w"> </span><span class="n">Frame</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame</span><span class="p">,</span><span class="w"></span>
+<span class="w">                            </span><span class="n">ReferenceLineInfo</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">reference_line_info</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="simple">
+<li><p>Return process status.</p></li>
+<li><p>Output: pre stop fence for open space planner.</p></li>
+</ol>
+</section>
+<section id="open-space-fallback-decider">
+<h3>Open space fallback decider<a class="headerlink" href="#open-space-fallback-decider" title="永久链接至标题"></a></h3>
+<ol class="simple">
+<li><p>Input: obstacles info \ vehicle info \ road info \ parking space info.</p></li>
+<li><p>Base on the prdicted trajectory of obstacles, the bounding box info of obstacles in each time interval is obtained, then we add it into predicted_bounding_rectangles.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">BuildPredictedEnvironment</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">Obstacle</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">obstacles</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                   </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Box2d</span><span class="o">&gt;&gt;&amp;</span><span class="w"></span>
+<span class="w">                                   </span><span class="n">predicted_bounding_rectangles</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>By calling <code class="docutils literal notranslate"><span class="pre">IsCollisonFreeTrajectory()</span></code> to determine whether it will intersect with obstacles.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsCollisionFreeTrajectory</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">TrajGearPair</span><span class="o">&amp;</span><span class="w"> </span><span class="n">trajectory_pb</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">common</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">Box2d</span><span class="o">&gt;&gt;&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">predicted_bounding_rectangles</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="kt">size_t</span><span class="o">*</span><span class="w"> </span><span class="n">current_idx</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="o">*</span><span class="w"> </span><span class="n">first_collision_idx</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>If ADC trajectroy is collision free, the chosen partitioned trajectory can be used directly, otherwise a fallback trajectroy base on current partition trajectroy will be gererated, which leads ADC stop inside safety distance.</p></li>
+<li><p>Return process status.</p></li>
+<li><p>Output: fallback trajectory.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jointly_prediction_planning_evaluator_cn.html" class="btn btn-neutral float-left" title="预测规划交互评估器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="open_space_trajectory_optimizer_en.html" class="btn btn-neutral float-right" title="OPTIMIZE COARSE TRAJECTORY" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

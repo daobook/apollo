@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Develop Cyber RT inside Docker on Both x86_64 and ARM64 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Migration guide from Apollo ROS" href="CyberRT_Migration_Guide.html" />
+    <link rel="prev" title="Apollo Cyber RT Developer Tools" href="CyberRT_Developer_Tools.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+      <li>How to Develop Cyber RT inside Docker on Both x86_64 and ARM64</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/cyber/doxy-docs/source/CyberRT_Docker.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-develop-cyber-rt-inside-docker-on-both-x86-64-and-arm64">
+<h1>How to Develop Cyber RT inside Docker on Both x86_64 and ARM64<a class="headerlink" href="#how-to-develop-cyber-rt-inside-docker-on-both-x86-64-and-arm64" title="永久链接至标题"></a></h1>
+<p>To make life easier, Apollo maintains Cyber Docker images and a number of
+scripts to help developers build and play with Cyber RT framework.</p>
+<p>Cyber Docker images are built upon Ubuntu 18.04, and comes with full support for
+Cyber RT framework. For those who are interested in Cyber RT only, this would be
+the ideal point to start with.</p>
+<p><strong>Note: Apollo team also maintains ARM64 Cyber Docker images which was tested on
+Jetson AGX Xavier. The same set of scripts are provided to run both on x86_64
+and ARM64 platforms.</strong></p>
+<p>In the next section, we will show you how to play with Cyber Docker images.</p>
+<section id="build-and-test-cyber-rt-inside-docker">
+<h2>Build and Test Cyber RT inside Docker<a class="headerlink" href="#build-and-test-cyber-rt-inside-docker" title="永久链接至标题"></a></h2>
+<p>Run the following command to start Cyber Docker container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/cyber_start.sh
+</pre></div>
+</div>
+<p>Or if you are in China, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/cyber_start.sh -g cn
+</pre></div>
+</div>
+<p>A Docker container named <code class="docutils literal notranslate"><span class="pre">apollo_cyber_$USER</span></code> will be started.</p>
+<p><strong>Note</strong>: You will lose all your previous changes in the container if you have
+ran this command before. Unless you would like to start a fresh Docker
+environment.</p>
+<p>To log into the newly started Cyber container:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/cyber_into.sh
+</pre></div>
+</div>
+<p><strong>Note</strong>: you can login and logout Cyber container multiple times as you wish,
+the Docker environment will stay there until the next time you start another
+Cyber container.</p>
+<p>To build Cyber RT only and run unit tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./apollo.sh build cyber
+./apollo.sh <span class="nb">test</span> cyber
+</pre></div>
+</div>
+<p>Or run with <code class="docutils literal notranslate"><span class="pre">--config=opt</span></code> for an optimized build/test.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./apollo.sh build --config<span class="o">=</span>opt cyber
+./apollo.sh <span class="nb">test</span> --config<span class="o">=</span>opt cyber
+</pre></div>
+</div>
+<p>You should be able to see that all the testcases passed.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CyberRT_Developer_Tools.html" class="btn btn-neutral float-left" title="Apollo Cyber RT Developer Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="CyberRT_Migration_Guide.html" class="btn btn-neutral float-right" title="Migration guide from Apollo ROS" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
