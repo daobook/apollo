@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera Perception &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="2018-09-02" href="tools/obstacle_detection/data/yolo/3d-r4-half/CHANGELOG.html" />
+    <link rel="prev" title="Perception" href="../README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Camera Perception</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/perception/camera/README.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="camera-perception">
+<h1>Camera Perception<a class="headerlink" href="#camera-perception" title="永久链接至标题"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<p>Apollo 7.0 camera obstacle add a new model based on <a class="reference external" href="https://github.com/lzccccc/SMOKE">SMOKE</a>. SMOKE is a Single-Stage monocular 3D object detection model which made some improvements for 3D vision on the CenterNet. We did some adaptation on the SMOKE and trained on <a class="reference external" href="https://waymo.com/open/">waymo open dateset</a>.Finally, our new model is added to Apollo as a new components.</p>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="永久链接至标题"></a></h2>
+<p>Here we mainly focus on the modifications based on SMOKE,  more detail about SMOKE model please reference paper.</p>
+<ul class="simple">
+<li><p>Deformable conv can not convert onnx or libtorch. Therefore, we modify the deformable convolution in the backbone to normal convolution, which will lead to the decline of mAP;</p></li>
+<li><p>Because the 3D center points of some obstacles may appear outside the image, these obstacles will be filtered out during training, resulting in missed detection. Therefore, we take the center point of 2D bounding boxes to represent the obstacle, and add a head prediction offset term to recover the 3D center point;</p></li>
+<li><p>We add the head to predict the width and height of the 2D bounding box, and  directly calculate the 2D bbox of the obstacle with 2D center;</p></li>
+<li><p>Using 2D bounding box and other 3D information, we use post-processing geometric constraints to optimize the predicted position information. Firstly, we use the 3D information predicted by the model to calculate the 3D bounding box of the obstacle, as shown in Formula 1. <span class="math notranslate nohighlight">\(\theta\)</span> represents the rotation of obstacle，<span class="math notranslate nohighlight">\(h,w,l\)</span> is the dimensions and <span class="math notranslate nohighlight">\(x,y,z\)</span> represent location。</p></li>
+</ul>
+<!-- $$
+B = \left[\begin{matrix} \cos(\theta) & 0 & \sin(\theta) \\ 0 & 1 & 0 \\ -\sin(\theta) & 0 & \cos(\theta) \end{matrix} \right]
+\left[\begin{matrix} \pm\frac{h}{2}  \\ \pm\frac{w}{2} \\ \pm\frac{l}{2} \end{matrix} \right] + 
+\left[\begin{matrix} x  \\ y \\ z \end{matrix} \right]
+\tag{1}
+$$ -->
+<div align=center>
+<img alt="https://latex.codecogs.com/svg.latex?B&amp;space;=&amp;space;left[begin{matrix}&amp;space;cos(theta)&amp;space;&amp;&amp;space;0&amp;space;&amp;&amp;space;sin(theta)&amp;space;\&amp;space;0&amp;space;&amp;&amp;space;1&amp;space;&amp;&amp;space;0&amp;space;\&amp;space;-sin(theta)&amp;space;&amp;&amp;space;0&amp;space;&amp;&amp;space;cos(theta)&amp;space;end{matrix}&amp;space;right]&amp;space;left[begin{matrix}&amp;space;pmfrac{h}{2}&amp;space;\&amp;space;pmfrac{w}{2}&amp;space;\&amp;space;pmfrac{l}{2}&amp;space;end{matrix}&amp;space;right]&amp;space;+&amp;space;left[begin{matrix}&amp;space;x&amp;space;\&amp;space;y&amp;space;\&amp;space;z&amp;space;end{matrix}&amp;space;right]" src="https://latex.codecogs.com/svg.latex?B&amp;space;=&amp;space;left[begin{matrix}&amp;space;cos(theta)&amp;space;&amp;&amp;space;0&amp;space;&amp;&amp;space;sin(theta)&amp;space;\&amp;space;0&amp;space;&amp;&amp;space;1&amp;space;&amp;&amp;space;0&amp;space;\&amp;space;-sin(theta)&amp;space;&amp;&amp;space;0&amp;space;&amp;&amp;space;cos(theta)&amp;space;end{matrix}&amp;space;right]&amp;space;left[begin{matrix}&amp;space;pmfrac{h}{2}&amp;space;\&amp;space;pmfrac{w}{2}&amp;space;\&amp;space;pmfrac{l}{2}&amp;space;end{matrix}&amp;space;right]&amp;space;+&amp;space;left[begin{matrix}&amp;space;x&amp;space;\&amp;space;y&amp;space;\&amp;space;z&amp;space;end{matrix}&amp;space;right]" />
+</div>
+<p>Then, according to the corresponding relationship between the bounding boxes as the constraint condition, we optimized the position information of the obstacle as shown in formula 2.</p>
+<!-- $$
+x^*, y^*, z^* = arg\,\max_{\lbrace x,y,z \rbrace}{\sum{||B - B^*||^2_{\sum}}}
+\tag{2}
+$$ -->
+<div align=center>
+<img alt="https://latex.codecogs.com/svg.latex?x^*,&amp;space;y^*,&amp;space;z^*&amp;space;=&amp;space;arg,max_{lbrace&amp;space;x,y,z&amp;space;rbrace}{sum{||B&amp;space;-&amp;space;B^*||^2_{sum}}}" src="https://latex.codecogs.com/svg.latex?x^*,&amp;space;y^*,&amp;space;z^*&amp;space;=&amp;space;arg,max_{lbrace&amp;space;x,y,z&amp;space;rbrace}{sum{||B&amp;space;-&amp;space;B^*||^2_{sum}}}" />
+</div>
+<p>The final network structure is shown below</p>
+<div align=center>
+<img src="../../../docs/specs/images/3d_obstacle_perception/camera_network.png" alt="图片名称" width="60%" />
+</div>
+</section>
+<section id="training">
+<h2>Training<a class="headerlink" href="#training" title="永久链接至标题"></a></h2>
+<p>We trained model on the waymo open source dataset. Firstly, we used the conversion tool provided by the mmdetction3d framework to convert the waymo data into Kitti format. For specific operations, please refer to the <a class="reference external" href="https://github.com/open-mmlab/mmdetection3d/blob/master/docs/datasets/waymo_det.md">open mmlab documentation</a>. We only saved the front camera (image_ 0) data. Data conversion will take up a lot of space. Please ensure that your disk has enough space. After converting waymo data into Kitti format, we only need to make a few adjustments to the code to train and test. The test results on the waymo validation set are shown in the following table:</p>
+<div align=center>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="text-align:center head"><p>Car</p></th>
+<th class="text-align:center head"><p>Pedestrian</p></th>
+<th class="text-align:center head"><p>Cyclist</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mAP</p></td>
+<td class="text-align:center"><p>6.88</p></td>
+<td class="text-align:center"><p>0.35</p></td>
+<td class="text-align:center"><p>0.32</p></td>
+</tr>
+<tr class="row-odd"><td><p>bev</p></td>
+<td class="text-align:center"><p>11.84</p></td>
+<td class="text-align:center"><p>0.41</p></td>
+<td class="text-align:center"><p>0.40</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The visualize on waymo image data as follwos：</p>
+<div align=center>
+<img src="../../../docs/specs/images/3d_obstacle_perception/smoke_example.png" alt="图片名称" width="40%" />
+</div>
+<p>At the same time, we also provide the paddle training code of the model with the Baidu PaddlePaddle team, and please refer to the <a class="reference external" href="https://github.com/PaddlePaddle/models/tree/develop/PaddleCV/3d_vision/SMOKE">SMOKE-Paddle</a> for more details.</p>
+</section>
+<section id="online">
+<h2>Online<a class="headerlink" href="#online" title="永久链接至标题"></a></h2>
+<p>Here, we use libtorch for online deployment and use the torch.jit.trace function of pytorch. We put camera internal parameters and image scaling coefficient into the model as parameters. For details, please refer to the code:
+“modules/perception/camera/lib/obstacle/detector/smoke/smoke_obstacle_detector.cc”</p>
+</section>
+<section id="launch">
+<h2>Launch<a class="headerlink" href="#launch" title="永久链接至标题"></a></h2>
+<p>We provide a separate dag file to start the smoke obstacle detection model, which can be started by the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mainboard -d modules/perception/production/dag/dag_streaming_obstacle_detection.dag
+</pre></div>
+</div>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Liu, Zechen, Zizhang Wu, and Roland Tóth. “Smoke: single-stage monocular 3d object detection via keypoint estimation.” In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, pp. 996-997. 2020.</p></li>
+<li><p>{MMDetection3D: OpenMMLab} next-generation platform for general 3D object detection} <a class="reference external" href="https://github.com/open-mmlab/mmdetection3d">https://github.com/open-mmlab/mmdetection3d</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../README.html" class="btn btn-neutral float-left" title="Perception" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="tools/obstacle_detection/data/yolo/3d-r4-half/CHANGELOG.html" class="btn btn-neutral float-right" title="2018-09-02" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

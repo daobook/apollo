@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo 3.0传感器安装指南 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Guide on Nuvo-6108GC Installation" href="IPC/Nuvo-6108GC_Installation_Guide.html" />
+    <link rel="prev" title="Guideline of sensor Installation for Apollo 3.0" href="Guideline_sensor_Installation_apollo_3.0.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo 3.0传感器安装指南</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/Guideline_sensor_Installation_apollo_3.0_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-3-0">
+<h1>Apollo 3.0传感器安装指南<a class="headerlink" href="#apollo-3-0" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>需要的硬件<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p><img alt="Image" src="../../_images/perception_required_hardware.png" /></p>
+<p>外部设备</p>
+<p><img alt="Image" src="../../_images/perception_peripherals.png" /></p>
+</section>
+<section id="id2">
+<h2>坐标系<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>单位：毫米（mm）</p>
+<p>原点：车辆后轮轴中心</p>
+<p><img alt="Image" src="../../_images/perception_setup_figure1.png" /></p>
+<p><strong>Figure 1. 原点和坐标系</strong></p>
+<p><img alt="Image" src="../../_images/perception_setup_figure2.png" /></p>
+<p><strong>Figure 2. 卡车坐标系和安装摄像机与雷达的示意图</strong></p>
+</section>
+<section id="id3">
+<h2>传感器安装指南<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<section id="imu-gps">
+<h3>IMU/GPS<a class="headerlink" href="#imu-gps" title="永久链接至标题"></a></h3>
+<p>IMU/GPS需要安装在靠近后车轮毂的位置。GPS天线需要安装在车辆顶部。</p>
+</section>
+<section id="radar">
+<h3>Radar<a class="headerlink" href="#radar" title="永久链接至标题"></a></h3>
+<p>远程雷达需要安装在车辆前保险杠上，请参考Figure 1 and Figure 2展示的信息。</p>
+</section>
+<section id="camera">
+<h3>Camera<a class="headerlink" href="#camera" title="永久链接至标题"></a></h3>
+<p>一个6mm镜头的摄像机应该面向车辆的前方。前向摄像机应当安装在车辆前部的中心位置，离地面高度为1600mm到2000mm（Camera 1），或者安装在车辆挡风玻璃上（Camera 2）。</p>
+<p><img alt="Image" src="../../_images/perception_setup_figure3.png" /></p>
+<p><strong>Figure 3. 安装摄像机的示例图</strong></p>
+<p>摄像机安装完成后，摄像机w、r、t的物理坐标x、y、z应该被记录在校准文件里。</p>
+<section id="id4">
+<h4>安装摄像机后的检验<a class="headerlink" href="#id4" title="永久链接至标题"></a></h4>
+<p>三个摄像机的方位应当全部设置为0。摄像机安装后，需要车辆在公路以直线开动一段距离并记录一个rosbag，通过rosbag的回放，摄像机的方位需要重新调整以设置间距、偏航角并将角度转置为0度。如果摄像机被正确的安装，地平线应该在画面高度方向上的正中间并且不倾斜。灭点同样应该在画面的正中间。请参考下述图片以将摄像机设置为最佳状态：</p>
+<p><img alt="Image" src="../../_images/perception_setup_figure4.png" /></p>
+<p><strong>Figure 4. 摄像机安装后的画面示例。地平线应该在画面高度方向上的正中间并且不倾斜。灭点同样应该在画面的正中间。 红色线段显示了画面高度和宽度方向上的中点。</strong></p>
+<p>估测的平移参数的示例如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">header</span><span class="p">:</span>
+    <span class="n">seq</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">stamp</span><span class="p">:</span>
+        <span class="n">secs</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="n">nsecs</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="n">frame_id</span><span class="p">:</span> <span class="n">white_mkz</span>
+<span class="n">child_frame_id</span><span class="p">:</span> <span class="n">onsemi_obstacle</span>
+<span class="n">transform</span><span class="p">:</span>
+    <span class="n">rotation</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">:</span>  <span class="mf">0.5</span>
+        <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span>
+        <span class="n">z</span><span class="p">:</span>  <span class="mf">0.5</span>
+        <span class="n">w</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span>
+    <span class="n">translation</span><span class="p">:</span>	
+        <span class="n">x</span><span class="p">:</span> <span class="mf">1.895</span>
+        <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.235</span>
+        <span class="n">z</span><span class="p">:</span> <span class="mf">1.256</span> 
+</pre></div>
+</div>
+<p>如果角度不为0，则上述数据需要重新校准并在四元数中表示（参考上例中的transform-&gt;rotation	）</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Guideline_sensor_Installation_apollo_3.0.html" class="btn btn-neutral float-left" title="Guideline of sensor Installation for Apollo 3.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="IPC/Nuvo-6108GC_Installation_Guide.html" class="btn btn-neutral float-right" title="Guide on Nuvo-6108GC Installation" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

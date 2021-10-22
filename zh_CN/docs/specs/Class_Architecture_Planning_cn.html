@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planning模块架构和概述 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="Dreamland" href="Dreamland_introduction.html" />
+    <link rel="prev" title="Class Architecture and Overview – Planning Module" href="Class_Architecture_Planning.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Planning模块架构和概述</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/Class_Architecture_Planning_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="planning">
+<h1>Planning模块架构和概述<a class="headerlink" href="#planning" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>数据输入和输出<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<section id="id2">
+<h3>输出数据<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+<p>Planning模块的输出数据类型定义在<code class="docutils literal notranslate"><span class="pre">planning.proto</span></code>，如下图所示：</p>
+<p><img alt="img" src="../../_images/image001.png" /></p>
+<section id="planning-proto">
+<h4><em>planning.proto</em><a class="headerlink" href="#planning-proto" title="永久链接至标题"></a></h4>
+<p>在proto数据的定义中，输出数据包括总时间、总长度和确切的路径信息，输出数据由控制单元解析执行，输出数据结构定义在<code class="docutils literal notranslate"><span class="pre">repeated</span> <span class="pre">apollo.common.TrajectoryPointtrajectory_point</span></code>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">trajectory</span> <span class="pre">point</span></code>类继承自<code class="docutils literal notranslate"><span class="pre">path_point</span></code>类，并新增了speed、acceleration和timing属性。
+定义在<code class="docutils literal notranslate"><span class="pre">pnc_point.proto</span></code>中的<code class="docutils literal notranslate"><span class="pre">trajectory_point</span></code>包含了路径的详细属性。</p>
+<p><img alt="img" src="../../_images/image002.png" /></p>
+<p><img alt="img" src="../../_images/image003.png" /></p>
+<p>除了路径信息，Planning模块输出了多种注释信息。主要的注释数据包括：</p>
+<ul class="simple">
+<li><p>Estop</p></li>
+<li><p>DecisionResult</p></li>
+<li><p>调试信息</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Estop</span></code>是标示了错误和异常的指令。例如，当自动驾驶的车辆碰到了障碍物或者无法遵守交通规则时将发送estop信号。<code class="docutils literal notranslate"><span class="pre">DecisionResult</span></code>主要用于展示模拟的输出结果以方便开发者更好的了解Planning模块的计算结果。更多详细的中间值结果会被保存并输出作为调试信息供后续的调试使用。</p>
+</section>
+</section>
+</section>
+<section id="id3">
+<h2>输入数据<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>为了计算最终的输出路径，Planning模块需要统一的规划多个输入数据。Planning模块的输入数据包括：</p>
+<ul class="simple">
+<li><p>Routing</p></li>
+<li><p>感知和预测</p></li>
+<li><p>车辆状态和定位</p></li>
+<li><p>高清地图</p></li>
+</ul>
+<p>Routing定义了概念性问题“我想去哪儿”，消息定义在<code class="docutils literal notranslate"><span class="pre">routing.proto</span></code>文件中。<code class="docutils literal notranslate"><span class="pre">RoutingResponse</span></code>包含了<code class="docutils literal notranslate"><span class="pre">RoadSegment</span></code>，<code class="docutils literal notranslate"><span class="pre">RoadSegment</span></code>指明了车辆到达目的地应该遵循的路线。</p>
+<p><img alt="img" src="../../_images/image004.png" /></p>
+<p>关于概念性问题“我周围有什么”的消息定义在<code class="docutils literal notranslate"><span class="pre">perception_obstacles.proto</span></code>和<code class="docutils literal notranslate"><span class="pre">traffic_light_detection.proto</span></code>中。<code class="docutils literal notranslate"><span class="pre">perception_obstacles.proto</span></code>定义了表示车辆周围的障碍物的数据，车辆周围障碍物的数据由感知模块提供。<code class="docutils literal notranslate"><span class="pre">traffic_light_detection</span></code>定义了信号灯状态的数据。除了已被感知的障碍物外，动态障碍物的路径预测对Planning模块也是非常重要的数据，因此<code class="docutils literal notranslate"><span class="pre">prediction.proto</span></code>封装了<code class="docutils literal notranslate"><span class="pre">perception_obstacle</span></code>消息来表示预测路径。请参考下述图片：</p>
+<p><img alt="img" src="../../_images/image005.png" /></p>
+<p>每个预测的路径都有其单独的可能性，而且每个动态障碍物可能有多个预测路径。</p>
+<p>除了概念性问题“我想去哪儿”和“我周围有什么”，另外一个重要的概念性问题是“我在哪”。关于该问题的数据通过高清地图和定位模块获得。定位信息和车辆车架信息被封装在<code class="docutils literal notranslate"><span class="pre">VehicleState</span></code>消息中，该消息定义在<code class="docutils literal notranslate"><span class="pre">vehicle_state.proto</span></code>，参考下述图片：</p>
+<p><img alt="img" src="../../_images/image009.png" /></p>
+</section>
+<section id="id4">
+<h2>代码结构和类层次<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>代码组织方式如下图所示：Planning模块的入口是<code class="docutils literal notranslate"><span class="pre">planning.cc</span></code>。在Planning模块内部，重要的类在下图中展示。</p>
+<p><img alt="img" src="../../_images/image006.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">ReferenceLineInfo</span></code>对<code class="docutils literal notranslate"><span class="pre">ReferenceLine</span></code>类进行了封装，为Planning模块提供了平滑的指令执行序列。
+<strong>Frame</strong>包含了所有的数据依赖关系，例如包含了预测路径信息的障碍物，自动驾驶车辆的状态等。
+<strong>HD-Ma</strong>p在Planning模块内作为封装了多个数据的库使用，提供不同特点的地图数据查询需求。
+<strong>EM Planne</strong>r执行具体的Planning任务，继承自<strong>Planner</strong>类。Apollo2.0中的<strong>EM Planner</strong>类和之前发布的<strong>RTK Planner</strong>类都继承自Planner类。</p>
+<p><img alt="img" src="../../_images/image007.png" /></p>
+<p>例如，在EM Planner执行的一次planning循环的内部，采用迭代执行的方法，tasks的三个类别交替执行。“<strong>决策/优化</strong>”类的关系在下述图片中展示：</p>
+<p><img alt="img" src="../../_images/image008.png" /></p>
+<ul class="simple">
+<li><p><strong>Deciders</strong> 包括 traffic decider, path decider and speed decider.</p></li>
+<li><p><strong>Path Optimizers</strong> 为DP/QP path optimizers.</p></li>
+<li><p><strong>Speed Optimizers</strong> 为DP/QP speed optimizers.</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>附注：</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DP表示动态规划（dynamic programming），QP表示二次规划（quadratic programming）。经过计算步骤后，最终的路径数据经过处理后传递到下一个节点模块进行路径的执行。</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Class_Architecture_Planning.html" class="btn btn-neutral float-left" title="Class Architecture and Overview – Planning Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="Dreamland_introduction.html" class="btn btn-neutral float-right" title="Dreamland" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

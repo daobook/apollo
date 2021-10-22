@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release 6.0 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/tabs.js"></script>
+        <script src="_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="Apollo Governance" href="MANIFESTO.html" />
+    <link rel="prev" title="Apollo 行为准则" href="CODE_OF_CONDUCT_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Release 6.0</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/RELEASE.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="release-6-0">
+<h1>Release 6.0<a class="headerlink" href="#release-6-0" title="永久链接至标题"></a></h1>
+<p>Apollo 6.0 incorporates new deep learning models to enhance the capabilities for certain Apollo modules. This version works seamlessly with new additions of data pipeline services to better serve Apollo developers. Apollo 6.0 is also the first version to integrate certain features as a demonstration of our continuous exploration and experimentation efforts towards driverless technology.</p>
+<section id="major-features-and-improvements">
+<h2>Major Features and Improvements<a class="headerlink" href="#major-features-and-improvements" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Upgraded Deep Learning Models</p>
+<ul>
+<li><p>PointPillars based obstacle detection model</p></li>
+<li><p>Semantic map based pedestrian prediction model</p></li>
+<li><p>Learning based trajectory planning model</p></li>
+</ul>
+</li>
+<li><p>Brand New Data Pipeline Services</p>
+<ul>
+<li><p>Low speed obstacle prediction model training service with semantic map support</p></li>
+<li><p>PointPillars based obstacle detection model training service</p></li>
+<li><p>Control profiling service</p></li>
+<li><p>Vehicle dynamic model training service</p></li>
+<li><p>Open space planner profiling service</p></li>
+<li><p>Complete control parameter auto-tune service</p></li>
+</ul>
+</li>
+<li><p>Driverless Research</p>
+<ul>
+<li><p>Remote control interface with DreamView integration</p></li>
+<li><p>Audio based emergency vehicle detection system</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>[Note]</strong> All models and methodologies included in Apollo 6.0 are for research purposes only. Productized and commercial uses of these models are <strong>NOT</strong> encouraged, and it is at your own risk. Please be cautious to try Apollo 6.0 with enough safety protection mechanism. Your feedback is highly appreciated for us to continuously improve the models.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-5-5">
+<h1>Release 5.5<a class="headerlink" href="#release-5-5" title="永久链接至标题"></a></h1>
+<p>Apollo 5.5 enhances the complex urban road autonomous driving capabilities of previous Apollo releases, by introducing curb-to-curb driving support. With this new addition, Apollo is now a leap closer to fully autonomous urban road driving. The car has complete 360-degree visibility, along with upgraded perception deep learning model a brand new prediction model to handle the changing conditions of complex road and junction scenarios, making the car more secure and aware. New Planning scenarios have been introduced to support curb-side functionality.</p>
+<section id="id1">
+<h2>Major Features And Improvements<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Brand new Data Pipeline Service</p>
+<ul>
+<li><p>Sensor Calibration service</p></li>
+</ul>
+</li>
+<li><p>Brand new module - Storytelling</p></li>
+<li><p>Scenario - Based Planning with a new planning scenarios to support curb-to-curb driving</p>
+<ul>
+<li><p>Park-and-go</p></li>
+<li><p>Emergency</p></li>
+</ul>
+</li>
+<li><p>Prediction Model - Caution Obstacle</p>
+<ul>
+<li><p>Semantic LSTM evaluator</p></li>
+<li><p>Extrapolation predictor</p></li>
+</ul>
+</li>
+<li><p>Control module</p>
+<ul>
+<li><p>Model Reference Adaptive Control (MRAC)</p></li>
+<li><p>Control profiling service</p></li>
+</ul>
+</li>
+<li><p>Simulation scenarios</p></li>
+</ul>
+</section>
+<section id="autonomous-drive-capabilities">
+<h2>Autonomous Drive Capabilities<a class="headerlink" href="#autonomous-drive-capabilities" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously in complex urban road conditions including both residential and downtown areas. <strong>BE CAUTIOUS WHEN DRIVING AUTONOMOUSLY, ESPECIALLY AT NIGHT OR IN POOR VISION ENVIRONMENT. URBAN DRIVING INVOLVES NAVIGATING HIGH RISK ZONES LIKE SCHOOLS, PLEASE TEST APOLLO 5.0 WITH THE SUPPORT FROM APOLLO ENGINEERING TEAM, PLEASE AVOID DRIVING THE VEHICLE ON THE HIGHWAY OR AT SPEEDS THAT ARE ABOVE OUR SUPPORTED THRESHOLD</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-5-0">
+<h1>Release 5.0<a class="headerlink" href="#release-5-0" title="永久链接至标题"></a></h1>
+<p>Apollo 5.0 is an effort to support volume production for Geo-Fenced Autonomous Driving. The car now has 360-degree visibility, along with upgraded perception deep learning model to handle the changing conditions of complex road scenarios, making the car more secure and aware. Scenario-based planning has been enhanced to support additional scenarios like pull over and crossing bare intersections.</p>
+<section id="id2">
+<h2>Major Features And Improvements<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Brand new Data Pipeline Service</p>
+<ul>
+<li><p>Vehicle Calibration</p></li>
+</ul>
+</li>
+<li><p>New Perception algorithms</p></li>
+<li><p>Sensor Calibration Service</p></li>
+<li><p>Scenario - Based Planning with a new planning algorithm, Open Space Planner and new scenarios supported</p>
+<ul>
+<li><p>Intersection - STOP Sign, Traffic Light, Bare Intersection</p></li>
+<li><p>Park - Valet, Pull Over</p></li>
+</ul>
+</li>
+<li><p>Map Data Verification tool</p></li>
+<li><p>Prediction Evaluators</p></li>
+<li><p>Simulation web platform - Dreamland</p>
+<ul>
+<li><p>Scenario Editor</p></li>
+<li><p>Control-in-loop Simulation</p></li>
+</ul>
+</li>
+<li><p>Apollo Synthetic Data Set</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>Autonomous Drive Capabilities<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously in complex urban road conditions including both residential and downtown areas. <strong>BE CAUTIOUS WHEN DRIVING AUTONOMOUSLY, ESPECIALLY AT NIGHT OR IN POOR VISION ENVIRONMENT. URBAN DRIVING INVOLVES NAVIGATING HIGH RISK ZONES LIKE SCHOOLS, PLEASE TEST APOLLO 5.0 WITH THE SUPPORT FROM APOLLO ENGINEERING TEAM, PLEASE AVOID DRIVING THE VEHICLE ON THE HIGHWAY OR AT SPEEDS THAT ARE ABOVE OUR SUPPORTED THRESHOLD</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-3-5">
+<h1>Release 3.5<a class="headerlink" href="#release-3-5" title="永久链接至标题"></a></h1>
+<p>Apollo 3.5 is capable of navigating through complex driving scenarios such as residential and downtown areas. With 360-degree visibility and upgraded perception algorithms to handle the changing conditions of urban roads, the car is more secure and aware.</p>
+<section id="id4">
+<h2>Major Features And Improvements<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Upgraded Sensor Suite</p>
+<ul>
+<li><p>VLS - 128 Line LiDAR</p></li>
+<li><p>FPD-Link Cameras</p></li>
+<li><p>Continental high-range function radars</p></li>
+<li><p>Apollo Expansion Unit (AXU)</p></li>
+<li><p>Additional IPC</p></li>
+</ul>
+</li>
+<li><p>Brand new Runtime Framework - <strong>Apollo CyberRT</strong> which is specifically targeted towards autonomous driving</p></li>
+<li><p>New Perception algorithms</p></li>
+<li><p>Scenario - Based Planning with a new planning algorithm, Open Space Planner</p></li>
+<li><p>New Localization algorithm</p></li>
+<li><p>V2X Capabilities</p></li>
+<li><p>Open Vehicle Certification platform - 2 new vehicles added <strong>GAC GE3</strong> and <strong>GWM WEY VV6</strong></p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>Autonomous Drive Capabilities<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously in complex urban road conditions including both residential and downtown areas. <strong>BE CAUTIOUS WHEN DRIVING AUTONOMOUSLY, ESPECIALLY AT NIGHT OR IN POOR VISION ENVIRONMENT. URBAN DRIVING INVOLVES NAVIGATING HIGH RISK ZONES LIKE SCHOOLS, PLEASE TEST APOLLO 3.5 WITH THE SUPPORT FROM APOLLO ENGINEERING TEAM</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-3-0">
+<h1>Release 3.0<a class="headerlink" href="#release-3-0" title="永久链接至标题"></a></h1>
+<p>Apollo 3.0 enables L4 product level solution that allows vehicles to drive in a closed venue setting at a low speed. Automakers can now leverage this one stop solution for autonomous driving without having to customize on their own.</p>
+<section id="id6">
+<h2>Major Features And Improvements<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>New Safety module called Guardian</p></li>
+<li><p>Enhanced Surveillance module - Monitor</p></li>
+<li><p>Hardware service layer that will now act like a platform and not a product, giving developers the flexibility to integrate their own Hardware</p></li>
+<li><p>Apollo Sensor Unit (ASU)</p></li>
+<li><p>New Gatekeeper - Ultrasonic Sensor</p></li>
+<li><p>Perception module changes:</p>
+<ul>
+<li><p><strong>CIPV(Closest In-Path Vehicle) detection and Tailgating</strong>: The vehicle in front of the ego-car is detected and its trajectory is estimated for more efficient tailgating and lane keeping when lane detection is unreliable.</p></li>
+<li><p><strong>Asynchronous sensor fusion</strong>: unlike the previous version, Perception in Apollo 3.0 is capable of consolidating all the information and data points by asynchronously fusing LiDAR, Radar and Camera data. Such conditions allow for more comprehensive data capture and reflect more practical sensor environments.</p></li>
+<li><p><strong>Online pose estimation</strong>: This new feature estimates the pose of an ego-vehicle for every single frame. This feature helps to drive through bumps or slopes on the road with more accurate 3D scene understanding.</p></li>
+<li><p><strong>Ultrasonic sensors</strong>: Perception in Apollo 3.0 now works with ultrasonic sensors. The output can be used for Automated Emergency Brake (AEB) and vertical/perpendicular parking.</p></li>
+<li><p><strong>Whole lane line</strong>: Unlike previous lane line segments, this whole lane line feature will provide more accurate and long range detection of lane lines.</p></li>
+<li><p><strong>Visual localization</strong>: Cameras are currently being tested to aid and enhance localization</p></li>
+<li><p><strong>16 beam LiDAR support</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="autonomous-driving-capabilities">
+<h2>Autonomous Driving Capabilities<a class="headerlink" href="#autonomous-driving-capabilities" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously in a Closed Venue setting. It is a production ready version for low-speed autonomous driving capabilities.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-2-5">
+<h1>Release 2.5<a class="headerlink" href="#release-2-5" title="永久链接至标题"></a></h1>
+<p>This release allows the vehicle to autonomously run on geo-fenced highways. Vehicles are able to do lane keeping cruise and avoid collisions with the leading vehicles.</p>
+<section id="id7">
+<h2>Major Features And Improvements<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Upgrade localization based on multiple sensor fusion (MSF)</p></li>
+<li><p>Upgrade DreamView with more visualization features</p></li>
+<li><p>Add HD map data collection tool</p></li>
+<li><p>Add vision based perception with obstacle and lane mark detections</p></li>
+<li><p>Add relative map to support ACC and lane keeping for planning and control</p></li>
+<li><p>Make docker file available</p></li>
+</ul>
+</section>
+<section id="id8">
+<h2>Autonomous Drive Capabilities<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously on highways at higher speed with limited HD map support. The highway needs to have clear white painted lane marks with minimum curvatures. The performance of vision based perception will degrade significantly at night or with strong light flares. <strong>BE CAUTIOUS WHEN DRIVING AUTONOMOUSLY, ESPECIALLY AT NIGHT OR IN POOR VISION ENVIRONMENT. PLEASE TEST APOLLO 2.5 WITH THE SUPPORT FROM APOLLO ENGINEERING TEAM</strong>.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-2-0">
+<h1>Release 2.0<a class="headerlink" href="#release-2-0" title="永久链接至标题"></a></h1>
+<p>This release supports that vehicles autonomously drive on simple urban roads. Vehicles are able to cruise and avoid collisions with obstacles, stop at traffic lights and change lanes if needed to reach the destination.</p>
+<section id="id9">
+<h2>Major Features And Improvements<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Add traffic light detection</p></li>
+<li><p>Add obstacle classification and support obstacle categories: <em>vehicle</em>, <em>pedestrian</em>, <em>cyclist</em> and <em>unknown</em></p></li>
+<li><p>Upgrade planning capability to change lanes in order to reach the destination</p></li>
+<li><p>Add point cloud based localization algorithm fusion with RTK</p></li>
+<li><p>Add MPC based control algorithm</p></li>
+<li><p>Add RNN model for traffic prediction</p></li>
+<li><p>Integrate HMI and DreamView</p></li>
+<li><p>Redesign DreamView and upgrade it with additional debugging visualization tools</p></li>
+<li><p>Add additional debugging tools in <code class="docutils literal notranslate"><span class="pre">modules/tools</span></code></p></li>
+<li><p>Add release docker image upgrade through secure OTA</p></li>
+<li><p>Add USB camera and radar driver support</p></li>
+</ul>
+</section>
+<section id="id10">
+<h2>Autonomous Driving Capabilities<a class="headerlink" href="#id10" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version can drive autonomously on simple urban roads with light to medium traffic at slow to medium speed.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-1-5">
+<h1>Release 1.5<a class="headerlink" href="#release-1-5" title="永久链接至标题"></a></h1>
+<p>This release supports that vehicles autonomously cruise on fixed lanes.</p>
+<section id="id11">
+<h2>Major Features And Improvements<a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Add routing, perception, prediction, planning and end-to-end</p>
+<ul>
+<li><p><strong><em>Perception</em></strong>: 3D point cloud based obstacle detection and tracking with GPU support</p></li>
+<li><p><strong><em>Prediction</em></strong>: Deep neural network MLP prediction model and multiple predictors handling different categories of obstacles</p></li>
+<li><p><strong><em>Planning</em></strong>: traffic law modules, multiple iterations of DP and QP optimizations for path and speed</p></li>
+<li><p><strong><em>End-to-end</em></strong>: Mixed deep neural network models with convolutional LSTM in longitudinal and FCNN in lateral</p></li>
+</ul>
+</li>
+<li><p>Add HD Map engine APIs</p></li>
+<li><p>Add Velodyne 64 LiDAR driver support</p></li>
+<li><p>Add debugging tools in <code class="docutils literal notranslate"><span class="pre">modules/tools/</span></code></p></li>
+<li><p>Improve HMI and DreamView features to allow realtime traffic display and traffic scenario replay.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h2>Autonomous Driving Capabilities<a class="headerlink" href="#id12" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version do <strong>NOT</strong> detect traffic lights. Vehicles will <strong>NOT</strong> stop at red traffic lights. Neither will they change lanes on the road.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="release-1-0">
+<h1>Release 1.0<a class="headerlink" href="#release-1-0" title="永久链接至标题"></a></h1>
+<p>Initial release of Apollo implements autonomous GPS waypoint following.</p>
+<section id="id13">
+<h2>Major Features And Improvements<a class="headerlink" href="#id13" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Include localization, control</p>
+<ul>
+<li><p><strong><em>Location</em></strong>: RTK</p></li>
+<li><p><strong><em>Control</em></strong>: calibration table in longitudinal and LQR in lateral</p></li>
+</ul>
+</li>
+<li><p>Add GPS/IMU gnss driver support</p></li>
+<li><p>Use HMI to record and replay a trajectory, and DreamView to visualize vehicle trajectory</p></li>
+<li><p>Include debugging tools in <code class="docutils literal notranslate"><span class="pre">modules/tools/</span></code></p></li>
+</ul>
+</section>
+<section id="id14">
+<h2>Autonomous Driving Capabilities<a class="headerlink" href="#id14" title="永久链接至标题"></a></h2>
+<p>Vehicles with this version do <strong>NOT</strong> perceive obstacles in close promixity. Neither can they drive on public roads or areas without GPS signals.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CODE_OF_CONDUCT_cn.html" class="btn btn-neutral float-left" title="Apollo 行为准则" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="MANIFESTO.html" class="btn btn-neutral float-right" title="Apollo Governance" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

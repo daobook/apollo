@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基于激光雷达的封闭园区自动驾驶搭建–感知适配 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="封闭园区自动驾驶搭建–规划适配" href="planning_configuration_cn.html" />
+    <link rel="prev" title="基于摄像头的封闭园区自动驾驶搭建–自动驾驶演示" href="../Camera_Based_Auto_Driving/start_auto_driving_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>基于激光雷达的封闭园区自动驾驶搭建–感知适配</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/D-kit/Lidar_Based_Auto_Driving/perception_configuration_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>基于激光雷达的封闭园区自动驾驶搭建–感知适配<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#%E5%9F%BA%E4%BA%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E7%9A%84%E5%B0%81%E9%97%AD%E5%9B%AD%E5%8C%BA%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E6%90%AD%E5%BB%BA--%E6%84%9F%E7%9F%A5%E9%80%82%E9%85%8D">基于激光雷达的封闭园区自动驾驶搭建–感知适配</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E6%A6%82%E8%A7%88">概览</a></p></li>
+<li><p><a class="reference external" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></p></li>
+<li><p><a class="reference external" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9">配置文件的修改</a></p></li>
+<li><p><a class="reference external" href="#%E5%90%AF%E5%8A%A8lidar%E6%84%9F%E7%9F%A5">启动Lidar感知</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E5%90%AF%E5%8A%A8can%E5%8D%A1">1. 启动can卡</a></p></li>
+<li><p><a class="reference external" href="#2-%E7%BC%96%E8%AF%91%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8dreamview">2. 编译项目，启动Dreamview</a></p></li>
+<li><p><a class="reference external" href="#3-%E5%90%AF%E5%8A%A8%E6%89%80%E9%9C%80%E6%A8%A1%E5%9D%97">3. 启动所需模块</a></p></li>
+<li><p><a class="reference external" href="#4-%E6%A3%80%E6%9F%A5lidar%E6%95%B0%E6%8D%AE%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE">4. 检查lidar数据是否正确</a></p></li>
+<li><p><a class="reference external" href="#5-%E5%90%AF%E5%8A%A8lidar%E6%84%9F%E7%9F%A5">5. 启动Lidar感知</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#%E9%AA%8C%E8%AF%81lidar%E6%84%9F%E7%9F%A5%E6%95%88%E6%9E%9C">验证Lidar感知效果</a></p></li>
+<li><p><a class="reference external" href="#next">NEXT</a></p></li>
+<li><p><a class="reference external" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E6%84%9F%E7%9F%A5%E7%9A%84%E8%BE%93%E5%87%BA%E5%B8%A7%E7%8E%87%E8%BE%BE%E4%B8%8D%E5%88%B010%E5%B8%A7">1. 感知的输出帧率达不到10帧</a></p></li>
+<li><p><a class="reference external" href="#2-%E6%84%9F%E7%9F%A5%E7%9A%84%E9%9A%9C%E7%A2%8D%E7%89%A9%E4%BD%8D%E7%BD%AE%E4%B8%8E%E5%AE%9E%E9%99%85%E9%9A%9C%E7%A2%8D%E7%89%A9%E8%AF%AF%E5%B7%AE%E8%BE%83%E5%A4%A7">2. 感知的障碍物位置与实际障碍物误差较大</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h2>概览<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>该用户手册旨在帮助用户完成激光雷达感知适配，实现Lidar感知</p>
+</section>
+<section id="id3">
+<h2>前提条件<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<ol class="simple">
+<li><p>正确完成了<a class="reference internal" href="../Waypoint_Following/start_waypoint_following_cn.html"><span class="doc std std-doc">循迹搭建–车辆循迹演示</span></a></p></li>
+<li><p>正确完成了<a class="reference internal" href="sensor_integration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知设备集成</span></a></p></li>
+<li><p>正确完成了<a class="reference internal" href="sensor_calibration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知设备标定</span></a></p></li>
+</ol>
+</section>
+<section id="id4">
+<h2>配置文件的修改<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>待修改文件</p></th>
+<th class="head"><p>修改内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">modules/common/data/global_flagfile.txt</span></code></p></td>
+<td><p>添加<code class="docutils literal notranslate"><span class="pre">--half_vehicle_width=0.43</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lidar">
+<h2>启动Lidar感知<a class="headerlink" href="#lidar" title="永久链接至标题"></a></h2>
+<p>把车辆开到户外，启动lidar感知</p>
+<section id="can">
+<h3>1. 启动can卡<a class="headerlink" href="#can" title="永久链接至标题"></a></h3>
+<p>进入can卡目录启动can卡，用以下命令启动</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ~/SocketCan/
+bash start.sh
+</pre></div>
+</div>
+</section>
+<section id="dreamview">
+<h3>2. 编译项目，启动Dreamview<a class="headerlink" href="#dreamview" title="永久链接至标题"></a></h3>
+<p>进入docker环境，用gpu编译项目，启动DreamView</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd /apollo
+bash docker/scripts/dev_start.sh
+bash docker/scripts/dev_into.sh
+bash apollo.sh build_opt_gpu
+bash scripts/bootstrap.sh
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>3. 启动所需模块<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+<ul>
+<li><p>在浏览器中打开<code class="docutils literal notranslate"><span class="pre">(http://localhost:8888)</span></code>，选择模式为<code class="docutils literal notranslate"><span class="pre">Dev</span> <span class="pre">Kit</span> <span class="pre">Debug</span></code>， 根据车辆铭牌信息选择对应的车型(详情见下表)，在Module Controller标签页启动Canbus、GPS、Localization、Transform模块。</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>铭牌信息</p></th>
+<th class="head"><p>车型选择</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Apollo D-KIT Lite</p></td>
+<td><p>dev_kit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Standard</p></td>
+<td><p>dev_kit_standard</p></td>
+</tr>
+<tr class="row-even"><td><p>Apollo D-KIT Advanced(NE-S)</p></td>
+<td><p>dev_kit_advanced_ne-s</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Advanced(SNE-R)</p></td>
+<td><p>dev_kit_advanced_sne-r</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="lidar_adaptation_dreamview1" src="../../../_images/lidar_adaptation_dreamview4.png" /></p>
+</li>
+<li><p>定位模块启动后，需要接收定位数据，需要等待约1分钟左右。打开新的终端，并使用<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">docker/scripts/dev_into.sh</span></code>命令进入docker环境，在新终端中输入<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>命令查看<code class="docutils literal notranslate"><span class="pre">tf</span></code>、<code class="docutils literal notranslate"><span class="pre">tf_static</span></code>、<code class="docutils literal notranslate"><span class="pre">/apollo/localization/pose</span></code>数据，这三个数据在cyber_monitor中均显示为绿色代表定位模块启动成功
+<img alt="lidar_integration_localization_check" src="../../../_images/lidar_integration_localization_check.png" /></p></li>
+<li><p>在dreamview中启动<code class="docutils literal notranslate"><span class="pre">lidar</span></code>模块</p>
+<p><img alt="lidar_integration_start_lidar" src="../../../_images/lidar_integration_start_lidar.png" /></p>
+</li>
+</ul>
+</section>
+<section id="id6">
+<h3>4. 检查lidar数据是否正确<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<ul>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>，查看激光雷达相关channel是否正常输出，并使用上下方向键选择channel，使用右方向键查看channel详细数据。(关于cyber_monitor更详细使用，请参考<a class="reference internal" href="../../cyber/CyberRT_Developer_Tools.html"><span class="doc std std-doc">CyberRT_Developer_Tools</span></a>)</p></li>
+<li><p>单激光雷达用户用户，请检查如下channel是否正常输出</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>channel</p></th>
+<th class="head"><p>帧率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/Scan</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/compensator/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p><img alt="lidar_integration_cyber_monitor" src="../../../_images/lidar_integration_cyber_monitor.png" /></p>
+<ul>
+<li><p>三激光雷达用户用户，请检查如下channel是否正常输出</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>channel</p></th>
+<th class="head"><p>帧率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/back/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/left/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/right/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/fusion/PointCloud2</span></code></p></td>
+<td><p>10HZ</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/lidar16/compensator/PointCloud2</span></code></p></td>
+<td><p>10Hz</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</section>
+<section id="id7">
+<h3>5. 启动Lidar感知<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<p>在dreamview中启动<code class="docutils literal notranslate"><span class="pre">lidar</span> <span class="pre">perception</span></code>模块，使用<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>查看<code class="docutils literal notranslate"><span class="pre">/apollo/perception/obstacles</span></code>是否正常输出，并在dreamview上查看障碍物信息：</p>
+<p><img alt="lidar_adaptation_dreamview3" src="../../../_images/lidar_adaptation_dreamview3.png" /></p>
+</section>
+</section>
+<section id="id8">
+<h2>验证Lidar感知效果<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+<p>查看车前方10米处运动的人或者自行车（自行车上要有人），在DreamView上查看障碍物颜色以及位置速度信息（自行车青蓝色，行人黄色，车辆绿色），如下图所示：</p>
+<p><img alt="lidar_adaptation_dreamview2" src="../../../_images/lidar_adaptation_dreamview2.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">/apollo/perception/obstacles</span></code>的数据如下图所示：</p>
+<p><img alt="lidar_adaptation_obstacles1" src="../../../_images/lidar_adaptation_obstacles1.png" /></p>
+<p><img alt="lidar_adaptation_obstacles2" src="../../../_images/lidar_adaptation_obstacles2.png" /></p>
+<p>如果在dreamview上能看到障碍物并且<code class="docutils literal notranslate"><span class="pre">/apollo/perception/obstacles</span></code>有障碍物信息，则开环测试通过。</p>
+</section>
+<section id="next">
+<h2>NEXT<a class="headerlink" href="#next" title="永久链接至标题"></a></h2>
+<p>现在，您已经完成激光雷达感知适配，接下来可以开始<a class="reference internal" href="planning_configuration_cn.html"><span class="doc std std-doc">封闭园区自动驾驶搭建–规划适配</span></a></p>
+</section>
+<section id="id9">
+<h2>常见问题<a class="headerlink" href="#id9" title="永久链接至标题"></a></h2>
+<section id="id10">
+<h3>1. 感知的输出帧率达不到10帧<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>建议使用 <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">apollo.sh</span> <span class="pre">build_opt_gpu</span></code> 编译Apollo工程</p></li>
+</ul>
+</section>
+<section id="id11">
+<h3>2. 感知的障碍物位置与实际障碍物误差较大<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>确认localization信号状态，保证<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/best_pose</span></code>中<code class="docutils literal notranslate"><span class="pre">sol_type</span></code> 选项显示为<code class="docutils literal notranslate"><span class="pre">NARROW_INT</span></code></p></li>
+<li><p>保证各个传感器外参文件准确</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Camera_Based_Auto_Driving/start_auto_driving_cn.html" class="btn btn-neutral float-left" title="基于摄像头的封闭园区自动驾驶搭建–自动驾驶演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="planning_configuration_cn.html" class="btn btn-neutral float-right" title="封闭园区自动驾驶搭建–规划适配" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

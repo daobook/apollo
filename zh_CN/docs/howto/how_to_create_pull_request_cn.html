@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何创建合入请求(Pull Request) &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to Debug Apollo" href="how_to_debug.html" />
+    <link rel="prev" title="How to Create a Pull Request" href="how_to_create_pull_request.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何创建合入请求(Pull Request)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_create_pull_request_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="pull-request">
+<h1>如何创建合入请求(Pull Request)<a class="headerlink" href="#pull-request" title="永久链接至标题"></a></h1>
+<p>本文档以 Apollo 项目为例，引导新手逐步熟悉创建代码合入请求（Pull Request）的步骤
+。另，可参考<a class="reference external" href="https://help.github.com/articles/using-pull-requests/">GitHub 页</a>
+了解更多。</p>
+<section id="apollo">
+<h2>第一步：创建您个人的 Apollo 代码分支<a class="headerlink" href="#apollo" title="永久链接至标题"></a></h2>
+<p>这可以通过点击<a class="reference external" href="https://github.com/ApolloAuto/apollo">Apollo 的 GitHub 页</a> 右上角
+的【Fork】按钮并按照其指引操作来完成。</p>
+</section>
+<section id="id1">
+<h2>第二步：克隆您的 Apollo 分支仓库<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>注：</p>
+<blockquote>
+<div><p>请用您的 GitHub 用户名替换以下描述中的”YOUR_USERNAME”。</p>
+</div></blockquote>
+<p>打开终端，输入以下任一命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 SSH 方式</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
+
+<span class="c1"># 使用 HTTPS 方式</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>第三步：设置您的用户名和电子邮件地址<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span>  <span class="s2">&quot;My Name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;myname@example.com&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="apollo-upstream">
+<h2>第四步： 将 Apollo 官方仓库设为 upstream 上游分支<a class="headerlink" href="#apollo-upstream" title="永久链接至标题"></a></h2>
+<p>设置上游分支以便后续同步远端 upstream 分支的代码变更，这可以通过如下命令完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用SSH</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
+
+<span class="c1"># 使用 HTTPS</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>通过如下命令查看 upstream 是否设置成功：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+<p>如成功，则会显示如下的 remotes 列表：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<span class="n">upstream</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">upstream</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>第五步：创建分支，做出修改，提交变更<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_dev</span> <span class="n">origin</span><span class="o">/</span><span class="n">master</span>
+
+<span class="c1"># 在您的my_dev分支修复问题，添加新功能，等等</span>
+<span class="c1"># ...</span>
+
+<span class="c1"># 将代码变动提交到您的本地分支，注意提交消息格式</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;[module] brief description of the changes&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>第六步：同步上游仓库变更<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span>  <span class="n">upstream</span> <span class="n">master</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>第七步：将您的本地修改推送到您个人的 Apollo 分支仓库<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my_dev</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>第八步，生成代码合并请求<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+<p>通过点击您的 Apollo 克隆 GitHub 页（通常
+为https://github.com/YOUR_USERNAME/apollo) 上的”Pull Request” 按钮新建从
+“YOUR_USERNAME/apollo:my_dev” 到 “Apolloauto/apollo:master” 的代码合并请求。</p>
+<p>可参
+考<a class="reference external" href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">GitHub 页：创建合并请求</a>
+的描述来完成代码合并请求。</p>
+<p><strong>注</strong>：</p>
+<blockquote>
+<div><p>请不要忘了添加您的 PR 的描述。PR 描述可以帮助代码评审人员更好地理解您的代码变
+更的意图。</p>
+</div></blockquote>
+<p>作为开源项目，我们作为 Apollo 团队成员，很乐意评审并合入您提交的代码。但限于精力
+，可能您的 PR 从提交到合入需要花一些时间，请给我们一点耐心。</p>
+</section>
+<section id="id7">
+<h2>最后：大功告成<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<p>感谢您的 PR！</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_create_pull_request.html" class="btn btn-neutral float-left" title="How to Create a Pull Request" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_debug.html" class="btn btn-neutral float-right" title="How to Debug Apollo" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

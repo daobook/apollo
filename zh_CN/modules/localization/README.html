@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localization &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="定位" href="README_cn.html" />
+    <link rel="prev" title="ultrasonic_radar" href="../drivers/radar/ultrasonic_radar/README_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Localization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/modules/localization/README.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="localization">
+<h1>Localization<a class="headerlink" href="#localization" title="永久链接至标题"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<p>This module provides localization services. There are two ways in which localization is provided:</p>
+<ul class="simple">
+<li><p>The RTK (Real Time Kinematic) based method which incorporates GPS and IMU (Inertial Measurement Unit) information</p></li>
+<li><p>The  multi-sensor fusion method which incorporates GPS, IMU, and LiDAR information.</p></li>
+</ul>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="永久链接至标题"></a></h2>
+<p>In the provided RTK localization method, there are two inputs:</p>
+<ul class="simple">
+<li><p>GPS - The Global Positioning System</p></li>
+<li><p>IMU - Inertial Measurement Unit</p></li>
+</ul>
+<p>In the  multi-sensor fusion localization method, there are three inputs:</p>
+<ul class="simple">
+<li><p>GPS - The Global Positioning System</p></li>
+<li><p>IMU - Inertial Measurement Unit</p></li>
+<li><p>LiDAR - Light Detection And Ranging Sensor</p></li>
+</ul>
+<p>For more information, refer to</p>
+<p>Guowei Wan, Xiaolong Yang, Renlan Cai, Hao Li, Yao Zhou, Hao Wang, Shiyu Song. “Robust and Precise Vehicle Localization Based on Multi-Sensor Fusion in Diverse City Scenes,” 2018 IEEE International Conference on Robotics and Automation (ICRA), Brisbane, QLD, 2018, pp. 4670-4677.
+doi: 10.1109/ICRA.2018.8461224. <a class="reference external" href="https://ieeexplore.ieee.org/document/8461224">link</a></p>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="永久链接至标题"></a></h2>
+<p>An object instance defined by Protobuf message <code class="docutils literal notranslate"><span class="pre">LocalizationEstimate</span></code>, which can be found in file <code class="docutils literal notranslate"><span class="pre">localization/proto/localization.proto</span></code>.</p>
+</section>
+<section id="implementing-localization">
+<h2>Implementing Localization<a class="headerlink" href="#implementing-localization" title="永久链接至标题"></a></h2>
+<p>Currently the RTK based localization is implemented in class <code class="docutils literal notranslate"><span class="pre">RTKLocalization</span></code>. If you are implementing a new localization method, for example, <code class="docutils literal notranslate"><span class="pre">FooLocalization</span></code>, you would need to perform the following steps:</p>
+<ol class="simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">proto/localization_config.proto</span></code>, add a value <code class="docutils literal notranslate"><span class="pre">FOO</span></code> to the <code class="docutils literal notranslate"><span class="pre">LocalizationType</span></code> enum type</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">modules/localization</span></code> directory, and create a <code class="docutils literal notranslate"><span class="pre">foo</span></code> directory. In the <code class="docutils literal notranslate"><span class="pre">foo</span></code> directory, implement the class <code class="docutils literal notranslate"><span class="pre">FooLocalization</span></code> by following the code in the <code class="docutils literal notranslate"><span class="pre">RTKLocalization</span></code> class in the <code class="docutils literal notranslate"><span class="pre">rtk</span></code> directory. <code class="docutils literal notranslate"><span class="pre">FooLocalization</span></code> has to be a subclass of <code class="docutils literal notranslate"><span class="pre">LocalizationBase</span></code>. Also create a file <code class="docutils literal notranslate"><span class="pre">foo/BUILD</span></code> by following the file <code class="docutils literal notranslate"><span class="pre">rtk/BUILD</span></code></p></li>
+<li><p>You need to register the <code class="docutils literal notranslate"><span class="pre">FooLocalization</span></code> class in the function <code class="docutils literal notranslate"><span class="pre">Localization::RegisterLocalizationMethods()</span></code>, which is located in the <code class="docutils literal notranslate"><span class="pre">localization.cc</span></code> file. You can register it by inserting the following code at the end of the function:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">localization_factory_</span><span class="o">.</span><span class="n">Register</span><span class="p">(</span><span class="n">LocalizationConfig</span><span class="p">::</span><span class="n">FOO</span><span class="p">,</span> <span class="p">[]()</span><span class="o">-&gt;</span><span class="n">LocalizationBase</span><span class="o">*</span> <span class="p">{</span> <span class="k">return</span> <span class="n">new</span> <span class="n">FooLocalization</span><span class="p">();</span> <span class="p">});</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Make sure your code compiles by including the header files that defines class <code class="docutils literal notranslate"><span class="pre">FooLocalization</span></code></p></li>
+<li><p>Now you can go back to the <code class="docutils literal notranslate"><span class="pre">apollo</span></code> root directory and build your code with command <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">apollo.sh</span> <span class="pre">build</span></code></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../drivers/radar/ultrasonic_radar/README_cn.html" class="btn btn-neutral float-left" title="ultrasonic_radar" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="README_cn.html" class="btn btn-neutral float-right" title="定位" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

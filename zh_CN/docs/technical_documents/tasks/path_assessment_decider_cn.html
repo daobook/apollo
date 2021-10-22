@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>路径评估决策 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="路径边界决策" href="path_bounds_decider_cn.html" />
+    <link rel="prev" title="PREDICTION PREDICTOR" href="../prediction_predictor.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>路径评估决策</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/technical_documents/tasks/path_assessment_decider_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="toc-backref" href="#id12">路径评估决策</a><a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="contents topic" id="id2">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id12">路径评估决策</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id13">概览</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id14">路径评估决策相关代码及对应版本</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id15">路径评估决策代码流程及框架</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id16">路径重复使用</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id17">去掉无效路径</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id18">分析并加入重要信息</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id19">排序并选出最有路径</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id20">更新必要信息</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id11" id="id21">路径排序算法解析</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="id3">
+<h2><a class="toc-backref" href="#id13">概览</a><a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">路径评估决策</span></code>是规划模块的任务，属于task中的decider类别。</p>
+<p>规划模块的运动总体流程图如下：</p>
+<p><img alt="总体流程图" src="../../../_images/lane_follow.png" /></p>
+<p>总体流程图以<a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/conf/scenario/lane_follow_config.pb.txt">lane follow</a>场景为例子进行说明。task的主要功能位于<code class="docutils literal notranslate"><span class="pre">Process</span></code>函数中。</p>
+<p>Fig.1的具体运行过程可以参考<span class="xref myst">path_bounds_decider</span>。</p>
+</section>
+<section id="id4">
+<h2><a class="toc-backref" href="#id14">路径评估决策相关代码及对应版本</a><a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+<p>本节说明path assessment decider的代码流程。</p>
+<p>请参考代码<a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/r6.0.0/modules/planning/tasks/deciders/path_assessment_decider">Apollo r6.0.0 path_assessment_decider</a></p>
+<ul class="simple">
+<li><p>输入</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Status</span> <span class="pre">PathAssessmentDecider::Process(Frame*</span> <span class="pre">const</span> <span class="pre">frame,</span> <span class="pre">ReferenceLineInfo*</span> <span class="pre">const</span> <span class="pre">reference_line_info)</span></code></p>
+<p>输入Frame，reference_line_info。具体解释可以参考<span class="xref myst">path_bounds_decider</span>。</p>
+<ul class="simple">
+<li><p>输出</p></li>
+</ul>
+<p>路径排序之后，选择第一个路径。结果保存在reference_line_info中。</p>
+</section>
+<section id="id5">
+<h2><a class="toc-backref" href="#id15">路径评估决策代码流程及框架</a><a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>代码主体流程如下图：</p>
+<p><img alt="流程图" src="../../../_images/path_assessment.png" /></p>
+<section id="id6">
+<h3><a class="toc-backref" href="#id16">路径重复使用</a><a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 如果路径重复使用则跳过</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">FLAGS_enable_skip_path_tasks</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_reusable</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="o">::</span><span class="n">OK</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3><a class="toc-backref" href="#id17">去掉无效路径</a><a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 1. 删掉无效路径.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">PathData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">curr_path_data</span> <span class="p">:</span><span class="w"> </span><span class="n">candidate_path_data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// RecordDebugInfo(curr_path_data, curr_path_data.path_label(),</span>
+<span class="w">    </span><span class="c1">//                 reference_line_info);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;fallback&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsValidFallbackPath</span><span class="p">(</span><span class="o">*</span><span class="n">reference_line_info</span><span class="p">,</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsValidRegularPath</span><span class="p">(</span><span class="o">*</span><span class="n">reference_line_info</span><span class="p">,</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_time1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end_time1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">end_time0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time for path validity checking: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; msec.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+</pre></div>
+</div>
+<p>其中fallback的无效路径是偏离参考线以及道路的路径。regular的无效路径是偏离参考线、道路，碰撞，停在相邻的逆向车道的路径。</p>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id18">分析并加入重要信息</a><a class="headerlink" href="#id8" title="永久链接至标题"></a></h3>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 2. 分析并加入重要信息给speed决策</span>
+<span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="n">cnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Obstacle</span><span class="o">*</span><span class="w"> </span><span class="n">blocking_obstacle_on_selflane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">curr_path_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;fallback&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// remove empty path_data.</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">Empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cnt</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="n">valid_path_data</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">SetPathInfo</span><span class="p">(</span><span class="o">*</span><span class="n">reference_line_info</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">curr_path_data</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 修剪所有的借道路径，使其能够以in-lane结尾</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;pullover&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">TrimTailingOutLanePoints</span><span class="p">(</span><span class="o">&amp;</span><span class="n">curr_path_data</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// 找到 blocking_obstacle_on_selflane, 为下一步选择车道做准备</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;self&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">blocking_obstacle_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">blocking_obstacle_id</span><span class="p">();</span><span class="w"></span>
+<span class="w">      </span><span class="n">blocking_obstacle_on_selflane</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">          </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_decision</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Find</span><span class="p">(</span><span class="n">blocking_obstacle_id</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// 删掉空路径</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">Empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cnt</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">valid_path_data</span><span class="p">[</span><span class="n">cnt</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="o">++</span><span class="n">cnt</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// RecordDebugInfo(curr_path_data, curr_path_data.path_label(),</span>
+<span class="w">    </span><span class="c1">//                 reference_line_info);</span>
+<span class="w">    </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;For &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">path_label</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"></span>
+<span class="w">           </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;path length = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">curr_path_data</span><span class="p">.</span><span class="n">frenet_frame_path</span><span class="p">().</span><span class="n">size</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">cnt</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 如果没有有效路径，退出</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Neither regular nor fallback path is valid.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="p">(</span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">PLANNING_ERROR</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;There are &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; valid path data.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_time2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end_time2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">end_time1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time for path info labeling: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; msec.&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+</pre></div>
+</div>
+<p>这一步骤的代码执行流程如下：
+1). 去掉空的路径
+2). 从尾部开始剪掉lane-borrow路径，从尾部开始向前搜索，剪掉如下类型path_point：
+  (1) OUT_ON_FORWARD_LANE
+  (2) OUT_ON_REVERSE_LANE
+  (3) 未知类型
+3). 找到自车道的障碍物id，用于车道选择
+4). 如果没有有效路径，返回错误码</p>
+</section>
+<section id="id9">
+<h3><a class="toc-backref" href="#id19">排序并选出最有路径</a><a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+<p>这一步请看最后一章<code class="docutils literal notranslate"><span class="pre">相关算法解析</span></code></p>
+</section>
+<section id="id10">
+<h3><a class="toc-backref" href="#id20">更新必要信息</a><a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// 4. Update necessary info for lane-borrow decider&#39;s future uses.</span>
+<span class="w">  </span><span class="c1">// Update front static obstacle&#39;s info.</span>
+<span class="w">  </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">mutable_path_decider_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">injector_</span><span class="o">-&gt;</span><span class="n">planning_context</span><span class="p">()</span><span class="w"></span>
+<span class="w">                                          </span><span class="o">-&gt;</span><span class="n">mutable_planning_status</span><span class="p">()</span><span class="w"></span>
+<span class="w">                                          </span><span class="o">-&gt;</span><span class="n">mutable_path_decider</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">GetBlockingObstacle</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">front_static_obstacle_cycle_counter</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">        </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">front_static_obstacle_cycle_counter</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_front_static_obstacle_cycle_counter</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">front_static_obstacle_cycle_counter</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_front_static_obstacle_cycle_counter</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">front_static_obstacle_cycle_counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_front_static_obstacle_id</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">GetBlockingObstacle</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Id</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">front_static_obstacle_cycle_counter</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">        </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">front_static_obstacle_cycle_counter</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_front_static_obstacle_cycle_counter</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">front_static_obstacle_cycle_counter</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_front_static_obstacle_cycle_counter</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">front_static_obstacle_cycle_counter</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">-10</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Update self-lane usage info.</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_data</span><span class="p">().</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;self&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"></span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// &amp;&amp; std::get&lt;1&gt;(reference_line_info-&gt;path_data()</span>
+<span class="w">    </span><span class="c1">//                 .path_point_decision_guide()</span>
+<span class="w">    </span><span class="c1">//                 .front()) == PathData::PathPointType::IN_LANE)</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">able_to_use_self_lane_counter</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">        </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">able_to_use_self_lane_counter</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">able_to_use_self_lane_counter</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">able_to_use_self_lane_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_able_to_use_self_lane_counter</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">able_to_use_self_lane_counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">set_able_to_use_self_lane_counter</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Update side-pass direction.</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">is_in_path_lane_borrow_scenario</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">left_borrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">right_borrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path_decider_status</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
+<span class="w">        </span><span class="n">injector_</span><span class="o">-&gt;</span><span class="n">planning_context</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">planning_status</span><span class="p">().</span><span class="n">path_decider</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="nl">lane_borrow_direction</span> <span class="p">:</span><span class="w"></span>
+<span class="w">         </span><span class="n">path_decider_status</span><span class="p">.</span><span class="n">decided_side_pass_direction</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lane_borrow_direction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PathDeciderStatus</span><span class="o">::</span><span class="n">LEFT_BORROW</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="w">          </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_data</span><span class="p">().</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;left&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"></span>
+<span class="w">              </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">left_borrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lane_borrow_direction</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">PathDeciderStatus</span><span class="o">::</span><span class="n">RIGHT_BORROW</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
+<span class="w">          </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_data</span><span class="p">().</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;right&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"></span>
+<span class="w">              </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">right_borrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">clear_decided_side_pass_direction</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">right_borrow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">add_decided_side_pass_direction</span><span class="p">(</span><span class="w"></span>
+<span class="w">          </span><span class="n">PathDeciderStatus</span><span class="o">::</span><span class="n">RIGHT_BORROW</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left_borrow</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">mutable_path_decider_status</span><span class="o">-&gt;</span><span class="n">add_decided_side_pass_direction</span><span class="p">(</span><span class="w"></span>
+<span class="w">          </span><span class="n">PathDeciderStatus</span><span class="o">::</span><span class="n">LEFT_BORROW</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_time4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end_time4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">end_time3</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time for FSM state updating: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; msec.&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1">// Plot the path in simulator for debug purpose.</span>
+<span class="w">  </span><span class="n">RecordDebugInfo</span><span class="p">(</span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">path_data</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;Planning PathData&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                  </span><span class="n">reference_line_info</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Status</span><span class="o">::</span><span class="n">OK</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+<p>更新必要信息：</p>
+<p>1.更新adc前方静态障碍物的信息
+2.更新自车道使用信息3.更新旁车道的方向
+(1) 根据PathDeciderStatus是RIGHT_BORROW或LEFT_BORROW判断是从左侧借道，还是从右侧借道</p>
+</section>
+</section>
+<section id="id11">
+<h2><a class="toc-backref" href="#id21">路径排序算法解析</a><a class="headerlink" href="#id11" title="永久链接至标题"></a></h2>
+<p>最后这里说明排序算法。</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// 3. Pick the optimal path.</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"></span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">bind</span><span class="p">(</span><span class="n">ComparePathData</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_1</span><span class="p">,</span><span class="w"></span>
+<span class="w">                      </span><span class="n">std</span><span class="o">::</span><span class="n">placeholders</span><span class="o">::</span><span class="n">_2</span><span class="p">,</span><span class="w"> </span><span class="n">blocking_obstacle_on_selflane</span><span class="p">));</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Using &#39;&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">path_label</span><span class="p">()</span><span class="w"></span>
+<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;&#39; path out of &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; path(s)&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">path_label</span><span class="p">().</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;fallback&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"></span>
+<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">FLAGS_static_obstacle_nudge_l_buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="o">*</span><span class="p">(</span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">mutable_path_data</span><span class="p">())</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">SetBlockingObstacle</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="n">valid_path_data</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">blocking_obstacle_id</span><span class="p">());</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">end_time3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">system_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">diff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">end_time3</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">end_time2</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Time for optimal path selection: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">diff</span><span class="p">.</span><span class="n">count</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<span class="w">         </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; msec.&quot;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">reference_line_info</span><span class="o">-&gt;</span><span class="n">SetCandidatePathData</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">valid_path_data</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+</pre></div>
+</div>
+<p>排序算法的流程具体如下：</p>
+<p><code class="docutils literal notranslate"><span class="pre">ComparePathData(lhs,</span> <span class="pre">rhs,</span> <span class="pre">…)</span></code></p>
+<p>路径排序：（道路评估的优劣通过排序获得）</p>
+<ul class="simple">
+<li><p>1.空的路径永远排在后面</p></li>
+<li><p>2.regular &gt; fallback</p></li>
+<li><p>3.如果self-lane有一个存在，选择那个。如果都存在，选择较长的.如果长度接近，选择self-lane如果self-lane都不存在，选择较长的路径</p></li>
+<li><p>4.如果路径长度接近，且都要借道:</p>
+<ul>
+<li><p>(1) 都要借逆向车道，选择距离短的</p></li>
+<li><p>(2) 针对具有两个借道方向的情况:</p>
+<ul>
+<li><p>有障碍物，选择合适的方向，左或右借道</p></li>
+<li><p>无障碍物，根据adc的位置选择借道方向</p></li>
+</ul>
+</li>
+<li><p>(3) 路径长度相同，相邻车道都是前向的，选择较早返回自车道的路径</p></li>
+<li><p>(4) 如果路径长度相同，前向借道，返回自车道时间相同，选择从左侧借道的路径</p></li>
+</ul>
+</li>
+<li><p>5.最后如果两条路径相同，则 lhs is not &lt; rhl排序之后：选择最优路径，即第一个路径</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../prediction_predictor.html" class="btn btn-neutral float-left" title="PREDICTION PREDICTOR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="path_bounds_decider_cn.html" class="btn btn-neutral float-right" title="路径边界决策" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

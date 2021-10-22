@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何为 Apollo 安装低时延/实时内核 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to Launch and Run Apollo" href="how_to_launch_and_run_apollo.html" />
+    <link rel="prev" title="How to Install Low-Latency / Realtime Kernel" href="how_to_install_apollo_kernel.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何为 Apollo 安装低时延/实时内核</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_install_apollo_kernel_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo">
+<h1>如何为 Apollo 安装低时延/实时内核<a class="headerlink" href="#apollo" title="永久链接至标题"></a></h1>
+<p>本文档描述了在 Ubuntu 18.04 上安装低时延 (Low-Latency) 或实时 (Realtime)内核及
+Nvidia 驱动的步骤。</p>
+<section id="id1">
+<h2>在开始之前<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>仅在实车上运行 Apollo 软件栈才需要低时延或实时内核。 如果您的目的只是基于 Apollo
+平台开发/测试您的算法，或者运行仿真软件（如 Lgsvl 模拟器），则可能您根本不需要安
+装这里描述的低时延或实时内核。</p>
+</section>
+<section id="ubuntu">
+<h2>Ubuntu 自带的低时延内核<a class="headerlink" href="#ubuntu" title="永久链接至标题"></a></h2>
+<p>Ubuntu 软件仓库中的低时延内核足以为实车上运行 Apollo 提供低（或者零）时延。在其
+内核配置中，任务抢占式 (PREEMPT)优化是开启了的，时延可低至 0.1 毫秒。</p>
+<p>下面是安装 Ubuntu 低时延内核的步骤：</p>
+<ol class="simple">
+<li><p>安装最新的低时延内核及其头文件</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install linux-image-<span class="k">$(</span>uname -r<span class="k">)</span>-lowlatency linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>-lowlatency
+</pre></div>
+</div>
+<p><strong>注意</strong>：</p>
+<blockquote>
+<div><p>如果在执行了<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code>后通过<code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">list</span> <span class="pre">--upgradable</span></code>查看有新版本内核
+，请将上述命令中的<code class="docutils literal notranslate"><span class="pre">$(uname</span> <span class="pre">-r)</span></code>改为 Ubuntu 软件仓库中最新的内核版本号。截至本
+文写作时（2020 年 12 月 2 日），Ubuntu 软件仓库中的最新内核是<code class="docutils literal notranslate"><span class="pre">5.4.0-56</span></code>。</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>重启系统以启动低时延内核。</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo reboot
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>安装实时内核<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>请按
+照<a class="reference external" href="https://index.ros.org/doc/ros2/Tutorials/Building-Realtime-rt_preempt-kernel-for-ROS-2">ROS2：构建实时 Linux</a>
+中描述的步骤来构建和安装最新的稳定版实时内核。虽然该文档是按照 Ubuntu 20.04 来讲
+的，但其中的步骤完全适用于 Ubuntu 18.04。</p>
+</section>
+<section id="nvidia">
+<h2>安装 Nvidia 驱动<a class="headerlink" href="#nvidia" title="永久链接至标题"></a></h2>
+<section id="id3">
+<h3>在低时延内核上安装 Nvidia 驱动<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<p>对 Ubuntu 低时延内核而言，安装 Nvidia 驱动的步骤比较简单：</p>
+<ol class="simple">
+<li><p>从<a class="reference external" href="https://developer.nvidia.com/cuda-downloads?target_os=Linux">CUDA Toolkit 下载</a>
+页下载并安装 Nvidia 最新驱动。</p></li>
+</ol>
+<p>在选择安装类型(Installer Type)时，建议选择 <strong>本地安装(deb[local])</strong> 或者 <strong>网络
+安装(deb(network])</strong> 模式。</p>
+<p><img alt="Download CUDA Toolkit for x86_64" src="../../_images/download_cuda_x86_64.png" /></p>
+<p><img alt="Download CUDA Toolkit for AArch64" src="../../_images/download_cuda_aarch64.png" /></p>
+<p><strong>注意</strong>：</p>
+<blockquote>
+<div><p>可能需要注册并签署 CUDA 最终用户使用协议(EULA) 才可以下载 Nvidia 驱动及 CUDA
+安装包。</p>
+</div></blockquote>
+<p>比如，如下是在 x86_64 架构的 Ubuntu 18.04.5 上通过 <strong>本地安装 Deb 软件包</strong>的方式
+安装 Nvidia 驱动：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.1-455.32.00-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.1-455.32.00-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install nvidia-driver-455
+</pre></div>
+</div>
+<p><strong>注意</strong>:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">nvidia-driver-XXX</span></code> 的数字应该与 CUDA 本地安装包中的数字一致。本例中是<code class="docutils literal notranslate"><span class="pre">455</span></code>。</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>重启系统。</p></li>
+<li><p>运行<code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> 检查是否生效。</p></li>
+</ol>
+</section>
+<section id="preempt-rt-nvidia">
+<h3>在实时 (PREEMPT_RT) 内核上安装 Nvidia 驱动<a class="headerlink" href="#preempt-rt-nvidia" title="永久链接至标题"></a></h3>
+<p>请先按照低时延内核 Nvidia 驱动的安装方法完成 Nvidia 驱动的初步安装。请注意，由于
+Nvidia 驱动不支持实时内核，所以在上面执
+行<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">nvidia-driver-455</span></code> 的步骤时会报如下错误消息：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The kernel you are installing for is a PREEMPT_RT kernel!
+
+The NVIDIA driver does not support real-time kernels. If you
+are using a stock distribution kernel, please install
+a variant of this kernel that does not have the PREEMPT_RT
+patch set applied; if this is a custom kernel, please
+install a standard Linux kernel.  Then try installing the
+NVIDIA kernel module again.
+
+*** Failed PREEMPT_RT sanity check. Bailing out! ***
+</pre></div>
+</div>
+<p>我们可以通过在编译 Nvidia 驱动的时候设置 <code class="docutils literal notranslate"><span class="pre">IGNORE_PREEMPT_RT_PRESENCE=1</span></code> 来绕过这
+一点。</p>
+<p>步骤如下：</p>
+<ol class="simple">
+<li><p>运行如下命令来编译 Nvidia 驱动：</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 切换到Nvidia 驱动的源码目录</span>
+<span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span>dpkg -L nvidia-kernel-source-455 <span class="p">|</span> grep -m <span class="m">1</span> <span class="s2">&quot;nvidia-drm&quot;</span> <span class="p">|</span> xargs dirname<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># 设置 IGNORE_PREEMPT_RT_PRESENCE=1 来编译Nvidia 驱动</span>
+sudo env <span class="nv">NV_VERBOSE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    make -j8 <span class="nv">NV_EXCLUDE_BUILD_MODULES</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\</span>
+    <span class="nv">KERNEL_UNAME</span><span class="o">=</span><span class="k">$(</span>uname -r<span class="k">)</span> <span class="se">\</span>
+    <span class="nv">IGNORE_XEN_PRESENCE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">IGNORE_CC_MISMATCH</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">IGNORE_PREEMPT_RT_PRESENCE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">SYSSRC</span><span class="o">=</span>/lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/build <span class="se">\</span>
+    <span class="nv">LD</span><span class="o">=</span>/usr/bin/ld.bfd <span class="se">\</span>
+    modules
+
+sudo mv *.ko /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/updates/dkms/
+sudo depmod -a
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>重启系统</p></li>
+<li><p>运行 <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> 来检查 Nvidia 驱动是否正常工作。</p></li>
+</ol>
+</section>
+</section>
+<section id="esd-can">
+<h2>（可选）安装 ESD-CAN 内核驱动<a class="headerlink" href="#esd-can" title="永久链接至标题"></a></h2>
+<p>如有需要，可按照
+<a class="reference external" href="https://github.com/ApolloAuto/apollo-kernel/blob/master/linux/ESDCAN-README.md">ESD-CAN 安装说明</a>
+来编译安装 ESD-CAN 驱动。</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_install_apollo_kernel.html" class="btn btn-neutral float-left" title="How to Install Low-Latency / Realtime Kernel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_launch_and_run_apollo.html" class="btn btn-neutral float-right" title="How to Launch and Run Apollo" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

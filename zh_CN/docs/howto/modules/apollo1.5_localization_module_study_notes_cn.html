@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Localization module 分析 &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Perception Module 分析" href="apollo1.5_perception_module_study_notes_cn.html" />
+    <link rel="prev" title="HD map 使用" href="apollo1.5_HDmap_study_notes_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Localization module 分析</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="localization-module">
+<h1>Localization module 分析<a class="headerlink" href="#localization-module" title="永久链接至标题"></a></h1>
+<section id="id1">
+<h2>作用：<a class="headerlink" href="#id1" title="永久链接至标题"></a></h2>
+<p>实时确定车辆的位置。</p>
+</section>
+<section id="localization">
+<h2>Localization节点流图：<a class="headerlink" href="#localization" title="永久链接至标题"></a></h2>
+<section id="id2">
+<h3>节点数据流图：<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+<p><img alt="localization data flow" src="../../../_images/localization_node_arch.bmp" /></p>
+</section>
+<section id="id3">
+<h3>输入：<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>Imu数据：/apollo/sensor/gnss/corrected_imu。</p></li>
+<li><p>Gps数据：/apollo/sensor/gnss/odometry。</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>输出：<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>定位信息：/apollo/localization/pose。</p></li>
+<li><p>监视信息：/apollo/localization/。</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2>代码分析：<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+<p>主要文件：<a class="reference external" href="http://localization.cc">localization.cc</a>,localization.h,localization_base.h。</p>
+<section id="id6">
+<h3>Localization类:<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>继承于ApolloApp类，有三个数据，localization_具体的定位算法实例指针，localization_factory_存储定位算法类，config_存储配置文件信息。</p></li>
+<li><p>Init()函数注册RTKLocalization类到localization_factory_，此类基于RTK算法实现定位算法；读取配置文件到config_。</p></li>
+<li><p>Name()函数返回模块名字。</p></li>
+<li><p>Start()函数，用localization_factory_类实例化一个定位算法对象，用localization_直向。若创建成功，调用定位算法的start()函数。</p></li>
+</ul>
+</section>
+<section id="localizationbase">
+<h3>LocalizationBase类：<a class="headerlink" href="#localizationbase" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>定位算法的基类。</p></li>
+<li><p>Start()函数启动定位算法。</p></li>
+<li><p>Stop()函数终止定位算法。</p></li>
+</ul>
+</section>
+<section id="rtklocalization">
+<h3>RTKLocalization类：<a class="headerlink" href="#rtklocalization" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>继承LocalizationBase类。</p></li>
+<li><p>Start()函数：创建timer，检测gps和imu是否有数据。超时执行OnTimer()函数。OnTimer()函数检查gps和imu是否有数据，然后调用PublishLocalization()发布定位信息，并更新数据接收时间。在PublishLocalization()函数中先调用PrepareLocalizationMsg()函数计算定位信息，并填充发布数据结构localization；然后调用AdapterManager::PublishLocalization发布定位topic。PrepareLocalizationMsg(&amp;localization)函数首先获取gps数据，然后根据gps数据时间戳获取imu数据，然后调用ComposeLocalizationMsg()函数，进行数据融合以定位，其实所谓的数据融合也就是在最终的定位信息中分别使用gps和imu测得数据设置定位信息，唯一由两个器件融合的量只有线速度。所谓RTK算法应该单指由gps数据获取gps定位信息，在localization阶段其实是使用这个定位信息，真正RTK算法应该是作用在gps数据的处理上。</p></li>
+<li><p>Stop()函数停止timer，即退出定位模式。</p></li>
+</ul>
+</section>
+</section>
+<section id="id7">
+<h2>疑惑：<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>定位信息给出的应该是车辆在世界中的的绝对位置，因为采用gps数据，那么这个位置如何与地图建立关系的？</p></li>
+</ul>
+<p>答：地图中的点也可能是世界中的绝对位置。</p>
+<ul class="simple">
+<li><p>map_offset这个量的作用：//TODO</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="apollo1.5_HDmap_study_notes_cn.html" class="btn btn-neutral float-left" title="HD map 使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="apollo1.5_perception_module_study_notes_cn.html" class="btn btn-neutral float-right" title="Perception Module 分析" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to add a new evaluator in Prediction module &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="如何在预测模块中添加新评估器" href="how_to_add_a_new_evaluator_in_prediction_module_cn.html" />
+    <link rel="prev" title="如何添加新的控制算法" href="how_to_add_a_new_control_algorithm_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to add a new evaluator in Prediction module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_add_a_new_evaluator_in_prediction_module.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-add-a-new-evaluator-in-prediction-module">
+<h1>How to add a new evaluator in Prediction module<a class="headerlink" href="#how-to-add-a-new-evaluator-in-prediction-module" title="永久链接至标题"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h2>
+<p>The Evaluator generates features (from the raw information of obstacles and the ego vehicle) to get the model output by applying the pre-trained deep learning model.</p>
+</section>
+<section id="steps-to-add-a-new-evaluator">
+<h2>Steps to add a new evaluator<a class="headerlink" href="#steps-to-add-a-new-evaluator" title="永久链接至标题"></a></h2>
+<p>Please follow the steps to add a new evaluator named <code class="docutils literal notranslate"><span class="pre">NewEvaluator</span></code>.</p>
+<ol class="simple">
+<li><p>Add a field in proto</p></li>
+<li><p>Define a class that inherits <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></p></li>
+<li><p>Implement the class <code class="docutils literal notranslate"><span class="pre">NewEvaluator</span></code></p></li>
+<li><p>Update prediction conf</p></li>
+<li><p>Upate the evaluator manager</p></li>
+</ol>
+<section id="define-a-class-that-inherits-evaluator">
+<h3>Define a class that inherits <code class="docutils literal notranslate"><span class="pre">Evaluator</span></code><a class="headerlink" href="#define-a-class-that-inherits-evaluator" title="永久链接至标题"></a></h3>
+<p>Create a new file named <code class="docutils literal notranslate"><span class="pre">new_evaluator.h</span></code> in the folder  <code class="docutils literal notranslate"><span class="pre">modules/prediction/evaluator/vehicle</span></code>. And define it like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;modules/prediction/evaluator/evaluator.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">apollo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">prediction</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="k">class</span> <span class="nc">NewEvaluator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Evaluator</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">NewEvaluator</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">NewEvaluator</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">Evaluate</span><span class="p">(</span><span class="n">Obstacle</span><span class="o">*</span><span class="w"> </span><span class="n">obstacle_ptr</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Other useful functions and fields.</span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace prediction</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace apollo</span>
+</pre></div>
+</div>
+</section>
+<section id="implement-the-class-newevaluator">
+<h3>Implement the class <code class="docutils literal notranslate"><span class="pre">NewEvaluator</span></code><a class="headerlink" href="#implement-the-class-newevaluator" title="永久链接至标题"></a></h3>
+<p>Create a new file named <code class="docutils literal notranslate"><span class="pre">new_evaluator.cc</span></code> in the same folder as that of <code class="docutils literal notranslate"><span class="pre">new_evaluator.h</span></code>. Implement it like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>#include &quot;modules/prediction/evaluator/vehicle/new_evaluator.h&quot;
+
+namespace apollo {
+namespace prediction {
+
+NewEvaluator::NewEvaluator() {
+  // Implement
+}
+
+NewEvaluator::～NewEvaluator() {
+  // Implement
+}
+
+NewEvaluator::Evaluate(Obstacle* obstacle_ptr)() {
+  // Extract features
+  // Compute new_output by applying pre-trained model
+}
+
+// Other functions
+
+}  // namespace prediction
+}  // namespace apollo
+
+</pre></div>
+</div>
+</section>
+<section id="add-a-new-evaluator-in-proto">
+<h3>Add a new evaluator in proto<a class="headerlink" href="#add-a-new-evaluator-in-proto" title="永久链接至标题"></a></h3>
+<p>Add a new type of evaluator in <code class="docutils literal notranslate"><span class="pre">prediction_conf.proto</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">enum</span> <span class="nc">EvaluatorType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">MLP_EVALUATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">NEW_EVALUATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="update-prediction-conf-file">
+<h3>Update prediction_conf file<a class="headerlink" href="#update-prediction-conf-file" title="永久链接至标题"></a></h3>
+<p>In the file <code class="docutils literal notranslate"><span class="pre">modules/prediction/conf/prediction_conf.pb.txt</span></code>, update the field <code class="docutils literal notranslate"><span class="pre">evaluator_type</span></code> like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">obstacle_conf</span> <span class="p">{</span>
+  <span class="n">obstacle_type</span><span class="p">:</span> <span class="n">VEHICLE</span>
+  <span class="n">obstacle_status</span><span class="p">:</span> <span class="n">ON_LANE</span>
+  <span class="n">evaluator_type</span><span class="p">:</span> <span class="n">NEW_EVALUATOR</span>
+  <span class="n">predictor_type</span><span class="p">:</span> <span class="n">NEW_PREDICTOR</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-upate-the-evaluator-manager">
+<h3>Step 5: Upate the evaluator manager<a class="headerlink" href="#step-5-upate-the-evaluator-manager" title="永久链接至标题"></a></h3>
+<p>Update <code class="docutils literal notranslate"><span class="pre">CreateEvluator(</span> <span class="pre">...</span> <span class="pre">)</span></code> like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="n">ObstacleConf</span><span class="o">::</span><span class="nl">NEW_EVALUATOR</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">evaluator_ptr</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">NewEvaluator</span><span class="p">());</span><span class="w"></span>
+<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Update <code class="docutils literal notranslate"><span class="pre">RegisterEvaluators()</span></code> like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="n">RegisterEvaluator</span><span class="p">(</span><span class="n">ObstacleConf</span><span class="o">::</span><span class="n">NEW_EVALUATOR</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>After following the steps above, the new evaluator should be created.</p>
+</section>
+</section>
+<section id="adding-new-features">
+<h2>Adding new features<a class="headerlink" href="#adding-new-features" title="永久链接至标题"></a></h2>
+<p>If you would like to add new features, follow the instructions that follow:</p>
+<section id="add-a-field-in-proto">
+<h3>Add a field in proto<a class="headerlink" href="#add-a-field-in-proto" title="永久链接至标题"></a></h3>
+<p>Assume the new evaluating result named <code class="docutils literal notranslate"><span class="pre">new_output</span></code> and also assume its type is <code class="docutils literal notranslate"><span class="pre">int32</span></code>. If the output is related directly to the obstacles, you can add it into <code class="docutils literal notranslate"><span class="pre">modules/prediction/proto/feature.proto</span></code> like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">message</span><span class="w"> </span><span class="n">Feature</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other existing features</span>
+<span class="w">    </span><span class="n">optional</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">new_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If the output is related to the lane sequences, please add it into <code class="docutils literal notranslate"><span class="pre">modules/prediction/proto/lane_graph.proto</span></code> like this:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">message</span><span class="w"> </span><span class="n">LaneSequence</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other existing features</span>
+<span class="w">    </span><span class="n">optional</span><span class="w"> </span><span class="n">int32</span><span class="w"> </span><span class="n">new_output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_add_a_new_control_algorithm_cn.html" class="btn btn-neutral float-left" title="如何添加新的控制算法" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_add_a_new_evaluator_in_prediction_module_cn.html" class="btn btn-neutral float-right" title="如何在预测模块中添加新评估器" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

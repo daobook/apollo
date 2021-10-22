@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Parameter Auto-Tuning Service &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="../../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Control Profiling Service" href="../Control_Profiling/README.html" />
+    <link rel="prev" title="python/cyber_py/cyber.py" href="../../../cyber/doxy-docs/source/api/pythonapi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Control Parameter Auto-Tuning Service</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Apollo_Fuel/Control_Auto_Tuning/README.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="control-parameter-auto-tuning-service">
+<h1>Control Parameter Auto-Tuning Service<a class="headerlink" href="#control-parameter-auto-tuning-service" title="永久链接至标题"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#ControlParameterAuto-TuningService">Control Parameter Auto-Tuning Service</a></p>
+<ul>
+<li><p><a class="reference external" href="#Overview">Overview</a></p></li>
+<li><p><a class="reference external" href="#Prerequisites">Prerequisites</a></p></li>
+<li><p><a class="reference external" href="#MainSteps">Main Steps</a></p></li>
+<li><p><a class="reference external" href="#BaiduCloudStorageBOSRegistration">Baidu Cloud Storage BOS Registration</a></p></li>
+<li><p><a class="reference external" href="#OpenCloudServiceAccount">Open Cloud Service Account</a></p></li>
+<li><p><a class="reference external" href="#TaskConfigurationFileSetting">Task Configuration File Setting</a></p>
+<ul>
+<li><p><a class="reference external" href="#TaskConfigurationProtocolBuffers">Task Configuration Protocol Buffers</a></p></li>
+<li><p><a class="reference external" href="#TaskConfigurationFileExample">Task Configuration File Example</a></p></li>
+<li><p><a class="reference external" href="#TaskConfigurationDetailedExplanations">Task Configuration Detailed Explanations</a></p></li>
+<li><p><a class="reference external" href="#CustomizedDynamicModelsGuidance">Customized Dynamic Models Guidance</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#TaskSubmission">Task Submission</a></p>
+<ul>
+<li><p><a class="reference external" href="#TaskConfigurationFileStorage">Task Configuration File Storage</a></p></li>
+<li><p><a class="reference external" href="#SubmitJobviaWebpage">Submit Job via Webpage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#TaskResultsAcquisition">Task Results Acquisition</a></p>
+<ul>
+<li><p><a class="reference external" href="#ReceiveTaskResultsEmail">Receive Task Results Email</a></p></li>
+<li><p><a class="reference external" href="#TaskResultsAnalysis">Task Results Analysis</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="永久链接至标题"></a></h2>
+<p>Control parameter auto-tuning service utilizes the machine learning method to automatically optimize the control parameters of the PID, LQR, MPC, MRAC, etc. controllers used in the Apollo Control Module, to realize the full automation of controller tuning within offline simulation environment that saves massive manual tests with on-road experiments. It integrates with multiple Apollo online service tools including the dynamic modeling, simulation platform, and control profiling.</p>
+<p>Control parameter auto-tuning service 1) iteratively generates the new control parameters and evaluate the generated parameters by invoking the backend Apollo Simulation service, in which the pre-trained vehicle dynamic models are used to enable the control-in-the-loop simulation; 2) the simulation results are evaluated via the backend control profiling service; 3) and furthermore, tens of control metrics from the control profiling results are weighted and combined into one weighted score, and with this score as optimization target, the auto-tuning service continuously searches the new control parameters with better score in the promising zone, until it reaches the given step.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="永久链接至标题"></a></h2>
+<p>Control parameter auto-tuning is executed in the control-in-the-loop simulation environment, and thus it request the users to provide their own vehicle dynamic model (i.e., the results of dynamic modeling service) for simulation; otherwise, the service will use the default vehicle dynamic model based on the MKZ vehicle model. Therefore, for a control parameter training service on the customized vehicle, some pre-required steps are listed as follows:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ApolloAuto/apollo">Apollo</a> 6.0 or higher version</p></li>
+<li><p>Cloud and simulation services registered according to <a class="reference external" href="http://bce.apollo.auto/">Apollo Dreamland</a></p></li>
+<li><p><a class="reference internal" href="../Dynamic_Model/README.html"><span class="doc std std-doc">Dynamic Modeling</span></a> service</p></li>
+</ul>
+</section>
+<section id="main-steps">
+<h2>Main Steps<a class="headerlink" href="#main-steps" title="永久链接至标题"></a></h2>
+<ul class="simple">
+<li><p>Task Configuration File Setting</p></li>
+<li><p>Task Submission</p></li>
+<li><p>Task Results Acquisition</p></li>
+</ul>
+</section>
+<section id="baidu-cloud-storage-bos-registration">
+<h2>Baidu Cloud Storage BOS Registration<a class="headerlink" href="#baidu-cloud-storage-bos-registration" title="永久链接至标题"></a></h2>
+<p>The registration please refer to <a class="reference internal" href="../apply_bos_account_cn.html"><span class="doc std std-doc">Baidu Cloud Storage BOS Register and User Manual</span></a></p>
+<p><strong>Note:</strong> The clients must use the registered <code class="docutils literal notranslate"><span class="pre">bucket</span></code>，and make sure that the <code class="docutils literal notranslate"><span class="pre">Bucket</span> <span class="pre">Name</span></code>、<code class="docutils literal notranslate"><span class="pre">Backet</span> <span class="pre">Area</span></code> are the same as the ones when registered。</p>
+</section>
+<section id="open-cloud-service-account">
+<h2>Open Cloud Service Account<a class="headerlink" href="#open-cloud-service-account" title="永久链接至标题"></a></h2>
+<p>Please contact with the business department to open the cloud service account and provide your <code class="docutils literal notranslate"><span class="pre">Bucket</span> <span class="pre">Name</span></code>、<code class="docutils literal notranslate"><span class="pre">Backet</span> <span class="pre">Area</span></code> mentioned in the last step</p>
+</section>
+<section id="task-configuration-file-setting">
+<h2>Task Configuration File Setting<a class="headerlink" href="#task-configuration-file-setting" title="永久链接至标题"></a></h2>
+<section id="task-configuration-protocol-buffers">
+<h3>Task Configuration Protocol Buffers<a class="headerlink" href="#task-configuration-protocol-buffers" title="永久链接至标题"></a></h3>
+<p>The task configuration should be prepared in the form of the “XXX_tuner_params_config.pb.txt”, with the
+Protocol Buffers file as follows:
+<img alt="" src="../../../_images/tuner_param_config_proto.png" /></p>
+</section>
+<section id="task-configuration-file-example">
+<h3>Task Configuration File Example<a class="headerlink" href="#task-configuration-file-example" title="永久链接至标题"></a></h3>
+<p>According to the Protocol Buffers shown above, an example of the configuration file is shown as follows:
+<img alt="" src="../../../_images/tuner_param_config_pb_txt.png" /></p>
+</section>
+<section id="task-configuration-detailed-explanations">
+<h3>Task Configuration Detailed Explanations<a class="headerlink" href="#task-configuration-detailed-explanations" title="永久链接至标题"></a></h3>
+<p>The detailed explanations of the message in the XXX_tuner_params_config.pb.txt is as follows:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Detailed Explanations</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git_info.repo</span></code></p></td>
+<td><p>The repo name which will be executed in the Apollo simulation platform</p></td>
+<td><p>The dynamic models used in simulation must be placed in the designed path in this github repo, following the <a class="reference external" href="#CustomizedDynamicModelsGuidance">Customized Dynamic Models Guidance</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git_info.commit_id</span></code></p></td>
+<td><p>The commit id which will be executed in the Apollo simulation platform</p></td>
+<td><p>If empty, by default the latest commit id will be used</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.user_tuning_module</span></code></p></td>
+<td><p>Set as <strong>CONTROL</strong></p></td>
+<td><p>Must be <strong>CONTROL</strong> otherwise cannot pass the task sanity check</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.user_conf_filename</span></code></p></td>
+<td><p>The control configuration file in the <code class="docutils literal notranslate"><span class="pre">git_info.repo</span></code>, which will be executed in the Apollo simulation platform</p></td>
+<td><p>The tuned parameters and flags must be included in the configuration file</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.n_iter</span></code></p></td>
+<td><p>The iteration step number used to search for the optimized control parameters. Suggested values: <strong>n_iter=200 for 1-2 tuned parameters; n_iter=300 for 3-4 tuned parameters; n_iter=400 for 5-6 tuned parameters; n_iter=500 for 7-8 tuned parameters; n_iter=600 or more for 9+ tuned parameters</strong></p></td>
+<td><p>The more the iteration steps are, the higher the optimization accuracy (but slower training process) is; must be <strong>&lt; 1000</strong> otherwise cannot pass the task sanity check</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.opt_max</span></code></p></td>
+<td><p>Set as <strong>True</strong></p></td>
+<td><p>Must be <strong>True</strong> otherwise cannot search for the optimized control parameters</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.flag</span></code></p></td>
+<td><p>(repeated message) Set as many flags (boolen parameters) as the users need in the users’ control configuration file. The flag values (True/False) you set will overwrite the default flag values in control configuration file</p></td>
+<td><p>The flags are NOT counted as <strong>Tuned Parameter</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tuner_parameters.parameter</span></code></p></td>
+<td><p>(repeated message) Set as many parameters as the users need in the users’ control configuration file. If the users set the <strong>constant</strong> property of the parameter, then the parameters will be treated as <strong>Constant Parameter</strong> and the set constant values will overwrite the default values in control configuration file; If the users set the <strong>min</strong> and <strong>max</strong> properties of the parameter, then the parameters will be treated as <strong>Tuned Parameter</strong> and the auto-tuning service will attempt to search the best parameter value through the range limited by <strong>min</strong> and <strong>max</strong></p></td>
+<td><p>The more the tuned parameters are, the more the optimization iteration step number (and the longer and slower auto-tuning process) may be needed</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scenarios.id</span></code></p></td>
+<td><p>(repeated message) Set as many scenario IDs as the users need for the control performance evaluation in the parameter auto-tuning. Suggested IDs: <strong>11014, 11015, 11016, 11017, 11018, 11019, 11020</strong></p></td>
+<td><p>The users may also choose any available scenario ID from the public scenarios from the Apollo simulation platform. The more the scenario IDs are, the slower the auto-tuning process may be</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dynamic_model</span></code></p></td>
+<td><p>Set as <strong>ECHO_LINCOLN</strong>, only if <code class="docutils literal notranslate"><span class="pre">git_info.repo</span></code> is set as the official Apollo repo</p></td>
+<td><p>Ignored if the customized repo is used in <code class="docutils literal notranslate"><span class="pre">git_info.repo</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="customized-dynamic-models-guidance">
+<h3>Customized Dynamic Models Guidance<a class="headerlink" href="#customized-dynamic-models-guidance" title="永久链接至标题"></a></h3>
+<p>If the users intend to use their own dynamic models in simulation, then please provide the forward-driving model at github <strong>apollo/modules/control/conf/dynamic_model_forward.bin</strong>; backward-driving model at github <strong>apollo/modules/control/conf/dynamic_model_backward.bin</strong>. Please refer to <a class="reference internal" href="../Dynamic_Model/README.html"><span class="doc std std-doc">Dynamic Model</span></a> for guidance on how to generate the customized dynamic models</p>
+</section>
+</section>
+<section id="task-submission">
+<h2>Task Submission<a class="headerlink" href="#task-submission" title="永久链接至标题"></a></h2>
+<section id="task-configuration-file-storage">
+<h3>Task Configuration File Storage<a class="headerlink" href="#task-configuration-file-storage" title="永久链接至标题"></a></h3>
+<p>Before using the auto-tuning service，set up the input file storage first according to <a class="reference internal" href="../apply_bos_account_cn.html"><span class="doc std std-doc">Baidu Cloud Storage BOS Register and User Manual</span></a> as indicated in [Baidu Cloud Storage BOS Registration](#Baidu Cloud Storage BOS Registration). Then, put the designed XXX_tuner_params_config.pb.txt file into any place under the users’ BOS folder</p>
+</section>
+<section id="submit-job-via-webpage">
+<h3>Submit Job via Webpage<a class="headerlink" href="#submit-job-via-webpage" title="永久链接至标题"></a></h3>
+<p>Login in the <a class="reference external" href="http://bce.apollo.auto/">Apollo webpage</a> and choose the <strong>Apollo Fuel -&gt; New Job</strong> in the functionality menu. Select the <strong>Control Auto Tuning</strong> option in the <strong>New Job</strong> menu，and then fill the <strong>Input Data Path</strong> with the task configuration file path starting from the root directory under the users’ BOS folder (Note: <strong>the Input Data Path must include the full configuration file name</strong>, for example, ‘input/XXX_tuner_params_config.pb.txt’). Finally, submit your job by clicking the <strong>Submit Job</strong> button。</p>
+<p><img alt="" src="../../../_images/control_auto_tuning_webpage.png" /></p>
+</section>
+</section>
+<section id="task-results-acquisition">
+<h2>Task Results Acquisition<a class="headerlink" href="#task-results-acquisition" title="永久链接至标题"></a></h2>
+<section id="receive-task-results-email">
+<h3>Receive Task Results Email<a class="headerlink" href="#receive-task-results-email" title="永久链接至标题"></a></h3>
+<ul>
+<li><p>After the control parameter auto-tuning job successfully starts, the users’ task configuration file will be tested by the sanity check procedure. If cannot pass the sanity check, then the user will receive the <strong>failure notice email</strong> at your registered email address, with the detailed failure reason.</p></li>
+<li><p>If the control parameter auto-tuning job successfully passes the sanity check procedure, then after the job is fully finished, the user will receive the <strong>results report email</strong>, in which the parameter auto-tuning results and the linked configuration file will be provided as attachments.</p></li>
+<li><p>Results Email</p>
+<p><img alt="" src="../../../_images/tuner_results_email.png" /></p>
+</li>
+</ul>
+</section>
+<section id="task-results-analysis">
+<h3>Task Results Analysis<a class="headerlink" href="#task-results-analysis" title="永久链接至标题"></a></h3>
+<ul class="simple">
+<li><p>The control auto-tuning results can be attained by accessing the report table in the email or in the attached tuner_results.txt file, with the detailed explanations as follows:</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Detailed Explanations</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Tuner_Config</span></code></p></td>
+<td><p>The source of the task configuration file</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Base_Target</span></code></p></td>
+<td><p>The weighted score of the best control parameters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Base_Params</span></code></p></td>
+<td><p>The best control parameters</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Optimization_Time</span></code></p></td>
+<td><p>The overall time consumption of the entire auto-tuning optimization process</p></td>
+<td><p>Unit: seconds</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Time_Efficiency</span></code></p></td>
+<td><p>The average time consumption of the single optimization iteration step</p></td>
+<td><p>Unit: seconds / iteration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../cyber/doxy-docs/source/api/pythonapi.html" class="btn btn-neutral float-left" title="python/cyber_py/cyber.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../Control_Profiling/README.html" class="btn btn-neutral float-right" title="Control Profiling Service" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Build, Test and Run your Python Application &mdash; Apollo Auto alpha 文档</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="How to Clone Apollo Repository from China" href="how_to_clone_apollo_repo_from_china.html" />
+    <link rel="prev" title="How to Add a New External Dependency" href="how_to_add_an_external_dependency.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Build, Test and Run your Python Application</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_build_and_run_python_app.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-build-test-and-run-your-python-application">
+<h1>How to Build, Test and Run your Python Application<a class="headerlink" href="#how-to-build-test-and-run-your-python-application" title="永久链接至标题"></a></h1>
+<p>Starting from Apollo 6.0, building and testing Python applications in Apollo is
+done using <a class="reference external" href="https://docs.bazel.build/versions/master/be/python.html">Bazel</a>
+exclusively. We use Bazel Python rules to build, run, and test Python programs.
+This not only frees us from hand-crafting Protobuf dependencies and managing
+Python related Env variables manually, but also helps with managing third party
+Python module dependency.</p>
+<section id="create-the-build-file">
+<h2>Create the BUILD file<a class="headerlink" href="#create-the-build-file" title="永久链接至标题"></a></h2>
+<p>Generally you need a BUILD target for each python file, which could be one of</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">py_library(name=&quot;lib_target&quot;,</span> <span class="pre">...)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py_binary(name=&quot;bin_target&quot;,</span> <span class="pre">...)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py_test(name=&quot;test_target&quot;,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="永久链接至标题"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;@rules_python//python:defs.bzl&quot;</span><span class="p">,</span> <span class="s2">&quot;py_binary&quot;</span><span class="p">,</span> <span class="s2">&quot;py_library&quot;</span><span class="p">,</span> <span class="s2">&quot;py_test&quot;</span><span class="p">)</span>
+
+<span class="n">package</span><span class="p">(</span><span class="n">default_visibility</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//visibility:public&quot;</span><span class="p">])</span>
+
+<span class="n">py_binary</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo.py&quot;</span><span class="p">],</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//path/to/a/data/dependency&quot;</span><span class="p">],</span>  <span class="c1"># which we invoke at run time, maybe a cc_binary etc.</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;:foolib&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;//path/to/a/py/library&quot;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">py_library</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foolib&quot;</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foolib.py&quot;</span><span class="p">],</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;//path/to/a/py/library&quot;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">py_test</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;foo_test&quot;</span><span class="p">,</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo_test.py&quot;</span><span class="p">],</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;:foolib&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;//path/to/a/py/library&quot;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Above is a BUILD file template, you can also use the
+<span class="xref myst">BUILD</span> and
+<span class="xref myst">BUILD</span>
+file as examples.</p>
+</section>
+</section>
+<section id="build-test-and-run-commands">
+<h2>Build, Test and Run commands<a class="headerlink" href="#build-test-and-run-commands" title="永久链接至标题"></a></h2>
+<ol>
+<li><p>To build any target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel build //path/to:target
+</pre></div>
+</div>
+</li>
+<li><p>To run a binary target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel run //path/to:target
+</pre></div>
+</div>
+</li>
+<li><p>To run a unit test target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel <span class="nb">test</span> //path/to:target_test
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_add_an_external_dependency.html" class="btn btn-neutral float-left" title="How to Add a New External Dependency" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="how_to_clone_apollo_repo_from_china.html" class="btn btn-neutral float-right" title="How to Clone Apollo Repository from China" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2021, xinetzone.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
