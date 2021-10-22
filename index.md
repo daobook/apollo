@@ -3,6 +3,8 @@ Apollo Auto 文档
 
 切换中英文版本：[{guilabel}`中`](https://daobook.github.io/apollo/zh_CN/)/[{guilabel}`英`](https://daobook.github.io/apollo/en/)。
 
+欢迎加入文档完善的工作。
+
 ```{toctree}
 :maxdepth: 2
     

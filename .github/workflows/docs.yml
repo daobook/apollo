@@ -37,6 +37,7 @@ jobs:
 
       - name: 构建 Sphinx 文档
         run: |
+          sphinx-build -D language=zh_CN -b html ./ _build
           sphinx-build -D language=zh_CN -b html ./ _build/zh_CN
           sphinx-build -D language=en -b html ./ _build/en
 
