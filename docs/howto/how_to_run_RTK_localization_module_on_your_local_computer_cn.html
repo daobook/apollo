@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何在本地运行RTK定位模块 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to run the Map Data Verification Tool" href="how_to_run_map_verification_tool.html" />
+    <link rel="prev" title="How to Run RTK Localization Module On Your Local Computer" href="how_to_run_RTK_localization_module_on_your_local_computer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何在本地运行RTK定位模块</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="rtk">
+<h1>如何在本地运行RTK定位模块<a class="headerlink" href="#rtk" title="Permalink to this headline"></a></h1>
+<p>本文档提供了如何在本地运行RTK定位模块的方法。</p>
+<section id="id1">
+<h2>1. 事先准备<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>从<a class="reference external" href="https://github.com/ApolloAuto/apollo">GitHub网站</a>下载Apollo源代码</p></li>
+<li><p>按照<a class="reference internal" href="../quickstart/apollo_software_installation_guide.html"><span class="doc std std-doc">教程</span></a>设置Docker环境</p></li>
+<li><p>从<a class="reference external" href="http://data.apollo.auto/?name=sensor%20data&amp;data_key=multisensor&amp;data_type=1&amp;locale=en-us&amp;lang=en">Apollo数据平台</a>下载多传感器融合定位demo数据包（仅限美国地区），使用其中<em>apollo3.5</em>文件夹下的数据。</p></li>
+</ul>
+</section>
+<section id="apollo">
+<h2>2. 编译apollo工程<a class="headerlink" href="#apollo" title="Permalink to this headline"></a></h2>
+<section id="apollodocker">
+<h3>2.1 启动并进入Apollo开发版Docker容器<a class="headerlink" href="#apollodocker" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">docker</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dev_start</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">bash</span> <span class="n">docker</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dev_into</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>2.2 编译工程<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Optional) To make sure you start clean</span>
+<span class="n">bash</span> <span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">clean</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="n">bash</span> <span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">build_opt</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>3. 运行RTK模式定位<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cyber_launch</span> <span class="n">start</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">localization</span><span class="o">/</span><span class="n">launch</span><span class="o">/</span><span class="n">rtk_localization</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>在/apollo/data/log目录下，可以看到定位模块输出的相关log文件。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://localization.INFO">localization.INFO</a> : INFO级别的log信息</p></li>
+<li><p>localization.WARNING : WARNING级别的log信息</p></li>
+<li><p>localization.ERROR : ERROR级别的log信息</p></li>
+<li><p>localization.out : 标准输出重定向文件</p></li>
+<li><p>localizaiton.flags : 启动localization模块使用的配置</p></li>
+</ul>
+</section>
+<section id="record">
+<h2>4. 播放record文件<a class="headerlink" href="#record" title="Permalink to this headline"></a></h2>
+<p>在下载好的定位demo数据中，找到一个名为”apollo3.5”的文件夹，假设该文件夹所在路径为DATA_PATH。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">DATA_PATH</span><span class="o">/</span><span class="n">records</span>
+<span class="n">cyber_recorder</span> <span class="n">play</span> <span class="o">-</span><span class="n">f</span> <span class="n">record</span><span class="o">.*</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>6. 可视化定位结果（可选）<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<section id="id5">
+<h3>可视化定位结果<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<p>运行可视化工具</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cyber_launch</span> <span class="n">start</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">localization</span><span class="o">/</span><span class="n">launch</span><span class="o">/</span><span class="n">msf_visualizer</span><span class="o">.</span><span class="n">launch</span>
+</pre></div>
+</div>
+<p>该可视化工具首先根据定位地图生成用于可视化的缓存文件，存放在/apollo/cyber/data/map_visual目录下。</p>
+<p>然后接收以下topic并进行可视化绘制。</p>
+<ul class="simple">
+<li><p>/apollo/sensor/lidar128/compensator/PointCloud2</p></li>
+<li><p>/apollo/localization/pose</p></li>
+</ul>
+<p>可视化效果如下
+<img alt="1" src="../../_images/online_visualizer2.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_run_RTK_localization_module_on_your_local_computer.html" class="btn btn-neutral float-left" title="How to Run RTK Localization Module On Your Local Computer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_run_map_verification_tool.html" class="btn btn-neutral float-right" title="How to run the Map Data Verification Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

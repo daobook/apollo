@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Prepare Bazel Distribution Directory &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="如何准备 Bazel 的依赖缓存目录" href="how_to_prepare_bazel_dist_dir_cn.html" />
+    <link rel="prev" title="ff" href="how_to_monitor_perf_with_oprofile_on_tx2_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Prepare Bazel Distribution Directory</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_prepare_bazel_dist_dir.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-prepare-bazel-distribution-directory">
+<h1>How to Prepare Bazel Distribution Directory<a class="headerlink" href="#how-to-prepare-bazel-distribution-directory" title="Permalink to this headline"></a></h1>
+<p>This document describes the steps to prepare Bazel
+<a class="reference external" href="https://docs.bazel.build/versions/master/guide.html#distribution-files-directories">distribution directory</a>
+for Apollo.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>According to
+<a class="reference external" href="https://docs.bazel.build/versions/master/guide.html#running-bazel-in-an-airgapped-environment">Bazel Docs: Running Bazel in an airgapped environment</a>,
+Bazel’s implicit dependencies are fetched over the network while running for the
+first time. However, this may cause problems when running Bazel in an airgapped
+environment or with unstable Internet access, even if you have vendored all of
+your WORKSPACE dependencies.</p>
+<p>To solve that, the Apollo team decided to provide these dependencies for every
+Bazel binary version used in Apollo. Please do remember to do this once for
+every new Bazel binary version, since the implicit dependencies can be different
+for every Bazel release.</p>
+<p>The section below describes the steps to prepare distribution directory using
+Apollo-provided tarballs.</p>
+</section>
+<section id="prepare-distribution-directory-using-apollo-provided-tarballs">
+<h2>Prepare Distribution Directory using Apollo-provided tarballs<a class="headerlink" href="#prepare-distribution-directory-using-apollo-provided-tarballs" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>Check Bazel version used by Apollo by running <code class="docutils literal notranslate"><span class="pre">bazel</span> <span class="pre">version</span></code> from inside
+Apollo container.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ bazel version
+Build label: <span class="m">3</span>.5.0
+Build target: bazel-out/aarch64-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: Wed Sep <span class="m">2</span> <span class="m">21</span>:11:43 <span class="m">2020</span> <span class="o">(</span><span class="m">1599081103</span><span class="o">)</span>
+Build timestamp: <span class="m">1599081103</span>
+Build timestamp as int: <span class="m">1599081103</span>
+</pre></div>
+</div>
+<p>Here the Bazel version used is <code class="docutils literal notranslate"><span class="pre">3.5.0</span></code>. In the sections below, we will refer to
+it as <code class="docutils literal notranslate"><span class="pre">BAZEL_VERSION</span></code>.</p>
+<ol class="simple">
+<li><p>Download corresponding bazel-dependencies tarball by running:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://apollo-system.cdn.bcebos.com/archive/bazel_deps/bazel-dependencies-<span class="si">${</span><span class="nv">BAZEL_VERSION</span><span class="si">}</span>.tar.gz
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Uncompress the tarball and move the dependencies into the distribution
+directory defined by the <code class="docutils literal notranslate"><span class="pre">${APOLLO_BAZEL_DIST_DIR}</span></code> environment variable:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar xzf bazel-dependencies-<span class="si">${</span><span class="nv">BAZEL_VERSION</span><span class="si">}</span>.tar.gz
+<span class="nb">source</span> <span class="si">${</span><span class="nv">APOLLO_ROOT_DIR</span><span class="si">}</span>/cyber/setup.bash
+mv bazel-dependencies-<span class="si">${</span><span class="nv">BAZEL_VERSION</span><span class="si">}</span>/* <span class="s2">&quot;</span><span class="si">${</span><span class="nv">APOLLO_BAZEL_DIST_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>In case that bazel-dependencies for the Bazel version you used were not provided
+by the Apollo team, you can build it on your own following the recipe below.</p>
+</section>
+<section id="recipe-to-build-bazels-implicit-dependencies">
+<h2>Recipe to build Bazel’s implicit dependencies<a class="headerlink" href="#recipe-to-build-bazels-implicit-dependencies" title="Permalink to this headline"></a></h2>
+<p>The following is the recipe to produce Bazel’s implicit dependencies:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Checkout Bazel-${BAZEL_VERSION} branch</span>
+git clone --depth<span class="o">=</span><span class="m">1</span> -b <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BAZEL_VERSION</span><span class="si">}</span><span class="s2">&quot;</span> https://github.com/bazelbuild/bazel bazel.git
+
+<span class="nb">cd</span> bazel.git
+
+<span class="c1"># Build Bazel&#39;s implicit dependencies for that Bazel version</span>
+bazel build @additional_distfiles//:archives.tar
+
+<span class="c1"># Make sure ${APOLLO_BAZEL_DIST_DIR} is defined</span>
+<span class="nb">source</span> <span class="si">${</span><span class="nv">APOLLO_ROOT_DIR</span><span class="si">}</span>/cyber/setup.bash
+
+<span class="c1"># Uncompress the tarball to the distribution directory for Apollo</span>
+tar xvf bazel-bin/external/additional_distfiles/archives.tar <span class="se">\</span>
+  -C <span class="s2">&quot;</span><span class="si">${</span><span class="nv">APOLLO_BAZEL_DIST_DIR</span><span class="si">}</span><span class="s2">&quot;</span> --strip-components<span class="o">=</span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_monitor_perf_with_oprofile_on_tx2_cn.html" class="btn btn-neutral float-left" title="ff" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_prepare_bazel_dist_dir_cn.html" class="btn btn-neutral float-right" title="如何准备 Bazel 的依赖缓存目录" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreamview for Teleoperation (Remote Control) &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Vehicle Modes" href="../../conf/hmi_modes/README.html" />
+    <link rel="prev" title="Customize Your Own HMI" href="../hmi/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Dreamview for Teleoperation (Remote Control)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/modules/dreamview/backend/teleop/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dreamview-for-teleoperation-remote-control">
+<h1>Dreamview for Teleoperation (Remote Control)<a class="headerlink" href="#dreamview-for-teleoperation-remote-control" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>When the autonomous car is running without any driver, it is paramount to add the extra layer of safety by providing teleoperation or remote control ability between the autonomous car and the control center staffed with well-trained teleoperators. Passengers in the autonomous car may need to communicate with the teleoperator about urgent situations. Safety operator also needs to have a full picture of the traffic situation the autonomous car is in before one can make the best decision. Therefore we will need at least some audio and video streaming functionalities. When the teleoperator chooses one of the emergency actions such as “pull-over”, the autonomous car also needs to respond with appropriate motion planning. We will also need to monitor network sigal strength as it involves remote data transmission.</p>
+<p>Dreamview module tries to provide a web interface that helps to operate and visualize the teleoperation features. It defines some interfaces for data transmission so that users can design and implement their own audio/video streaming and network modules as long as it conforms to the interfaces.</p>
+</section>
+<section id="teleop-service">
+<h2>Teleop Service<a class="headerlink" href="#teleop-service" title="Permalink to this headline"></a></h2>
+<section id="user-interface">
+<h3>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline"></a></h3>
+<p>There are two types of views supporting the teleoperation service. The first one, called <em>Car Teleop</em>, is run on the autonomous car, and contains minimal teleop features for the passengers to stay informed. The other one, called <em>Console Teleop</em>, is run in the control center with GUI for the teleoperator to observe the traffic situation and issue commands when needed.</p>
+<section id="car-teleop">
+<h4>Car Teleop<a class="headerlink" href="#car-teleop" title="Permalink to this headline"></a></h4>
+<p><img alt="car_dreamview" src="../../../../_images/car_teleop.png" />
+In addition to monitoring the status of modules working on the self-driving feature, we also monitor the status of network router, video encoder, and audio modules.</p>
+<p>The passenger will be able to initiate audio communication with the teleoperator by toggling on the audio feature. Once turned on, it enables both microphone and speaker for conversation on both sides. The passenger can mute oneself if desired.</p>
+<p>If the user decides to connect with more than one network modems to make sure data is never lost, we also show the signal strength of each modem in a list, as long as the information is provided in accordance with <span class="xref myst">modem_info.proto</span>.</p>
+<p>If there is a pull-over or emergency stop request issued by the teleoperator, there will be a visual/audio signal for the passenger to be aware of the situation. Meanwhile an acknowledgement will also be sent back to the teleoperator automatically.</p>
+<p>The router, video encoder etc. also resides in the autonomous car system. However the passenger does not need to have access to them. They should be toggled on either by default or triggered when the teleoperator requests for video streaming.</p>
+</section>
+<section id="console-teleop">
+<h4>Console Teleop<a class="headerlink" href="#console-teleop" title="Permalink to this headline"></a></h4>
+<p><img alt="console_dreamview" src="../../../../_images/console_teleop.png" />
+Similar to the basic setup in <a class="reference external" href="#car-teleop">teleop car</a> view, we also monitor the status of additional modules such as network router, video decoder, image viewer and audio.</p>
+<p>The teleoperator will be able to initiate audio communication with the remote passenger by toggling on the audio feature. Once turned on, it enables both microphone and speaker for conversation on both sides. The teleoperator can mute oneself if desired.</p>
+<p>In order to get a full view of the traffic situation the remote car is in, the teleoperator needs to toggle on one or more viewing windows for video streaming. The request should automatically turn on the video decoder module in the control center, as well as the video video encoder in the remote car. Network router module should be automatically turned on when starting the teleop process.</p>
+<p>Again if the user decides to connect with more than one network modems to make sure data is never lost, we also show the signal strength of each modem in a list. The modem information can be provided by the user according to the format <span class="xref myst">modem_info.proto</span>.</p>
+<p>Based on one’s assessment of the situation, the teleoperator can issue either a pull-over or emergency stop request if necessary. Two separate visual/audio signals are provided to acknowledge this command has been issued by the teleoperator and then received by the remote car.</p>
+<p>To provide a top-down view of the location of the remote car, we also supports expandable map using Baidu Map API.</p>
+</section>
+</section>
+<section id="user-commands">
+<h3>User Commands<a class="headerlink" href="#user-commands" title="Permalink to this headline"></a></h3>
+<p>Dreamview module only provides an interface for teleoperation. It needs to work with a few backend processes to complete the desired audio/video streaming and emergency operations. Here is a list of possible hardwares needed and processes users need to implement in the programming language they chose.</p>
+<ul class="simple">
+<li><p>Network Interface Card</p></li>
+<li><p>Modem</p></li>
+<li><p>Router</p></li>
+<li><p>Video encoder/decoder</p></li>
+<li><p>Image viewer</p></li>
+<li><p>VOIP encoder/decoder</p></li>
+</ul>
+<p>As you would expect for Apollo, most messages are communicated via cyber channels. So the interaction between Dreamview and user-defined backend processes are also expected to be done via cyber messages. An example can be seen in <a class="reference external" href="teleop.cc#L109">daemon_channels</a>. Similarly, information about the status of modems needs to be sent to Dreamview via cyber messages <a class="reference external" href="teleop.cc#L89">example</a>.</p>
+<section id="send-audio-stream">
+<h4>Send Audio Stream<a class="headerlink" href="#send-audio-stream" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When “Audio” switch is toggled, both the speaker and microphone are turned on/off for the autonomous car as well as the control center.</p></li>
+<li><p>The backend process is not implemented or provided by Dreamview. Users can implement their own application for audio streaming with their choice of programming language and library. Then they can make use of the <span class="xref myst">daemon_cmd.proto</span> and the corresponding function <code class="docutils literal notranslate"><span class="pre">SendAudioStreamCmd</span></code> in <a class="reference external" href="teleop.cc#L442">teleop.cc</a> to start/stop the audio streaming process.</p></li>
+</ul>
+</section>
+<section id="send-mic-stream">
+<h4>Send Mic Stream<a class="headerlink" href="#send-mic-stream" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When the button with “Microphone” icon is clicked, only the local microphone is turned on/off.</p></li>
+<li><p>The backend process is not implemented or provided by Dreamview. Users can implement their own application for audio streaming with their choice of programming language and library. Then they can make use of the <span class="xref myst">daemon_cmd.proto</span> and the corresponding function <code class="docutils literal notranslate"><span class="pre">SendMicStreamCmd</span></code> in <a class="reference external" href="teleop.cc#L457">teleop.cc</a> to start/stop the local audio streaming process.</p></li>
+</ul>
+</section>
+<section id="send-video-stream">
+<h4>Send Video Stream<a class="headerlink" href="#send-video-stream" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When “Video” switch is toggled, both the video encoder on the remote car and the decoder on the control station should be turned on/off.</p></li>
+<li><p>The backend process is not implemented or provided by Dreamview. Users can implement their own application for video streaming with their choice of programming language and library. Then they can make use of the <span class="xref myst">daemon_cmd.proto</span> and the corresponding function <code class="docutils literal notranslate"><span class="pre">SendVideoStreamCmd</span></code> in <a class="reference external" href="teleop.cc#L420">teleop.cc</a> to start/stop the video streaming process.</p></li>
+</ul>
+</section>
+<section id="send-emergency-stop-command">
+<h4>Send Emergency Stop Command<a class="headerlink" href="#send-emergency-stop-command" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When “Stop” button is clicked, a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">STOP</span></code>, defined by Protobuf message <code class="docutils literal notranslate"><span class="pre">PadMessage</span></code> in <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/proto/pad_msg.proto">pad_msg.proto</a>, will be published by <strong>Dreamview</strong>.</p></li>
+<li><p>Upon receiving a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">STOP</span></code>, <strong>Planning</strong> module will execute <strong>emergency stop</strong> by abruptly braking and stopping at the current position.</p></li>
+</ul>
+</section>
+<section id="send-emergency-pull-over-command">
+<h4>Send Emergency Pull-over Command<a class="headerlink" href="#send-emergency-pull-over-command" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When “Pull Over” button is clicked, a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">PULL_OVER</span></code>, defined by Protobuf message <code class="docutils literal notranslate"><span class="pre">PadMessage</span></code> in <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/proto/pad_msg.proto">pad_msg.proto</a>, will be published by <strong>Dreamview</strong>.</p></li>
+<li><p>Upon receiving a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">PULL_OVER</span></code>, <strong>Planning</strong> module will execute <strong>emergency pull-over</strong> by safely pulling over as soon as possible.</p></li>
+</ul>
+</section>
+<section id="send-resume-cruise-command">
+<h4>Send Resume Cruise Command<a class="headerlink" href="#send-resume-cruise-command" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>When “Resume Cruise” button is clicked, a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">RESUME_CRUISE</span></code>, defined by Protobuf message <code class="docutils literal notranslate"><span class="pre">PadMessage</span></code> in <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/planning/proto/pad_msg.proto">pad_msg.proto</a>, will be published by <strong>Dreamview</strong>.</p></li>
+<li><p>Upon receiving a pad message with <code class="docutils literal notranslate"><span class="pre">DrivingAction</span></code> of <code class="docutils literal notranslate"><span class="pre">RESUME_CRUISE</span></code>, <strong>Planning</strong> module will <strong>resume cruising</strong> based on the current routing.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../hmi/README.html" class="btn btn-neutral float-left" title="Customize Your Own HMI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../conf/hmi_modes/README.html" class="btn btn-neutral float-right" title="Vehicle Modes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

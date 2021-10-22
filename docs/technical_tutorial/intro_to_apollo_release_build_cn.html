@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo Release Build 简介 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Apollo导航模式教程" href="navigation_mode_tutorial_cn.html" />
+    <link rel="prev" title="Introduction to Apollo Release Build" href="intro_to_apollo_release_build.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo Release Build 简介</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_tutorial/intro_to_apollo_release_build_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-release-build">
+<h1>Apollo Release Build 简介<a class="headerlink" href="#apollo-release-build" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2>背景<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>基于 CyberRT 的 Apollo 在相当长的时间内一直没有二进制发布版本。用户需要先在
+Apollo 开发容器内自行完成对整个项目的编译构建才能运行 Apollo 中的模块和工具。这
+种部署上的不足，在若干情形下对用户相当不便。SVL 模拟器的开发者发现，将 Apollo
+中 Docker 镜像、Docker 卷及 Bazel 缓存和构建查出加起来，足有 40 多 GB！</p>
+</section>
+<section id="release-build">
+<h2>Release Build 的实现原理<a class="headerlink" href="#release-build" title="Permalink to this headline"></a></h2>
+<p>这种部署上的不足的根本原因，在于 Bazel 缺少其他构建系统通常具备的开箱即用的「安
+装」支持，如<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>.</p>
+<p>为解决这一问题，我们借鉴了<a class="reference external" href="https://github.com/RobotLocomotion/drake">Drake</a> 项目
+中的「安装」实现，，利用 Starlark 语言，实现了 适用于 Apollo 的 Bazel「安装」扩
+展，支持 Apollo 中二进制程序、共享库、资源文件（配置、数据、DAG 文件等）以及文档
+的安装。</p>
+<p>单独完备的二进制程序的安装是简单的。然而，CyberRT 框架的核心概念即为将每个模块（
+如感知、预测、规划）作为组件，以共享库的形式（<code class="docutils literal notranslate"><span class="pre">libX_component.so</span></code>）动态加载。在
+目前的 Bazel 构建下，<code class="docutils literal notranslate"><span class="pre">mainboard</span></code>二进制程序和<code class="docutils literal notranslate"><span class="pre">libX_component.so</span></code>链接了成千上百各
+其他共享库对象。如，对规划模块运行如下<code class="docutils literal notranslate"><span class="pre">ldd</span></code>命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ldd bazel-bin/modules/planning/libplanning_component.so
+</pre></div>
+</div>
+<p>会输出如下消息：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>	linux-vdso.so.1 (0x00007ffc8a77c000)
+	libmodules_Splanning_Slibplanning_Ucomponent_Ulib.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Slibplanning_Ucomponent_Ulib.so (0x00007fe8a7f9f000)
+	libmodules_Splanning_Slibnavi_Uplanning.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Slibnavi_Uplanning.so (0x00007fe8a7d81000)
+	libmodules_Splanning_Slibon_Ulane_Uplanning.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Slibon_Ulane_Uplanning.so (0x00007fe8a7b53000)
+	libmodules_Splanning_Slibplanning_Ubase.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Slibplanning_Ubase.so (0x00007fe8a7945000)
+	libmodules_Splanning_Scommon_Ssmoothers_Slibsmoother.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Scommon_Ssmoothers_Slibsmoother.so (0x00007fe8a7739000)
+	libmodules_Splanning_Splanner_Slibplanner_Udispatcher.so =&gt; /apollo/bazel-bin/modules/planning/../../_solib_local/libmodules_Splanning_Splanner_Slibplanner_Udispatcher.so (0x00007fe8a752e000)
+    ...
+</pre></div>
+</div>
+<p>如何实现对<code class="docutils literal notranslate"><span class="pre">libplanning_component.so</span></code> 及其链接的所有共享库（后缀为”.so”）文件的「
+安装」，成为实现<code class="docutils literal notranslate"><span class="pre">install</span></code>规则中最难的部分。</p>
+<p>幸好有<code class="docutils literal notranslate"><span class="pre">patchelf</span></code>。利用 Bazel 中<code class="docutils literal notranslate"><span class="pre">runfiles_data</span></code>的概念来确定出链接的所有共享库文件
+，再利用<code class="docutils literal notranslate"><span class="pre">patchelf</span> <span class="pre">--force-rpath</span> <span class="pre">--set-rpath</span></code> 来修改其 RPATH 设置。</p>
+<p>欲要更深入了解，请参考：
+<span class="xref myst">tools/install/install.bzl</span>。</p>
+</section>
+<section id="id2">
+<h2>如何执行 Release Build 构建<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>可运行如下命令以生成二进制发布构建产物：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./apollo.sh release -c
+</pre></div>
+</div>
+<p>其中，<code class="docutils literal notranslate"><span class="pre">-c</span></code>为可选参数，用于清理先前构建的残留。产物位于<code class="docutils literal notranslate"><span class="pre">/apollo/output</span></code>目录。</p>
+<p>上述命令略等价于如下 Bazel 命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel run --config<span class="o">=</span>opt --config<span class="o">=</span>gpu //:install <span class="se">\</span>
+        -- --pre_clean /apollo/output
+</pre></div>
+</div>
+<p>可输入<code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">release</span> <span class="pre">-h</span></code> 查看<code class="docutils literal notranslate"><span class="pre">apollo.sh</span> <span class="pre">release</span></code>子命令的更多用法。</p>
+</section>
+<section id="apollo">
+<h2>通过二进制发布构建产物运行 Apollo<a class="headerlink" href="#apollo" title="Permalink to this headline"></a></h2>
+<p>在二进制发布产物根目录下，运行如下命令以启动 Apollo Runtime Docker 镜像：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/runtime_start.sh
+</pre></div>
+</div>
+<p>国内用户可使用<code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">cn</span></code>选项来加速 Docker 镜像的拉取。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/runtime_start.sh -g cn
+</pre></div>
+</div>
+<p>运行如下命令以进入 Apollo Runtime Docker 环境：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash docker/scripts/runtime_into.sh
+</pre></div>
+</div>
+<p>启动 Dreaview：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./scripts/bootstrap.sh
+</pre></div>
+</div>
+</section>
+<section id="install">
+<h2>如何将<code class="docutils literal notranslate"><span class="pre">install</span></code>规则应用到任一自定义模块<a class="headerlink" href="#install" title="Permalink to this headline"></a></h2>
+<p>欲实现自定义模块的<em>安装</em>，可参考 Apollo 代码中其他模块的示例，还是以规划模块为例
+：</p>
+<p>这是最上层的<span class="xref myst">BUILD</span> 文件的一部分：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">install</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;//cyber:install&quot;</span><span class="p">,</span>
+        <span class="c1"># ...</span>
+        <span class="s2">&quot;//modules/planning:install&quot;</span><span class="p">,</span>
+        <span class="c1"># ...</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>这是规划模块自身的 BUILD 文件
+<span class="xref myst">modules/planning/BUILD</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filegroup</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;planning_conf&quot;</span><span class="p">,</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="n">glob</span><span class="p">([</span>
+        <span class="s2">&quot;conf/**&quot;</span><span class="p">,</span>
+    <span class="p">]),</span>
+<span class="p">)</span>
+
+<span class="n">filegroup</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;runtime_data&quot;</span><span class="p">,</span>
+    <span class="n">srcs</span> <span class="o">=</span> <span class="n">glob</span><span class="p">([</span>
+        <span class="s2">&quot;dag/*.dag&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;launch/*.launch&quot;</span><span class="p">,</span>
+    <span class="p">])</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;:planning_conf&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">install</span><span class="p">(</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;:runtime_data&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;:libplanning_component.so&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;//cyber:install&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2><code class="docutils literal notranslate"><span class="pre">install</span></code>规则的参数列表<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">install</span></code>规则定义在
+<span class="xref myst">tools/install/install.bzl</span>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">install</span> <span class="o">=</span> <span class="n">rule</span><span class="p">(</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;deps&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">label_list</span><span class="p">(</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[</span><span class="n">InstallInfo</span><span class="p">]),</span>
+        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">label_list</span><span class="p">(</span><span class="n">allow_files</span> <span class="o">=</span> <span class="kc">True</span><span class="p">),</span>
+        <span class="s2">&quot;data_dest&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;@PACKAGE@&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;data_strip_prefix&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string_list</span><span class="p">(),</span>
+        <span class="s2">&quot;targets&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">label_list</span><span class="p">(),</span>
+        <span class="s2">&quot;library_dest&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;@PACKAGE@&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;library_strip_prefix&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string_list</span><span class="p">(),</span>
+        <span class="s2">&quot;mangled_library_dest&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;lib&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;mangled_library_strip_prefix&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string_list</span><span class="p">(),</span>
+        <span class="s2">&quot;runtime_dest&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;bin&quot;</span><span class="p">),</span>
+        <span class="s2">&quot;runtime_strip_prefix&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string_list</span><span class="p">(),</span>
+        <span class="s2">&quot;rename&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">string_dict</span><span class="p">(),</span>
+        <span class="s2">&quot;install_script_template&quot;</span><span class="p">:</span> <span class="n">attr</span><span class="o">.</span><span class="n">label</span><span class="p">(</span>
+            <span class="n">allow_files</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">executable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="n">cfg</span> <span class="o">=</span> <span class="s2">&quot;target&quot;</span><span class="p">,</span>
+            <span class="n">default</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="s2">&quot;//tools/install:install.py.in&quot;</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="n">executable</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">implementation</span> <span class="o">=</span> <span class="n">_install_impl</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>其具体参数列举如下</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>含义</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>deps</p></td>
+<td><p>本规则依赖的其它安装规则</p></td>
+</tr>
+<tr class="row-odd"><td><p>data</p></td>
+<td><p>待安装的资源文件（平台无关）列表</p></td>
+</tr>
+<tr class="row-even"><td><p>data_dest</p></td>
+<td><p>资源文件目标安装地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>data_strip_prefix</p></td>
+<td><p>需去掉的资源文件路径前缀列表</p></td>
+</tr>
+<tr class="row-even"><td><p>targets</p></td>
+<td><p>待安装目标</p></td>
+</tr>
+<tr class="row-odd"><td><p>runtime_dest</p></td>
+<td><p>可执行目标的目标安装地址，默认为 bin 目录</p></td>
+</tr>
+<tr class="row-even"><td><p>runtime_strip_prefix</p></td>
+<td><p>需去掉可执行目标路径的前缀</p></td>
+</tr>
+<tr class="row-odd"><td><p>rename</p></td>
+<td><p>安装时的文件重命名</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>局限性<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<p>当前的 Release Build 实现</p>
+<ul class="simple">
+<li><p>只支持 C++，不支持 Python。</p></li>
+<li><p>只支持 x86_64 架构，Aarch64 支持尚待完善。</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro_to_apollo_release_build.html" class="btn btn-neutral float-left" title="Introduction to Apollo Release Build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="navigation_mode_tutorial_cn.html" class="btn btn-neutral float-right" title="Apollo导航模式教程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

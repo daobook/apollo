@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DreamView FAQs &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="General FAQs" href="General_FAQs.html" />
+    <link rel="prev" title="" href="CyberRT_FAQs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>DreamView FAQs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/FAQs/Dreamview_FAQs.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dreamview-faqs">
+<h1>DreamView FAQs<a class="headerlink" href="#dreamview-faqs" title="Permalink to this headline"></a></h1>
+<section id="i-had-difficulty-connecting-to-http-localhost-8888-dreamview-web-ui">
+<h2>I had difficulty connecting to <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> (Dreamview Web UI).<a class="headerlink" href="#i-had-difficulty-connecting-to-http-localhost-8888-dreamview-web-ui" title="Permalink to this headline"></a></h2>
+<p>The Dreamview web server is provided by the dreamview node (A node is an
+executable in CyberRT terminology). Before accessing Dreamview Web UI, make sure
+Apollo is built within Apollo development Docker container following
+<a class="reference internal" href="../quickstart/apollo_software_installation_guide.html"><span class="doc std std-doc">Apollo Software Installation Guide</span></a>.
+Once built, dreamview node will be started by running
+<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">scripts/bootstrap.sh</span></code>.</p>
+<p>So if you can not access Dreamview, please check:</p>
+<ul class="simple">
+<li><p>Make sure you have the Dreamview process running correctly. In the latest
+version, <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">scripts/bootstrap.sh</span></code> will report
+<code class="docutils literal notranslate"><span class="pre">dreamview:</span> <span class="pre">ERROR</span> <span class="pre">(spawn</span> <span class="pre">error)</span></code> if dreamview fails to start. You can also
+check with command: <code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">aux</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">dreamview</span></code>.</p></li>
+<li><p>Make sure the address and port are not blocked by the firewall.</p></li>
+<li><p>Make sure you’re using <code class="docutils literal notranslate"><span class="pre">&lt;apollo_host_ip&gt;:8888</span></code> instead of <code class="docutils literal notranslate"><span class="pre">localhost:8888</span></code> if
+you are accessing the Dreamview UI through another host.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="dreamview-does-not-open-up-if-i-install-more-than-1-version-of-apollo">
+<h2>Dreamview does not open up if I install more than 1 version of Apollo?<a class="headerlink" href="#dreamview-does-not-open-up-if-i-install-more-than-1-version-of-apollo" title="Permalink to this headline"></a></h2>
+<p>This issue occured because of port conflict error. Even though you setup two
+different docker environments, both of them are still trying to use port 8888 on
+your machine, therefore causing a port conflict issue. If you’d like to run both
+versions at the same time, please make sure different ports are set.</p>
+<p>To do so,</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">dreamview.conf</span></code> file under modules/dreamview/conf add
+<code class="docutils literal notranslate"><span class="pre">--server_ports=&lt;PORT_NUMBER&gt;</span></code> to the end of the file. Ex:
+–flagfile=modules/common/data/global_flagfile.txt –server_ports=5555</p></li>
+<li><p>Restart apollo</p></li>
+</ol>
+<p>This way, dreamview can be accessed from <a class="reference external" href="http://localhost">http://localhost</a>:&lt;PORT_NUMBER&gt;
+(<a class="reference external" href="http://localhost:5555">http://localhost:5555</a> for this example)</p>
+</section>
+<hr class="docutils" />
+<section id="dreamview-is-too-slow-how-do-i-resolve-it">
+<h2>Dreamview is too slow. How do I resolve it?<a class="headerlink" href="#dreamview-is-too-slow-how-do-i-resolve-it" title="Permalink to this headline"></a></h2>
+<p>If you feel Dreamview is taking too long to load/work, please run both the
+<a class="reference external" href="http://webglreport.com/?v=1">WebGL reports</a>. If there are any missing drivers,
+please install them</p>
+</section>
+<hr class="docutils" />
+<section id="how-to-draw-anything-in-dreamview-e-g-an-arrow">
+<h2>How to draw anything in Dreamview (e.g. an arrow)<a class="headerlink" href="#how-to-draw-anything-in-dreamview-e-g-an-arrow" title="Permalink to this headline"></a></h2>
+<p>Dreamview uses <a class="reference external" href="https://github.com/mrdoob/three.js">https://github.com/mrdoob/three.js</a> as graphics library. You can
+modify the frontend code to draw an arrow using the corresponding API of the
+library. After that you need to run a <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">build_fe</span></code> to compile.</p>
+</section>
+<hr class="docutils" />
+<section id="how-can-i-test-planning-algorithms-offline">
+<h2>How can I test planning algorithms offline?<a class="headerlink" href="#how-can-i-test-planning-algorithms-offline" title="Permalink to this headline"></a></h2>
+<p>Use dreamview and enable sim_control on dreamview to test your planning
+algorithm.</p>
+</section>
+<hr class="docutils" />
+<section id="adding-a-new-point-of-interest-permanently-in-the-dreamview-interface">
+<h2>Adding a new point of interest permanently in the Dreamview interface<a class="headerlink" href="#adding-a-new-point-of-interest-permanently-in-the-dreamview-interface" title="Permalink to this headline"></a></h2>
+<p>There’s a default_end_way_point file for each map to specify point of interest,
+you can refer to
+<span class="xref myst">the following file</span>.</p>
+</section>
+<hr class="docutils" />
+<section id="whats-the-function-of-sim-control-in-the-backend-of-dreamview">
+<h2>What’s the function of sim_control in the backend of dreamview<a class="headerlink" href="#whats-the-function-of-sim-control-in-the-backend-of-dreamview" title="Permalink to this headline"></a></h2>
+<p>It simulates a SDC’s control module, and moves the car based on planning result.
+This is a really convenient way to visualize and test planning module</p>
+</section>
+<hr class="docutils" />
+<section id="how-do-i-turn-on-sim-control">
+<h2>How do I turn on Sim Control?<a class="headerlink" href="#how-do-i-turn-on-sim-control" title="Permalink to this headline"></a></h2>
+<p>Purpose of sim control: drive the car based on the planning trajectory. Good for
+debugging planning algorithms.</p>
+<p><strong>Apollo 2.5 or after</strong>: simply turning on the SimControl switch as seen in the
+image below:</p>
+<p><img alt="" src="../../_images/sim_control_2.5.png" /></p>
+<p><strong>Apollo 2.0 or older</strong>: you would need to enable the sim control manually,
+which can be performed as follows:</p>
+<ol class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">modules/dreamview/conf/dreamview.conf</span></code></p></li>
+<li><p>Add <strong>“–enable_sim_control=true”</strong> to the second line of the file</p></li>
+<li><p>Restart apollo using our bootstrap script</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    bash scripts/bootstrap.sh stop
+    bash scripts/bootstrap.sh start
+</pre></div>
+</div>
+<p><strong>Please note</strong>, planning and routing modules (see image below) should be ON
+while using SimControl. To navigate the ego-car, select either “route editing”
+or “default routing” from the side bar to define a route. You can turn the
+sim_control on and off from the toggle. However, a new routing request is needed
+each time the sim_control is restarted. <img alt="" src="../../_images/sim_control_2.0.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="i-want-to-plot-my-own-graphs-for-my-algorithms-where-should-i-go">
+<h2>I want to plot my own graphs for my algorithms, where should I go?<a class="headerlink" href="#i-want-to-plot-my-own-graphs-for-my-algorithms-where-should-i-go" title="Permalink to this headline"></a></h2>
+<p>Go to the PnC Monitor section in
+<a class="reference internal" href="../specs/dreamview_usage_table.html"><span class="doc std std-doc">Dreamview Doc</span></a>.</p>
+</section>
+<hr class="docutils" />
+<section id="what-is-dreamland">
+<h2>What is Dreamland?<a class="headerlink" href="#what-is-dreamland" title="Permalink to this headline"></a></h2>
+<p>Dreamland is Apollo’s web-based simulation platform. Based on an enormous amount
+of driving scenario data and large-scale cloud computing capacity, Apollo
+simulation engine creates a powerful testing environment for the development of
+an autonomous driving system, from algorithms to grading, and then back to
+improved algorithms. It enables the developers and start-ups to run millions of
+miles of simulation daily, which dramatically accelerates the development cycle.</p>
+<p>To access Dreamland, please visit
+<a class="reference external" href="http://apollo.auto/platform/simulation.html">our Simulation website</a> and join
+now!</p>
+<hr class="docutils" />
+<p><strong>More DreamView FAQs to follow.</strong></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CyberRT_FAQs.html" class="btn btn-neutral float-left" title="" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="General_FAQs.html" class="btn btn-neutral float-right" title="General FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

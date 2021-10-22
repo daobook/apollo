@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PREDICTION EVALUATOR &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="PREDICTION PREDICTOR" href="prediction_predictor.html" />
+    <link rel="prev" title="Planning Speed Bounds Decider Introduction" href="planning_speed_bounds_decider.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>PREDICTION EVALUATOR</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_documents/prediction_evaluator.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="prediction-evaluator">
+<h1>PREDICTION EVALUATOR<a class="headerlink" href="#prediction-evaluator" title="Permalink to this headline"></a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<p>The prediction module comprises 4 main functionalities: Container, Scenario, Evaluator and Predictor.</p>
+<p>The Evaluator predicts path and speed separately for any given obstacle. An evaluator evaluates a path by outputting a probability for it (lane sequence) using the given model stored in prediction/data/.</p>
+<p>The list of available evaluators include:</p>
+<ul class="simple">
+<li><p>Cost evaluator: probability is calculated by a set of cost functions</p></li>
+<li><p>MLP evaluator: probability is calculated using an MLP model</p></li>
+<li><p>RNN evaluator: probability is calculated using an RNN model</p></li>
+<li><p>Cruise MLP + CNN-1d evaluator: probability is calculated using a mix of MLP and CNN-1d models for the cruise scenario</p></li>
+<li><p>Junction MLP evaluator: probability is calculated using a MLP model for junction scenario</p></li>
+<li><p>Junction Map evaluator: probability is calculated using an semantic map-based CNN model for junction scenario. This evaluator was created for caution level obstacles</p></li>
+<li><p>Social Interaction evaluator: this model is used for pedestrians, for short term trajectory prediction. It uses social LSTM. This evaluator was created for caution level obstacles</p></li>
+<li><p>Semantic LSTM evaluator: this evaluator is used in the new Caution Obstacle model to generate short term trajectory points which are calculated using CNN and LSTM. Both vehicles and pedestrians are using this same model, but with different parameters</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="where-is-the-code">
+<h1>Where is the code<a class="headerlink" href="#where-is-the-code" title="Permalink to this headline"></a></h1>
+<p>Please refer <a class="reference external" href="https://github.com/ApolloAuto/apollo/modules/prediction/evaluator">prediction evaluator</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="code-reading">
+<h1>Code Reading<a class="headerlink" href="#code-reading" title="Permalink to this headline"></a></h1>
+<section id="solcial-interaction-evaluator">
+<h2>Solcial interaction evaluator<a class="headerlink" href="#solcial-interaction-evaluator" title="Permalink to this headline"></a></h2>
+<ol>
+<li><p>The evaluator uses social LSTM to predict short-term trajectroy for pedestrians with caution level. In the code, the evaluator is named by pedestrain interaction evalutor.</p></li>
+<li><p>Extract features from obstacles.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">ExtractFeatures</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Obstacle</span><span class="o">*</span><span class="w"> </span><span class="n">obstacle_ptr</span><span class="p">,</span><span class="w"></span>
+<span class="w">                   </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">feature_values</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+<li><p>Using social LSTM module to predict short-term trajectory by following steps:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Get social embedding</p></li>
+<li><p>Get position embedding</p></li>
+<li><p>Conduct single LSTM and update hidden states</p></li>
+<li><p>Get a predicted trajectory</p></li>
+</ul>
+</section>
+<section id="semantic-lstm-evaluator">
+<h2>Semantic LSTM evaluator<a class="headerlink" href="#semantic-lstm-evaluator" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>Get and process feature map by obstacles’id.</p></li>
+<li><p>Build input features for torch.</p></li>
+<li><p>Get predicted trajectory with different parameters for different types of obstacles.</p></li>
+</ol>
+</section>
+<section id="junction-map-evaluator">
+<h2>Junction map evaluator<a class="headerlink" href="#junction-map-evaluator" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>Only care about obstalces at intersections. Obstacles are not closed to any junction exit cannot be evaluated by this evaluator.</p></li>
+<li><p>Take the obstacle as the center and the orientation as the reference direction, 12 fan-shaped areas are divided.
+<img alt="Diagram" src="../../_images/prediction_evaluator_fig_1.png" /></p></li>
+<li><p>Since the juction exit is associated with these 12 fan-shaped areas, the probability can be calculated by solving the fan-shaped areas classification problem.</p></li>
+<li><p>Assign all lane sequence probability.</p></li>
+</ol>
+</section>
+<section id="junction-mlp-evaluator">
+<h2>Junction mlp evaluator<a class="headerlink" href="#junction-mlp-evaluator" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>Using a MLP model to solve the classification problem mentioned in junction map evaluator.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="planning_speed_bounds_decider.html" class="btn btn-neutral float-left" title="Planning Speed Bounds Decider Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prediction_predictor.html" class="btn btn-neutral float-right" title="PREDICTION PREDICTOR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

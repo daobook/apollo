@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Debug Apollo &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to do performance profiling" href="how_to_do_performance_profiling.html" />
+    <link rel="prev" title="如何创建合入请求(Pull Request)" href="how_to_create_pull_request_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Debug Apollo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_debug.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-debug-apollo">
+<h1>How to Debug Apollo<a class="headerlink" href="#how-to-debug-apollo" title="Permalink to this headline"></a></h1>
+<section id="debugging-apollo">
+<h2>Debugging Apollo<a class="headerlink" href="#debugging-apollo" title="Permalink to this headline"></a></h2>
+<p>The Apollo project runs in Docker and cannot be used directly on the host
+machine. It must be created in Docker with GDBServer. Debug the service process,
+and then use GDB to connect to the debug service process in Docker on the host
+machine. The specific operation methods are as follows:</p>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h3>
+<p>The main prerequisites contain collecting debugging information and installing
+the GDBServer if it is not already present in Docker</p>
+<section id="collecting-debugging-information">
+<h4>Collecting debugging information<a class="headerlink" href="#collecting-debugging-information" title="Permalink to this headline"></a></h4>
+<p>When compiling Apollo projects, you will need to use debugging information
+options <strong>build_dbg</strong>. Optimization options such as <strong>build_opt</strong> or
+<strong>build_opt_gpu</strong> cannot be used.</p>
+</section>
+<section id="install-gdbserver-inside-docker">
+<h4>Install GDBServer inside Docker<a class="headerlink" href="#install-gdbserver-inside-docker" title="Permalink to this headline"></a></h4>
+<p>After entering Docker, you can use the following command to view if the
+GDBServer is present:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdbserver --version
+</pre></div>
+</div>
+<p>If the prompt is similar to the following information:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>GNU gdbserver <span class="o">(</span>Ubuntu <span class="m">8</span>.1-0ubuntu3.2<span class="o">)</span> <span class="m">8</span>.1.0.20180409-git
+Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2018</span> Free Software Foundation, Inc.
+gdbserver is free software, covered by the GNU General Public License.
+This gdbserver was configured as <span class="s2">&quot;x86_64-linux-gnu&quot;</span>
+</pre></div>
+</div>
+<p>It means that GDBServer has been installed inside Docker. You should be able to
+view the prompt below. But if the GDBServer is not present and if you are
+prompted with the following information:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash: gdbserver: <span class="nb">command</span> not found
+</pre></div>
+</div>
+<p>Then you would need to install the GDBServer using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get -y update
+sudo apt-get install gdbserver
+</pre></div>
+</div>
+</section>
+<section id="start-the-dreamview-daemon">
+<h4>Start the Dreamview daemon<a class="headerlink" href="#start-the-dreamview-daemon" title="Permalink to this headline"></a></h4>
+<p>Go to Docker and start Dreamview. The command is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="si">${</span><span class="nv">APOLLO_ROOT_DIR</span><span class="si">}</span>
+<span class="c1"># If Docker is not started, start it first, otherwise ignore this step</span>
+bash docker/scripts/dev_start.sh
+<span class="c1"># Enter Docker</span>
+bash docker/scripts/dev_into.sh
+<span class="c1"># Start Dreamview background service</span>
+bash scripts/bootstrap.sh
+</pre></div>
+</div>
+</section>
+<section id="start-the-module-that-needs-to-be-debugged">
+<h4>Start the module that needs to be debugged<a class="headerlink" href="#start-the-module-that-needs-to-be-debugged" title="Permalink to this headline"></a></h4>
+<p>Start the module to be debugged, either by using the command line or by using
+the Dreamview interface. The following is an example of debugging the
+<strong>Planning</strong> module from the Dreamview interface.</p>
+<ul class="simple">
+<li><p>Open URL: <a class="reference external" href="http://localhost:8888/">http://localhost:8888/</a> in Chrome</p></li>
+<li><p>On Dreamview, click on the <strong>SimControl</strong> slider, as shown below:</p></li>
+</ul>
+<p><img alt="enable simcontrol" src="../../_images/enable_simcontrol.png" /></p>
+<ul class="simple">
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Controler</span></code> tab on the left toolbar and select the
+<code class="docutils literal notranslate"><span class="pre">Routing</span></code> and <code class="docutils literal notranslate"><span class="pre">Planning</span></code> options as shown below:</p></li>
+</ul>
+<p><img alt="start routing and planning" src="../../_images/start_routing_and_planning.png" /></p>
+<ul class="simple">
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">Routing</span></code> tab on the left toolbar, select
+<code class="docutils literal notranslate"><span class="pre">Route:</span> <span class="pre">Reverse</span> <span class="pre">Early</span> <span class="pre">Change</span> <span class="pre">Lane</span></code> or any of these options, send a
+<code class="docutils literal notranslate"><span class="pre">Routing</span> <span class="pre">Request</span></code> request, and generate a global navigation path, as shown
+below:</p></li>
+</ul>
+<p><img alt="check route reverse early change lane" src="../../_images/check_route_reverse_early_change_lane.png" /></p>
+</section>
+<section id="viewing-the-planning-process-id">
+<h4>Viewing the “Planning” Process ID<a class="headerlink" href="#viewing-the-planning-process-id" title="Permalink to this headline"></a></h4>
+<p>Use the following command to view the “Planning” process ID:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps aux <span class="p">|</span> grep mainboard <span class="p">|</span> grep planning
+</pre></div>
+</div>
+<p>The result in the following figure is similar to the previous figure, you can
+see that the <code class="docutils literal notranslate"><span class="pre">Planning</span></code> process ID is 4147.</p>
+<p><img alt="plannning id ps" src="../../_images/planning_id_ps.png" /></p>
+</section>
+<section id="debugging-planning-module-using-gdbserver">
+<h4>Debugging Planning module using GDBServer<a class="headerlink" href="#debugging-planning-module-using-gdbserver" title="Permalink to this headline"></a></h4>
+<p>Next we need to carry out our key operations, using GDBServer to additionally
+debug the <code class="docutils literal notranslate"><span class="pre">Planning</span></code> process, the command is as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo gdbserver :1111 --attach <span class="m">4147</span>
+</pre></div>
+</div>
+<p>In the command above, “:1111” indicates that the debugging service process with
+the port “1111” is enabled, and “4147” indicates the “Planning” process ID. If
+the result is as shown below, the operation is successful.</p>
+<p><img alt="gdbserver attach debug" src="../../_images/gdbserver_attach_debug.png" /></p>
+<p>After restarting a terminal and entering Docker, use the following command to
+see if the “gdbserver” process is running properly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ps aux <span class="p">|</span> grep gdbserver
+</pre></div>
+</div>
+<p><img alt="view gdbserver process" src="../../_images/view_gdbserver_process.png" /></p>
+</section>
+<section id="starting-gdbserver-with-a-script-file">
+<h4>Starting GDBServer with a Script File<a class="headerlink" href="#starting-gdbserver-with-a-script-file" title="Permalink to this headline"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">docker/scripts/dev_start_gdb_server.sh</span></code> can start GDBServer directly on the
+host (outside Docker).</p>
+<p>Assuming that while debugging the planning module, the port number is 1111, the
+usage of <code class="docutils literal notranslate"><span class="pre">docker/scripts/dev_start_gdb_server.sh</span></code> is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start gdbserver directly on the host machine (outside Docker)</span>
+bash docker/scripts/dev_start_gdb_server.sh planning <span class="m">1111</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="possible-errors-and-their-solutions">
+<h3>Possible Errors and their Solutions<a class="headerlink" href="#possible-errors-and-their-solutions" title="Permalink to this headline"></a></h3>
+<p>During the debugging process, you may encounter the following problems:</p>
+<section id="the-network-connection-is-not-smooth-can-not-be-debugged">
+<h4>the network connection is not smooth, can not be debugged<a class="headerlink" href="#the-network-connection-is-not-smooth-can-not-be-debugged" title="Permalink to this headline"></a></h4>
+</section>
+<section id="solution">
+<h4>Solution<a class="headerlink" href="#solution" title="Permalink to this headline"></a></h4>
+<p>The solution is to ensure the network is smooth, and disable the agent tool</p>
+</section>
+</section>
+<section id="remote-debugging">
+<h3>Remote debugging<a class="headerlink" href="#remote-debugging" title="Permalink to this headline"></a></h3>
+<p>During the R&amp;D process, we also need to debug the Apollo project remotely on the
+industrial computer inside the vehicle, that is, connect the in-vehicle
+industrial computer with the SSH service on the debugging computer, start the
+relevant process in the industrial computer, and then perform remote debugging
+on the debugging computer. The following is an example of debugging the planning
+module:</p>
+<section id="view-the-ip-address-of-the-industrial-computer-in-the-car">
+<h4>View the IP address of the industrial computer in the car<a class="headerlink" href="#view-the-ip-address-of-the-industrial-computer-in-the-car" title="Permalink to this headline"></a></h4>
+<p>On the industrial computer in the car, check the IP of the machine by the
+following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+</div>
+</section>
+<section id="open-dreamview-in-the-browser-of-the-debugging-computer-and-start-the-module-to-be-debugged">
+<h4>Open Dreamview in the browser of the debugging computer and start the module to be debugged<a class="headerlink" href="#open-dreamview-in-the-browser-of-the-debugging-computer-and-start-the-module-to-be-debugged" title="Permalink to this headline"></a></h4>
+<p>Assuming that the IP address of the industrial computer LAN is: <code class="docutils literal notranslate"><span class="pre">192.168.3.137</span></code>,
+open URL: <a class="reference external" href="http://192.168.3.137:8888/">http://192.168.3.137:8888/</a> on your machine and start the module (<code class="docutils literal notranslate"><span class="pre">Planning</span></code>) to debug as
+shown in <a class="reference external" href="#Start-the-module-that-needs-to-be-debugged">Start the module that needs debugging</a>
+section.</p>
+<p><img alt="remote show dreamview" src="../../_images/remote_show_dreamview.png" /></p>
+</section>
+<section id="use-the-ssh-command-to-remotely-log-in-to-the-industrial-pc-and-start-the-gdbserver-service-of-the-industrial-pc">
+<h4>Use the SSH Command to Remotely Log In to the Industrial PC and Start the Gdbserver Service of the Industrial PC<a class="headerlink" href="#use-the-ssh-command-to-remotely-log-in-to-the-industrial-pc-and-start-the-gdbserver-service-of-the-industrial-pc" title="Permalink to this headline"></a></h4>
+<p>Assume that the user name of the industrial computer in the car is <code class="docutils literal notranslate"><span class="pre">xxxxx</span></code>, and
+the IP address of the LAN is <code class="docutils literal notranslate"><span class="pre">192.168.3.137</span></code>. Use the following command to
+remotely log in to the industrial computer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh xxxxx@192.168.3.137
+</pre></div>
+</div>
+<p>After successfully entering the IPC, assume that the Planning module needs to be
+debugged, and the port number is 1111, use the following command to start the
+gdbserver service of the in-vehicle IPC:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Switch to the Apollo project root directory on the industrial computer</span>
+<span class="nb">cd</span> ~/code/apollo
+<span class="c1"># Start the gdbserver service outside of Docker</span>
+bash docker/scripts/dev_start_gdb_server.sh planning <span class="m">1111</span>
+</pre></div>
+</div>
+<p>As shown in the figure below, if you see a prompt similar to Listening on port
+1111, the gdbserver service starts successfully.</p>
+<p><img alt="remote start gdbserver" src="../../_images/remote_start_gdbserver.png" /></p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_create_pull_request_cn.html" class="btn btn-neutral float-left" title="如何创建合入请求(Pull Request)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_do_performance_profiling.html" class="btn btn-neutral float-right" title="How to do performance profiling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

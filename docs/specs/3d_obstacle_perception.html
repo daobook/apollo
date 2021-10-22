@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Obstacle Perception &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3D 障碍物感知" href="3d_obstacle_perception_cn.html" />
+    <link rel="prev" title="多激光雷达全球导航卫星系统(Multiple-LiDAR GNSS)校准指南" href="../quickstart/multiple_lidar_gnss_calibration_guide_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>3D Obstacle Perception</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/3d_obstacle_perception.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="d-obstacle-perception">
+<h1>3D Obstacle Perception<a class="headerlink" href="#d-obstacle-perception" title="Permalink to this headline"></a></h1>
+<p>There are three main components of 3D obstacle perception:</p>
+<ul class="simple">
+<li><p>LiDAR Obstacle Perception</p></li>
+<li><p>RADAR Obstacle Perception</p></li>
+<li><p>Obstacle Results Fusion</p></li>
+</ul>
+<section id="lidar-obstacle-perception">
+<h2>LiDAR Obstacle Perception<a class="headerlink" href="#lidar-obstacle-perception" title="Permalink to this headline"></a></h2>
+<p>The following sections describe the obstacle perception pipeline given input as 3D point cloud data from the LiDAR sensor that are resolved by Apollo:</p>
+<ul class="simple">
+<li><p>HDMap Region of Interest (ROI) Filter</p></li>
+<li><p>Convolutional Neural Networks (CNN) Segmentation</p></li>
+<li><p>MinBox Builder</p></li>
+<li><p>HM ObjectTracker</p></li>
+<li><p>Sequential TypeFusion</p></li>
+</ul>
+<section id="hdmap-region-of-interest-roi-filter">
+<h3>HDMap Region of Interest (ROI) Filter<a class="headerlink" href="#hdmap-region-of-interest-roi-filter" title="Permalink to this headline"></a></h3>
+<p>The Region of Interest (ROI) specifies the drivable area that includes road surfaces and junctions that are retrieved from the HD (high-resolution) map. The HDMap ROI filter processes LiDAR points that are outside the ROI, removing background objects, e.g., buildings and trees around the road. What remains is the point cloud in the ROI for subsequent processing.</p>
+<p>Given an HDMap, the affiliation of each LiDAR point indicates whether it is inside or outside the ROI. Each LiDAR point can be queried with a lookup table (LUT) of 2D quantization of the region around the car. The
+input and output of the HDMap ROI filter module are summarized in the table below.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The point cloud: A set of 3D points captured from LiDAR Sensor.</p></td>
+<td><p>The indices of input points that are inside the ROI defined by HDMap.</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDMap: A set of polygons, each of which is an ordered set of points.</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>The Apollo HDMap ROI filter generally consists of three successive steps:</p>
+<ul class="simple">
+<li><p>Coordinate transformation.</p></li>
+<li><p>ROI LUT construction.</p></li>
+<li><p>Point inquiry with ROI LUT.</p></li>
+</ul>
+<section id="coordinate-transformation">
+<h4>Coordinate Transformation<a class="headerlink" href="#coordinate-transformation" title="Permalink to this headline"></a></h4>
+<p>For the HDMap ROI filter, the data interface for HDMap is defined by a set of polygons, each of which is actually an ordered set of points in the world coordinate system. Running an inquiry on the points with the HDMap ROI requires that the point cloud and polygons are represented in the same coordinate system. For this purpose, Apollo transforms the points of the input point cloud and the HDMap polygons into a local coordinate system that originates from the LiDAR sensor’s location.</p>
+</section>
+<section id="roi-lut-construction">
+<h4>ROI LUT Construction<a class="headerlink" href="#roi-lut-construction" title="Permalink to this headline"></a></h4>
+<p>To determine an input point, whether inside or outside the ROI, Apollo adopts a grid-wise LUT that quantifies the ROI into a birds-eye view 2D grid. As shown in Figure 1, this LUT covers a rectangle region, bounded by a predefined spatial range around the general view from above in the boundary of HDMap. Then it represents the affiliation with the ROI for each cell of the grid (i.e., 1/0 represents it is inside/outside the ROI). For computational efficiency, Apollo uses a scan line algorithm and bitmap encoding to construct the ROI LUT.</p>
+<div align=center><img src="images/3d_obstacle_perception/roi_lookup_table.png"></div>
+<div align=center>Figure 1 Illustration of ROI lookup table (LUT)</div>
+<p>The blue lines indicate the boundary of HDMap ROI, including road surfaces and junctions. The red solid dot represents the origin of the local coordinate system corresponding to the LiDAR sensor location. The 2D grid is composed of 8×8 cells that are shown as green squares. The cells inside the ROI are blue-filled squares while the ones outside the ROI are yellow-filled squares.</p>
+</section>
+<section id="point-inquiry-with-roi-lut">
+<h4>Point Inquiry with ROI LUT<a class="headerlink" href="#point-inquiry-with-roi-lut" title="Permalink to this headline"></a></h4>
+<p>Based on the ROI LUT, the affiliation of each input point is queried using a two-step verification. Then, Apollo conducts data compilation and output as described below. For the point inquiry process, Apollo:</p>
+<ul class="simple">
+<li><p>Identifies whether the point is inside or outside the rectangle region of ROI LUT.</p></li>
+<li><p>Queries the corresponding cell of the point in the LUT for its affiliation with respect to the ROI.</p></li>
+<li><p>Collects all the points that belong to the ROI and outputs their indices with respect to the input point cloud.</p></li>
+</ul>
+<p>Set the user-defined parameters in the configuration file: <code class="docutils literal notranslate"><span class="pre">modules/perception/production/data/perception/lidar/models/roi_filter/hdmap_roi_filter/hdmap_roi_filter.conf</span></code>.</p>
+<p>The table below describes the usage of parameters for HDMap ROI Filter.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter Name</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>range</p></td>
+<td><p>The range of ROI LUT (the 2D grid) with respect to the origin (LiDAR sensor).</p></td>
+<td><p>120.0 meters</p></td>
+</tr>
+<tr class="row-odd"><td><p>cell_size</p></td>
+<td><p>The size of cells for quantizing the 2D grid.</p></td>
+<td><p>0.25 meter</p></td>
+</tr>
+<tr class="row-even"><td><p>extend_dist</p></td>
+<td><p>The distance that the ROI extends from the polygon boundary.</p></td>
+<td><p>0.0 meter</p></td>
+</tr>
+<tr class="row-odd"><td><p>no_edge_table</p></td>
+<td><p>use edge_table for polygon mask generation.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>set_roi_service</p></td>
+<td><p>enable roi_service to perception lidar modules.</p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="convolutional-neural-networks-cnn-segmentation">
+<h3>Convolutional Neural Networks (CNN) Segmentation<a class="headerlink" href="#convolutional-neural-networks-cnn-segmentation" title="Permalink to this headline"></a></h3>
+<p>After identifying the surrounding environment using the HDMap ROI filter, Apollo obtains the filtered point cloud that includes <em>only</em> the points inside the ROI (i.e., the drivable road and junction areas). Most of the background obstacles, such as buildings and trees around the road region, have been removed, and the point cloud inside the ROI is fed into the segmentation module. This process detects and segments out foreground obstacles, e.g., cars, trucks, bicycles, and pedestrians.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Input</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>The point cloud (a set of 3D points)</p></td>
+<td><p>A set of objects corresponding to obstacles in the ROI.</p></td>
+</tr>
+<tr class="row-odd"><td><p>The point indices that indicate points inside the ROI as defined in HDMap</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Apollo uses a deep CNN for accurate obstacle detection and segmentation. The Apollo CNN segmentation consists of four successive steps:</p>
+<ul class="simple">
+<li><p>Channel Feature Extraction.</p></li>
+<li><p>CNN-Based Obstacle Prediction.</p></li>
+<li><p>Obstacle Clustering.</p></li>
+<li><p>Post-processing.</p></li>
+</ul>
+<p>The following sections describe the deep CNN in detail.</p>
+<section id="channel-feature-extraction">
+<h4>Channel Feature Extraction<a class="headerlink" href="#channel-feature-extraction" title="Permalink to this headline"></a></h4>
+<p>Given a point cloud frame, Apollo builds a birds-eye view (i.e., projected to the X-Y plane) that is a 2D grid in the local coordinate system. Each point within a predefined range with respect to the origin (i.e., the LiDAR sensor) is quantized into one cell of the 2D grid based on its X and Y coordinates. After quantization, Apollo computes 8 statistical measurements of the points for each cell of the grid, which will be the input channel features fed into the CNN in the subsequent step. The statistical measurements computed are the:</p>
+<ul class="simple">
+<li><p>Maximum height of points in the cell.</p></li>
+<li><p>Intensity of the highest point in the cell.</p></li>
+<li><p>Mean height of points in the cell.</p></li>
+<li><p>Mean intensity of points in the cell.</p></li>
+<li><p>Number of points in the cell.</p></li>
+<li><p>Angle of the cell’s center with respect to the origin.</p></li>
+<li><p>Distance between the cell’s center and the origin.</p></li>
+<li><p>Binary value indicating whether the cell is empty or occupied.</p></li>
+</ul>
+</section>
+<section id="cnn-based-obstacle-prediction">
+<h4>CNN-Based Obstacle Prediction<a class="headerlink" href="#cnn-based-obstacle-prediction" title="Permalink to this headline"></a></h4>
+<p>Based on the channel features described above, Apollo uses a deep fully-convolutional neural network (FCNN) to predict the cell-wise obstacle attributes including the offset displacement with respect to the potential object center — called center offset, (see Figure 2 below), objectness, positiveness, and object height. As shown in Figure 2, the input of the network is a <em>W</em>×<em>H</em>×<em>C</em> channel image where:</p>
+<ul class="simple">
+<li><p><em>W</em> represents the column number of the grid.</p></li>
+<li><p><em>H</em> represents the row number of the grid.</p></li>
+<li><p><em>C</em> represents the number of channel features.</p></li>
+</ul>
+<p>The FCNN is composed of three layers:</p>
+<ul class="simple">
+<li><p>Downstream encoding layers (feature encoder).</p></li>
+<li><p>Upstream decoding layers (feature decoder).</p></li>
+<li><p>Obstacle attribute prediction layers (predictor).</p></li>
+</ul>
+<p>The feature encoder takes the channel feature image as input and successively down-samples its spatial resolution with increasing feature abstraction. Then the feature decoder gradually up-samples the encoded
+feature image to the spatial resolution of the input 2D grid, which can recover the spatial details of the feature image to facilitate the cell-wise obstacle attribute prediction. The down-sampling and up-sampling operations are implemented in terms of stacked convolution/devolution layers with non-linear activation (i.e., ReLu) layers.</p>
+<div align=center><img src="images/3d_obstacle_perception/FCNN-with-class.png"></div>
+<div align=center>Figure 2 The FCNN for cell-wise obstacle prediction</div>
+</section>
+<section id="obstacle-clustering">
+<h4>Obstacle Clustering<a class="headerlink" href="#obstacle-clustering" title="Permalink to this headline"></a></h4>
+<p>After the CNN-based prediction step, Apollo obtains prediction information for individual cells. Apollo utilizes five cell object attribute images that contain the:</p>
+<ul class="simple">
+<li><p>Center offset</p></li>
+<li><p>Objectness</p></li>
+<li><p>Positiveness</p></li>
+<li><p>Object height</p></li>
+<li><p>Class probability</p></li>
+</ul>
+<p>To generate obstacle objects, Apollo constructs a directed graph, based on the cell center offset prediction, and searches the connected components as candidate object clusters.</p>
+<p>As shown in Figure 3, each cell is a node of the graph and the directed edge is built based on the center offset prediction of the cell, which points to its parent node corresponding to another cell.</p>
+<p>Given this graph, Apollo adopts a compressed Union Find algorithm to efficiently find the connected components, each of which is a candidate obstacle object cluster. The objectness is the probability of being a valid object for one individual cell.  So Apollo defines the non-object cells as the ones with the objectness of less than 0.5. Thus, Apollo filters out the empty cells and non-object ones for each candidate object cluster.</p>
+<div align=center><img src="images/3d_obstacle_perception/obstacle_clustering.png"></div>
+<div align=center>Figure 3 Illustration of obstacle clustering</div>
+<ul class="simple">
+<li><p>The red arrow represents the object center offset prediction for each cell.</p></li>
+<li><p>The blue mask corresponds to the object cells for which  the objectness probability is no less than 0.5.</p></li>
+<li><p>The cells within the solid red polygon compose a candidate object cluster.</p></li>
+<li><p>The red filled five-pointed stars indicate the root nodes (cells) of sub-graphs that correspond to the connected components.</p></li>
+</ul>
+<p>One candidate object cluster can be composed of multiple neighboring connected components whose root nodes are adjacent to each other.</p>
+<p>The class probabilities are summed up over the nodes (cells) within the object cluster for each candidate obstacle type, including vehicle, pedestrian, bicyclist and unknown. The obstacle type corresponding to the maximum-averaged probability is the final classification result of the object cluster.</p>
+</section>
+<section id="post-processing">
+<h4>Post-processing<a class="headerlink" href="#post-processing" title="Permalink to this headline"></a></h4>
+<p>After clustering, Apollo obtains a set of candidate object clusters each of which includes several cells. In the post-processing step, Apollo first computes the detection confidence score and object height for each candidate cluster by averaging the positiveness and object height values of its involved cells respectively. Then, Apollo removes the points that are too high with respect to the predicted object height and collects the points of valid cells for each candidate cluster. Finally, Apollo removes the candidate clusters that have either a very low confidence score or a small number of points, to output the final obstacle clusters/segments.</p>
+<p>Set the user-defined parameters in the configuration file <code class="docutils literal notranslate"><span class="pre">modules/perception/production/data/perception/lidar/models/cnnseg/velodyne128/cnnseg_param.conf</span></code>.</p>
+<p>The table below explains the parameter usage and default values for CNN Segmentation.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter Name</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>objectness_thresh</p></td>
+<td><p>The threshold of objectness for filtering out non-object cells in the obstacle clustering step.</p></td>
+<td><p>0.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>model_type</p></td>
+<td><p>Network type, e.g., RTNet means tensorRT accelerated network</p></td>
+<td><p>RTNet</p></td>
+</tr>
+<tr class="row-even"><td><p>confidence_thresh</p></td>
+<td><p>The detection confidence score threshold for filtering out the candidate clusters in the post-processing step.</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>confidence_range</p></td>
+<td><p>The confident range with respect to the origin (the LiDAR sensor)for good quality detection.</p></td>
+<td><p>85.0 meters</p></td>
+</tr>
+<tr class="row-even"><td><p>height_thresh</p></td>
+<td><p>If it is non-negative, the points that are higher than the predicted object height by height_thresh are filtered out in the post-processing step.</p></td>
+<td><p>0.5 meters</p></td>
+</tr>
+<tr class="row-odd"><td><p>min_pts_num</p></td>
+<td><p>In the post-processing step, the candidate clusters with less than min_pts_num points are removed.</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>ground_detector</p></td>
+<td><p>Ground surface detector type.</p></td>
+<td><p>SpatioTemporalGroundDetector</p></td>
+</tr>
+<tr class="row-odd"><td><p>gpu_id</p></td>
+<td><p>The ID of the GPU device used in the CNN-based obstacle prediction step.</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>roi_filter</p></td>
+<td><p>The ROI filter type, with help of the HDmap.</p></td>
+<td><p>HdmapROIFilter</p></td>
+</tr>
+<tr class="row-odd"><td><p>network_param {instance_pt_blob, etc}</p></td>
+<td><p>The types of different caffe input and outputlayer blob.</p></td>
+<td><p>layer predefined</p></td>
+</tr>
+<tr class="row-even"><td><p>feature_param {width}</p></td>
+<td><p>The number of cells in X (column) axis of the 2D grid.</p></td>
+<td><p>864</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature_param {height}</p></td>
+<td><p>The number of cells in Y (row) axis of the 2D grid.</p></td>
+<td><p>864</p></td>
+</tr>
+<tr class="row-even"><td><p>feature_param {min_height}</p></td>
+<td><p>The minimum height with respect to the origin (the LiDAR sensor).</p></td>
+<td><p>-5.0 meters</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature_param {max_height}</p></td>
+<td><p>The maximum height with respect to the origin (the LiDAR sensor).</p></td>
+<td><p>5.0 meters</p></td>
+</tr>
+<tr class="row-even"><td><p>feature_param {use_intensity_feature}</p></td>
+<td><p>Enable input channel internsity feature.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature_param {use_constant_feature}</p></td>
+<td><p>Enable input channel constant feature.</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>feature_param {point_cloud_range}</p></td>
+<td><p>The range of the 2D grid with respect to the origin (the LiDAR sensor).</p></td>
+<td><p>90 meters</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note: the provided model is a sample for experiment purpose only.</strong></p>
+</section>
+</section>
+<section id="minbox-builder">
+<h3>MinBox Builder<a class="headerlink" href="#minbox-builder" title="Permalink to this headline"></a></h3>
+<p>The object builder component establishes a bounding box for the detected obstacles. Due to occlusions or the distance to the LiDAR sensor, the point cloud forming an obstacle can be sparse and cover only a portion of the surfaces. Thus, the box builder works to recover the full bounding box given the polygon point. The main purpose of the bounding box is to estimate the heading of the obstacle (e.g., vehicle) even if the point cloud is sparse. Equally, the bounding box is used to visualize the obstacles.</p>
+<p>The idea behind the algorithm is to find the all areas given an edge of the polygon point. In the following example, if AB is the edge, Apollo projects other polygon points onto AB and establishes the pair of
+intersections that has the maximum distance. That’s one of the edges belonging to the bounding box. Then it is straightforward to obtain the other edge of the bounding box. By iterating all edges in the polygon, as shown in Figure 4, Apollo determines a 6-edge bounding box. Apollo then selects the solution that has the minimum area as the final bounding box.</p>
+<div align=center><img src="images/3d_obstacle_perception/object_building.png"></div>
+<div align=center>Figure 4 Illustration of MinBox Object Builder</div>
+</section>
+<section id="hm-object-tracker">
+<h3>HM Object Tracker<a class="headerlink" href="#hm-object-tracker" title="Permalink to this headline"></a></h3>
+<p>The HM object tracker is designed to track obstacles detected by the segmentation step. In general, it forms and updates track lists by associating current detections with existing track lists, deletes the old track lists if they no longer persist, and spawns new track lists if new detections are identified. The motion state of the updated track lists are estimated after association. In the HM object tracker, the Hungarian algorithm is used for detection-to-track association, and a Robust Kalman Filter is adopted for motion estimation.</p>
+<section id="detection-to-track-association">
+<h4>Detection-to-Track Association<a class="headerlink" href="#detection-to-track-association" title="Permalink to this headline"></a></h4>
+<p>When associating detection to existing track lists, Apollo constructs a bipartite graph and then uses the Hungarian algorithm to find the best detection-to-track matching with minimum cost (distance).</p>
+<section id="computing-association-distance-matrix">
+<h5><strong>Computing Association Distance Matrix</strong><a class="headerlink" href="#computing-association-distance-matrix" title="Permalink to this headline"></a></h5>
+<p>In the first step, an association distance matrix is established. The distance between a given detection and one track is calculated according to a series of association features including motion consistency and appearance consistency. Some features used in HM tracker’s distance computing are shown below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Association Feature Name</p></th>
+<th class="head"><p>Evaluating Consistency Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>location_distance</p></td>
+<td><p>Motion</p></td>
+</tr>
+<tr class="row-odd"><td><p>direction_distance</p></td>
+<td><p>Motion</p></td>
+</tr>
+<tr class="row-even"><td><p>bbox_size_distance</p></td>
+<td><p>Appearance</p></td>
+</tr>
+<tr class="row-odd"><td><p>point_num_distance</p></td>
+<td><p>Appearance</p></td>
+</tr>
+<tr class="row-even"><td><p>histogram_distance</p></td>
+<td><p>Appearance</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, there are some important parameters of distance weights that are used for combining the above-mentioned association features into a final distance measurement.</p>
+<p><strong>Bipartite Graph Matching via Hungarian Algorithm</strong></p>
+<p>Given the association distance matrix, as shown in Figure 5, Apollo constructs a bipartite graph and uses the Hungarian algorithm to find the best detection-to-track matching via minimizing the distance cost. It solves the assignment problem within O(n^3) time complexity. To boost computing performance, the Hungarian algorithm is implemented after cutting the original bipartite graph into subgraphs, by deleting vertices with a distance greater than a reasonable maximum distance threshold.</p>
+<div align=center><img src="images/3d_obstacle_perception/bipartite_graph_matching.png"></div>
+<div align=center>Figure 5 Illustration of Bipartite Graph Matching</div>
+</section>
+</section>
+<section id="track-motion-estimation">
+<h4>Track Motion Estimation<a class="headerlink" href="#track-motion-estimation" title="Permalink to this headline"></a></h4>
+<p>After the detection-to-track association, the HM object tracker uses a Robust Kalman Filter to estimate the motion states of current track lists with a constant velocity motion model. The motion states include the belief anchor point and belief velocity, which correspond to the 3D position and the 3D velocity respectively. To overcome possible distraction caused from imperfect detections, Robust Statistics techniques are implemented in the tracker’s filtering algorithm.</p>
+<p><strong>Observation Redundancy</strong></p>
+<p>The measurement of velocity that is the input of the filtering algorithm is selected among a series of redundant observations, which include anchor point shift, bounding box center shift, and bounding box corner point shift. Redundant observations bring extra robustness to filtering measurement, because the probability that all observations fail is much less than the probability that a single observation fails.</p>
+<p><strong>Breakdown</strong></p>
+<p>Gaussian Filter algorithms assume their noises are generated from Gaussian distribution. However, this hypothesis may fail in a motion estimation problem because the noise of its measurement may draw from fat-tail distributions. Apollo uses a breakdown threshold in the filtering process to neutralize the over-estimation of update gain.</p>
+<p><strong>Update according Association Quality</strong></p>
+<p>The original Kalman Filter updates its states without distinguishing the quality of its measurements. However, the quality of measurement is a beneficial indicator of filtering noise and can be estimated. For instance, the distance calculated in the association step could be a reasonable estimate of the quality of measurement. Updating the state of the filtering algorithm according to the association quality enhances robustness and smoothness to the motion estimation problem.</p>
+<p>A high-level workflow of HM object tracker is given in Figure 6.</p>
+<div align=center><img src="images/3d_obstacle_perception/hm_object_tracker.png"></div>
+<div align=center>Figure 6 Workflow of HM Object Tracker</div>
+<p>The main points in an HM object tracker workflow are:</p>
+<ol class="simple">
+<li><p>Construct the tracked objects and transform them into world coordinates.</p></li>
+<li><p>Predict the states of existing track lists and match detections to them.</p></li>
+<li><p>Update the motion state of updated track lists and collect the tracking results.</p></li>
+</ol>
+</section>
+</section>
+<section id="sequential-type-fusion">
+<h3>Sequential Type Fusion<a class="headerlink" href="#sequential-type-fusion" title="Permalink to this headline"></a></h3>
+<p>To smooth the obstacle type and reduce the type switch over the entire trajectory, Apollo utilizes a sequential type fusion algorithm based on a linear-chain Conditional Random Field (CRF), which can be formulated as follows:</p>
+<p><img alt="CRF_eq1" src="../../_images/CRF_eq1.png" /></p>
+<p><img alt="CRF_eq2" src="../../_images/CRF_eq2.png" /></p>
+<p>where the unary term acts on each single node, while the binary one acts on each edge.</p>
+<p>The probability in the unary term is the class probability output by the CNN-based prediction, and the state transition probability in the binary term is modeled by the obstacle type transition from time <em>t-1</em> to time <em>t</em>, which is statistically learned from large amounts of obstacle trajectories. Specifically, Apollo also uses a learned confusion matrix to indicate the probability of changing from the predicted type to ground truth type to optimize the original CNN-based class probability.</p>
+<p>Using the Viterbi algorithm, the sequential obstacle type is optimized by solving the following problem:</p>
+<p><img alt="CRF_eq3" src="../../_images/CRF_eq3.png" /></p>
+</section>
+</section>
+<section id="radar-detector">
+<h2>Radar Detector<a class="headerlink" href="#radar-detector" title="Permalink to this headline"></a></h2>
+<p>Given the radar data from the sensor, follow a basic process such as the one described below.</p>
+<p>First, the track ID should be extended, because Apollo needs a global track ID for ID association. The original radar sensor provides an ID with only 8 bits, so it is difficult to determine if two objects with the same ID in two adjacent frames denote a single object in the tracking history, especially if there is a frame dropping problem. Apollo uses the measurement state provided by the radar sensor to handle this problem. Meanwhile, Apollo assigns a new track ID to the object that is far away from the object with the same track ID as in the previous frame.</p>
+<p>Second, use a false positive filter to remove noise. Apollo sets some threshold via radar data to filter results that could be noise. Then, objects are built according the radar data as a unified object format. Apollo translates the objects into world coordinates via calibration results. The original radar sensor provides the relative velocity of the object, so Apollo uses the host car velocity from localization. Apollo adds these two velocities to denote the absolute velocity of the detected object.</p>
+<p>Finally, the HDMap ROI filter is used to obtain the interested objects. Only objects inside the ROI are used by the sensor fusion algorithm.</p>
+</section>
+<section id="obstacle-results-fusion">
+<h2>Obstacle Results Fusion<a class="headerlink" href="#obstacle-results-fusion" title="Permalink to this headline"></a></h2>
+<p>The sensor fusion module is designed to fuse LiDAR tracking results and radar detection results.  Apollo first matches the sensor results with the fusion items by tracking their IDs. Then it computes the association matrix for unmatched sensor results and unmatched fusion items to get an optimal matching result.</p>
+<p>For the matched sensor result, update the corresponding fusion item using the Adaptive Kalman Filter. For the unmatched sensor result, create a new fusion item. Remove any stale unmatched fusion items.</p>
+<section id="fusion-items-management">
+<h3>Fusion Items Management<a class="headerlink" href="#fusion-items-management" title="Permalink to this headline"></a></h3>
+<p>Apollo has the concept of publish-sensor. The given radar results are cached.  The given LiDAR results trigger the fusion action. The frequency of sensor fusion output is the same as the frequency of publish sensor. Apollo’s publish-sensor is LiDAR. The sensor results feed the fusion pipeline sorted by the sensor time stamp. Apollo keeps all sensor results. The object survival time is set for different sensor objects in Apollo. An object is kept alive if at least one sensor result survives. The Apollo perception module provides fusion results of LiDAR and radar in the short-range area around the car and radar-only results for the long distance.</p>
+</section>
+<section id="sensor-results-to-fusion-lists-association">
+<h3>Sensor Results to Fusion Lists Association<a class="headerlink" href="#sensor-results-to-fusion-lists-association" title="Permalink to this headline"></a></h3>
+<p>When associating sensor results to the fusion lists, Apollo first matches the identical track ID  of the same sensor, then constructs a bipartite graph and uses the Hungarian algorithm to find the best result-to-fusion matching of the unmatched sensor results and fusion lists, via minimizing the distance cost. The Hungarian algorithm is the same algorithm that the HM Object Tracker uses. The distance cost is computed by the Euclidean distance of the anchor points of the sensor result and fusion item.</p>
+</section>
+<section id="motion-fusion">
+<h3>Motion Fusion<a class="headerlink" href="#motion-fusion" title="Permalink to this headline"></a></h3>
+<p>Apollo uses the Adaptive Kalman filter to estimate the motion of a current item with a constant acceleration motion model. The motion state includes its belief anchor point, belief velocity and belief acceleration, which correspond to the 3D position, its 3D velocity and acceleration respectively. Apollo uses only position and velocity from sensor results. In motion fusion, Apollo caches the state of all sensor results and computes the acceleration via the Kalman Filter.  Apollo provides uncertainty of position and velocity in LiDAR tracker and radar detector data. Apollo feeds all the states and uncertainties to the Adaptive Kalman Filter and obtains the fused results. Apollo uses a breakdown threshold in the filtering process to neutralize the over-estimation of update gain.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../quickstart/multiple_lidar_gnss_calibration_guide_cn.html" class="btn btn-neutral float-left" title="多激光雷达全球导航卫星系统(Multiple-LiDAR GNSS)校准指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="3d_obstacle_perception_cn.html" class="btn btn-neutral float-right" title="3D 障碍物感知" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

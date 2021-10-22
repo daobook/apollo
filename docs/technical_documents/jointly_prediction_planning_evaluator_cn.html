@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>预测规划交互评估器 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OPEN SPACE DECIDER" href="open_space_decider.html" />
+    <link rel="prev" title="JOINTLY PREDICTION PLANNING EVALUATOR" href="jointly_prediction_planning_evaluator.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>预测规划交互评估器</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/technical_documents/jointly_prediction_planning_evaluator_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>预测规划交互评估器<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>预测模块主要由四个子模块组成，分别是： Container（信息容器）, Scenario（场景选择器）, Evaluator（评估器） and Predictor（预测器）。</p>
+<p>评估器用于预测障碍物的速度和路径信息，通过给出路径置信度或短预测时域的轨迹信息，供后续的预测器进一步处理。评估器使用的模型文件存放在prediction/data/路径下。</p>
+<p>预测规划交互评估器是针对交互障碍物设计的评估器，主要解决交互场景下（会车，狭窄道路，路口）障碍物预测问题，使用Vectornet和LSTM，考虑主车轨迹信息进行障碍物轨迹预测。</p>
+<p><img alt="Diagram" src="../../_images/interaction_model_fig_1.png" /></p>
+</section>
+<section id="where-is-the-code">
+<h2>Where is the code<a class="headerlink" href="#where-is-the-code" title="Permalink to this headline"></a></h2>
+<p>可以参考 <a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/evaluator/vehicle">jointly prediction planning evaluator代码</a>.</p>
+</section>
+<section id="code-reading">
+<h2>Code Reading<a class="headerlink" href="#code-reading" title="Permalink to this headline"></a></h2>
+<section id="interaction-filter">
+<h3>Interaction filter<a class="headerlink" href="#interaction-filter" title="Permalink to this headline"></a></h3>
+<p>Please refer <a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/scenario/interaction_filter">interaction filter代码</a>.</p>
+<ol>
+<li><p>交互障碍物的获取是通过交互障碍物过滤器得到的，交互障碍物过滤器基于一定的规则筛选出与主车可能发生交互关系的障碍物。</p></li>
+<li><p>这些障碍物将被添加上交互标签，用于触发交互预测模型。</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">AssignInteractiveTag</span><span class="p">();</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="model-inference">
+<h3>Model inference<a class="headerlink" href="#model-inference" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>模型使用的编码器是Vectornet，因此在调用模型进行轨迹预测前，需要将障碍物和地图信息组合成编码器需求的格式。</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="jointly_prediction_planning_evaluator.html" class="btn btn-neutral float-left" title="JOINTLY PREDICTION PLANNING EVALUATOR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="open_space_decider.html" class="btn btn-neutral float-right" title="OPEN SPACE DECIDER" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Calibration Online Service &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="百度云对象存储BOS注册与基本使用向导" href="../apply_bos_account_cn.html" />
+    <link rel="prev" title="Prediction Pedestrian Model Training Service" href="../Prediction_Pedestrian_Model_Training/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Vehicle Calibration Online Service</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Apollo_Fuel/Vehicle_Calibration_Online/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="vehicle-calibration-online-service">
+<h1>Vehicle Calibration Online Service<a class="headerlink" href="#vehicle-calibration-online-service" title="Permalink to this headline"></a></h1>
+<section id="note">
+<h2>Note:<a class="headerlink" href="#note" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>Please refer to <a class="reference internal" href="../apply_bos_account_cn.html"><span class="doc std std-doc">Apply_BOS_Account</span></a> for account setup before you can use the service.</p></li>
+<li><p>New service entrance point available at <a class="reference external" href="http://bce.apollo.auto">Apollo Dreamland</a></p></li>
+<li><p>Chinese version tailing for D-kit is available at <a class="reference internal" href="../../D-kit/Waypoint_Following/vehicle_calibration_online_cn.html"><span class="doc std std-doc">Vehicle_Calibration_Online_cn.md</span></a></p></li>
+</ol>
+<p>vehicle calibration system automatically generates calibration table for different vehicle models. It includes three parts: a frontend data collection monitor system, a data pipeline upload/download tool for uploading collected data and downloading generated calibration tables, and a visualization tool for performance evaluation.</p>
+<!-- # Table of Contents 1\. [Frontend](#frontend) 2\. [Data](#data) - [Upload Tool](#upload) - [Download Tool](#download) 3\. [Visulization](#visulization) -->
+</section>
+<section id="frontend">
+<h2>Frontend<a class="headerlink" href="#frontend" title="Permalink to this headline"></a></h2>
+<p>In DreamView, a data collection monitor is presented for monitoring the data calibration process. In vehicle calibration mode, collected data frames are visualized in the data calibration monitor. Data frames are categorized into different driving conditions according to their chassis information. The amount of collected data frames are indicated as progress bars.</p>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
+<p>In the on-vehicle DreamView environment,</p>
+<ol class="simple">
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">vehicle</span> <span class="pre">calibration</span></code> in <code class="docutils literal notranslate"><span class="pre">--setup</span> <span class="pre">mode--</span></code>,</p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Collection</span> <span class="pre">Monitor</span></code> at <code class="docutils literal notranslate"><span class="pre">Others</span></code> panel.</p></li>
+</ol>
+<p><img alt="" src="../../../_images/calibration_table1.png" /></p>
+<p>The data collection monitor is displayed in DreamView.</p>
+</section>
+<section id="data-collection">
+<h3>Data collection<a class="headerlink" href="#data-collection" title="Permalink to this headline"></a></h3>
+<p>When driving, data frames are automatically processed by reading their chassis messages. When a data frame satisfy the speed criterion (speed equal or larger than 0.2 mps), the data frame is categorized by its steering, speed and throttle/brake information. The data collection process is presented by bars in data collection monitor.</p>
+<p>There are 21 bars in total in data collection monitor. The overall process is indicated by the top bar. The rest 20 bars indicate 20 driving conditions, including</p>
+<ul class="simple">
+<li><p>Six brake conditions at different speed level</p>
+<ul>
+<li><p>low speed (&lt;10 mps) brake pulse</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) brake pulse</p></li>
+<li><p>high speed (&gt;=20 mps) brake pulsing</p></li>
+<li><p>low speed ( &lt;10 mps) brake tap</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) brake tap</p></li>
+<li><p>high speed (&gt;=20 mps) brake tap</p></li>
+</ul>
+</li>
+<li><p>Six throttle conditions at different speed level</p>
+<ul>
+<li><p>low speed (&lt;10 mps) under throttle</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) under throttle</p></li>
+<li><p>high speed (&gt;=20 mps) under throttle</p></li>
+<li><p>low speed ( &lt;10 mps) harsh throttle</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) harsh throttle</p></li>
+<li><p>high speed (&gt;=20 mps) harsh throttle</p></li>
+</ul>
+</li>
+<li><p>Eight steering angle conditions</p>
+<ul>
+<li><p>left 0% ~ 20%</p></li>
+<li><p>left 20% ~ 40%</p></li>
+<li><p>left 40% ~ 60%</p></li>
+<li><p>left 60% ~ 100%</p></li>
+<li><p>right 0% ~ 20%</p></li>
+<li><p>right 20% ~ 40%</p></li>
+<li><p>right 40% ~ 60%</p></li>
+<li><p>right 60% ~ 100%</p></li>
+</ul>
+</li>
+</ul>
+<p>For each bar, there is a blue ribbon indicating collected data frames. When the blue ribbon fills the whole bar, the number of collected frames reaches the target number. There is also a number at right end of each bar indicating the completion percentage.</p>
+<p>For calibration table data collection, when the first 13 bars (total progress bar and 12 brake/throttle condition bars) reaches 100% the data collection process is considered as completed. For dynamic model data collection, the data collection process is completed when all bars reaches 100%.</p>
+<p>All data are saved in <code class="docutils literal notranslate"><span class="pre">nvme</span> <span class="pre">drive</span></code> or <code class="docutils literal notranslate"><span class="pre">data/record/</span></code></p>
+</section>
+<section id="vehicle-configuration">
+<h3>Vehicle Configuration<a class="headerlink" href="#vehicle-configuration" title="Permalink to this headline"></a></h3>
+<p>The brake and throttle specs are different between vehicle models. Therefore, the criteria for brake pulsing/tap and hash/under throttle depend on vehicle models. The default setting is based on Lincoln MKZ model. For different vehicle model, these parameters is configurable at</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">dreamview</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mkz7_data_collection_table</span><span class="o">.</span><span class="n">pb</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>(description)</p>
+</section>
+</section>
+<section id="folder-structure-requirement">
+<h2>Folder Structure Requirement<a class="headerlink" href="#folder-structure-requirement" title="Permalink to this headline"></a></h2>
+<p>Before uploading your data, take a note of:</p>
+<ol>
+<li><p>The folder structure to be maintained is:
+<img alt="" src="../../../_images/file_system1.png" /></p></li>
+<li><p>As seen above, the file structure to be maintained is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Origin</span> <span class="n">Folder</span> <span class="o">-&gt;</span> <span class="n">Task</span> <span class="n">Folder</span> <span class="o">-&gt;</span><span class="n">Vehicle</span> <span class="n">Folder</span> <span class="o">-&gt;</span> <span class="n">Records</span> <span class="o">+</span> <span class="n">Configuration</span> <span class="n">files</span>
+</pre></div>
+</div>
+</li>
+<li><p>A <strong>task</strong> folder needs to be created for your calibration job, such as task001, task002…</p></li>
+<li><p>A vehicle folder needs to be created for your vehicle. The name of the folder should be the same as seen in Dreamview</p></li>
+<li><p>Inside your folder, create a <strong>Records</strong> folder to hold the data</p></li>
+<li><p>Store all the <strong>Configuration files</strong> along with the Records folder, within the <strong>Vehicle</strong> folder</p></li>
+<li><p>The vehicle configuration file (vehicle_param.pb.txt) is updated since Apollo 5.0 and later, you should check it</p></li>
+<li><p>One task folder can contain more than one vehicle folder, you can  train more vehicles in one training job</p></li>
+</ol>
+<section id="upload">
+<h3>Upload<a class="headerlink" href="#upload" title="Permalink to this headline"></a></h3>
+<p>Use <a class="reference external" href="https://cloud.baidu.com/doc/BOS/BOSCLI/8.5CBOS.20FS.html">bosfs</a> to mount
+your bucket to local, for example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>BUCKET=&lt;bucket&gt;
+AK=&lt;access key&gt;
+SK=&lt;secret key&gt;
+MOUNT=/mnt/bos
+# It&#39;s required to provide correct BOS region. Please read the document
+# https://cloud.baidu.com/doc/BOS/S3.html#.E6.9C.8D.E5.8A.A1.E5.9F.9F.E5.90.8D
+REGION=bj
+
+mkdir -p &quot;${MOUNT}&quot;
+bosfs &quot;${BUCKET}&quot; &quot;${MOUNT}&quot; -o allow_other,logfile=/tmp/bos-${BUCKET}.log,endpoint=http://${REGION}.bcebos.com,ak=${AK},sk=${SK}
+</pre></div>
+</div>
+<p>Then you can copy the prepared data folder to somewhere under /mnt/bos.</p>
+</section>
+<section id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline"></a></h3>
+<p>No download needed, the results will be sent to your email associated with your BOS bucket.</p>
+</section>
+</section>
+<section id="result-visualization">
+<h2>Result Visualization<a class="headerlink" href="#result-visualization" title="Permalink to this headline"></a></h2>
+<p>The docker environment does not support Matplotlib. Thus, result are visualized outside of the docker environment. The following two figures show the visualization result of PC training results.</p>
+<p><img alt="" src="../../../_images/throttle.png" /></p>
+<p><img alt="" src="../../../_images/brake.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Prediction_Pedestrian_Model_Training/README.html" class="btn btn-neutral float-left" title="Prediction Pedestrian Model Training Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../apply_bos_account_cn.html" class="btn btn-neutral float-right" title="百度云对象存储BOS注册与基本使用向导" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

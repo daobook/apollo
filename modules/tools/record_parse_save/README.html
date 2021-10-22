@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apollo cyber-record file parser (Python based) &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Record and Play Tool" href="../record_play/README.html" />
+    <link rel="prev" title="Record Analyzer Tool" href="../record_analyzer/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Apollo cyber-record file parser (Python based)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/tools/record_parse_save/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apollo-cyber-record-file-parser-python-based">
+<h1>Apollo cyber-record file parser (Python based)<a class="headerlink" href="#apollo-cyber-record-file-parser-python-based" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>This tool presents multiple examples of how to parse data from a record file and
+save using predefined format. The tool has been built on example provided within
+Apollo (<code class="docutils literal notranslate"><span class="pre">/apollo/cyber/python/examples/</span></code>).</p>
+<p>The samples provided here illustrate cases for, parsing data from:</p>
+<ul class="simple">
+<li><p>lidar: based on
+<a class="reference internal" href="../../../docs/specs/Lidar/VLS_128_Installation_Guide.html"><span class="doc std std-doc">Velodyne VLS-128</span></a></p></li>
+<li><p>radar: based on
+<a class="reference internal" href="../../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.html"><span class="doc std std-doc">Continental ARS-408-21</span></a></p></li>
+<li><p>camera: based on
+<a class="reference internal" href="../../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide.html"><span class="doc std std-doc">Leopard Imaging Inc’s Camera - LI-USB30-AZ023WDRB</span></a></p></li>
+</ul>
+</section>
+<section id="files-and-functions">
+<h2>Files and functions:<a class="headerlink" href="#files-and-functions" title="Permalink to this headline"></a></h2>
+<p>The files/functions provided are as follows:</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">record_parse_save.py</span></code>: main function that parses
+record files from and saves extracted data to specified location</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">parse_lidar.py</span></code>: function to parse lidar data</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">parse_radar.py</span></code>: function to parse radar data</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">parse_camera.py</span></code>: function to parse camera data</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">parser_params.yaml</span></code>: YAML file with details of
+record-file location, where the output files should be saved and what sensor
+data should be parsed along with specific channel-names associated with
+particular sensor, it’s configuration and it’s location.</p>
+<ul>
+<li><p>list of channels in a record-file can be obtained using
+<code class="docutils literal notranslate"><span class="pre">cyber_recorder</span> <span class="pre">info</span></code>. For example, to get details on a sample record file
+<code class="docutils literal notranslate"><span class="pre">20190422142705.record.00000</span></code> saved at:
+<code class="docutils literal notranslate"><span class="pre">/apollo/data/record_files/2019-04-22-14-27-05/2019-04-22-14-27-05_records/</span></code>
+enter following at command prompt:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cyber_recorder</span> <span class="pre">info</span> <span class="pre">/apollo/data/record_files/2019-04-22-14-27-05/2019-04-22-14-27-05_records/20190422142705.record.00000</span></code></p></li>
+<li><p>The output on screen will look like that presented in the image below:</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../../../_images/sample_cyber_info.jpg" /></p>
+</section>
+<section id="dependency">
+<h2>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline"></a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo pip install pyyaml
+</pre></div>
+</div>
+</section>
+<section id="how-to-use">
+<h2>How-to-use:<a class="headerlink" href="#how-to-use" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>It is assumed that the user is within Apollo docker environment and has
+successfully built it. Please check documentation on
+<a class="reference internal" href="../../../docs/howto/how_to_launch_and_run_apollo.html"><span class="doc std std-doc">Build Apollo</span></a> if
+required.</p></li>
+<li><p>Modify parameters specified within <code class="docutils literal notranslate"><span class="pre">parser_params.yaml</span></code> to serve your purpose.</p></li>
+<li><p>After correct parameters are specified in the YAML file, run parser function
+in <code class="docutils literal notranslate"><span class="pre">/apollo</span></code> using:</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">./bazel-bin/modules/tools/record_parse_save/record_parse_save</span></code></p>
+<ul class="simple">
+<li><p>parsed sensor data will be saved in new folder along with associated capture
+or scan timestamps in a text file.</p></li>
+</ul>
+</section>
+<section id="notes">
+<h2>NOTES<a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>In the example setup here, parsed data is saved within the parent folder
+containing the records-file’s folder. Every saved file has associated
+timestamp with it.</p></li>
+<li><p>All record-files within the folder are parsed. If any record file is corrupt,
+the parser will display error message and continue to next record file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radar</span></code> data is saved in text files in JSON format for each scan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lidar</span></code> point-cloud data is saved in text files for each scan</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camera</span></code> images are saved in jpeg file for each capture</p></li>
+<li><p>All timestamps are saved in a separate file with <code class="docutils literal notranslate"><span class="pre">timestamp</span></code> suffix, in the
+same order in which the parsed files are saved in corresponding folder.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../record_analyzer/README.html" class="btn btn-neutral float-left" title="Record Analyzer Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../record_play/README.html" class="btn btn-neutral float-right" title="Record and Play Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

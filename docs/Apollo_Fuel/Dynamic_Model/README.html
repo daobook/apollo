@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Dynamic Modeling &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Open Space Planner Profiling Service" href="../Open_Space_Planner_Profiling/README.html" />
+    <link rel="prev" title="Control Profiling Service" href="../Control_Profiling/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Vehicle Dynamic Modeling</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Apollo_Fuel/Dynamic_Model/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="vehicle-dynamic-modeling">
+<h1>Vehicle Dynamic Modeling<a class="headerlink" href="#vehicle-dynamic-modeling" title="Permalink to this headline"></a></h1>
+<p>Vehicle dynamic modeling service employs the supervised machine learning algorithm to generate a learning-based vehicle dynamic model, which can be used as the customized dynamic model in the Apollo simulation platform for control-in-the-loop simulation. The usage of the dynamic modeling asks for three main steps: (1) collect the training/test data for learning-based modeling, via a frontend data collection process monitoring system, (2) upload the collected data into cloud by locally build the standard BOS-linked folder, and (3) submit the service command via the online service webpage and expect the modeling results within email notice.</p>
+<!-- # Table of Contents 1\. [Frontend](#frontend) 2\. [Data](#data) - [Upload Tool](#upload) - [Download Tool](#download) 3\. [Visulization](#visulization) -->
+<section id="frontend">
+<h2>Frontend<a class="headerlink" href="#frontend" title="Permalink to this headline"></a></h2>
+<p>In DreamView, a data collection monitor is presented for monitoring the data collection process. After the user selects the “Vehicle Calibration” option in the “setup_mode” menu, the data collection process is visualized in the data collection monitor. Driving data are categorized into different driving conditions, as shown in the following figure. The amounts of collected data (in unit of frame) are indicated as progress bars.</p>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
+<p>In the on-vehicle DreamView environment,</p>
+<ol class="simple">
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">vehicle</span> <span class="pre">calibration</span></code> in <code class="docutils literal notranslate"><span class="pre">--setup</span> <span class="pre">mode--</span></code>,</p></li>
+<li><p>Choose <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Collection</span> <span class="pre">Monitor</span></code> at <code class="docutils literal notranslate"><span class="pre">Others</span></code> panel.</p></li>
+</ol>
+<p><img alt="" src="../../../_images/calibration_table.png" /></p>
+<p>The data collection monitor is displayed in DreamView.</p>
+</section>
+<section id="data-collection">
+<h3>Data collection<a class="headerlink" href="#data-collection" title="Permalink to this headline"></a></h3>
+<p>When driving, data frames are automatically processed by identifying their driving status form the Chassis Channel messages. When a single data frame satisfies the speed criterion (speed equal or larger than 0.2 mps), the single data frame is categorized by its steering, speed and throttle/brake information. The data collection process is presented in progress bars of the data collection monitor.</p>
+<p>There are 21 progress bars in total in data collection monitor. The overall process is indicated by the top progress bar. The rest 20 progress bars indicate 20 driving conditions, including</p>
+<ul class="simple">
+<li><p>Six brake conditions at different speed level</p>
+<ul>
+<li><p>low speed (&lt;10 mps) brake pulse</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) brake pulse</p></li>
+<li><p>high speed (&gt;=20 mps) brake pulsing</p></li>
+<li><p>low speed ( &lt;10 mps) brake tap</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) brake tap</p></li>
+<li><p>high speed (&gt;=20 mps) brake tap</p></li>
+</ul>
+</li>
+<li><p>Six throttle conditions at different speed level</p>
+<ul>
+<li><p>low speed (&lt;10 mps) under throttle</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) under throttle</p></li>
+<li><p>high speed (&gt;=20 mps) under throttle</p></li>
+<li><p>low speed ( &lt;10 mps) harsh throttle</p></li>
+<li><p>middle speed (10 mps ~ 20 mps ) harsh throttle</p></li>
+<li><p>high speed (&gt;=20 mps) harsh throttle</p></li>
+</ul>
+</li>
+<li><p>Eight steering angle conditions</p>
+<ul>
+<li><p>left 0% ~ 20%</p></li>
+<li><p>left 20% ~ 40%</p></li>
+<li><p>left 40% ~ 60%</p></li>
+<li><p>left 60% ~ 100%</p></li>
+<li><p>right 0% ~ 20%</p></li>
+<li><p>right 20% ~ 40%</p></li>
+<li><p>right 40% ~ 60%</p></li>
+<li><p>right 60% ~ 100%</p></li>
+</ul>
+</li>
+</ul>
+<p>For each bar, there is a blue ribbon indicating collected data frames. When the blue ribbon fills the whole bar, the number of collected frames reaches the target number. There is also a number at right end of each bar indicating the completion percentage. For dynamic modeling data collection, when the all the progress bars reaches 100%, the data collection process is considered as “completed”.</p>
+<p>All data are saved in <code class="docutils literal notranslate"><span class="pre">nvme</span> <span class="pre">drive</span></code> or <code class="docutils literal notranslate"><span class="pre">data/record/</span></code></p>
+</section>
+<section id="vehicle-configuration">
+<h3>Vehicle Configuration<a class="headerlink" href="#vehicle-configuration" title="Permalink to this headline"></a></h3>
+<p>The brake and throttle specs are different between vehicle models. Therefore, the criteria for brake pulsing/tap and hash/under throttle depend on vehicle models. The default setting is based on Lincoln MKZ model. For different vehicle models, these parameters are configurable at</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">modules</span><span class="o">/</span><span class="n">dreamview</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">mkz7_data_collection_table</span><span class="o">.</span><span class="n">pb</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>(description)</p>
+</section>
+</section>
+<section id="folder-structure-requirement">
+<h2>Folder Structure Requirement<a class="headerlink" href="#folder-structure-requirement" title="Permalink to this headline"></a></h2>
+<p>Before uploading your data, take a note of:</p>
+<ol>
+<li><p>The folder structure to be maintained is:
+<img alt="" src="../../../_images/file_system.png" /></p></li>
+<li><p>As seen above, the file structure to be maintained is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Origin</span> <span class="n">Folder</span> <span class="o">-&gt;</span> <span class="n">Task</span> <span class="n">Folder</span> <span class="o">-&gt;</span> <span class="n">Vehicle</span> <span class="n">Folder</span> <span class="o">-&gt;</span> <span class="n">Records</span> <span class="n">Folder</span> <span class="o">+</span> <span class="n">Configuration</span> <span class="n">files</span>
+</pre></div>
+</div>
+</li>
+<li><p>A <strong>task</strong> folder needs to be created for your dynamic modeling job, such as task001, task002…</p></li>
+<li><p>A vehicle folder needs to be created for your vehicle. The name of the folder should be the same as seen in Dreamview</p></li>
+<li><p>Inside your folder, create a <strong>Records</strong> folder to hold the data</p></li>
+<li><p>Store all the <strong>Configuration files</strong> along with the Records folder, within the <strong>Vehicle</strong> folder</p></li>
+<li><p>The vehicle configuration file (vehicle_param.pb.txt) is updated since Apollo 5.0 and later, you should check it</p></li>
+<li><p>One task folder can contain more than one vehicle folder, in other words, you may train models for multiple vehicles in one training job</p></li>
+</ol>
+<section id="upload-data">
+<h3>Upload Data<a class="headerlink" href="#upload-data" title="Permalink to this headline"></a></h3>
+<p>Use <a class="reference external" href="https://cloud.baidu.com/doc/BOS/BOSCLI/8.5CBOS.20FS.html">bosfs</a> to mount
+your bucket to local, for example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>BUCKET=&lt;bucket&gt;
+AK=&lt;access key&gt;
+SK=&lt;secret key&gt;
+MOUNT=/mnt/bos
+# It&#39;s required to provide correct BOS region. Please read the document
+# https://cloud.baidu.com/doc/BOS/S3.html#.E6.9C.8D.E5.8A.A1.E5.9F.9F.E5.90.8D
+REGION=bj
+
+mkdir -p &quot;${MOUNT}&quot;
+bosfs &quot;${BUCKET}&quot; &quot;${MOUNT}&quot; -o allow_other,logfile=/tmp/bos-${BUCKET}.log,endpoint=http://${REGION}.bcebos.com,ak=${AK},sk=${SK}
+</pre></div>
+</div>
+<p>Then you can copy the prepared data folder to somewhere under /mnt/bos.</p>
+</section>
+</section>
+<section id="submit-job-via-on-line-service-website">
+<h2>Submit Job Via On-Line Service Website<a class="headerlink" href="#submit-job-via-on-line-service-website" title="Permalink to this headline"></a></h2>
+<p>Login in the <a class="reference external" href="http://bce.apollo.auto/">Apollo webpage</a> and choose the <strong>Apollo Fuel -&gt; New Job</strong> in the functionality menu. Select the <strong>Dynamic Model</strong> option in the <strong>New Job</strong> menu，and then fill the <strong>Input Data Path</strong> with the data storage path starting from the root directory under your BOS folder， and choose whether click the <strong>is backward</strong> radio button (Only click it if you intend to train the dynamic model under the <strong>backward driving</strong> mode; otherwise, leave it blank). Finally, submit your job by clicking the <strong>Submit Job</strong> button。</p>
+<p><img alt="" src="../../../_images/dynamic_model_job_submit.png" /></p>
+</section>
+<section id="receive-model-training-results">
+<h2>Receive Model Training Results<a class="headerlink" href="#receive-model-training-results" title="Permalink to this headline"></a></h2>
+<p>After the dynamic modeling job successfully starts and your uploaded data passes the sanity check, the user will receive the <strong>first notice email</strong> at your registered email address.</p>
+<p>Then, after the dynamic modeling job is fully finished, the user will receive the <strong>second notice email</strong>, in which the generated model storage path and filtered data visualization path under your own BOS folder will be provided.</p>
+<p><img alt="" src="../../../_images/dynamic_model_email.png" /></p>
+<p>To use these generated dynamic models in the simulation platform or the <a class="reference internal" href="../Control_Auto_Tuning/README.html"><span class="doc std std-doc">Control_Auto_Tuning</span></a> service, the users need to rename the received dynamic models and put them in the corresponding github repo path as follows: provide the forward-driving model at github <strong>apollo/modules/control/conf/dynamic_model_forward.bin</strong>; backward-driving model at github <strong>apollo/modules/control/conf/dynamic_model_backward.bin</strong>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Control_Profiling/README.html" class="btn btn-neutral float-left" title="Control Profiling Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Open_Space_Planner_Profiling/README.html" class="btn btn-neutral float-right" title="Open Space Planner Profiling Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

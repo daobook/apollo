@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>如何添加新的CAN卡 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Add a New Control Algorithm" href="how_to_add_a_new_control_algorithm.html" />
+    <link rel="prev" title="How to Add a New CAN Card" href="how_to_add_a_new_can_card.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>如何添加新的CAN卡</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_add_a_new_can_card_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="can">
+<h1>如何添加新的CAN卡<a class="headerlink" href="#can" title="Permalink to this headline"></a></h1>
+<section id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>控制器区域网络（CAN）是在许多微控制器和设备中密集使用的网络，用于在没有主计算机帮助的情况下在设备之间传输数据。</p>
+<p>Apollo中使用的默认CAN卡是 <strong>ESD CAN-PCIe卡</strong>。您可以使用以下步骤添加新的CAN卡：</p>
+</section>
+<section id="id2">
+<h2>添加新CAN卡<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>添加新的CAN卡需要完成以下几个步骤:</p>
+<ol class="simple">
+<li><p>实现新CAN卡的<code class="docutils literal notranslate"><span class="pre">CanClient</span></code>类。</p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">CanClientFactory</span></code>中注册新的CAN卡。</p></li>
+<li><p>更新配置文件。</p></li>
+</ol>
+<p>以下步骤展示了如何添加新的CAN卡 - 示例添加CAN卡到您的工程。</p>
+<section id="id3">
+<h3>步骤 1<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<p>实现新CAN卡的CanClient类
+下面的代码展示了如何实现 <code class="docutils literal notranslate"><span class="pre">CANClient</span></code> 类:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hermes_can/include/bcan.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;modules/canbus/can_client/can_client.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;modules/canbus/common/canbus_consts.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;modules/common/proto/error_code.pb.h&quot;</span><span class="cp"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @namespace apollo::canbus::can</span>
+<span class="cm"> * @brief apollo::canbus::can</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">apollo</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">canbus</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">can</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @class ExampleCanClient</span>
+<span class="cm"> * @brief The class which defines a Example CAN client which inherits CanClient.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">ExampleCanClient</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">CanClient</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Initialize the Example CAN client by specified CAN card parameters.</span>
+<span class="cm">   * @param parameter CAN card parameters to initialize the CAN client.</span>
+<span class="cm">   * @return If the initialization is successful.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">Init</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">CANCardParameter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameter</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Destructor</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">ExampleCanClient</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Start the Example CAN client.</span>
+<span class="cm">   * @return The status of the start action which is defined by</span>
+<span class="cm">   *         apollo::common::ErrorCode.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Stop the Example CAN client.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">Stop</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Send messages</span>
+<span class="cm">   * @param frames The messages to send.</span>
+<span class="cm">   * @param frame_num The amount of messages to send.</span>
+<span class="cm">   * @return The status of the sending action which is defined by</span>
+<span class="cm">   *         apollo::common::ErrorCode.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Send</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">CanFrame</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">frames</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                 </span><span class="kt">int32_t</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame_num</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Receive messages</span>
+<span class="cm">   * @param frames The messages to receive.</span>
+<span class="cm">   * @param frame_num The amount of messages to receive.</span>
+<span class="cm">   * @return The status of the receiving action which is defined by</span>
+<span class="cm">   *         apollo::common::ErrorCode.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Receive</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">CanFrame</span><span class="o">&gt;*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frames</span><span class="p">,</span><span class="w"></span>
+<span class="w">                                    </span><span class="kt">int32_t</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">frame_num</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * @brief Get the error string.</span>
+<span class="cm">   * @param status The status to get the error string.</span>
+<span class="cm">   */</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">GetErrorString</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span><span class="w"></span>
+
+<span class="w"> </span><span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="w">  </span><span class="p">...</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace can</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace canbus</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace apollo</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>步骤 2<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<p>在CanClientFactory中注册新CAN卡，
+在 <code class="docutils literal notranslate"><span class="pre">CanClientFactory</span></code>中添加如下代码:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">CanClientFactory::RegisterCanClients</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<span class="w">  </span><span class="n">Register</span><span class="p">(</span><span class="n">CANCardParameter</span><span class="o">::</span><span class="n">ESD_CAN</span><span class="p">,</span><span class="w"> </span>
+<span class="w">           </span><span class="p">[]()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">CanClient</span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">can</span><span class="o">::</span><span class="n">EsdCanClient</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w">  </span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c1">// register the new CAN card here.  </span>
+<span class="w">  </span><span class="n">Register</span><span class="p">(</span><span class="n">CANCardParameter</span><span class="o">::</span><span class="n">EXAMPLE_CAN</span><span class="p">,</span><span class="w">  </span>
+<span class="w">           </span><span class="p">[]()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">CanClient</span><span class="o">*</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">can</span><span class="o">::</span><span class="n">ExampleCanClient</span><span class="p">();</span><span class="w"> </span><span class="p">});</span><span class="w">  </span>
+<span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>步骤 3<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<p>接下来，需要更新配置文件
+在<code class="docutils literal notranslate"><span class="pre">/modules/canbus/proto/can_card_parameter.proto</span></code>添加 EXAMPLE_CAN</p>
+<div class="highlight-proto notranslate"><div class="highlight"><pre><span></span><span class="kd">message</span> <span class="nc">CANCardParameter</span> <span class="p">{</span>
+  <span class="kd">enum</span> <span class="n">CANCardBrand</span> <span class="p">{</span>
+    <span class="na">FAKE_CAN</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="na">ESD_CAN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="na">EXAMPLE_CAN</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// add new CAN card here.</span>
+  <span class="p">}</span>
+  <span class="o">...</span> <span class="o">...</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Update <code class="docutils literal notranslate"><span class="pre">/modules/canbus/conf/canbus_conf.pb.txt</span></code></p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>... ... 
+can_card_parameter {
+  brand:EXAMPLE_CAN
+  type: PCI_CARD // suppose the new can card is PCI_CARD
+  channel_id: CHANNEL_ID_ZERO // suppose the new can card has CHANNEL_ID_ZERO
+}
+... ...
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_add_a_new_can_card.html" class="btn btn-neutral float-left" title="How to Add a New CAN Card" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_add_a_new_control_algorithm.html" class="btn btn-neutral float-right" title="How to Add a New Control Algorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

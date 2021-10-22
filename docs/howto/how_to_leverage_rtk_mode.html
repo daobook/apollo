@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Leverage Apollo’s RTK mode &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Leverage Scenario Editor" href="how_to_leverage_scenario_editor.html" />
+    <link rel="prev" title="How to Launch and Run Apollo" href="how_to_launch_and_run_apollo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Leverage Apollo’s RTK mode</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_leverage_rtk_mode.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-leverage-apollos-rtk-mode">
+<h1>How to Leverage Apollo’s RTK mode<a class="headerlink" href="#how-to-leverage-apollos-rtk-mode" title="Permalink to this headline"></a></h1>
+<p>RTK mode helps developers and partners to better test your perception and control modules without needing to check the planning decisions.</p>
+<section id="process-to-use-rtk-mode">
+<h2>Process to use RTK Mode<a class="headerlink" href="#process-to-use-rtk-mode" title="Permalink to this headline"></a></h2>
+<section id="step-1-mode-selection">
+<h3>Step 1: Mode Selection<a class="headerlink" href="#step-1-mode-selection" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Build Apollo and Launch DreamView on <a class="reference external" href="http://localhost:8888">http://localhost:8888</a></p></li>
+<li><p>Set the mode as <code class="docutils literal notranslate"><span class="pre">RTK</span></code>, and select the vehicle type and map for your specific case</p></li>
+</ol>
+<p><img alt="" src="../../_images/rtk_1.png" /></p>
+</section>
+<section id="step-2-module-initialization">
+<h3>Step 2: Module Initialization<a class="headerlink" href="#step-2-module-initialization" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Controller</span></code> from the left-side of Dreamview</p></li>
+<li><p>Enable all modules under the RTK mode except <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">Player</span></code> and <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">Recorder</span></code> from the bottom right-hand side of the window</p></li>
+<li><p>Under the Components section, pause until the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Recorder</span></code> and <code class="docutils literal notranslate"><span class="pre">Localization</span></code> both display <code class="docutils literal notranslate"><span class="pre">OK</span></code> status.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Note</span><span class="p">:</span> <span class="n">to</span> <span class="n">activate</span> <span class="n">the</span> <span class="n">localization</span> <span class="n">module</span> <span class="k">with</span> <span class="n">accurate</span> <span class="n">position</span> <span class="n">signal</span> <span class="n">shown</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Dreamview</span><span class="p">,</span> <span class="n">the</span> <span class="n">driver</span> <span class="n">may</span> <span class="n">need</span> <span class="n">to</span> <span class="n">manually</span> <span class="n">drive</span> <span class="n">the</span> <span class="n">car</span> <span class="n">around</span> <span class="n">your</span> <span class="n">parking</span> <span class="n">lot</span> <span class="n">several</span> <span class="n">times</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/rtk_2.png" /></p>
+</section>
+<section id="step-3-enable-rtk-recorder">
+<h3>Step 3: Enable RTK Recorder<a class="headerlink" href="#step-3-enable-rtk-recorder" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Drive the car to the beginning of the desired testing path. The car should currently be in <code class="docutils literal notranslate"><span class="pre">Manual</span></code> mode.</p></li>
+<li><p>Enable the <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">recorder</span></code>.<br />
+From this moment on, Dreamview enters the <code class="docutils literal notranslate"><span class="pre">Path</span> <span class="pre">Recording</span></code> mode</p></li>
+</ol>
+<p><img alt="" src="../../_images/rtk_3.png" /></p>
+</section>
+<section id="step-4-manual-path-generation">
+<h3>Step 4: Manual Path Generation<a class="headerlink" href="#step-4-manual-path-generation" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Manually drive the car along the desired test path. This path will be recorded automatically</p></li>
+<li><p>After reaching the end of the desired path, it is important to remember that you must disable the <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">Recorder</span></code> module before anything else</p></li>
+<li><p>Manually drive back to the initial position with both <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">Player</span></code> and <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">Recorder</span></code> off.</p></li>
+</ol>
+</section>
+<section id="step-5-enabling-rtk-player">
+<h3>Step 5: Enabling RTK Player<a class="headerlink" href="#step-5-enabling-rtk-player" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Enable the <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">player</span></code>. The driver should be able to see the recorded path trajectory</p></li>
+<li><p>The driver can then decide if he needs to adjust the car’s position to record the path better</p></li>
+<li><p>Once ready, the driver may click on <code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">Auto</span></code>, and the car will be expected to track the recorded path automatically</p></li>
+</ol>
+<div class="highlight-Note: notranslate"><div class="highlight"><pre><span></span>
+Start Auto refers to putting the car into autonomous mode. This can be done by putting the car in neutral and clicking on the Start Auto button present in the Tasks window.
+
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>When path tracking is complete, the driver may disable the <code class="docutils literal notranslate"><span class="pre">RTK</span> <span class="pre">player</span></code> or directly return back to the start point for the second/third/…  run if applied</p></li>
+</ol>
+<p><img alt="" src="../../_images/rtk_4.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Note</span><span class="p">:</span>
+<span class="n">The</span> <span class="n">blue</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">above</span> <span class="n">image</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">recorded</span> <span class="n">path</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3><a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>The recorded path will be never be cleared unless you re-record the path, so feel free to repeat the auto-mode path-tracking tests as many times as you may need</p></li>
+<li><p>If a new path is needed, simply repeat steps 3 - 5 to record the new path. The newly recorded path will overwrite the old path automatically.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_launch_and_run_apollo.html" class="btn btn-neutral float-left" title="How to Launch and Run Apollo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_leverage_scenario_editor.html" class="btn btn-neutral float-right" title="How to Leverage Scenario Editor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Space Planner Algorithm &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Specs" href="README.html" />
+    <link rel="prev" title="SPAN-IGM-A1安装指南" href="Navigation/SPAN-IGM-A1_Installation_Guide_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Open Space Planner Algorithm</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/Open_Space_Planner.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="open-space-planner-algorithm">
+<h1>Open Space Planner Algorithm<a class="headerlink" href="#open-space-planner-algorithm" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>As the Planning module introduced a major change with the launch of Scenario-based planning, we realized the need to have scenario specific algorithms that can be fine-tuned to enhance the trajectory of the ego-car for that particular scenario. The Open Space Planner is one such algorithm in development targeted towards reverse parking and sharp U-turns.
+This algorithm was initially inspired by several papers<cite>[1]</cite><cite>[2]</cite><cite>[3]</cite>.</p>
+</section>
+<section id="algorithm-flow">
+<h2>Algorithm Flow<a class="headerlink" href="#algorithm-flow" title="Permalink to this headline"></a></h2>
+<p><img alt="" src="../../_images/os_planner.png" /></p>
+<p>This algorithm takes in input from two different sources:</p>
+<ul class="simple">
+<li><p>Perception data which includes but is not limited to obstacles</p></li>
+<li><p>The Region of Interest (ROI) which is obtained via HD Map</p></li>
+</ul>
+<p>Once the data is in place, Open Space planner is triggered as seen in the image above. The algorithm itself is comprised of two stages:</p>
+<section id="searching-based-planning">
+<h3>Searching - Based Planning<a class="headerlink" href="#searching-based-planning" title="Permalink to this headline"></a></h3>
+<p>In step 1, a raw trajectory is generated for the ego-car. This stage applies vehicle kinemetic model in algorithm to create the raw trajectory with a series of distance equidistant points as seen in the image below.
+The red line represents the raw trajectory output from Hybrid A*, which is sent to the next step, Optimization to calculate the green smoothened line.</p>
+<p><img alt="" src="../../_images/os_step1.png" /></p>
+</section>
+<section id="optimization">
+<h3>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline"></a></h3>
+<p>This step involves two major tasks,</p>
+<ul class="simple">
+<li><p>Smooth the trajectory to get better riding comfort experience and to make it easier for the control module to track</p></li>
+<li><p>Ensure collision avoidance</p></li>
+</ul>
+<p>The received raw trajectory is taken as an initial guess for optimization to iterate on. The generated result is a set of points that are not distributed evenly but are closer to each other near the turning while those on a linear path are more spread-out.
+This not only ensures better turns, but as time/space is fixed, the nearer the points, the slower the speed of the ego-car. Which also means that velocity tracking in this step is possible but more reasonable acceleration, braking and steering.</p>
+<p><img alt="" src="../../_images/os_step2.png" /></p>
+<p>Once this stage is complete, the output is directly sent to the Control module to have it sent to the ego-car.</p>
+<p><img alt="" src="../../_images/os_step3.png" /></p>
+</section>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline"></a></h2>
+<p>Currently Open Space Planner is used for 2 parking scenarios in the planning stage namely:</p>
+<section id="valet">
+<h3>Valet<a class="headerlink" href="#valet" title="Permalink to this headline"></a></h3>
+<p>This scenario is designed to park the ego car in a designated parking spot using a zig-zag trajectory.</p>
+</section>
+<section id="pull-over">
+<h3>Pull Over<a class="headerlink" href="#pull-over" title="Permalink to this headline"></a></h3>
+<p>This scenario is designed to park the ego car along the curb, either normally or requiring parallel parking.</p>
+<p>To learn more about the existing planning scenarios, please refer to the <a class="reference external" href="https://github.com/ApolloAuto/apollo/tree/master/modules/planning">Planning README</a></p>
+</section>
+</section>
+<section id="future-applications">
+<h2>Future Applications<a class="headerlink" href="#future-applications" title="Permalink to this headline"></a></h2>
+<p>As the algorithm is currently in development, it is currently used for reverse and/or parallel parking, but can also be implemented in scenarios that involve tight U-turns or for curb-side parking when an emergency vehicle passes by. The main aim of scenario-based planning is to ensure efficient planning of the car’s trajectory using targeted algorithms for individual scenarios just like with Open Space Planning for reverse parking.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<p>[1]:  Dolgov, Dmitri, et al. “Path Planning for Autonomous Vehicles in Unknown Semi-Structured Environments.” The International Journal of Robotics Research, vol. 29, no. 5, 2010, pp. 485-501., doi:10.1177/0278364909359210.</p>
+<p>[2]: Prodan, Ionela, et al. “Mixed-integer representations in control design: Mathematical foundations and applications.”” Springer, 2015.</p>
+<p>[3]:  Xiaojing Zhang, et al. “Optimization-Based Collision Avoidance” (arXiv:1711.03449).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Navigation/SPAN-IGM-A1_Installation_Guide_cn.html" class="btn btn-neutral float-left" title="SPAN-IGM-A1安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="README.html" class="btn btn-neutral float-right" title="Specs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

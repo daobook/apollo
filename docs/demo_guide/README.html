@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Run Simulation with Offline Record &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="运行线下演示" href="README_cn.html" />
+    <link rel="prev" title="" href="../cyber/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Run Simulation with Offline Record</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/demo_guide/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="run-simulation-with-offline-record">
+<h1>Run Simulation with Offline Record<a class="headerlink" href="#run-simulation-with-offline-record" title="Permalink to this headline"></a></h1>
+<p>This document provides a step-by-step guide on how to run simulation with a demo
+offline record, in case you don’t have the required hardware.</p>
+<section id="preparation-work">
+<h2>Preparation Work<a class="headerlink" href="#preparation-work" title="Permalink to this headline"></a></h2>
+<p>Suppose you have followed the
+<a class="reference internal" href="../quickstart/apollo_software_installation_guide.html"><span class="doc std std-doc">Apollo Software Installation Guide</span></a>.
+You have cloned Apollo’s GitHub repo, all the software pre-requisites were
+installed correctly.</p>
+</section>
+<section id="start-and-enter-apollo-development-docker-container">
+<h2>Start and enter Apollo development Docker container<a class="headerlink" href="#start-and-enter-apollo-development-docker-container" title="Permalink to this headline"></a></h2>
+<p>The following commands are assumed to run from <code class="docutils literal notranslate"><span class="pre">$APOLLO_ROOT_DIR</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">docker</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dev_start</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">bash</span> <span class="n">docker</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">dev_into</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="build-apollo">
+<h2>Build Apollo<a class="headerlink" href="#build-apollo" title="Permalink to this headline"></a></h2>
+<p>Run the following command to build Apollo inside Docker:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
+</pre></div>
+</div>
+<p>Note:</p>
+<blockquote>
+<div><p>The script will auto-detect whether it was a CPU only build or a GPU build.</p>
+</div></blockquote>
+</section>
+<section id="start-dreamview">
+<h2>Start Dreamview<a class="headerlink" href="#start-dreamview" title="Permalink to this headline"></a></h2>
+<p>To start the Monitor module and Dreamview
+backend, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="download-and-play-the-demo-record">
+<h2>Download and play the demo record<a class="headerlink" href="#download-and-play-the-demo-record" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">docs</span><span class="o">/</span><span class="n">demo_guide</span><span class="o">/</span><span class="n">record_helper</span><span class="o">.</span><span class="n">py</span> <span class="n">demo_3</span><span class="mf">.5</span><span class="o">.</span><span class="n">record</span>
+<span class="n">cyber_recorder</span> <span class="n">play</span> <span class="o">-</span><span class="n">f</span> <span class="n">demo_3</span><span class="mf">.5</span><span class="o">.</span><span class="n">record</span> <span class="o">--</span><span class="n">loop</span>
+</pre></div>
+</div>
+<p>Note:</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">--loop</span></code> option enables record to keep playing in a loop playback mode.</p>
+</div></blockquote>
+</section>
+<section id="open-http-127-0-0-1-8888-in-your-favorate-browser-e-g-chrome-to-access-apollo-dreamview">
+<h2>Open <a class="reference external" href="http://127.0.0.1:8888">http://127.0.0.1:8888</a> in your favorate browser (e.g. Chrome) to access Apollo Dreamview<a class="headerlink" href="#open-http-127-0-0-1-8888-in-your-favorate-browser-e-g-chrome-to-access-apollo-dreamview" title="Permalink to this headline"></a></h2>
+<p>The following screen should be shown to you and the car in Dreamview now moves around!</p>
+<p><img alt="" src="../../_images/dv_trajectory.png" /></p>
+<p>Congratulations!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../cyber/README.html" class="btn btn-neutral float-left" title="" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="README_cn.html" class="btn btn-neutral float-right" title="运行线下演示" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

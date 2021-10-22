@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>在Apollo中如何使用CI结果 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HD map 使用" href="modules/apollo1.5_HDmap_study_notes_cn.html" />
+    <link rel="prev" title="How to Use CI Result in Apollo" href="how_to_use_ci_result.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>在Apollo中如何使用CI结果</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_use_ci_result_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="apolloci">
+<h1>在Apollo中如何使用CI结果<a class="headerlink" href="#apolloci" title="Permalink to this headline"></a></h1>
+<p>在Apollo项目中，一个PR（pull request）能否被合入取决于是否签署了CLA协议以及CI的结果。</p>
+<section id="ci">
+<h2>CI将会检查哪些内容<a class="headerlink" href="#ci" title="Permalink to this headline"></a></h2>
+<p>Apollo的CI会按照以下步骤运行：</p>
+<ol class="simple">
+<li><p>将你的PR签入master的基础代码并进行构建</p></li>
+<li><p>对你的代码进行风格检查（包括 .cc、.h、.py、BUILD等）</p></li>
+<li><p>运行所有单元测试</p></li>
+</ol>
+<p>所以，推荐在提交代码前执行以下命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">lint</span>
+<span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">build</span>
+<span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>当你的PR出现CI错误时，你可以点击下图中的<code class="docutils literal notranslate"><span class="pre">Details</span></code></p>
+<p><img alt="build_failed" src="../../_images/build_failed.png" /></p>
+<p>现在你就进入到了我们的CI系统，进入<code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">Log</span></code>可以查看更详细的日志。</p>
+<p><img alt="detail_log" src="../../_images/build_log.png" /></p>
+</section>
+<section id="id1">
+<h2>可能遇到的错误和解决办法<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<section id="error-fail-modules-perception-base-blob-cpplint">
+<h3>Error: “FAIL: //modules/perception/base:blob_cpplint”<a class="headerlink" href="#error-fail-modules-perception-base-blob-cpplint" title="Permalink to this headline"></a></h3>
+<p><img alt="lint" src="../../_images/lint.png" /></p>
+<p>这是由于代码风格检查失败。Apollo的代码使用Google代码风格，所以头文件应该按照建议的顺序排列。如果你没有找到建议内容，可以点击展开日志信息。</p>
+</section>
+<section id="error-fail-modules-perception-base-blob-test">
+<h3>Error: “FAIL: //modules/perception/base:blob_test”<a class="headerlink" href="#error-fail-modules-perception-base-blob-test" title="Permalink to this headline"></a></h3>
+<p><img alt="test_failed" src="../../_images/unit_test_failed.png" /></p>
+<p><img alt="test_failed_log" src="../../_images/unit_failed_log.png" /></p>
+<p>这是由于单元测试失败。你可以根据日志信息来修正单元测试。特别是发生超时问题时，你可以尝试将BUILD文件中的<code class="docutils literal notranslate"><span class="pre">size</span></code>设置从<code class="docutils literal notranslate"><span class="pre">small</span></code>修改为<code class="docutils literal notranslate"><span class="pre">medium</span></code>或<code class="docutils literal notranslate"><span class="pre">large</span></code>，这可能会有效。</p>
+<p>如果遇到了更加复杂的情况，欢迎在你提交的PR下进行留言。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_use_ci_result.html" class="btn btn-neutral float-left" title="How to Use CI Result in Apollo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules/apollo1.5_HDmap_study_notes_cn.html" class="btn btn-neutral float-right" title="HD map 使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

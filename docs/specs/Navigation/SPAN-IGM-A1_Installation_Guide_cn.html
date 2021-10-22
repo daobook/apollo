@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPAN-IGM-A1安装指南 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Open Space Planner Algorithm" href="../Open_Space_Planner.html" />
+    <link rel="prev" title="Installation Guide of SPAN-IGM-A1" href="SPAN-IGM-A1_Installation_Guide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>SPAN-IGM-A1安装指南</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="span-igm-a1">
+<h1>SPAN-IGM-A1安装指南<a class="headerlink" href="#span-igm-a1" title="Permalink to this headline"></a></h1>
+<p>NovAtel SPAN-IGM-A1是一个集成的单盒的并且紧密耦合了全球卫星导航系统和惯性导航系统，以NovAtel OEM615接收器为本身特点的方案。</p>
+<p><img alt="novatel_imu" src="../../../_images/Novatel_imu1.png" /></p>
+<p>和GPS-IMU一同使用的GPS接收器/天线是 <strong>NovAtel GPS-703-GGG-HV</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>GPS NovAtelGPS-703-GGG-HV必须和两种GPS-IMU选择的任一模型(SPAN-IGM-A1 和 Propak6), 全球定位系统(GPS)和惯性计算单元(IMU)协同工作。
+</pre></div>
+</div>
+<p><img alt="gps_receiver" src="../../../_images/gps_receiver1.png" /></p>
+<section id="gps">
+<h2>安装GPS接收器和天线<a class="headerlink" href="#gps" title="Permalink to this headline"></a></h2>
+<p>本安装指令描述了挂载、连接和为GPS-IMU NovAtel SPAN-IGM-A1量取和设置控制杆尺寸的步骤。</p>
+<section id="id1">
+<h3>挂载<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<p>使用者可以将装置GPS-IMU NovAtel SPAN-IGM-A1放置在车辆上的大部分位置，但是我们建议使用者采用下述的建议方案：</p>
+<ul class="simple">
+<li><p>将GPS-IMU NovAtel SPAN-IGM-A1放置并固定在车辆内部，同时使Y轴指向前方。</p></li>
+<li><p>将NovAtel GPS-703-GGG-HV 天线挂载在车辆上方无遮挡的区域。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>配线<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<p>有三个需要连接的数据线</p>
+<ul class="simple">
+<li><p>天线数据线将GNSS天线连接到SPAN-IGM-A1天线端口</p></li>
+<li><p>主数据线：</p>
+<ul>
+<li><p>将15-pin端连接到SPAN-IGM-A1</p></li>
+<li><p>连接电源线到一个10-to-30V DC电源</p></li>
+<li><p>连接用户端口到IPC.</p></li>
+<li><p>如果电源供应来自于车辆的电池，则需要额外增加一个辅助电池（推荐）。</p></li>
+</ul>
+</li>
+<li><p>AUX线:</p>
+<ul>
+<li><p>连接AUX数据线到15-pin AUX端口</p></li>
+<li><p>如果USB端口用于数据传输，则连接USB数据线到IPC
+请参考下述图片：</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="imu_main_cable_connection" src="../../../_images/imu_main_cable_connection1.png" /></p>
+<p>如果需要了解更多信息，请访问<a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">the SPAN-IGM™ Quick Start Guide</a>第3页获取更多详细的图片。</p>
+</section>
+<section id="id3">
+<h3>量取控制臂长度<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<p>当SPAN-IGM-A1和GPS天线处在正确位置时量取SPAN-IGM-A1到GPS天线的距离。距离被测量并记录为X轴偏移、 Y轴偏移、 和Z轴偏移。设备的中点标记在设备的外部。</p>
+<p>如果需要了解更多信息，请访问<a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">the SPAN-IGM™ Quick Start Guide</a>第5页获取更多详细的图片。</p>
+</section>
+</section>
+<section id="gpsspan-igm-a1">
+<h2>配置GPS和SPAN-IGM-A1<a class="headerlink" href="#gpsspan-igm-a1" title="Permalink to this headline"></a></h2>
+<p>下面展现了配置GPS和SPAN-IGM-A1的方法。该配置过程可以通过键入命令或从NovAtel Connect下载批量配置文件完成。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span> <span class="n">STATE</span> <span class="n">OFF</span>
+<span class="n">UNLOGALL</span> <span class="n">THISPORT</span>
+<span class="n">INSCOMMAND</span> <span class="n">ENABLE</span>
+<span class="n">SETIMUORIENTATION</span> <span class="mi">5</span>
+<span class="n">ALIGNMENTMODE</span> <span class="n">AUTOMATIC</span>  
+<span class="n">VEHICLEBODYROTATION</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">COM</span> <span class="n">COM1</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">COM</span> <span class="n">COM2</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">INTERFACEMODE</span> <span class="n">COM1</span> <span class="n">NOVATEL</span> <span class="n">NOVATEL</span> <span class="n">ON</span>
+<span class="n">PPSCONTROL</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mf">1.0</span> <span class="mi">10000</span>
+<span class="n">MARKCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span>
+<span class="n">EVENTINCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">0</span> <span class="mi">2</span>
+<span class="n">interfacemode</span> <span class="n">usb2</span> <span class="n">rtcmv3</span> <span class="n">none</span> <span class="n">off</span>
+<span class="n">rtksource</span> <span class="n">auto</span> <span class="nb">any</span>
+<span class="n">psrdiffsource</span> <span class="n">auto</span> <span class="nb">any</span>
+
+<span class="n">SETIMUTOANTOFFSET</span> <span class="mf">0.00</span> <span class="mf">1.10866</span> <span class="mf">1.14165</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+<span class="n">SETINSOFFSET</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK2</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">999999990</span> <span class="mi">10</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">500000000</span> <span class="mi">500000000</span>
+
+
+<span class="n">LOG</span> <span class="n">COM2</span> <span class="n">GPRMC</span> <span class="n">ONTIME</span> <span class="mf">1.0</span> <span class="mf">0.25</span>
+<span class="n">LOG</span> <span class="n">USB1</span> <span class="n">GPGGA</span> <span class="n">ONTIME</span> <span class="mf">1.0</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssvelb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVAXB</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">CORRIMUDATASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">RAWIMUSXB</span> <span class="n">onnew</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">mark1pvab</span> <span class="n">onnew</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">rangeb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">imutoantoffsetsb</span> <span class="n">once</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">vehiclebodyrotationb</span> <span class="n">onchanged</span>
+ 
+<span class="n">SAVECONFIG</span>
+</pre></div>
+</div>
+<p><strong><img alt="warning_icon" src="../../../_images/warning_icon3.png" /> WARNING：</strong> 基于对 SPAN-IGM-A1和天线偏移值的实际测量数据修改 <strong><u>SETIMUTOANTOFFSE</u>T</strong> 行对应的参数</p>
+<p>例如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SETIMUTOANTOFFSET</span> <span class="o">-</span><span class="mf">0.05</span> <span class="mf">0.5</span> <span class="mf">0.8</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+</pre></div>
+</div>
+<p>前3个数字表示控制杆的测距结果。后3个数字表示测量的不确定性（误差）。</p>
+</section>
+<section id="id4">
+<h2>资料参考<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<p>获取更多关于NovAtel SPAN-IGM-A1的信息，请参考：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.novatel.com/products/span-gnss-inertial-systems/span-combined-systems/span-igm-a1/">NovAtel SPAN-IGM-A1 Product Page</a></p></li>
+<li><p><a class="reference external" href="https://www.novatel.com/products/gnss-antennas/high-performance-gnss-antennas/gps-703-ggg-hv/">NovAtel GPS-703-GGG-HV Product page</a></p></li>
+<li><p><a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf">SPAN-IGM™ Quick Start Guide</a></p></li>
+<li><p><a class="reference external" href="http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf">SPAN-IGM™ User Manual</a></p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>免责声明<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<p>This device is <code class="docutils literal notranslate"><span class="pre">Apollo</span> <span class="pre">Platform</span> <span class="pre">Supported</span></code></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SPAN-IGM-A1_Installation_Guide.html" class="btn btn-neutral float-left" title="Installation Guide of SPAN-IGM-A1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Open_Space_Planner.html" class="btn btn-neutral float-right" title="Open Space Planner Algorithm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基于双目感知的封闭园区自动驾驶搭建–设备集成 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="基于双目感知的封闭园区自动驾驶搭建–自动驾驶演示" href="start_auto_driving_cn.html" />
+    <link rel="prev" title="基于双目感知的封闭园区自动驾驶搭建–感知适配" href="perception_configuration_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>基于双目感知的封闭园区自动驾驶搭建–设备集成</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/D-kit/Third_Party_Perception/sensor_integration_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>基于双目感知的封闭园区自动驾驶搭建–设备集成<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<section id="id2">
+<h2>前提条件<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>完成了<a class="reference internal" href="../Waypoint_Following/start_waypoint_following_cn.html"><span class="doc std std-doc">循迹搭建–车辆循迹演示</span></a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>主要步骤<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>摄像头安装配置与数据验证。</p></li>
+</ul>
+<section id="id4">
+<h3>摄像头型号说明<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>摄像头型号：smartereye S1双目相机。</p></li>
+<li><p>smartereye S1双目相机采用标准RJ45的网络接口，由北京中科慧眼科技有限公司制造。</p></li>
+<li><p>更多详细参数可参考中科慧眼官网：<a class="reference external" href="http://www.smartereye.com/product/S1">Smartereye S1</a>。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>摄像头安装配置与数据验证<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>牢固安装在小车结构架的竖杆上，水平安装，镜头保持清洁，避免影响图像采集。安装后的效果如下图所示：</p></li>
+</ul>
+<p><img alt="camera_integration_installation" src="../../../_images/camera_integration_installation.jpg" /></p>
+</section>
+<section id="id6">
+<h3>摄像头与工控机连接<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>用车上的电源给相机供电。</p></li>
+<li><p>用网线将设备连接在IPC的网络接口上。</p></li>
+<li><p>向双目相机的供应厂询问设备的IP地址，例如设备的IP地址为192.168.1.251；在IPC的终端中ping 192.168.1.251，能ping通则表示相机和IPC之间的网络是通的。</p></li>
+<li><p>参考双目相机的官网文档对相机做一下相关的配置：<a class="reference external" href="http://www.smartereye.com/product/S1">Smartereye S1</a>。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>摄像头的启动<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>运行<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/ApolloAuto/apollo-contrib.git</span></code>命令将apollo-contrib仓库克隆至本地，然后将apollo-contrib文件夹下面的smartereye文件夹整体拷贝到/apollo目录下。</p></li>
+<li><p>启动docker环境，在docker环境中输入以下命令：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">bash</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">smartereye</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">third_party</span><span class="o">/</span><span class="n">camera_library</span><span class="o">/</span><span class="n">smartereye</span>
+</pre></div>
+</div>
+<p>将smartereye的共享库拷贝至apollo的对应的位置。删除<code class="docutils literal notranslate"><span class="pre">/apollo/smartereye</span></code>文件夹。</p>
+<ul class="simple">
+<li><p>将<code class="docutils literal notranslate"><span class="pre">/apollo/modules/dreamview/conf/hmi_modes/mkz_standard_debug.pb.txt</span></code>文件中的第四行的内容<code class="docutils literal notranslate"><span class="pre">dag_files:</span> <span class="pre">&quot;/apollo/modules/drivers/camera/dag/camera.dag&quot;</span></code>修改为<code class="docutils literal notranslate"><span class="pre">dag_files:</span> <span class="pre">&quot;/apollo/modules/drivers/smartereye/dag/smartereye.dag&quot;</span></code>并保存；将<code class="docutils literal notranslate"><span class="pre">/apollo/modules/common/data/global_flagfile.txt</span></code>文件中的末尾添加下面一行：<code class="docutils literal notranslate"><span class="pre">--image_short_topic=/apollo/sensor/smartereye/image/compressed</span></code>并保存。</p></li>
+<li><p>确保apollo被正确编译。</p></li>
+<li><p>启动DreamView： <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">/apollo/scripts/bootstrap.sh</span></code>，并在浏览器中输入DreamView地址：<code class="docutils literal notranslate"><span class="pre">http://localhost:8888/</span></code></p></li>
+<li><p>在<code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Controller</span></code>标签栏下，打开<code class="docutils literal notranslate"><span class="pre">Camera</span></code>开关，开关位置如下图所示：</p></li>
+</ul>
+<p><img alt="camera_integration_dreamview1" src="../../../_images/camera_integration_dreamview11.png" /></p>
+<ul class="simple">
+<li><p>在<code class="docutils literal notranslate"><span class="pre">Tasks</span></code>标签栏下依次打开<code class="docutils literal notranslate"><span class="pre">SimControl</span></code>和<code class="docutils literal notranslate"><span class="pre">Camera</span> <span class="pre">Sensor</span></code>开关，<code class="docutils literal notranslate"><span class="pre">Camera</span> <span class="pre">Sensor</span></code>打开后，务必关闭<code class="docutils literal notranslate"><span class="pre">SimControl</span></code>。选择<code class="docutils literal notranslate"><span class="pre">Mkz</span> <span class="pre">Standard</span> <span class="pre">Debug</span></code>模式，开关在dreamview界面的位置如下图所示：</p></li>
+</ul>
+<p><img alt="camera_integration_dreamview2" src="../../../_images/camera_integration_dreamview21.png" /></p>
+<ul class="simple">
+<li><p>如果一切正常，则会在<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>右下角出现摄像头采集的图像。</p></li>
+<li><p>在正确完成上述步骤后，在<code class="docutils literal notranslate"><span class="pre">docker</span></code>环境内使用<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>工具，查看<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/smartereye/image</span></code>、<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/smartereye/image/compressed</span></code>是否有数据输出，且帧率是否稳定在15帧左右。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>//输入如下命令启动cyber_monitor
+budaoshi@in_dev_docker:/apollo$ cyber_monitor
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="perception_configuration_cn.html" class="btn btn-neutral float-left" title="基于双目感知的封闭园区自动驾驶搭建–感知适配" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="start_auto_driving_cn.html" class="btn btn-neutral float-right" title="基于双目感知的封闭园区自动驾驶搭建–自动驾驶演示" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

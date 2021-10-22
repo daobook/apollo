@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>封闭园区自动驾驶搭建–虚拟车道线制作 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="基于双目感知的封闭园区自动驾驶搭建–感知适配" href="../Third_Party_Perception/perception_configuration_cn.html" />
+    <link rel="prev" title="基于激光雷达的封闭园区自动驾驶搭建–自动驾驶演示" href="start_auto_driving_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>封闭园区自动驾驶搭建–虚拟车道线制作</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/D-kit/Lidar_Based_Auto_Driving/virtual_lane_generation_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>封闭园区自动驾驶搭建–虚拟车道线制作<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#%E5%B0%81%E9%97%AD%E5%9B%AD%E5%8C%BA%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E6%90%AD%E5%BB%BA--%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF%E5%88%B6%E4%BD%9C">封闭园区自动驾驶搭建–虚拟车道线制作</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></p></li>
+<li><p><a class="reference external" href="#%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">主要步骤</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF%E6%95%B0%E6%8D%AE%E5%8C%85%E5%BD%95%E5%88%B6">虚拟车道线数据包录制</a></p></li>
+<li><p><a class="reference external" href="#%E4%BD%BF%E7%94%A8%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF%E4%BA%91%E6%9C%8D%E5%8A%A1%E7%94%9F%E6%88%90%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF">使用虚拟车道线云服务生成虚拟车道线</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE%E8%87%B3bos">1. 上传数据至BOS</a></p></li>
+<li><p><a class="reference external" href="#2-%E6%8F%90%E4%BA%A4%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF%E7%94%9F%E6%88%90%E4%BB%BB%E5%8A%A1">2. 提交虚拟车道线生成任务</a></p></li>
+<li><p><a class="reference external" href="#3-%E8%8E%B7%E5%8F%96%E8%99%9A%E6%8B%9F%E8%BD%A6%E9%81%93%E7%BA%BF%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%88%B0apollo%E4%B8%AD">3. 获取虚拟车道线并添加到apollo中</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#next">NEXT</a></p></li>
+<li><p><a class="reference external" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E5%9C%A8bos%E4%B8%AD%E6%B2%A1%E6%9C%89%E7%94%9F%E6%88%90local_map%E6%96%87%E4%BB%B6%E5%A4%B9">1. 在BOS中没有生成local_map文件夹</a></p></li>
+<li><p><a class="reference external" href="#2-%E5%9C%A8bos%E4%B8%AD%E7%94%9F%E6%88%90%E7%9A%84%E5%9C%B0%E5%9B%BE%E6%9C%89%E9%97%AE%E9%A2%98">2. 在BOS中生成的地图有问题</a></p></li>
+<li><p><a class="reference external" href="#3-%E5%9C%A8bos%E6%B2%A1%E6%9C%89%E7%94%9F%E6%88%90%E4%BB%BB%E4%BD%95%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE">3. 在BOS没有生成任何地图数据</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h2>前提条件<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>完成了<a class="reference internal" href="sensor_calibration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知设备标定</span></a></p></li>
+<li><p>完成了<a class="reference internal" href="../../Apollo_Fuel/apply_fuel_account_cn.html"><span class="doc std std-doc">开通云服务账号向导</span></a></p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>主要步骤<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<section id="id4">
+<h3>虚拟车道线数据包录制<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<p>将想要自动驾驶的区域提前按要求录制数据包，作为后面生成虚拟车道线的输入数据，注意目前限制数据包大小不要超过5G。</p>
+<ul class="simple">
+<li><p>需要的channel信息如下所示：</p></li>
+</ul>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>序号</p></th>
+<th class="head"><p>topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>/apollo/localization/pose</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>/apollo/sensor/gnss/odometry</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>/apollo/sensor/gnss/ins_stat</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>/apollo/sensor/lidar16/compensator/PointCloud2</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>为获取上述<code class="docutils literal notranslate"><span class="pre">channel</span></code>，需要启动<code class="docutils literal notranslate"><span class="pre">GPS</span></code>、<code class="docutils literal notranslate"><span class="pre">Localization</span></code>、<code class="docutils literal notranslate"><span class="pre">Velodyne</span></code>三个模块，<code class="docutils literal notranslate"><span class="pre">GPS</span></code>、<code class="docutils literal notranslate"><span class="pre">Localization</span></code>模块的启动请参考定位模块配置文档，<code class="docutils literal notranslate"><span class="pre">Velodyne</span></code>模块的启动请参考感知传感器集成文档。由于GNSS设备的限制，<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/odometry</span></code>、<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/ins_stat</span></code>这两个<code class="docutils literal notranslate"><span class="pre">channel</span></code>不能由GNSS设备直接给出，需要借助<code class="docutils literal notranslate"><span class="pre">/apollo/modules/tools/sensor_calibration/</span></code>下的两个脚本工具。在<code class="docutils literal notranslate"><span class="pre">localization</span></code>模块正常启动且输出<code class="docutils literal notranslate"><span class="pre">/apollo/localization/pose</span></code>数据时，在不同终端分别执行<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">modules/tools/sensor_calibration/ins_stat_publisher.py</span></code>、<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">modules/tools/sensor_calibration/odom_publisher.py</span></code>两个命令，便可以分别产生<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/ins_stat</span></code>、<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/odometry</span></code>这两个<code class="docutils literal notranslate"><span class="pre">channel</span></code>。</p></li>
+<li><p>为了节省数据空间，这里建议用户在docker环境使用命令行录制数据包，不要使用<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>模块录制，录制命令如下</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">cyber_recorder</span> <span class="n">record</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">localization</span><span class="o">/</span><span class="n">pose</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">odometry</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">ins_stat</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">lidar16</span><span class="o">/</span><span class="n">compensator</span><span class="o">/</span><span class="n">PointCloud2</span>
+</pre></div>
+</div>
+<p><strong>注意</strong>：在执行<code class="docutils literal notranslate"><span class="pre">sensor_calibration/ins_stat_publisher.py</span></code>脚本前，请务必检查<code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/best_pose</span></code>中GPS信号质量，确保GPS信号质量为<code class="docutils literal notranslate"><span class="pre">NARROW_INT</span></code>时，才可以使用<code class="docutils literal notranslate"><span class="pre">ins_stat_publisher.py</span></code>脚本。在录制数据前，应首先确保<code class="docutils literal notranslate"><span class="pre">modules/localization/conf/localization.conf</span></code>文件中的<code class="docutils literal notranslate"><span class="pre">enable_lidar_localization</span></code>设置为<code class="docutils literal notranslate"><span class="pre">false</span></code>，待地图制作完成后如果需要msf定位，再修改为true。</p>
+</section>
+<section id="id5">
+<h3>使用虚拟车道线云服务生成虚拟车道线<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<section id="bos">
+<h4>1. 上传数据至BOS<a class="headerlink" href="#bos" title="Permalink to this headline"></a></h4>
+<p><strong>注意：</strong> 必须使用在Dreamland中提交用户账号信息的 Bos bucket，确认<code class="docutils literal notranslate"><span class="pre">Bos容器名</span></code>、<code class="docutils literal notranslate"><span class="pre">Bos服务区域</span></code>、<code class="docutils literal notranslate"><span class="pre">Bos访问秘钥</span></code>、<code class="docutils literal notranslate"><span class="pre">Bos访问私钥</span></code>正确。</p>
+<p>在BOS bucket中新建目录virtual_lane，作为后续云标定服务读取数据的<code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">Data</span> <span class="pre">Path</span></code>，把前面录制的数据包以及lidar_GNSS外参文件拷贝至该目录。目录结构如图所示：</p>
+<p><img alt="virtual_lane_tree1" src="../../../_images/virtual_lane_tree1.png" /></p>
+</section>
+<section id="id6">
+<h4>2. 提交虚拟车道线生成任务<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h4>
+<p>点击左侧菜单栏的「Apollo Fuel」里的「任务」菜单项，进入任务管理页面，点击新建任务按钮，在弹出的下拉框中选择虚拟车道线服务，如下图所示：</p>
+<p><img alt="virtual_lane_fuel" src="../../../_images/virtual_lane_fuel.png" /></p>
+<p>填写输入数据路径（在本例中为”virtual_lane”）、输出数据路径（地图生成路径此例中为”result”）、区域编号（根据当地实际情况填写，本例中所在地方为北京应填50）、雷达类型（是配置的/apollo/sensor/lidar16/compensator/PointCloud2这个channel的雷达类型，此例中是lidar16）、车道宽度(车道线的宽度，此例中为3.3)、额外ROI拓展(车道线的边界到真实道路边缘的距离，此例中为0.5)，最后点击提交任务按钮提交。
+<strong>注意</strong>：bos需要有写权限,并且传入的区域编号应和录制数据包时localiztion.conf配置文件中的local_utm_zone_id配置项的值一致才行。</p>
+</section>
+<section id="apollo">
+<h4>3. 获取虚拟车道线并添加到apollo中<a class="headerlink" href="#apollo" title="Permalink to this headline"></a></h4>
+<p>任务完成后，将在注册的邮箱中收到一封邮件：</p>
+<p><img alt="virtual_lane_email" src="../../../_images/virtual_lane_email.png" /></p>
+<p>如果邮件内容为上图所示则表示虚拟车道线成功生成，查看bos上的Output Data Path（此例中为result），此path的目录结构如下图所示：</p>
+<p><img alt="virtual_lane_tree2" src="../../../_images/virtual_lane_tree2.png" /></p>
+<p>将上图中的2020-01-16-08-08-42整个文件夹拷贝到/apollo/modules/map/data/下，重命名为自己的地图名字（例如gongyuan），重启DreamView即可在地图下拉框中看到自己刚添加的地图。</p>
+</section>
+</section>
+</section>
+<section id="next">
+<h2>NEXT<a class="headerlink" href="#next" title="Permalink to this headline"></a></h2>
+<p>现在，您已经完成虚拟车道线制作，根据您使用的是基于Lidar的感知方案还是基于Camera的感知方案，接下来可以开始<a class="reference internal" href="perception_configuration_cn.html"><span class="doc std std-doc">基于激光雷达的封闭园区自动驾驶搭建–感知适配</span></a>或<a class="reference internal" href="../Camera_Based_Auto_Driving/perception_configuration_cn.html"><span class="doc std std-doc">基于摄像头的封闭园区自动驾驶搭建–感知适配</span></a></p>
+</section>
+<section id="id7">
+<h2>常见问题<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
+<section id="boslocal-map">
+<h3>1. 在BOS中没有生成local_map文件夹<a class="headerlink" href="#boslocal-map" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>确认/apollo/modules/localization/conf/localization.conf文件中<code class="docutils literal notranslate"><span class="pre">--local_utm_zone_id</span></code> 选项和提交虚拟车道线云服务的时传入的zone_id一致。</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>2. 在BOS中生成的地图有问题<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>在虚拟车道线数据包录制过程中，车只能沿着预定道路走一遍且不能闭环。</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>3. 在BOS没有生成任何地图数据<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>确认提交账号时给的BOS信息正确。</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="start_auto_driving_cn.html" class="btn btn-neutral float-left" title="基于激光雷达的封闭园区自动驾驶搭建–自动驾驶演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Third_Party_Perception/perception_configuration_cn.html" class="btn btn-neutral float-right" title="基于双目感知的封闭园区自动驾驶搭建–感知适配" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

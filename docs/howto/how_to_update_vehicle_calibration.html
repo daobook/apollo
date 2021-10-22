@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Update Vehicle Calibration for Throttle and Brakes &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="如何标定车辆油门和制动" href="how_to_update_vehicle_calibration_cn.html" />
+    <link rel="prev" title="HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW" href="how_to_understand_architecture_and_workflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Update Vehicle Calibration for Throttle and Brakes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_update_vehicle_calibration.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-update-vehicle-calibration-for-throttle-and-brakes">
+<h1>How to Update Vehicle Calibration for Throttle and Brakes<a class="headerlink" href="#how-to-update-vehicle-calibration-for-throttle-and-brakes" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>The purpose of vehicle calibration is to find the throttle and brake commands that accurately produce the amount of acceleration requested from the control module.</p>
+</section>
+<section id="preparation">
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline"></a></h2>
+<p>Preparation consists of the following task sequence:</p>
+<ul class="simple">
+<li><p>Gain access to the relevant code.</p></li>
+<li><p>Change the driving mode.</p></li>
+<li><p>Select the testing site.</p></li>
+</ul>
+<section id="gain-access-to-the-relevant-code">
+<h3>Gain Access to the Relevant Code<a class="headerlink" href="#gain-access-to-the-relevant-code" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Canbus, which includes modules for:</p>
+<ul>
+<li><p>GPS Driver</p></li>
+<li><p>Localization</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="change-the-driving-mode">
+<h3>Change the Driving Mode<a class="headerlink" href="#change-the-driving-mode" title="Permalink to this headline"></a></h3>
+<p>Set the driving mode in <code class="docutils literal notranslate"><span class="pre">modules/canbus/conf/canbus_conf.pb.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">AUTO_SPEED_ONLY</span></code>.</p>
+</section>
+<section id="select-the-testing-site">
+<h3>Select the Testing Site<a class="headerlink" href="#select-the-testing-site" title="Permalink to this headline"></a></h3>
+<p>The preferred testing site is a long flat road.</p>
+</section>
+</section>
+<section id="update-the-vehicle-calibration">
+<h2>Update the Vehicle Calibration<a class="headerlink" href="#update-the-vehicle-calibration" title="Permalink to this headline"></a></h2>
+<p>After preparation, complete the following task sequence from <code class="docutils literal notranslate"><span class="pre">modules/tools/vehicle_calibration</span></code>:</p>
+<ul class="simple">
+<li><p>Collect data.</p></li>
+<li><p>Process data.</p></li>
+<li><p>Plot results.</p></li>
+<li><p>Convert results to <code class="docutils literal notranslate"><span class="pre">protobuf</span></code>.</p></li>
+</ul>
+<section id="collect-data">
+<h3>Collect Data<a class="headerlink" href="#collect-data" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">data_collector.py</span></code> for different commands, commands like x y z, where x is acceleration command, y is speed limit(mps), z is decceleration command,Positive number for throttle and negative number for brake.Run each command multiple times.</p></li>
+<li><p>Adjust the command script based on the vehicle response.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">plot_data.py</span> </code> to open recorded data and visualize collected data.</p></li>
+</ol>
+<p>like <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">5.2</span> <span class="pre">-10</span></code>, will create and record a file named <code class="docutils literal notranslate"><span class="pre">t15b-10r0.csv</span></code>.</p>
+</section>
+<section id="process-data">
+<h3>Process Data<a class="headerlink" href="#process-data" title="Permalink to this headline"></a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">process_data.sh</span></code> on each recorded log individually. data log is processed to <code class="docutils literal notranslate"><span class="pre">t15b-10r0.csv.result</span></code>.</p>
+</section>
+<section id="plot-results">
+<h3>Plot Results<a class="headerlink" href="#plot-results" title="Permalink to this headline"></a></h3>
+<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">plot_results.py</span> <span class="pre">t15b-10r0.csv.result</span></code> to visualize final results. Check for any abnormality.</p>
+</section>
+<section id="convert-results-to-protobuf">
+<h3>Convert Results to <code class="docutils literal notranslate"><span class="pre">Protobuf</span></code><a class="headerlink" href="#convert-results-to-protobuf" title="Permalink to this headline"></a></h3>
+<p>If everything looks good, run <code class="docutils literal notranslate"><span class="pre">result2pb.sh</span></code> to move calibration results to <code class="docutils literal notranslate"><span class="pre">protobuf</span></code> defined for the control module.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_understand_architecture_and_workflow.html" class="btn btn-neutral float-left" title="HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_update_vehicle_calibration_cn.html" class="btn btn-neutral float-right" title="如何标定车辆油门和制动" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

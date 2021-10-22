@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dreamview Usage Table &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="DreamView用法介绍" href="dreamview_usage_table_cn.html" />
+    <link rel="prev" title="Apollo坐标系统" href="coordination_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Dreamview Usage Table</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/specs/dreamview_usage_table.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="dreamview-usage-table">
+<h1>Dreamview Usage Table<a class="headerlink" href="#dreamview-usage-table" title="Permalink to this headline"></a></h1>
+<p>Dreamview is a web application that,</p>
+<ol class="simple">
+<li><p>visualizes the current output of relevant autonomous driving modules, e.g. planning trajectory, car localization, chassis status, etc.</p></li>
+<li><p>provides human-machine interface for users to view hardware status, turn on/off of modules, and start the autonomous driving car.</p></li>
+<li><p>provides debugging tools, such as PnC Monitor to efficiently track module issues.</p></li>
+</ol>
+<section id="layout-and-features">
+<h2>Layout and Features<a class="headerlink" href="#layout-and-features" title="Permalink to this headline"></a></h2>
+<p>The application layout is divided into several regions: header, sidebar, main view, and tool view.</p>
+<section id="header">
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline"></a></h3>
+<p>The Header has 3 drop-downs that can be set as shown:
+<img alt="" src="../../_images/header.png" /></p>
+<p>The Co-Driver switch is used to detect disengagement event automatically. Once detected, Dreamview will display a pop-up of the data recorder window for the co-driver to enter a new drive event.</p>
+<p>Depending on the mode chosen from the mode selector, the corresponding modules and commands, defined in <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/modules/dreamview/conf/hmi.conf">hmi.conf</a>, will be presented in the <strong>Module Controller</strong>, and <strong>Quick Start</strong>, respectively.</p>
+<p>Note: navigation mode is for the purpose of the low-cost feature introduced in Apollo 2.5. Under this mode, Baidu (or Google) Map presents the absolute position of the ego-vehicle, while the main view has all objects and map elements presented in relative positions to the ego-vehicle.</p>
+</section>
+<section id="sidebar-and-tool-view">
+<h3>Sidebar and Tool View<a class="headerlink" href="#sidebar-and-tool-view" title="Permalink to this headline"></a></h3>
+<p><img alt="" src="../../_images/sidebar.png" />
+Sidebar panel controls what is displayed in the tool view described below:</p>
+</section>
+<section id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline"></a></h3>
+<p>All the tasks that you could perform in DreamView:
+<img alt="" src="../../_images/tasks.png" /></p>
+<ul>
+<li><p><strong>Quick Start</strong>: commands supported from the selected mode. In general,
+<strong>setup</strong>: turns on all modules</p>
+<p><strong>reset all</strong>: turns off all modules</p>
+<p><strong>start auto</strong>: starts driving the vehicle autonomously</p>
+</li>
+<li><p><strong>Others</strong>: switches and buttons for tools used frequently</p></li>
+<li><p><strong>Module Delay</strong>: the time delay between two messages for each topic</p></li>
+<li><p><strong>Console</strong>: monitor messages from the Apollo platform</p></li>
+</ul>
+</section>
+<section id="module-controller">
+<h3>Module Controller<a class="headerlink" href="#module-controller" title="Permalink to this headline"></a></h3>
+<p>A panel to view the hardware status and turn the modules on/off
+<img alt="" src="../../_images/module_controller.png" /></p>
+</section>
+<section id="layer-menu">
+<h3>Layer Menu<a class="headerlink" href="#layer-menu" title="Permalink to this headline"></a></h3>
+<p>A toggle menu for visual elements displays.
+<img alt="" src="../../_images/layer_menu.png" /></p>
+</section>
+<section id="route-editing">
+<h3>Route Editing<a class="headerlink" href="#route-editing" title="Permalink to this headline"></a></h3>
+<p>A visual tool to plan a route before sending the routing request to the Routing module
+<img alt="" src="../../_images/route_editing.png" /></p>
+</section>
+<section id="data-recorder">
+<h3>Data Recorder<a class="headerlink" href="#data-recorder" title="Permalink to this headline"></a></h3>
+<p>A panel to report issues to drive event topic (“/apollo/drive_event”) to rosbag.
+<img alt="" src="../../_images/data_recorder.png" /></p>
+</section>
+<section id="default-routing">
+<h3>Default Routing<a class="headerlink" href="#default-routing" title="Permalink to this headline"></a></h3>
+<p>List of predefined routes or single points, known as point of interest (POI).</p>
+<p><img alt="" src="../../_images/default_routing.png" /></p>
+<p>If route editing is on, routing point(s) can be added visually on the map.</p>
+<p>If route editing is off, clicking a desired POI will send a routing request to the server. If the selected POI contains only a point, the start point of the routing request is the current position of the autonomous car; otherwise, the start position is the first point from the desired route.</p>
+<p>To edit POIs, see <span class="xref myst">default_end_way_point.txt</span> file under the directory of the Map. For example, if the map selected from the map selector is “Demo”, then <span class="xref myst">default_end_way_point.txt</span> is located under <code class="docutils literal notranslate"><span class="pre">modules/map/data/demo</span></code>.</p>
+</section>
+<section id="main-view">
+<h3>Main view:<a class="headerlink" href="#main-view" title="Permalink to this headline"></a></h3>
+<p>Main view animated 3D computer graphics in a web browser.</p>
+<p><img alt="" src="../../_images/mainview.png" /></p>
+<p>Elements in the main view are listed in the table below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image002.png" /></p></td>
+<td><p><ul><li>The autonomous car    </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image004.png" /></p></td>
+<td><p><ul><li>The wheel steering percentage.</li> <li>The status of left/right turn signals (In an emergency situation, both signals will be on.)</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image003.png" /></p></td>
+<td><p><ul><li>  The traffic signal detected     </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image005.png" /></p></td>
+<td><p><ul><li>  The driving mode (AUTO/DISENGAGED/MANUAL/etc.) </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image006.png" /></p></td>
+<td><p><ul><li>The driving speed in km/h as default. Click on the unit to change the unit.</li> <li>The accelerator/brake percentage</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image026.png" /></p></td>
+<td><p><ul><li> The  red thick line shows the routing suggestion</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image038.png" /></p></td>
+<td><p><ul><li>  Nudge object decision – the orange zone indicates the area to avoid </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image062.png" /></p></td>
+<td><p><ul><li>  The  green thick curvy band indicates the planned trajectory </li></ul></p></td>
+</tr>
+</tbody>
+</table>
+<section id="obstacles">
+<h4>Obstacles<a class="headerlink" href="#obstacles" title="Permalink to this headline"></a></h4>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image010.png" /></p></td>
+<td><p><ul><li>Vehicle  obstacle   </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image012.png" /></p></td>
+<td><p><ul><li>Pedestrian  obstacle    </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image014.png" /></p></td>
+<td><p><ul><li>Bicycle  obstacle      </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image016.png" /></p></td>
+<td><p><ul><li>Unknown  obstacle </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image018.png" /></p></td>
+<td><p><ul><li>The  velocity arrow shows the direction of the movement with the length  proportional to the magnitude</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image020.png" /></p></td>
+<td><p><ul><li>The  white arrow shows the directional heading of the obstacle</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image022.png" /></p></td>
+<td><p>The  yellow text indicates: <ul><li>The tracking ID of the obstacle.</li><li>The distance from the autonomous car and obstacle speed.</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image024.png" /></p></td>
+<td><p><ul><li>The  lines show the predicted movement of the obstacle with the same color as the  obstacle</li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="planning-decision">
+<h4>Planning Decision<a class="headerlink" href="#planning-decision" title="Permalink to this headline"></a></h4>
+<section id="decision-fence">
+<h5>Decision Fence<a class="headerlink" href="#decision-fence" title="Permalink to this headline"></a></h5>
+<p>Decision fences reflect decisions made by planning module to ego-vehicle (main) and obstacles (objects). Each type of decision is presented in different color and icon as shown below:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image028.png" /></p></td>
+<td><p><ul><li><strong>Stop</strong> depicting the primary stopping reason</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image030.png" /></p></td>
+<td><p><ul><li><strong>Stop</strong> depicting the object stopping reason</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="2" src="../../_images/0clip_image032.png" /></p></td>
+<td><p><ul><li><strong>Follow</strong> object</li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image034.png" /></p></td>
+<td><p><ul><li><strong>Yield</strong> object decision – the dotted line connects with the respective object</li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image036.png" /></p></td>
+<td><p><ul><li><strong>Overtake</strong> object decision – the dotted line connects with the respective object</li></ul></p></td>
+</tr>
+</tbody>
+</table>
+<p>Changing lane is a special decision and hence, instead of having decision fence, a change lane icon shows on the autonomous car:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/change-lane-left.png" /></p></td>
+<td><p><ul><li>Change to <strong>Left</strong> lane </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/change-lane-right.png" /></p></td>
+<td><p><ul><li>Change to <strong>Right</strong> lane </li></ul></p></td>
+</tr>
+</tbody>
+</table>
+<p>When a yield decision is made based on the “Right of Way” laws at a stop-sign intersection, the obstacles to be yielded will have the yield icon on top:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image037.png" /></p></td>
+<td><p>Obstacle to yield at stop sign</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="stop-reasons">
+<h5>Stop reasons<a class="headerlink" href="#stop-reasons" title="Permalink to this headline"></a></h5>
+<p>When a STOP decision fence is shown, the reason to stop is displayed on the right side of the stop icon. Possible reasons and the corresponding icons are:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Depiction Explanation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image040.png" /></p></td>
+<td><p><ul><li> <strong>Clear-zone in front</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image042.png" /></p></td>
+<td><p><ul><li> <strong>Crosswalk in front</strong> </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image044.png" /></p></td>
+<td><p><ul><li> <strong>Destination arrival</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image046.png" /></p></td>
+<td><p><ul><li> <strong>Emergency</strong>  </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image048.png" /></p></td>
+<td><p><ul><li> <strong>Auto mode is not ready</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image050.png" /></p></td>
+<td><p><ul><li> <strong>Obstacle is blocking the route</strong></li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image052.png" /></p></td>
+<td><p><ul><li> <strong>Pedestrian crossing in front</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image054.png" /></p></td>
+<td><p><ul><li> <strong>Traffic light is yellow/red</strong> </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image056.png" /></p></td>
+<td><p><ul><li> <strong>Vehicle in front</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image058.png" /></p></td>
+<td><p><ul><li> <strong>Stop sign in front</strong> </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/0clip_image059.png" /></p></td>
+<td><p><ul><li> <strong>Pull over</strong> </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/0clip_image060.png" /></p></td>
+<td><p><ul><li> <strong>Yield sign in front</strong> </li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="point-of-view">
+<h4>Point of View<a class="headerlink" href="#point-of-view" title="Permalink to this headline"></a></h4>
+<p>Main view that reflects the point of view chosen from <strong>Layer Menu</strong>:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Visual Element</p></th>
+<th class="head"><p>Point of View</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="../../_images/default_view.png" /></p></td>
+<td><p><ul><li><strong>Default</strong>      </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/near_view.png" /></p></td>
+<td><p><ul><li><strong>Near</strong>   </li></ul></p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" src="../../_images/overhead_view.png" /></p></td>
+<td><p><ul><li><strong>Overhead</strong>    </li></ul></p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" src="../../_images/map_view.png" /></p></td>
+<td><p><strong>Map</strong> <ul><li> To zoom in/out: mouse scroll or pinch with two fingers </li><li> To move around:right-click and drag or swipe with three fingers</li></ul></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="shortcut-keys">
+<h2>Shortcut Keys<a class="headerlink" href="#shortcut-keys" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shortcut Keys</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Toggle <strong>Task</strong> panel</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Toggle <strong>Module Controller</strong> panel</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Toggle <strong>Layer Menu</strong> panel</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Toggle <strong>Route Editing</strong> panel</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Toggle <strong>Data Recorder</strong> panel</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Toggle <strong>Audio Capture</strong> panel</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Toggle <strong>Default Routing</strong> panel</p></td>
+</tr>
+<tr class="row-odd"><td><p>v</p></td>
+<td><p>Rotate <strong>Point of View</strong> options</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pnc-monitor">
+<h2>PnC Monitor<a class="headerlink" href="#pnc-monitor" title="Permalink to this headline"></a></h2>
+<p>To view the monitor:</p>
+<ol class="simple">
+<li><p>Build Apollo and run Dreamview on your web browser</p></li>
+<li><p>Turn on the “PNC Monitor” from the ‘Others’ panel.</p></li>
+<li><p>On the right-hand side, you should be able to view the Planning, Control, Latency graphs as seen below
+<img alt="" src="../../_images/Dreamview_landing.png" /></p></li>
+</ol>
+<section id="planning-control-graphs">
+<h3>Planning/Control Graphs<a class="headerlink" href="#planning-control-graphs" title="Permalink to this headline"></a></h3>
+<p>The Planning/Control tab from the monitor plots various graphs to reflect the internal states of its modules.</p>
+<section id="customizable-graphs-for-planning-module">
+<h4>Customizable Graphs for Planning Module<a class="headerlink" href="#customizable-graphs-for-planning-module" title="Permalink to this headline"></a></h4>
+<p><a class="reference external" href="../../modules/planning/proto/planning_internal.proto#L180">planning_internal.proto</a> is a protobuf that stores debugging information, which is processed by dreamview server and send to dreamview client to help engineers debug. For users who want to plot their own graphs for new planning algorithms:</p>
+<ol>
+<li><p>Fill in the information of your “chart” defined in planning_internal.proto.</p></li>
+<li><p>X/Y axis: <span class="xref myst"><strong>chart.proto</strong> </span> has “Options” that you could set for axis which include</p>
+<ul class="simple">
+<li><p>min/max: minimum/maximum number for the scale</p></li>
+<li><p>label_string: axis label</p></li>
+<li><p>legend_display: to show or hide a chart legend.
+<a class="reference internal" href="../../_images/pncmonitor_options.png"><img alt="../../_images/pncmonitor_options.png" src="../../_images/pncmonitor_options.png" style="width: 600px; height: 300px;" /></a></p></li>
+</ul>
+</li>
+<li><p>Dataset:</p>
+<ul>
+<li><p>Type: each graph can have multiple lines, polygons, and/or car markers defined in <span class="xref myst"><strong>chart.proto</strong></span>:</p>
+<ul>
+<li><p>Line:</p>
+<a class="reference internal image-reference" href="../../_images/pncmonitor_line.png"><img alt="../../_images/pncmonitor_line.png" src="../../_images/pncmonitor_line.png" style="width: 600px; height: 300px;" /></a>
+</li>
+<li><p>Polygon:</p>
+<a class="reference internal image-reference" href="../../_images/pncmonitor_polygon.png"><img alt="../../_images/pncmonitor_polygon.png" src="../../_images/pncmonitor_polygon.png" style="width: 600px; height: 300px;" /></a>
+</li>
+<li><p>Car:</p>
+<a class="reference internal image-reference" href="../../_images/pncmonitor_car.png"><img alt="../../_images/pncmonitor_car.png" src="../../_images/pncmonitor_car.png" style="width: 600px; height: 300px;" /></a>
+</li>
+</ul>
+</li>
+<li><p>Label: each dataset must have a unique “Label” to each chart in order to help dreamview identify which dataset to update.</p></li>
+<li><p>Properties: for polygon and line, you can set styles. Dreamview uses <strong><a class="reference external" href="http://Chartjs.org">Chartjs.org</a></strong> for graphs. Below are common ones:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>The line color</p></td>
+<td><p>rgba(27, 249, 105, 0.5)</p></td>
+</tr>
+<tr class="row-odd"><td><p>borderWidth</p></td>
+<td><p>The line width</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>pointRadius</p></td>
+<td><p>The radius of the point shape</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>fill</p></td>
+<td><p>Whether to fill the area under the line</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>showLine</p></td>
+<td><p>Whether to draw the line</p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>Refer to <a class="reference external" href="https://www.chartjs.org/docs/latest/charts/line.html">https://www.chartjs.org/docs/latest/charts/line.html</a> for more properties.</p>
+</li>
+<li><p>Sample: You could look into <a class="reference external" href="../../modules/planning/on_lane_planning.cc#L562">on_lane_planning.cc</a> for a code sample.</p></li>
+</ol>
+</section>
+<section id="additional-planning-paths">
+<h4>Additional Planning Paths<a class="headerlink" href="#additional-planning-paths" title="Permalink to this headline"></a></h4>
+<p>For users who want to render additional paths on dreamview 3D scene, add the desired paths to the “path” field in <a class="reference external" href="../../modules/planning/proto/planning_internal.proto#L164">planning_internal.proto</a>. These paths will be rendered when PnC Monitor is on:
+<img alt="" src="../../_images/pncmonitor_paths.png" /></p>
+<p>Dreamview has predefined styles for the first four paths:</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Properties</p></th>
+<th class="head"><p>Path 1</p></th>
+<th class="head"><p>Path 2</p></th>
+<th class="head"><p>Path 3</p></th>
+<th class="head"><p>Path 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>width</p></td>
+<td><p>0.8</p></td>
+<td><p>0.15</p></td>
+<td><p>0.4</p></td>
+<td><p>0.65</p></td>
+</tr>
+<tr class="row-odd"><td><p>color</p></td>
+<td><p>0x01D1C1</p></td>
+<td><p>0x36A2EB</p></td>
+<td><p>0x8DFCB4</p></td>
+<td><p>0xD85656</p></td>
+</tr>
+<tr class="row-even"><td><p>opacity</p></td>
+<td><p>0.65</p></td>
+<td><p>1</p></td>
+<td><p>0.7</p></td>
+<td><p>0.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>zOffset</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you have more than four paths to render or want to change the styles, edit the planning.pathProperties value in <span class="xref myst">dreamview/frtonend/dist/parameters.json</span>
+.</p>
+</section>
+</section>
+<section id="latency-graph">
+<h3>Latency graph<a class="headerlink" href="#latency-graph" title="Permalink to this headline"></a></h3>
+<p>The graph displays the difference in time when the module receives sensor input data to when it will publish this data.
+<img alt="" src="../../_images/Dreamview_landing2.png" /></p>
+<p>The Latency Graph can be used to track the latency each individual faces. The graphs are coloured differently to help distinguish the modules and a key is included for better understanding. The graph is plotted as Latency measured in ms vs Timestamp measure in seconds as seen in the image below.
+<img alt="" src="../../_images/Latency.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="coordination_cn.html" class="btn btn-neutral float-left" title="Apollo坐标系统" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dreamview_usage_table_cn.html" class="btn btn-neutral float-right" title="DreamView用法介绍" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

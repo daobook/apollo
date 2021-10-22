@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Launch and Run Apollo &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Leverage Apollo’s RTK mode" href="how_to_leverage_rtk_mode.html" />
+    <link rel="prev" title="如何为 Apollo 安装低时延/实时内核" href="how_to_install_apollo_kernel_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Launch and Run Apollo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_launch_and_run_apollo.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-launch-and-run-apollo">
+<h1>How to Launch and Run Apollo<a class="headerlink" href="#how-to-launch-and-run-apollo" title="Permalink to this headline"></a></h1>
+<section id="build-apollo">
+<h2>Build Apollo<a class="headerlink" href="#build-apollo" title="Permalink to this headline"></a></h2>
+<p>First check to make sure you are in development docker container before you
+proceed. Make sure nVidia GPU is available and that you have installed the
+appropriate nVidia driver if you want to run the entire system. You could still
+proceed with the next few steps if no nVidia GPU is available, the system will
+run without perception as it was CUDA-based.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure you start up clean</span>
+<span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">clean</span>
+
+<span class="c1"># This will build the full system and requires nVidia GPU with nVidia drivers</span>
+<span class="c1"># loaded. If no GPU is availabe, please run &quot;./apollo.sh build_opt&quot; instead.</span>
+<span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">build_opt_gpu</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>:</p>
+<blockquote>
+<div><p>Please run <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">build_fe</span></code> before <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">build_opt</span></code> if you made
+any modifications to the Dreamview frontend.</p>
+</div></blockquote>
+</section>
+<section id="run-apollo">
+<h2>Run Apollo<a class="headerlink" href="#run-apollo" title="Permalink to this headline"></a></h2>
+<p>Once you have finished building Apollo, follow the steps below to launch it.
+Note that although <code class="docutils literal notranslate"><span class="pre">bootstrap.sh</span></code> may succeed, the Web UI won’t be ready if the
+former building step was skipped.</p>
+<section id="start-apollo">
+<h3>Start Apollo<a class="headerlink" href="#start-apollo" title="Permalink to this headline"></a></h3>
+<p>Running <code class="docutils literal notranslate"><span class="pre">scripts/bootstrap.sh</span></code> will start Dreamview backend with the monitor
+module enabled.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Startup modules monitor and dreamview, the default option is start.</span>
+<span class="o">./</span><span class="n">scripts</span><span class="o">/</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">sh</span> <span class="p">[</span><span class="n">start</span> <span class="o">|</span> <span class="n">stop</span> <span class="o">|</span> <span class="n">restart</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="access-dreamview-web-ui">
+<h3>Access Dreamview Web UI<a class="headerlink" href="#access-dreamview-web-ui" title="Permalink to this headline"></a></h3>
+<p>Open <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> in your favorite browser,
+e.g. Chrome, and you should see this screen. However, no module(s) except
+monitor is running in the background at this moment.</p>
+<p><img alt="Access Dreamview" src="../../_images/apollo_bootstrap_screen.png" /></p>
+</section>
+<section id="select-drive-mode-and-map">
+<h3>Select Drive Mode and Map<a class="headerlink" href="#select-drive-mode-and-map" title="Permalink to this headline"></a></h3>
+<p>From the dropdown box of Mode Setup, select “Mkz Standard Debug” mode. From the
+dropdown box of Map, select “Sunnyvale with Two Offices”.</p>
+<p><img alt="Drive Mode and Map Selection" src="../../_images/dreamview_6_0_setup_profile.png" /></p>
+</section>
+<section id="replay-demo-record">
+<h3>Replay Demo Record<a class="headerlink" href="#replay-demo-record" title="Permalink to this headline"></a></h3>
+<p>To see if the system works, use the demo record to “feed” the system.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># You need to download the demo record using the following commands</span>
+<span class="n">cd</span> <span class="n">docs</span><span class="o">/</span><span class="n">demo_guide</span><span class="o">/</span>
+<span class="n">python3</span> <span class="n">record_helper</span><span class="o">.</span><span class="n">py</span> <span class="n">demo_3</span><span class="mf">.5</span><span class="o">.</span><span class="n">record</span>
+
+<span class="c1"># You can now replay this demo &quot;record&quot; in a loop with the &#39;-l&#39; flag</span>
+<span class="n">cyber_recorder</span> <span class="n">play</span> <span class="o">-</span><span class="n">f</span> <span class="n">docs</span><span class="o">/</span><span class="n">demo_guide</span><span class="o">/</span><span class="n">demo_3</span><span class="mf">.5</span><span class="o">.</span><span class="n">record</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Dreamview should show a running vehicle now. (The following image might be
+different due to frontend code changes.)</p>
+<p><img alt="Dreamview with Trajectory" src="../../_images/dv_trajectory_6.0.png" /></p>
+</section>
+<section id="congrats">
+<h3>Congrats!<a class="headerlink" href="#congrats" title="Permalink to this headline"></a></h3>
+<p>You have successfully built Apollo! Now you can revisit
+<a class="reference internal" href="../../README.html"><span class="doc std std-doc">Apollo Readme</span></a> for additional guidelines on the neccessary
+hardware setup.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_install_apollo_kernel_cn.html" class="btn btn-neutral float-left" title="如何为 Apollo 安装低时延/实时内核" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_leverage_rtk_mode.html" class="btn btn-neutral float-right" title="How to Leverage Apollo’s RTK mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

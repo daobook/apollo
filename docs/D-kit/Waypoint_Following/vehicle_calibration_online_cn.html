@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>循迹搭建–车辆动力学云标定 &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="循迹搭建–车辆集成" href="vehicle_integration_cn.html" />
+    <link rel="prev" title="循迹搭建–车辆循迹演示" href="start_waypoint_following_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>循迹搭建–车辆动力学云标定</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>循迹搭建–车辆动力学云标定<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="#%E5%BE%AA%E8%BF%B9%E6%90%AD%E5%BB%BA--%E8%BD%A6%E8%BE%86%E5%8A%A8%E5%8A%9B%E5%AD%A6%E4%BA%91%E6%A0%87%E5%AE%9A">循迹搭建–车辆动力学云标定</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E6%A6%82%E8%A7%88">概览</a></p></li>
+<li><p><a class="reference external" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a></p></li>
+<li><p><a class="reference external" href="#%E4%B8%BB%E8%A6%81%E6%AD%A5%E9%AA%A4">主要步骤</a></p></li>
+<li><p><a class="reference external" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">修改配置文件</a></p></li>
+<li><p><a class="reference external" href="#%E6%A0%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86">标定数据采集</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E5%87%86%E5%A4%87">准备</a></p>
+<ul>
+<li><p><a class="reference external" href="#1%E9%80%89%E6%8B%A9%E6%A8%A1%E5%BC%8F%E9%80%89%E6%8B%A9%E8%BD%A6%E5%9E%8B">1、选择模式，选择车型</a></p></li>
+<li><p><a class="reference external" href="#2%E5%90%AF%E5%8A%A8%E6%A0%87%E5%AE%9A%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E6%A8%A1%E5%9D%97">2、启动标定所需要的软件模块</a></p></li>
+<li><p><a class="reference external" href="#3%E8%BF%9B%E5%85%A5%E9%87%87%E9%9B%86%E7%95%8C%E9%9D%A2">3、进入采集界面</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#%E5%BC%80%E5%A7%8B%E9%87%87%E9%9B%86">开始采集</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#%E6%A0%87%E5%AE%9A%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4">标定任务提交</a></p>
+<ul>
+<li><p><a class="reference external" href="#%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BB%93%E6%9E%84%E8%A6%81%E6%B1%82">文件夹结构要求</a></p>
+<ul>
+<li><p><a class="reference external" href="#1-%E4%B8%8A%E4%BC%A0%E9%A2%84%E5%A4%84%E7%90%86%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E8%87%B3bos">1. 上传预处理后的数据至BOS</a></p></li>
+<li><p><a class="reference external" href="#2-%E6%8F%90%E4%BA%A4%E6%A0%87%E5%AE%9A%E4%BB%BB%E5%8A%A1">2. 提交标定任务</a></p></li>
+<li><p><a class="reference external" href="#3-%E8%8E%B7%E5%8F%96%E6%A0%87%E5%AE%9A%E7%BB%93%E6%9E%9C%E5%8F%8A%E6%A0%87%E5%AE%9A%E8%A1%A8">3. 获取标定结果及标定表</a></p></li>
+<li><p><a class="reference external" href="#4-%E5%B0%86%E6%A0%87%E5%AE%9A%E8%A1%A8%E5%86%99%E5%85%A5%E6%8E%A7%E5%88%B6%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD">4. 将标定表写入控制配置文件中</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#%E7%BB%93%E6%9E%9C%E6%98%BE%E7%A4%BA">结果显示</a></p></li>
+<li><p><a class="reference external" href="#next">NEXT</a></p></li>
+<li><p><a class="reference external" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></p></li>
+</ul>
+</li>
+</ul>
+<section id="id2">
+<h2>概览<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>车辆云标定是通过采集车辆底盘油门踏板量、刹车踏板量、车辆速度、加速度作为车辆纵向动力模型的输入，通过机器学习的方式，生成相应车辆的踏板标定表，生成的标定表数据量大，精度高，提高车辆的控制精度。车辆踏板标定系统主要包括三个部分：</p>
+<ul class="simple">
+<li><p>在<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>数据采集监视器内采集标定数据；</p></li>
+<li><p>数据本地预处理；</p></li>
+<li><p>标定数据上传至BOS云盘，提交标定任务；</p></li>
+<li><p>生成用于性能评估的可视化标定结果。</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>前提条件<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="vehicle_integration_cn.html"><span class="doc std std-doc">循迹搭建–车辆集成</span></a></p></li>
+<li><p><a class="reference internal" href="localization_configuration_cn.html"><span class="doc std std-doc">循迹搭建–定位模块配置</span></a></p></li>
+<li><p><a class="reference internal" href="apollo_installation_cn.html"><span class="doc std std-doc">循迹搭建–Apollo系统安装</span></a></p></li>
+<li><p><a class="reference internal" href="../../Apollo_Fuel/apply_fuel_account_cn.html"><span class="doc std std-doc">开通云服务账号</span></a></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>主要步骤<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>修改标定配置文件</p></li>
+<li><p>标定数据采集</p></li>
+<li><p>标定任务提交</p></li>
+<li><p>可视化结果分析</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>修改配置文件<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h2>
+<p>在开始标定前，需要根据实际车辆的最大速度、速度、油门、刹车踏板的限制，进行用于车辆踏板标定的数据采集配置，来适配车辆的标定，满足标定数据能够尽可能多的覆盖车辆踏板的有效范围。我们设置了开发套件的默认车辆标定数据采集配置文件，在文件<code class="docutils literal notranslate"><span class="pre">apollo/modules/calibration/data/$vehicle_type/dreamview_conf/data_collection_table.pb.txt</span></code>内。对于不同的车型，配置文件的位置不同，主要由车型参数<code class="docutils literal notranslate"><span class="pre">$vehicle_type</span></code>决定，根据车辆铭牌信息选择对应的车型，如下表所示。</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>铭牌信息</p></th>
+<th class="head"><p>$vehicle_type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Apollo D-KIT Lite</p></td>
+<td><p>dev_kit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Standard</p></td>
+<td><p>dev_kit_standard</p></td>
+</tr>
+<tr class="row-even"><td><p>Apollo D-KIT Advanced(NE-B)</p></td>
+<td><p>dev_kit_advanced_ne-b</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Advanced(NE-S)</p></td>
+<td><p>dev_kit_advanced_ne-s</p></td>
+</tr>
+<tr class="row-even"><td><p>Apollo D-KIT Advanced(SNE-R)</p></td>
+<td><p>dev_kit_advanced_sne-r</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>下面以Apollo D-KIT Lite（dev_kit)举例说明。</strong>，Apollo D-KIT Lite标定配置文件在<code class="docutils literal notranslate"><span class="pre">apollo/modules/calibration/data/dev_kit/dreamview_conf/data_collection_table.pb.txt</span></code>内。</p>
+<p>开发者在了解了标定文件构成后，如有需要可以自行修改需要的数据采集配置文件，通常情况下使用默认标定配置可以覆盖小车大部分踏板控制范围，<strong>建议开发者不需要单独修改此配置文件，使用默认标定配置即可</strong>。默认标定配置文件内主要设计了小车的标定条件如下：</p>
+<p>车辆前进模型</p>
+<ul class="simple">
+<li><p>速度条件</p>
+<ul>
+<li><p>低速 0 ～ 2.5m/s</p></li>
+<li><p>高速 &gt;= 2.5m/s</p></li>
+</ul>
+</li>
+<li><p>油门条件</p>
+<ul>
+<li><p>小油门 Throttle deadzone ~ 24%</p></li>
+<li><p>大油门 Throttle &gt;= 24%</p></li>
+</ul>
+</li>
+<li><p>刹车条件</p>
+<ul>
+<li><p>缓刹车 Brake deadzone ~ 28%</p></li>
+<li><p>急刹车 Brake &gt;= 28%</p></li>
+</ul>
+</li>
+</ul>
+<p>上述的<code class="docutils literal notranslate"><span class="pre">Throttle</span> <span class="pre">deadzone</span></code>表示车辆油门踏板的不产生加速度的无效区段，一般设在车辆刚能起步的附近，<strong>开发套件给出的默认值是5%，开发者可以根据实际车辆的情况修改此参数</strong>；<code class="docutils literal notranslate"><span class="pre">Brake</span> <span class="pre">deadzone</span></code>表示车辆刹车踏板的不产生减速度的无效区段，一般设在较低的踏板开度时，<strong>开发套件给出的默认值是3%，开发者可以根据实际车辆的情况修改此参数</strong>。此参数设置在<code class="docutils literal notranslate"><span class="pre">apollo/modules/calition/data/dev_kit/vehicle_param.pb.txt</span></code>文件内<code class="docutils literal notranslate"><span class="pre">throttle_deadzone</span></code>和<code class="docutils literal notranslate"><span class="pre">brake_deadzone</span></code>，在标定开始前，就要先把改参数确定好，后面进行数据训练时上传的配置文件，也需要对应使用该参数。</p>
+<p>根据如上标定条件，即可匹配出车辆的所有标定条件，共8种条件，分别为：</p>
+<ul class="simple">
+<li><p>低速小油门</p></li>
+<li><p>低速大油门</p></li>
+<li><p>高速小油门</p></li>
+<li><p>高速大油门</p></li>
+<li><p>低速缓刹车</p></li>
+<li><p>低速急刹车</p></li>
+<li><p>高速缓刹车</p></li>
+<li><p>高速急刹车</p></li>
+</ul>
+<p>确认好上述标定条件后，通常情况下使用默认标定配置可以覆盖小车大部分踏板控制范围，如果需要修改配置文件，则需要将<code class="docutils literal notranslate"><span class="pre">apollo/modules/calibration/data/dev_kit/dreamview_conf/data_collection_table.pb.txt</span></code> 中<code class="docutils literal notranslate"><span class="pre">Go</span> <span class="pre">Straight</span></code>部分配置进行修改，其它部分配置代码无需修改，无需删除，通过启动<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>后重新选择车辆后配置生效，具体修改代码如下：</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>frame_threshold: 20 // 帧有效阈值，连续满足标定条件的帧数大于等于该阈值时才会被记录
+total_frames: 4000  // 设置每一个标定case数据帧总量，当前设置为4000帧，可根据实际情况调整，数据量越大采集标定数据时间越长
+scenario {
+  key: &quot;Go Straight&quot;
+  value {
+    feature {
+      name: &quot;Forward&quot;
+      range {
+        criterion {
+          field: &quot;gear_location&quot;
+          comparison_operator: EQUAL
+          value: 1
+        }
+      }
+    }
+    feature {
+      name: &quot;Steering Angle&quot;
+      range {
+        name: &quot;Straight&quot;
+        criterion {
+          field: &quot;steering_percentage&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          value: -1
+        }
+        criterion {
+          field: &quot;steering_percentage&quot;
+          comparison_operator: LESS_THAN
+          value: 1
+        }
+      }
+    }
+    feature {
+      name: &quot;Speed&quot;
+      range {
+        name: &quot;Speed 0 ~ 2.5mps&quot;
+        criterion {
+          field: &quot;speed_mps&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          value: 0.2
+        }
+        criterion {
+          field: &quot;speed_mps&quot;
+          comparison_operator: LESS_THAN
+          value: 2.5
+        }
+      }
+      range {
+        name: &quot;Speed &gt;= 2.5mps&quot;
+        criterion {
+          field: &quot;speed_mps&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          value: 2.5
+        }
+      }
+    }
+    feature {
+      name: &quot;Accelerator (Decelerator)&quot;
+      range {
+        name: &quot;Throttle deadzone ~ 24%&quot;
+        criterion {
+          field: &quot;throttle_percentage&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          vehicle_config: &quot;throttle_deadzone&quot;
+        }
+        criterion {
+          field: &quot;throttle_percentage&quot;
+          comparison_operator: LESS_THAN
+          value: 24
+        }
+      }
+      range {
+        name: &quot;Throttle &gt;= 24%&quot;
+        criterion {
+          field: &quot;throttle_percentage&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          value: 24
+        }
+      }
+      range {
+        name: &quot;Brake deadzone ~ 28%&quot;
+        criterion {
+          field: &quot;brake_percentage&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          vehicle_config: &quot;brake_deadzone&quot;
+        }
+        criterion {
+          field: &quot;brake_percentage&quot;
+          comparison_operator: LESS_THAN
+          value: 28
+        }
+      }
+      range {
+        name: &quot;Brake &gt;= 28%&quot;
+        criterion {
+          field: &quot;brake_percentage&quot;
+          comparison_operator: GREATER_THAN_OR_EQUAL
+          value: 28
+        }
+      }
+    }
+  }
+}
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>标定数据采集<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h2>
+</section>
+<section id="id7">
+<h2>准备<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h2>
+<p>完成配置文件修改后，将车辆移动至适合标定的场地后，启动apollo，并执行以下命令：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">bash</span> <span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">build_opt</span>
+    <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">bootstrap</span><span class="o">.</span><span class="n">sh</span> 
+</pre></div>
+</div>
+<p>在浏览器打开<code class="docutils literal notranslate"><span class="pre">DreamView(http://localhost:8888)</span></code>，进行下述步骤：</p>
+<section id="id8">
+<h3>1、选择模式，选择车型<a class="headerlink" href="#id8" title="Permalink to this headline"></a></h3>
+<p>在<code class="docutils literal notranslate"><span class="pre">--setup</span> <span class="pre">mode--</span></code>内，选择<code class="docutils literal notranslate"><span class="pre">vehicle</span> <span class="pre">calibration</span></code>（车辆标定）选项， 在<code class="docutils literal notranslate"><span class="pre">--vehicle--</span></code>选择车型，根据车辆铭牌信息选择对应的车型(见下表)，如使用Apollo D-KIT Lite，则在<code class="docutils literal notranslate"><span class="pre">--vehicle--</span></code>选择车型<code class="docutils literal notranslate"><span class="pre">Dev</span> <span class="pre">Kit</span></code>；</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>铭牌信息</p></th>
+<th class="head"><p>选择车型</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Apollo D-KIT Lite</p></td>
+<td><p>dev_kit</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Standard</p></td>
+<td><p>dev_kit_standard</p></td>
+</tr>
+<tr class="row-even"><td><p>Apollo D-KIT Advanced(NE-B)</p></td>
+<td><p>dev_kit_advanced_ne-b</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apollo D-KIT Advanced(NE-S)</p></td>
+<td><p>dev_kit_advanced_ne-s</p></td>
+</tr>
+<tr class="row-even"><td><p>Apollo D-KIT Advanced(SNE-R)</p></td>
+<td><p>dev_kit_advanced_sne-r</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="vehicle_calibration_select_vehicle" src="../../../_images/vehicle_calibration_select_vehicle.png" /></p>
+</section>
+<section id="id9">
+<h3>2、启动标定所需要的软件模块<a class="headerlink" href="#id9" title="Permalink to this headline"></a></h3>
+<p>在进行标定前，需要采集包含车辆底盘、定位信息的数据作为输入，可以通过<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>界面上的模块开关启动相关模块软件，在<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>界面左侧边栏选择<code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Controller</span></code>标签，然后在主界面启动<code class="docutils literal notranslate"><span class="pre">Canbus</span></code>、<code class="docutils literal notranslate"><span class="pre">GPS</span></code>、<code class="docutils literal notranslate"><span class="pre">Localization</span></code>模块，如下图所示：</p>
+<p><img alt="vehicle_calibration_launch_modules" src="../../../_images/vehicle_calibratio_launch_modules.png" /></p>
+<p>通过左侧<code class="docutils literal notranslate"><span class="pre">Components</span></code>查看<code class="docutils literal notranslate"><span class="pre">Canbus</span></code>、<code class="docutils literal notranslate"><span class="pre">GPS</span></code>、<code class="docutils literal notranslate"><span class="pre">RTK</span></code>状态，直到信号都达到<code class="docutils literal notranslate"><span class="pre">OK</span></code>才能够进行下一步。<code class="docutils literal notranslate"><span class="pre">Localization</span></code>启动后，需要等待1~2分钟，<code class="docutils literal notranslate"><span class="pre">RTK</span></code>状态才能变成OK。</p>
+<p><img alt="vehicle_calibration_check_components.png" src="../../../_images/vehicle_calibration_check_components.png" /></p>
+</section>
+<section id="id10">
+<h3>3、进入采集界面<a class="headerlink" href="#id10" title="Permalink to this headline"></a></h3>
+<p>在确认上一步已经启动的软件模块状态<code class="docutils literal notranslate"><span class="pre">OK</span></code>后，点击<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>界面左侧边栏<code class="docutils literal notranslate"><span class="pre">TASK</span></code>标签，在<code class="docutils literal notranslate"><span class="pre">Others</span></code>区域，打开<code class="docutils literal notranslate"><span class="pre">Fuel</span> <span class="pre">Client</span></code>开关启动云服务采集界面，然后在界面右上侧选择<code class="docutils literal notranslate"><span class="pre">Go</span> <span class="pre">Straight</span></code>标签，查看</p>
+<p>如下图所示，为标定数据采集面板。</p>
+<p><img alt="vehicle_calibration_fuel_cleint" src="../../../_images/vehicle_calibration_fuel_cleint.png" /></p>
+</section>
+</section>
+<section id="id11">
+<h2>开始采集<a class="headerlink" href="#id11" title="Permalink to this headline"></a></h2>
+<p>在<code class="docutils literal notranslate"><span class="pre">DreamView</span></code>界面点击左侧边栏，选择<code class="docutils literal notranslate"><span class="pre">Module</span> <span class="pre">Controller</span></code>，这时点击<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关，开始录制标定数据，这时Apollo系统就开始录制记录车辆标定数据了。</p>
+<p>（如果在打开Recorder开关之前，右侧的数据采集器的进度条已经有一些增加，没有关系，因为在打开<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关后会清除进度条的采集量，重新开始记录）</p>
+<p>&lt;<strong>记录数据时请注意</strong>&gt;：建议在第一次打开<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关后，一次性把所有的标定case数据全部采集完之后再关闭<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关，通常一次标定采集数据所用时间为20-40分钟，根据熟练程度、场地大小等决定。</p>
+<p><strong>（请务必切记先打开<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关，再进行标定数据采集操作，实际情况常常会因未打开<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关造成数据未记录保存，影响效率）</strong></p>
+<p><img alt="vehicle_calibration_launch_recorder.png" src="../../../_images/vehicle_calibration_launch_recorder.png" /></p>
+<p>这时，我们使用遥控器遥控车辆，根据<code class="docutils literal notranslate"><span class="pre">Dreamview</span></code>右侧数据采集监视器，采集相应标定条件的车辆数据，每符合标定条件一次，则进度条增加一点，直至进度条增加满为止。</p>
+<p><img alt="vehicle_calibration_collect_data" src="../../../_images/vehicle_calibration_collect_data.png" /></p>
+<p>待监视器内各标定条件进度条（<strong>蓝色</strong>）全部采集完成后，点击关闭<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>开关，关闭数据记录，结束车辆标定数据采集。</p>
+<p><strong>这里需要注意，原则上进度条全部采集完对标定结果的生成是最佳的；但开发者也可以根据实际情况采集进度条，实际根据场地大小限制，速度限制等，比如有些case很容易采集满，有些很难，对于很不好采集到的数据可以采集到60-80%的状态也可以。</strong></p>
+<p><img alt="vehicle_calibration_collect_data_complete" src="../../../_images/vehicle_calibration_collect_data_complete.png" /></p>
+</section>
+<section id="id12">
+<h2>标定任务提交<a class="headerlink" href="#id12" title="Permalink to this headline"></a></h2>
+<section id="bos">
+<h3>1. 上传预处理后的数据至BOS<a class="headerlink" href="#bos" title="Permalink to this headline"></a></h3>
+<p>在上传数据之前，请注意以下几点：</p>
+<p>1）标定数据预处理：</p>
+<p>采集完车辆的标定数据，关闭<code class="docutils literal notranslate"><span class="pre">Recorder</span></code>后,如图所示，点击右下角<code class="docutils literal notranslate"><span class="pre">「Preprocess」</span></code>按钮，进行标定数据预处理。</p>
+<p><img alt="vehicle_calibration_preprocess_data.png" src="../../../_images/vehicle_calibration_preprocess_data.png" /></p>
+<p>2）查看预处理结果</p>
+<p>点击<code class="docutils literal notranslate"><span class="pre">「Preprocess」</span></code>按钮后，首先对标定数据进行数据完整检查(sanity check)，如果数据完整检查不通过，在进度条下方会有不通过的错误提示（通常情况下，只要按照文档上述步骤一步步做，完整性检查就不会有错）。</p>
+<p>预处理按钮只需要点一次，不需要多次点击。</p>
+<p><img alt="vehicle_calibration_preprocess_data_complete" src="../../../_images/vehicle_calibration_preprocess_data_complete.png" /></p>
+<p>3）生成结果如下目录</p>
+<p>结束数据完整检查后，会提示将生成的预处理数据存入到<code class="docutils literal notranslate"><span class="pre">apollo/output/task-*******</span></code>，文件夹以当时处理的时间为命名，所以开发者在<code class="docutils literal notranslate"><span class="pre">apollo/output</span></code>目录下查找时间最近的task文件夹即可。</p>
+<p>如下图所示，拷贝预处理完成后的文件夹<code class="docutils literal notranslate"><span class="pre">task-2021-01-04-18-12</span></code>，用于标定使用。</p>
+<p><img alt="vehicle_calibration_preprocess_data_folder" src="../../../_images/vehicle_calibration_preprocess_data_folder.png" /></p>
+<p>4）把生成的结果上传至BOS</p>
+<p>在<a class="reference internal" href="../../Apollo_Fuel/apply_bos_account_cn.html"><span class="doc std std-doc">BOS</span></a>的初始目录，上传上一步选择的文件夹<code class="docutils literal notranslate"><span class="pre">task-2021-01-04-18-12</span></code>。</p>
+<p><img alt="vehicle_calibration_upload_bos" src="../../../_images/vehicle_calibration_upload_bos.png" /></p>
+</section>
+<section id="id13">
+<h3>2. 提交标定任务<a class="headerlink" href="#id13" title="Permalink to this headline"></a></h3>
+<p>首先进入<a class="reference external" href="http://bce.apollo.auto/login">Apollo云服务任务页面</a>，选择使用百度账号登录，在左侧框中选择<code class="docutils literal notranslate"><span class="pre">Apollo</span> <span class="pre">Fuel--&gt;任务</span></code>，点击<code class="docutils literal notranslate"><span class="pre">新建任务</span></code>，然后在下拉框内选择<code class="docutils literal notranslate"><span class="pre">车辆标定</span></code>，然后输入相应要评测的数据路径，在<code class="docutils literal notranslate"><span class="pre">输入数据路径</span></code>中填写到根目录，在本示例中填写为<code class="docutils literal notranslate"><span class="pre">task001</span></code>（因为“task001”在BOS的根目录）。如下图所示：</p>
+<p><img alt="vehicle_calibration_submit_task1" src="../../../_images/vehicle_calibration_submit_task1.jpg" /></p>
+<p><img alt="vehicle_calibration_submit_task2" src="../../../_images/vehicle_calibration_submit_task2.jpg" /></p>
+<p><img alt="vehicle_calibration_submit_task3" src="../../../_images/vehicle_calibration_submit_task3.png" /></p>
+<p><img alt="vehicle_calibration_submit_task4" src="../../../_images/vehicle_calibration_submit_task4.png" /></p>
+</section>
+<section id="id14">
+<h3>3. 获取标定结果及标定表<a class="headerlink" href="#id14" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>云标定任务完成后，将在注册的邮箱（请与商务联系）中收到一封标定结果邮件。如果标定任务成功，将包含标定表及标定结果图片。</p></li>
+</ul>
+</section>
+<section id="id15">
+<h3>4. 将标定表写入控制配置文件中<a class="headerlink" href="#id15" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>生成的标定表以 <code class="docutils literal notranslate"><span class="pre">车型_calibration_table.pb.txt</span></code>命名，将标定表内的标定数据为calibration_table字段，把全部数据拷贝替换至<code class="docutils literal notranslate"><span class="pre">apollo/modules/calibration/data/dev_kit/control_conf.pb.txt</span></code>下对应的<code class="docutils literal notranslate"><span class="pre">lon_controller_conf</span></code>字段下面的<code class="docutils literal notranslate"><span class="pre">calibration_table</span></code>段内。</p></li>
+</ul>
+<p>注：云标定数据片段示例（截取了前4段）</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>calibration {
+  speed: 0.0
+  acceleration: -1.3040223121643066
+  command: -69.0
+}
+calibration {
+  speed: 0.0
+  acceleration: -1.2989914417266846
+  command: -65.63157894736842
+}
+calibration {
+  speed: 0.0
+  acceleration: -1.2903447151184082
+  command: -62.26315789473684
+}
+calibration {
+  speed: 0.0
+  acceleration: -1.2760969400405884
+  command: -58.89473684210526
+}
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id16">
+<h2>结果显示<a class="headerlink" href="#id16" title="Permalink to this headline"></a></h2>
+<p>标定表和结果，以邮件的形式，发送至与BOS存储绑定的电子邮箱中。</p>
+<ul class="simple">
+<li><p>油门踏板标定结果</p></li>
+</ul>
+<p><img alt="vehicle_calibration_online_throttle_result" src="../../../_images/vehicle_calibration_online_throttle_result.png" /></p>
+<ul class="simple">
+<li><p>刹车踏板标定结果</p></li>
+</ul>
+<p><img alt="vehicle_calibration_online_brake_result" src="../../../_images/vehicle_calibration_online_brake_result.png" /></p>
+</section>
+<section id="next">
+<h2>NEXT<a class="headerlink" href="#next" title="Permalink to this headline"></a></h2>
+<p>车辆云标定能够提供精度较高的车辆踏板标定表，对于自动驾驶的控制精度有显著提升。当然，目前车辆的出厂一致性较好，在对控制精度要求不高的前提下，<code class="docutils literal notranslate"><span class="pre">D-KIT</span></code>配置表内默认的标定数据，也可以进行正常循迹等闭环自动驾驶演示。</p>
+<p>现在，您已经完成车辆动力学标定，接下来可以开始<a class="reference internal" href="start_waypoint_following_cn.html"><span class="doc std std-doc">车辆循迹演示</span></a>。</p>
+</section>
+<section id="id17">
+<h2>常见问题<a class="headerlink" href="#id17" title="Permalink to this headline"></a></h2>
+<section id="id18">
+<h3>1.在进行车辆标定时，收到如下报错邮件，数据完整性检查出现错误<a class="headerlink" href="#id18" title="Permalink to this headline"></a></h3>
+<p><img alt="vehicle_calibration_online_error1" src="../../../_images/vehicle_calibration_online_error1.png" /></p>
+<p>排查方法：</p>
+<p>1.查看<code class="docutils literal notranslate"><span class="pre">文件夹结构</span></code>是否正确，一般数据预处理时，会自动生成文件夹目录，如果文件夹目录存在错误，可以手动参考如下图目录自行修改:</p>
+<p>所有采集的标定数据都保存在<code class="docutils literal notranslate"><span class="pre">apollo/data/bag/</span></code>目录下，找到以<code class="docutils literal notranslate"><span class="pre">年-月-日-时-分-秒</span></code>命名的文件夹，根据时间找到属于车辆标定采集的数据。我们可以分批采集数据，即每一次可以采集一部分数据，这样数据会记录在不同的<code class="docutils literal notranslate"><span class="pre">年-月-日-时-分-秒</span></code>文件夹，（<strong>注意</strong>：默认情况下，数据采集后会在<code class="docutils literal notranslate"><span class="pre">apollo/data/bag/</span></code>文件夹下生成2个<code class="docutils literal notranslate"><span class="pre">年月日时分秒相似</span></code>的文件夹，分别以<code class="docutils literal notranslate"><span class="pre">年-月-日-时-分-秒</span></code>和<code class="docutils literal notranslate"><span class="pre">年-月-日-时-分-秒_s</span></code>命名，开发者可以不用理会<code class="docutils literal notranslate"><span class="pre">_s</span></code>后缀的文件夹，只需要使用<code class="docutils literal notranslate"><span class="pre">年-月-日-时-分-秒</span></code>文件夹内录制的标定数据即可）也可以一次全部采集，这样所有的数据都记录在同一个文件夹内，通常完成上述标定条件的车辆标定数据采集需要20分钟左右。</p>
+<p>1）正确的文件夹结构如下图所示：</p>
+<p><img alt="vehicle_calibration_online_structure" src="../../../_images/vehicle_calibration_online_structure.png" /></p>
+<p>2）<code class="docutils literal notranslate"><span class="pre">Origin</span> <span class="pre">Folder</span></code>确保是<strong>BOS的根目录</strong>，确保<code class="docutils literal notranslate"><span class="pre">task001</span></code>目录是在BOS根目录下创建的（根目录：登录BOS存储服务器后首先看到的目录即为根目录，一般是<code class="docutils literal notranslate"><span class="pre">Bucket</span> <span class="pre">name</span></code>目录）；</p>
+<p>3）<code class="docutils literal notranslate"><span class="pre">task001、task002...</span></code>代表一次车辆标定任务文件夹，即每次标定任务提交时，会训练一个<code class="docutils literal notranslate"><span class="pre">task文件夹</span></code>内的车辆数据；<code class="docutils literal notranslate"><span class="pre">task文件夹</span></code>上一层（<code class="docutils literal notranslate"><span class="pre">Origin</span> <span class="pre">Folder</span></code>）可以是BOS根目录或其他目录；</p>
+<p>3） <code class="docutils literal notranslate"><span class="pre">Vehicle1、Vehicle2...</span></code>代表标定的车辆文件夹，可以根据实际情况，按照车辆名称+编号的形式命名，如<code class="docutils literal notranslate"><span class="pre">ch01</span></code>、<code class="docutils literal notranslate"><span class="pre">ch02</span></code>等。一个task文件夹下内可以包含多个Vehicle车辆文件夹，在一次任务提交中标定多个车辆；</p>
+<p>4）<code class="docutils literal notranslate"><span class="pre">Records</span></code>文件内导入采集的车辆标定数据，车辆的录制数据在<code class="docutils literal notranslate"><span class="pre">apollo/data/bag/</span></code>目录下；</p>
+<p><strong>需要注意：</strong><code class="docutils literal notranslate"><span class="pre">Records</span></code>文件夹下需要有2层子文件夹，第一层为大时间（年-月-日），如上图<code class="docutils literal notranslate"><span class="pre">2019-04-19</span></code>，第二层文件夹是具体的record文件夹（年-月-日-时-分等），如上图<code class="docutils literal notranslate"><span class="pre">2019-04-19-12-45-01</span></code>等，提醒大家一定要注意<code class="docutils literal notranslate"><span class="pre">Records</span></code>文件夹下的文件夹结构还要有2层，不然后续会影响标定找不到文件数据，文件夹结构如上图所示；</p>
+<p>5） <code class="docutils literal notranslate"><span class="pre">Configuration</span> <span class="pre">File</span></code>即为<code class="docutils literal notranslate"><span class="pre">vehicle_param.pb.txt</span></code>（车辆配置文件），该文件在<code class="docutils literal notranslate"><span class="pre">apollo/modules/calition/data/dev_kit</span></code>文件夹内，将该文件夹下的<code class="docutils literal notranslate"><span class="pre">vehicle_param.pb.txt</span></code>拷贝至BOS对应的车辆标定文件夹下，如上图<code class="docutils literal notranslate"><span class="pre">Vehicle2</span></code>文件夹内；</p>
+<p>6）总结上述文件夹结构：</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>BOS根目录 -&gt; Task Folder -&gt;Vehicle Folder -&gt; Records + vehicle_param.pb.txt
+</pre></div>
+</div>
+<p>2.查看是否在车辆文件夹内添加车辆配置文件（<code class="docutils literal notranslate"><span class="pre">vehicle_param.pb.txt</span></code>）</p>
+<p>3.查看录制数据包内是否存在标定需要的channel数据：</p>
+<ul class="simple">
+<li><p>通过<code class="docutils literal notranslate"><span class="pre">cyber_recorder</span> <span class="pre">info</span> <span class="pre">xxxxxx.record.xxxxx</span></code>
+检查采集数据内是否存在下面3个<code class="docutils literal notranslate"><span class="pre">channel</span></code>的数据：</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/apollo/canbus/chassis</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/best_pose</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/apollo/localization/pose</span></code></p></li>
+<li><p>下图为正确的数据包示意</p></li>
+</ul>
+<p><img alt="vehicle_calibration_online_record_check" src="../../../_images/vehicle_calibration_online_record_check.png" /></p>
+<p>如果发现缺少了上述channel的某一项，请排查相关模块。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="start_waypoint_following_cn.html" class="btn btn-neutral float-left" title="循迹搭建–车辆循迹演示" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vehicle_integration_cn.html" class="btn btn-neutral float-right" title="循迹搭建–车辆集成" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

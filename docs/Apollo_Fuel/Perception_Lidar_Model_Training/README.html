@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Perception Lidar Model Training Service &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Prediction Pedestrian Model Training Service" href="../Prediction_Pedestrian_Model_Training/README.html" />
+    <link rel="prev" title="Open Space Planner Profiling Service" href="../Open_Space_Planner_Profiling/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Open Perception Lidar Model Training Service</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/Apollo_Fuel/Perception_Lidar_Model_Training/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="open-perception-lidar-model-training-service">
+<h1>Open Perception Lidar Model Training Service<a class="headerlink" href="#open-perception-lidar-model-training-service" title="Permalink to this headline"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>Open Perception Lidar Model Training Service is a cloud-based service to train perception lidar model using pointpillars algorithm from your data, to better detect obstacles in your environment.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ApolloAuto/apollo">Apollo</a> 6.0 or higher version.</p></li>
+<li><p>Baidu Cloud BOS service registered according to <a class="reference external" href="https://github.com/ApolloAuto/apollo/blob/master/docs/Apollo_Fuel/apply_bos_account_cn.md">document</a></p></li>
+<li><p>Fuel service account on <a class="reference external" href="http://bce.apollo.auto/user-manual/fuel-service">Apollo Dreamland</a></p></li>
+</ul>
+</section>
+<section id="main-steps">
+<h2>Main Steps<a class="headerlink" href="#main-steps" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Data collection</p></li>
+<li><p>Job submission</p></li>
+<li><p>Model training result</p></li>
+</ul>
+</section>
+<section id="data-collection">
+<h2>Data Collection<a class="headerlink" href="#data-collection" title="Permalink to this headline"></a></h2>
+<section id="data-recording">
+<h3>Data Recording<a class="headerlink" href="#data-recording" title="Permalink to this headline"></a></h3>
+<p>Collecting sensor data from lidar and cameras in different scenarios covering your autonomous driving environment as much as possible, please make sure the scenarios have different types of obstacles such as pedestrians and vehicles. Then labeling the sensor data using kitti data format.</p>
+</section>
+<section id="data-format">
+<h3>Data format<a class="headerlink" href="#data-format" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><strong>We use <a class="reference external" href="http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d">Kitti data format</a> as training data format</strong>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">INPUT_DATA_PATH</span><span class="p">:</span>
+        <span class="n">training</span><span class="p">:</span>
+            <span class="n">calib</span>
+            <span class="n">image_2</span>
+            <span class="n">label_2</span>
+            <span class="n">velodyne</span>
+        <span class="n">testing</span><span class="p">:</span>
+            <span class="n">calib</span>
+            <span class="n">image_2</span>
+            <span class="n">velodyne</span>
+        <span class="n">train</span><span class="o">.</span><span class="n">txt</span>
+	<span class="n">val</span><span class="o">.</span><span class="n">txt</span>
+        <span class="n">trainval</span><span class="o">.</span><span class="n">txt</span>
+        <span class="n">test</span><span class="o">.</span><span class="n">txt</span> 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Supported obstacle detection categories:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">bus</span><span class="p">,</span> <span class="n">Car</span><span class="p">,</span> <span class="n">construction_vehicle</span><span class="p">,</span> <span class="n">Truck</span><span class="p">,</span> <span class="n">barrier</span><span class="p">,</span> <span class="n">Cyclist</span><span class="p">,</span> <span class="n">motorcycle</span><span class="p">,</span> <span class="n">Pedestrian</span><span class="p">,</span> <span class="n">traffic_cone</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When labeling your data, `type` must be one of the above categories (please note the uppercase).
+</pre></div>
+</div>
+</section>
+</section>
+<section id="job-submission">
+<h2>Job Submission<a class="headerlink" href="#job-submission" title="Permalink to this headline"></a></h2>
+<section id="upload-data-to-bos">
+<h3>Upload data to BOS<a class="headerlink" href="#upload-data-to-bos" title="Permalink to this headline"></a></h3>
+<p>Requirements of the folder structure for job submission：</p>
+<ol class="simple">
+<li><p>Input Data Path: upload your <a class="reference external" href="###Data-format">data</a> to INPUT_DATA_PATH directory.</p></li>
+<li><p>Output Data Path: if the model is trained successfully, an onnx file will be saved to the OUTPUT_DATA_PATH directory.</p></li>
+</ol>
+</section>
+<section id="submit-job-on-dreamland">
+<h3>Submit job on Dreamland<a class="headerlink" href="#submit-job-on-dreamland" title="Permalink to this headline"></a></h3>
+<p>Go to <a class="reference external" href="http://bce.apollo.auto/">Apollo Dreamland</a>, login with <strong>Baidu</strong> account, choose <code class="docutils literal notranslate"><span class="pre">Apollo</span> <span class="pre">Fuel</span> <span class="pre">--&gt;</span> <span class="pre">Jobs</span></code>，<code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Job</span></code>, <code class="docutils literal notranslate"><span class="pre">Perception</span> <span class="pre">Lidar</span> <span class="pre">Model</span> <span class="pre">Training</span></code>，and input the correct BOS path as in <a class="reference external" href="###Upload-data-to-BOS">Upload data to BOS</a> section.</p>
+</section>
+</section>
+<section id="model-training-result">
+<h2>Model Training Result<a class="headerlink" href="#model-training-result" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Once a job is done, you should be expecting one email per job including the results and <code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Path</span></code>.</p></li>
+</ul>
+<p><img alt="" src="../../../_images/perception_email.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Open_Space_Planner_Profiling/README.html" class="btn btn-neutral float-left" title="Open Space Planner Profiling Service" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Prediction_Pedestrian_Model_Training/README.html" class="btn btn-neutral float-right" title="Prediction Pedestrian Model Training Service" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

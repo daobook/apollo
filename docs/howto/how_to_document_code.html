@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Document Source Code in Apollo &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Generate Local Map For MSF Localization Module" href="how_to_generate_local_map_for_MSF_localization_module.html" />
+    <link rel="prev" title="How to do performance profiling" href="how_to_do_performance_profiling.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Document Source Code in Apollo</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_document_code.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-document-source-code-in-apollo">
+<h1>How to Document Source Code in Apollo<a class="headerlink" href="#how-to-document-source-code-in-apollo" title="Permalink to this headline"></a></h1>
+<p>Apollo uses <a class="reference external" href="https://www.doxygen.nl/index.html">Doxygen</a> for source code
+documentation. Developers who are not familiar with Doxygen can refer to
+official Doxygen Manual(<a class="reference external" href="https://www.doxygen.nl/manual/index.html">https://www.doxygen.nl/manual/index.html</a>) for an
+in-depth knowledge on documenting code with Doxygen. This document serves as a
+brief version of
+<a class="reference external" href="https://www.doxygen.nl/manual/docblocks.html">Doxygen Manual: Documenting the code</a>)
+focusing specificly on C/C++ and Python.</p>
+<p>We will take
+<span class="xref myst">modules/common/math/kalman_filter.h</span>
+as an example to show you how to document code the Doxygen way. Note that
+Javadoc style is preferred rather than Qt style for comment blocks.</p>
+<section id="file">
+<h2>File<a class="headerlink" href="#file" title="Permalink to this headline"></a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @file</span>
+<span class="cm"> * @brief Defines the templated KalmanFilter class.</span>
+<span class="cm"> */</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="namespace">
+<h2>Namespace<a class="headerlink" href="#namespace" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="nd">@namespace</span> <span class="n">apollo</span><span class="p">::</span><span class="n">common</span><span class="p">::</span><span class="n">math</span>
+ <span class="o">*</span> <span class="nd">@brief</span> <span class="n">apollo</span><span class="p">::</span><span class="n">common</span><span class="p">::</span><span class="n">math</span>
+ <span class="o">*/</span>
+
+<span class="n">namespace</span> <span class="n">apollo</span> <span class="p">{</span>
+<span class="n">namespace</span> <span class="n">common</span> <span class="p">{</span>
+<span class="n">namespace</span> <span class="n">math</span> <span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="nd">@class</span> <span class="n">KalmanFilter</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="nd">@brief</span> <span class="n">Implements</span> <span class="n">a</span> <span class="n">discrete</span><span class="o">-</span><span class="n">time</span> <span class="n">Kalman</span> <span class="nb">filter</span><span class="o">.</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="nd">@param</span> <span class="n">XN</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">state</span>
+ <span class="o">*</span> <span class="nd">@param</span> <span class="n">ZN</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">observations</span>
+ <span class="o">*</span> <span class="nd">@param</span> <span class="n">UN</span> <span class="n">dimension</span> <span class="n">of</span> <span class="n">controls</span>
+ <span class="o">*/</span>
+<span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">XN</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">ZN</span><span class="p">,</span> <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">UN</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">KalmanFilter</span> <span class="p">{</span>
+ <span class="n">public</span><span class="p">:</span>
+ <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="function">
+<h2>Function<a class="headerlink" href="#function" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">/**</span>
+   <span class="o">*</span> <span class="nd">@brief</span> <span class="n">Sets</span> <span class="n">the</span> <span class="n">initial</span> <span class="n">state</span> <span class="n">belief</span> <span class="n">distribution</span><span class="o">.</span>
+   <span class="o">*</span>
+   <span class="o">*</span> <span class="nd">@param</span> <span class="n">x</span> <span class="n">Mean</span> <span class="n">of</span> <span class="n">the</span> <span class="n">state</span> <span class="n">belief</span> <span class="n">distribution</span>
+   <span class="o">*</span> <span class="nd">@param</span> <span class="n">P</span> <span class="n">Covariance</span> <span class="n">of</span> <span class="n">the</span> <span class="n">state</span> <span class="n">belief</span> <span class="n">distribution</span>
+   <span class="o">*/</span>
+  <span class="n">void</span> <span class="n">SetStateEstimate</span><span class="p">(</span><span class="n">const</span> <span class="n">Eigen</span><span class="p">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">XN</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span>
+                        <span class="n">const</span> <span class="n">Eigen</span><span class="p">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">XN</span><span class="p">,</span> <span class="n">XN</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">P</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+  <span class="p">}</span>
+
+  <span class="o">/**</span>
+   <span class="o">*</span> <span class="nd">@brief</span> <span class="n">Get</span> <span class="n">initialization</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">filter</span>
+   <span class="o">*</span> <span class="nd">@return</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">filter</span> <span class="ow">is</span> <span class="n">initialized</span>
+   <span class="o">*/</span>
+  <span class="nb">bool</span> <span class="n">IsInitialized</span><span class="p">()</span> <span class="n">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">is_initialized_</span><span class="p">;</span> <span class="p">}</span>
+
+</pre></div>
+</div>
+</section>
+<section id="public-protected-class-member-variables">
+<h2>Public / protected class member variables<a class="headerlink" href="#public-protected-class-member-variables" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">protected</span><span class="p">:</span>
+  <span class="o">///</span> <span class="n">Mean</span> <span class="n">of</span> <span class="n">current</span> <span class="n">state</span> <span class="n">belief</span> <span class="n">distribution</span>
+  <span class="n">Eigen</span><span class="p">::</span><span class="n">Matrix</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">XN</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="n">x_</span><span class="p">;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Note: There is no public/protected member variables for <code class="docutils literal notranslate"><span class="pre">KalmanFilter</span></code>. The
+code above serves for illustration purpose only.</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_do_performance_profiling.html" class="btn btn-neutral float-left" title="How to do performance profiling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_generate_local_map_for_MSF_localization_module.html" class="btn btn-neutral float-right" title="How to Generate Local Map For MSF Localization Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to run the Map Data Verification Tool &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to Run Perception Module on Your Local Computer" href="how_to_run_perception_module_on_your_local_computer.html" />
+    <link rel="prev" title="如何在本地运行RTK定位模块" href="how_to_run_RTK_localization_module_on_your_local_computer_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to run the Map Data Verification Tool</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_run_map_verification_tool.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-run-the-map-data-verification-tool">
+<h1>How to run the Map Data Verification Tool<a class="headerlink" href="#how-to-run-the-map-data-verification-tool" title="Permalink to this headline"></a></h1>
+<p>The Map Data Verification tool is designed to help Apollo developers detect any issues in their map data collection process before the data is used for HD Map creation. The benefit of using this tool is to ensure that all issues are detected prior to map creation and also ensures that data can be efficiently recollected based on the suggestions in the tool.</p>
+<section id="running-the-tool">
+<h2>Running the tool<a class="headerlink" href="#running-the-tool" title="Permalink to this headline"></a></h2>
+<p>In order to run your data on this tool, please follow the steps below:</p>
+<ol>
+<li><p>Build Apollo as recommended in the <a class="reference internal" href="../quickstart/apollo_software_installation_guide.html"><span class="doc std std-doc">Build Guide</span></a> until the <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">build</span></code> step.</p></li>
+<li><p>Once instde dev docker and after running <code class="docutils literal notranslate"><span class="pre">./apollo.sh</span> <span class="pre">build</span></code> please go to the folder <code class="docutils literal notranslate"><span class="pre">modules/tools/map_datachecker/</span></code></p></li>
+<li><p>Starting the server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash server.sh start
+</pre></div>
+</div>
+<p>Note: You should see the following message displayed <code class="docutils literal notranslate"><span class="pre">Server</span> <span class="pre">has</span> <span class="pre">been</span> <span class="pre">started</span> <span class="pre">successfully</span></code>. If not, please resolve the errors before trying again</p>
+</li>
+<li><p>Start the record verification:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage record_check --cmd start --record_path path_to_record
+</pre></div>
+</div>
+<p>Note: Do not close your terminal window throughout this process.
+If the verification is successful, you will not see any error messages.</p>
+</li>
+<li><p>Static alignment verification:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage static_align --cmd start
+</pre></div>
+</div>
+<p>Note: The window will display the progress of the static alignment.</p>
+</li>
+<li><p>Figure 8 verification:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage eight_route --cmd start
+</pre></div>
+</div>
+<p>Note: Your window displays the progress of the Figure 8 verification</p>
+</li>
+<li><p>Laps verification:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage loops_check --cmd start
+</pre></div>
+</div>
+<p>Note: Run this command post data collection to check the number of laps</p>
+</li>
+<li><p>Figure 8 verification: This is repeated to verify that the extrinsic parameters have not been changed</p></li>
+<li><p>Static alignment verification: Similar to 5, it is preferable to repeat this verification to ensure high accuracy</p></li>
+<li><p>Stop record verification:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage record_check --cmd stop
+</pre></div>
+</div>
+</li>
+<li><p>Clean the intermediate results</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash client.sh --stage clean
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline"></a></h2>
+<ol class="simple">
+<li><p>The default value of <code class="docutils literal notranslate"><span class="pre">cmd</span></code> is <code class="docutils literal notranslate"><span class="pre">start</span></code></p></li>
+<li><p>All error messages will be printed to help better prepare your map data. Please follow the error messages exactly as recommended</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_run_RTK_localization_module_on_your_local_computer_cn.html" class="btn btn-neutral float-left" title="如何在本地运行RTK定位模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_run_perception_module_on_your_local_computer.html" class="btn btn-neutral float-right" title="How to Run Perception Module on Your Local Computer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

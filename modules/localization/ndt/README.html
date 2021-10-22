@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NDT-based Lidar Localization &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Map Data" href="../../map/data/README.html" />
+    <link rel="prev" title="Multi-sensor Fusion Localization" href="../msf/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>NDT-based Lidar Localization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/localization/ndt/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="ndt-based-lidar-localization">
+<h1>NDT-based Lidar Localization<a class="headerlink" href="#ndt-based-lidar-localization" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>NDT-based lidar localization provide a straightforward, flexible method which combile inspva information and lidar pointcloud to achieve high localization accuracy.</p>
+<p>Currently this localization method only works for x86_64 platform</p>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Point cloud data from LiDAR sensor ( <code class="docutils literal notranslate"><span class="pre">/apollo/sensor/velodyne64/compensator/PointCloud2</span></code>)</p></li>
+<li><p>Inspva message from integrated navigation sensor ( <code class="docutils literal notranslate"><span class="pre">/apollo/sensor/gnss/odometry</span></code>)</p></li>
+<li><p>Localization map (FLAGS_map_dir + “/” + FLAGS_ndt_map_dir + “/” + FLAGS_local_map_name)</p></li>
+<li><p>Parameter config files (velodyne64_novatel_extrinsics_example.yaml, velodyne64_height.yaml, located in <code class="docutils literal notranslate"><span class="pre">modules/localization/msf/params/</span></code>)</p></li>
+</ul>
+</section>
+<section id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Localization result defined by Protobuf message <code class="docutils literal notranslate"><span class="pre">LocalizationEstimate</span></code>, which can be found in file <code class="docutils literal notranslate"><span class="pre">localization/proto/localization.proto</span></code>. ( <code class="docutils literal notranslate"><span class="pre">/apollo/localization/pose</span></code>)</p></li>
+</ul>
+<section id="ndt-localization-setting">
+<h3>NDT Localization Setting<a class="headerlink" href="#ndt-localization-setting" title="Permalink to this headline"></a></h3>
+<p>under some circumstance, we need to balance the speed and accuracy of the algorithm. So we expose some parameters of NDT matching process, It includes <code class="docutils literal notranslate"><span class="pre">online_resolution</span></code> for online pointcloud, <code class="docutils literal notranslate"><span class="pre">ndt_max_iterations</span></code> for iterative optimization of NDT matching, <code class="docutils literal notranslate"><span class="pre">ndt_target_resolution</span></code> for target resolution, <code class="docutils literal notranslate"><span class="pre">ndt_line_search_step_size</span></code> for searching step size of iteration and <code class="docutils literal notranslate"><span class="pre">ndt_transformation_epsilon</span></code> for convergence condition.</p>
+</section>
+</section>
+<section id="generate-ndt-localization-map">
+<h2>Generate NDT Localization Map<a class="headerlink" href="#generate-ndt-localization-map" title="Permalink to this headline"></a></h2>
+<p>NDT Localization map is used for NDT-based localization, which is a voxel-grid representation of the environment. Each cell stores the centroid and relative covariance of the points in the cell. The map is organized as a group of map nodes. For more information, please refer to <code class="docutils literal notranslate"><span class="pre">apollo/modules/localization/msf/local_map/ndt_map</span></code>.</p>
+<p>We provide a script (<code class="docutils literal notranslate"><span class="pre">apollo/scripts/ndt_local_map_creator.sh</span></code>) to generate NDT localization map. You need to provide a group of point cloud frames (as .pcd file), corresponding poses file, and UTM zone id. The format of the poses file is <code class="docutils literal notranslate"><span class="pre">pcd_number</span> <span class="pre">timestamp</span> <span class="pre">x</span> <span class="pre">y</span> <span class="pre">z</span> <span class="pre">qx</span> <span class="pre">qy</span> <span class="pre">qz</span> <span class="pre">qw</span></code>.</p>
+</section>
+<section id="visualization-tool">
+<h2>Visualization Tool<a class="headerlink" href="#visualization-tool" title="Permalink to this headline"></a></h2>
+<p>NDT localization also use the same online visualization tool as msf, which can show localization map, point cloud, horizontal position of localization results. This tool is simply launched by <code class="docutils literal notranslate"><span class="pre">./scripts/localization_online_visualizer.sh</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../msf/README.html" class="btn btn-neutral float-left" title="Multi-sensor Fusion Localization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../map/data/README.html" class="btn btn-neutral float-right" title="Map Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

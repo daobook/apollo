@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to set up Apollo 3.5’s software on Dual-IPCs &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="国内环境 GitHub 拉取仓库速度慢的缓解方案" href="how_to_solve_slow_pull_from_cn.html" />
+    <link rel="prev" title="How to Save and Load Apollo Docker Images" href="how_to_save_and_load_docker_image.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to set up Apollo 3.5’s software on Dual-IPCs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_setup_dual_ipc.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-set-up-apollo-3-5s-software-on-dual-ipcs">
+<h1>How to set up Apollo 3.5’s software on Dual-IPCs<a class="headerlink" href="#how-to-set-up-apollo-3-5s-software-on-dual-ipcs" title="Permalink to this headline"></a></h1>
+<p>The modules of Apollo 3.5 are separately launched from two industrial PCs. This guide introduces the hardware/software setup on two parallel IPCs.</p>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Apollo 3.5</p></li>
+<li><p>Linux precision time protocol</p></li>
+</ul>
+</section>
+<section id="runtime-framework">
+<h2>Runtime Framework<a class="headerlink" href="#runtime-framework" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>CyberRT</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>There are two steps in the installation process:</p>
+<ul class="simple">
+<li><p>Clone and install linux PTP code on both of IPCs</p></li>
+<li><p>Clone Apollo 3.5 Github code on both of IPCs</p></li>
+</ul>
+<section id="clone-and-install-linux-ptp">
+<h3>Clone and install linux PTP<a class="headerlink" href="#clone-and-install-linux-ptp" title="Permalink to this headline"></a></h3>
+<p>Install PTP utility and synchorize the system time on both of IPCs.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  git clone https://github.com/richardcochran/linuxptp.git
+  <span class="nb">cd</span> linuxptp
+  make
+
+  <span class="c1"># on IPC1:</span>
+  sudo ./ptp4l -i eth0 -m <span class="p">&amp;</span>
+
+  <span class="c1"># on IPC2:</span>
+  sudo ./ptp4l -i eth0 -m -s <span class="p">&amp;</span>
+  sudo ./phc2sys -a -r <span class="p">&amp;</span>
+</pre></div>
+</div>
+</section>
+<section id="clone-apollo-3-5">
+<h3>Clone Apollo 3.5<a class="headerlink" href="#clone-apollo-3-5" title="Permalink to this headline"></a></h3>
+<p>Install Apollo 3.5 on local ubuntu machine</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  git clone https://github.com/ApolloAuto/apollo.git
+</pre></div>
+</div>
+</section>
+<section id="build-docker-environment">
+<h3>Build Docker environment<a class="headerlink" href="#build-docker-environment" title="Permalink to this headline"></a></h3>
+<p>Refer to the <a class="reference internal" href="../quickstart/apollo_software_installation_guide.html"><span class="doc std std-doc">How to build docker environment</span></a></p>
+</section>
+<section id="run-cyberrt-on-both-of-ipcs">
+<h3>Run CyberRT on both of IPCs<a class="headerlink" href="#run-cyberrt-on-both-of-ipcs" title="Permalink to this headline"></a></h3>
+<ol class="simple">
+<li><p>Change directory to apollo</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   <span class="nb">cd</span> apollo
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Start docker environment</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   bash docker/scripts/dev_start.sh
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Enter docker environment</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   bash docker/scripts/dev_into.sh
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Build Apollo in the Container:</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   bash apollo.sh build_opt_gpu
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Change CYBER_IP in cyber/setup.bash to IPC1’s ip address:</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   <span class="nb">source</span> cyber/setup.bash
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Start CyberRT and Dreamview:</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   bash scripts/bootstrap.sh
+</pre></div>
+</div>
+<ol>
+<li><p>Open Chrome and go to localhost:8888 to access Apollo Dreamview:</p>
+<ul>
+<li><p>on IPC1</p>
+<p>The header has 3 drop-downs, mode selector, vehicle selector and map selector.</p>
+<p><img alt="IPC1 Task" src="../../_images/IPC1_dv.png" /></p>
+<p>Select mode, for example “ipc1 Mkz Standard Debug”</p>
+<p><img alt="IPC1 mode" src="../../_images/IPC1_mode.png" /></p>
+<p>Select vehicle, for example “Mkz Example”</p>
+<p><img alt="IPC1 car" src="../../_images/IPC1_car.png" /></p>
+<p>Select map, for example “Sunnyvale Big Loop”</p>
+<p><img alt="IPC1 map" src="../../_images/IPC1_map.png" /></p>
+<p>All the tasks that you could perform in DreamView, in general, setup button turns on all the modules.</p>
+<p><img alt="IPC1 setup" src="../../_images/IPC1_setup.png" /></p>
+<p>All the hardware components should be connected to IPC1 and the modules, localization, perception, routing, recorder, traffic light and transform, are allocated on IPC1 also.</p>
+<p>Module Control on sidebar panel is used to check the modules on IPC1</p>
+<p><img alt="IPC1 check" src="../../_images/IPC1_check.png" /></p>
+<p>In order to open dreamview on IPC2, user must stop it on IPC1 by using the below command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Stop dreamview on IPC1</span>
+  bash scripts/bootstrap.sh stop
+</pre></div>
+</div>
+</li>
+<li><p>on IPC2
+Change CYBER_IP in cyber/setup.bash to IPC2’s ip address:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  <span class="nb">source</span> cyber/setup.bash
+</pre></div>
+</div>
+<p>Start dreamview on IPC2 by using the below command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># Start dremview on IPC2</span>
+  bash scripts/bootstrap.sh
+</pre></div>
+</div>
+<p>Select mode, vehicle and map on dreamview as the same operations on IPC1
+<img alt="IPC2 Task" src="../../_images/IPC2_setup.png" /></p>
+<p>The modules - planning, prediction and control are assigned on IPC2.</p>
+<p>Module Control on sidebar panel is used to check the modules on IPC2</p>
+<p><img alt="IPC2 modules" src="../../_images/IPC2_check.png" /></p>
+<p><a class="reference internal" href="../specs/dreamview_usage_table.html"><span class="doc std std-doc">See Dreamview user’s guide</span></a></p>
+</li>
+</ul>
+</li>
+<li><p>How to start/stop Dreamview:</p></li>
+</ol>
+<p>The current version of Dreamview shouldn’t run on the different IPCs simultaneously, so the user must perform it alternatively on IPC1 or IPC2.</p>
+<p>The code below can be used to stop Dreamview on IPC2 and start it on IPC1.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># Stop Dreamview on IPC2</span>
+   bash scripts/bootstrap.sh stop
+
+   <span class="c1"># Start Dreamview on IPC1</span>
+   bash scripts/bootstrap.sh
+</pre></div>
+</div>
+<ol>
+<li><p>Cyber monitor</p>
+<p>Cyber monitor is CyberRT’s tool used to check the status of all of the modules on local and remote machines. The User may observe the activity status of all the hardware and software components and ensure that they are working correctly.</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="future-work-to-do">
+<h2>Future work (To Do)<a class="headerlink" href="#future-work-to-do" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Multiple Dreamviews may run simultaneously</p></li>
+<li><p>Fix a bug that modules are still greyed-out after clicking the setup button. Users may check each modules’ status by using the command</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>   ps aux <span class="p">|</span> grep mainboard
+</pre></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline"></a></h1>
+<p><span class="xref myst">Apache license</span></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_save_and_load_docker_image.html" class="btn btn-neutral float-left" title="How to Save and Load Apollo Docker Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_solve_slow_pull_from_cn.html" class="btn btn-neutral float-right" title="国内环境 GitHub 拉取仓库速度慢的缓解方案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

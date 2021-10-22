@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Install Low-Latency / Realtime Kernel &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="如何为 Apollo 安装低时延/实时内核" href="how_to_install_apollo_kernel_cn.html" />
+    <link rel="prev" title="如何生产多传感器融合定位模块所需的地图" href="how_to_generate_local_map_for_MSF_localization_module_cn.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>How to Install Low-Latency / Realtime Kernel</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/howto/how_to_install_apollo_kernel.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-install-low-latency-realtime-kernel">
+<h1>How to Install Low-Latency / Realtime Kernel<a class="headerlink" href="#how-to-install-low-latency-realtime-kernel" title="Permalink to this headline"></a></h1>
+<p>This document describes the steps to install low-latency/realtime kernels with
+Nvidia driver on Ubuntu 18.04.</p>
+<section id="before-you-begin">
+<h2>Before You Begin<a class="headerlink" href="#before-you-begin" title="Permalink to this headline"></a></h2>
+<p>Low-Latency/Realtime kernel is only required for running Apollo software stack
+in the vehicle. If your sole purpose was to develop/test your algorithms or to
+run simulation software (e.g., LGSVL simulator) on top of Apollo, then maybe you
+don’t need to install low-latency/real-time kernels described here at all.</p>
+</section>
+<section id="ubuntu-low-latency-kernel">
+<h2>Ubuntu Low-Latency Kernel<a class="headerlink" href="#ubuntu-low-latency-kernel" title="Permalink to this headline"></a></h2>
+<p>Ubuntu low-latency kernel (availabe in Ubuntu repository) is completely capable
+of low- to no- latency for running Apollo in the vehicle. Preempt optimization
+is enabled in its kernel configuration, and latency as low as 0.1 millisecond
+can and has been achieved using it.</p>
+<p>The steps required to install Ubuntu low-latency kernel are described below:</p>
+<ol class="simple">
+<li><p>Install the latest low-latency kernel and its headers.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+<span class="c1"># Install the latest low-latency kernel &amp; headers.</span>
+sudo apt-get install linux-image-<span class="k">$(</span>uname -r<span class="k">)</span>-lowlatency linux-headers-<span class="k">$(</span>uname -r<span class="k">)</span>-lowlatency
+</pre></div>
+</div>
+<p><strong>Note</strong>:</p>
+<blockquote>
+<div><p>Please change <code class="docutils literal notranslate"><span class="pre">$(uname</span> <span class="pre">-r)</span></code> to the latest kernel should there be newer kernel
+packages available. (You can view newer packages availabe with
+<code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">list</span> <span class="pre">--upgradable</span></code>.) The latest kernel version on Ubuntu 18.04 as of this
+writing (Dec 02, 2020) is <code class="docutils literal notranslate"><span class="pre">5.4.0-56</span></code>.</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>Reboot to start the low-latency kernel.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo reboot
+</pre></div>
+</div>
+</section>
+<section id="install-realtime-kernel">
+<h2>Install Realtime Kernel<a class="headerlink" href="#install-realtime-kernel" title="Permalink to this headline"></a></h2>
+<p>There is a community-contributed
+<a class="reference external" href="https://index.ros.org/doc/ros2/Tutorials/Building-Realtime-rt_preempt-kernel-for-ROS-2">Building Realtime Linux for ROS2</a>
+document for building/installing PREEMPT_RT kernel on Ubuntu 20.04, which is
+applicable to Ubuntu 18.04 also. Please follow the instructions there to install
+the latest stable realtime kernel first.</p>
+</section>
+<section id="install-nvidia-driver">
+<h2>Install Nvidia Driver<a class="headerlink" href="#install-nvidia-driver" title="Permalink to this headline"></a></h2>
+<section id="install-nvidia-driver-for-low-latency-kernel">
+<h3>Install Nvidia Driver for Low-Latency Kernel<a class="headerlink" href="#install-nvidia-driver-for-low-latency-kernel" title="Permalink to this headline"></a></h3>
+<p>For Ubuntu low-latency kernel, the steps to install Nvidia driver is relatively
+straightforward.</p>
+<ol>
+<li><p>Download and install the latest Nvidia driver from the
+<a class="reference external" href="https://developer.nvidia.com/cuda-downloads?target_os=Linux">CUDA Toolkit Downloads</a>
+Page.</p>
+<p>Choose either <strong>Local Installer</strong>(“deb[local]”) or <strong>Network
+Installer</strong>(“deb[network]”) for <strong>Installer Type</strong> and follow the
+instructions there.</p>
+</li>
+</ol>
+<p><img alt="Download CUDA Toolkit for x86_64" src="../../_images/download_cuda_x86_64.png" /></p>
+<p><img alt="Download CUDA Toolkit for AArch64" src="../../_images/download_cuda_aarch64.png" /></p>
+<p><strong>Note</strong></p>
+<blockquote>
+<div><p>You may need to regist and sign CUDA EULA to download Nvidia packages.</p>
+</div></blockquote>
+<p>For example, below is the instructions installing Nvidia driver on x86_64 Ubuntu
+18.04.5 with the “deb[local]” approach:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda-repo-ubuntu1804-11-1-local_11.1.1-455.32.00-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-1-local_11.1.1-455.32.00-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-1-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install nvidia-driver-455
+</pre></div>
+</div>
+<p><strong>Note</strong>:</p>
+<blockquote>
+<div><p>The number in <code class="docutils literal notranslate"><span class="pre">nvidia-driver-XXX</span></code> should match that in the local installer
+(455 in the example above).</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>Reboot for the changes to make effect.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> to check if everything is OK.</p></li>
+</ol>
+</section>
+<section id="install-nvidia-driver-for-realtime-kernel">
+<h3>Install Nvidia Driver for Realtime Kernel<a class="headerlink" href="#install-nvidia-driver-for-realtime-kernel" title="Permalink to this headline"></a></h3>
+<p>Please follow the first step listed above first. However, as the Nvidia driver
+does not support real-time kernels, running
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">nvidia-driver-455</span></code> on a PREEMPT_RT kernel should partially
+fail with the following error message:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>The kernel you are installing for is a PREEMPT_RT kernel!
+
+The NVIDIA driver does not support real-time kernels. If you
+are using a stock distribution kernel, please install
+a variant of this kernel that does not have the PREEMPT_RT
+patch set applied; if this is a custom kernel, please
+install a standard Linux kernel.  Then try installing the
+NVIDIA kernel module again.
+
+*** Failed PREEMPT_RT sanity check. Bailing out! ***
+</pre></div>
+</div>
+<p>We can set <code class="docutils literal notranslate"><span class="pre">IGNORE_PREEMPT_RT_PRESENCE=1</span></code> when build Nvidia driver as a
+workaround:</p>
+<ol class="simple">
+<li><p>Run the following commands to build Nvidia driver:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change to Nvidia driver source directory</span>
+<span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span>dpkg -L nvidia-kernel-source-455 <span class="p">|</span> grep -m <span class="m">1</span> <span class="s2">&quot;nvidia-drm&quot;</span> <span class="p">|</span> xargs dirname<span class="k">)</span><span class="s2">&quot;</span>
+
+<span class="c1"># Build Nvidia driver with IGNORE_PREEMPT_RT_PRESENCE=1</span>
+sudo env <span class="nv">NV_VERBOSE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    make -j8 <span class="nv">NV_EXCLUDE_BUILD_MODULES</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\</span>
+    <span class="nv">KERNEL_UNAME</span><span class="o">=</span><span class="k">$(</span>uname -r<span class="k">)</span> <span class="se">\</span>
+    <span class="nv">IGNORE_XEN_PRESENCE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">IGNORE_CC_MISMATCH</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">IGNORE_PREEMPT_RT_PRESENCE</span><span class="o">=</span><span class="m">1</span> <span class="se">\</span>
+    <span class="nv">SYSSRC</span><span class="o">=</span>/lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/build <span class="se">\</span>
+    <span class="nv">LD</span><span class="o">=</span>/usr/bin/ld.bfd <span class="se">\</span>
+    modules
+
+sudo mv *.ko /lib/modules/<span class="k">$(</span>uname -r<span class="k">)</span>/updates/dkms/
+sudo depmod -a
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>Reboot the system</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> to check if everything is OK.</p></li>
+</ol>
+</section>
+</section>
+<section id="install-esd-can-driver-optional">
+<h2>Install ESD-CAN Driver (Optional)<a class="headerlink" href="#install-esd-can-driver-optional" title="Permalink to this headline"></a></h2>
+<p>You should follow the
+<a class="reference external" href="https://github.com/ApolloAuto/apollo-kernel/blob/master/linux/ESDCAN-README.md">instructions</a>
+to build ESD-CAN driver if necessary.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="how_to_generate_local_map_for_MSF_localization_module_cn.html" class="btn btn-neutral float-left" title="如何生产多传感器融合定位模块所需的地图" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="how_to_install_apollo_kernel_cn.html" class="btn btn-neutral float-right" title="如何为 Apollo 安装低时延/实时内核" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

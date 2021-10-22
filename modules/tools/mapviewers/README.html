@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MapViewers &mdash; Apollo Auto alpha documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Navi Config" href="../navigation/config/README.html" />
+    <link rel="prev" title="Map Show" href="../mapshow/README.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: skyblue" >
+            <a href="../../../index.html" class="icon icon-home"> Apollo Auto
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Apollo Auto 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/README.html">Apollo Auto 文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Apollo Auto</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MapViewers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/modules/tools/mapviewers/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="mapviewers">
+<h1>MapViewers<a class="headerlink" href="#mapviewers" title="Permalink to this headline"></a></h1>
+<p>MapViewers folder contains a set of tools for plotting map related data.</p>
+<section id="gmapviewer-py">
+<h2><a class="reference external" href="http://gmapviewer.py">gmapviewer.py</a><a class="headerlink" href="#gmapviewer-py" title="Permalink to this headline"></a></h2>
+<p>Gmapviewer is a tool to display HDMap on Google map through Google map javascript API. It generates a html file (gmap.html) with HDMap data. You could view the data by opening the html file in a web browser.</p>
+<p>You need to install yattag before running the script</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">yattag</span>
+</pre></div>
+</div>
+<p>Inside docker, run the following command from your Apollo root dir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">modules</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">mapviewer</span><span class="o">/</span><span class="n">gmap_viwer</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">map_path_and_file</span>
+</pre></div>
+</div>
+<p>An output file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmap</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>can be found in your Apollo root dir.</p>
+<p>The default utm zone is set to <em><strong>10</strong></em> in this tool. if the HDMap is located in a differet utm zone, run following command with a specified zone id:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">modules</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">mapviewer</span><span class="o">/</span><span class="n">gmap_viwer</span><span class="o">.</span><span class="n">py</span> <span class="n">map_path_and_file</span> <span class="n">utm_zone_id</span>
+</pre></div>
+</div>
+</section>
+<section id="hdmapviewer-py">
+<h2><a class="reference external" href="http://hdmapviewer.py">hdmapviewer.py</a><a class="headerlink" href="#hdmapviewer-py" title="Permalink to this headline"></a></h2>
+<p>Activate environments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">py27bokeh</span> <span class="n">python</span><span class="o">=</span><span class="mf">2.7.15</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">bokeh</span> <span class="n">protobuf</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">py27bokeh</span>
+</pre></div>
+</div>
+<p>Inside docker, run the following command from Apollo root dir:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">modules</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">mapviewer</span><span class="o">/</span><span class="n">hdmapviwer</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">map_path_and_file</span>
+</pre></div>
+</div>
+<p>An output file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hdmap</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>can be found in your Apollo root dir.</p>
+<p>Deactivate environments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">deactivate</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../mapshow/README.html" class="btn btn-neutral float-left" title="Map Show" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../navigation/config/README.html" class="btn btn-neutral float-right" title="Navi Config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, xinetzone.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
