@@ -38,12 +38,13 @@ jobs:
       - name: 构建 Sphinx 文档
         run: |
           sphinx-build -D language=zh_CN -b html ./ _build/zh_CN
+          sphinx-build -D language=en -b html ./ _build/en
 
       # 部署 HTML 到 gh-pages 分支
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/zh_CN
+          publish_dir: ./_build
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
