@@ -13,12 +13,12 @@
 
 ## 概览
 该用户手册旨在帮助用户完成规划模块的配置和开环验证。规划模块需要上游的感知数据，目前有Lidar感知和Camera感知两种方案，用户可以选择其中任意一种感知方案。
-## 前提条件
+### 前提条件
 
   - 完成了[基于激光雷达的封闭园区自动驾驶搭建--感知适配](perception_configuration_cn.md)或[基于摄像头的封闭园区自动驾驶搭建--感知适配](../Camera_Based_Auto_Driving/perception_configuration_cn.md)
   - 完成了[封闭园区自动驾驶搭建--虚拟车道线制作](virtual_lane_generation_cn.md)
 
-## 配置文件的修改
+### 配置文件的修改
 对`/apollo/modules/planning/conf/planning.conf`和`/apollo/modules/planning/conf/planning_config.pb.txt`两个配置文件进行以下修改：
 
 |修改文件名称 | 修改内容 | 对应的gflag参数 | 单位 | 作用 | 
@@ -44,15 +44,15 @@
 
 把车辆开到户外，手动控制车辆，在感知有障碍物信息显示的情况下添加routing点并查看是否有planning轨迹线信息。
 
-#### 1. 拍下车辆尾部的急停开关
+### 1. 拍下车辆尾部的急停开关
 本文档目的是进行规划的适配，并完规划模块的开环验证，不需要车辆行驶，为了安全起见，将车开到室外调试场后，请全程确保急停开关处于按下状态
 
 
-#### 2. 启动感知
+### 2. 启动感知
 - 如果用户使用Lidar感知方案，请参照[基于激光雷达的封闭园区自动驾驶搭建--感知适配](perception_configuration_cn.md)启动Lidar感知
 - 如果用户使用Camera感知方案，请参照[基于摄像头的封闭园区自动驾驶搭建--感知适配](../Camera_Based_Auto_Driving/perception_configuration_cn.md)启动Camera感知
 
-#### 3. 启动 Planning、Prediction、Routing、Control模块
+### 3. 启动 Planning、Prediction、Routing、Control模块
 确保感知模块启动成功后，在Module Controller标签页启动Planning、Prediction、Routing、Control模块。
 - 对于Lidar感知方案，DreamView上显示启动的模块如下图所示：
 ![lidar_adaptation_dreamview1](images/lidar_adaptation_dreamview7_debug.png)
@@ -66,7 +66,7 @@
 
 
 
-####  4. 验证Planning、Prediction、Routing、Control模块是否启动成功
+###  4. 验证Planning、Prediction、Routing、Control模块是否启动成功
 从DreamView中查看会出现一个蓝色的线 以及一个红色的stop标志。如下图所示：
 ![lidar_demonstration_routing1](images/lidar_demonstration_routing1.png)
 在车前方存在人或者自行车（车上有人）时，在task标签页查看planning轨迹线，正常情况下planning会重新规划轨迹，如下图所示：

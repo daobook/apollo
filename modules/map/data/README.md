@@ -2,7 +2,7 @@
 
 A bundle of correlated maps are organized as a directory, with a structure like:
 
-```txt
+```md
 <map_dir>                        # Defined by FLAGS_map_dir
   |-- base_map.xml               # Defined by FLAGS_base_map_filename
   |-- routing_map.bin            # Defined by FLAGS_routing_map_filename
@@ -12,14 +12,14 @@ A bundle of correlated maps are organized as a directory, with a structure like:
 
 You can specify the map filenames as a list of candidates:
 
-```txt
+```md
 --base_map_filename="base.xml|base.bin|base.txt"
 ```
 
 Then it will find the first available file to load. Generally we follow the
 extension pattern of:
 
-```txt
+```md
 x.xml  # An OpenDrive formatted map.
 x.bin  # A binary pb map.
 x.txt  # A text pb map.
@@ -58,7 +58,7 @@ x.txt  # A text pb map.
 
    Obviously it also only affects a single module.
 
-   ```txt
+   ```md
    --flagfile=modules/common/data/global_flagfile.txt
 
    # Override values from the global flagfile.

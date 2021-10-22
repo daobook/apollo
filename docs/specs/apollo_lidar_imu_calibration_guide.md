@@ -1,4 +1,4 @@
-## Apollo LiDAR - IMU Calibration Service
+# Apollo LiDAR - IMU Calibration Service
 
 ```
 Note:

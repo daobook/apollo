@@ -37,14 +37,14 @@
 把车辆开到户外，启动lidar感知
 
 
-#### 1. 启动can卡
+### 1. 启动can卡
 
 进入can卡目录启动can卡，用以下命令启动
 
     cd ~/SocketCan/
     bash start.sh
 
-####  2. 编译项目，启动Dreamview
+###  2. 编译项目，启动Dreamview
 进入docker环境，用gpu编译项目，启动DreamView 
 
     cd /apollo
@@ -53,7 +53,7 @@
     bash apollo.sh build_opt_gpu
     bash scripts/bootstrap.sh
 
-####  3. 启动所需模块
+###  3. 启动所需模块
 
 - 在浏览器中打开`(http://localhost:8888)`，选择模式为`Dev Kit Debug`， 根据车辆铭牌信息选择对应的车型(详情见下表)，在Module Controller标签页启动Canbus、GPS、Localization、Transform模块。
 
@@ -73,7 +73,7 @@
 
   ![lidar_integration_start_lidar](images/lidar_integration_start_lidar.png)
  
-####  4. 检查lidar数据是否正确
+###  4. 检查lidar数据是否正确
 
  - 使用`cyber_monitor`，查看激光雷达相关channel是否正常输出，并使用上下方向键选择channel，使用右方向键查看channel详细数据。(关于cyber_monitor更详细使用，请参考[CyberRT_Developer_Tools](../../cyber/CyberRT_Developer_Tools.md))
 
@@ -98,7 +98,7 @@
   |  5 | `/apollo/sensor/lidar16/compensator/PointCloud2` | 10Hz |
     
 
-#### 5. 启动Lidar感知
+### 5. 启动Lidar感知
 在dreamview中启动`lidar perception`模块，使用`cyber_monitor`查看`/apollo/perception/obstacles`是否正常输出，并在dreamview上查看障碍物信息：
 
 ![lidar_adaptation_dreamview3](images/lidar_adaptation_dreamview3.png)
@@ -121,9 +121,9 @@
 现在，您已经完成激光雷达感知适配，接下来可以开始[封闭园区自动驾驶搭建--规划适配](planning_configuration_cn.md)
 
 ## 常见问题
-#### 1. 感知的输出帧率达不到10帧
+### 1. 感知的输出帧率达不到10帧
 * 建议使用 `bash apollo.sh build_opt_gpu` 编译Apollo工程
 
-#### 2. 感知的障碍物位置与实际障碍物误差较大
+### 2. 感知的障碍物位置与实际障碍物误差较大
 * 确认localization信号状态，保证`/apollo/sensor/gnss/best_pose`中`sol_type` 选项显示为`NARROW_INT`
 * 保证各个传感器外参文件准确

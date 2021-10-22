@@ -1,4 +1,4 @@
-## Installation guide of the Puck Series LiDAR (and HDL32)
+# Installation guide of the Puck Series LiDAR (and HDL32)
 ![lidar_image](images/lidar_pic_vlp32c.png)
 
 ![Interface_Box](images/lidar_interface_box.png)
@@ -9,11 +9,11 @@ You can connect to the LiDAR via an interface box which is included in the packa
 
 Since the interface box was first introduced with the **HDL32** product line, this installation guide also works for HDL32 Lidars alongwith the following [modification](https://github.com/ApolloAuto/apollo/commit/df37d2c79129434fb90353950a65671278a4229e#diff-cb9767ab272f7dc5b3e0d870a324be51). However, please note that you would need to change the intrinsics for HDL32. 
 
-#### Mounting
+## Mounting
 
 A customized mounting structure(s) is required to successfully mount a Puck Series LiDAR on top of a vehicle. This structure must provide rigid support to the LiDAR system. If only one LiDAR is used in the system, the mount needs to raise the LiDAR to a certain height to avoid the laser beams being blocked by the vehicle's body. If multiple LiDAR's are to be installed, the mounting structure(s) needs to provide suitable LiDAR configurations including positioning and tilting of the LiDARs as required by your system. Please find the detailed tilt angle of each laser beam on the individual LiDAR's manual when deciding the mounting of the LiDARs. Or you could also consult with Apollo engineers for the configurations that we have used and tested successfully.
 
-#### Wiring
+## Wiring
 
 * **Connection to the Power Source**
 
@@ -31,7 +31,7 @@ A customized mounting structure(s) is required to successfully mount a Puck Seri
 
 ![gps_pinout](images/lidar_gps_pinout.png)
 
-#### Configuration
+## Configuration
 By default, the LiDAR has the network IP address of 192.168.0.201. However, when you setting up Apollo, you might need to change the IP address to **192.168.20.14**. 
 
 * Power the LiDAR and connect it to your laptop via an ethernet cable.
@@ -41,7 +41,7 @@ By default, the LiDAR has the network IP address of 192.168.0.201. However, when
 * After the changes, click **save config**. Then, power cycle the LiDAR.
 * [Optional] Configure your laptop again to connect to the LiDAR (if IP changed) to confirm that the changes have taken effect.
 
-#### [Optional] Installation of VLP-16 for Mapping
+## [Optional] Installation of VLP-16 for Mapping
 
 In Apollo 2.5, map creation service has been made available. To acquire the data necessary for map creation, you would need to install an additional VLP-16 LiDAR on the vehicle. The purpose of this LiDAR is to collect point cloud information for objects above the FOV of the HDL-64 S3 LiDAR, such as traffic lights and signs. It requires a customized rack to mount the VLP-16 LiDAR on top of the vehicle. The figure below shows one of the possible configurations. 
 
@@ -49,7 +49,7 @@ In Apollo 2.5, map creation service has been made available. To acquire the data
 
 In this specific configuration, the VLP-16 LiDAR is mounted with an upward tilt of 20±2°. The power cable of the VLP-16 is connected to the DataSpeed power panel. The ethernet connection is connected to the IPC (possibly through an ethernet switch). Similar to HDL-64E S3 LiDAR, the VLP-16's GPRMC and PPS receive input from the same GPS receiver. Ideally, additional hardware should be installed to duplicate the GPRMC and PPS signals from the GPS receiver and sent to HDL-64 and VLP-16 respectively. However, a simple Y-split cable may also provide adequate signal for both LiDARs. To help distinguish from the HDL-64 S3 LiDAR, please follow the VLP-16 manual and use the webpage interface to configure the IP of VLP-16 to **192.168.20.14**, its data port to **2369**, and its telemetry port to **8309**. The pinout for the signal input from GPS receiver can also be found in the manual if you need customized cable. Please connect the VLP-16 to the same network as the HDL-64E and configure the ethernet switch to do port forwarding.
 
-#### References
+## References
 
 For additional information, please refer to:
 

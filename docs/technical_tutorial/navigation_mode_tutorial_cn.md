@@ -1,9 +1,9 @@
-### Apollo导航模式教程
+# Apollo导航模式教程
 
 **警告**
 > 本文档仅适用于 Apollo 2.5 及 3.0; Apollo 3.5及以后的版本不支持。
 
-#### 1. 教程简介
+## 1. 教程简介
 
 无人驾驶系统利用实时感知信息和静态地图信息构建出完整驾驶环境，并在构建的环境中，依据routing数据，规划出行车轨迹，并由控制模块执行完成。Apollo导航模式在上述的框架下，针对高速、乡村道路等简单道路场景，进行了以下的提升：
 
@@ -13,11 +13,11 @@
 
 
 
-##### 在本教程中，你将完成
+### 在本教程中，你将完成
 
 学习完本教程后，你将能够在导航模式下进行规划模块（planning）的线下调试和开发。
 
-##### 在本教教中，你将掌握
+### 在本教教中，你将掌握
 
 - 如何设置Apollo导航模式
 - 如何利用云端指引者发送指引线
@@ -26,14 +26,14 @@
 
 
 
-##### 在本教程中，你需要如下准备
+### 在本教程中，你需要如下准备
 
 - 下载并编译Apollo最新源码（[Howto](https://github.com/ApolloAuto/apollo/tree/master/docs/demo_guide)）
 
 - 下载 [Apollo2.5 demo bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)
 
 
-#### 2. 配置导航模式
+### 2. 配置导航模式
 
 在导航模式下，有以下几个参数需要进行配置：
 
@@ -42,7 +42,7 @@
 - 规划模块的Planner：目前支持EM, LATTICE, 和NAVI三种
 - 系统限速：单位为米/秒
 
-##### 在Docker下修改配置文件
+### 在Docker下修改配置文件
 
 配置文件位于：
 
@@ -70,7 +70,7 @@ speed_limit = 5
 
 该默认配置为Apollo 2.5 Demo bag录制时的配置，在此教程中，我们直接使用。
 
-##### 生效配置信息
+### 生效配置信息
 
 为了使配置生效，在Docker内的Apollo根目录下，运行如下命令
 
@@ -79,9 +79,9 @@ in_dev_docker:/apollo$ cd /apollo/modules/tools/navigation/config/
 in_dev_docker:/apollo/modules/tools/navigation/config$ python navi_config.py default.ini
 ```
 
-#### 3. 云端指引者的使用
+## 3. 云端指引者的使用
 
-##### 回放demo bag
+### 回放demo bag
 
 在进入Docker，启动Apollo之前，我们把[Apollo2.5 demo bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag) 拷贝到Apollo代码根目录下的data目录中。
 
@@ -112,7 +112,7 @@ in_dev_docker:/apollo/data$rosbag play demo_2.5.bag
 
 ![img](images/navigation_mode_tutorial/navigation_mode_2_play.png)
 
-##### 请求云端指引线
+### 请求云端指引线
 
 在地图中选择一个目的地（沿canada路），点击地图视图中的红色Route按钮，云端指引者会接收到这个请求，并返回指引线，该指引线会被显示在地图视图中。如下图所示。
 
@@ -120,11 +120,11 @@ in_dev_docker:/apollo/data$rosbag play demo_2.5.bag
 
 以上就是云端指引者的调用过程。
 
-#### 4.  离线指引者工具的使用 
+## 4.  离线指引者工具的使用 
 
 目前云端指引者只覆盖了有限的区域。除了云端的服务之外，我们还提供了离线指引者工具来制作和发送线下指引线。在本教程中，我们以[Apollo2.5 demo bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)为例来生成指引线。
 
-##### 指引线的制作
+### 指引线的制作
 
 生成指引线的步骤为
 
@@ -159,7 +159,7 @@ in_dev_docker:/apollo/modules/tools/navigator$bash smooth.sh path_demo_2.5.bag.t
 in_dev_docker:/apollo/modules/tools/navigator$path_demo_2.5.bag.txt.smoothed
 ```
 
-##### 指引线的发送
+### 指引线的发送
 
 得到平滑后的数据就可以发送到Apollo系统中，作为指引线，步骤为：
 
@@ -171,9 +171,9 @@ in_dev_docker:/apollo/modules/tools/navigator$python navigator.py path_demo_2.5.
 
 ![img](images/navigation_mode_tutorial/navigation_mode_4_offline.png)
 
-#### 5. 规划模块的调试
+## 5. 规划模块的调试
 
-##### 调试数据准备
+### 调试数据准备
 
 利用bag来进行模块调试，首先要把bag中的相应ros message过滤掉。假设我们想要调试规划模块，我们需要把消息
 
@@ -194,7 +194,7 @@ in_dev_docker:/apollo/data$rosbag filter demo_2.5.bag demo_2.5_no_planning.bag "
 in_dev_docker:/apollo/data$demo_2.5_no_planning.bag
 ```
 
-##### 规划轨迹的产生
+### 规划轨迹的产生
 
 我们播放没有规划的bag，用下面的命令
 
@@ -218,7 +218,7 @@ in_dev_docker:/apollo/modules/planning/conf$planning_config_navi.pb.txt
 
 去了解，这些参数会对规划结果有什么影响。或者修改规划算法的代码，进行调试。
 
-#### 6.结束
+## 6.结束
 
 恭喜你完成了本教程。现在你应该了解
 

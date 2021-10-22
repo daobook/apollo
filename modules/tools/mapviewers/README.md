@@ -2,7 +2,7 @@
 
 MapViewers folder contains a set of tools for plotting map related data.
 
-### gmapviewer.py
+## gmapviewer.py
 
 Gmapviewer is a tool to display HDMap on Google map through Google map javascript API. It generates a html file (gmap.html) with HDMap data. You could view the data by opening the html file in a web browser.
 
@@ -32,7 +32,7 @@ The default utm zone is set to ***10*** in this tool. if the HDMap is located in
 python modules/tools/mapviewer/gmap_viwer.py map_path_and_file utm_zone_id
 ```
 
-### hdmapviewer.py
+## hdmapviewer.py
 Activate environments:
 
 ```

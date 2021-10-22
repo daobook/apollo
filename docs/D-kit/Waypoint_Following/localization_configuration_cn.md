@@ -39,7 +39,7 @@
 
 其中的`1-10:1.0`就是上面记下的一串数字，根据实际情况进行替换即可；然后先按`ESC`键然后再按`:wq`保存文件内容退出，并重启系统。重启系统后执行`cd /dev`命令，用`ls -l imu`命令查看设备，要确保`imu`存在。配置设备时，需要将设备的串口线连接上电脑的串口才可以对设备进行配置，也就是说，用来配置设备的电脑主机需要拥有串口。Windows下可以通过串口助手、串口猎人或者COMCenter等工具进行配置，Linux下可以通过Minicom、cutecom等工具进行配置。linux下建议使用cutecom软件，可使用`sudo apt install cutecom`来安装此软件，在终端中使用`sudo cutecom`命令打开该软件，在软件中`open`名为`ttyS0`的设备。
 
-### 杆臂配置
+## 杆臂配置
 
 车尾天线（后天线，通常是主天线，也就是Primary）杆臂配置：
 
@@ -47,13 +47,13 @@
 
 这里的杆臂值`x_offset,y_offset,z_offset`就是车辆集成环节中测量所得的杆臂值，杆臂值请以自己使用的实际情况为准。
 
-### GNSS航向配置
+## GNSS航向配置
 
 天线车头车尾前后安装
 
 `$cmd,set,headoffset,0*ff`
 
-### 导航模式配置
+## 导航模式配置
 ```
 $cmd,set,navmode,FineAlign,off*ff
 $cmd,set,navmode,coarsealign,off*ff
@@ -64,7 +64,7 @@ $cmd,set,navmode,zupt,on*ff
 $cmd,set,navmode,firmwareindex,0*ff
 ```
 
-### USB接口输出设置
+## USB接口输出设置
 ```
 $cmd,output,usb0,rawimub,0.010*ff
 $cmd,output,usb0,inspvab,0.010*ff
@@ -75,7 +75,7 @@ $cmd,through,usb0,gloephemerisb,1.000*ff
 $cmd,through,usb0,bdsephemerisb,1.000*ff
 $cmd,through,usb0,headingb,1.000*ff
 ```
-### 网口配置
+## 网口配置
 ```
 $cmd,set,localip,192,168,0,123*ff
 $cmd,set,localmask,255,255,255,0*ff
@@ -110,7 +110,7 @@ $cmd,set,ntrip,enable,enable*ff
 $cmd,save,config*ff
 ```
 
-### PPS授时接口输出
+## PPS授时接口输出
 ```
 ppscontrol enable positive 1.0 10000
 log com3 gprmc ontime 1 0.25
@@ -122,11 +122,11 @@ log com3 gprmc ontime 1 0.25
 
 系统文件配置主要包括两部分，GNSS配置、`localization.conf`文件配置。
 
-### GNSS配置
+## GNSS配置
 
 将文档`modules/calibration/data/dev_kit/gnss_conf/gnss_conf.pb.txt`中的`proj4_text: "+proj=utm +zone=50 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"`这一行中的`zone=50`中的50换成自己的城市所在的utmzone数值；比如这里的数值50代表的是北京，若您在纽约，则用纽约的utmzone数值10替换掉这里的数值50，以此类推。
 
-### `Localization.conf`文件的配置
+## `Localization.conf`文件的配置
 对`modules/calibration/data/dev_kit/localization_conf/localization.conf`文件进行配置。**如果该配置文件没有进行正确配置，可能会对之后的传感器标定、虚拟车道线制作等功能产生影响**
 
 | 参数 | 说明 |
@@ -144,7 +144,7 @@ log com3 gprmc ontime 1 0.25
 
 将车辆移至室外平坦开阔处，按顺序执行如下操作
 
-####  1. 编译项目，启动Dreamview
+###  1. 编译项目，启动Dreamview
 进入docker环境，用gpu编译项目，启动DreamView 
 
     cd /apollo
@@ -153,20 +153,20 @@ log com3 gprmc ontime 1 0.25
     bash apollo.sh build_opt   
     bash scripts/bootstrap.sh
 
-####  2. 启动定位模块
+###  2. 启动定位模块
 
 - 在浏览器中打开`(http://localhost:8888)`，选择模式为`Dev Kit Debug`， 选择车型为`Dev Kit`，在Module Controller标签页启动GPS、Localization模块。
 
   ![localization_config_start_localization](images/localization_config_start_localization.png)
 
-####  3. 检查GPS信号
+###  3. 检查GPS信号
 
 打开新的终端，并使用`bash docker/scripts/dev_into.sh`命令进入docker环境，在新终端中输入`cyber_monitor`命令，进入 `/apollo/sensor/gnss/best_pose`条目下，查看sol_type字段是否为NARROW_INT。若为NARROW_INT，则表示GPS信号良好；若不为NARROW_INT，则将车辆移动一下，直到出现NARROW_INT为止。进入`/apollo/sensor/gnss/imu`条目下，确认IMU有数据刷新即表明GPS模块配置成功。
 
 ![localization_config_check_gps_1](images/localization_config_check_gps_1.png)
 ![localization_config_check_gps_2](images/localization_config_check_gps_2.png)
 
-####  4. 检查定位信号
+###  4. 检查定位信号
 
 使用`cyber_monotor`查看，进入`/apollo/localization/pose`条目下，等待两分钟，直到有数据刷新即表明定位模块配置成功。
 

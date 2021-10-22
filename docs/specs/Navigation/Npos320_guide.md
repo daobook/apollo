@@ -1,15 +1,15 @@
-## Npos320 Guide
+# Npos320 Guide
 
 BDStar Navigation NPOS is an integrated INS receiver, which has GNSS receiver and IMU included in the device.
 
 ![Npos320 main](images/Npos320_main.png)
 
-### Installation
+## Installation
 
 ![Npos320 panel ](images/Npos320_panel.png)
 
 
-### Data Protocol Parse
+## Data Protocol Parse
 Typical data protocols commonly used is `INSPVAXA` ，more detail about data protocol please see NovAtel《[OEM7 Commands and Logs Reference Manual](https://docs.novatel.com/OEM7/Content/PDFs/OEM7_Commands_Logs_Manual.pdf)》 
 
 Npos320 Configration：

@@ -61,21 +61,21 @@
 
 ### 各传感器坐标系的定义及初始化外参文件的配置
 
-#### 1. Lidar、Camera的坐标系定义
+### 1. Lidar、Camera的坐标系定义
 
  ![camera_calibration_coordinate_system](images/camera_calibration_coordinate_system.jpg)
  
-#### 2. Camera坐标系原点在传感器的位置
+### 2. Camera坐标系原点在传感器的位置
 
 Camera坐标系原点在下图所示平面的中心点：
 
 ![camera_calibration_look](images/camera_calibration_look.jpg)
 
-#### 3. Lidar坐标系原点在传感器的位置
+### 3. Lidar坐标系原点在传感器的位置
 
 见[基于激光雷达的封闭园区自动驾驶搭建--感知设备标定](../Lidar_Based_Auto_Driving/sensor_calibration_cn.md)文档
 
-#### 4. 手动测量Camera-Lidar的初始化外参文件
+### 4. 手动测量Camera-Lidar的初始化外参文件
 
 这里默认用户按照感知设备集成文档的要求正确安装了传感器，即传感器坐标系的定义与上文中的定义相同，且安装误差满足文档中的要求。
 
@@ -105,13 +105,13 @@ Camera坐标系原点在下图所示平面的中心点：
 
 **注意：Fuel-Client进行Camera-Lidar标定数据采集时，需要保证只有需要采集标定数据的相机工作，建议先拔掉其他相机的USB插头；多个相机标定需要分多次进行数据采集**
 
-#### 1. 选择正确的模式、车型
+### 1. 选择正确的模式、车型
 - 选择`Camera-Lidar Sensor Calibration`模式
 - 根据实际情况选择正确的车型(lite用户选择`Dev Kit`车型，standard用户选择`Dev Kit Standard`，单雷达的advanced用户选择`Dev Kit Standard Ne-s`，3雷达的advanced用户选择`Dev Kit Standard Sne-r`)
 ![camera_calibration_select_mode_vehicle.png](images/camera_calibration_select_mode_vehicle.png)
 
 
-#### 2. 启动`Fuel Client`，并启动相应模块
+### 2. 启动`Fuel Client`，并启动相应模块
 
 - 在dreamview的`Tasks`标签下，首先打开`Sim Control`，然后打开`Fuel Client`，`Fuel Client`打开后务必关闭`Sim Control`
 ![camera_calibration_open_fuel_client](images/camera_calibration_open_fuel_client.png)
@@ -119,7 +119,7 @@ Camera坐标系原点在下图所示平面的中心点：
 - 在dreamview的`Module Controllers`标签下，启动`Camera`、`GPS`、`Lidar`、`Localization`模块，等待左侧状显示模块中的`Camera`、`GPS`、`Lidar`、`RTK`均为绿色时，代表模块启动成功(Localization启动后，需要等待1~2分钟才能正常输出数据)。
 ![camera_calibration_start_modules.png](images/camera_calibration_start_modules.png)
 
-#### 3. 启动`Recorder`模块并开始采集
+### 3. 启动`Recorder`模块并开始采集
 
 - 当左侧左侧状显示模块中的`Camera`、`GPS`、`Lidar`、`RTK`均为绿色时，打开Recorder模块，并开始采集数据。在录制数据的时候，遥控车辆直线慢速行驶行驶，行驶10秒再停止5秒，如此反复5次。
 - 数据采集完成后，关闭`Recorder`模块停止数据录制
@@ -140,13 +140,13 @@ Camera坐标系原点在下图所示平面的中心点：
 
 ## 使用标定云服务生成外参文件
 
-#### 1. 上传预处理后的数据至BOS
+### 1. 上传预处理后的数据至BOS
 
 **注意：** 必须使用开通过权限的 bucket，确认`Bucket名称`、`所属地域`和提交商务注册时的Bucket名称和所属区域保持一致。
 
 将`camera_to_lidar-2021-01-12-13-49`目录上传到BOS的根目录下，作为后续云标定服务读取数据的`输入数据路径`。
 
-#### 2. 提交云标定任务
+### 2. 提交云标定任务
 
 打开Apollo云服务页面，新建一个任务，如下图所示：
 
@@ -156,7 +156,7 @@ Camera坐标系原点在下图所示平面的中心点：
 ![sensor_calibration_fuel](images/sensor_calibration_fuel.jpg)
 
 
-#### 3. 获取标定结果验证及标定外参文件
+### 3. 获取标定结果验证及标定外参文件
 
 云标定任务完成后，将在注册的邮箱中收到一封标定结果邮件。如果标定任务成功，将包含标定外参文件。
 
@@ -179,9 +179,9 @@ Camera坐标系原点在下图所示平面的中心点：
 ## NEXT
 现在，您已经完成摄像头感知设备标定， 接下来可以开始[封闭园区自动驾驶搭建--虚拟车道线制作](../Lidar_Based_Auto_Driving/virtual_lane_generation_cn.md)(如果在适配基于激光雷达的自动驾驶过程中已经制作了虚拟车道线文件，则可以跳过此步骤，进行[基于摄像头的封闭园区自动驾驶搭建--感知适配](perception_configuration_cn.md))
 ## 常见问题
-#### 1. 进行`Sensor Calibration`任务后，邮件显示任务失败
+### 1. 进行`Sensor Calibration`任务后，邮件显示任务失败
 建议检查一下输入路径是否正确
 
-#### 2. 标定结果误差较大
+### 2. 标定结果误差较大
 - 标定时，确保GNSS信号状态良好，周围有轮廓清晰的静态障碍物
 - 保证传感器的安装精度，安装误差超过要求精度时，标定结果不容易收敛

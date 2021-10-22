@@ -1,11 +1,11 @@
-## How to train the MLP Deep Learning Model
+# How to train the MLP Deep Learning Model
 
-### Prerequisites
+## Prerequisites
 There are 2 prerequisites to training the MLP Deep Learning Model:
-#### Download and Install Anaconda
+### Download and Install Anaconda
 * Please download and install Anaconda from its [website](https://www.anaconda.com/download)
 
-#### Install Dependencies
+### Install Dependencies
 Run the following commands to install the necessary dependencies:
 * **Install numpy**: `conda install numpy`
 * **Install tensorflow**: `conda install tensorflow`
@@ -14,7 +14,7 @@ Run the following commands to install the necessary dependencies:
 * **Install protobuf**: `conda install -c conda-forge protobuf`
 * **Install PyTorch**: `conda install -c pytorch pytorch`
 
-### Train the Model
+## Train the Model
 The following steps are to be followed in order to train the MLP model using the released demo data. For convenience, we denote `APOLLO` as the path of the local apollo repository, for example, `/home/username/apollo`
 
 1. Create a folder to store offline prediction data using the command `mkdir APOLLO/data/prediction` if it does not exist

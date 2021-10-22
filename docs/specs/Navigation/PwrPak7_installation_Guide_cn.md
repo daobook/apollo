@@ -1,10 +1,10 @@
-## NovAtel PwrPak7 安装指南
+# NovAtel PwrPak7 安装指南
 
 NovAtel PwrPak7是一款集成的INS接收器，该设备中包含GNSS接收器和IMU。
 
 ![novatel_pp7](images/pp7_pic.jpg)
 
-### 安装GPS接收器
+## 安装GPS接收器
 
 Novatel PwrPak7的概述如下所示。
 
@@ -31,7 +31,7 @@ PwrPak7接收器支持双天线，ANT1是上方的天线接口，作为主天线
 
 - 打开后备箱盖子，将天线的数据线放置在后备箱盖和车身之间的空闲区域。
 
-### 进行杠杆臂测量
+## 进行杠杆臂测量
 
 按以下步骤进行杆臂值测量：
 
@@ -39,7 +39,7 @@ PwrPak7接收器支持双天线，ANT1是上方的天线接口，作为主天线
 * 当PwrPak7和GPS天线就位后，必须测量从PwrPak7到GPS天线的距离。PwrPak7 IMU的中心和天线的中心标记在设备的外部。
 * 距离应测量为：X方向偏移，Y方向偏移和Z方向偏移。轴应由IMU确定。偏移误差必须在1厘米以内，以实现高精度的定位。
 
-### 配置PwrPak7
+## 配置PwrPak7
 
 请按照如下所示配置GPS和IMU。可以通过键入命令或在NovAtel Connect中加载批处理配置文件来完成此过程。
 
@@ -100,7 +100,7 @@ SETINSTRANSLATION ANT1 -0.05 0.5 0.8 0.05 0.05 0.08
 
 前三个数字表示杠杆臂距离的测量结果。后三个数字是测量的不确定度。
 
-### 参考
+## 参考
 
 有关NovAtel PwrPak7的更多信息，请参考：
 * [NovAtel PwrPak7 Installation & Operation User Manual](https://docs.novatel.com/OEM7/Content/PDFs/PwrPak7_Install_Ops_Manual.pdf)

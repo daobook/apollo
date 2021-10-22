@@ -1,8 +1,8 @@
-## Dump audio to wave
+# Dump audio to wave
 
 We provide tools to dump audio data from topic `/apollo/sensor/microphone` to wave files.
 
-### How
+## How
 
 To do so,
 1. Change `WAV_SAVING_PATH` in `audiosaver.py` to the directory for saving wave files, which is default to `/tmp`.
@@ -11,7 +11,7 @@ To do so,
 
 By default, there are 6 audio channels, so 6 files will be generated -- one for each audio channel. For information of the audio channel, refer to [Microphone](../../drivers/microphone/README.md) and [Microphone Configuration](../../drivers/microphone/conf/respeaker.pb.txt).
 
-### Other References
+## Other References
 
 * Hardware Specification -- [Respeaker](../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md)
 * Driver Configuration -- [Microphone](../../drivers/microphone/README.md)

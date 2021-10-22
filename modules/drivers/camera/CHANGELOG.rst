@@ -38,7 +38,7 @@ Changelog for package usb_cam
 * Made device name a std::string instead of const char*
 * Added usb_cam namespace
 * Added underscore sufix to class fields
-* Removed camera_ prefix from methods
+* Removed ``camera_`` prefix from methods
 * Moved methods to parse pixel_format and io_method from string to UsbCam
 * Moved camera_image_t struct to be private in UsbCam
 * Cleaned up parameter assignment

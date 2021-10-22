@@ -14,7 +14,7 @@
 
 
 
-#### 2.1 RS16
+### 2.1 RS16
 
 ```sh
 cyber_launch start /apollo/modules/drivers/lidar/robosense/launch/rs16.launch
@@ -33,7 +33,7 @@ Default Channel Name：
 - Scan--/apollo/sensor/rs16/Scan
 - Compensation point cloud -- /apollo/sensor/rs16/compensator/PointCloud2
 
-#### 2.2 RS32
+### 2.2 RS32
 
 ```sh
 cyber_launch start /apollo/modules/drivers/lidar/robosense/launch/rs32.launch
@@ -53,7 +53,7 @@ Default Channel Name：
 - Scan--/apollo/sensor/rs32/Scan
 - Compensation point cloud -- /apollo/sensor/rs32/compensator/PointCloud2
 
-#### 2.3 RS128
+### 2.3 RS128
 
 ```sh
 cyber_launch start /apollo/modules/drivers/lidar/robosense/launch/rs128.launch
@@ -72,7 +72,7 @@ Default Channel Name：
 - Scan--/apollo/sensor/rs128/Scan
 - Compensation point cloud -- /apollo/sensor/rs128/compensator/PointCloud2
 
-#### 2.4 RSBP
+### 2.4 RSBP
 
 ```sh
 cyber_launch start /apollo/modules/drivers/lidar/robosense/launch/rsbp.launch

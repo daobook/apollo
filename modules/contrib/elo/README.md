@@ -1,8 +1,8 @@
-### Download
+# Download
 
 You can download the elo (aka Ego Localization) module here [elo-1.5.zip](https://github.com/ApolloAuto/apollo/releases/download/v1.5.0/elo-1.5.zip)
 
-### 1. Introduction
+## 1. Introduction
 
 Baidu ego localization system is an accurate ego localization solution for self-driving. By combining sensor information, Global navigation satellite systems (GNSS), and Baidu HD Map into one system, Baidu ego localization system is able to offer a localization solution with high accuracy.
 
@@ -18,9 +18,9 @@ The main components of Baidu ego localization system is introduced as follow:
 * Feature matching: Baidu ego localization system locates current ego vehicle in HD Map by feature matching.
 * Motion compensation: compensates current frame and adjusts the matching result via historical information.
 
-### 2. Requirements: software
+## 2. Requirements: software
 
-#### a. External dependencies
+### a. External dependencies
 
 * Requirements for `cmake 2.8.7` or higher (see: [cmake installation instructions](https://cmake.org/Wiki/CMake))
 
@@ -34,17 +34,17 @@ The main components of Baidu ego localization system is introduced as follow:
 
 * Recommended requirements for `jsoncpp` (see: [github](https://github.com/open-source-parsers/jsoncpp))
 
-#### b. Internal dependencies
+### b. Internal dependencies
 
 * Requirements for `modified Caffe`  (`lib/libcaffe.so`)
 
 * Requirements for `HD Map database` (`config/hadmap/hadmap.db`)
 
-### 3. Requirements: hardware
+## 3. Requirements: hardware
 
 Deployed on NVIDIA Drive PX2 (PDK 4.1.4.0).
 
-### 4. Data format
+## 4. Data format
 
 * Input file:
 
@@ -108,7 +108,7 @@ Deployed on NVIDIA Drive PX2 (PDK 4.1.4.0).
   [INFO] GROUNDTRUTH (133.02665542, 25.40116628)   LOCALIZATION (133.02666082, 25.40117062)
   ```
 
-### 5. Installation
+## 5. Installation
 
 * Install and build dependencies in `2. Recommended requirements: software`, then do the following steps.
 
@@ -133,7 +133,7 @@ Deployed on NVIDIA Drive PX2 (PDK 4.1.4.0).
    ./localization_test config_file input_file image_path
    ```
 
-### 6. Demo
+## 6. Demo
 
 * Hardware description:
 

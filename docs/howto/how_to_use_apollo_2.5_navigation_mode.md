@@ -1,6 +1,6 @@
 # How to use Apollo 2.5 navigation mode
 
-### This article is translated by the Apollo community team.
+## This article is translated by the Apollo community team.
 
 Apollo is well received and highly commended by developers in the field of autonomous driving for its well-designed architecture, full functionality, robust open-source ecosystem, and standardized coding style. However, previous versions of Apollo had their perception, prediction, routing, and planning modules all heavily reliant on HDMaps, for which development was cumbersome and opaque. For many developers, this posed an insurmountable barrier. Given the inaccessibility of HDMaps, developers could only play demo data bag on Apollo's simulation tools, rather than deploy the Apollo system on vehicles for road testing. This greatly undermined the usage scenarios of Apollo and hampered the development and growth of the Apollo community. Obviously, the Apollo team had been aware of this problem. With months of hard work, they released a new navigation mode in Apollo 2.5 based on a relative map. Leveraging navigation mode, developers could easily deploy Apollo for road testing on a real vehicle.
 

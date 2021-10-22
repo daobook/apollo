@@ -1,3 +1,5 @@
+# fr
+
 ## 引言
 Lidar是一种常用的环境感知传感器，利用脉冲激光来照射目标并接收目标的反射脉冲，根据激光返回的时间来计算与目标的距离。通过对目标多次全方位的测量，可以得到目标环境的数字3D结构模型。Apollo平台默认支持velodyne 16线，32线，64线和128线等多种型号的lidar。该说明主要介绍Lidar驱动的主要功能以及如何在apollo平台中添加一款新的lidar设备驱动。
 
@@ -13,11 +15,11 @@ Lidar是一种常用的环境感知传感器，利用脉冲激光来照射目标
 
 ## 添加新lidar驱动的步骤
 
-#### 1. 熟悉cyber框架
+### 1. 熟悉cyber框架
 
 cyber框架下系统中每一个功能单元都可以抽象为一个component，通过channel相互间进行通信，然后根据dag(有向无环图)配置文件，构建成相应的pipeline，实现数据的流式处理。
 
-#### 2. 消息定义
+### 2. 消息定义
 
 apollo已经预定义了点云的消息格式，所以只需要为新lidar定义一个存储原始扫描数据的proto消息，用于数据的存档和离线开发调试，相比于点云数据，存档原始数据可以大量节省存储空间。一个新的扫描数据消息可以类似如下定义:
 
@@ -34,7 +36,7 @@ apollo已经预定义了点云的消息格式，所以只需要为新lidar定义
 	```
 在velodyne驱动中，其扫描数据消息定义为[VelodyneScan](../../modules/drivers/lidar/velodyne/proto/velodyne.proto#L29).
 
-#### 3. 读取原始数据
+### 3. 读取原始数据
 
 lidar每秒会产生大量数据，一般通过UDP协议来进行数据的高效传输。编写一个DriverComponent类，继承于无模版参数Component类；在Init函数中启动一个异步poll线程，不断从相应的端口读取lidar数据；然后根据需求如将一段时间内的数据打包为一帧ScanData，如扫描一圈为一帧；最后通过writer将ScanData写至相应的channel发送出去。
 
@@ -69,7 +71,7 @@ class DriverComponent : public Component<> {
 CYBER_REGISTER_COMPONENT(DriverComponent)
 ```
 
-#### 4. 解析扫描数据，生成点云。
+### 4. 解析扫描数据，生成点云。
 
 编写一个Parser类，输入为一帧ScanData，根据lidar自己的数据协议，解析出每一个点的时间戳，x/y/z三维坐标，以及反射强度，并组合成一帧点云。每个点都位于以lidar为原点的FLU（Front: x, Left: y, Up: z）坐标系下。
 
@@ -114,11 +116,11 @@ class ParserComponent : public Component<ScanData> {
 
 CYBER_REGISTER_COMPONENT(ParserComponent)
 ```
-#### 5. 对点云进行运行补偿
+### 5. 对点云进行运行补偿
 
 运动补偿是一个通用的点云处理过程，可以直接复用velodyne driver中compensator模块的算法逻辑。
 
-#### 6. 配置dag文件
+### 6. 配置dag文件
 
 将各个数据处理环节定义为component后，需要将各个component组成一个lidar数据处理pipeline，如下配置lidar_driver.dag:
 
@@ -160,7 +162,7 @@ module_config {
 }
 ```
 
-#### 7. 运行lidar驱动并查看点云
+### 7. 运行lidar驱动并查看点云
 完成以步骤后，就可以通过以下命令来启动lidar驱动。
 
 ```bash

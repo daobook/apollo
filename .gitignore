@@ -77,3 +77,7 @@ output
 
 # Flamegraph files
 tools/FlameGraph
+
+# Sphinx
+_build/
+*.mo

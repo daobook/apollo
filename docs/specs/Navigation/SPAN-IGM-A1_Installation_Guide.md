@@ -1,4 +1,4 @@
-## Installation Guide of SPAN-IGM-A1
+# Installation Guide of SPAN-IGM-A1
 
 The NovAtel SPAN-IGM-A1 is an integrated, single-box solution that offers tightly coupled Global Navigation Satellite System (GNSS) positioning and inertial navigation featuring the NovAtel OEM615 receiver.
 
@@ -12,18 +12,18 @@ The GPS NovAtelGPS-703-GGG-HV works with either model of the two GPS-IMU options
 
 ![gps_receiver](images/gps_receiver.png)
 
-### Installing the GPS Receiver and Antenna
+## Installing the GPS Receiver and Antenna
 
 The installation instructions describe the procedure to mount, connect, and take the lever arm measurements for the GPS-IMU NovAtel SPAN-IGM-A1.
 
-##### Mounting
+### Mounting
 
 You can place the GPS-IMU NovAtel SPAN-IGM-A1 in most places in the vehicle but it is suggested that you follow these recommendations:
 
 - Place and secure the NovAtel SPAN-IGM-A1 inside the trunk with the Y-axis pointing forward.
 - Mount the NovAtel GPS-703-GGG-HV antenna in an unobstructed location on top of the vehicle.
 
-##### Wiring
+### Wiring
 
 There are three cables that need to be connected
 
@@ -43,7 +43,7 @@ Refer to the diagram below for reference:
 
 For additional information, visit Page 3 of [the SPAN-IGM™ Quick Start Guide](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf) to view the detailed diagram.
 
-##### Taking the Lever Arm Measurement
+### Taking the Lever Arm Measurement
 
 When the SPAN-IGM-A1 and the GPS Antenna are in position, the distance from the SPAN-IGM-A1 to the GPS Antenna must be measured. The distance should be measured as: X offset, Y offset, and Z offset.
 
@@ -51,7 +51,7 @@ The center of the IMU and the center of the antenna are labeled on the exterior 
 
 For additional information, visit Page 5 of [the SPAN-IGM™ Quick Start Guide](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf) to view the detailed diagram.
 
-### Configuring the GPS and IMU
+## Configuring the GPS and IMU
 
 Configure the SPAN-IGM-A1 as shown below. The setting can be configured by keying in the following command or loading a batch file in Novatel Connect:
 
@@ -113,7 +113,7 @@ SETIMUTOANTOFFSET -0.05 0.5 0.8 0.05 0.05 0.08
 ```
 The first 3 numbers indicate the result of the lever arm distance measurement. The last 3 numbers are the uncertainty of the measurement. 
 
-### References
+## References
 
 For additional information on the NovAtel SPAN-IGM-A1:
 

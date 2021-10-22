@@ -1,5 +1,4 @@
-HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW
-===========================================
+# HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW
 
 ## Fundamentals to understand AplloAuto - core
 
@@ -28,7 +27,7 @@ In Baidu ApolloAuto, three stages of development have already been described
 ## ROS underlying Subscription and Publication mechanism and ApolloAuto modules structure
 
 
-#### ROS underlying Subscription and Publication mechanism
+### ROS underlying Subscription and Publication mechanism
 
 So how does ROS1 based system communicate with each other and how does ApolloAuto make use of it? ROS has [tutorials](http://wiki.ros.org/ROS/Tutorials), and I will explain it
 quickly before we analyze ApolloAuto modules structure.
@@ -62,7 +61,7 @@ ros::Publisher pub = h.advertise<generated_msg_format_cls>("topic_name", q_size)
 cb here is a callback executed when Linux kernel IO is ready. With these signatures bearing in mind, we can quickly analyze ApolloAuto
 module structures before diving deep into core modules implementation.
 
-#### apolloauto modules structure
+### apolloauto modules structure
 
 I have conducted full research about it but I cannot show you all of them. ApolloAuto modules/common/ provide basic micros to control ros::spin for each
 module and /modules/common/adaptor contains the most information on how a topic is registered. Every module will be registered from the [point](https://github.com/yiakwy/apollo/blob/master/modules/common/adapters/adapter_manager.cc#L50)
@@ -81,7 +80,7 @@ Since it is used in input data preprocessing, you might see it in HD Maps, perce
 
 ## Selected modules analysis
 
-#### HMI & Dreamviewer
+### HMI & Dreamviewer
 
 There is not too much about hmi interface and dreamviewer but it is a good place to visualize the topics parameters.
 
@@ -93,7 +92,7 @@ to execute the corresponding binary.
 Dreamviewer, in contrast, works a little bit like frontend app written in React, Webpack, and Threejs \( WebGL, see /dreamview/backend/simulation_world, /dreamview/frontend/src/render \),
 techniques. It subscribes to messages from ROS nodes and draws it a frame after a frame.
 
-#### Perception
+### Perception
 
 Initially, this module implemented logics exclusively for Lidar and Radar processes. It is registered by AdapterManager as a ros node functioning as an info fusion system to
 output observed Obstacles info. In the latest version of the codes, different hardware input handlers of ROS nodes are specified in /perception/obstacles/onboard and implemented in

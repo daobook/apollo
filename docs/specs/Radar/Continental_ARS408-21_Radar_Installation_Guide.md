@@ -1,4 +1,4 @@
-## Installation Guide of Continental ARS-408-21 Radar
+# Installation Guide of Continental ARS-408-21 Radar
 
 ```
 The ARS408 realized a broad field of view by two independent scans in conjunction with the high range functions
@@ -15,7 +15,7 @@ The following diagram contains the range of the ARS-408-21 Radar:
 
 ![radar_range](images/ars-404-21-range.jpg)
 
-### Installation
+## Installation
 
 1. A mechanical mount needs to be designed to mount the Radar to the desired position. The mount should be able to hold the Radar in a way that the scanning plane is parallel to the bottom of the car, so that the scanning radar wave would not be blocked by the road surface causing it to create ghost objects. If a stationary mount cannot satisfy such requirement, please consider adding adjustment in vertical and horizontal directions to the mount
 
@@ -29,7 +29,7 @@ The following diagram contains the range of the ARS-408-21 Radar:
 
 5. You should be able to receive the CAN messages through the CAN port once the Radar is powered.
 
-### References
+## References
 
 1. Additional information can be found on the [product page](https://www.continental-automotive.com/Landing-Pages/Industrial-Sensors/Products/ARS-408-21)
 

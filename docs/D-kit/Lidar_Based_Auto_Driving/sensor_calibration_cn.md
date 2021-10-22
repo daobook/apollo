@@ -28,7 +28,7 @@
 
 该用户手册旨在帮助用户完成激光雷达的标定(Lidar-GNSS)
 
-## 前提条件
+### 前提条件
 
 - 完成了[循迹搭建--车辆循迹演示](../Waypoint_Following/start_waypoint_following_cn.md)
 
@@ -36,7 +36,7 @@
 
 - 完成了[开通云服务账号向导](../../Apollo_Fuel/apply_fuel_account_cn.md)
 
-## 修改配置文件
+### 修改配置文件
 
 |修改文件名称 | 修改内容 |
 |---|---|
@@ -53,29 +53,29 @@
 
  各传感器坐标系的定义及初始化外参文件的配置
 
-#### 1. IMU、Lidar的坐标系定义
+### 1. IMU、Lidar的坐标系定义
 
  ![lidar_calibration_coordinate_system](images/lidar_calibration_coordinate_system.jpg)
 
-#### 2. Lidar坐标系原点在传感器的位置
+### 2. Lidar坐标系原点在传感器的位置
 
 Lidar坐标系原点位于Lidar底部向上37.7mm的平面所在的中心点，如下图所示。
 
 ![lidar_calibration_coordinate_picture](images/lidar_calibration_coordinate_picture.png)
 
-#### 3. IMU坐标系原点在传感器的位置
+### 3. IMU坐标系原点在传感器的位置
 
 IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置为IMU高度的一半，在XY轴上的位置已在IMU上标出，如下图所示)
 
  ![lidar_calibration_imu_look](images/lidar_calibration_imu_look.png)
 
-#### 4. 手动测量Lidar-GNSS的初始化外参
+### 4. 手动测量Lidar-GNSS的初始化外参
 
 这里默认用户按照感知设备集成文档的要求正确安装了传感器，即传感器坐标系的定义与上文中的定义相同，且安装误差满足文档中的要求。
 
 - rotation:在传感器的安装满足上述安装要求的情况下，用户无需测量该值，可直接使用如下的默认值即可
 
-  ```txt
+  ```md
     rotation:
       w: 0.7071
       x: 0.0
@@ -85,7 +85,7 @@ IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置
 
 - translation:用户需要手动测量以IMU坐标系为基坐标系，以激光雷达坐标系为目标坐标系的位移变换，一个IMU-Velodyne16位移变换的示例如下所示：
 
-  ```txt
+  ```md
     translation:
       x: 0.0
       y: 0.38
@@ -102,12 +102,12 @@ IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置
 
 ## 使用Fuel-Client采集数据
 
-#### 1. 选择正确的模式、车型
+### 1. 选择正确的模式、车型
 - 选择`Lidar-GNSS Sensor Calibration`模式
 - 根据实际情况选择正确的车型(lite用户选择`Dev Kit`车型，standard用户选择`Dev Kit Standard`，单雷达的advanced用户选择`Dev Kit Standard Ne-s`，3雷达的advanced用户选择`Dev Kit Standard Sne-r`)
 ![lidar_calibration_select_mode_vehicle.png](images/lidar_calibration_select_mode_vehicle.png)
 
-#### 2. 启动`Fuel Client`，并启动相应模块
+### 2. 启动`Fuel Client`，并启动相应模块
 
 - 在dreamview的`Tasks`标签下，首先打开`Sim Control`，然后打开`Fuel Client`，`Fuel Client`打开后务必关闭`Sim Control`
 ![lidar_calibration_open_fuel_client](images/lidar_calibration_open_fuel_client.png)
@@ -115,7 +115,7 @@ IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置
 - 在dreamview的`Module Controllers`标签下，启动`GPS`、`Lidar`、`Localization`模块，等待左侧状显示模块中的`GPS`、`Lidar`、`RTK`均为绿色时，代表模块启动成功(Localization启动后，需要等待1~2分钟才能正常输出数据)。
 ![lidar_calibration_start_modules.png](images/lidar_calibration_start_modules.png)
 
-#### 3. 启动`Recorder`模块并开始采集
+### 3. 启动`Recorder`模块并开始采集
 
 - 当左侧左侧状显示模块中的`GPS`、`Lidar`、`RTK`均为绿色时，打开Recorder模块，并开始采集数据，需要控制车辆以8字形轨迹缓慢行驶，并使转弯半径尽量小 ，包含2~3圈完整的8字轨迹数据。
 ![lidar_calibration_turn_around](images/lidar_calibration_turn_around.png)
@@ -136,20 +136,20 @@ IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置
 ## 使用标定云服务生成外参文件
 
 
-#### 1. 上传预处理后的数据至BOS
+### 1. 上传预处理后的数据至BOS
 
 **注意：** 必须使用开通过权限的 bucket，确认`Bucket名称`、`所属地域`和提交商务注册时的Bucket名称和所属区域保持一致。
 
 将`lidar_to_gnss-2021-01-12-14-10`目录上传到BOS的根目录下，作为后续云标定服务读取数据的`输入数据路径`。
 
-#### 2. 提交云标定任务
+### 2. 提交云标定任务
 
 打开Apollo云服务页面，新建一个任务，如下图所示：
 ![fuel_new_task](images/fuel_new_task.png)
 
 点击`新建任务`后，在下拉框中选择`感知标定`选项，根据实际情况填写输入`输入数据路径`，这里以`lidar_to_gnss-2021-01-12-14-10`为例，指定`输出数据路径`后，点击`提交任务`(Submit Job)按钮提交。
 ![sensor_calibration_fuel](images/sensor_calibration_fuel.jpg)
-#### 3. 获取标定结果验证及标定外参文件
+### 3. 获取标定结果验证及标定外参文件
 
 云标定任务完成后，将在注册的邮箱中收到一封标定结果邮件。如果标定任务成功，将包含标定外参文件。
 
@@ -177,11 +177,11 @@ IMU坐标系原点位于IMU的几何中心上(中心点在Z轴方向上的位置
 
 ## 常见问题
 
-#### 1. 进行`Sensor Calibration`任务后，邮件显示任务失败
+### 1. 进行`Sensor Calibration`任务后，邮件显示任务失败
 
 建议检查一下输入路径是否正确
 
-#### 2. 标定结果效果较差
+### 2. 标定结果效果较差
 
 - 标定时，确保GNSS信号状态良好，周围有轮廓清晰的静态障碍物
 - 保证传感器的安装精度，安装误差超过要求精度时，标定结果不容易收敛

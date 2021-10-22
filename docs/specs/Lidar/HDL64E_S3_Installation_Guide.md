@@ -1,10 +1,10 @@
-## Installation guide of Velodyne HDL64E-S3
+# Installation guide of Velodyne HDL64E-S3
 
 Apollo uses the 64 line LiDar system **HDL-64E S3** from Velodyne LiDAR, Inc.
 
 ![](images/lidar_pic.png)
 
-### Key Features:
+## Key Features:
 
 - 64 Channels
 - 120m range
@@ -17,7 +17,7 @@ Apollo uses the 64 line LiDar system **HDL-64E S3** from Velodyne LiDAR, Inc.
 - User selectable frame rate
 - Rugged DesignLidar/Velodyne/HDL64E-S3/
 
-#### Mounting
+### Mounting
 
 A customized mounting structure is required to successfully mount an HDL64E S3 LiDAR on top of a vehicle. This structure must provide rigid support to the LiDAR system while raising the LiDAR to a certain height above the ground under driving conditions. This mounted height should prevent the laser beams from the LiDAR being blocked by the front and/or rear of the vehicle. The actual height needed for the LiDAR depends on the design of the vehicle and the mounting point of the LiDAR is relative to the vehicle being used. The vertical tilt angle of the lasers normally ranges from **+2~-24.8 degrees relative to the horizon**. 
 For a standard Lincoln MKZ, it is recommended that you mount the LiDAR at a minimum height of 1.8 meters (from ground to the base of the LiDAR), to use the angle range for detection effectively.
@@ -26,7 +26,7 @@ For a standard Lincoln MKZ, it is recommended that you mount the LiDAR at a mini
 If for some reason, the LiDAR beam has to be blocked by the vehicle, it might be necessary to apply a filter to remove these points while processing the data received.
 ```
 
-#### Wiring
+### Wiring
 
 Each HDL-64E S3 LiDAR includes a cable bundle to connect the LiDAR to the power supply, the GPS timesync source and the computer (Ethernet for data transfer and a serial port for LiDAR configuration). 
 
@@ -70,7 +70,7 @@ Each HDL-64E S3 LiDAR includes a cable bundle to connect the LiDAR to the power 
 
    ![pinout_table](images/pinout_table.png)
 
-#### Configuration
+## Configuration
 
 By default, the HDL-64E S3 has the network IP address of 192.168.0.1. However, when you are setting up Apollo, change the network IP address to **192.168.20.13**. You can use the terminal application with Termite3.2 for this purpose. The IP address of the HDL-64E S3 can be configured using the following steps:
 
@@ -100,7 +100,7 @@ By default, the HDL-64E S3 has the network IP address of 192.168.0.1. However, w
 
 ![Issuing the serial command](images/Issuing_the_serial_command.png)
 
-#### References
+## References
 
 For additional information on Velodyne HDL-64E S3, please refer to their 
 [website here](http://velodynelidar.com/hdl-64e.html).

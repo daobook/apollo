@@ -1,10 +1,10 @@
-## Installation Guide of NovAtel PwrPak7
+# Installation Guide of NovAtel PwrPak7
 
 NovAtel PwrPak7 is an integrated INS receiver, which has GNSS receiver and IMU included in the device.
 
 ![novatel_pp7](images/pp7_pic.jpg)
 
-### Installing the GPS Receiver
+## Installing the GPS Receiver
 
 The overview of Novatel PwrPak7 is shown as below.
 
@@ -28,7 +28,7 @@ You can place the PwrPak7 in most places in the vehicle, but it is suggested tha
 - Use a magnetic adapter to tightly attach the antenna to the trunk lid.
 - Install the antenna cable in the trunk by opening the trunk and placing the cable in the space between the trunk lid and the body of the car.
 
-#### Taking the Lever Arm Measurement
+### Taking the Lever Arm Measurement
 
 Follow these steps:
 
@@ -36,7 +36,7 @@ Follow these steps:
 * When the PwrPak7 and the GPS Antenna are in position, the distance from the PwrPak7 to the GPS Antenna must be measured. The center of the PwrPak7 IMU and the center of the antenna are labeled on the exterior of the devices.
 * The distance should be measured as: X offset, Y offset, and Z offset. The axis should be determined by the IMU. The error of offset must be within one centimeter to achieve high accuracy in positioning and localization.
 
-### Configuring the PwrPak7
+## Configuring the PwrPak7
 
 Configure the GPS and IMU as shown below. This process can be done either by keying in the commands, or by loading batch configuraion file in NovAtel Connect.
 
@@ -98,7 +98,7 @@ SETINSTRANSLATION ANT1 -0.05 0.5 0.8 0.05 0.05 0.08
 
 The first 3 numbers indicate the result of the lever arm distance measurement. The last 3 numbers are the uncertainty of the measurement.
 
-### References
+## References
 
 For more information about the NovAtel PwrPak7, see:
 * [NovAtel PwrPak7 Installation & Operation User Manual](https://docs.novatel.com/OEM7/Content/PDFs/PwrPak7_Install_Ops_Manual.pdf)

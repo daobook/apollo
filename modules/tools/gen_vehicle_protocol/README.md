@@ -1,11 +1,14 @@
 
-## Gen Vehicle Protocol Tool
-	It's a convinent tool to let you quickly generate a nearly complete code for a new vehicle.
+# Gen Vehicle Protocol Tool
+	
+It's a convinent tool to let you quickly generate a nearly complete code for a new vehicle.
 You only have to do is to have the dbc file (which is a communication protocol for the car, which is usually made by the vehicle integrated company), and write a less 10 lines config for generate an encode/decode `
 
 ## Dependency
 
-> sudo pip install pyyaml
+```sh
+sudo pip install pyyaml
+```
 
 ## Usage:
 
@@ -16,7 +19,9 @@ The tool's input is :
 
 Run:
 
-> python gen.py lincoln_conf.yml
+```sh
+python gen.py lincoln_conf.yml
+```
 
 ## Tool Framework
 
