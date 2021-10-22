@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:1
+msgid "Prediction Pedestrian Model Training Service"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:4
+msgid "Overview"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:6
+msgid ""
+"Prediction Pedestrian Model Treaining Service is a cloud based service to"
+" train a prediction model for pedestrian from the data you provide, to "
+"better fit the pedestrian behavior in your environment."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:8
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:11
+msgid "[Apollo](https://github.com/ApolloAuto/apollo) 6.0 or higher version."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:13
+msgid ""
+"Baidu Cloud BOS service registered according to "
+"[document](https://github.com/ApolloAuto/apollo/blob/master/docs/Apollo_Fuel/apply_bos_account_cn.md)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:15
+msgid ""
+"Fuel service account on [Apollo Dreamland](http://bce.apollo.auto/user-"
+"manual/fuel-service)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:17
+msgid "Main Steps"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:19
+msgid "Data collection"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:21
+msgid "Job submit"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:23
+msgid "Trained model"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:25
+msgid "Data Collection"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:27
+msgid "Data Recording"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:29
+msgid ""
+"Finish several hours of autonomous driving with different scenarios, "
+"please make sure to have some pedestrians in sights. Just record them "
+"with `cyber_recorder`."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:31
+msgid "Data Sanity Check"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:34
+msgid ""
+"**make sure following channels are included in records before submitting "
+"them to cloud service**："
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "Modules"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "channel"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "items"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "Perception"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "`/apollo/perception/PerceptionObstacles`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "exits without error message"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "Localization"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "`/apollo/localization/pose`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md
+msgid "-"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:41
+msgid "you can check with `cyber_recorder`："
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:48
+msgid "Job Submission"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:51
+msgid "Upload data to BOS"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:53
+msgid "1）`Input Data Path` is **BOS root folder**，for users；"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:55
+msgid ""
+"2）There should be two folders under your `Input Data Path`, one named "
+"`map` for the map you are using in Apollo format, the other is `records`,"
+" for the records you collected."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:59
+msgid "Submit job requests in Dreamview"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:61
+msgid ""
+"Goto [Apollo Dreamland](http://bce.apollo.auto/login), login with "
+"**Baidu** account, choose `Apollo Fuel--> task`，`new task`, `prediction "
+"pedestrian model training`，and input correct path as in [Upload data to "
+"BOS](###Upload-data-to-BOS) section："
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:64
+msgid "Get Trained models"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.md:66
+msgid ""
+"After job is done, you should be expecting emails including the results, "
+"the trained model will be in a `models` folder under your `Input Data "
+"Path`."
+msgstr ""
+

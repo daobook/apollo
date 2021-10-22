@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/planning/README_cn.md:1
+msgid "规划"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:3
+msgid "介绍"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:5
+msgid ""
+"Apollo7.0相对之前的版本，本次新增了断头路场景，增加了\"三点掉头\"功能，增加了驶入驶出的能力，扩展了城市路网运营边界。\"三点掉头\"功能"
+" 基于open space planner框架，包含以下几个部分：断头路场景转换、开放空间ROI构建、掉头轨迹规划。"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:8
+msgid "输入"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:9
+msgid "输入信息：定位、感知、预测、高精地图、路由、任务管理模块。"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:11
+msgid "输出"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:12
+msgid "输出信息：控制模块可执行的顺滑无碰撞轨迹。"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:14
+msgid "Planning 模块架构"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:15
+msgid "![](images/DeadEndScenario.png)"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:17
+msgid "场景展示"
+msgstr ""
+
+#: ../../modules/planning/README_cn.md:18
+msgid ""
+"![](images/EnterDeadEnd.png) ![](images/TuringAround1.png) "
+"![](images/TuringAround2.png) ![](images/OutDeadEnd.png)"
+msgstr ""
+

@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:1
+msgid "**Robosense LiDAR Driver**"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:5
+msgid "1 工程简介"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:7
+msgid "**robosense** 为速腾聚创在阿波罗平台上的雷达驱动集成包。 目前支持*RS16，RS32，RSBP，RS128*四种型号的雷达。"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:11
+msgid "2 运行"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:13
+msgid "**所有驱动均需要在Apollo Docker环境下运行**"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:15
+msgid "2.1 RS16"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:21
+#: ../../modules/drivers/lidar/robosense/README_cn.md:40
+#: ../../modules/drivers/lidar/robosense/README_cn.md:60
+#: ../../modules/drivers/lidar/robosense/README_cn.md:79
+msgid "或"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:27
+#: ../../modules/drivers/lidar/robosense/README_cn.md:47
+#: ../../modules/drivers/lidar/robosense/README_cn.md:66
+#: ../../modules/drivers/lidar/robosense/README_cn.md:85
+msgid "默认话题名："
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:29
+msgid "原始点云 -- /apollo/sensor/rs16/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:31
+msgid "Scan--/apollo/sensor/rs16/Scan"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:32
+msgid "运动补偿后点云 -- /apollo/sensor/rs16/compensator/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:34
+msgid "2.2 RS32"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:49
+msgid "原始点云 -- /apollo/sensor/rs32/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:51
+msgid "Scan -- /apollo/sensor/rs32/Scan"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:52
+msgid "运动补偿后点云 -- /apollo/sensor/rs32/compensator/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:54
+msgid "2.3 RS128"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:68
+msgid "原始点云 -- /apollo/sensor/rs128/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:70
+msgid "Scan--/apollo/sensor/rs128/Scan"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:71
+msgid "运动补偿后点云 -- /apollo/sensor/rs128/compensator/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:73
+msgid "2.4 RSBP"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:87
+msgid "原始点云 -- /apollo/sensor/rsbp/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:89
+msgid "Scan--/apollo/sensor/rsbp/Scan"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:90
+msgid "运动补偿后点云 -- /apollo/sensor/rsbp/compensator/PointCloud2"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:94
+msgid "3 参数介绍"
+msgstr ""
+
+#: ../../modules/drivers/lidar/robosense/README_cn.md:96
+msgid "[参数介绍](doc/parameter_intro.md)"
+msgstr ""
+

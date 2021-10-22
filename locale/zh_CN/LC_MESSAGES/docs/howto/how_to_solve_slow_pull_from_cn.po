@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:1
+msgid "国内环境 GitHub 拉取仓库速度慢的缓解方案"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:3
+msgid "第一步: 浏览器打开如下两个网址，找到对应 IP 地址:"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:5
+msgid "http://github.com.ipaddress.com/"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:6
+msgid "http://github.global.ssl.fastly.net.ipaddress.com/"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:8
+msgid "假设对应 IP 地址分别为 140.82.xx.xxx 和 199.232.yy.yyy"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:10
+msgid "第二步: 编辑 hosts 文件"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:16
+msgid "加入如下两行:"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:23
+msgid "第三步：更新 DNS 缓存（仅限 Mac 用户）"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:25
+msgid "Linux 用户请忽略此步骤。"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:31
+msgid "大功告成!"
+msgstr ""
+
+#: ../../docs/howto/how_to_solve_slow_pull_from_cn.md:33
+msgid "现在，您可以尝试从 GitHub 重新拉取代码了，是不是变快了一些？"
+msgstr ""
+

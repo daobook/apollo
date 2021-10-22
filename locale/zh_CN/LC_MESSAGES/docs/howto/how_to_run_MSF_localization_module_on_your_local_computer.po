@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:1
+msgid "How to Run MSF Localization Module On Your Local Computer"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:3
+msgid "1. Preparation"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:4
+msgid ""
+"Download source code of Apollo from "
+"[GitHub](https://github.com/ApolloAuto/apollo)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:5
+msgid ""
+"Follow the tutorial to set up [docker "
+"environment](../quickstart/apollo_software_installation_guide.md)."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:6
+#, python-format
+msgid ""
+"Download localization data from [Apollo Data Open "
+"Platform](http://data.apollo.auto/?name=sensor%20data&data_key=multisensor&data_type=1&locale"
+"=en-us&lang=en)（US only)."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:8
+msgid ""
+"the localization data is a experimental dataset to verify the "
+"availability of localization. It contains localization map(local_map/), "
+"vehicle params(params/), sensor recording data(records/). The specific "
+"attributes are as follows: duration: 5 mins mileage: 3km areas: city "
+"roads in Sunnyvale weather: sunny day"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:14
+msgid "2. Build Apollo"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:16
+msgid ""
+"First check and make sure you are in development docker container before "
+"you proceed. Now you will need to build from the source."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:24
+msgid "3. Configuring Parameters"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:25
+msgid ""
+"In the downloaded data, you can find a folder named *apollo3.5*. Let's "
+"assume the path of this folder as DATA_PATH."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:26
+msgid "3.1 Configure Sensor Extrinsics"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:30
+msgid "The meaning of each file in the folder"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:31
+msgid "**ant_imu_leverarm.yaml**:  Lever arm value"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:32
+msgid ""
+"**velodyne128_novatel_extrinsics.yaml**: Transform from IMU coord to "
+"LiDAR coord"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:33
+msgid "**velodyne128_height.yaml**: Height of the LiDAR relative to the ground"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:35
+msgid "3.2 Configure Map Path"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:36
+msgid ""
+"Add config of map path in "
+"/apollo/modules/localization/conf/localization.conf"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:41
+msgid "This will overwrite the default config defined in global_flagfile.txt"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:43
+msgid "4. Run the multi-sensor fusion localization module"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:44
+msgid "run the script in apollo directory"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:49
+msgid "In /apollo/data/log directory, you can see the localization log files."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:50
+msgid "localization.INFO : INFO log"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:51
+msgid "localization.WARNING : WARNING log"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:52
+msgid "localization.ERROR : ERROR log"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:53
+msgid "localization.out : Redirect standard output"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:54
+msgid "localizaiton.flags : A backup of configuration file"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:56
+msgid "5. Play cyber records"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:61
+msgid ""
+"The localization module will finish initialization and start publishing "
+"localization results after around 50 seconds."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:63
+msgid "6. Record and Visualize localization result (optional)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:64
+msgid "Record localization result"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:68
+msgid "Visualize Localization result"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:72
+msgid ""
+"First, the visualization tool will generate a series of cache files from "
+"the localization map, which will be stored in the "
+"/apollo/cyber/data/map_visual directory."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:74
+msgid "Then it will receive the topics blew and draw them on screen."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:75
+msgid "/apollo/sensor/lidar128/compensator/PointCloud2"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:76
+msgid "/apollo/localization/msf_lidar"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:77
+msgid "/apollo/localization/msf_gnss"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:78
+msgid "/apollo/localization/pose"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:80
+msgid "If everything is fine, you should see this on screen."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:82
+msgid "![1](images/msf_localization/online_visualizer.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:82
+msgid "1"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:84
+msgid ""
+"`Note:` The visualization tool will show up the windows after the "
+"localization module started to published localization msgs to topic "
+"/apollo/localization/pose. You can use command *cyber_monitor* to monitor"
+" the status of topics."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:86
+msgid "7. Stop localization module"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:87
+msgid ""
+"If you record localization result in step 6, you will also need to end "
+"the recording process:"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:92
+msgid "8. Verify the localization result (optional)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:97
+msgid "OUTPUT_PATH is the folder stored recording bag in step 6."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:99
+msgid "This script compares the localization results of MSF mode to RTK mode."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:101
+msgid ""
+"`Note:` Aware that this comparison makes sense only when the RTK mode "
+"runs well."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:103
+msgid "And we can get the statistical results like this"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:105
+msgid "![2](images/msf_localization/localization_result.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:105
+msgid "2"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:107
+msgid ""
+"The first table is the statistical data of Fusion localization. The "
+"second table is the statistical result of Lidar localization."
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:109
+msgid "The meaning of each row in the table"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:110
+msgid "**error**：  the plane error, unit is meter"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:111
+msgid "**error lon**：  the error in the car's heading direction, unit is meter"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:112
+msgid "**error lat**：  the error in the car's lateral direction, unit is meter"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:113
+msgid "**error roll**： the roll angle error, unit is degree"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:114
+msgid "**error pit**：  the pitch angle error, unit is degree"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:115
+msgid "**error yaw**：  the yaw angle error, unit is degree"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:117
+msgid "The meaning of each col in the table"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:118
+msgid "**mean**： evaluation value of the error"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:119
+msgid "**std**：  the standard deviation of the error"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:120
+msgid "**max**：  the maximum value of the error"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:121
+msgid ""
+"**< xx**：  percentage of frames whose error is smaller than the indicated"
+" range"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_MSF_localization_module_on_your_local_computer.md:122
+msgid ""
+"**con_frame()**： the maximum number of consecutive frames that satisfy "
+"the conditions in parentheses"
+msgstr ""
+

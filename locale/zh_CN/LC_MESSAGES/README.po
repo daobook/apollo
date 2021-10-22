@@ -1,0 +1,564 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../README.md:1
+msgid "![](docs/demo_guide/images/Apollo_logo.png)"
+msgstr ""
+
+#: ../../README.md:3
+msgid ""
+"[![Build "
+"Status](http://180.76.142.62:8111/app/rest/builds/buildType:Apollo_Build/statusIcon)](http://180.76.142.62:8111/viewType.html?buildTypeId=Apollo_Build&guest=1)"
+" [![Simulation "
+"Status](https://azure.apollo.auto/dailybuildstatus.svg)](https://azure.apollo.auto"
+"/daily-build/public)"
+msgstr ""
+
+#: ../../README.md:3
+msgid "Build Status"
+msgstr ""
+
+#: ../../README.md:3
+msgid "Simulation Status"
+msgstr ""
+
+#: ../../README.md:16
+msgid "Welcome to Apollo's GitHub page!"
+msgstr ""
+
+#: ../../README.md:18
+msgid ""
+"[Apollo](http://apollo.auto) is a high performance, flexible architecture"
+" which accelerates the development, testing, and deployment of Autonomous"
+" Vehicles."
+msgstr ""
+
+#: ../../README.md:20
+msgid ""
+"For business and partnership, please visit [our "
+"website](http://apollo.auto)."
+msgstr ""
+
+#: ../../README.md:22
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../README.md:24
+msgid "[Introduction](#introduction)"
+msgstr ""
+
+#: ../../README.md:25
+msgid "[Prerequisites](#prerequisites)"
+msgstr ""
+
+#: ../../README.md:26
+msgid "[Individual Versions](#individual-versions)"
+msgstr ""
+
+#: ../../README.md:27
+msgid "[Architecture](#architecture)"
+msgstr ""
+
+#: ../../README.md:28
+msgid "[Installation](#installation)"
+msgstr ""
+
+#: ../../README.md:29
+msgid "[Quick Starts](#quick-starts)"
+msgstr ""
+
+#: ../../README.md:30
+msgid "[Documents](#documents)"
+msgstr ""
+
+#: ../../README.md:32
+msgid "Introduction"
+msgstr ""
+
+#: ../../README.md:34
+msgid ""
+"Apollo is loaded with new modules and features but needs to be calibrated"
+" and configured perfectly before you take it for a spin. Please review "
+"the prerequisites and installation steps in detail to ensure that you are"
+" well equipped to build and launch Apollo. You could also check out "
+"Apollo's architecture overview for a greater understanding of Apollo's "
+"core technology and platforms."
+msgstr ""
+
+#: ../../README.md:36
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../README.md:38
+msgid ""
+"**[New 2021-01]** The Apollo platform (stable version) is now upgraded "
+"with software packages and library dependencies of newer versions "
+"including:"
+msgstr ""
+
+#: ../../README.md:41
+msgid ""
+"CUDA upgraded to version 11.1 to support Nvidia Ampere (30x0 series) "
+"GPUs, with NVIDIA driver >= 455.32"
+msgstr ""
+
+#: ../../README.md:43
+msgid "LibTorch (both CPU and GPU version) bumped to version 1.7.0 accordingly."
+msgstr ""
+
+#: ../../README.md:45
+msgid ""
+"We do not expect a disruption to your current work, but to ease your life"
+" of migratation, you would need to:"
+msgstr ""
+
+#: ../../README.md:48
+msgid ""
+"Update NVIDIA driver on your host to version >= 455.32. ([Web "
+"link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
+msgstr ""
+
+#: ../../README.md:50
+msgid ""
+"Pull latest code and run the following commands after restarting and "
+"logging into Apollo Development container:"
+msgstr ""
+
+#: ../../README.md:63
+msgid ""
+"The vehicle equipped with the by-wire system, including but not limited "
+"to brake-by-wire, steering-by-wire, throttle-by-wire and shift-by-wire "
+"(Apollo is currently tested on Lincoln MKZ)"
+msgstr ""
+
+#: ../../README.md:65
+msgid "A machine with a 8-core processor and 16GB memory minimum"
+msgstr ""
+
+#: ../../README.md:67
+msgid "NVIDIA Turing GPU is strongly recommended"
+msgstr ""
+
+#: ../../README.md:69
+msgid "Ubuntu 18.04"
+msgstr ""
+
+#: ../../README.md:71
+msgid ""
+"NVIDIA driver version 455.32.00 and above ([Web "
+"link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
+msgstr ""
+
+#: ../../README.md:73
+msgid ""
+"Docker-CE version 19.03 and above ([Official "
+"doc](https://docs.docker.com/engine/install/ubuntu/))"
+msgstr ""
+
+#: ../../README.md:75
+msgid ""
+"NVIDIA Container Toolkit ([Official doc](https://github.com/NVIDIA"
+"/nvidia-docker))"
+msgstr ""
+
+#: ../../README.md:77
+msgid ""
+"**Please note**, it is recommended that you install the versions of "
+"Apollo in the following order: **1.0 -> whichever version you would like "
+"to test out**. The reason behind this recommendation is that you need to "
+"confirm whether individual hardware components and modules are "
+"functioning correctly, and clear various version test cases before "
+"progressing to a higher and more capable version for your safety and the "
+"safety of those around you."
+msgstr ""
+
+#: ../../README.md:79
+msgid "Individual Versions:"
+msgstr ""
+
+#: ../../README.md:81
+msgid ""
+"The following diagram highlights the scope and features of each Apollo "
+"release:"
+msgstr ""
+
+#: ../../README.md:83
+msgid "![](docs/demo_guide/images/Apollo_Roadmap_6_0.png)"
+msgstr ""
+
+#: ../../README.md:85
+msgid ""
+"[**Apollo "
+"1.0:**](docs/quickstart/apollo_1_0_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../README.md:87
+msgid ""
+"Apollo 1.0, also referred to as the Automatic GPS Waypoint Following, "
+"works in an enclosed venue such as a test track or parking lot. This "
+"installation is necessary to ensure that Apollo works perfectly with your"
+" vehicle. The diagram below lists the various modules in Apollo 1.0."
+msgstr ""
+
+#: ../../README.md:89
+msgid "![](docs/demo_guide/images/Apollo_1.png)"
+msgstr ""
+
+#: ../../README.md:91
+msgid ""
+"[**Apollo "
+"1.5:**](docs/quickstart/apollo_1_5_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../README.md:93
+msgid ""
+"Apollo 1.5 is meant for fixed lane cruising. With the addition of LiDAR, "
+"vehicles with this version now have better perception of its surroundings"
+" and can better map its current position and plan its trajectory for "
+"safer maneuvering on its lane. Please note, the modules highlighted in "
+"Yellow are additions or upgrades for version 1.5."
+msgstr ""
+
+#: ../../README.md:95
+msgid "![](docs/demo_guide/images/Apollo_1_5.png)"
+msgstr ""
+
+#: ../../README.md:97
+msgid ""
+"[**Apollo "
+"2.0:**](docs/quickstart/apollo_2_0_hardware_system_installation_guide_v1.md"
+"#key-hardware-components)"
+msgstr ""
+
+#: ../../README.md:99
+msgid ""
+"Apollo 2.0 supports vehicles autonomously driving on simple urban roads. "
+"Vehicles are able to cruise on roads safely, avoid collisions with "
+"obstacles, stop at traffic lights, and change lanes if needed to reach "
+"their destination.  Please note, the modules highlighted in Red are "
+"additions or upgrades for version 2.0."
+msgstr ""
+
+#: ../../README.md:101
+msgid "![](docs/demo_guide/images/Apollo_2.png)"
+msgstr ""
+
+#: ../../README.md:103
+msgid ""
+"[**Apollo "
+"2.5:**](docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md)"
+msgstr ""
+
+#: ../../README.md:105
+msgid ""
+"Apollo 2.5 allows the vehicle to autonomously run on geo-fenced highways "
+"with a camera for obstacle detection. Vehicles are able to maintain lane "
+"control, cruise and avoid collisions with vehicles ahead of them."
+msgstr ""
+
+#: ../../README.md:113
+msgid "![](docs/demo_guide/images/Apollo_2_5.png)"
+msgstr ""
+
+#: ../../README.md:115
+msgid "[**Apollo 3.0:**](docs/quickstart/apollo_3_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:117
+msgid ""
+"Apollo 3.0's primary focus is to provide a platform for developers to "
+"build upon in a closed venue low-speed environment. Vehicles are able to "
+"maintain lane control, cruise and avoid collisions with vehicles ahead of"
+" them."
+msgstr ""
+
+#: ../../README.md:119
+msgid "![](docs/demo_guide/images/Apollo_3.0_diagram.png)"
+msgstr ""
+
+#: ../../README.md:121
+msgid "[**Apollo 3.5:**](docs/quickstart/apollo_3_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:123
+msgid ""
+"Apollo 3.5 is capable of navigating through complex driving scenarios "
+"such as residential and downtown areas. The car now has 360-degree "
+"visibility, along with upgraded perception algorithms to handle the "
+"changing conditions of urban roads, making the car more secure and aware."
+" Scenario-based planning can navigate through complex scenarios, "
+"including unprotected turns and narrow streets often found in residential"
+" areas and roads with stop signs."
+msgstr ""
+
+#: ../../README.md:125
+msgid "![](docs/demo_guide/images/Apollo_3_5_Architecture.png)"
+msgstr ""
+
+#: ../../README.md:127
+msgid "[**Apollo 5.0:**](docs/quickstart/apollo_3_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:129
+msgid ""
+"Apollo 5.0 is an effort to support volume production for Geo-Fenced "
+"Autonomous Driving. The car now has 360-degree visibility, along with "
+"upgraded perception deep learning model to handle the changing conditions"
+" of complex road scenarios, making the car more secure and aware. "
+"Scenario-based planning has been enhanced to support additional scenarios"
+" like pull over and crossing bare intersections."
+msgstr ""
+
+#: ../../README.md:132
+msgid "![](docs/demo_guide/images/Apollo_5_0_diagram1.png)"
+msgstr ""
+
+#: ../../README.md:134
+msgid "[**Apollo 5.5:**](docs/quickstart/apollo_5_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:136
+msgid ""
+"Apollo 5.5 enhances the complex urban road autonomous driving "
+"capabilities of previous Apollo releases, by introducing curb-to-curb "
+"driving support. With this new addition, Apollo is now a leap closer to "
+"fully autonomous urban road driving. The car has complete 360-degree "
+"visibility, along with upgraded perception deep learning model and a "
+"brand new prediction model to handle the changing conditions of complex "
+"road and junction scenarios, making the car more secure and aware."
+msgstr ""
+
+#: ../../README.md:138
+msgid "![](docs/demo_guide/images/Apollo_5_5_Architecture.png)"
+msgstr ""
+
+#: ../../README.md:140
+msgid "[**Apollo 6.0:**](docs/quickstart/apollo_6_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:142
+msgid ""
+"Apollo 6.0 incorporates new deep learning models to enhance the "
+"capabilities for certain Apollo modules. This version works seamlessly "
+"with new additions of data pipeline services to better serve Apollo "
+"developers. Apollo 6.0 is also the first version to integrate certain "
+"features as a demonstration of our continuous exploration and "
+"experimentation efforts towards driverless technology."
+msgstr ""
+
+#: ../../README.md:144
+msgid "![](docs/demo_guide/images/Apollo_6_0.png)"
+msgstr ""
+
+#: ../../README.md:146
+msgid "Architecture"
+msgstr ""
+
+#: ../../README.md:148
+msgid "**Hardware/ Vehicle Overview**"
+msgstr ""
+
+#: ../../README.md:150
+msgid "![](docs/demo_guide/images/Hardware_overview_3_5.png)"
+msgstr ""
+
+#: ../../README.md:152
+msgid "**Hardware Connection Overview**"
+msgstr ""
+
+#: ../../README.md:154
+msgid "![](docs/demo_guide/images/Hardware_connection_3_5_1.png)"
+msgstr ""
+
+#: ../../README.md:156
+msgid "**Software Overview**"
+msgstr ""
+
+#: ../../README.md:158
+msgid "![](docs/demo_guide/images/Apollo_3_5_software_architecture.png)"
+msgstr ""
+
+#: ../../README.md:160
+msgid "Installation"
+msgstr ""
+
+#: ../../README.md:162
+msgid ""
+"[Hardware installation "
+"guide](docs/quickstart/apollo_3_5_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../README.md:163
+msgid ""
+"[Software installation "
+"guide](docs/quickstart/apollo_software_installation_guide.md) - **This "
+"step is required**"
+msgstr ""
+
+#: ../../README.md:164
+msgid "[Launch and run Apollo](docs/howto/how_to_launch_and_run_apollo.md)"
+msgstr ""
+
+#: ../../README.md:166
+msgid ""
+"Congratulations! You have successfully built out Apollo without Hardware."
+" If you do have a vehicle and hardware setup for a particular version, "
+"please pick the Quickstart guide most relevant to your setup:"
+msgstr ""
+
+#: ../../README.md:168
+msgid "Quick Starts:"
+msgstr ""
+
+#: ../../README.md:170
+msgid "[Apollo 6.0 QuickStart Guide](docs/quickstart/apollo_6_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:172
+msgid "[Apollo 5.5 QuickStart Guide](docs/quickstart/apollo_5_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:174
+msgid "[Apollo 5.0 QuickStart Guide](docs/quickstart/apollo_5_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:176
+msgid "[Apollo 3.5 QuickStart Guide](docs/quickstart/apollo_3_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:178
+msgid "[Apollo 3.0 QuickStart Guide](docs/quickstart/apollo_3_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:180
+msgid "[Apollo 2.5 QuickStart Guide](docs/quickstart/apollo_2_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:182
+msgid "[Apollo 2.0 QuickStart Guide](docs/quickstart/apollo_2_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:184
+msgid "[Apollo 1.5 QuickStart Guide](docs/quickstart/apollo_1_5_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:186
+msgid "[Apollo 1.0 QuickStart Guide](docs/quickstart/apollo_1_0_quick_start.md)"
+msgstr ""
+
+#: ../../README.md:188
+msgid "Documents"
+msgstr ""
+
+#: ../../README.md:190
+msgid ""
+"[Technical Tutorials](docs/technical_tutorial/README.md): Everything you "
+"need to know about Apollo. Written as individual versions with links to "
+"every document related to that version."
+msgstr ""
+
+#: ../../README.md:192
+msgid ""
+"[How-To Guides](docs/howto/README.md): Brief technical solutions to "
+"common problems that developers face during the installation and use of "
+"the Apollo platform"
+msgstr ""
+
+#: ../../README.md:194
+msgid ""
+"[Specs](docs/specs/README.md): A Deep dive into Apollo's Hardware and "
+"Software specifications (only recommended for expert level developers "
+"that have successfully installed and launched Apollo)"
+msgstr ""
+
+#: ../../README.md:196
+msgid "[FAQs](docs/FAQs/README.md)"
+msgstr ""
+
+#: ../../README.md:198
+msgid "Questions"
+msgstr ""
+
+#: ../../README.md:200
+msgid ""
+"You are welcome to submit questions and bug reports as [GitHub "
+"Issues](https://github.com/ApolloAuto/apollo/issues)."
+msgstr ""
+
+#: ../../README.md:202
+msgid "Copyright and License"
+msgstr ""
+
+#: ../../README.md:204
+msgid ""
+"Apollo is provided under the [Apache-2.0 "
+"license](https://github.com/ApolloAuto/apollo/blob/master/LICENSE)."
+msgstr ""
+
+#: ../../README.md:206
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../README.md:208
+msgid ""
+"Apollo open source platform only has the source code for models, "
+"algorithms and processes, which will be integrated with cybersecurity "
+"defense strategy in the deployment for commercialization and "
+"productization."
+msgstr ""
+
+#: ../../README.md:210
+msgid ""
+"Please refer to the Disclaimer of Apollo in [Apollo's official "
+"website](http://apollo.auto/docs/disclaimer.html)."
+msgstr ""
+
+#: ../../README.md:212
+msgid "Connect with us"
+msgstr ""
+
+#: ../../README.md:213
+msgid ""
+"[Have suggestions for our GitHub "
+"page?](https://github.com/ApolloAuto/apollo/issues)"
+msgstr ""
+
+#: ../../README.md:214
+msgid "[Twitter](https://twitter.com/apolloplatform)"
+msgstr ""
+
+#: ../../README.md:215
+msgid "[YouTube](https://www.youtube.com/channel/UC8wR_NX_NShUTSSqIaEUY9Q)"
+msgstr ""
+
+#: ../../README.md:216
+msgid "[Blog](https://www.medium.com/apollo-auto)"
+msgstr ""
+
+#: ../../README.md:217
+msgid "[Newsletter](http://eepurl.com/c-mLSz)"
+msgstr ""
+
+#: ../../README.md:218
+msgid ""
+"Interested in our turnKey solutions or partnering with us Mail us at: "
+"apollopartner@baidu.com"
+msgstr ""
+

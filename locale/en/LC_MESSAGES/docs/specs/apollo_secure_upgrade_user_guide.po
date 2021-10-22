@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:1
+msgid "Apollo Secure Upgrade SDK"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:3
+msgid ""
+"Currently, most software upgrade solutions are not securely protected. "
+"Therefore, devices are exposed to various security threats during the "
+"upgrade procedure. Apollo secure upgrade SDK provides secure upgrade "
+"capabilities, and can be easily integrated to make the upgrade process "
+"more secure and robust."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:8
+msgid "Features"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:10
+msgid ""
+"Packages are encrypted and signature protected in storing and "
+"transmitting phases."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:12
+msgid "Server and device can authenticate each other."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:13
+msgid "Cryptographic resources are protected properly."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:14
+msgid "Server provides customized authorizations to different devices."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:15
+msgid ""
+"Prevent attackers utilizing the server’s response to replay attack "
+"devices."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:16
+msgid ""
+"Multiple platforms (Ubuntu 14, Centos 6, Centos 7 and Andorid) are "
+"supported."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:18
+msgid "Upgrade Procedure"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:20
+msgid "A typical upgrade procedure is shown below:"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:22
+msgid "![](images/apollo_unsecure_upgrade_procedure.jpg)"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:24
+msgid "The upgrade server generates the upgrade package."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:25
+msgid "Packages are uploaded to the storage server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:26
+msgid "Storage server sends the package URL to upgrade server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:27
+msgid "Device sends the upgrade request to upgrade server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:28
+msgid "Upgrade server replies package URL to the device."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:29
+msgid "Device requests package from the storage server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:30
+msgid "Packages are downloaded to device."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:31
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:50
+msgid "Device installs the package."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:33
+msgid ""
+"After integrating secure upgrade SDK, the upgrade procedure is modified "
+"as follows:"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:36
+msgid "![](images/apollo_secure_upgrade_procedure.jpg)"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:38
+msgid "The upgrade server generates the secure package and package token."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:39
+msgid "Secure packages and the package token are uploaded to the storage server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:40
+msgid ""
+"The storage server sends secure package and package token URLs to the "
+"upgrade server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:42
+msgid ""
+"The device generates the device token and sends to the upgrade server "
+"with the upgrade request."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:44
+msgid ""
+"The upgrade server generates authorization token and sends the token to "
+"the device with a replied secure package URL."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:46
+msgid "Device requests secure package from the storage server."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:47
+msgid "Secure packages are downloaded to device."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:48
+msgid ""
+"Device verifies the secure package with the authorization token, and "
+"generates the original package."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:52
+msgid "User Guide"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:54
+msgid "1. SDK Layout"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:56
+msgid "SDK contains four directories:"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:58
+msgid "python API: python interface."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:59
+msgid "config: SDK root configuration file, log file."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:60
+msgid "certificate: certificate file."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:61
+msgid "depend_lib: dependency libraries."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:63
+msgid "2. Interfaces"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:65
+msgid "a) Initialize"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:67
+msgid "This function should be called before using secure upgrade APIs."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:75
+msgid "b) Device Token Generation"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:77
+msgid "This function is used to generate the device token."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:87
+msgid "c) Package Generation"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:89
+msgid ""
+"This function is used to generate the secure upgrade package and package "
+"token."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:105
+msgid "d) Authorization Token Generation"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:107
+msgid ""
+"This function is used to generate a device’s authorization token, based "
+"on device token and package token."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:123
+msgid "e) Authorization Token and Package Verification"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:125
+msgid ""
+"This function is used to verify the downloaded secure package with the "
+"authorization token and generate the original package."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:138
+msgid "3. Additional Information"
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:140
+msgid "SDK uses standard PEM certificates."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:141
+msgid ""
+"Before using SDK, users need to generate two seperate chains of "
+"certificate for server and device."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:143
+msgid ""
+"Certificates from the server certificate chain are deployed to server and"
+" make sure they cannot sign other certificates."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:145
+msgid ""
+"Certificates from the device certificate chain are deployed to device and"
+" make sure they cannot sign other certificates."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:147
+msgid "Root private key should not be deployed to server or devices."
+msgstr ""
+
+#: ../../docs/specs/apollo_secure_upgrade_user_guide.md:148
+msgid ""
+"Users need to be assigned the read and write permissions of the `config` "
+"directory and the read permission of the `certificate` directory."
+msgstr ""
+

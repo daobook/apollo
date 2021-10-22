@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/technical_documents/parking_scenario.md:1
+msgid "PARKING SCENARIO"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:5
+msgid ""
+"Apollo planning is scenario based, where each driving use case is treated"
+" as a different driving scenario."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:7
+msgid ""
+"There are three scenairos, park and go, pull over and valet parking, "
+"which related to park planning."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:9
+msgid ""
+"park and go: the park and go scenario was designed to handle curb side "
+"parking, planning a new trajectory to the next destination and then "
+"driving along that trajectory. This scenario is extremely useful in "
+"situations like curb-side delivery or passenger pickup or drop-off."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:11
+msgid ""
+"pull over: the pull over scenario was designed especially for maneuvering"
+" to the side of the road upon reaching your destination like for curb-"
+"side parallel parking."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:13
+msgid ""
+"valet parking: the valet parking scenario was designed to safely park "
+"your ego car in a targeted parking spot."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:15
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:17
+msgid ""
+"Please refer "
+"[park](https://github.com/ApolloAuto/apollo/modules/planning/scenarios/park/)"
+" & [park and "
+"go](https://github.com/ApolloAuto/apollo/modules/planning/scenarios/park_and_go/)."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:19
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:21
+msgid ""
+"All three scenarios contain specific stages, the function of scenarios "
+"are realized through the conversion of stages. Thus, figure out the "
+"process of stages conversion is the key to understand this code."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:23
+msgid "PARK AND GO SCENARIO"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:24
+msgid ""
+"This scenario consists of four stages, check stage, adjust stage, pre "
+"cruise stage and cruise stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:26
+msgid "check stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:28
+msgid ""
+"In check stage, by calling ```checkadcreadytocruise()```to check whether "
+"ADC's gear info, ADC's velocity, obstacle position, ADC's heading and "
+"ADC's lateral station meet the requirements."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:34
+msgid ""
+"If ADC is ready to cruise, check stage is finished and we switch to "
+"cruise stage. Otherwise we switch to adjust stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:36
+msgid "adjust stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:38
+msgid ""
+"In adjust stage, we run open space planning algorithms to adjust ADC "
+"position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:42
+msgid ""
+"Once position adjustment is done, we check whether ADC reaches the end of"
+" trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:44
+msgid ""
+"Then we check whether ADC is ready to cruise by calling "
+"```CheckADCReadyToCruise()```."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:46
+msgid ""
+"If ADC is ready to cruise and reaches the end of trajectory, adjust stage"
+" is finished."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:48
+msgid "If steering percentage within the threshold, we switch to cruise stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:50
+msgid "Otherwise we reset init position of ADC and switch to pre cruise stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:54
+msgid "Otherwise ADC stay in adjust stage to adjust ADC position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:56
+msgid "pre cruise stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:58
+msgid ""
+"In pre cruise stage, we run open space planning algorithms to adjust ADC "
+"with the init position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:60
+msgid "Then we check whether the steering percentage within the threshold."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:62
+msgid "If so, pre cruise stage is finished and we switch to cruise stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:64
+msgid "Otherwise ADC stay in pre cruise stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:66
+msgid "cruise stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:67
+msgid "We run an on lane planning algorithms to adjust ADC position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:72
+msgid ""
+"Then we check whether the lateral distacne between ADC and target line "
+"within the threshold."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:77
+msgid "If so, cruise stage is finished and quit park and go scenario is done."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:79
+msgid ""
+"Otherwise ADC stay in cruise stage until ADC cruises to a desired "
+"position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:81
+msgid ""
+"The conversion of stages can be seen in  "
+"![Diagram](images/parking_scenairo_fig_1.png)."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:81
+#: ../../docs/technical_documents/parking_scenario.md:135
+#: ../../docs/technical_documents/parking_scenario.md:155
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:84
+msgid "PULL OVER SCENARIO"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:85
+msgid ""
+"This scenario consists of three stages, approach stage, retry approach "
+"parking stage and retry parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:87
+msgid "approach stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:88
+msgid ""
+"We run an on lane planning algorithms to approach pull over target "
+"position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:90
+msgid ""
+"At first, we check path points data to see whether the s, l and theta "
+"error between ADC and the target path point within the threshold."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:91
+msgid "If so, the pull over status is set to PARK_COMPLETE."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:93
+msgid "Otherwise we add a stop fence for adc to pause at a better position."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:95
+msgid ""
+"However, if we can't find a suitable new stop fence, approach stage is "
+"finished and we switch to retry appoach parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:103
+msgid "Then we check whether adc parked properly."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:104
+msgid ""
+"If ADC pass the destination or park properly, approach stage is finished "
+"and pull over scenario is done."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:106
+msgid ""
+"If adc park failed, approach stage is finished and we switch to retry "
+"appoach parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:115
+msgid "retry approach parking stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:116
+msgid ""
+"We run an on lane planning algorithms to reach the stop line of open "
+"space planner."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:118
+msgid "Check whether ADC stop properly."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:122
+msgid ""
+"If so, retry approach parking stage is finished and switch to retry "
+"parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:124
+msgid "retry parking stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:125
+msgid "We run an open space planning algorithms to park."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:127
+msgid "Check whether ADC park properly(check distance and theta diff)."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:131
+msgid "If so, retry parking stage is finished and pull over scenario is done."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:133
+msgid "Otherwise ADC stay in the stage until ADC park properly."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:135
+msgid ""
+"The conversion of stages can be seen in  "
+"![Diagram](images/parking_scenairo_fig_2.png)."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:138
+msgid "VALET PARKING SCENARIO"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:139
+msgid ""
+"This scenario consists of two stages, approach parking spot stage and "
+"parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:141
+msgid "approach parking spot stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:142
+msgid ""
+"We run an on lane planning algorithms to approach the designated parking "
+"spot."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:144
+msgid ""
+"ADC cruises to a halt once it has found the right stopping point required"
+" in order to reverse into the parking spot."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:148
+msgid ""
+"If stop properly, approach parking spot stage is finished and switch to "
+"parking stage."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:150
+msgid ""
+"Otherwise ADC stay in the stage until it approaches to desired parking "
+"spot."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:152
+msgid "parking stage:"
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:153
+msgid ""
+"Open Space Planner algorithm is used to generate a zig-zag trajectory "
+"which involves both forward and reverse driving (gear changes) in order "
+"to safely park the ego car."
+msgstr ""
+
+#: ../../docs/technical_documents/parking_scenario.md:155
+msgid ""
+"The conversion of stages can be seen in  "
+"![Diagram](images/parking_scenairo_fig_3.png)."
+msgstr ""
+

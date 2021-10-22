@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:1
+msgid "如何生产多传感器融合定位模块所需的地图"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:3
+msgid "本文档介绍了如何利用apollo开源的工具生产多传感器融合定位模块所需要的地图。"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:5
+msgid "1. 事先准备"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:6
+msgid "从[GitHub网站](https://github.com/ApolloAuto/apollo)下载Apollo源代码"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:7
+msgid "按照[教程](../quickstart/apollo_software_installation_guide.md)设置Docker环境"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:8
+#, python-format
+msgid ""
+"~~从[Apollo数据平台](http://data.apollo.auto/?name=sensor%20data&data_key=multisensor&data_type=1&locale"
+"=en-us&lang=en)的“多传感器融合定位数据”栏目下载多传感器融合定位demo数据包（仅限美国地区）。~~"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:9
+msgid ""
+"下载数据集： 请发邮件至*zhouyao@baidu.com*来申请数据。邮件中需要包含以下内容：(1) 你所在的机构名称和邮件地址; "
+"(2)数据集使用目的。"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:11
+msgid "2. 编译apollo工程"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:13
+msgid "2.1 构建docker容器"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:14
+msgid "我们提供了一个叫做*dev-latest*的docker镜像，docker容器会将你本地的apollo工程挂载到 */apollo* 。"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:18
+msgid "2.2 进入docker容器"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:22
+msgid "2.3 编译工程"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:30
+msgid "3. 生产定位地图"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:32
+msgid "在下载好的定位demo数据中，找到一个名为\"apollo3.5\"的文件夹，将其中的数据包解压，假设该文件夹所在路径为DATA_PATH。"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:34
+msgid "执行以下脚本"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:38
+msgid "该脚本会在OUT_FOLDER_PATH的路径下生成定位需要的地图。"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:40
+msgid ""
+"下图为地图中某个node使用LiDAR放射值进行渲染的效果。 "
+"![1](images/msf_localization/map_node_image.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_generate_local_map_for_MSF_localization_module_cn.md:40
+msgid "1"
+msgstr ""
+

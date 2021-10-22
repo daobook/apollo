@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:1
+msgid "如何准备 Bazel 的依赖缓存目录"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:3
+msgid ""
+"本文档描述了在 Apollo 项目中准备 Bazel 的依赖缓存目录 ([Distribution "
+"Directory](https://docs.bazel.build/versions/master/guide.html"
+"#distribution-files-directories)) 的方法。"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:9
+msgid ""
+"根 据[Bazel 官方指南：在封闭环境中运行 "
+"Bazel](https://docs.bazel.build/versions/master/guide.html#running-bazel-"
+"in-an-airgapped-environment) 的说明，Bazel 的隐式依赖项是在 Bazel "
+"初次运行的时候从网络上拉取的。然而，即使所 有在 WORKSPACE 中指定的依赖项均已到位，这在封闭环境或者网络连接不稳定的状况下依 "
+"然会造成问题。"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:15
+msgid ""
+"为便利国内开发者，对 Apollo 中使用到的各 Bazel 版本，Apollo 均提供**与之对应**的 Bazel "
+"隐式依赖压缩包文件。请注意，对不同版本的 Bazel 来说，其隐式依赖项不尽相同 。当 Bazel "
+"版本更新后，请务必按照本文档描述的方法，**重新**执行一遍。"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:19
+msgid "接下来，我们先熟悉把 Apollo 提供的 Bazel 隐式依赖压缩包解压到依赖缓存目录的流程 。"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:22
+msgid "如何利用 Apollo 提供的 Bazel 隐式依赖压缩包"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:24
+msgid "在 Apollo 容器中执行`bazel version`确定 Bazel 版本："
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:35
+msgid "在本示例中的 Bazel 版本为`3.5.0`。在以下行文中，我们将以`BAZEL_VERSION`指代之。"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:37
+msgid "运行如下命令以下载对应的 Bazel 隐式依赖压缩包"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:43
+msgid "将压缩包解压到由环境变量`${APOLLO_BAZEL_DIST_DIR}`指代的 Bazel 依赖缓存目录"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:51
+msgid "自己动手构建 Bazel 的隐式依赖项的方法"
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:53
+msgid ""
+"如果您需要的 Bazel 版本 Apollo 未能提供，除了 在[GitHub Issues "
+"页](https://github.com/ApolloAuto/apollo/issues) 提交 Issue 外 "
+"，您还可以通过如下方法在一台网络连接良好的机器上自己动手构建："
+msgstr ""
+
+#: ../../docs/howto/how_to_prepare_bazel_dist_dir_cn.md:75
+msgid ""
+"然后，你就可以在 Apollo 容器中顺利执行`./apollo.sh build`，`./apollo.sh test` 等 "
+"命令而无需担心依赖项拉不下来的问题了。"
+msgstr ""
+

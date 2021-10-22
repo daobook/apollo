@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:1
+msgid "Apollo 3.5 Software Architecture"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:3
+msgid ""
+"Core software modules running on the Apollo 3.5 powered autonomous "
+"vehicle include:"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:5
+msgid ""
+"**Perception** — The perception module identifies the world surrounding "
+"the autonomous vehicle. There are two important submodules inside "
+"perception: obstacle detection and traffic light detection."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:6
+msgid ""
+"**Prediction** — The prediction module anticipates the future motion "
+"trajectories of the perceived obstacles."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:7
+msgid ""
+"**Routing** — The routing module tells the autonomous vehicle how to "
+"reach its destination via a series of lanes or roads."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:8
+msgid ""
+"**Planning** — The planning module plans the spatio-temporal trajectory "
+"for the autonomous vehicle to take."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:9
+msgid ""
+"**Control** — The control module executes the planned spatio-temporal "
+"trajectory by generating control commands such as throttle, brake, and "
+"steering."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:10
+msgid ""
+"**CanBus** — The CanBus is the interface that passes control commands to "
+"the vehicle hardware. It also passes chassis information to the software "
+"system."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:11
+msgid ""
+"**HD-Map** — This module is similar to a library. Instead of publishing "
+"and subscribing messages, it frequently functions as query engine support"
+" to provide ad-hoc structured information regarding the roads."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:12
+msgid ""
+"**Localization** — The localization module leverages various information "
+"sources such as GPS, LiDAR and IMU to estimate where the autonomous "
+"vehicle is located."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:13
+msgid ""
+"**HMI** - Human Machine Interface or DreamView in Apollo is a module for "
+"viewing the status of the vehicle, testing other modules and controlling "
+"the functioning of the vehicle in real-time."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:14
+msgid ""
+"**Monitor** - The surveillance system of all the modules in the vehicle "
+"including hardware."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:15
+msgid ""
+"**Guardian** - A new safety module that performs the function of an "
+"Action Center and intervenes should Monitor detect a failure."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:22
+msgid "The interactions of these modules are illustrated in the picture below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:24
+msgid "![img](images/Apollo_3_5_software_architecture.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:24
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:43
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:53
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:57
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:63
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:75
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:81
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:89
+msgid "img"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:26
+msgid ""
+"Every module is running as a separate CarOS-based ROS node. Each module "
+"node publishes and subscribes certain topics. The subscribed topics serve"
+" as data input while the published topics serve as data output. The "
+"detailed interactions are described in the following sections."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:28
+msgid "Perception"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:30
+msgid "Apollo Perception 3.5 has following new features:"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:32
+msgid "**Support for VLS-128 Line LiDAR**"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:33
+msgid "**Obstacle detection through multiple cameras**"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:34
+msgid "**Advanced traffic light detection**"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:35
+msgid "**Configurable sensor fusion**"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:37
+msgid ""
+"The perception module incorporates the capability of using 5 cameras (2 "
+"front, 2 on either side and 1 rear) and 2 radars (front and rear) along "
+"with 3 16-line LiDARs (2 rear and 1 front) and 1 128-line LiDAR to "
+"recognize obstacles and fuse their individual tracks to obtain a final "
+"track list. The obstacle sub-module detects, classifies and tracks "
+"obstacles. This sub-module also predicts obstacle motion and position "
+"information (e.g., heading and velocity). For lane line, we construct "
+"lane instances by postprocessing lane parsing pixels and calculate the "
+"lane relative location to the ego-vehicle (L0, L1, R0, R1, etc.)."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:39
+msgid "Prediction"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:41
+msgid ""
+"The prediction module estimates the future motion trajectories for all "
+"the perceived obstacles. The output prediction message wraps the "
+"perception information. Prediction subscribes to localization, planning "
+"and perception obstacle messages as shown below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:43
+msgid "![img](images/pred.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:45
+msgid ""
+"When a localization update is received, the prediction module updates its"
+" internal status. The actual prediction is triggered when perception "
+"sends out its perception obstacle message."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:47
+msgid "Localization"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:49
+msgid ""
+"The localization module aggregates various data to locate the autonomous "
+"vehicle. There are two types of localization modes: OnTimer and Multiple "
+"SensorFusion."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:51
+msgid ""
+"The first localization method is RTK-based, with a timer-based callback "
+"function `OnTimer`, as shown below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:53
+msgid "![img](images/localization1.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:55
+msgid ""
+"The other localization method is the Multiple Sensor Fusion (MSF) method,"
+" where a bunch of event-triggered callback functions are registered, as "
+"shown  below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:57
+msgid "![img](images/localization2.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:59
+msgid "Routing"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:61
+msgid ""
+"The routing module needs to know the routing start point and routing end "
+"point, to compute the passage lanes and roads. Usually the routing start "
+"point is the autonomous vehicle location. The `RoutingResponse` is "
+"computed and published as shown below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:63
+msgid "![img](images/routing1.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:65
+msgid "Planning"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:67
+msgid ""
+"Apollo 3.5 uses several information sources to plan a safe and collision "
+"free trajectory, so the planning module interacts with almost every other"
+" module. As Apollo matures and takes on different road conditions and "
+"driving use cases, planning has evolved to a more modular, scenario "
+"specific and wholistic approach. In this approach, each driving use case "
+"is treated as a different driving scenario. This is useful because an "
+"issue now reported in a particular scenario can be fixed without "
+"affecting the working of other scenarios as opposed to the previous "
+"versions, wherein an issue fix affected other driving use cases as they "
+"were all treated as a single driving scenario."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:69
+msgid ""
+"Initially, the planning module takes the prediction output. Because the "
+"prediction output wraps the original perceived obstacle, the planning "
+"module subscribes to the traffic light detection output rather than the "
+"perception obstacles output."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:71
+msgid ""
+"Then, the planning module takes the routing output. Under certain "
+"scenarios, the planning module might also trigger a new routing "
+"computation by sending a routing request if the current route cannot be "
+"faithfully followed."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:73
+msgid ""
+"Finally, the planning module needs to know the location (Localization: "
+"where I am) as well as the current autonomous vehicle information "
+"(Chassis: what is my status)."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:75
+msgid "![img](images/planning1.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:77
+msgid "Control"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:79
+msgid ""
+"The Control takes the planned trajectory as input, and generates the "
+"control command to pass to CanBus.  It has five main data interfaces: "
+"OnPad, OnMonitor, OnChassis, OnPlanning and OnLocalization."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:81
+msgid "![img](images/control1.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:83
+msgid ""
+"The `OnPad` and `OnMonitor` are routine interactions with the PAD-based "
+"human interface and simulations."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:85
+msgid "CanBus"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:87
+msgid "The CanBus has two data interfaces as shown below."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:89
+msgid "![img](images/canbus1.png)"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:91
+msgid ""
+"The first one is the `OnControlCommand` which is an event-based publisher"
+" with a callback function, which is triggered when the CanBus module "
+"receives control commands and the second one is `OnGuardianCommand`."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:93
+msgid "HMI"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:95
+msgid ""
+"Human Machine Interface or DreamView in Apollo is a web application that:"
+"     -\tvisualizes the current output of relevant autonomous driving "
+"modules, e.g. planning trajectory, car localization, chassis status, etc."
+"     -\tprovides human-machine interface for user to view hardware "
+"status, turn on/off of modules, and start the autonomous driving car."
+"     -\tprovides debugging tools, such as PnC Monitor to efficiently "
+"track module issues."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:100
+msgid "Monitor"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:102
+msgid ""
+"The surveillance system of all the modules in the vehicle including "
+"hardware. Monitor receives Data from different modules and passes them on"
+" to HMI for the driver to view and ensure that all the modules are "
+"working without any issue. In the event of a module or hardware failure, "
+"monitor sends an alert to Guardian (new Action Center Module) which then "
+"decides on which action needs to be taken to prevent a crash."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:104
+msgid "Guardian"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:106
+msgid ""
+"This new module is basically an action center that takes a decision based"
+" on the data that is sent by Monitor. There are 2 main functions of "
+"Guardian:"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:107
+msgid ""
+"All modules working fine - Guardian allows the flow of control to work "
+"normally. Control signals are sent to CANBus as if Guardian were not "
+"present."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:108
+msgid ""
+"Module crash is detected by Monitor - if there is a failure detected by "
+"Monitor, Guardian will prevent Control signals from reaching CANBus and "
+"bring the car to a stop. There are 3 ways in which Guardian decides how "
+"to stop the car, and to do so, Guardian turns to the final Gatekeeper, "
+"Ultrasonic sensors,"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:109
+msgid ""
+"If the Ultrasonic sensor is running fine without detecting an obstacle, "
+"Guardian will bring the car to a slow stop"
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:110
+msgid ""
+"If the sensor is not responding, Guardian applies a hard brake to bring "
+"the car to an immediate stop."
+msgstr ""
+
+#: ../../docs/specs/Apollo_3.5_Software_Architecture.md:111
+msgid ""
+"This is a special case, If the HMI informs the driver of an impending "
+"crash and the driver does not intervene for 10 seconds, Guardian applies "
+"a hard brake to bring the car to an immediate stop."
+msgstr ""
+

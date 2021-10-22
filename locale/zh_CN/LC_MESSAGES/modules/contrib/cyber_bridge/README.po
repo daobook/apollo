@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/contrib/cyber_bridge/README.md:1
+msgid "Apollo Cyber bridge for the `master` branch"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:3
+msgid ""
+"This is bridge that exposes custom TCP socket for accepting and "
+"transmitting Cyber messages."
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:5
+msgid "Building"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:7
+msgid "Run the build from the `/apollo` directory inside docker."
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:13
+msgid "Running"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:15
+msgid "From the `/apollo` directory, execute:"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:21
+msgid "For extra logging:"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:27
+msgid "Add extra `-port 9090` argument for custom port (9090 is default)."
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:29
+msgid "Example"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:31
+msgid "In one terminal launch `cyber_bridge`:"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:37
+msgid "In another terminal launch example talker:"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:43
+msgid "In one more terminal launch example listener:"
+msgstr ""
+
+#: ../../modules/contrib/cyber_bridge/README.md:49
+msgid ""
+"Now you should observe talker and listener sending & receiving message "
+"with incrementing integer."
+msgstr ""
+

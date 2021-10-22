@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/tools/record_parse_save/README.md:1
+msgid "Apollo cyber-record file parser (Python based)"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:5
+msgid ""
+"This tool presents multiple examples of how to parse data from a record "
+"file and save using predefined format. The tool has been built on example"
+" provided within Apollo (`/apollo/cyber/python/examples/`)."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:9
+msgid "The samples provided here illustrate cases for, parsing data from:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:11
+msgid ""
+"lidar: based on [Velodyne "
+"VLS-128](../../../docs/specs/Lidar/VLS_128_Installation_Guide.md)"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:13
+msgid ""
+"radar: based on [Continental "
+"ARS-408-21](../../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md)"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:15
+msgid ""
+"camera: based on [Leopard Imaging Inc's Camera - LI-"
+"USB30-AZ023WDRB](../../../docs/specs/Camera/Leopard_Camera_LI-"
+"USB30-AZ023WDR__Installation_Guide.md)"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:18
+msgid "Files and functions:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:20
+msgid "The files/functions provided are as follows:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:22
+msgid ""
+"{file}`record_parse_save.py`: main function that parses record files from"
+" and saves extracted data to specified location"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:24
+msgid "{file}`parse_lidar.py`: function to parse lidar data"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:25
+msgid "{file}`parse_radar.py`: function to parse radar data"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:26
+msgid "{file}`parse_camera.py`: function to parse camera data"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:27
+msgid ""
+"{file}`parser_params.yaml`: YAML file with details of record-file "
+"location, where the output files should be saved and what sensor data "
+"should be parsed along with specific channel-names associated with "
+"particular sensor, it's configuration and it's location."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:31
+msgid ""
+"list of channels in a record-file can be obtained using `cyber_recorder "
+"info`. For example, to get details on a sample record file "
+"`20190422142705.record.00000` saved at: "
+"`/apollo/data/record_files/2019-04-22-14-27-05/2019-04-22-14-27-05_records/`"
+" enter following at command prompt:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:36
+msgid ""
+"`cyber_recorder info "
+"/apollo/data/record_files/2019-04-22-14-27-05/2019-04-22-14-27-05_records/20190422142705.record.00000`"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:37
+msgid "The output on screen will look like that presented in the image below:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:39
+msgid "![alt text](./images/sample_cyber_info.jpg)"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:39
+msgid "alt text"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:41
+msgid "Dependency"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:47
+msgid "How-to-use:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:49
+msgid ""
+"It is assumed that the user is within Apollo docker environment and has "
+"successfully built it. Please check documentation on [Build "
+"Apollo](../../../docs/howto/how_to_launch_and_run_apollo.md) if required."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:53
+msgid ""
+"Modify parameters specified within `parser_params.yaml` to serve your "
+"purpose."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:54
+msgid ""
+"After correct parameters are specified in the YAML file, run parser "
+"function in `/apollo` using:"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:57
+msgid "`./bazel-bin/modules/tools/record_parse_save/record_parse_save`"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:59
+msgid ""
+"parsed sensor data will be saved in new folder along with associated "
+"capture or scan timestamps in a text file."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:62
+msgid "NOTES"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:64
+msgid ""
+"In the example setup here, parsed data is saved within the parent folder "
+"containing the records-file's folder. Every saved file has associated "
+"timestamp with it."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:67
+msgid ""
+"All record-files within the folder are parsed. If any record file is "
+"corrupt, the parser will display error message and continue to next "
+"record file."
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:69
+msgid "`radar` data is saved in text files in JSON format for each scan"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:70
+msgid "`lidar` point-cloud data is saved in text files for each scan"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:71
+msgid "`camera` images are saved in jpeg file for each capture"
+msgstr ""
+
+#: ../../modules/tools/record_parse_save/README.md:72
+msgid ""
+"All timestamps are saved in a separate file with `timestamp` suffix, in "
+"the same order in which the parsed files are saved in corresponding "
+"folder."
+msgstr ""
+

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:1
+msgid "rf"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:3
+msgid ""
+"oprofile is a performance monitoring tool that runs on linux system. "
+"Generally, oprofile has been included in linux system modules, but "
+"oprofile module is not supported on ARM, so we have to install it "
+"manually."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:5
+msgid ""
+"oprofile supports multi-thread program. It records the number of function"
+" calls, and can also output the source code to show results user-"
+"friendly. So it fits well to performance monitoring on TX2."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:8
+msgid "Download"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:9
+msgid "Download the newest version of oprofile"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:15
+msgid "Installation"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:22
+msgid "Test"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:23
+msgid ""
+"After installation，perform command `operf` to see if it could get CPU "
+"information normally. If it fails and the output is like this:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:25
+msgid "`unable to open /sys/devices/system/cpu/cpu0/online`"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:27
+msgid ""
+"This is because TX2 only launches 4 CPU cores by default. The other two "
+"CPU cores are closed. Use below command to open the other two CPU cores:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:33
+msgid "How to use"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:34
+msgid ""
+"oprofile provides variety of commands, the commands `operf`, `opreport` "
+"and `opannotate` are used more often. Take testing perception as an "
+"example."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:37
+msgid ""
+"1.modify `script/apollo_bash.sh`, add command `operf` behind keyword "
+"`nuhup` in line 239. As shown below："
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:39
+msgid "![operf_command](images/TX2/operf_command.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:39
+msgid "operf_command"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:41
+msgid "2.use script like `./script/perception.sh` to launch perception program"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:43
+msgid ""
+"And now, operf is collecting data of perception program. Stopping "
+"perception program in any approach can stop the collecting process."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:45
+msgid "Output"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:46
+msgid ""
+"After stopping perception program, a directory named oprofile_data is "
+"generated in current directory. Use command `opreport` to show the total "
+"statistics:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:51
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:63
+msgid "As shown below:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:53
+msgid "![opreport_](images/TX2/opreport_.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:53
+msgid "opreport_"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:55
+msgid "Use command `opreport` to show the statistics of each function:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:59
+msgid ""
+"Because there is too much information to show, so it’s better to save the"
+" output into a file."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:65
+msgid "![opreport_file](images/TX2/opreport_file.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:65
+msgid "opreport_file"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:67
+msgid "Use command `opannotate` to show the statistics with source code:"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:72
+msgid ""
+"Notice: It only supports one operf program to be running at any time, so "
+"when operf program is running, we could launch another program with "
+"`operf`."
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:76
+msgid ""
+"oprofile official website: "
+"[http://oprofile.sourceforge.net/news/](http://oprofile.sourceforge.net/news/)"
+msgstr ""
+
+#: ../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2.md:79
+msgid ""
+"oprofile user manual: "
+"[http://oprofile.sourceforge.net/doc/index.html](http://oprofile.sourceforge.net/doc/index.html)"
+msgstr ""
+

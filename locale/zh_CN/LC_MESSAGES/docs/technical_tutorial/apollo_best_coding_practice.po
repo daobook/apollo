@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:1
+msgid "Apollo Best Coding Practice"
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:3
+msgid "Always build, test, and lint all."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:9
+msgid "Always write unit tests and put them along with the source files."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:17
+msgid "A Bazel target should contain at most one header and one source file."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:39
+msgid ""
+"You can use `./apollo.sh format <path/to/BUILD>` to fix BUILD file style "
+"issues."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:42
+msgid ""
+"In general, Apollo follows [Google C++ coding "
+"style](https://google.github.io/styleguide/cppguide.html). You should run"
+" `scripts/clang_format.sh <path/to/cpp/dirs/or/files>` or `./apollo.sh "
+"format -c <path/to/cpp/dirs/or/files>` to fix C++ style issues."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:47
+msgid "Simple and unified function signature."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:66
+msgid "Use const whenever possible."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:75
+msgid "Prefer C++ headers over C headers."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:77
+msgid ""
+"We prefer using `#include <ctime>` over `#include <time.h>`, `<cmath>` "
+"over `<math.h>`, `<cstdio>` over `<stdio.h>`, `<cstring>` over "
+"`<string.h>`, etc."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:80
+msgid "Include necessary headers **only**. No more, no less."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:82
+msgid ""
+"Please also pay attention to header orders. Again, you can use `apollo.sh"
+" format -c` or `scripts/clang_format.sh` to fix header order issues."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:86
+msgid "List only direct dependencies in `deps` section of a Bazel target."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:88
+msgid ""
+"Generally, only targets to which the included headers belongs should be "
+"listed as a dependency."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:91
+msgid ""
+"For example, suppose `sandwich.h` includes `bread.h` which in turn "
+"includes `flour.h`. Since `sandwich.h` doesn't include `flour.h` directly"
+" (who wants flour in their sandwich?), the BUILD file would look like "
+"this:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:121
+msgid "Conform to the DRY principle."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:123
+msgid ""
+"Don't repeat yourself, in any way. Avoid duplicate classes, functions, "
+"const variables, or a simple piece of code. Some examples:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:126
+msgid ""
+"It's fine to refer a name with full path once, like "
+"`apollo::common::util::Type`, but better to make a short alias if you "
+"need to use twice or more: `using apollo::common::util::Type;`."
+msgstr ""
+
+#: ../../docs/technical_tutorial/apollo_best_coding_practice.md:129
+msgid ""
+"It's fine to access a sub-field of proto once in cascade style, like "
+"`a_proto.field_1().field_2().field_3()`, but better to save the reference"
+" of a common part first if you need to access it twice or more: `const "
+"auto& field_2 = a_proto.field_1().field_2();`."
+msgstr ""
+

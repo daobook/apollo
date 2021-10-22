@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:1
+msgid "Installation Guide of Racobit B01HC Radar"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:3
+msgid ""
+"Racobit developed one Radar product with **60 degree FOV** and **150 m** "
+"detection range for autonomous driving needs."
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:5
+msgid "![radar_image](images/b01hc.png)"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:5
+msgid "radar_image"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:7
+msgid "Installation"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:9
+msgid ""
+"A mechanical mount needs to be designed to mount the Radar to the desired"
+" position. The mount should be able to hold the Radar in a way that the "
+"scanning plane is parallel to the bottom of the car, so that the scanning"
+" radar wave would not be blocked by the road surface causing it to create"
+" ghost objects. If a stationary mount cannot satisfy such requirement, "
+"please consider adding adjustment in vertical and horizontal directions "
+"to the mount"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:10
+msgid ""
+"When you receive the Radar package, a set of connection cables should be "
+"included. Connect the water-proof connector to the Radar, and guide the "
+"cable through/under the car into the trunk. Secure the cable to the body "
+"of the car if necessary"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:11
+msgid "Connect the power cable to **12VDC** power supply."
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:12
+msgid "Connect the CAN output to the CAN interface of the IPC."
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:13
+msgid ""
+"You should be able to receive the CAN messages through the CAN port once "
+"the Radar is powered."
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:14
+msgid ""
+"Please discuss with the vendor for additional support if needed while "
+"integrating it with your vehicle."
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:16
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Radar/Racobit_B01HC_Radar_Installation_Guide.md:18
+msgid "This device is `Apollo Hardware Development Platform Supported`"
+msgstr ""
+

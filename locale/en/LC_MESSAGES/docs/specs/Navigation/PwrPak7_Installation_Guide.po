@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:1
+msgid "Installation Guide of NovAtel PwrPak7"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:3
+msgid ""
+"NovAtel PwrPak7 is an integrated INS receiver, which has GNSS receiver "
+"and IMU included in the device."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:5
+msgid "![novatel_pp7](images/pp7_pic.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:5
+msgid "novatel_pp7"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:7
+msgid "Installing the GPS Receiver"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:9
+msgid "The overview of Novatel PwrPak7 is shown as below."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:11
+msgid "![pp7_poweron](images/pp7_power.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:11
+msgid "pp7_poweron"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:13
+msgid ""
+"To power on the receiver, connect +VIN_A and +VIN_B from power extension "
+"cable to power source (i.e., 12VDC) positive side, and connect both -VIN "
+"to negative side. Refer to link below about PwrPak7 power cable."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:15
+msgid ""
+"[NovAtel ProPak7 Power "
+"Cable](https://docs.novatel.com/OEM7/Content/Technical_Specs_Receiver/PwrPak7_Power_Cable.htm)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:17
+msgid ""
+"The PwrPak7 receiver supports dual antenna, ANT1 is the port on top and "
+"considered as primary antenna, which is required by Apollo system. ANT2 "
+"is the port on bottom and considered as secondary antenna, and this is "
+"optional."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:19
+msgid ""
+"To send RTK correction and log data, similar as Novatel ProPak6, we can "
+"use a USB cable and connect to the MicroUSB port on PwrPak7, and the "
+"other side to the IPC on the vehicle."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:21
+msgid ""
+"The COM2 port and PPS signal are required to connect to Lidar system, "
+"which needs an extension cable of the 26-pin connector on PwrPak7. For "
+"detail information about the extension cable, refer to Novatel PwrPak All"
+" I/O Cable website below."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:23
+msgid ""
+"[NovAtel ProPak7 All I/O "
+"Cable](https://docs.novatel.com/OEM7/Content/Technical_Specs_Receiver/PwrPak7_All_IO_Cable.htm?tocpath=Specifications%7CPwrPak7%20Technical%20Specifications%7C_____11)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:25
+msgid ""
+"You can place the PwrPak7 in most places in the vehicle, but it is "
+"suggested that you follow these recommendations:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:27
+msgid ""
+"Place and secure the PwrPak7 inside the trunk with the Y-axis pointing "
+"forward."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:28
+msgid "Use a magnetic adapter to tightly attach the antenna to the trunk lid."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:29
+msgid ""
+"Install the antenna cable in the trunk by opening the trunk and placing "
+"the cable in the space between the trunk lid and the body of the car."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:31
+msgid "Taking the Lever Arm Measurement"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:33
+msgid "Follow these steps:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:35
+msgid "Before taking the measurement, turn on the IPC."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:36
+msgid ""
+"When the PwrPak7 and the GPS Antenna are in position, the distance from "
+"the PwrPak7 to the GPS Antenna must be measured. The center of the "
+"PwrPak7 IMU and the center of the antenna are labeled on the exterior of "
+"the devices."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:37
+msgid ""
+"The distance should be measured as: X offset, Y offset, and Z offset. The"
+" axis should be determined by the IMU. The error of offset must be within"
+" one centimeter to achieve high accuracy in positioning and localization."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:39
+msgid "Configuring the PwrPak7"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:41
+msgid ""
+"Configure the GPS and IMU as shown below. This process can be done either"
+" by keying in the commands, or by loading batch configuraion file in "
+"NovAtel Connect."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:43
+msgid "For PwrPak7:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:91
+msgid ""
+"**![warning_icon](images/warning_icon.png) WARNING:** Modify the "
+"**<u>SETINSTRANSLATION</u>T** line based on the actual measurement (of "
+"the antenna and the IMU offset). ANT1 is for primary antenna which is "
+"required, and ANT2 is for secondary antenna and it is optional."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:91
+msgid "warning_icon"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:93
+msgid "For example:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:99
+msgid ""
+"The first 3 numbers indicate the result of the lever arm distance "
+"measurement. The last 3 numbers are the uncertainty of the measurement."
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:101
+msgid "References"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:103
+msgid "For more information about the NovAtel PwrPak7, see:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:104
+msgid ""
+"[NovAtel PwrPak7 Installation & Operation User "
+"Manual](https://docs.novatel.com/OEM7/Content/PDFs/PwrPak7_Install_Ops_Manual.pdf)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:105
+msgid ""
+"[NovAtel PwrPak7 Installation "
+"Overview](https://docs.novatel.com/OEM7/Content/PwrPak_Install/PwrPak7_Install_Overview.htm?TocPath=Installation%7CPwrPak7%20Installation%7C_____4)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:107
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Navigation/PwrPak7_Installation_Guide.md:109
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

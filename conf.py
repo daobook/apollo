@@ -16,7 +16,7 @@
 
 # -- 项目信息 -----------------------------------------------------
 
-project = 'Apollo Sphinx'
+project = 'Apollo Auto'
 copyright = '2021, xinetzone'
 author = 'xinetzone'
 

@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/drivers/camera/README.md:1
+msgid "Driver for V4L USB Cameras"
+msgstr ""
+
+#: ../../modules/drivers/camera/README.md:2
+msgid "This package is based on V4L devices specifically instead of just UVC."
+msgstr ""
+
+#: ../../modules/drivers/camera/README.md:4
+msgid "License"
+msgstr ""
+
+#: ../../modules/drivers/camera/README.md:5
+msgid ""
+"usb_cam is released with a BSD license. For full terms and conditions, "
+"see the [LICENSE](LICENSE) file."
+msgstr ""
+
+#: ../../modules/drivers/camera/README.md:7
+msgid "Authors"
+msgstr ""
+
+#: ../../modules/drivers/camera/README.md:8
+msgid "See the [AUTHORS](AUTHORS.md) file for a full list of contributors."
+msgstr ""
+

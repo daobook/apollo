@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:1
+msgid "How to add a new lidar detector algorithm"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:3
+msgid ""
+"The processing flow of lidar perception module is shown below: "
+"![](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/lidar_perception_data_flow.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:6
+msgid ""
+"The detector algorithm introduced by this document is located at "
+"Detection Component listed below. Current architecture of Detection "
+"Component is shown： ![lidar detection high-"
+"level](images/lidar_detection_1.png) ![lidar "
+"detection](images/lidar_detection_2.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:6
+msgid "lidar detection high-level"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:6
+msgid "lidar detection"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:10
+msgid ""
+"As we can see from above structure, lidar detector algorithm, such as "
+"PointPillars, is the derived class of `base_lidar_detector` which acts as"
+" a abstract class member of `base_lidar_obstacle_detection` located in "
+"Detection Component. Next, We will introduce how to add a new lidar "
+"detector algorithm."
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:12
+msgid ""
+"Apollo has provided two lidar detector algorithms -- PointPillars and CNN"
+" （NCut will no longer be updated）. Both of them could be easily changed "
+"or replaced by other algorithms. The input of algorithm should be "
+"original points cloud data, while the output should be obastacle object "
+"data. This document will introduce how to add a new lidar detector "
+"algorithm, the basic task sequence is listed below："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:14
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:21
+msgid "Define a class that inherits `base_lidar_detector`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:15
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:92
+msgid "Implement the class `NewLidarDetector`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:16
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:127
+msgid "Add config and param proto file for `NewLidarDetector`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:17
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:178
+msgid "Update lidar_obstacle_detection.conf"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:19
+msgid "The steps are elaborated below for better understanding:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:23
+msgid ""
+"All the lidar detector algorithms shall inherit "
+"`base_lidar_detector`，which defines a set of interfaces. Here is an "
+"example of the detector implementation:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:48
+msgid "The function signature of `base_lidar_detector` is pre-defined："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:94
+msgid ""
+"To ensure the new detector could function properly, `NewLidarDetector` "
+"should at least override the interface Init(), Detect(), Name() defined "
+"in `base_lidar_detector`. Init() is resposible for config loading, class "
+"member initialization, etc. And Detect() will implement the basic logic "
+"of algorithm. A concrete `NewLidarDetector.cc` example is shown："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:129
+msgid ""
+"Follow the following steps to add config and param proto file for the new"
+" detector:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:131
+msgid ""
+"Define a `proto` for the new detector configurations according to the "
+"requirements of your algorithm. As a reference， you can found and follow "
+"the `proto` definition of `cnn_segmentation` at "
+"`modules/perception/lidar/lib/detector/cnn_segmentation/proto/cnnseg_config.proto`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:133
+msgid ""
+"Once finishing your `proto`, for example `newlidardetector_config.proto`,"
+" add the following content:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:144
+msgid ""
+"Define a `proto` for the new detector parameters according to the "
+"requirements of your algorithm. Also, as a reference, you can found and "
+"follow the `proto` definition of `cnn_segmentation` at "
+"`modules/perception/lidar/lib/detector/cnn_segmentation/proto/cnnseg_param.proto`."
+" Similarly, add the following content once finished:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:153
+msgid ""
+"Refer to "
+"`modules/perception/production/conf/perception/lidar/config_manager.config`"
+" and add your detector path:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:159
+msgid ""
+"Refer to the `modules/cnnseg.config` in the same folder and create "
+"`newlidardetector.config`:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:172
+msgid ""
+"Refer to `cnnseg` and create `newlidardetector` folder at "
+"`modules/perception/production/data/perception/lidar/models/`. Add "
+"`.conf` files for different sensors："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:180
+msgid ""
+"To use your new lidar detector algorithm in Apollo，you need to modify the"
+" value of `detector` to your detector's name in "
+"`lidar_obstacle_detection.conf` located in corresponding sensor folder in"
+" "
+"`modules/perception/production/data/perception/lidar/models/lidar_obstacle_pipline`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_lidar_detector_algorithm.md:182
+msgid ""
+"Once you finished the above modifications, you new detector should take "
+"effect in Apollo."
+msgstr ""
+

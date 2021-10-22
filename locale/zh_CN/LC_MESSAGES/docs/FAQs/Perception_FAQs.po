@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/FAQs/Perception_FAQs.md:1
+msgid "Perception FAQs"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:3
+msgid "How many typer of sensors calibrations are present?"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:5
+msgid "There are 5 types of calibration:"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:7
+msgid "Camera - Camera"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:8
+msgid "Camera - LiDAR"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:9
+msgid "Radar - Camera"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:10
+msgid "LiDAR - GNSS"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:11
+msgid "IMU - Vehicle"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:13
+msgid ""
+"For additional information on Sensor Calibration, please refer to our "
+"[calibration guide](../quickstart/apollo_2_0_sensor_calibration_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:16
+msgid ""
+"For additional information on LiDAR - GNSS calibration please refer to "
+"our [LiDAR - GNSS calibration "
+"guide](https://github.com/ApolloAuto/apollo/blob/r1.5.0/docs/quickstart/apollo_1_5_lidar_calibration_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:21
+msgid ""
+"Is the order of sensor calibration important at all ? Can I do IMU - "
+"vehicle before Radar - Camera ?"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:23
+msgid ""
+"Yes it is important, but you could calibrate the IMU - Vehicle before "
+"Radar - Camera"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:28
+msgid "Are you going to release the source code for the calibration tools ?"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:30
+msgid ""
+"No, we currently have not released the source code for our calibration "
+"tools."
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:34
+msgid ""
+"How do you ensure that the right calibration files are loaded for the "
+"perception module ?"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:36
+msgid ""
+"In each car, specific Camera parameters should be saved and the default "
+"parameters will be replaced by the saved parameters when you install the "
+"release version. When user select a vehicle, we'll copy files from "
+"calibration/data/[vehicle]/[src_data] to target places. The code is at "
+"[Link](../../modules/dreamview/backend/hmi/vehicle_manager.cc). This "
+"action is totally configurable, see the [example "
+"here](../../modules/dreamview/conf/vehicle_data.pb.txt)"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:46
+msgid ""
+"I am trying to run the extrinsic sensor calibration tools and they seem "
+"to complain about the INS_STAT not being 56. But when I echo the "
+"/apollo/sensor/gnss/ins_stat topic I can see that the position type is "
+"56. What could be the problem?"
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:48
+msgid ""
+"The error log occurs (stat=-1) whenever the tool has not received any "
+"GNSS message or the image stamp is not correct. Please check the topic of"
+" GNSS message or image stamp."
+msgstr ""
+
+#: ../../docs/FAQs/Perception_FAQs.md:54
+msgid "**More Perception FAQs to follow**"
+msgstr ""
+

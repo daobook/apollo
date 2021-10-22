@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:1
+msgid "传感器标定 FAQs"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:3
+msgid "如何查看传感器是否有数据输出?"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:5
+msgid "使用 rostopic 命令。例如，查看 HDL-64ES3 的输出，可以在终端中输入:"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:11
+msgid "若该 topic 的数据会显示在终端上，则激光雷达工作正常。"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:13
+msgid "如何查看车辆的定位状态?"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:15
+msgid "以使用 Novatel 组合惯导为例，在终端中输入:"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:21
+msgid ""
+"找到“pos_type”字段，若该字段的值为 56，则表示进入了良好的定位状态 (RTK_FIXED)， 可以用于标定。若不为 "
+"56，则无法获得可靠的标定结果。"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:24
+msgid "如何进行质检?"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:26
+msgid ""
+"目前进行质检方法主要通过人工来完成。标定完成后，页面会提供标定过程中拼接得到的点 "
+"云。若标定结果良好，会得到锐利和清晰的拼接点云，可反映出标定场地的细节。通常质检 "
+"的参照物有平整的建筑立面、路灯和电线杆以及路沿等。若标定质量较差，则会使拼接点云 出现一些模糊、重影的效果。图 1 "
+"是两张不同标定质量的拼接点云对比。"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:31
+msgid "![](../quickstart/images/calibration/lidar_calibration/good_calib.png)"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:37
+msgid "![](../quickstart/images/calibration/lidar_calibration/poor_calib.png)"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:47
+msgid "如何解决标定程序权限错误？"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:49
+msgid "Output path 需要`write`权限来创建文件夹以及保存标定结果，若缺少相关权限，则会出 现如下错误："
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:56
+msgid "输入以下命令，来为 Output path 添加`write`权限："
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:63
+msgid "如何解决执行 sensor_calibration.sh 时出现的权限错误？"
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:65
+msgid "Log 存储文件夹需要`write`权限来创建日志，若缺少相关权限，则会出现如下错误："
+msgstr ""
+
+#: ../../docs/FAQs/Calibration_FAQs_cn.md:71
+msgid "输入以下命令，来为脚本添加`write`权限："
+msgstr ""
+

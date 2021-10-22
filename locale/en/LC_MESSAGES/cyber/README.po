@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../cyber/README.md:1
+msgid "Introduction"
+msgstr ""
+
+#: ../../cyber/README.md:3
+msgid ""
+"Apollo Cyber RT is an open source, high performance runtime framework "
+"designed specifically for autonomous driving scenarios. Based on a "
+"centralized computing model, it is greatly optimized for high "
+"concurrency, low latency, and high throughput in autonomous driving."
+msgstr ""
+
+#: ../../cyber/README.md:5
+msgid ""
+"During the last few years of the development of autonomous driving "
+"technologies, we have learned a lot from our previous experience with "
+"Apollo. The industry is evolving and so is Apollo. Going forward, Apollo "
+"has already moved from development to productization, with volume "
+"deployments in the real world, we see the demands for the highest level "
+"of robustness and performance. That’s why we spent years building and "
+"perfecting Apollo Cyber RT, which addresses that requirements of "
+"autonomous driving solutions."
+msgstr ""
+
+#: ../../cyber/README.md:7
+msgid "Key benefits of using Apollo Cyber RT:"
+msgstr ""
+
+#: ../../cyber/README.md:9
+msgid "Accelerate development"
+msgstr ""
+
+#: ../../cyber/README.md:10
+msgid "Well defined task interface with data fusion"
+msgstr ""
+
+#: ../../cyber/README.md:11
+msgid "Array of development tools"
+msgstr ""
+
+#: ../../cyber/README.md:12
+msgid "Large set of sensor drivers"
+msgstr ""
+
+#: ../../cyber/README.md:13
+msgid "Simplify deployment"
+msgstr ""
+
+#: ../../cyber/README.md:14
+msgid "Efficient and adaptive message communication"
+msgstr ""
+
+#: ../../cyber/README.md:15
+msgid "Configurable user level scheduler with resource awareness"
+msgstr ""
+
+#: ../../cyber/README.md:16
+msgid "Portable with fewer dependencies"
+msgstr ""
+
+#: ../../cyber/README.md:17
+msgid "Empower your own autonomous vehicles"
+msgstr ""
+
+#: ../../cyber/README.md:18
+msgid "The default open source runtime framework"
+msgstr ""
+
+#: ../../cyber/README.md:19
+msgid "Building blocks specifically designed for autonomous driving"
+msgstr ""
+
+#: ../../cyber/README.md:20
+msgid "Plug and play your own AD system"
+msgstr ""
+
+#: ../../cyber/README.md:22
+msgid "Documents"
+msgstr ""
+
+#: ../../cyber/README.md:24
+msgid ""
+"***New!!*** [How to Develop Cyber RT inside Docker Environment on Both "
+"x86 and ARM "
+"Platform](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_Docker.md):"
+" Official docker image for Cyber RT development, which is easiest way to "
+"build and play with Cyber RT. On top of that, we officially support "
+"development of Cyber RT on both x86 and ARM platform."
+msgstr ""
+
+#: ../../cyber/README.md:26
+msgid ""
+"[Apollo Cyber RT Quick "
+"Start](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_Quick_Start.md):"
+" Everything you need to know about how to start developing your first "
+"application module on top of Apollo Cyber RT."
+msgstr ""
+
+#: ../../cyber/README.md:28
+msgid ""
+"[Apollo Cyber RT Developer "
+"Tools](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_Developer_Tools.md):"
+" Detailed guidance on how to use the developer tools from Apollo Cyber "
+"RT."
+msgstr ""
+
+#: ../../cyber/README.md:30
+msgid ""
+"[Apollo Cyber RT API for "
+"Developers](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_API_for_Developers.md):"
+" A comprehensive guide to explore all the APIs of Apollo Cyber RT, with "
+"many concrete examples in source code."
+msgstr ""
+
+#: ../../cyber/README.md:32
+msgid ""
+"[Apollo Cyber RT "
+"FAQs](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_FAQs.md):"
+" Answers to the most frequently asked questions about Apollo Cyber RT."
+msgstr ""
+
+#: ../../cyber/README.md:34
+msgid ""
+"[Apollo Cyber RT "
+"Terms](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_Terms.md):"
+" Commonly used terminologies in Cyber RT documentation and code."
+msgstr ""
+
+#: ../../cyber/README.md:36
+msgid ""
+"[Apollo Cyber RT Python Wrapper](python/README.md): Develop projects in "
+"Python."
+msgstr ""
+
+#: ../../cyber/README.md:38
+msgid "More documents to come soon!"
+msgstr ""
+

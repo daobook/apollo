@@ -24,23 +24,21 @@ jobs:
       - run: conda --version
       - run: which python
 
-      # 安装依赖包
-      - name: Install dependencies
+      - name: 安装依赖包
         run: |
           pip install -r requirements.txt
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
       
-      # # 安装 HTML 主题
-      # - name: Install theme
+      # - name: 安装 HTML 主题
       #   run: |
       #     git clone https://github.com/xinetzone/xin-css.git docs/_static/xin-css
       #     git clone https://github.com/xinetzone/w3css.git docs/_static/w3css
 
-      # 构建 Sphinx 文档
-      - name: Build the book
+      - name: 构建 Sphinx 文档
         run: |
-          make html
+          make -e SPHINXOPTS="-Dlanguage='zh_CN'" html/zh_CN
+          make -e SPHINXOPTS="-Dlanguage='en'" html/en
 
       # 部署 HTML 到 gh-pages 分支
       - name: GitHub Pages action

@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:1
+msgid "How to Build, Test and Run your Python Application"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:3
+msgid ""
+"Starting from Apollo 6.0, building and testing Python applications in "
+"Apollo is done using "
+"[Bazel](https://docs.bazel.build/versions/master/be/python.html) "
+"exclusively. We use Bazel Python rules to build, run, and test Python "
+"programs. This not only frees us from hand-crafting Protobuf dependencies"
+" and managing Python related Env variables manually, but also helps with "
+"managing third party Python module dependency."
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:10
+msgid "Create the BUILD file"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:12
+msgid ""
+"Generally you need a BUILD target for each python file, which could be "
+"one of"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:14
+msgid "`py_library(name=\"lib_target\", ...)`"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:15
+msgid "`py_binary(name=\"bin_target\", ...)`"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:16
+msgid "`py_test(name=\"test_target\", ...)`"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:18
+msgid "Example"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:56
+msgid ""
+"Above is a BUILD file template, you can also use the "
+"[BUILD](../../cyber/python/BUILD) and "
+"[BUILD](../../cyber/python/cyber_py3/examples/BUILD) file as examples."
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:61
+msgid "Build, Test and Run commands"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:63
+msgid "To build any target:"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:69
+msgid "To run a binary target:"
+msgstr ""
+
+#: ../../docs/howto/how_to_build_and_run_python_app.md:75
+msgid "To run a unit test target:"
+msgstr ""
+

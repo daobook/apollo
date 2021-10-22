@@ -1,0 +1,1984 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:1
+msgid "Apollo 1.0 Hardware and System Installation Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:3
+msgid "[About This Guide](#about-this-guide)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:4
+msgid "[Document Conventions](#document-conventions)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:5
+msgid "[Introduction](#introduction)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:6
+msgid "[Documentation](#documentation)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:7
+msgid "[Key Hardware Components](#key-hardware-components)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:8
+msgid "[Additional Components Required](#additional-components-required)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:9
+msgid "[Onboard Computer System - IPC](#onboard-computer-system---ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:10
+msgid "[IPC Configuration](#ipc-configuration)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:11
+msgid "[IPC Front and Rear Views](#ipc-front-and-rear-views)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:12
+msgid "[Controller Area Network (CAN) Card](#controller-area-network-(can)-card)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:13
+msgid ""
+"[Global Positioning System (GPS) and Inertial Measurement Unit (IMU"
+")](#global-positioning-system-(gps)-and-inertial-measurement-unit-(imu))"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:15
+msgid "[Option 1: The NovAtel SPAN-IGM-A1](#option-1:-the-novatel-span-igm-a1)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:16
+msgid ""
+"[Option 2: The NovAtel SPAN ProPak6 and NovAtel IMU-IGM-A1](#option-2"
+":-the-novatel-span-propak6-and-novatel-imu-igm-a1)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:17
+msgid "[The GPS Receiver/Antenna](#the-gps-receiver/antenna)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:18
+msgid "[Overview of the Installation Tasks](#overview-of-the-installation-tasks)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:19
+msgid "[Steps for the Installation Tasks](#steps-for-the-installation-tasks)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:20
+msgid "[At the Office](#at-the-office)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:21
+msgid "[Preparing the IPC](#preparing-the-ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:22
+msgid ""
+"[Installing the Software for the IPC](#installing-the-software-for-the-"
+"ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:23
+msgid "[In the Vehicle](#in-the-vehicle)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:24
+msgid "[Prerequisites](#prerequisites)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:25
+msgid ""
+"[Diagrams of the Major Component Installations](#diagrams-of-the-major-"
+"component-installations)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:26
+msgid ""
+"[Installing the GPS Receiver and Antenna](#installing-the-gps-receiver-"
+"and-antenna)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:27
+msgid "[Installing the IPC](#installing-the-ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:28
+msgid "[Configuring the GPS and IMU](#configuring-the-gps-and-imu)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:29
+msgid "[Setting up the Network](#setting-up-the-network)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:30
+msgid "[Recommendations](#recommendations)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:31
+msgid "[Additional Tasks Required](#additional-tasks-required)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:32
+msgid "[Next Steps](#next-steps)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:35
+msgid "About This Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:37
+msgid ""
+"The *Apollo 1.0 Hardware and System Installation Guide* provides the "
+"instructions to install all of the hardware components and system "
+"software for the **Apollo Project **. The system installation information"
+" included pertains to the procedures to download and install the Apollo "
+"Linux Kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:39
+msgid "Document Conventions"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:41
+msgid "The following table lists the conventions that are used in this document:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "**Icon**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "**Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "**Bold**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "Emphasis"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "`Mono-space font`"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "Code, typed data"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "_Italic_"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "Titles of documents, sections, and headings Terms used"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "![info](images/info_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:48
+msgid "info"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid ""
+"**Info**  Contains information that might be useful.  Ignoring the Info "
+"icon has no negative consequences."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "![tip](images/tip_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:49
+msgid "tip"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid ""
+"**Tip**. Includes helpful hints or a shortcut that might assist you in "
+"completing a task."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "![online](images/online_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:50
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:131
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:134
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:150
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:171
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:187
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:191
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:205
+msgid "online"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid ""
+"**Online**. Provides a link to a particular web site where you can get "
+"more information."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid "![warning](images/warning_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:51
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:299
+msgid "warning"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md
+msgid ""
+"**Warning**. Contains information that must **not** be ignored or you "
+"risk failure when you perform a certain task or step."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:53
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:55
+msgid ""
+"The **Apollo Project** is an initiative that provides an open, complete, "
+"and reliable software platform for Apollo partners in the automotive and "
+"autonomous driving industries. The aim of this project is to enable these"
+" entities to develop their own self-driving systems based on Apollo "
+"software stack."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:57
+msgid "Documentation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:59
+msgid "The following set of documentation describes Apollo 1.0:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:61
+msgid ""
+"***<u>[Apollo Hardware and System Installation Guide]</u>***  ─ Provides "
+"the instructions to install the hardware components and the system "
+"software for the vehicle:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:63
+msgid "**Vehicle**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:65
+msgid "Industrial PC (IPC)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:66
+msgid "Global Positioning System (GPS)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:67
+msgid "Inertial Measurement Unit (IMU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:68
+msgid "Controller Area Network (CAN) card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:69
+msgid "Hard drive"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:70
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:242
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:470
+msgid "GPS Antenna"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:71
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:244
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:472
+msgid "GPS Receiver"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:73
+msgid "**Software**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:74
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:265
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:371
+msgid "Ubuntu Linux"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:75
+msgid "Apollo Linux Kernel"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:77
+msgid ""
+"***<u>[Apollo Quick Start Guide]</u>*** ─ A combination tutorial and "
+"roadmap that provide the complete set of end-to-end instructions. The "
+"Quick Start Guide also provides links to additional documents that "
+"describe the conversion of a regular car to an autonomous-driving "
+"vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:80
+msgid "Key Hardware Components"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:82
+msgid "The key hardware components to install include:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:84
+msgid "Onboard computer system ─ Neousys Nuvo-5095GC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:85
+msgid "Controller Area Network (CAN) Card ─ ESD CAN-PCIe/402-1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:86
+msgid ""
+"General Positioning System (GPS) and Inertial Measurement Unit (IMU) ─ "
+"You can select one of the following options:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:88
+msgid "NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:89
+msgid "NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:91
+msgid "Additional Components Required"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:93
+msgid ""
+"You need to provide these additional components for the Additional Tasks "
+"Required:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:95
+msgid "A 4G router for Internet access"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:96
+msgid "A monitor, keyboard, and mouse for debugging at the car onsite"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:97
+msgid ""
+"Cables: Video Graphics Array (VGA) connector, a Digital Visual Interface "
+"(DVI) cable (optional)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:98
+msgid "Apple iPad Pro: 9.7-inch, Wi-Fi (optional)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:100
+msgid ""
+"The features of the key hardware components are presented in the "
+"subsequent sections."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:102
+msgid "Onboard Computer System - IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:104
+msgid ""
+"The onboard computer system is an industrial PC (IPC) for the autonomous "
+"vehicle and uses the **NeousysNuvo-5095GC** that is powered by a sixth-"
+"generation Intel Skylake core i7-6700 CPU."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:106
+msgid ""
+"The Neousys Nuvo-5095GC is the central unit of the autonomous driving "
+"system (ADS)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:108
+msgid "IPC Configuration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:110
+msgid "Configure the IPC as follows:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:112
+msgid "32GB DDR4 RAM"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:113
+msgid "MezIO-V20-EP module (with ignition control for in-vehicle usage)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:114
+msgid "PO-160W-OW 160W AC/DC power adapter"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:115
+msgid "CSM2 module (x16 PCIe expansion Gen3 8-lane cassette)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:117
+msgid "IPC Front and Rear Views"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:119
+msgid ""
+"The front and rear views of the IPC are shown with the Graphics "
+"Processing Unit (GPU) installed in the following pictures:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:121
+msgid "The front view of the Nuvo-5095GC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:123
+msgid "![ipc_front](images/ipc_front.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:123
+msgid "ipc_front"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:125
+msgid "The rear view of the Nuvo-5095GC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:127
+msgid "![ipc_back](images/ipc_back.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:127
+msgid "ipc_back"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:129
+msgid "For more information about the Nuvo-5095GC, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:131
+msgid "![online](images/online_icon.png) Neousys Nuvo-5095GC Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:134
+msgid ""
+"[http://www.neousys-tech.com/en/product/application/gpu-computing/product"
+"/nuvo-5095gc-gpu-computer](http://www.neousys-"
+"tech.com/en/product/application/gpu-computing/product/nuvo-5095gc-gpu-"
+"computer) ![online](images/online_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:138
+msgid "Neousys Nuvo-5095GC-Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:140
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:630
+msgid ""
+"[http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual](http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:142
+msgid "Controller Area Network (CAN) Card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:144
+msgid "The CAN card to use with the IPC is **ESD** **CAN-PCIe/402**."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:146
+msgid "![can_card](images/can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:146
+msgid "can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:148
+msgid "For more information about the CAN-PCIe/402, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:150
+msgid "![online](images/online_icon.png)    ESD CAN-PCIe/402 Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:152
+msgid ""
+"[https://esd.eu/en/products/can-pcie402](https://esd.eu/en/products/can-"
+"pcie402)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:156
+msgid "Global Positioning System (GPS) and Inertial Measurement Unit (IMU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:158
+msgid ""
+"There are **two** GPS-IMU **options** available,and the choice depends "
+"upon the one that most fits your needs:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:160
+msgid "**Option 1: NovAtel SPAN-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:161
+msgid "**Option 2: NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:163
+msgid "Option 1: The NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:165
+msgid ""
+"The NovAtel SPAN-IGM-A1 is an integrated, single-box solution that offers"
+" tightly coupled Global Navigation Satellite System (GNSS) positioning "
+"and inertial navigation featuring the NovAtel OEM615 receiver."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:167
+msgid "![novatel_imu](images/Novatel_imu.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:167
+msgid "novatel_imu"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:169
+msgid "For more information about the NovAtel SPAN-IGM-A1, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:171
+msgid "![online](images/online_icon.png) NovAtel SPAN-IGM-A1 Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:173
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:689
+msgid ""
+"[https://www.novatel.com/products/span-gnss-inertial-systems/span-"
+"combined-systems/span-igm-a1/](https://www.novatel.com/products/span-"
+"gnss-inertial-systems/span-combined-systems/span-igm-a1/)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:175
+msgid "Option 2: The NovAtel SPAN ProPak6 and NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:177
+msgid ""
+"NovAtel ProPak6 is a standalone GNSS receiver. It works with a separate "
+"NovAtel- supported IMU (in this case, the NovAtel IMU-IGM-A1)to provide "
+"localization."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:179
+msgid ""
+"The ProPak6 provides the latest and most sophisticated enclosure product "
+"manufactured by NovAtel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:181
+msgid ""
+"The IMU-IGM-A1 is an IMU that pairs with a SPAN-enabled GNSS receiver "
+"such as the SPAN ProPak6."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:183
+msgid "![novatel_pp6](images/Novatel_pp6.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:183
+msgid "novatel_pp6"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:185
+msgid ""
+"For more information about the NovAtel SPAN ProPak6 and the IMU-IGM-A1, "
+"see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:187
+msgid ""
+"![online](images/online_icon.png) NovAtel ProPak6 Installation & "
+"Operation Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:189
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:606
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:685
+msgid "[https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf](https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:191
+msgid "![online](images/online_icon.png)NovAtel IMU-IGM-A1 Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:193
+msgid ""
+"[https://www.novatel.com/products/span-gnss-inertial-systems/span-imus"
+"/span-mems-imus/imu-igm-a1/#overview](https://www.novatel.com/products"
+"/span-gnss-inertial-systems/span-imus/span-mems-imus/imu-"
+"igm-a1/#overview)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:195
+msgid "The GPS Receiver/Antenna"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:197
+msgid ""
+"The GPS Receiver/Antenna used with the GPS-IMU component is the **NovAtel"
+" GPS-703-GGG-HV**."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:199
+msgid ""
+"**NOTE: **The GPS NovAtelGPS-703-GGG-HV works with either model of the "
+"two GPS-IMU options that are described in the previous section, Global "
+"Positioning System (GPS) and Inertial Measurement Unit (IMU)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:201
+msgid "![gps_receiver](images/gps_receiver.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:201
+msgid "gps_receiver"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:203
+msgid "For more information about the NovAtel GPS-703-GGG-HV, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:205
+msgid "![online](images/online_icon.png) NovAtel GPS-703-GGG-HV Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:207
+msgid ""
+"[https://www.novatel.com/products/gnss-antennas/high-performance-gnss-"
+"antennas/gps-703-ggg-hv/](https://www.novatel.com/products/gnss-antennas"
+"/high-performance-gnss-antennas/gps-703-ggg-hv/)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:211
+msgid "Overview of the Installation Tasks"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:213
+msgid "Installing the hardware and the software components involves these tasks:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:215
+msgid "**AT THE OFFICE:**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:216
+msgid ""
+"Prepare the IPC:  a. Examine the Graphics Processing Unit (GPU) cassette "
+"to determine if you need to remove the GPU card (if it was pre-"
+"installed).  b. Prepare and then install the Controller Area Network "
+"(CAN) card by first repositioning the CAN card termination jumper before "
+"you insert the card into the slot."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:220
+msgid "Install the hard drive (if none was pre-installed) in the IPC."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:222
+msgid "You can also choose to replace a pre-installed hard drive if you prefer."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:224
+msgid "**Recommendations** :"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:225
+msgid "Install a Solid-State Drive (SSD) for better reliability."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:226
+msgid "Use a high-capacity drive if you need to collect driving data."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:228
+msgid ""
+"Prepare the IPC for powering up:  a. Attach the power cable to the power "
+"connector (terminal block).  b. Connect the monitor, Ethernet, keyboard, "
+"and mouse to the IPC.  c. Connect the IPC to a power source."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:233
+msgid ""
+"Install the software on the IPC (some Linux experience is required):  a. "
+"Install Ubuntu Linux.  b. Install the Apollo Linux kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:237
+msgid "**IN THE VEHICLE:**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:239
+msgid ""
+"Make sure that all the modifications for the vehicle, which are listed in"
+" the section Prerequisites, have been performed."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:241
+msgid ""
+"Install the major components (according to the illustrations and the "
+"instructions included in this document):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:243
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:471
+msgid "IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:246
+msgid ""
+"The actual steps to install all of the hardware and software components "
+"are detailed in the section, Steps for the Installation Tasks."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:248
+msgid "Steps for the Installation Tasks"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:250
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:369
+msgid "This section describes the steps to install:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:252
+msgid "The key hardware and software components"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:253
+msgid "The hardware in the vehicle"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:255
+msgid "At the Office"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:257
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:466
+msgid "Perform these tasks:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:259
+msgid "Prepare the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:260
+msgid "Install the CAN card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:261
+msgid "Install or replace the hard drive"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:262
+msgid "Prepare the IPC for powering up"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:264
+msgid "Install the software for the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:266
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:372
+msgid "Apollo Kernel"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:268
+msgid "Preparing the IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:270
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:377
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:612
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:672
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:765
+msgid "Follow these steps:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:272
+msgid ""
+"In the IPC, examine the GPU cassette to determine if there is a pre-"
+"installed GPU card, which you need to remove:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:274
+msgid ""
+"a. Turn over the IPC to unscrew the four screws (shown in the purple "
+"squares) on the bottom of computer that are holding the GPU cassette in "
+"place:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:276
+msgid "![ipc_gpu_cassette](images/ipc_gpu_cassette.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:276
+msgid "ipc_gpu_cassette"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:278
+msgid "b. Remove the GPU cassette from the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:280
+msgid "![ipc_gpu_cassette_remove](images/ipc_gpu_cassette_remove.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:280
+msgid "ipc_gpu_cassette_remove"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:282
+msgid ""
+"c. Remove the GPU cassette from the IPC: Unscrew three additional screws "
+"(shown in the purple circles) on the bottom of the GPU cassette to open "
+"the cover:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:284
+msgid "![ipc_gpu_cassette_unscrew](images/ipc_gpu_cassette_unscrew.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:284
+msgid "ipc_gpu_cassette_unscrew"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:286
+msgid "d. Remove the GPU card (if installed):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:288
+msgid "![ipc_gpu_remove](images/ipc_gpu_remove.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:288
+msgid "ipc_gpu_remove"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:293
+msgid "Prepare and install the CAN card:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:295
+msgid ""
+"a. Set the CAN card termination jumper by removing the red jumper cap "
+"(shown in yellow circles) from its default location and placing it at its"
+" termination position:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:297
+msgid "![prepare_can_card](images/prepare_can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:297
+msgid "prepare_can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:299
+msgid ""
+"**![warning](images/warning_icon.png)WARNING**: The CAN card will not "
+"work if the termination jumper is not set correctly."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:301
+msgid "b. Insert the CAN card into the slot in the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:303
+msgid "![insert_can_card](images/insert_can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:303
+msgid "insert_can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:305
+msgid "c. Reinstall the GPU cassette in the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:307
+msgid "![reinstall_gpu_cassette](images/reinstall_gpu_cassette.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:307
+msgid "reinstall_gpu_cassette"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:309
+msgid "Install or replace the hard drive."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:311
+msgid ""
+"You need to install one or two 2.5” SSD or hard drives if none have been "
+"pre-installed. As an alternative, you might want to replace a pre-"
+"installed hard drive with one of your own (say, an SSD)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:313
+msgid ""
+"![tip_icon](images/tip_icon.png) An SSD drive is highly recommended for "
+"better reliability. Also consider using a high-capacity drive if you need"
+" to collect driving data."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:313
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:323
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:350
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:374
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:383
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:385
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:409
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:778
+msgid "tip_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:315
+msgid "To install the hard drive:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:317
+msgid ""
+"a. Unscrew the three screws (shown in the purple circles) to open the "
+"hard drive cover (caddy):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:319
+msgid "![hard_drive_unscrew](images/hard_drive_unscrew.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:319
+msgid "hard_drive_unscrew"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:321
+msgid "b. Install the drive in the caddy (as shown with an Intel SSD):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:323
+msgid ""
+"![tip_icon](images/tip_icon.png) Observe the way the hard drive is "
+"situated in the caddy for the installation.  The Serial Advanced "
+"Technology Attachment (SATA) and the power connectors should be placed in"
+" the caddy facing the end that has the **two** screw holes showing."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:326
+msgid "![hard_drive](images/hard_drive.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:326
+msgid "hard_drive"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:330
+msgid "![hard_drive_connect](images/hard_drive_connect.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:330
+msgid "hard_drive_connect"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:332
+msgid "c. Reinstall the SSD caddy in the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:334
+msgid "![reinstall_ssd](images/reinstall_ssd.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:334
+msgid "reinstall_ssd"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:336
+msgid "Prepare the IPC for powering up:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:338
+msgid ""
+"a. Attach the power cable to the power connector(terminal block) that "
+"comes with the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:340
+msgid ""
+"![warning_icon](images/warning_icon.png)**WARNING**: Make sure that the "
+"positive(labeled **R** for red) and the negative(labeled **B** for black)"
+" wires of the power cable are inserted into the correct holes on the "
+"power terminal block."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:340
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:477
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:745
+msgid "warning_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:342
+msgid "![ipc_power_RB](images/ipc_power_RB.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:342
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:616
+msgid "ipc_power_RB"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:344
+msgid "b.   Connect the monitor, Ethernet cable, keyboard, and mouse to the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:346
+msgid "![ipc_power_back](images/ipc_power_back.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:346
+msgid "ipc_power_back"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:348
+msgid "​"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:350
+msgid ""
+"![tip_icon](images/tip_icon.png)It is recommended that you use a Video "
+"Graphics Array (VGA) connector for the monitor for these reasons:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:352
+msgid ""
+"If you do not see any screen display when the IPC boots up, switch to the"
+" VGA input. The Neousys Nuvo-5095GC IPC **always** outputs to a **VGA "
+"port** even if there is no monitor connected. Consequently, the Linux "
+"installer might “elect” to output to a VGA port instead of a DVI port."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:353
+msgid ""
+"If you do not see a dialog window during the installation process when "
+"using a dual-monitor setup, try switching between VGA and DVI to find it."
+" The Linux installer might detect two monitors and use them both."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:355
+msgid "For better display quality, you have the option to:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:357
+msgid ""
+"Connect to another monitor using a DVI cable, or a High-Definition "
+"Multimedia Interface (HMI) with DVI-HMI adapter"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:358
+msgid "Use the DVI/HDMI port on the same monitor"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:360
+msgid "c. Connect the power:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:362
+msgid "![ipc_connect_power](images/ipc_connect_power.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:362
+msgid "ipc_connect_power"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:367
+msgid "Installing the Software for the IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:374
+msgid ""
+"![tip_icon](images/tip_icon.png)It is assumed that you have experience "
+"working with Linux to successfully perform the software installation."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:376
+msgid "Installing Ubuntu Linux"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:379
+msgid "Create a bootable Ubuntu Linux USB flash drive:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:381
+msgid ""
+"Download Ubuntu (or a variant such as Xubuntu) and follow the online "
+"instructions to create a bootable USB flash drive."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:383
+msgid ""
+"![tip_icon](images/tip_icon.png)It is recommended that you use **Ubuntu "
+"14.04.3**."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:385
+msgid ""
+"![tip_icon](images/tip_icon.png)You can type F2 during the system boot "
+"process to enter the BIOS settings. It is recommended that you disable "
+"Quick Boot and Quiet Boot in the BIOS to make it easier to catch any "
+"issues in the boot process."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:387
+msgid ""
+"For more information about Ubuntu, see: "
+"![online_icon](images/online_icon.png) Ubuntu for Desktop web site:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:387
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:536
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:548
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:604
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:628
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:683
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:687
+msgid "online_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:390
+msgid "[https://www.ubuntu.com/desktop](https://www.ubuntu.com/desktop)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:392
+msgid "Install Ubuntu Linux:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:394
+msgid ""
+"a.   Insert the Ubuntu installation drive into a USB port and turn on the"
+" system.  b.   Install Linux by following the on-screen instructions."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:397
+msgid ""
+"Perform a software update and the installation:  a.   Reboot into Linux "
+"after the installation is done.  b.   Launch the Software Updater to "
+"update to the latest software packages (for the installed distribution) "
+"or type the following commands in a terminal program such as GNOME "
+"Terminal."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:404
+msgid ""
+"c. Launch a terminal program such as GNOME Terminal and type the "
+"following command to install the Linux 4.4 kernel:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:409
+msgid ""
+"![tip_icon](images/tip_icon.png)The IPC must have Internet access to "
+"update and install software. Make sure that the Ethernet cable is "
+"connected to a network with Internet access. You might need to configure "
+"the network for the IPC if the network that it is connected to is not "
+"using the Dynamic Host Configuration Protocol (DHCP)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:412
+msgid "Installing the Apollo Kernel"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:414
+msgid ""
+"The Apollo runtime in the vehicle requires the [Apollo "
+"Kernel](https://github.com/ApolloAuto/apollo-kernel). You are strongly "
+"recommended to install the pre-built kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:416
+msgid "Use pre-built Apollo Kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:418
+msgid ""
+"You get access and install the pre-built kernel with the following "
+"commands."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:420
+msgid "Download the release packages from the release section on github"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:424
+msgid "Install the kernel After having the release package downloaded:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:431
+msgid "Reboot your system by the `reboot` command"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:432
+msgid ""
+"Build the ESD CAN driver source code Now you need to build the ESD CAN "
+"driver source code according to [ESDCAN-"
+"README.md](https://github.com/ApolloAuto/apollo-kernel/blob/master/linux"
+"/ESDCAN-README.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:435
+msgid "Build your own kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:436
+msgid ""
+"If have modified the kernel, or the pre-built kernel is not the best for "
+"your platform, you can build your own kernel with the following steps."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:438
+msgid "Clone the code from repository"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:443
+msgid ""
+"Add the ESD CAN driver source code according to [ESDCAN-"
+"README.md](https://github.com/ApolloAuto/apollo-kernel/blob/master/linux"
+"/ESDCAN-README.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:445
+msgid "Build the kernel with the following command."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:449
+msgid "Install the kernel the same way as using a pre-built Apollo Kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:451
+msgid "Optional: Test the ESD CAN device node"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:452
+msgid "After rebooting the IPC with the new kernel:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:454
+msgid ""
+"a. Create the CAN device node by issuing the following commands in a "
+"terminal:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:459
+msgid ""
+"b. Test the CAN device node using the test program that is part of the "
+"ESD CAN software package that you have acquired from ESD Electronics."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:462
+msgid "The IPC is now ready to be mounted on the vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:464
+msgid "In the Vehicle"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:468
+msgid ""
+"Make the necessary modifications to the vehicle as specified in the list "
+"of prerequisites"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:469
+msgid "Install the major components:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:475
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:477
+msgid ""
+"**![warning_icon](images/warning_icon.png)WARNING**: Prior to mounting "
+"the major components (GPS Antenna, IPC, and GPS Receiver) in the vehicle,"
+" certain modifications must be performed as specified in the list of "
+"prerequisites. The instructions for making the mandatory changes in the "
+"list are outside the scope of this document."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:479
+msgid "The list of prerequisites are as follows:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:481
+msgid ""
+"The vehicle must be modified for “drive-by-wire” technology by a "
+"professional service company. Also, a CAN interface hookup must be "
+"provided in the trunk where the IPC will be mounted."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:482
+msgid ""
+"A power panel must be installed in the trunk to provide power to the IPC "
+"and the GPS-IMU. The power panel would also service other devices in the "
+"vehicle such as a 4G LTE router. The power panel should be hooked up to "
+"the power system in the vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:483
+msgid ""
+"A custom-made rack must be installed to mount the GPS-IMU Antenna on top "
+"of the vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:484
+msgid "A custom-made rack must be installed to mount the GPS-IMU in the trunk."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:485
+msgid ""
+"A 4G LTE router must be mounted in the trunk to provide Internet access "
+"for the IPC. The router must have built-in Wi-Fi access point (AP) "
+"capability to connect to other devices, such as an iPad, to interface "
+"with the autonomous driving (AD) system. A user would be able to use the "
+"mobile device to start AD mode or monitor AD status, for example."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:487
+msgid "Diagrams of the Major Component Installations"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:489
+msgid ""
+"The following two diagrams indicate the locations of where the three "
+"major components (GPS Antenna, IPC, and GPS Receiver) should be installed"
+" on the vehicle:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:493
+msgid "![major_component_side_view](images/major_component_side_view.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:493
+msgid "major_component_side_view"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:497
+msgid "![major_component_rear_view](images/major_component_rear_view.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:497
+msgid "major_component_rear_view"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:501
+msgid "Installing the GPS Receiver and Antenna"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:503
+msgid ""
+"This section provides general information about installing **one** of two"
+" choices:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:505
+msgid "**Option 1:** GPS-IMU: **NovAtel SPAN-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:506
+msgid "**Option 2:** GPS-IMU: **NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:508
+msgid "Option 1: Installing the NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:510
+msgid ""
+"The installation instructions describe the procedures to mount, connect, "
+"and take the lever arm measurements for the GPS-IMU NovAtel SPAN-IGM-A1."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:512
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:578
+msgid "Mounting"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:514
+msgid ""
+"You can place the GPS-IMU NovAtel SPAN-IGM-A1 in most places in the "
+"vehicle but it is suggested that you follow these recommendations:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:516
+msgid ""
+"Place and secure the NovAtel SPAN-IGM-A1 inside the trunk with the Y-axis"
+" pointing forward."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:517
+msgid ""
+"Mount the NovAtel GPS-703-GGG-HV antenna in an unobscured location on top"
+" of the vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:519
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:590
+msgid "Wiring"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:521
+msgid "You must connect two cables:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:523
+msgid ""
+"The antenna cable ─ Connects the GNSS antenna to the antenna port of the "
+"SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:524
+msgid "The main cable:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:525
+msgid "Connects its 15-pin end to the SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:526
+msgid "Connects its power wires to a power supply of 10-to-30V DC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:527
+msgid ""
+"Connects its serial port to the IPC. If the power comes from a vehicle "
+"battery, add an auxiliary battery (recommended)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:530
+msgid "![imu_main_cable_connection](images/imu_main_cable_connection.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:530
+msgid "imu_main_cable_connection"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:532
+msgid "Main Cable Connections"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:534
+msgid ""
+"For more information, see the *SPAN-IGM™ Quick Start Guide*, page 3, for "
+"a detailed diagram:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:536
+msgid "![online_icon](images/online_icon.png)SPAN-IGM™ Quick Start Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:538
+msgid "[http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:540
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:670
+msgid "Taking the Lever Arm Measurement"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:542
+msgid ""
+"When the SPAN-IGM-A1 and the GPS Antenna are in position,the distance "
+"from the SPAN-IGM-A1 to the GPS Antenna must be measured. The distance "
+"should be measured as: X offset, Y offset, and Z offset."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:544
+msgid ""
+"The error of offset must be within one centimeter to achieve high "
+"accuracy. For more information, see the *SPAN-IGM™ Quick Start Guide*, "
+"page 5, for a detailed diagram."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:546
+msgid "For an additional information about the SPAN-IGM-A1, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:548
+msgid "![online_icon](images/online_icon.png)SPAN-IGM™ User Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:550
+msgid "[http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf](http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:554
+msgid "Option 2: Installing NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:556
+msgid ""
+"The installation instructions describe the procedures to mount, connect, "
+"and take the lever arm measurements for the GPS NovAtel SPAN® ProPak6™ "
+"**and** the NovAtel IMU-IGM-A1."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:558
+msgid "Components for the Installation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:560
+msgid "The components that are required for the installation include:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:562
+msgid "NovAtel GPS SPAN ProPak6"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:564
+msgid "NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:566
+msgid "NovAtel GPS-703-GGG-HV Antenna"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:568
+msgid "NovAtel GPS-C006 Cable (to connect antenna to GPS)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:570
+msgid "NovAtel 01019014 Main Cable (to connect GPS to a serial port the IPC)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:572
+msgid "Data Transport Unit (DTU) – similar to a 4G router"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:574
+msgid "Magnetic adapters (for antenna and DTU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:576
+msgid "DB9 Straight Through Cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:580
+msgid ""
+"You can place the two devices, the ProPak6 and the IMU, inmost places in "
+"the vehicle but it is suggested that you follow these recommendations:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:582
+msgid ""
+"Place and secure the ProPak6 and the IMU side-by-side inside the trunk "
+"with the Y-axis pointing forward."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:583
+msgid ""
+"Mount the NovAtel GPS-703-GGG-HV antenna on top of the vehicle or on top "
+"of the trunk lid as shown:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:585
+msgid "![gps_receiver_on_car](images/gps_receiver_on_car.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:585
+msgid "gps_receiver_on_car"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:587
+msgid "Use a magnetic adapter to tightly attach the antenna to the trunk lid."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:588
+msgid ""
+"Install the antenna cable in the trunk by opening the trunk and placing "
+"the cable in the space between the trunk lid and the body of the car."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:592
+msgid ""
+"Follow these steps to connect the ProPak6 GNSS Receiver and the IMU to "
+"the Apollo system:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:594
+msgid ""
+"Use the split cable that comes with IMU-IGM-A1 to connect the IMU Main "
+"port and theProPak6 COM3/IMU port."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:595
+msgid ""
+"Use a USB-A-to-MicroUSB cable to connect the USB port of the IPC and the "
+"MicroUSB port of the ProPak6."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:596
+msgid "Connect the other end of the IMU-IGM-A1 split cable to the vehicle power."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:597
+msgid "Connect the GNSS antenna to Propak6."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:598
+msgid "Connect the Propak6 power cable."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:600
+msgid "![wiring](images/wiring.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:600
+msgid "wiring"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:602
+msgid "For more information about the NovAtel SPAN ProPak6, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:604
+msgid ""
+"![online_icon](images/online_icon.png)NovAtel ProPak6 Installation& "
+"Operation Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:610
+msgid "Installingthe IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:614
+msgid "Use a power cable to connect the vehicle power source to the IPC:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:616
+msgid ""
+"Use its power connector as one end "
+"![ipc_power_RB](images/ipc_power_RB.png) , and connect the other end to "
+"the power panel in the vehicle(see the section, Prerequisites)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:618
+msgid ""
+"Place the onboard computer system, the 5059GC,inside the trunk "
+"(recommended)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:620
+msgid ""
+"For example, Apollo 1.0 uses 4x4 self-tapping screws to bolt the 5059GC "
+"to the carpeted floor of the trunk. ![IPC-bolt_down-936x720](images/IPC-"
+"bolt_down-936x720.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:620
+msgid "IPC-bolt_down-936x720"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:622
+msgid ""
+"Mount the IPC so that its front and back sides(where all ports are "
+"located) face the right side (passenger) and the left side(driver) of the"
+" trunk."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:624
+msgid "This positioning makes it easier to connect all of the cables."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:626
+msgid "For more information, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:628
+msgid "![online_icon](images/online_icon.png)Neousys Nuvo-5095GC – Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:632
+msgid "Connect all cables, which include:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:634
+msgid "Power cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:636
+msgid "Controller Area Network (CAN) cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:638
+msgid "Ethernet cable from the 4G router to the IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:640
+msgid "GPS Receiver to the IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:642
+msgid "(Optional) Monitor, keyboard, mouse"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:645
+msgid "a.   Connect the power cable to the IPC (as shown):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:647
+msgid "![IPC-power-842x636](images/IPC-power-842x636.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:647
+msgid "IPC-power-842x636"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:649
+msgid ""
+"b. Connect the other end of the power cable to the vehicle battery (as "
+"shown):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:652
+msgid "![IPC-power-cable](images/IPC-power-cable.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:652
+msgid "IPC-power-cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:654
+msgid "c. Connect the DB9 cable to the IPC to talk to the CAN (as shown):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:656
+msgid "![DB9_cable](images/DB9_cable.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:656
+msgid "DB9_cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:658
+msgid "d. Connect:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:660
+msgid "the Ethernet cable from the 4G router to the IPC (labeled as Router)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:662
+msgid "the GPS Receiver to the IPC (labeled as GPSIMU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:664
+msgid "(optional) the monitor (labeled as Monitor):"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:666
+msgid "![ipc_other_cables](images/ipc_other_cables.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:666
+msgid "ipc_other_cables"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:674
+msgid "Before taking the measurement, turn on the IPC."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:677
+msgid ""
+"When the IMU and the GPS Antenna are in position, the distance from the "
+"IMU to the GPS Antenna must be measured. The distance should be measured "
+"as: X offset, Yoffset, and Z offset."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:679
+msgid ""
+"The error of offset must be within one centimeter to achieve high "
+"accuracy in positioning and localization."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:681
+msgid "For an additional information, see:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:683
+msgid ""
+"![online_icon](images/online_icon.png)NovAtel ProPak6 Installation & "
+"Operation Manual:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:687
+msgid "![online_icon](images/online_icon.png)NovAtel SPAN-IGM-A1 Product Page:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:691
+msgid "Configuring the GPS and IMU"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:693
+msgid "Configure the GPS and IMU as shown:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:719
+msgid "For ProPak6:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:745
+msgid ""
+"**![warning_icon](images/warning_icon.png) WARNING:** Modify the "
+"**<u>SETIMUTOANTOFFSE</u>T** line based on the actual measurement (of the"
+" antenna and the IMU offset)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:747
+msgid "For example:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:753
+msgid "Setting up the Network"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:755
+msgid "This section provides recommendations for setting up the network."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:757
+msgid ""
+"The IPC that is running the Apollo software must access the Internet to "
+"acquire the Real Time Kinematic (RTK) data for accurate localization. A "
+"mobile device also needs to connect to the IPC to run the Apollo "
+"software."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:759
+msgid "Recommendations"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:761
+msgid ""
+"Itis recommended that you set up your network according to the following "
+"diagram:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:763
+msgid "![4G_network_setup](images/4G_network_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:763
+msgid "4G_network_setup"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:767
+msgid ""
+"Install and configure a 4G LTE router with Wi-Fi Access Point (AP) "
+"capability and Gigabit Ethernet ports."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:770
+msgid "Connect the IPC to the LTE router using an Ethernet cable."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:773
+msgid ""
+"Configure the LTE router to access the Internet using the LTE cellular "
+"network."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:776
+msgid ""
+"Configure the AP capability of the LTE router so that the iPad Pro or "
+"another mobile device can connect to the router, and, in turn, connect to"
+" the IPC."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:778
+msgid ""
+"![tip_icon](images/tip_icon.png)It is recommended that you configure a "
+"fixed IP instead of using DHCP on the IPC to make it easier to connect to"
+" it from a mobile terminal."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:780
+msgid "Additional Tasks Required"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:782
+msgid ""
+"Youwill use the components that you were required to provide to perform "
+"the following tasks:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:784
+msgid ""
+"Connect a monitor using the DVI or the HDMI cables and connect the "
+"keyboard and mouse to perform debugging tasks at the car onsite."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:786
+msgid ""
+"Establish a Wi-Fi connection on the Apple iPad Pro to access the HMI and "
+"control the Apollo ADS that is running on the IPC."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:788
+msgid "Next Steps"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide.md:790
+msgid ""
+"After you complete the hardware installation in the vehicle, see the "
+"[Apollo Quick "
+"Start](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_1_0_quick_start.md)"
+" for the steps to complete the software installation."
+msgstr ""
+

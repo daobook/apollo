@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:1
+msgid "HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:3
+msgid "Fundamentals to understand AplloAuto - core"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:5
+msgid ""
+"Autonomous vehicles \\(AV\\) dynamics are controlled by the planning "
+"engine through the Controller Area Network bus \\(CAN bus\\). The "
+"software reads data from hardware registers and writes them back just "
+"like we would in Assembly language. For high-precision computation, the "
+"Localization, Perception and Planning modules function as independent "
+"input sources, while output sources work together though the Peer2Peer "
+"(P2P) protocol. P2P is supported by the RPC network application."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:8
+msgid ""
+"ApolloAuto uses ROS1 as the underlying network which means that "
+"ApolloAuto borrows the Master-Nodes framework from ROS1. Since xmlRPC "
+"from ROS1 is really old \\(compared to the recent brpc and "
+"[grpc](https://yiakwy.github.io/blog/2017/10/01/gRPC-C-CORE)\\), Baidu "
+"has developed its own protobuf version of RPC."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:11
+msgid ""
+"In Baidu ApolloAuto, three stages of development have already been "
+"described"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:13
+msgid "Dreamviewer Offline Simulation Engine & ApolloAuto core software module"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:14
+msgid "Get a first taste on how the algorithms work for a car"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:15
+msgid ""
+"We don't need to touch a real car or hardware and start development "
+"immediately"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:16
+msgid "Core modules Integration:"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:17
+msgid "Localization"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:18
+msgid ""
+"Perception \\(support third parties' solution like Mobileye ES4 chip "
+"based camera for L2 development\\) process point cloud data from `Lidar` "
+"and return segmented objects info on request"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:19
+msgid ""
+"Planning: compute the fine-tuned path, car dynamic controlling info for "
+"path segments from route service"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:20
+msgid ""
+"Routine: local implementation of finding path segments through "
+"`Navigator` interface; Using A\\*star algorithm."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:21
+msgid ""
+"HD Maps. One of the key differences from L2 level AV development. L4 AV "
+"machine needs Hdmap. Since a robot \\(an autonomous vehicle \\) needs to "
+"rebuild 3d world \\(please check OpenCV [SLAM]() chapter\\) in its "
+"microcomputer, reference object coordinates play a great role in "
+"relocating AV both in the map and the real world."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:23
+msgid "Cloud-based Online Simulation Drive Scenario Engine and Data Center."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:24
+msgid ""
+"As a partner of Baidu, you will be granted docker credentials to commit "
+"new images and replay the algorithm you developed on the cloud."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:25
+msgid ""
+"Create and manage complex scenarios to simulate real-world driving "
+"experiences"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:27
+msgid ""
+"ROS underlying Subscription and Publication mechanism and ApolloAuto "
+"modules structure"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:30
+msgid "ROS underlying Subscription and Publication mechanism"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:32
+msgid ""
+"So how does ROS1 based system communicate with each other and how does "
+"ApolloAuto make use of it? ROS has "
+"[tutorials](http://wiki.ros.org/ROS/Tutorials), and I will explain it "
+"quickly before we analyze ApolloAuto modules structure."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:35
+msgid ""
+"ROS is a software, currently exclusively well supported by Ubuntu series."
+" It has master roscore."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:37
+msgid "printenv | grep ROS"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:39
+msgid ""
+"default ros master uri is \"http://localhost:11311. One can create an "
+"independent binary by performing ros::init and start it by performing "
+"ros::spin \\(some kind of Linux event loop\\) using c++ or python. The "
+"binary behind the freshly created package is called ***ROS node***. The "
+"node will register its name and IP address in Master in case of other "
+"nodes querying. Nodes communicate with each by directly constructing a "
+"TCP connection."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:43
+msgid ""
+"If a node wants to read data from others, we call it subscriber. The "
+"typical format is"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:52
+msgid ""
+"If a node wants to provide data for subscribers to read, we call it a "
+"publisher. The typical format is"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:61
+msgid ""
+"cb here is a callback executed when Linux kernel IO is ready. With these "
+"signatures bearing in mind, we can quickly analyze ApolloAuto module "
+"structures before diving deep into core modules implementation."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:64
+msgid "apolloauto modules structure"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:66
+msgid ""
+"I have conducted full research about it but I cannot show you all of "
+"them. ApolloAuto modules/common/ provide basic micros to control "
+"ros::spin for each module and /modules/common/adaptor contains the most "
+"information on how a topic is registered. Every module will be registered"
+" from the "
+"[point](https://github.com/yiakwy/apollo/blob/master/modules/common/adapters/adapter_manager.cc#L50)"
+" . By reading configuration file defined ${MODULE_NAME}/conf, we can get "
+"basic information about topics a module subscribe and publish."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:70
+msgid ""
+"Each module starts by firing \"Init\" interface and register callbacks. "
+"If you want to step by step debug ApolloAuto in gdb, make sure you have "
+"added breakpoints in those back. This also demonstrate that if you don't "
+"like what implemented by Baidu, just override the callback."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:73
+msgid "Data preprocessing and Extended Kalman Filter"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:75
+msgid ""
+"Kalman Filter is mathematical interactive methods to converge to real "
+"estimation without knowing the whole real\\-time input sequence. No "
+"matter what kind of data you need to process, you can rely on Kalman "
+"Filter. Extended Kalman Filter is used for 3d rigid movements in a matrix"
+" format. It is not hard. I recommend you a series tutorial from United "
+"States F15 director [Michel van "
+"Biezen](https://www.youtube.com/watch?v=CaCcOwJPytQ)."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:79
+msgid ""
+"Since it is used in input data preprocessing, you might see it in HD "
+"Maps, perception, planning and so on so forth."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:81
+msgid "Selected modules analysis"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:83
+msgid "HMI & Dreamviewer"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:85
+msgid ""
+"There is not too much about hmi interface and dreamviewer but it is a "
+"good place to visualize the topics parameters."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:87
+msgid ""
+"HMI is a simply simple python application based on Flask. Instead of "
+"using HTTP, it uses web socket to query ROS modules application. If you "
+"have experience on asynchronous HTTP downloaders, it is easy to "
+"understand, that an HTTP connection is just a socket connection file "
+"descriptor which we have already write HTTP headers, methods into that "
+"buffer. Once hmi flask backend receives a command, it will execute a "
+"subprocess to execute the corresponding binary."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:92
+msgid ""
+"Dreamviewer, in contrast, works a little bit like frontend app written in"
+" React, Webpack, and Threejs \\( WebGL, see "
+"/dreamview/backend/simulation_world, /dreamview/frontend/src/render \\), "
+"techniques. It subscribes to messages from ROS nodes and draws it a frame"
+" after a frame."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:95
+msgid "Perception"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:97
+msgid ""
+"Initially, this module implemented logics exclusively for Lidar and Radar"
+" processes. It is registered by AdapterManager as a ros node functioning "
+"as an info fusion system to output observed Obstacles info. In the latest"
+" version of the codes, different hardware input handlers of ROS nodes are"
+" specified in /perception/obstacles/onboard and implemented in different "
+"parallel locations, which consists of *Lidar, Radar, Traffic lights and "
+"GPS*."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:101
+msgid "Lidar:"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:102
+msgid ""
+"HD Maps: get transformation matrix convert point world coordinates to "
+"local coordinates and build map polygons"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:103
+msgid "ROI filter: get ROI and perform Kalman Filter on input data"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:104
+msgid ""
+"Segmentation: A U-Net based \\(a lot of variants\\) Caffe model will be "
+"loaded and perform forward computation based on data from HD Maps and ROI"
+" filtering results"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:105
+msgid ""
+"Object Building: Lidar return points \\(x, y, z\\). Hence you need to "
+"group them into \"Obstacles\" \\(vector or set\\)"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:106
+msgid ""
+"Obstacles Tracker: Baidu is using HM solver from Google. For a large "
+"bipartite graph, KM algorithms in Lagrange format is usually deployed "
+"since SGD is extremely simple for that."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:109
+msgid "Radar:"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:110
+msgid "Similar to Lidar with raw\\_obstacles info from sensors."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:111
+msgid "ROI filter: get ROI objects and perform Kalman Filter on input data"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:112
+msgid "Objects Tracker"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:114
+msgid "Probability Fusion\\(New in Apollo 1.5!\\):"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:115
+msgid "As far as I can understand, fusion system in ApolloAuto"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:116
+msgid ""
+"It is typically one of most important parts: collects all the info and "
+"makes a final combination of information from sensors on the motherboard "
+"for track lists and rule-based cognitive engine"
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:118
+msgid ""
+"The major process is the association, hence HM algorithms here is used "
+"again as a bipartite graph."
+msgstr ""
+
+#: ../../docs/howto/how_to_understand_architecture_and_workflow.md:119
+msgid ""
+"Tracklists are maintained along timestamps and each list will be updated "
+"based on a probabilistic rules engine"
+msgstr ""
+

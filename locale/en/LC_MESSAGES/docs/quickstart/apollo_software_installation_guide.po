@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:1
+msgid "Apollo Software Installation Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:3
+msgid ""
+"This document describes the steps required to install Apollo on Ubuntu "
+"18.04.5 LTS (Bionic Beaver), the recommended Ubuntu release for Apollo "
+"6.0."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:6
+msgid "Pre-requisites"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:8
+msgid ""
+"Before getting started, please make sure all the pre-requisite steps were"
+" finished as described in the [Pre-requisite Software Installation "
+"Guide](../specs/prerequisite_software_installation_guide.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:12
+msgid ""
+"Please also make sure Docker is running. Type `systemctl status docker` "
+"to check the running status of Docker daemon, and type `systemctl start "
+"docker` to start Docker if needed."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:16
+msgid "Download Apollo Sources"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:18
+msgid ""
+"Run the following commands to clone [Apollo's GitHub "
+"Repo](https://github.com/ApolloAuto/apollo.git)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:30
+msgid "And checkout the latest branch:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:37
+msgid ""
+"For CN users, please refer to [How to Clone Apollo Repository from "
+"China](../howto/how_to_clone_apollo_repo_from_china.md) if your have "
+"difficulty cloning from GitHub."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:41
+msgid ""
+"(Optional) For convenience, you can set up environment variable "
+"`APOLLO_ROOT_DIR` to refer to Apollo root directory by running:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:48
+msgid ""
+"![tip](images/tip_icon.png) In the following sections, we will refer to "
+"Apollo root directory as `$APOLLO_ROOT_DIR`"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:48
+msgid "tip"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:51
+msgid "Start Apollo Development Docker Container"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:53
+msgid "From the `${APOLLO_ROOT_DIR}` directory, type"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:59
+msgid "to start Apollo development Docker container."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:61
+msgid ""
+"If successful, you will see the following messages at the bottom of your "
+"screen:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:70
+msgid "Enter Apollo Development Docker Container"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:72
+msgid "Run the following command to login into the newly started container:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:78
+msgid "Build Apollo inside Container"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:80
+msgid "From the `/apollo` directory inside Apollo Docker container, type:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:86
+msgid "to build the whole Apollo project."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:88
+msgid "Or type"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:94
+msgid "for an optimized build."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:96
+msgid ""
+"You can refer to [Apollo Build and Test "
+"Explained](../specs/apollo_build_and_test_explained.md) for a thorough "
+"understanding of Apollo builds and tests."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:100
+msgid "Launch and Run Apollo"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:102
+msgid ""
+"Please refer to the [Run Apollo](../howto/how_to_launch_and_run_apollo.md"
+"#run-apollo) section of [How to Launch And Run "
+"Apollo](../howto/how_to_launch_and_run_apollo.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:106
+msgid "(Optional) Support a new Vehicle in DreamView"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:108
+msgid ""
+"In order to support a new vehicle in DreamView, please follow the steps "
+"below:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:110
+msgid "Create a new folder for your vehicle under `modules/calibration/data`"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:112
+msgid ""
+"There is already a sample file in the `modules/calibration/data` folder "
+"named `mkz_example`. Refer to this structure and include all necessary "
+"configuration files in the same file structure as “mkz_example”. Remember"
+" to update the configuration files with your own parameters if needed."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_software_installation_guide.md:117
+msgid ""
+"Restart DreamView and you will be able to see your new vehicle (name is "
+"the same as your newly created folder) in the selected vehicle."
+msgstr ""
+

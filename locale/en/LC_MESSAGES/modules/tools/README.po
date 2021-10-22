@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/tools/README.md:1
+msgid "Apollo Tools"
+msgstr ""
+
+#: ../../modules/tools/README.md:3
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../modules/tools/README.md:5
+msgid ""
+"The tools are mostly written in Python and relying on compiled proto "
+"modules. So generally you need to do the following steps to make it "
+"function well."
+msgstr ""
+
+#: ../../modules/tools/README.md:8
+msgid ""
+"`Note that all scripts in this page are referenced from Apollo root "
+"directory.`"
+msgstr ""
+
+#: ../../modules/tools/README.md:18
+msgid "Highlight Tools"
+msgstr ""
+
+#: ../../modules/tools/README.md:20
+msgid "Diagnostics"
+msgstr ""
+
+#: ../../modules/tools/README.md:22
+msgid "`shortcuts: scripts/diagnostics.sh`"
+msgstr ""
+
+#: ../../modules/tools/README.md:24
+msgid "Display input/output protobuf messages for modules."
+msgstr ""
+
+#: ../../modules/tools/README.md:26
+msgid "Plot_control"
+msgstr ""
+
+#: ../../modules/tools/README.md:28
+msgid ""
+"Subscribe control command message and plot recent x steering, throttle, "
+"and brake values."
+msgstr ""
+
+#: ../../modules/tools/README.md:31
+msgid "Realtime_plot"
+msgstr ""
+
+#: ../../modules/tools/README.md:33
+msgid "`shortcuts: scripts/realtime_plot.sh`"
+msgstr ""
+
+#: ../../modules/tools/README.md:35
+msgid ""
+"Subscribe planning & control messages and plot real time trajectory, "
+"speed, curvature/ST-graph, and acceleration/heading."
+msgstr ""
+
+#: ../../modules/tools/README.md:38
+msgid "Record_play"
+msgstr ""
+
+#: ../../modules/tools/README.md:40
+msgid "Rtk_recorder"
+msgstr ""
+
+#: ../../modules/tools/README.md:42
+msgid "`shortcuts: scripts/run_rtk_recorder.sh`"
+msgstr ""
+
+#: ../../modules/tools/README.md:44
+msgid "Record vehicle trajectory and save it into a file."
+msgstr ""
+
+#: ../../modules/tools/README.md:46
+msgid "Rtk_player"
+msgstr ""
+
+#: ../../modules/tools/README.md:48
+msgid "`shortcuts: scripts/run_rtk_player.sh`"
+msgstr ""
+
+#: ../../modules/tools/README.md:50
+msgid "Read recorded trajectory and publish it as a planning trajectory."
+msgstr ""
+

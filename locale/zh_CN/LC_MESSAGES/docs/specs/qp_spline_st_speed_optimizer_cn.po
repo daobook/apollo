@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:1
+msgid "二次规划ST速度优化"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:3
+msgid ""
+"_**Tip**: "
+"为了更好的展示本文档中的等式，我们建议使用者使用带有[插件](https://chrome.google.com/webstore/detail"
+"/tex-all-the-"
+"things/cbimabofgmfdkicghcadidpemeenbffn)的Chrome浏览器，或者将Latex等式拷贝到[在线编辑公式网站](http://www.hostmath.com/)进行浏览。_"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:5
+msgid "1  定义"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:7
+msgid ""
+"从二次规划样条路径中选取一条路径后，Apollo将路线上的所有障碍物和自动驾驶车辆（ADV）展现在一个时间-路径图上（path-time "
+"ST），该路径图表示了路径上的站点变化。速度优化的任务是在ST图上找到一条合理的，无障碍的路径。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:9
+msgid "Apollo使用多个样条来表示速度参数，在ST图上表示为一系列的ST点。Apollo会对二次规划的结果做再次的平衡以获得最佳的速度参数。QP问题的标准类型定义为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:23
+msgid "2  目标函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:25
+msgid "2.1  获取样条段"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:27
+msgid "将路ST速度参数分为 **n** 段，每段路径用一个多项式来表示。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:29
+msgid "2.2  定义样条段函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:31
+msgid "每个样条段 ***i*** 都有沿着参考线的累加距离$d_i$。每段的路径默认用5介多项式表示。多项式介数可以通过配置参数进行调整。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:40
+msgid "2.3  定义样条段优化函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:42
+msgid "Apollo首先定义$cost_1$以使路径更加平滑："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:50
+msgid "然后，Apollo定义$cost_2$表示最后的S-T路径和S-T巡航路径（有速度限制且m个点）的差值："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:58
+msgid "同样地，Apollo定义了$cost_3$表示第一个S-T路径和随后的S-T路径（o个点）的差值："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:66
+msgid "最后得出的目标函数为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:74
+msgid "3  约束条件"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:76
+msgid "3.1 初始点约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:78
+msgid ""
+"假设第一个点是($t0$, $s0$)，且$s0$在路径$f_i(t)$, $f'i(t)$, "
+"和$f_i(t)''$上（位置、速率、加速度）。Apollo将这些约束转换为QP约束的等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:86
+msgid "3.2  单调约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:88
+msgid "路线必须是单调的，比如车辆只能往前开。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:90
+msgid ""
+"在路径上采样 **m** 个点，对每一个 $j$和$j-1$ "
+"的点对，且($j\\in[1,...,m]$)，如果两个点都处在同一个样条$k$上，则："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:104
+msgid "如两个点分别处在不同的样条$k$和$l$上，则："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:118
+msgid "3.3  平滑节点约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:120
+msgid ""
+"该约束的目的是使样条的节点更加平滑。假设两个段$seg_k$ 和$seg_{k+1}$互相连接，且$seg_k$的累计值 **s** "
+"为$s_k$。计算约束的等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:128
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:239
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:262
+msgid "即："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:149
+msgid "然后，"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:163
+msgid "等式中得出的结果为$t_0$ = 0。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:165
+msgid "同样地，为下述等式计算约束等式："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:177
+msgid "3.4  点采样边界约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:179
+msgid "在路径上均匀的取样 **m** 个点，检查这些点上的障碍物边界。将这些约束转换为QP约束不等式，使用不等式："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:187
+msgid "首先基于道路宽度和周围的障碍物找到点 $(s_j, l_j)$的下边界$l_{lb,j}$，且$j\\in[0, m]$。计算约束的不等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:207
+msgid "同样地，对上边界$l_{ub,j}$，计算约束的不等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:228
+msgid "3.5  速度边界优化"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:230
+msgid "Apollo同样需要建立速度限制边界。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:232
+msgid "在st曲线上取样 **m** 个点，为每个点$j$获取速度限制的上边界和下边界，例如$v{ub,j}$ 和 $v{lb,j}$，约束定义为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_st_speed_optimizer_cn.md:256
+msgid "且，"
+msgstr ""
+

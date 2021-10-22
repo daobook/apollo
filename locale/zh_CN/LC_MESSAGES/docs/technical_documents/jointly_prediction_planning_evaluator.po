@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:1
+msgid "JOINTLY PREDICTION PLANNING EVALUATOR"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:5
+msgid ""
+"The prediction module comprises 4 main functionalities: Container, "
+"Scenario, Evaluator and Predictor."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:7
+msgid ""
+"The Evaluator predicts path and speed separately for any given obstacle. "
+"An evaluator evaluates a path by outputting a probability for it (lane "
+"sequence) using the given model stored in prediction/data/."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:9
+msgid ""
+"Jointly prediction planning evaluator is used in the new Interactive "
+"Obstacle(vehicle-type) model to generate short term trajectory points "
+"which are calculated using Vectornet and LSTM. By considering ADC's "
+"trajectory info, the obstacle trajectory prediction can be more accurate "
+"under interaction scenario."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:11
+msgid "![Diagram](images/interaction_model_fig_1.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:11
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:13
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:15
+msgid ""
+"Please refer [jointly prediction planning "
+"evaluator](https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/evaluator/vehicle)."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:17
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:19
+msgid "Interaction filter"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:20
+msgid ""
+"Please refer [interaction "
+"filter](https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/scenario/interaction_filter)."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:21
+msgid ""
+"The interaction filter is a rule-based filter for selecting interactive "
+"obstacles."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:23
+msgid "Such interactive obstacles will be labeled."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:29
+msgid "Model inference"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator.md:30
+msgid ""
+"The encoder of jointly prediction planning evaluator is Vectornet, before"
+" model inference, we need to process obstacle and map data into the "
+"correct format."
+msgstr ""
+

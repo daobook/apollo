@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/canbus/README_cn.md:1
+msgid "CAN总线"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:3
+msgid "引言"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:4
+msgid "CAN总线接受并执行控制命令，并收集底盘状态作为给控制模块的反馈。"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:6
+msgid "输入"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:7
+msgid "控制命令"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:9
+msgid "输出"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:10
+msgid "底盘状态"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:11
+msgid "底盘细节状态"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:13
+msgid "实现"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:14
+msgid "CAN总线模块的主要部件有："
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:15
+msgid "包括车辆控制器和消息管理器的车辆"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:17
+msgid "(客户端可以移动到‘/modules/drivers/canbus’，因为它是被不同的使用CAN总线协议的传感器共享的)"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:19
+msgid "您自己的CAN客户端可以通过继承“CanClient”类在*can_client*的文件夹中实现。记得在“CanClientFactory”注册你的客户机客户端。"
+msgstr ""
+
+#: ../../modules/canbus/README_cn.md:21
+msgid "您自己的车辆控制器和消息管理器可以通过“VehicleController”和“MessageManager”的继承在“vehicle”的文件夹中实现。记得在“VehicleFactory”注册你的车辆。"
+msgstr ""
+

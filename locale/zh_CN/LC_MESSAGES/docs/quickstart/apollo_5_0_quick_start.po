@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:1
+msgid "Apollo 5.0 Quick Start Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:3
+msgid ""
+"The following guide serves as a user manual for launching the Apollo "
+"upgraded software and hardware stack on vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:5
+msgid ""
+"This Quick Start Guide focuses on the new features. For general Apollo "
+"concepts, please refer to [Apollo 3.5 Quick "
+"Start](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_5_quick_start.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:8
+msgid "Contents"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:10
+msgid "[Calibration Guide](#calibration-guide)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:11
+msgid "[Hardware and Software Installation](#hardware-and-software-installation)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:12
+msgid "[Dreamview Usage Table](#dreamview-usage-table)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:13
+msgid "[Onboard Test](#onboard-test)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:15
+msgid "Calibration Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:17
+msgid ""
+"Apollo currently offers a robust calibration service to support your "
+"calibration requirements from LiDARs to IMU to Cameras. This service is "
+"being offered to selected partners only. If you would like to learn more "
+"about the calibration service, please reach out to us via email: "
+"**apollopartner@baidu.com**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:19
+msgid "Hardware and Software Installation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:21
+msgid ""
+"The Hardware setup for Apollo 5.0 remains the same as Apollo 3.5, please "
+"refer to [Apollo 3.5 Hardware and System Installation "
+"Guide](apollo_3_5_hardware_system_installation_guide.md) for the steps to"
+" install the hardware components and the system software, as well as "
+"[Apollo Software Installation "
+"Guide](apollo_software_installation_guide.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:26
+msgid "Dreamview Usage Table"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:28
+msgid ""
+"For questions regarding Dreamview icons refer to the [Dreamview Usage "
+"Table](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/dreamview_usage_table.md)."
+" For questions regarding Dreamland and the scenario editor, please visit "
+"our [Dreamland Introduction "
+"guide](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Dreamland_introduction.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:32
+msgid "Onboard Test"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:34
+msgid ""
+"Plug-in an external hard-drive to any available USB port in the host "
+"machine"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:36
+msgid "Turn on the vehicle, and then the host machine"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:38
+msgid "Launch the Dev Docker Container"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:40
+msgid "Launch DreamView"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:42
+msgid ""
+"Note\\: Use your favorite browser to access Dreamview web service in your"
+" host machine browser with URL <http://localhost:8888>"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:45
+msgid "![dreamview_2_5](images/dreamview_2_5.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:45
+msgid "dreamview_2_5"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:47
+msgid "Select Mode, Vehicle and Map"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:49
+msgid "![dreamview_2_5_setup_profile](images/dreamview_2_5_setup_profile.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:49
+msgid "dreamview_2_5_setup_profile"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:51
+msgid ""
+"Note\\: You'll be required to setup profile before doing anything else. "
+"Click the dropdown menu to select **Navigation** mode, the HDMap and "
+"vehicle you want to use. The lists are defined in [HMI config "
+"file](https://raw.githubusercontent.com/ApolloAuto/apollo/master/modules/dreamview/conf/hmi.conf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:56
+msgid ""
+"Note\\: It's also possible to change the profile on the right panel of "
+"the HMI, but just remember to click `Reset All` on the top-right corner "
+"to restart the system"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:60
+msgid "Start the Modules."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:62
+msgid "Click the `Setup` button"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:64
+msgid "![dreamview_2_5_setup](images/dreamview_2_5_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:64
+msgid "dreamview_2_5_setup"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:66
+msgid ""
+"Go to **Module Controller** tab, check if all modules and hardware are "
+"ready (Note\\: In your offline environment, the hardware modules such as "
+"GPS, CANBus, Velodyne, Camera and Radar cannot be brought up) (Note\\: "
+"You may need to drive around a bit to get a good GPS signal)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:71
+msgid "![dreamview_2_5_module_controller](images/dreamview_2_5_module_controller.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:71
+msgid "dreamview_2_5_module_controller"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:73
+msgid "Under `Default Routing` select your desired route"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:75
+msgid ""
+"Under Tasks click `Start Auto`. (Note: Be cautious when starting the "
+"autonomous driving, you should now be in autonomous mode)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:78
+msgid "![dreamview_2_5_start_auto](images/dreamview_2_5_start_auto.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:78
+msgid "dreamview_2_5_start_auto"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:80
+msgid ""
+"After the autonomous testing is complete, under `Tasks` click `Reset "
+"All`, close all windows and shutdown the machine"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_5_0_quick_start.md:83
+msgid "Remove the hard drive"
+msgstr ""
+

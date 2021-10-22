@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:1
+msgid "国内环境下如何克隆 Apollo 仓库"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:3
+msgid "本文档描述了在国内环境下既快又好地克隆Apollo 仓库的方法。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:5
+msgid "必要前提/准备"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:7
+msgid ""
+"假设你已经 「fork」 了GitHub上的Apollo 代码库。这可以通过点击[GitHub上的 "
+"Apollo](https://github.com/ApolloAuto/apollo.git) "
+"页面右上角的「Fork」按钮并遵照随后的提示来完成。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:9
+msgid "首先，从码云上克隆 Apollo 仓库"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:11
+msgid ""
+"[码云上的 Apollo仓库](https://gitee.com/ApolloAuto/apollo.git) 通常比[GitHub上的 "
+"Apollo仓库](https://github.com/ApolloAuto/apollo.git) 更新晚一天。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:13
+msgid "我们可以以它为起点，克隆码云上的Apollo 仓库。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:15
+msgid "执行命令："
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:21
+msgid "这一步通常很快，只需十数分钟。在本文作者所在的百度内部，下载速度可达 10 多 MiB/s，终端输出如下："
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:34
+msgid "**注意：** 以下步骤可选。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:36
+msgid "重置远程分支origin"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:38
+msgid "上述步骤完成后，就可以「过河拆桥」，将远程分支 origin 重置为你刚 「fork」的GitHub 分支。"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:44
+msgid "将 GitHub 上的 Apollo 仓库设为远程分支upstream"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:54
+msgid "你可以运行如下命令来确认远程分支 origin 和 upstream 已被正确设置："
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:60
+msgid "如果之前的操作正确，它将列出如下的远端分支："
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:69
+msgid "现在，从 GitHub 远程分支upstream 拉取最新的「增量」代码"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:75
+msgid "如果遇到问题，你可以参考这篇文档：[国内环境拉取GitHub仓库慢的缓解方案](how_to_solve_slow_pull_from_cn.md)."
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:77
+msgid "结语"
+msgstr ""
+
+#: ../../docs/howto/how_to_clone_apollo_repo_from_china_cn.md:79
+msgid "恭喜你成功地克隆了 Apollo Gitee/GitHub 仓库，并由此开启你的 Apollo 自动驾驶之旅！"
+msgstr ""
+

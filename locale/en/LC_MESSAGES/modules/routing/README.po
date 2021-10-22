@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/routing/README.md:1
+msgid "Routing"
+msgstr ""
+
+#: ../../modules/routing/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/routing/README.md:4
+msgid ""
+"The Routing module generates high level navigation information based on "
+"requests."
+msgstr ""
+
+#: ../../modules/routing/README.md:6
+msgid ""
+"The Routing module depends on a routing topology file, usually named "
+"`routing_map.*` in apollo."
+msgstr ""
+
+#: ../../modules/routing/README.md:8
+msgid "The routing map can be genreated using this command:"
+msgstr ""
+
+#: ../../modules/routing/README.md:13
+msgid "Input"
+msgstr ""
+
+#: ../../modules/routing/README.md:14
+msgid "Map data"
+msgstr ""
+
+#: ../../modules/routing/README.md:15
+msgid "Routing request (Start and end location)"
+msgstr ""
+
+#: ../../modules/routing/README.md:17
+msgid "Output"
+msgstr ""
+
+#: ../../modules/routing/README.md:18
+msgid "Routing navigation information"
+msgstr ""
+

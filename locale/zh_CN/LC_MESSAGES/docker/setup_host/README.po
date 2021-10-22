@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docker/setup_host/README.md:1
+msgid "Host Setup"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:2
+msgid ""
+"**It is strongly recommended that you run _setup_host.sh_ on your host "
+"machine before installing Apollo.**"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:4
+msgid "UDEV rules"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:5
+msgid ""
+"All udev rule files under `etc/udev/rules.d` in the current folder are "
+"examples to show your how to map the specific devices to standard device "
+"names that Apollo recognizes below:"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:6
+msgid ""
+"99-usbtty.rules: it maps 3 USB devices to novatel devices that Apollo "
+"uses to receive GPS signals."
+msgstr ""
+
+#: ../../docker/setup_host/README.md:7
+msgid ""
+"99-webcam.rules (**deprecated in Apollo 3.5 and later versions**): it "
+"maps 3 USB camera devices with different names to what Apollo uses for "
+"different perception tasks: obstacle, traffic light and lane mark "
+"detections. All 3 cameras are front facing cameras, and wide angle "
+"cameras are normally used for obstacle and lane mark detection. Long "
+"focal lens camera is used for traffic light detection."
+msgstr ""
+
+#: ../../docker/setup_host/README.md:8
+msgid ""
+"99-asucam.rules (**available in Apollo 3.5 and later versions**): it maps"
+" all FPD-Link cameras attached to ASU to what Apollo uses for different "
+"perception tasks at different positions. Please modify this file after "
+"you check your camera attributes and connect the cameras whose attributes"
+" correspond to the correct devices to be mapped."
+msgstr ""
+
+#: ../../docker/setup_host/README.md:10
+msgid "Identifying camera attributes"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:11
+msgid ""
+"Please use the following command to check the device (_e.g. video0_) "
+"attributes:"
+msgstr ""
+
+#: ../../docker/setup_host/README.md:13
+msgid "`udevadm info --attribute-walk --name /dev/video0`"
+msgstr ""
+

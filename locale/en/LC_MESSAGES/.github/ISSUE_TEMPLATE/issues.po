@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:7
+msgid ""
+"We appreciate you go through Apollo documentations and search previous "
+"issues before creating an new one. If neither of the sources helped you "
+"with your issues, please report the issue using the following form. "
+"Please note missing info can delay the response time."
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:9
+msgid "System information"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:11
+msgid "**OS Platform and Distribution (e.g., Linux Ubuntu 18.04)**:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:12
+msgid "**Apollo installed from (source or binary)**:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:13
+msgid "**Apollo version (3.5, 5.0, 5.5, 6.0)**:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:14
+msgid "**Output of `apollo.sh config` if on `master` branch**:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:16
+msgid "Steps to reproduce the issue:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:17
+msgid "**Please use bullet points and include as much details as possible**:"
+msgstr ""
+
+#: ../../.github/ISSUE_TEMPLATE/issues.md:19
+msgid "Supporting materials (screenshots, command lines, code/script snippets):"
+msgstr ""
+

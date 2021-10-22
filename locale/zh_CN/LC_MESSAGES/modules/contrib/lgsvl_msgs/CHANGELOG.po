@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:3
+msgid "Changelog for package lgsvl_msgs"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:6
+msgid "0.0.1 (2018-12-18)"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:7
+msgid "add changelog"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:8
+msgid "update initial version number"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:9
+msgid "add license"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:10
+msgid "add Ros package for ground truth messages"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:11
+msgid "initial commit"
+msgstr ""
+
+#: ../../modules/contrib/lgsvl_msgs/CHANGELOG.rst:12
+msgid "Contributors: David Uhm"
+msgstr ""
+

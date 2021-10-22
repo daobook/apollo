@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:1
+msgid "Pre-requisite Software Installation Guide"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:3
+msgid ""
+"This article describes all the pre-requisite steps needed before "
+"installing Apollo."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:6
+#: ../../docs/specs/prerequisite_software_installation_guide.md:14
+msgid "Installing Ubuntu Linux"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:7
+#: ../../docs/specs/prerequisite_software_installation_guide.md:38
+msgid "Installing NVIDIA GPU Driver"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:8
+#: ../../docs/specs/prerequisite_software_installation_guide.md:89
+msgid "Installing Docker Engine"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:9
+#: ../../docs/specs/prerequisite_software_installation_guide.md:115
+msgid "Installing NVIDIA Container Toolkit"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:11
+msgid ""
+"![tip_icon](images/tip_icon.png) Working knowledge of Linux is assumed "
+"for successful software installation in this guide."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:11
+#: ../../docs/specs/prerequisite_software_installation_guide.md:130
+msgid "tip_icon"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:16
+msgid ""
+"Although other Linux distributions may be OK, we have only tested Apollo "
+"on Ubuntu systems. To be specific, [Ubuntu 18.04.5 LTS (Bionic "
+"Beaver)](https://releases.ubuntu.com/18.04.5/). So we would recommend "
+"using Ubuntu 18.04.5+ (including Ubuntu 20.04) as the host system."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:22
+msgid ""
+"The steps required to install Ubuntu 18.04+ are available at [Tutorial "
+"from ubuntu.com on How to Install Ubuntu](https://ubuntu.com/tutorials"
+"/install-ubuntu-desktop). Please follow the guide there for a successful "
+"Ubuntu installation."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:26
+msgid "Don't forget to perform software updates after the installation is done:"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:33
+msgid ""
+"![](images/tip_icon.png) Internet access is needed for successful "
+"software updates. Make sure either WiFi or Ethernet cable is connected to"
+" a network with Internet access. You might need to configure the network "
+"for your host if the connected network is not using the Dynamic Host "
+"Configuration Protocol (DHCP)."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:40
+msgid "The Apollo runtime in the vehicle requires NVIDIA GPU Driver."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:42
+msgid ""
+"According to [How to Install NVIDIA Driver](https://github.com/NVIDIA"
+"/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-"
+"nvidia-driver), the recommended way for Ubuntu is to use the `apt-get` "
+"commands, or use an official \"runfile\" from [www.nvidia.com/en-"
+"us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:48
+msgid "For Ubuntu 18.04+, you can simply run:"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:57
+msgid ""
+"You can type `nvidia-smi` to check if NVIDIA GPU works fine on your host."
+" (You may restart your host for the changes to take effect.) On success, "
+"the following message will be shown."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:91
+msgid ""
+"Apollo 6.0+ requires Docker 19.03+ to work properly. Just follow the "
+"[Install Docker Engine on "
+"Ubuntu](https://docs.docker.com/engine/install/ubuntu/) doc to install "
+"docker engine."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:95
+msgid ""
+"Docker-CE on Ubuntu can also be setup using Docker’s official convenience"
+" script:"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:103
+msgid ""
+"You can choose whichever method you would prefer. Just don't forget the "
+"[Post-installation Actions for "
+"Linux](https://docs.docker.com/engine/install/linux-postinstall/), esp. "
+"the section on [Manage Docker as Non-root "
+"User](https://docs.docker.com/engine/install/linux-postinstall/#manage-"
+"docker-as-a-non-root-user) and [Configure Docker to Start on "
+"Boot](https://docs.docker.com/engine/install/linux-postinstall"
+"/#configure-docker-to-start-on-boot)."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:110
+msgid ""
+"There is also a [dedicated bash "
+"script](../../docker/setup_host/install_docker.sh) Apollo provides to "
+"ease Docker installation, which works both for X86_64 and AArch64 "
+"platforms."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:117
+msgid ""
+"The NVIDIA Container Toolkit for Docker is required to run Apollo's CUDA "
+"based Docker images."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:120
+msgid "You can run the following to install NVIDIA Container Toolkit:"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:130
+msgid ""
+"![tip_icon](images/tip_icon.png) Don't forget to restart the Docker "
+"daemon for the changes above to take effect."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:137
+msgid ""
+"Refer to [NVIDIA Container Toolkit Installation "
+"Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit"
+"/install-guide.html) for more."
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:141
+msgid "What's Next"
+msgstr ""
+
+#: ../../docs/specs/prerequisite_software_installation_guide.md:143
+msgid ""
+"With successful installation of the pre-requisites above, you can now "
+"move to \"Git Clone Apollo Repo\" section now."
+msgstr ""
+

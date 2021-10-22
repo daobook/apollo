@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/canbus/README.md:1
+msgid "Canbus"
+msgstr ""
+
+#: ../../modules/canbus/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/canbus/README.md:4
+msgid ""
+"Canbus accepts and executes control module commands and collects the "
+"car's chassis status as feedback to control."
+msgstr ""
+
+#: ../../modules/canbus/README.md:6
+msgid "Input"
+msgstr ""
+
+#: ../../modules/canbus/README.md:7
+msgid "Control commands"
+msgstr ""
+
+#: ../../modules/canbus/README.md:9
+msgid "Output"
+msgstr ""
+
+#: ../../modules/canbus/README.md:10
+msgid "Chassis status"
+msgstr ""
+
+#: ../../modules/canbus/README.md:11
+msgid "Chassis detailed status"
+msgstr ""
+
+#: ../../modules/canbus/README.md:13
+msgid "Implementation"
+msgstr ""
+
+#: ../../modules/canbus/README.md:15
+msgid "The major components in canbus module are:"
+msgstr ""
+
+#: ../../modules/canbus/README.md:16
+msgid ""
+"**Vehicle**: the vehicle itself, including its controller and message "
+"manager"
+msgstr ""
+
+#: ../../modules/canbus/README.md:18
+msgid ""
+"**CAN Client** - CAN client has been moved to `/modules/drivers/canbus` "
+"since it is shared by different sensors utilizing the canbus protocol"
+msgstr ""
+
+#: ../../modules/canbus/README.md:20
+msgid ""
+"You can implement your own CAN client in the folder `can_client` by "
+"inheriting from the `CanClient` class."
+msgstr ""
+
+#: ../../modules/canbus/README.md:27
+msgid ""
+"You can also implement your own vehicle controller and message manager in"
+" the folder `vehicle` by inheriting from `VehicleController` and "
+"`MessageManager`."
+msgstr ""
+

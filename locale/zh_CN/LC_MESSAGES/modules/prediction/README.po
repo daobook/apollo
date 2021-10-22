@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Sphinx
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Sphinx \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-22 16:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../modules/prediction/README.md:1
+msgid "Prediction"
+msgstr ""
+
+#: ../../modules/prediction/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/prediction/README.md:4
+msgid ""
+"The Prediction module studies and predicts the behavior of all the "
+"obstacles detected by the perception module. Prediction receives obstacle"
+" data along with basic perception information including positions, "
+"headings, velocities, accelerations, and then generates predicted "
+"trajectories with probabilities for those obstacles."
+msgstr ""
+
+#: ../../modules/prediction/README.md:7
+msgid ""
+"In **Apollo 5.5**, the Prediction module introduces a new model - "
+"**Caution Obstacle**. Together with aggressively emphasizing on caution "
+"when proceeding to a junction, this model will now scan all obstacles "
+"that have entered the junction as long as computing resources permit. The"
+" Semantic LSTM Evaluator and the Extrapolation Predictor have also been "
+"introduced in Apolo 5.5 to support the Caution Obstacle model."
+msgstr ""
+
+#: ../../modules/prediction/README.md:15
+msgid "Input"
+msgstr ""
+
+#: ../../modules/prediction/README.md:16
+msgid "Obstacles information from the perception module"
+msgstr ""
+
+#: ../../modules/prediction/README.md:17
+msgid "Localization information from the localization module"
+msgstr ""
+
+#: ../../modules/prediction/README.md:18
+msgid ""
+"Planning trajectory of the previous computing cycle from the planning "
+"module"
+msgstr ""
+
+#: ../../modules/prediction/README.md:20
+msgid "Output"
+msgstr ""
+
+#: ../../modules/prediction/README.md:21
+msgid ""
+"Obstacles annotated with predicted trajectories and their priorities. "
+"Obstacle priority is now calculated as individual scenarios are "
+"prioritized differently. The priorities include: ignore, caution and "
+"normal (default)"
+msgstr ""
+
+#: ../../modules/prediction/README.md:23
+msgid "Functionalities"
+msgstr ""
+
+#: ../../modules/prediction/README.md:25
+msgid ""
+"Based on the figure below, the prediction module comprises 4 main "
+"functionalities: Container, Scenario, Evaluator and Predictor.  "
+"Container, Evaluator and Predictor existed in Apollo 3.0. In Apollo 3.5, "
+"we introduced the Scenario functionality as we have moved towards a more "
+"scenario-based approach for Apollo's autonomous driving capabilities. "
+"![](images/prediction.png)"
+msgstr ""
+
+#: ../../modules/prediction/README.md:28
+msgid "Container"
+msgstr ""
+
+#: ../../modules/prediction/README.md:30
+msgid ""
+"Container stores input data from subscribed channels. Current supported "
+"inputs are **_perception obstacles_**, **_vehicle localization_** and "
+"**_vehicle planning_**."
+msgstr ""
+
+#: ../../modules/prediction/README.md:33
+msgid "Scenario"
+msgstr ""
+
+#: ../../modules/prediction/README.md:35
+msgid ""
+"The Scenario sub-module analyzes scenarios that includes the ego vehicle."
+" Currently, we have two defined scenarios:"
+msgstr ""
+
+#: ../../modules/prediction/README.md:37
+msgid "**Cruise** : this scenario includes Lane keeping and following"
+msgstr ""
+
+#: ../../modules/prediction/README.md:38
+msgid ""
+"**Junction** : this scenario involves junctions. Junctions can either "
+"have traffic lights and/or STOP signs"
+msgstr ""
+
+#: ../../modules/prediction/README.md:40
+msgid "Obstacles"
+msgstr ""
+
+#: ../../modules/prediction/README.md:42
+msgid ""
+"**Ignore**: these obstacles will not affect the ego car's trajectory and "
+"can be safely ignored (E.g. the obstacle is too far away)"
+msgstr ""
+
+#: ../../modules/prediction/README.md:43
+msgid ""
+"**Caution**: these obstacles have a high possibility of interacting with "
+"the ego car"
+msgstr ""
+
+#: ../../modules/prediction/README.md:44
+msgid ""
+"**Normal**: the obstacles that do not fall under ignore or caution are "
+"placed by default under normal"
+msgstr ""
+
+#: ../../modules/prediction/README.md:47
+msgid "Evaluator"
+msgstr ""
+
+#: ../../modules/prediction/README.md:49
+msgid ""
+"The Evaluator predicts path and speed separately for any given obstacle. "
+"An evaluator evaluates a path by outputting a probability for it (lane "
+"sequence) using the given model stored in _prediction/data/_."
+msgstr ""
+
+#: ../../modules/prediction/README.md:53
+msgid "The list of available evaluators include:"
+msgstr ""
+
+#: ../../modules/prediction/README.md:55
+msgid "**Cost evaluator**: probability is calculated by a set of cost functions"
+msgstr ""
+
+#: ../../modules/prediction/README.md:57
+msgid "**MLP evaluator**: probability is calculated using an MLP model"
+msgstr ""
+
+#: ../../modules/prediction/README.md:59
+msgid "**RNN evaluator**: probability is calculated using an RNN model"
+msgstr ""
+
+#: ../../modules/prediction/README.md:61
+msgid ""
+"**Cruise MLP + CNN-1d evaluator**: probability is calculated using a mix "
+"of MLP and CNN-1d models for the cruise scenario"
+msgstr ""
+
+#: ../../modules/prediction/README.md:63
+msgid ""
+"**Junction MLP evaluator**: probability is calculated using an MLP model "
+"for junction scenario"
+msgstr ""
+
+#: ../../modules/prediction/README.md:65
+msgid ""
+"**Junction Map evaluator**: probability is calculated using an semantic "
+"map-based CNN model for junction scenario. This evaluator was created for"
+" caution level obstacles"
+msgstr ""
+
+#: ../../modules/prediction/README.md:67
+msgid ""
+"**Social Interaction evaluator**: this model is used for pedestrians, for"
+" short term trajectory prediction. It uses social LSTM. This evaluator "
+"was created for caution level obstacles"
+msgstr ""
+
+#: ../../modules/prediction/README.md:69
+msgid ""
+"**Semantic LSTM evaluator**: this evaluator is used in the new Caution "
+"Obstacle model to generate short term trajectory points which are "
+"calculated using CNN and LSTM. Both vehicles and pedestrians are using "
+"this same model, but with different parameters"
+msgstr ""
+
+#: ../../modules/prediction/README.md:71
+msgid ""
+"**Vectornet LSTM evaluator**: this evaluator is used in place of Semantic"
+" LSTM evaluator to generate short term trajectory points for \"Caution\" "
+"tagged obstacles. More detail is in [vectornet lstm evaluator "
+"readme](https://github.com/ApolloAuto/apollo/docs/technical_documents/vectornet_lstm_evaluator.md)."
+msgstr ""
+
+#: ../../modules/prediction/README.md:73
+msgid ""
+"**Jointly prediction planning evaluator**: this evaluator is used in the "
+"new Interactive Obstacle(vehicle-type) model to generate short term "
+"trajectory points which are calculated using Vectornet and LSTM. By "
+"considering ADC's trajectory info, the obstacle trajectory prediction can"
+" be more accurate under interaction scenario. Please refer [jointly "
+"prediction planning "
+"evaluator](https://github.com/ApolloAuto/apollo/blob/master/docs/technical_documents/jointly_prediction_planning_evaluator.md)."
+msgstr ""
+
+#: ../../modules/prediction/README.md:75
+msgid "Predictor"
+msgstr ""
+
+#: ../../modules/prediction/README.md:77
+msgid ""
+"Predictor generates predicted trajectories for obstacles. Currently, the "
+"supported predictors include:"
+msgstr ""
+
+#: ../../modules/prediction/README.md:79
+msgid "**Empty**: obstacles have no predicted trajectories"
+msgstr ""
+
+#: ../../modules/prediction/README.md:80
+msgid ""
+"**Single lane**: Obstacles move along a single lane in highway navigation"
+" mode. Obstacles not on lane will be ignored."
+msgstr ""
+
+#: ../../modules/prediction/README.md:81
+msgid "**Lane sequence**: obstacle moves along the lanes"
+msgstr ""
+
+#: ../../modules/prediction/README.md:82
+msgid ""
+"**Move sequence**: obstacle moves along the lanes by following its "
+"kinetic pattern"
+msgstr ""
+
+#: ../../modules/prediction/README.md:83
+msgid "**Free movement**: obstacle moves freely"
+msgstr ""
+
+#: ../../modules/prediction/README.md:84
+msgid "**Regional movement**: obstacle moves in a possible region"
+msgstr ""
+
+#: ../../modules/prediction/README.md:85
+msgid "**Junction**: Obstacles move toward junction exits with high probabilities"
+msgstr ""
+
+#: ../../modules/prediction/README.md:86
+msgid ""
+"**Interaction predictor**: compute the likelihood to create posterior "
+"prediction results after all evaluators have run. This predictor was "
+"created for caution level obstacles"
+msgstr ""
+
+#: ../../modules/prediction/README.md:87
+msgid ""
+"**Extrapolation predictor**: extends the Semantic LSTM evaluator's "
+"results to create an 8 sec trajectory."
+msgstr ""
+
+#: ../../modules/prediction/README.md:89
+msgid "Prediction Architecture"
+msgstr ""
+
+#: ../../modules/prediction/README.md:91
+msgid ""
+"The prediction module estimates the future motion trajectories for all "
+"perceived obstacles. The output prediction message wraps the perception "
+"information. Prediction both subscribes to and is triggered by perception"
+" obstacle messages, as shown below:"
+msgstr ""
+
+#: ../../modules/prediction/README.md:93
+msgid "![](images/architecture.png)"
+msgstr ""
+
+#: ../../modules/prediction/README.md:95
+msgid ""
+"The prediction module also takes messages from both localization and "
+"planning as input. The structure is shown below:"
+msgstr ""
+
+#: ../../modules/prediction/README.md:97
+msgid "![](images/architecture2.png)"
+msgstr ""
+
+#: ../../modules/prediction/README.md:99
+msgid "Related Paper"
+msgstr ""
+
+#: ../../modules/prediction/README.md:101
+msgid ""
+"[Xu K, Xiao X, Miao J, Luo Q. \"Data Driven Prediction Architecture for "
+"Autonomous Driving and its Application on Apollo Platform.\" *arXiv "
+"preprint arXiv:2006.06715.* ](https://arxiv.org/pdf/2006.06715.pdf)"
+msgstr ""
+
