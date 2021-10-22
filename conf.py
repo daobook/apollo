@@ -195,6 +195,7 @@ def setup(app):
 extlinks = {
     'daobook': ('https://daobook.github.io', 'daobook'),
     'xinetzone': ('https://xinetzone.github.io', 'xinetzone'),
+    'apollo': ('http://apollo.auto', 'apollo'),
     'images': ('http://apollo.auto', 'images'),
     'params': ('http://apollo.auto', 'params'),
 }
