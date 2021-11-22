@@ -29,6 +29,7 @@ jobs:
           pip install -r requirements.txt
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
+          sudo apt-get update
           sudo apt-get install doxygen doxygen-gui
       
       # - name: 构建 Cyber 文档
