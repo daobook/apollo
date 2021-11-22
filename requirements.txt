@@ -1,7 +1,6 @@
 Sphinx
 myst-parser
-sphinxcontrib-mermaid
 linkify-it-py
 sphinx-inline-tabs
-sphinx_rtd_theme
+furo
 breathe

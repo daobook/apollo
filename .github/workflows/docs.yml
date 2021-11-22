@@ -27,25 +27,25 @@ jobs:
       - name: 安装依赖包
         run: |
           pip install -r requirements.txt
+          conda env create -f environment.yml
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
       
-      # - name: 安装 HTML 主题
+      # - name: 构建 Cyber 文档
       #   run: |
-      #     git clone https://github.com/xinetzone/xin-css.git docs/_static/xin-css
-      #     git clone https://github.com/xinetzone/w3css.git docs/_static/w3css
+      #     ./cyber/doxy-docs/build_doxy_sphinx.sh
+      #     mv -f cyber/doxy-docs/build/ _build/html/cyber
 
       - name: 构建 Sphinx 文档
         run: |
-          sphinx-build -D language=zh_CN -b html ./ _build
-          sphinx-build -D language=zh_CN -b html ./ _build/zh_CN
-          sphinx-build -D language=en -b html ./ _build/en
+          ./build_doxy.sh
+          sphinx-build -D language=zh_CN -b html ./ _build/html
 
       # 部署 HTML 到 gh-pages 分支
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build
+          publish_dir: ./_build/html
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"

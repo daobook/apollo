@@ -2,7 +2,7 @@
 
 ```{toctree}
 :hidden:
-:maxdepth: 1
+:maxdepth: 2
 :caption: Apollo Auto
 :glob:
     
@@ -17,7 +17,7 @@ CONTRIBUTING
 ```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :caption: Docker
 :glob:
 :hidden:
@@ -25,21 +25,9 @@ CONTRIBUTING
 docker/**/*
 ```
 
-```{toctree}
-:maxdepth: 1
-:caption: cyber
-:glob:
-:hidden:
-
-cyber/README
-cyber/doxy-docs/source/index
-cyber/doxy-docs/source/**
-cyber/examples/common_component_example/README
-cyber/python/README
-```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :caption: other
 :glob:
 :hidden:
@@ -49,7 +37,7 @@ modules/**/*
 ```
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 :caption: other
 :glob:
 :hidden:
