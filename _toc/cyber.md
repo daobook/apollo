@@ -4,7 +4,7 @@
 :maxdepth: 3
 :glob:
 
-../cyber/README
+Cyber 自述 <../cyber/README>
 ../cyber/doxy-docs/source/index
 ../cyber/doxy-docs/source/**
 ../cyber/examples/common_component_example/README

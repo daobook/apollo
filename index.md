@@ -9,8 +9,5 @@ Apollo Auto 文档
 Apollo Auto 自述 <README>
 Apollo Auto 文档 <docs/README>
 _toc/cyber
-```
-
-<!-- 暂时性的目录 -->
-```{include} toctree.txt
+_toc/other
 ```

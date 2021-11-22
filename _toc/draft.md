@@ -1,3 +1,5 @@
+# 临时目录
+
 <!-- 暂时性的目录 -->
 
 ```{toctree}
@@ -7,13 +9,13 @@
 :glob:
     
 README
-docs/*
-docs/**/*
-CODE_OF_CONDUCT
-CODE_OF_CONDUCT_cn
-RELEASE
-MANIFESTO
-CONTRIBUTING
+../docs/*
+../docs/**/*
+../CODE_OF_CONDUCT
+../CODE_OF_CONDUCT_cn
+../RELEASE
+../MANIFESTO
+../CONTRIBUTING
 ```
 
 ```{toctree}
@@ -22,7 +24,7 @@ CONTRIBUTING
 :glob:
 :hidden:
 
-docker/**/*
+../docker/**/*
 ```
 
 
@@ -32,8 +34,8 @@ docker/**/*
 :glob:
 :hidden:
     
-third_party/**/*
-modules/**/*
+../third_party/**/*
+../modules/**/*
 ```
 
 ```{toctree}
@@ -42,7 +44,7 @@ modules/**/*
 :glob:
 :hidden:
 
-.github/ISSUE_TEMPLATE/issues
-.github/ISSUE_TEMPLATE/bug_report
-.github/ISSUE_TEMPLATE/feature_request
+../.github/ISSUE_TEMPLATE/issues
+../.github/ISSUE_TEMPLATE/bug_report
+../.github/ISSUE_TEMPLATE/feature_request
 ```

@@ -31,7 +31,7 @@ release = 'alpha'
 #  在这里添加任何 Sphinx 插件模块的名字，以字符串的形式。
 # 它们可以是 Sphinx 自带的插件（命名为 ``'sphinx.ext.*'``）或你自定义的。
 extensions = [
-    'furo',
+    'sphinx_book_theme',
     'breathe',
     "myst_parser",
     "sphinx_inline_tabs",
@@ -62,7 +62,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # 用于 HTML 和 HTML 帮助页面的主题。参见文档中的内置主题的列表。
 #
-html_theme = 'furo'
+html_theme = 'sphinx_book_theme'
 
 # ----------------------------
 # 添加自定义 CSS 或 JavaScript
