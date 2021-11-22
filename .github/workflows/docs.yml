@@ -27,7 +27,7 @@ jobs:
       - name: 安装依赖包
         run: |
           pip install -r requirements.txt
-          conda env create -f environment.yml
+          conda env create -f readthedocs.yml
           conda install ipykernel
           python -m ipykernel install --user --name ai --display-name "ai"
       
