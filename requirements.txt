@@ -2,5 +2,5 @@ Sphinx
 myst-parser
 linkify-it-py
 sphinx-inline-tabs
-furo
+sphinx-book-theme
 breathe
