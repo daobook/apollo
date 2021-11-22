@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/linters_and_formatters.md:1
+msgid "Linters and Formatters used in Apollo 6.0"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:10
+msgid ""
+"A great project is made out of consistent code. In the ideal world, you "
+"should not be able to tell who wrote a certain line of the code for the "
+"project. Modern linters and formatters help to close this gap by "
+"specifying a simple set of rules to be enforced on all developers working"
+" on the project. Such tools also stimulate developers to write better "
+"code by pointing out common mistakes and introducing good programming "
+"practices."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:17
+msgid ""
+"Generally, linters are used for catching errors, whereas formatters are "
+"used to fix coding style problems."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:20
+msgid ""
+"In this article, we will describe briefly the various linters and "
+"formatters used in Apollo."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:23
+msgid "Apollo Coding Style"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:25
+msgid ""
+"As you may already know, Apollo adopted Google coding style for C/C++ and"
+" Python programs. You can refer to [Google C++ Style "
+"Guide](https://google.github.io/styleguide/cppguide.html) and [Google "
+"Python Style Guide](https://google.github.io/styleguide/pyguide.html) for"
+" full text of their specifications."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:31
+msgid "Linters in Apollo"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:33
+msgid ""
+"To enforce that everyone conform to Apollo coding style, the following "
+"linters are provided for developers to check style issues."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:36
+msgid "**Note:**"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:38
+msgid ""
+"As the time of this writing, Apollo CI system enforced style check on C++"
+" files only. We hope that linters for other languages will be online in "
+"the near future."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "Linters"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "Source Extensions"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "Usage"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "cpplint"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".h/.c/.hpp/.cpp/.hh/.cc/.hxx/.cxx/.cu"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "bash apollo.sh lint --cpp"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "flake8"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".py"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "bash apollo.sh lint --py"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "shellcheck"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".sh/.bash/.bashrc"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "bash apollo.sh lint --sh"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:48
+msgid ""
+"To make sure your code conforms to Apollo coding style, you can use "
+"`./apollo.sh lint` to find any possible style problems and fix them "
+"manually."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:51
+msgid "Formatters in Apollo"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:53
+msgid ""
+"To help ease your life with Apollo coding style, various formatters are "
+"pre-installed into Apollo Docker image, to help you auto-format your "
+"code, and avoid common mistakes when writing code."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:57
+msgid ""
+"The following table lists the formatters currently integrated into "
+"Apollo, covering C/C++, Python, Bash, Bazel, Markdown, JSON and YAML "
+"files."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "Formatters"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "Formatter Config"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "clang-format"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".h/.c/.hpp/.cpp/.hh/.cc/.hxx/.cxx/.cu/.proto"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "./apollo.sh format -c <path/to/src/dir/or/files>"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".clang-format"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "autopep8"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "./apollo.sh format -p <path/to/src/dir/or/files>"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "tox.ini"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "buildifier"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".BUILD/.bzl/.bazel/WORKSPACE/BUILD"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "./apollo.sh format -b <path/to/src/dir/or/files>"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "N/A"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "shfmt"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "./apollo.sh format -s <path/to/src/dir/or/files>"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".editorconfig"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "prettier"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".md/.json/.yml"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid "./apollo.sh format -m <path/to/src/dir/or/files>"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md
+msgid ".prettier.json"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:68
+msgid "For easy use, you can format all files with types listed above with:"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:74
+msgid "For example,"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:80
+msgid ""
+"which will auto-format Bazel `WORKSPACE` file under `$APOLLO_ROOT_DIR`, "
+"`third_party/BUILD` file, and all the files under the `./scripts` "
+"directory."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:83
+msgid "Note:"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:85
+msgid ""
+"`./apollo.sh format` can also work outside Docker if relavant tools "
+"installed properly."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:88
+msgid "Conclusion"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:90
+msgid "To summarize,"
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:92
+msgid "Use `./apollo.sh lint` to check coding style errors."
+msgstr ""
+
+#: ../../docs/specs/linters_and_formatters.md:93
+msgid "Use `./apollo.sh format` to auto-format your code."
+msgstr ""
+

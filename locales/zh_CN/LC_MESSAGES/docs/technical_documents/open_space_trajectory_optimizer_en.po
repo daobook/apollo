@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:1
+msgid "OPTIMIZE COARSE TRAJECTORY"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:4
+msgid ""
+"The goal of this part is to optimizes the initial trajectory in the open "
+"space. Open_space_trajectory_optimizer is able to call a variety of "
+"different optimization algorithms."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:6
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:7
+msgid ""
+"Please refer "
+"[open_space_trajectory_optimizer.cc](https://github.com/ApolloAuto/apollo/tree/master/modules/planning/tasks/optimizers/open_space_trajectory_generation/open_space_trajectory_optimizer.cc)"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:9
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:10
+msgid ""
+"Input: stitching trajectory is provided by the "
+"open_space_trajectory_provider, planned target point, boundary of x and "
+"y, rotation angle relative to the corner of parking space, the reference "
+"origin point, line segment of boundary."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:24
+msgid ""
+"Before optimization, some unreasonable cases are exited from the "
+"optimization process and implement some preprocessing."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:25
+msgid "The unreasonable case is below:"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:26
+msgid "Input data is empty."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:34
+msgid "Starting point of planning is near the end point."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:45
+msgid ""
+"End of the stitching trajectory is rotated and translated, and the "
+"trajectory information is converted according to the corner     of the "
+"parking space."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:50
+msgid ""
+"Generate the coarse trajectory based on the warm start technology which "
+"is Hybrid A* algorithm."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:62
+msgid ""
+"According to FLAGS_enable_parallel_trajectory_smoothing to achieve "
+"different optimization process. When                                  "
+"FLAGS_enable_parallel_trajectory_smoothing is false, the optimization "
+"process is as follows:"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:63
+msgid ""
+"(x, y, phi, V) and (ster, a) of initial trajectory points in "
+"hybrid_a_star are stored into xws and UWS respectively through           "
+"LoadHybridAstarResultInEigen() function, and xws and UWS are used to "
+"generate the subsequent smooth trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:64
+msgid ""
+"Generate the smooth trajectory by the GenerateDistanceApproachTraj() "
+"function."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:85
+msgid ""
+"When FLAGS_enable_parallel_trajectory_smoothing is true, the optimization"
+" process is as follows:"
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:86
+msgid "Trajectorypartition() function is used to segment the initial trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:87
+msgid ""
+"Use loadhybridastarresultineigen() function to store the partitioned "
+"trajetory into xws and UWS respectively."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:88
+msgid "Set the initial information(a,V) of each trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:89
+msgid ""
+"the initial information of the first trajectory is the end point of the "
+"stitching trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:90
+msgid ""
+"In the next trajectory, the initial information is set to zero. At the "
+"start of the trajectory, the vehicle is stationary."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:96
+msgid ""
+"Use combinetrajectories() function to integrate the parameter information"
+" after segmented optimization."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:105
+msgid "Converting trajectory information to world coordinate system."
+msgstr ""
+
+#: ../../docs/technical_documents/open_space_trajectory_optimizer_en.md:112
+msgid "}"
+msgstr ""
+

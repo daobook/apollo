@@ -1,0 +1,269 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:1
+msgid "Introduction to Apollo Release Build"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:3
+msgid "Background"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:5
+msgid ""
+"For quite some time, binary distribution was unavailable for CyberRT-"
+"based Apollo. Users have to build the whole project themselves inside "
+"Apollo Dev container before they can run various modules and tools. This "
+"incapability of deployment causes trouble in certain situations. For "
+"example, people from SVL Simulator find that the total size of all Docker"
+" images, volumes and Bazel caches and build artifacts sums up to 40+ GB, "
+"which was rather inconvenient for their use case."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:13
+msgid "Principle of Release Build Implementation"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:15
+msgid ""
+"The root cause of this incapability was Bazel's lack of out-of-box "
+"installation support similar to those provided in other build systems "
+"(e.g., `make install`)."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:18
+msgid ""
+"To resolve this issue, we borrowed ideas from the "
+"[Drake](https://github.com/RobotLocomotion/drake) project, and "
+"implemented the `install` extension in the Starlark language, which can "
+"be used to install binaries, shared libraries, resource files (config, "
+"data, launch files, dags, etc) and documents for the Apollo project."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:24
+msgid ""
+"Installation for standalone binaries was rather straightforward. As you "
+"may already know, the core concept of the CyberRT framework was to load "
+"each module (e.g, Perception, Prediction, Planning, etc) dynamically as a"
+" component in the form of `libX_component.so`. Both the `mainboard` "
+"binary program and `libX_component.so` links thousands of other shared "
+"libraries themselves. For example, running `ldd` on the Planning module "
+"with the following command"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:35
+msgid "will show the following output:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:48
+msgid ""
+"How to _install_ `libplanning_component.so` with all the shared objects "
+"(i.e., \"\\*.so\" files) it links becomes the hardest issue to solve to "
+"implement the `install` rule."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:52
+msgid ""
+"`patchelf` comes to rescue. All the shared objects can be retrieved from "
+"`runfiles_data`, while `patchelf --force-rpath --set-rpath` can be used "
+"to change RPATH settings."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:56
+msgid ""
+"Refer to [tools/install/install.bzl](../../tools/install/install.bzl) for"
+" a thorough understanding."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:59
+msgid "How to Run Release Build for Apollo"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:61
+msgid "To generate binary outputs for Apollo, simply run:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:67
+msgid ""
+"where `-c` is an optional argument used for pre-cleaning. The output was "
+"located at `/apollo/output` inside Apollo Dev container."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:70
+msgid "The command above is roughly equivalent to the following:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:77
+msgid ""
+"Please type `./apollo.sh release -h` for more usage of `apollo.sh "
+"release`."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:79
+msgid "How to Run Apollo with Release Build Output"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:81
+msgid ""
+"In order to run Apollo Runtime Docker with release build output, type the"
+" following command from the root of release build output directory "
+"outside Apollo Dev Docker:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:89
+msgid ""
+"For users in China, use `-g cn` to speed up pulling of Docker "
+"images/volumes."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:95
+msgid "Log into Apollo Runtime Docker by running:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:101
+msgid "Start Dreamview by running:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:107
+msgid "from inside Apollo Runtime container."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:109
+msgid "How to Use `install` Rule to Install a Custom Module"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:111
+msgid ""
+"To _install_ a custom module, you can follow examples for installing "
+"other modules from the Apollo repository."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:114
+msgid "Take the Planning module as an example."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:116
+msgid "This is part of the topmost [BUILD](../../BUILD) file:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:130
+msgid ""
+"This is a snippet from "
+"[modules/planning/BUILD](../../modules/planning/BUILD):"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:162
+msgid "Arguments of the `install` Bazel Rule"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:164
+msgid "From [tools/install/install.bzl](../../tools/install/install.bzl):"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:193
+msgid "The detailed attributes of the `install` rule was listed below:"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "Argument"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "Notes"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "deps"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "List of other install rules that this rule should include."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "data"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "List of (platform-independent) resource files to install"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "data_dest"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "Destination for resource files (default = \"@PACKAGE@\")"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "data_strip_prefix"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "List of prefixes to remove from resource paths"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "targets"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "List of targets to install"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "runtime_dest"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "Destination for executable targets (default = \"bin\")"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "runtime_strip_prefix"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "List of prefixes to remove from executable paths"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid "rename"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md
+msgid ""
+"Mapping of install paths to alternate file names, used to rename files "
+"upon installation"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:206
+msgid "Limitations of Current Release Build Implementation"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:208
+msgid "C++ support only. Installation for Python was not ready."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build.md:209
+msgid "x86_64 support only. ARM64 support was not ready at the moment."
+msgstr ""
+

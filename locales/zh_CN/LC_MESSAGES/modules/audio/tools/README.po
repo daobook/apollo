@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/audio/tools/README.md:1
+msgid "Dump audio to wave"
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:3
+msgid ""
+"We provide tools to dump audio data from topic "
+"`/apollo/sensor/microphone` to wave files."
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:5
+msgid "How"
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:7
+msgid "To do so,"
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:8
+msgid ""
+"Change `WAV_SAVING_PATH` in `audiosaver.py` to the directory for saving "
+"wave files, which is default to `/tmp`."
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:9
+msgid ""
+"Run command `python3 audiosaver.py` to start to listen to audio data from"
+" the topic `/apollo/sensor/microphone` (while playing a record, etc.)."
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:10
+msgid ""
+"Terminate the program with `Ctrl + C` when you want to stop listening & "
+"save data to wave files under the target directory."
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:12
+msgid ""
+"By default, there are 6 audio channels, so 6 files will be generated -- "
+"one for each audio channel. For information of the audio channel, refer "
+"to [Microphone](../../drivers/microphone/README.md) and [Microphone "
+"Configuration](../../drivers/microphone/conf/respeaker.pb.txt)."
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:14
+msgid "Other References"
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:16
+msgid ""
+"Hardware Specification -- "
+"[Respeaker](../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md)"
+msgstr ""
+
+#: ../../modules/audio/tools/README.md:17
+msgid "Driver Configuration -- [Microphone](../../drivers/microphone/README.md)"
+msgstr ""
+

@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:1
+msgid "Guide for Navtech NV-GI120"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:12
+msgid "![navtech_pic](images/navtech_pic.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:12
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:18
+msgid "navtech_pic"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:14
+msgid ""
+"NV-GI120 integrates the GNSS receiver and MEMS IMU device into a compact "
+"package to provide high precision localization  results. It supports dual"
+" antenna configuration and multi-frequency reception."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:16
+msgid "Installation"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:18
+msgid "![navtech_pic](images/navtech_cables.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:20
+msgid "The antennas(antennae) can be connected to the module via SMA connection."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:22
+msgid ""
+"A cable bundle is provided with the navigation module. One cable breaks "
+"out to multiple connectors to handle communication and configuration."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:24
+msgid ""
+"The configuration is similar to what can be done on Novatel devices. "
+"Please contact the vendor for detailed instructions."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:26
+msgid ""
+"The table for the labels on the break out cable bundle and the "
+"corresponding explanations/translations is shown below:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Labels"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Explanations"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "PPS"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Pulse per second"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "导航"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "navigation output （replaceable by the ethernet)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "板卡"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "-------"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "里程"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Odometer connection"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "调试"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "configuration"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "网口"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "ethernet"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Two naked wire"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Power （red and blue)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "扩展"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md
+msgid "Extension"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:39
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide.md:41
+msgid "This device is `Apollo Hardware Development Platform Supported`"
+msgstr ""
+

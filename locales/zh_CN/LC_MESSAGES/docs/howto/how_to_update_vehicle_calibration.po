@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:2
+msgid "How to Update Vehicle Calibration for Throttle and Brakes"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:5
+msgid ""
+"The purpose of vehicle calibration is to find the throttle and brake "
+"commands that accurately produce the amount of acceleration requested "
+"from the control module."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:7
+msgid "Preparation"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:9
+msgid "Preparation consists of the following task sequence:"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:11
+msgid "Gain access to the relevant code."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:12
+msgid "Change the driving mode."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:13
+msgid "Select the testing site."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:15
+msgid "Gain Access to the Relevant Code"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:16
+msgid "Canbus, which includes modules for:"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:17
+msgid "GPS Driver"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:18
+msgid "Localization"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:20
+msgid "Change the Driving Mode"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:21
+msgid ""
+"Set the driving mode in `modules/canbus/conf/canbus_conf.pb.txt` to "
+"`AUTO_SPEED_ONLY`."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:23
+msgid "Select the Testing Site"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:24
+msgid "The preferred testing site is a long flat road."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:26
+msgid "Update the Vehicle Calibration"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:28
+msgid ""
+"After preparation, complete the following task sequence from "
+"`modules/tools/vehicle_calibration`:"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:30
+msgid "Collect data."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:31
+msgid "Process data."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:32
+msgid "Plot results."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:33
+msgid "Convert results to `protobuf`."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:35
+msgid "Collect Data"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:37
+msgid ""
+"Run `python data_collector.py` for different commands, commands like x y "
+"z, where x is acceleration command, y is speed limit(mps), z is "
+"decceleration command,Positive number for throttle and negative number "
+"for brake.Run each command multiple times."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:38
+msgid "Adjust the command script based on the vehicle response."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:39
+msgid ""
+"Run `python plot_data.py ` to open recorded data and visualize collected "
+"data."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:41
+msgid "like `15 5.2 -10`, will create and record a file named `t15b-10r0.csv`."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:43
+msgid "Process Data"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:44
+msgid ""
+"Run `process_data.sh` on each recorded log individually. data log is "
+"processed to `t15b-10r0.csv.result`."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:46
+msgid "Plot Results"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:47
+msgid ""
+"Run `python plot_results.py t15b-10r0.csv.result` to visualize final "
+"results. Check for any abnormality."
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:49
+msgid "Convert Results to `Protobuf`"
+msgstr ""
+
+#: ../../docs/howto/how_to_update_vehicle_calibration.md:50
+msgid ""
+"If everything looks good, run `result2pb.sh` to move calibration results "
+"to `protobuf` defined for the control module."
+msgstr ""
+

@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/template_en.md:1
+msgid "Title(replace it)"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:3
+msgid ""
+"_**Tip**: to read the equations in the document, you are recommended to "
+"use Chrome with [a plugin](https://chrome.google.com/webstore/detail/tex-"
+"all-the-things/cbimabofgmfdkicghcadidpemeenbffn) or copy the latex "
+"equation to [an online editor](http://www.hostmath.com/)_"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:5
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:7
+msgid "This is a paragraph of introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:9
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:11
+msgid ""
+"Please refer "
+"[code](https://github.com/ApolloAuto/apollo/blob/r1.0.0/docs/quickstart/apollo_1_0_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:13
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:15
+#: ../../docs/technical_documents/template_en.md:24
+msgid "![Diagram](images/example.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:15
+#: ../../docs/technical_documents/template_en.md:24
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:17
+msgid "Input"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:18
+msgid ""
+"Process, ```a line of code i++;```， Please not directly naming the line "
+"number of the code but taking a snapshot of it here"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:19
+#: ../../docs/technical_documents/template_en.md:29
+msgid "..."
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:20
+msgid "Output"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:22
+msgid "Algorithm Detail"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:26
+msgid "Parameters Explanation"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:27
+msgid "Intro"
+msgstr ""
+
+#: ../../docs/technical_documents/template_en.md:28
+msgid "Process"
+msgstr ""
+

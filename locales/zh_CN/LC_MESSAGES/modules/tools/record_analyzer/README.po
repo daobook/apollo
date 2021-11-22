@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/tools/record_analyzer/README.md:1
+msgid "Record Analyzer Tool"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:3
+msgid "Offline Record files analysis"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:4
+#: ../../modules/tools/record_analyzer/README.md:29
+msgid "Functions"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:6
+msgid ""
+"Record analyzer is a tool for analyzing the .record file created by "
+"cyber_recorder tool."
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:8
+msgid "It currently supports statistical analysis for"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:9
+msgid "Control module latency"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:10
+msgid "Planning module latency"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:11
+msgid "End to end system latency"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:13
+msgid "And distribution analysis for"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:14
+msgid "Control error code"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:15
+msgid "Control error message"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:16
+msgid "Planning trajectory type"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:17
+msgid "Planning estop"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:18
+msgid "Planning error code"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:19
+msgid "Planning error message"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:21
+#: ../../modules/tools/record_analyzer/README.md:37
+msgid "Usage"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:27
+msgid "Simulation Score API"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:30
+msgid "This API is used for simulation to grade planning trajectories."
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:32
+msgid "It currently supports following scores:"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:33
+msgid ""
+"frechet_dist: calculate the frechet_dist for two consecutive planning "
+"trajectories"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:34
+msgid ""
+"hard_brake_cycle_num: number of planning cycles that acceleration is less"
+" than -2.0 m/s^2"
+msgstr ""
+
+#: ../../modules/tools/record_analyzer/README.md:35
+msgid "overall_score: aggregated score for above metrics"
+msgstr ""
+

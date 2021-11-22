@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/tools/record_play/README.md:1
+msgid "Record and Play Tool"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:3
+msgid "Prerequisite"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:5
+msgid "Run the following command from your Apollo root dir:"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:12
+msgid "Recorder"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:14
+msgid ""
+"This tool records trajectory information from gateway into a csv file, "
+"the file name is defined in filename_path."
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:17
+msgid "Player"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:19
+msgid ""
+"This tool reads information from a csv file and publishes planning "
+"trajectory in the same format as real planning node."
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:22
+msgid "Default enable recorder and play under `/apollo` utilizing:"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:28
+msgid "and"
+msgstr ""
+
+#: ../../modules/tools/record_play/README.md:34
+msgid "Or using button on Dreamview"
+msgstr ""
+

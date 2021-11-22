@@ -1,0 +1,277 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:1
+msgid "如何调节控制参数"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:3
+msgid "引言"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:4
+msgid "控制模块的目标是基于计划轨迹和当前车辆状态生成控制命令给车辆。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:6
+msgid "背景"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:8
+msgid "输入/输出"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:10
+msgid "输入"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:11
+msgid "规划轨迹"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:12
+msgid "当前的车辆状态"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:13
+msgid "HMI驱动模式更改请求"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:14
+msgid "监控系统"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:16
+msgid "输出"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:17
+msgid "输出控制命令管理`canbus`中的转向、节流和制动等功能。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:19
+msgid "控制器介绍"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:20
+msgid "控制器包括管理转向指令的横向控制器和管理节气门和制动器命令的纵向控制器。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:22
+msgid "横向控制器"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:23
+msgid "横向控制器是基于LQR的最优控制器。 该控制器的动力学模型是一个简单的带有侧滑的自行车模型。它被分为两类，包括闭环和开环。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:25
+msgid "闭环提供具有4种状态的离散反馈LQR控制器："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:26
+msgid "横向误差"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:27
+msgid "横向误差率"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:28
+msgid "航向误差"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:29
+msgid "航向误差率"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:30
+msgid "开环利用路径曲率信息消除恒定稳态航向误差。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:33
+msgid "纵向控制器"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:34
+msgid "纵向控制器配置为级联PID +校准表。它被分为两类，包括闭环和开环。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:36
+msgid "闭环是一个级联PID（站PID +速度PID），它将以下数据作为控制器输入："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:37
+msgid "站误差"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:38
+msgid "速度误差"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:39
+msgid "开环提供了一个校准表，将加速度映射到节气门/制动百分比。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:42
+msgid "控制器调谐"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:44
+msgid "实用工具"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:45
+msgid ""
+"类似于[诊断](../../modules/tools/diagnostics) 和 "
+"[realtime_plot](../../modules/tools/realtime_plot) "
+"可用于控制器调优，并且可以在`apollo/modules/tools/`中找到."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:46
+msgid "横向控制器的整定"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:47
+msgid "横向控制器设计用于最小调谐力。“所有”车辆的基础横向控制器调谐步骤如下："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:49
+msgid "将`matrix_q` 中所有元素设置为零."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:51
+msgid "增加`matrix_q`中的第三个元素，它定义了航向误差加权，以最小化航向误差。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:53
+msgid "增加`matrix_q`的第一个元素，它定义横向误差加权以最小化横向误差。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:55
+msgid "林肯MKZ调谐"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:57
+msgid "对于Lincoln MKZ，有四个元素指的是状态加权矩阵Q的对角线元素："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:59
+msgid "横向误差加权"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:60
+msgid "横向误差率加权"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:61
+msgid "航向误差加权"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:62
+msgid "航向差错率加权"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:64
+msgid "通过在横向控制器调谐中列出的基本横向控制器调整步骤来调整加权参数。下面是一个例子。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:75
+msgid "调谐附加车辆类型"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:77
+msgid "当调整除林肯MKZ以外的车辆类型时，首先更新车辆相关的物理参数，如下面的示例所示。然后，按照上面列出的基本横向控制器调整步骤*横向控制器调谐*和定义矩阵Q参数。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:79
+msgid "下面是一个例子."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:95
+msgid "纵控制器的调谐"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:96
+msgid "纵向控制器由级联的PID控制器组成，该控制器包括一个站控制器和一个具有不同速度增益的高速/低速控制器。Apollo管理开环和闭环的调谐通过："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:98
+msgid ""
+"开环: "
+"校准表生成。请参阅[how_to_update_vehicle_calibration.md](how_to_update_vehicle_calibration.md)的详细步骤"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:99
+msgid "闭环: 基于高速控制器->低速控制器->站控制器的顺序。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:101
+msgid "高/低速控制器的调谐"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:103
+msgid "高速控制器代码主要用于跟踪高于某一速度值的期望速度。例如："
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:114
+msgid "首先将`kp`, `ki`, 和 `kd` 的值设为0."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:115
+msgid "然后开始增加`kp`的值，以减小阶跃响应对速度变化的上升时间。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:116
+msgid "最后，增加`ki`以降低速度控制器稳态误差。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:118
+msgid "一旦获得较高速度的相对准确的速度跟踪性能，就可以开始从起点开始调整低速PID控制器以获得一个舒适的加速率。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:129
+msgid "*注意:*  当设备切换到 *Drive*时，Apollo 通常将速度设置为滑行速度。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:131
+msgid "站控制器调谐"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:133
+msgid "Apollo 使用车辆的站控制器来跟踪车辆轨迹基准与车辆位置之间的站误差。  一个站控制器调谐示例如下所示。"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:143
+msgid "参考文献"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:144
+msgid ""
+"\"Vehicle dynamics and control.\" Rajamani, Rajesh. Springer Science & "
+"Business Media, 2011."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters_cn.md:146
+msgid ""
+"\"Optimal Trajectory generation for dynamic street scenarios in a Frenet "
+"Frame\", M. Werling et., ICRA2010"
+msgstr ""
+

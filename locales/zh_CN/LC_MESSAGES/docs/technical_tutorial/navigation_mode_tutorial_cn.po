@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:1
+msgid "Apollo导航模式教程"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:3
+msgid "**警告**"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:4
+msgid "本文档仅适用于 Apollo 2.5 及 3.0; Apollo 3.5及以后的版本不支持。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:6
+msgid "1. 教程简介"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:8
+msgid "无人驾驶系统利用实时感知信息和静态地图信息构建出完整驾驶环境，并在构建的环境中，依据routing数据，规划出行车轨迹，并由控制模块执行完成。Apollo导航模式在上述的框架下，针对高速、乡村道路等简单道路场景，进行了以下的提升："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:10
+msgid ""
+"Apollo导航模式以提高安全性和稳定性为目的，在驾驶环境中加入了静态引导信息，引导在驾驶环境中的轨迹规划，使其更安全更舒适。同时，引导信息也降低了对驾驶环境的完整性的要求"
+" -- 即降低了对地图信息的要求。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:11
+msgid "Apollo导航模式使用了相对/车身坐标系。减少了sensor数据的转化。同时也支持各种驾驶模式之间的转化，以应对不同的驾驶场景和条件。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:12
+msgid "Apollo导航模式引入了百度地图的Routing功能，考虑实时路况信息，使得Routing的结果更实用，更精确，更稳定。也使得Apollo系统更易于落地和商用。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:16
+msgid "在本教程中，你将完成"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:18
+msgid "学习完本教程后，你将能够在导航模式下进行规划模块（planning）的线下调试和开发。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:20
+msgid "在本教教中，你将掌握"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:22
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:225
+msgid "如何设置Apollo导航模式"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:23
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:226
+msgid "如何利用云端指引者发送指引线"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:24
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:227
+msgid "如何利用录制的ros bag产生指引线并用线下指引者发送"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:25
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:228
+msgid "如何进行规划模块的调试"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:29
+msgid "在本教程中，你需要如下准备"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:31
+msgid "下载并编译Apollo最新源码（[Howto](https://github.com/ApolloAuto/apollo/tree/master/docs/demo_guide)）"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:33
+msgid ""
+"下载 [Apollo2.5 demo "
+"bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:36
+msgid "2. 配置导航模式"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:38
+msgid "在导航模式下，有以下几个参数需要进行配置："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:40
+msgid "感知方案：目前支持摄像头方案（CAMERA）和基于Mobileye的方案（MOBILEYE）"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:41
+msgid "Apollo UTM Zone"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:42
+msgid "规划模块的Planner：目前支持EM, LATTICE, 和NAVI三种"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:43
+msgid "系统限速：单位为米/秒"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:45
+msgid "在Docker下修改配置文件"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:47
+msgid "配置文件位于："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:53
+msgid "默认配置为："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:71
+msgid "该默认配置为Apollo 2.5 Demo bag录制时的配置，在此教程中，我们直接使用。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:73
+msgid "生效配置信息"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:75
+msgid "为了使配置生效，在Docker内的Apollo根目录下，运行如下命令"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:82
+msgid "3. 云端指引者的使用"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:84
+msgid "回放demo bag"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:86
+msgid ""
+"在进入Docker，启动Apollo之前，我们把[Apollo2.5 demo "
+"bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)"
+" 拷贝到Apollo代码根目录下的data目录中。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:88
+msgid "在Docker内编译成功后，我们用如下命令启动Dreamview："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:94
+msgid "并在本地浏览器中打开"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:100
+msgid "如下图所示，在模式框中选择“Navigation”。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:102
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_1_init.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:102
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:113
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:119
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:172
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:207
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:211
+msgid "img"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:104
+msgid "然后在Docker内的apollo根目录下运行如下命令进行bag播放"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:111
+msgid "播放开始后，可以看到Dreamview界面如下"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:113
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_2_play.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:115
+msgid "请求云端指引线"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:117
+msgid "在地图中选择一个目的地（沿canada路），点击地图视图中的红色Route按钮，云端指引者会接收到这个请求，并返回指引线，该指引线会被显示在地图视图中。如下图所示。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:119
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_3_cloud.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:121
+msgid "以上就是云端指引者的调用过程。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:123
+msgid "4.  离线指引者工具的使用"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:125
+msgid ""
+"目前云端指引者只覆盖了有限的区域。除了云端的服务之外，我们还提供了离线指引者工具来制作和发送线下指引线。在本教程中，我们以[Apollo2.5 "
+"demo "
+"bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)为例来生成指引线。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:127
+msgid "指引线的制作"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:129
+msgid "生成指引线的步骤为"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:131
+msgid "从bag中提取路径数据"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:138
+msgid "提取出来的路径数据在路径"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:144
+msgid "中的"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:150
+msgid "平滑路径数据"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:156
+msgid "平滑后的的数据在"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:162
+msgid "指引线的发送"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:164
+msgid "得到平滑后的数据就可以发送到Apollo系统中，作为指引线，步骤为："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:170
+msgid "发送完成后，Dreamview的地图视图中的红色指引线会更新为如下图所示："
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:172
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_4_offline.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:174
+msgid "5. 规划模块的调试"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:176
+msgid "调试数据准备"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:178
+msgid "利用bag来进行模块调试，首先要把bag中的相应ros message过滤掉。假设我们想要调试规划模块，我们需要把消息"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:184
+msgid "过滤，使用以下命令"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:191
+msgid "过滤后的bag位于"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:197
+msgid "规划轨迹的产生"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:199
+msgid "我们播放没有规划的bag，用下面的命令"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:205
+msgid "在Dreamview中我们会看到车辆的规划轨迹没有输出，如下图"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:207
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_5_no_planning.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:209
+msgid "我们在Dreamview中打开Navi Planning模块，如下图"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:211
+msgid "![img](images/navigation_mode_tutorial/navigation_mode_6_live_planning.png)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:213
+msgid "我们看到实时计算的车辆的规划轨迹显示在Dreamview中。这时你可以试着更改一些规划模块的配置"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:219
+msgid "去了解，这些参数会对规划结果有什么影响。或者修改规划算法的代码，进行调试。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:221
+msgid "6.结束"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:223
+msgid "恭喜你完成了本教程。现在你应该了解"
+msgstr ""
+
+#: ../../docs/technical_tutorial/navigation_mode_tutorial_cn.md:230
+msgid "你也可以试着利用demo bag对其他一些模块进行调试。"
+msgstr ""
+

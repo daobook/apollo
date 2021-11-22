@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/perception/Perception_README_3_5.md:1
+msgid "Perception"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:3
+msgid ""
+"The Perception module has been upgraded completely to handle "
+"comprehensive sensor fusion of our brand-new sensor suite and also keep "
+"up with the brand new scenario-based planning."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:5
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:6
+msgid "Apollo Perception has following new features:"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:8
+msgid "**Support for VLS-128 Line LiDAR**"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:9
+msgid "**Obstacle detection through multiple cameras**"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:10
+msgid "**Advanced traffic light detection**"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:11
+msgid "**Configurable sensor fusion**"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:13
+msgid ""
+"The perception module incorporates the capability of using 5 cameras (2 "
+"front, 2 on either side and 1 rear) and 2 radars (front and rear) along "
+"with 3 16-line LiDARs (2 rear and 1 front) and 1 128-line LiDAR to "
+"recognize obstacles and fuse their individual tracks to obtain a final "
+"track list. The obstacle sub-module detects, classifies and tracks "
+"obstacles. This sub-module also predicts obstacle motion and position "
+"information (e.g., heading and velocity). For lane line, we construct "
+"lane instances by postprocessing lane parsing pixels and calculate the "
+"lane relative location to the ego-vehicle (L0, L1, R0, R1, etc.)."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:15
+msgid "Architecture"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:17
+msgid ""
+"The general architecture of the perception module is shown: "
+"![](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/Apollo3.5_perception_sensor_based.png)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:20
+msgid ""
+"The detailed perception modules are displayed below. "
+"![](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/Apollo3.5_perception_detail.png)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:23
+msgid "Input"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:25
+msgid "The perception module inputs are:"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:27
+msgid "128 channel LiDAR data (cyber channel /apollo/sensor/velodyne128)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:28
+msgid ""
+"16 channel LiDAR data (cyber channel /apollo/sensor/lidar_front, "
+"lidar_rear_left, lidar_rear_right)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:29
+msgid "Radar data (cyber channel /apollo/sensor/radar_front, radar_rear)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:30
+msgid "Image data (cyber channel /apollo/sensor/camera/front_6mm, front_12mm)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:31
+msgid "Extrinsic parameters of radar sensor calibration (from YAML files)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:32
+msgid ""
+"Extrinsic and Intrinsic parameters of front camera calibration (from YAML"
+" files)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:33
+msgid ""
+"Velocity and Angular Velocity of host vehicle (cyber channel "
+"/apollo/localization/pose)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:35
+msgid "Output"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:37
+msgid "The perception module outputs are:"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:39
+msgid ""
+"The 3D obstacle tracks with the heading, velocity and classification "
+"information (cyber channel /apollo/perception/obstacles)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:40
+msgid ""
+"The output of traffic light detection and recognition (cyber channel "
+"/apollo/perception/traffic_light)"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:42
+msgid "Setup Instructions"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:44
+msgid ""
+"Set up the general settings in the configuration file "
+"`modules/perception/conf/perception_lowcost.conf`."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:45
+msgid "Run the command  `./scripts/bootstrap.sh` to launch the web GUI."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:46
+msgid "Select the vehicle model in the web GUI."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:47
+msgid ""
+"Launch the perception module using the command "
+"`./scripts/perception_lowcost_vis.sh start` or by enabling the perception"
+" button on the *Module Controller* page of the web GUI. The command for "
+"stopping perception is `./scripts/perception_lowcost_vis.sh stop`. Note: "
+"please do not try to use GUI to enable perception but use script to stop "
+"it, vice versa."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:48
+msgid ""
+"Download the demo data from the Apollo [Open Data "
+"Platform](http://data.apollo.auto)."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:55
+msgid "Note"
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:56
+msgid ""
+"Nvidia GPU and CUDA are required to run the perception module with Caffe."
+" Apollo provides the CUDA and Caffe libraries in the release docker "
+"image. However, the Nvidia GPU driver is not installed in the dev docker "
+"image."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:58
+msgid ""
+"To run the perception module with CUDA acceleration, install the exact "
+"same version of the Nvidia driver in the docker image that is installed "
+"on your host machine, and then build Apollo with the GPU option (i.e., "
+"using `./apollo.sh build_gpu` or `./apollo.sh build_opt_gpu`)."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:60
+msgid ""
+"See [How to Run Perception Module on Your Local "
+"Computer](https://github.com/ApolloAuto/apollo/blob/master/docs/howto/how_to_run_perception_module_on_your_local_computer.md)."
+msgstr ""
+
+#: ../../modules/perception/Perception_README_3_5.md:62
+msgid ""
+"This module contains a redistribution in binary form of a modified "
+"version of [caffe](https://github.com/BVLC/caffe). A copy of the caffe's "
+"original copyright statement is included below:"
+msgstr ""
+

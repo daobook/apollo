@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:1
+msgid "Installation Guide of Continental ARS-408-21 Radar"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:12
+msgid "![radar_image](images/ARS-408-21.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:12
+msgid "radar_image"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:14
+msgid "The following diagram contains the range of the ARS-408-21 Radar:"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:16
+msgid "![radar_range](images/ars-404-21-range.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:16
+msgid "radar_range"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:18
+msgid "Installation"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:20
+msgid ""
+"A mechanical mount needs to be designed to mount the Radar to the desired"
+" position. The mount should be able to hold the Radar in a way that the "
+"scanning plane is parallel to the bottom of the car, so that the scanning"
+" radar wave would not be blocked by the road surface causing it to create"
+" ghost objects. If a stationary mount cannot satisfy such requirement, "
+"please consider adding adjustment in vertical and horizontal directions "
+"to the mount"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:22
+msgid ""
+"When you receive the Radar package, a set of connection cables should be "
+"included. Connect the water-proof connector to the Radar, and guide the "
+"cable through/under the car into the trunk. Secure the cable to the body "
+"of the car if necessary"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:24
+msgid "![radar_cable](images/ars-408-21-cable.png)"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:24
+msgid "radar_cable"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:26
+msgid "Connect the power cable to **12VDC** power supply"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:28
+msgid "Connect the CAN output to the CAN interface of the IPC"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:30
+msgid ""
+"You should be able to receive the CAN messages through the CAN port once "
+"the Radar is powered."
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:32
+msgid "References"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:34
+msgid ""
+"Additional information can be found on the [product page](https://www"
+".continental-automotive.com/Landing-Pages/Industrial-"
+"Sensors/Products/ARS-408-21)"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:36
+msgid ""
+"For information on troubleshooting or for the user manual, contact "
+"Continental directly"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:38
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.md:40
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

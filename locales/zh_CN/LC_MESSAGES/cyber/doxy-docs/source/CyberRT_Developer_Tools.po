@@ -1,0 +1,339 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:1
+msgid "Apollo Cyber RT Developer Tools"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:4
+msgid ""
+"Apollo Cyber RT framework comes with a collection of useful tools for "
+"daily development, including one visualization tool cyber_visualizer and "
+"two command line tools cyber_monitor and cyber_recorder."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:6
+msgid ""
+"*Note: apollo docker environment is required to use the tools, please "
+"follow apollo wiki to enter docker*"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:8
+msgid ""
+"All the tools from Apollo Cyber RT rely on Apollo Cyber RT library, so "
+"you must source the setup.bash file for environment setup before using "
+"any Apollo Cyber RT tools, shown as below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:14
+msgid "Cyber_visualizer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:16
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:57
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:139
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:308
+msgid "Install and run"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:18
+msgid ""
+"`cyber_visualizer` is a visualization tool for displaying the channel "
+"data in Apollo Cyber RT."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:25
+msgid "Interacting with cyber_visualizer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:27
+msgid "After launching cyber_visualizer, you will see the following interface:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:29
+msgid "![interface](images/cyber_visualizer1.png)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:29
+msgid "interface"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:31
+msgid ""
+"When data flow through channels in Apollo Cyber RT, the list of all "
+"channels are displayed under `ChannelNames` as seen in the figure below. "
+"For example, you can use the record tool(cyber_recorder) of Apollo Cyber "
+"RT to replay data from another terminal, then `cyber_visualizer` will "
+"receive information of all active channels(from replay data) and display "
+"it."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:33
+msgid "![channel information](images/cyber_visualizer2.png)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:33
+msgid "channel information"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:35
+msgid ""
+"By clicking on options in toolbar, you can enable reference grid, display"
+" point clouds, add images, or display multiple camera's data at the same "
+"time. If you have `Show Grid` option enabled, you can set the color of "
+"the grid by double-clicking the `Color` item of the `Grid` list below "
+"`ChannelNames`. The default color is gray. You can also edit the value of"
+" `CellCount` to adjust the number of cells in the grid. As for a point "
+"cloud or an image, you can select the source channel through its "
+"`ChannelName` sub-item, and `Action` sub-item to play or stop the data "
+"from the corresponding channel. As shown in figure below, three cameras' "
+"channel data on the button sections and one point cloud channel data on "
+"the top section are displayed simultaneously."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:39
+msgid "![visualization](images/cyber_visualizer3.png)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:39
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:43
+msgid "visualization"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:41
+msgid ""
+"To adjust the virtual camera in the 3D point cloud scene, you can right "
+"click on the point cloud display section. A dialog box will pop up as "
+"shown in figure below."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:43
+msgid "![visualization](images/cyber_visualizer4.png)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:45
+msgid ""
+"The point cloud scene supports two types of cameras: Free and "
+"Target.(select Type from pop up dialog above)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:46
+msgid ""
+"**Free type Camera**: For this type of camera in the point cloud scene, "
+"you can change the pose of the camera by holding down either left or "
+"right mouse button and move it. To change the pitch of camera, you can "
+"scroll the mouse wheel."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:47
+msgid ""
+"**Target type Camera**: For this type of camera in the point cloud scene,"
+" to change the camera's viewing angle, you can hold down the left mouse "
+"button and then move it. To change the distance of the camera to the "
+"observed point (the default observation point is the coordinate system "
+"origin (0, 0,0)), you can scroll the mouse wheel."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:49
+msgid ""
+"You can also modify the camera information directly in the dialog box to "
+"change the camera's observation status in the point cloud scene. And the "
+"\"Step\" item is the step value from the dialog box."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:51
+msgid ""
+"Place the mouse on the image of the camera channel, you can double-click "
+"the left button to highlight the corresponding data channel on the left "
+"menu bar. Right click on the image to bring up menu for deleting the "
+"camera channel."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:53
+msgid ""
+"Play and Pause buttons: when clicking the `Play` button, all channels "
+"will be shown. While when clicking the `Pause` button, all channels will "
+"stop showing on the tool."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:55
+msgid "Cyber_monitor"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:59
+msgid ""
+"The command line tool `cyber_monitor` provides a clear view of the list "
+"of real time channel information Apollo Cyber RT in the terminal."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:66
+msgid "Useful commands"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:68
+msgid "Display help information"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:70
+msgid "Use the -h option to get help for cyber_monitor"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:76
+msgid "Specify the channel"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:78
+msgid ""
+"With the -c option, you can have cyber_monitor to monitor only a "
+"specified channel, such as:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:84
+msgid "Get familiar with UI of cyber_monitor"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:86
+msgid ""
+"After launching the command line tool, you will notice it is similar to "
+"cyber_visualizer. It automatically collects the information of all the "
+"channels through the topology and displays them in two columns (channel "
+"name, channel data type)."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:88
+msgid ""
+"The default display for channel information is in red. However, if there "
+"is data flowing through the a channel, the corresponding line of the "
+"channel is displayed in green. As shown in the image below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:90
+msgid "![monitor](images/cyber_monitor.png)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:90
+msgid "monitor"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:92
+msgid "Interacting with cyber_monitor"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:94
+msgid "Common commands"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:102
+msgid "Common command for topology and channel"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:113
+msgid "Commands only for topology"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:121
+msgid "Commands only for channel"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:128
+msgid "View the repeated data field in a channel"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:135
+msgid "Cyber_recorder"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:137
+msgid ""
+"`cyber_recorder` is a record/playback tool provided by Apollo Cyber RT. "
+"It provides many useful functions, including recording a record file, "
+"playing back a record file, splitting a record file, checking the "
+"information of record file and etc."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:141
+msgid "Launch cyber_recorder:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:155
+msgid "Commands of cyber_recorder"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:157
+msgid "To view the information of a record file:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:165
+msgid "To record a record file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:180
+msgid "To play back a record file:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:199
+msgid "To split a record file:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:212
+msgid "To repair a record file:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:221
+msgid "Examples of using cyber_recorder"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:223
+msgid "Check the details of a record file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:255
+msgid "Record a record file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:263
+msgid "Replay a record file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:274
+msgid "rosbag_to\\_record"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:276
+msgid ""
+"`rosbag_to_record` is a tool which can convert rosbag to recorder file "
+"provided by Apollo Cyber RT. Now the tool support following channel:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:310
+msgid "Launch rosbag_to\\_record:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:319
+msgid "Example"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Developer_Tools.md:321
+msgid ""
+"We can convert [Apollo2.5 demo "
+"bag](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/demo_2.5.bag)"
+" to record file."
+msgstr ""
+

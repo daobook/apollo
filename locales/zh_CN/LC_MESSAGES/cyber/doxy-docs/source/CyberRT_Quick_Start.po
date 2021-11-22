@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:1
+msgid "How to Create and Run a new Component in Cyber RT"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:3
+msgid ""
+"Apollo Cyber RT framework is built upon the concept of components. As the"
+" building block of Cyber RT, each component is a specific algorithm "
+"module which processes a set of inputs and generates its set of outputs."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:7
+msgid ""
+"To successfully create and launch a new component, there are basically 4 "
+"steps:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:9
+msgid "Set up directory layout"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:10
+msgid "Implement the component class"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:11
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:113
+msgid "Configuration setup"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:12
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:160
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:182
+msgid "Launch the component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:14
+msgid ""
+"The example below demonstrates how to create, build and run a simple "
+"component named `CommonComponentExample`. To explore more about Cyber RT,"
+" you can find a couple of examples showing different functionalities of "
+"Cyber RT under the `cyber/examples` directory."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:19
+msgid ""
+"**Note**: The examples need to run after successfully built within Apollo"
+" Docker container."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:22
+msgid "Set up directry layout"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:24
+msgid ""
+"Take the sample component under `cyber/examples/common_component_example`"
+" for example:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:27
+msgid "Header file: common_component_example.h"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:28
+msgid "Source file: common_component_example.cc"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:29
+msgid "BUILD file: BUILD"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:30
+msgid "DAG file: common.dag"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:31
+msgid "Launch file: common.launch"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:33
+msgid "Implement the sample component class"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:35
+msgid "Header file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:37
+msgid ""
+"In the header file (`common_component_example.h`) for the sample "
+"component:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:39
+msgid "Inherit the `Component` base class"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:40
+msgid ""
+"Define your own `Init` and `Proc` functions. Please note that for `proc`,"
+" input data types need to be specified also."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:42
+msgid ""
+"Register the sample component class to be globally visible using the "
+"`CYBER_REGISTER_COMPONENT` macro."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:64
+msgid "Source File"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:66
+msgid ""
+"Implement both the `Init` and `Proc` functions in "
+"`common_component_example.cc`:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:84
+msgid "BUILD file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:115
+msgid "DAG file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:117
+msgid ""
+"To configure the DAG file (`common.dag` here), specify the following "
+"items:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:119
+msgid "Channel names: for data input and output"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:120
+msgid "Library path: library built from component class"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:121
+msgid "Class name: the class name of the component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:142
+msgid "Launch file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:144
+msgid ""
+"To configure the launch (`common.launch`) file, specify the following "
+"items:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:146
+msgid "The name of the component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:147
+msgid "The DAG file created in the previous step"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:148
+msgid "The name of the process to run the component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:162
+msgid "Build"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:164
+msgid "Build the sample component by running the command below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:171
+msgid "Environment setup"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:173
+msgid "Then configure the environment:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:184
+msgid "You can choose either of the two ways to launch the newly built component:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:186
+msgid "Launch with the launch file (recommended)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:192
+msgid "Launch with the DAG file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:198
+msgid "_Feed_ channel data for the component to process"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:200
+msgid "Open another terminal:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:208
+msgid "Open the 3rd terminal and run:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_Quick_Start.md:216
+msgid "And you should see output from terminal #1 like the following:"
+msgstr ""
+

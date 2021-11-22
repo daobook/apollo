@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/dreamview/README.md:2
+msgid "Dreamview"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:5
+msgid ""
+"Dreamview or Apollo's HMI module provides a web application that helps "
+"developers visualize the output of other relevant autonomous driving "
+"modules, e.g. the vehicle's planning trajectory, car localization, "
+"chassis status etc."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:7
+msgid "Input"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:8
+msgid "Currently Dreamview monitors the following messages:"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:9
+msgid ""
+"Localization, defined by Protobuf message `LocalizationEstimate`, which "
+"can be found in file `localization/proto/localization.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:10
+msgid ""
+"Chassis, defined by Protobuf message `Chassis`, which can be found in "
+"file `canbus/proto/chassis.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:11
+msgid ""
+"Planning, defined by Protobuf message `ADCTrajectory`, which can be found"
+" in file `planning/proto/planning.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:12
+msgid ""
+"Monitor, defined by Protobuf message `MonitorMessage`, which can be found"
+" in file `common/monitor/proto/monitor.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:13
+msgid ""
+"Perception Obstacles, defined by Protobuf message `PerceptionObstacles`, "
+"which can be found in file `perception/proto/perception_obstacle.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:14
+msgid ""
+"Prediction, defined by Protobuf message `PredictionObstacles`, which can "
+"be found in file `prediction/proto/prediction_obstacle.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:15
+msgid ""
+"Routing, defined by Protobuf message `RoutingResponse`, which can be "
+"found in file `routing/proto/routing.proto`."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:17
+msgid "Output"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:18
+msgid ""
+"A web-based dynamic 3D rendering of the monitored messages in a simulated"
+" world."
+msgstr ""
+
+#: ../../modules/dreamview/README.md:20
+msgid "Related Paper"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:22
+msgid ""
+"[Xu, J., Luo, Q., Xu, K., Xiao, X., Yu, S., Hu, J., Miao, J. and Wang, "
+"J., 2019, November. An Automated Learning-Based Procedure for Large-scale"
+" Vehicle Dynamics Modeling on Baidu Apollo Platform. In *2019 IEEE/RSJ "
+"International Conference on Intelligent Robots and Systems (IROS) (pp. "
+"5049-5056). IEEE.*](https://ieeexplore.ieee.org/document/8968102)"
+msgstr ""
+
+#: ../../modules/dreamview/README.md:24
+msgid ""
+"[Jiang, S., Wang, Y., Lin, L., Lin, W., Cao, Y., Miao, J. and Luo, Q., "
+"2020, November. DRF: A Framework for High-Accuracy Autonomous Driving "
+"Vehicle Modeling, *arXiv preprint "
+"arXiv:2011.00646.*](https://arxiv.org/abs/2011.00646)"
+msgstr ""
+

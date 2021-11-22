@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/common/README.md:1
+msgid "Common - Module"
+msgstr ""
+
+#: ../../modules/common/README.md:3
+msgid ""
+"This module contains code that is not specific to any module but is "
+"useful for the functioning of Apollo."
+msgstr ""
+
+#: ../../modules/common/README.md:5
+msgid "adapters"
+msgstr ""
+
+#: ../../modules/common/README.md:7
+msgid ""
+"Topics are used by different modules to communicate with one another. A "
+"large number of topic names are defined in `adapter_gflags`."
+msgstr ""
+
+#: ../../modules/common/README.md:9
+msgid "configs/data"
+msgstr ""
+
+#: ../../modules/common/README.md:11
+msgid "The vehicle configuration is specified in `configs/data`"
+msgstr ""
+
+#: ../../modules/common/README.md:13
+msgid "filters"
+msgstr ""
+
+#: ../../modules/common/README.md:15
+msgid ""
+"**filters** implements some filter classes including DigitalFilter and "
+"MeanFilter."
+msgstr ""
+
+#: ../../modules/common/README.md:17
+msgid "kv_db"
+msgstr ""
+
+#: ../../modules/common/README.md:19
+msgid ""
+"**KVDB** is a lightweight key-value database to store system-wide "
+"parameters."
+msgstr ""
+
+#: ../../modules/common/README.md:21
+msgid "latency_recorder"
+msgstr ""
+
+#: ../../modules/common/README.md:23
+msgid "**LatencyRecorder** can record the latency between two time points."
+msgstr ""
+
+#: ../../modules/common/README.md:25
+msgid "math"
+msgstr ""
+
+#: ../../modules/common/README.md:27
+msgid "**math** implements a number of useful mathematical libraries."
+msgstr ""
+
+#: ../../modules/common/README.md:29
+msgid "monitor_log"
+msgstr ""
+
+#: ../../modules/common/README.md:31
+msgid "**Monitor** defines a logging system."
+msgstr ""
+
+#: ../../modules/common/README.md:33
+msgid "proto"
+msgstr ""
+
+#: ../../modules/common/README.md:35
+msgid "**Proto** defines a number of project-wide protocol buffers."
+msgstr ""
+
+#: ../../modules/common/README.md:37
+msgid "status"
+msgstr ""
+
+#: ../../modules/common/README.md:39
+msgid ""
+"**Status** is used for determining whether certain functions were "
+"performed successfully or not. If not, status provides helpful error "
+"messages."
+msgstr ""
+
+#: ../../modules/common/README.md:41
+msgid "util"
+msgstr ""
+
+#: ../../modules/common/README.md:43
+msgid ""
+"**Util** contains an implementation of a factory design pattern with "
+"registration, a few string parsing functions, and some utilities for "
+"parsing protocol buffers from files."
+msgstr ""
+
+#: ../../modules/common/README.md:45
+msgid "vehicle_state"
+msgstr ""
+
+#: ../../modules/common/README.md:47
+msgid ""
+"The **vehicle_state** class specifies the current state of the vehicle "
+"(e.g. position, velocity, heading, etc.)."
+msgstr ""
+

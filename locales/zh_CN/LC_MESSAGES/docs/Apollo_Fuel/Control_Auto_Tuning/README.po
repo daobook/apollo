@@ -1,0 +1,542 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:1
+msgid "Control Parameter Auto-Tuning Service"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:4
+msgid ""
+"[Control Parameter Auto-Tuning Service](#ControlParameterAuto-"
+"TuningService)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:5
+msgid "[Overview](#Overview)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:6
+msgid "[Prerequisites](#Prerequisites)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:7
+msgid "[Main Steps](#MainSteps)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:8
+msgid "[Baidu Cloud Storage BOS Registration](#BaiduCloudStorageBOSRegistration)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:9
+msgid "[Open Cloud Service Account](#OpenCloudServiceAccount)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:10
+msgid "[Task Configuration File Setting](#TaskConfigurationFileSetting)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:11
+msgid "[Task Configuration Protocol Buffers](#TaskConfigurationProtocolBuffers)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:12
+msgid "[Task Configuration File Example](#TaskConfigurationFileExample)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:13
+msgid ""
+"[Task Configuration Detailed "
+"Explanations](#TaskConfigurationDetailedExplanations)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:14
+msgid "[Customized Dynamic Models Guidance](#CustomizedDynamicModelsGuidance)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:15
+msgid "[Task Submission](#TaskSubmission)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:16
+msgid "[Task Configuration File Storage](#TaskConfigurationFileStorage)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:17
+msgid "[Submit Job via Webpage](#SubmitJobviaWebpage)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:18
+msgid "[Task Results Acquisition](#TaskResultsAcquisition)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:19
+msgid "[Receive Task Results Email](#ReceiveTaskResultsEmail)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:20
+msgid "[Task Results Analysis](#TaskResultsAnalysis)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:23
+msgid "Overview"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:25
+msgid ""
+"Control parameter auto-tuning service utilizes the machine learning "
+"method to automatically optimize the control parameters of the PID, LQR, "
+"MPC, MRAC, etc. controllers used in the Apollo Control Module, to realize"
+" the full automation of controller tuning within offline simulation "
+"environment that saves massive manual tests with on-road experiments. It "
+"integrates with multiple Apollo online service tools including the "
+"dynamic modeling, simulation platform, and control profiling."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:27
+msgid ""
+"Control parameter auto-tuning service 1) iteratively generates the new "
+"control parameters and evaluate the generated parameters by invoking the "
+"backend Apollo Simulation service, in which the pre-trained vehicle "
+"dynamic models are used to enable the control-in-the-loop simulation; 2) "
+"the simulation results are evaluated via the backend control profiling "
+"service; 3) and furthermore, tens of control metrics from the control "
+"profiling results are weighted and combined into one weighted score, and "
+"with this score as optimization target, the auto-tuning service "
+"continuously searches the new control parameters with better score in the"
+" promising zone, until it reaches the given step."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:29
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:31
+msgid ""
+"Control parameter auto-tuning is executed in the control-in-the-loop "
+"simulation environment, and thus it request the users to provide their "
+"own vehicle dynamic model (i.e., the results of dynamic modeling service)"
+" for simulation; otherwise, the service will use the default vehicle "
+"dynamic model based on the MKZ vehicle model. Therefore, for a control "
+"parameter training service on the customized vehicle, some pre-required "
+"steps are listed as follows:"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:33
+msgid "[Apollo](https://github.com/ApolloAuto/apollo) 6.0 or higher version"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:35
+msgid ""
+"Cloud and simulation services registered according to [Apollo "
+"Dreamland](http://bce.apollo.auto/)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:37
+msgid "[Dynamic Modeling](../Dynamic_Model/README.md) service"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:40
+msgid "Main Steps"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:42
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:58
+msgid "Task Configuration File Setting"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:44
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:90
+msgid "Task Submission"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:46
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:102
+msgid "Task Results Acquisition"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:48
+msgid "Baidu Cloud Storage BOS Registration"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:50
+msgid ""
+"The registration please refer to [Baidu Cloud Storage BOS Register and "
+"User Manual](../../Apollo_Fuel/apply_bos_account_cn.md)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:52
+msgid ""
+"**Note:** The clients must use the registered `bucket`，and make sure that"
+" the `Bucket Name`、`Backet Area` are the same as the ones when "
+"registered。"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:54
+msgid "Open Cloud Service Account"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:56
+msgid ""
+"Please contact with the business department to open the cloud service "
+"account and provide your `Bucket Name`、`Backet Area` mentioned in the "
+"last step"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:60
+msgid "Task Configuration Protocol Buffers"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:61
+msgid ""
+"The task configuration should be prepared in the form of the "
+"\"XXX_tuner_params_config.pb.txt\", with the Protocol Buffers file as "
+"follows:    ![](images/tuner_param_config_proto.png)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:65
+msgid "Task Configuration File Example"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:66
+msgid ""
+"According to the Protocol Buffers shown above, an example of the "
+"configuration file is shown as follows:    "
+"![](images/tuner_param_config_pb_txt.png)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:69
+msgid "Task Configuration Detailed Explanations"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:70
+msgid ""
+"The detailed explanations of the message in the "
+"XXX_tuner_params_config.pb.txt is as follows:"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Message"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Detailed Explanations"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Notes"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`git_info.repo`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The repo name which will be executed in the Apollo simulation platform"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The dynamic models used in simulation must be placed in the designed path"
+" in this github repo, following the [Customized Dynamic Models "
+"Guidance](#CustomizedDynamicModelsGuidance)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`git_info.commit_id`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The commit id which will be executed in the Apollo simulation platform"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "If empty, by default the latest commit id will be used"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.user_tuning_module`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Set as **CONTROL**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Must be **CONTROL** otherwise cannot pass the task sanity check"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.user_conf_filename`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The control configuration file in the `git_info.repo`, which will be "
+"executed in the Apollo simulation platform"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The tuned parameters and flags must be included in the configuration file"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.n_iter`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The iteration step number used to search for the optimized control "
+"parameters. Suggested values: **n_iter=200 for 1-2 tuned parameters; "
+"n_iter=300 for 3-4 tuned parameters; n_iter=400 for 5-6 tuned parameters;"
+" n_iter=500 for 7-8 tuned parameters; n_iter=600 or more for 9+ tuned "
+"parameters**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The more the iteration steps are, the higher the optimization accuracy "
+"(but slower training process) is; must be **< 1000** otherwise cannot "
+"pass the task sanity check"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.opt_max`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Set as **True**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"Must be **True** otherwise cannot search for the optimized control "
+"parameters"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.flag`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"(repeated message) Set as many flags (boolen parameters) as the users "
+"need in the users' control configuration file. The flag values "
+"(True/False) you set will overwrite the default flag values in control "
+"configuration file"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The flags are NOT counted as **Tuned Parameter**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`tuner_parameters.parameter`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"(repeated message) Set as many parameters as the users need in the users'"
+" control configuration file. If the users set the **constant** property "
+"of the parameter, then the parameters will be treated as **Constant "
+"Parameter** and the set constant values will overwrite the default values"
+" in control configuration file; If the users set the **min** and **max** "
+"properties of the parameter, then the parameters will be treated as "
+"**Tuned Parameter** and the auto-tuning service will attempt to search "
+"the best parameter value through the range limited by **min** and **max**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The more the tuned parameters are, the more the optimization iteration "
+"step number (and the longer and slower auto-tuning process) may be needed"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`scenarios.id`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"(repeated message) Set as many scenario IDs as the users need for the "
+"control performance evaluation in the parameter auto-tuning. Suggested "
+"IDs: **11014, 11015, 11016, 11017, 11018, 11019, 11020**"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The users may also choose any available scenario ID from the public "
+"scenarios from the Apollo simulation platform. The more the scenario IDs "
+"are, the slower the auto-tuning process may be"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`dynamic_model`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"Set as **ECHO_LINCOLN**, only if `git_info.repo` is set as the official "
+"Apollo repo"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Ignored if the customized repo is used in `git_info.repo`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:85
+msgid "Customized Dynamic Models Guidance"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:87
+msgid ""
+"If the users intend to use their own dynamic models in simulation, then "
+"please provide the forward-driving model at github "
+"**apollo/modules/control/conf/dynamic_model_forward.bin**; backward-"
+"driving model at github "
+"**apollo/modules/control/conf/dynamic_model_backward.bin**. Please refer "
+"to [Dynamic Model](../../Apollo_Fuel/Dynamic_Model/README.md) for "
+"guidance on how to generate the customized dynamic models"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:92
+msgid "Task Configuration File Storage"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:94
+msgid ""
+"Before using the auto-tuning service，set up the input file storage first "
+"according to [Baidu Cloud Storage BOS Register and User "
+"Manual](../../Apollo_Fuel/apply_bos_account_cn.md) as indicated in [Baidu"
+" Cloud Storage BOS Registration](#Baidu Cloud Storage BOS Registration). "
+"Then, put the designed XXX_tuner_params_config.pb.txt file into any place"
+" under the users' BOS folder"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:96
+msgid "Submit Job via Webpage"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:98
+msgid ""
+"Login in the [Apollo webpage](http://bce.apollo.auto/) and choose the "
+"**Apollo Fuel -> New Job** in the functionality menu. Select the "
+"**Control Auto Tuning** option in the **New Job** menu，and then fill the "
+"**Input Data Path** with the task configuration file path starting from "
+"the root directory under the users' BOS folder (Note: **the Input Data "
+"Path must include the full configuration file name**, for example, "
+"'input/XXX_tuner_params_config.pb.txt'). Finally, submit your job by "
+"clicking the **Submit Job** button。"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:100
+msgid "![](images/control_auto_tuning_webpage.png)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:104
+msgid "Receive Task Results Email"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:106
+msgid ""
+"After the control parameter auto-tuning job successfully starts, the "
+"users' task configuration file will be tested by the sanity check "
+"procedure. If cannot pass the sanity check, then the user will receive "
+"the **failure notice email** at your registered email address, with the "
+"detailed failure reason."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:108
+msgid ""
+"If the control parameter auto-tuning job successfully passes the sanity "
+"check procedure, then after the job is fully finished, the user will "
+"receive the **results report email**, in which the parameter auto-tuning "
+"results and the linked configuration file will be provided as "
+"attachments."
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:110
+msgid "Results Email"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:112
+msgid "![](images/tuner_results_email.png)"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:114
+msgid "Task Results Analysis"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md:116
+msgid ""
+"The control auto-tuning results can be attained by accessing the report "
+"table in the email or in the attached tuner_results.txt file, with the "
+"detailed explanations as follows:"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`Tuner_Config`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The source of the task configuration file"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`Base_Target`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The weighted score of the best control parameters"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`Base_Params`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The best control parameters"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`Optimization_Time`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid ""
+"The overall time consumption of the entire auto-tuning optimization "
+"process"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Unit: seconds"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "`Time_Efficiency`"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "The average time consumption of the single optimization iteration step"
+msgstr ""
+
+#: ../../docs/Apollo_Fuel/Control_Auto_Tuning/README.md
+msgid "Unit: seconds / iteration"
+msgstr ""
+

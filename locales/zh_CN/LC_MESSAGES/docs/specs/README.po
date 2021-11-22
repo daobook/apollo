@@ -1,0 +1,259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/README.md:1
+msgid "Specs"
+msgstr ""
+
+#: ../../docs/specs/README.md:3
+msgid "Software"
+msgstr ""
+
+#: ../../docs/specs/README.md:5
+msgid "[Apollo 5.5 Software Architecture](Apollo_5.5_Software_Architecture.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:6
+msgid "[Apollo 3.5 Software Architecture](Apollo_3.5_Software_Architecture.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:7
+msgid "[Apollo 3.0 Software Architecture](Apollo_3.0_Software_Architecture.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:8
+msgid "[Apollo 2.0 Software Architecture](Apollo_2.0_Software_Architecture.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:9
+msgid "[Class Architecture Planning](Class_Architecture_Planning.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:10
+msgid "[Control-in-loop simulation](dynamic_model.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:12 ../../docs/specs/README.md:45
+#: ../../docs/specs/README.md:66 ../../docs/specs/README.md:81
+msgid "Chinese documents"
+msgstr ""
+
+#: ../../docs/specs/README.md:14
+msgid ""
+"[Apollo 3.0 Software Architecture "
+"CN](Apollo_3.0_Software_Architecture_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:15
+msgid "[Class Architecture Planning CN](Class_Architecture_Planning_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:17
+msgid "Apollo Hardware Development Platform"
+msgstr ""
+
+#: ../../docs/specs/README.md:19
+msgid ""
+"Apollo 3.0 Hardware Development Platform provides 2 types of evaluation "
+"for our supported hardware devices - Apollo Platform Supported devices "
+"and Apollo Hardware Development Platform Supported devices. In order to "
+"view each device's support type, please look under the `Disclaimer` "
+"section in each device's insallation guide. We highly recommend that you "
+"read through our [Disclaimer](Disclaimer_Hardware.pdf) to understand each"
+" device type, before reading through our Hardware platform installation "
+"documents."
+msgstr ""
+
+#: ../../docs/specs/README.md:27
+msgid ""
+"[Apollo Sensor "
+"Unit](Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:28
+msgid "[Camera](Camera/README.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:29
+msgid "[LiDAR](Lidar/README.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:30
+msgid "[Radar](Radar/README.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:31
+msgid "[Navigation](Navigation/README.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:32
+msgid "[IPC](IPC/Nuvo-6108GC_Installation_Guide.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:33
+msgid ""
+"[Prerequisite Software "
+"Installation](prerequisite_software_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:35
+msgid "Perception"
+msgstr ""
+
+#: ../../docs/specs/README.md:37
+msgid "[Perception Apollo 5.0](perception_apollo_5.0.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:38
+msgid "[Perception Apollo 3.0](perception_apollo_3.0.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:39
+msgid ""
+"[Guideline Sensor Installation Apollo "
+"3.0](Guideline_sensor_Installation_apollo_3.0.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:40
+msgid "[Perception Apollo 2.5](perception_apollo_2.5.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:41
+msgid ""
+"[Guideline Sensor Installation Apollo "
+"2.5](Guideline_sensor_Installation_apollo_2.5.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:42
+msgid "[LiDAR Calibration.pdf](lidar_calibration.pdf)"
+msgstr ""
+
+#: ../../docs/specs/README.md:43
+msgid ""
+"[LiDAR - IMU Calibration "
+"Guide](../quickstart/multiple_lidar_gnss_calibration_guide.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:47
+msgid "[Perception Apollo 3.0 CN](perception_apollo_3.0_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:48
+msgid ""
+"[Guideline Sensor Installation Apollo 3.0 "
+"CN](Guideline_sensor_Installation_apollo_3.0_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:49
+msgid "[LiDAR Calibration CN](lidar_calibration_cn.pdf)"
+msgstr ""
+
+#: ../../docs/specs/README.md:51
+msgid "HMI"
+msgstr ""
+
+#: ../../docs/specs/README.md:53
+msgid "[Introducing Dreamland](Dreamland_introduction.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:54
+msgid "[Dreamview usage table](dreamview_usage_table.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:55
+msgid "[Dreamview usage table CN](dreamview_usage_table_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:57
+msgid "Algorithms"
+msgstr ""
+
+#: ../../docs/specs/README.md:59
+msgid "[Open Space Planner](Open_Space_Planner.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:60
+msgid "[3d obstacle perception](3d_obstacle_perception.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:61
+msgid "[QP spline path optimizer](qp_spline_path_optimizer.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:62
+msgid "[QP spline st speed optimizer](qp_spline_st_speed_optimizer.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:63
+msgid "[Reference line smoother](reference_line_smoother.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:64
+msgid "[Traffic Light](traffic_light.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:68
+msgid "[3d obstacle perception CN](3d_obstacle_perception_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:69
+msgid "[QP spline path optimizer CN](qp_spline_path_optimizer_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:70
+msgid "[QP spline st speed optimizer CN](qp_spline_st_speed_optimizer_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:71
+msgid "[Reference line smoother CN](reference_line_smoother_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:72
+msgid "[Traffic Light](traffic_light_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:74
+msgid "General"
+msgstr ""
+
+#: ../../docs/specs/README.md:76
+msgid "[Coordinate System.pdf](coordination.pdf)"
+msgstr ""
+
+#: ../../docs/specs/README.md:77
+msgid "[Apollo secure upgrade user guide](apollo_secure_upgrade_user_guide.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:78
+msgid "[Bazel in Apollo: An Overview](bazel_in_apollo_an_overview.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:79
+msgid "[Apollo Build and Test Explained](apollo_build_and_test_explained.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:83
+msgid "[Coordinate System CN](coordination_cn.md)"
+msgstr ""
+
+#: ../../docs/specs/README.md:84
+msgid "[Apollo secure upgrade user guide](apollo_secure_upgrade_user_guide_cn.md)"
+msgstr ""
+

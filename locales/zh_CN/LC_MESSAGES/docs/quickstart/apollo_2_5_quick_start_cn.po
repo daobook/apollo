@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:1
+msgid "Apollo 2.5 快速入门指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:3
+msgid ""
+"这个快速入门指南专注于Apollo 2.5新功能的介绍。对于Apollo的一般概念，请参考 [Apollo 1.0 "
+"快速入门指南](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_1_0_quick_start_cn.md)"
+" 和 "
+"[Apollo软件安装指南](https://github.com/ApolloAuto/apollo/blob/r3.0.0/docs/quickstart/apollo_software_installation_guide_cn.md)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:8
+msgid "上车测试"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:10
+msgid ""
+"上车测试，请确认你已经调试了所有传感器之间的外部参数。关于传感器标定，请参考 [Apollo 2.0 Sensor Calibration "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_0_sensor_calibration_guide_cn.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:13
+msgid "启动发布的环境的Docker镜像"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:15
+msgid "启动DreamView"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:17
+msgid "打开浏览器（譬如Chrome）然后在地址栏输入**http://localhost:8888**来启动Apollo Dreamview。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:19
+msgid "![](images/dreamview_2_5.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:21
+msgid "选择模式、车辆和地图"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:23
+msgid "![](images/dreamview_2_5_setup_profile.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:25
+msgid ""
+"单击右上角下拉菜单选择车辆和地图。这个列表是在 [HMI config "
+"file](ttps://raw.githubusercontent.com/ApolloAuto/apollo/master/modules/dreamview/conf/hmi.conf)"
+" 中定义的。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:29
+msgid "启动所有模块"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:31
+msgid "点击左侧的\"Setup\"按钮来设置。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:33
+msgid "![](images/dreamview_2_5_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:35
+msgid "跳转到*Module Controller*页面，检查所有的软硬件都已正常工作。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:37
+msgid "![](images/dreamview_2_5_module_controller.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:39
+msgid "在Default Routing下选择想要的路线。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:41
+msgid "在Tasks下谨慎启动自动驾驶模式"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:43
+msgid "确定硬件已经齐备，所有模块已经打开并且汽车状态良好，环境安全，点击\"Start Auto\"按钮。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:45
+msgid "[](images/dreamview_2_5_start_auto.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_5_quick_start_cn.md:47
+msgid "测试完成后，点击Reset All，关闭所有窗口，关闭工控机。"
+msgstr ""
+

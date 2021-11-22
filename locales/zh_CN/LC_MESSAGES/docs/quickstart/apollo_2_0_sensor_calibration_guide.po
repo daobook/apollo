@@ -1,0 +1,879 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:1
+msgid "Apollo 2.0 Sensor Calibration Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:3
+msgid ""
+"This guide introduces the Apollo Sensor Calibration Service and describes"
+" the three new calibration tools in Apollo 2.0:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:5
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:347
+msgid "Camera-to-Camera Calibration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:6
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:196
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:368
+msgid "Camera-to-LiDAR Calibration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:7
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:241
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:383
+msgid "Radar-to-Camera Calibration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:8
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:282
+msgid "IMU-to-Vehicle Calibration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:10
+msgid "About This Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:12
+msgid "This guide provides the following information:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:14
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:20
+msgid "Overview"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:15
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:25
+msgid "Preparation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:16
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:134
+msgid "Using the Calibration Tools"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:17
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:329
+msgid "Obtaining Calibration Results"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:18
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:341
+msgid "Validation Methods and Results"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:22
+msgid ""
+"The new calibration tools in Apollo 2.0 (Camera-to-Camera Calibration, "
+"Camera-to-LiDAR Calibration, and Radar-to-Camera Calibration) are "
+"provided by an onboard executable program.For LiDAR-GNSS calibration, "
+"please refer to the [LiDAR-IMU calibration "
+"guide](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/apollo_lidar_imu_calibration_guide.md)."
+" Velodyne HDL-64 users can also use the calibration service in Apollo "
+"1.5. The benefit in using these tools is that they reduce the amount of "
+"work that the user must do. The user only has to start the corresponding "
+"calibration program, and the calibration work is performed and completes "
+"in real time. The user can then verify the calibration results, which are"
+" provided as `.yaml` files."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:26
+msgid ""
+"Download [calibration "
+"tools](https://github.com/ApolloAuto/apollo/releases/download/v2.0.0/calibration.tar.gz),"
+" and extract files to `$APOLLO_HOME/modules/calibration`. APOLLO_HOME is "
+"the root directory of apollo repository."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:28
+msgid "Well Calibrated Intrinsics of Camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:30
+msgid ""
+"Camera intrinsics contain focus length, principal points, distortion "
+"coefficients, and other information. Users can obtain the intrinsics from"
+" other camera calibration tools such as the [ROS Camera Calibration "
+"Tools](http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration)"
+" and the [Camera Calibration Toolbox for "
+"Matlab](http://www.vision.caltech.edu/bouguetj/calib_doc/). After the "
+"calibration is completed, ***users should convert the result to a "
+"specific `yaml` format file manually***."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:32
+msgid "Users must ensure that the `K` and `D` data is correct:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:34
+msgid "`K` refers to the camera matrix"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:35
+msgid "`D` refers to the distortion parameters"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:37
+msgid "The following is an example of a camera intrinsic file:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:63
+msgid ""
+"It is recommended that you perform the intrinsic calibration for every "
+"single camera instead of using unified intrinsic parameters for every "
+"camera. If you follow this practice, you can improve the accuracy of the "
+"extrinsic calibration results."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:65
+msgid "Initial Extrinsic File"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:67
+msgid ""
+"The tools require the user to provide an initial extrinsic value as a "
+"reference."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:69
+msgid ""
+"The following is an example of an initial extrinsic file of Camera-to-"
+"LiDAR, where `translation` is the shift distance between the camera and "
+"LiDAR. The `rotation` is the quaternion expression form of the rotation "
+"matrix."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:91
+msgid ""
+"**NOTE:** The Camera-to-LiDAR Calibration is more dependent on initial "
+"extrinsic values. ***A large deviation can lead to calibration "
+"failure.*** Therefore, it is essential that you provide the most "
+"accurate, initial extrinsic value as conditions allow."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:93
+msgid "Calibration Site"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:95
+msgid ""
+"Because the Camera-to-LiDAR Calibration method is used in natual "
+"environment, a good location can significantly improve the accuracy of "
+"the calibration. It is recommended that you select a calibration site "
+"that includes objects such as trees, poles, street lights, traffic signs,"
+" stationary objects, and clear traffic lines."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:97
+msgid "Figure 1 is an example of a good choice for a calibration site:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:99
+msgid "![](images/calibration/sensor_calibration/calibration_place.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:102
+msgid "Required Topics"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:104
+msgid ""
+"Users must confirm that all sensor topics required by the program have "
+"output messages. For more information, see: [How to Check the Sensor "
+"Output?](https://github.com/ApolloAuto/apollo/blob/master/docs/FAQs/Calibration_FAQs.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:106
+msgid ""
+"The sensor topics that the on-board program requires are listed in Tables"
+" 1, 2, and 3."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:108
+msgid "**Table 1. The Required Topics of Camera-to-Camera Calibration**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Sensor"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Topic Name"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Topic Feq. (Hz)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Short_Camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "/apollo/sensor/camera/traffic/image_short"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "9"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Long_Camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "/apollo/sensor/camera/traffic/image_long"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "INS"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "/apollo/sensor/gnss/odometry"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "100"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "/apollo/sensor/gnss/ins_stat"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "2"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:117
+msgid "**Table 2. The Required Topics of Camera-to-LiDAR Calibration**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "LiDAR"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "/apollo/sensor/velodyne64/compensator/PointCloud2"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "10"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:126
+msgid "**Table 3. The Required Topics of Radar-to-Camera Calibration**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:136
+msgid ""
+"This section provides the following information to use the three "
+"calibration tools:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:138
+msgid "Commands to run each tool"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:139
+msgid "Data collection guidelines"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:140
+msgid "Location of the configuration file"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:141
+msgid "Types of data output"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:143
+msgid ""
+"Before you begin to use the tools, you must verify that the localization "
+"status is ***56*** or the calibration tools (programs) will ***not*** "
+"collect data."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:145
+msgid "Type the following command to check localization status:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:151
+msgid "Camera-to-Camera Calibration Tool"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:153
+msgid "Run the Camera-to-Camera Calibration Tool using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:160
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:205
+msgid "Follow these guidelines to collect data:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:162
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:207
+msgid ""
+"Because the two cameras have different timestamps, they cannot be "
+"completely synchronized, so it is important to drive the vehicle very "
+"slowly when recording the data. The slow speed of the vehicle can "
+"effectively alleviate the image mismatch that is caused by the different "
+"timestamps."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:164
+msgid ""
+"Make sure to enable a large enough overlap of the regions of the two "
+"camera images or the tool will ***not*** be able to perform the extrinsic"
+" calibration operation."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:166
+msgid "Note the location of the configuration file:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:172
+msgid "Table 4 identifies and describes each element in the configuration file."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:174
+msgid "**Table 4. Camera-to-Camera Calibration Configuration Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Configuration"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Description"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "long_image_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "telephoto camera image topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "short_image_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "wide-angle camera image topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "odometry_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "vehicle vodometry topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "ins_stat_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "vehicle locolization status topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "long_camera_intrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "intrinsic file of telephoto camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "short_camera_intrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "intrinsic file of wide-angle camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "init_extrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "initial extrinsic file"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "output_path"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "calibration results output path"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "max_speed_kmh"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "limitation of max vehicle speed, unit: km/h"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:188
+msgid "The types of output from the Camera-to-Camera Calibration Tool are:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:190
+msgid "The calibrated extrinsic file, provided as a `.yaml` file."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:191
+msgid "Validation images that include:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:192
+msgid "An image captured by the telephoto camera."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:193
+msgid "An image captured by the wide-angle camera."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:194
+msgid ""
+"A warp image blended with an undistorted wide-angle camera image and an "
+"undistorted telephoto camera image."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:198
+msgid "Run the Camera-to-LiDAR Calibration Tool using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:209
+msgid ""
+"Make sure that there are a certain number of (over 500) projection points"
+" in the camera image, or the tool ***cannot*** perform the extrinsic "
+"calibration operation. For this reason, this tool is only for wide angle "
+"cameras."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:211
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:254
+msgid "Note the location of the saved configuration file:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:218
+msgid "Table 5 identifies and describes each element in the configuration file."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:220
+msgid "**Table 5. Camera-to-LiDAR Calibration Configuration Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "camera_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "lidar_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "LiDAR point cloud topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "vehicle odometry topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "vehicle localization status topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "camera_intrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "intrinsic file of camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "calib_stop_count"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "required stops of capturing data"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:234
+msgid "The types of output from the Camera-to-LiDAR Calibration Tool are:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:236
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:277
+msgid "The calibrated extrinsic file, provided as a `.yaml` file"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:237
+msgid ""
+"Two validation images that project the LiDAR point cloud onto a camera "
+"image:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:238
+msgid "One image is colored with depth"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:239
+msgid "One image is colored with intensity"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:243
+msgid "Run the Radar-to-Camera Calibration Tool using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:250
+msgid "Follow this guideline to collect data:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:252
+msgid ""
+"Drive the vehicle at a low speed and in a straight line to enable the "
+"calibration tool to capture data only under this set of conditions."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:261
+msgid "Table 6 identifies and describes each element in the configuration file."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:263
+msgid "**Table 6. Radar-to-Camera Calibration Configuration Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "wide angle camera image topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:275
+msgid "The types of output from the Radar-to-Camera Calibration tool are:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:278
+msgid ""
+"A validation image that includes the projection result from Radar-to-"
+"LiDAR. You need to run the `radar_lidar_visualizer` tool to generate the "
+"image.  See [Radar LiDAR Visualizer Projection Tool](####Radar LiDAR "
+"Visualizer Projection Tool) for more information."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:283
+msgid ""
+"Download the [calibration tool](https://apollocache.blob.core.windows.net"
+"/apollo-cache/imu_car_calibrator.zip)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:284
+msgid ""
+"Start the vehicle to move before calibration. The vehicle should keep "
+"going straight at speed of 3m/s for 10s at least.  There is no need to "
+"provide the intrinsic and initial extrinsic."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:285
+msgid "Required topic: INS /apollo/sensors/gnss/odemetry 100Hz"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:287
+msgid "Run the IMU-to-Vehicle Calibration using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:293
+msgid ""
+"The result is saved as vehicle_imu_extrinsics.yaml in current path. Here "
+"is an example:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:320
+msgid "(Optional) Run All Calibration Tools"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:322
+msgid "If necessary, users can run all calibration tools using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:331
+msgid ""
+"All calibration results are saved under the  `output` path in the "
+"configuration files, and they are provided in `yaml` format. In addition,"
+" depending on the sensor, the calibration results are stored in different"
+" folders in the `output` directory as shown in Table 7:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:333
+msgid "**Table 7. Path of Saved Calibration Results for Each Sensor**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Path for Saved Results"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "[output]/camera_params"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Radar"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "[output]/radar_params"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:343
+msgid ""
+"When the calibration is complete, the corresponding calibration result "
+"verification image is generated in the `[output]/validation` directory."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:345
+msgid ""
+"This section provides the background information and the corresponding "
+"validation method to use to evaluate verification images for each "
+"calibration tool."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:349
+msgid ""
+"**Background Information:**  In the warp image, the green channel is "
+"produced from the wide-angle camera image, and the red and blue channels "
+"are produced from the telephoto camera image. Users can compare the "
+"alignment result of the warp image to validate the precision of the "
+"calibrated extrinsic parameter."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:352
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:394
+msgid "**Validation Method:**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:354
+msgid ""
+"In the fusion area of the warp image, judge the alignment of the scene 50"
+" meters away from the vehicle. If the images coincide completely, the "
+"extrinsic parameter is satisfactory. However, if a pink or green ghost "
+"(displacement) appears, the extrinsic parameter is in error."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:356
+msgid ""
+"When the error is greater than a certain range (for example, 20 pixels, "
+"determined by the actual usage), you need to re-calibrate the extrinsic "
+"parameter. Under general circumstances, due to the parallax, some "
+"dislocations may occur in the horizontal with close objects, but the "
+"vertical direction is not affected. This is a normal phenomenon."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:358
+msgid ""
+"**Examples: **As shown in the following examples, Figure 2 meets the "
+"precision requirements of the extrinsic parameter, and Figure 3 does not."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:360
+msgid ""
+"![](images/calibration/sensor_calibration/cam_cam_good.png) <a "
+"align=\"center\"> Figure 2. Good Calibration Result for Camera-to-Camera "
+"Calibration </p>"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:363
+msgid ""
+"![](images/calibration/sensor_calibration/cam_cam_error.png) <a "
+"align=\"center\"> Figure 3. Bad Calibration Result for Camera-to-Camera "
+"Calibration</p>"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:370
+msgid ""
+"**Background Information:**  In the point cloud projection images, users "
+"can see objects and signs with obvious edges and compare the alignment."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:372
+msgid ""
+"**Validation Method:** If the target is within 50 meters, its edge of "
+"point cloud can coincide with the edge of the image, and the accuracy of "
+"the calibration results can be proved to be very high. However, if there "
+"is a misplacement, the calibration results are in error. The extrinsic "
+"parameter is ***not*** available when the error is greater than a certain"
+" range (for example, 5 pixels, depending on the actual usage)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:374
+msgid ""
+"**Examples:**  As shown in the following examples, Figure 4 meets the "
+"precision requirements of the extrinsic parameter, and Figure 5 does not."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:377
+msgid "![](images/calibration/sensor_calibration/cam_lidar_good.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:380
+msgid "![](images/calibration/sensor_calibration/cam_lidar_error.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:385
+msgid ""
+"**Background Information:** To verify the extrinsic output, use the LiDAR"
+" in the system as a medium. This approach enables you to obtain:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:388
+msgid ""
+"The extrinsic parameter of the radar relative to the LiDAR through the "
+"extrinsic value of the radar relative to the camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:390
+msgid "The extrinsic value of the camera relative to the LiDAR"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:392
+msgid ""
+"You can then draw a bird's-eye-view fusion image, which fuses the radar "
+"data and the LiDAR data in the LiDAR coordinate system. You can use the "
+"alignment of the radar data and the LiDAR data in the bird's-eye-view "
+"fusion image to judge the accuracy of the extrinsic parameter. In the "
+"fusion image, all of the small white points indicate the LiDAR point "
+"cloud, while the large green solid circles indicate radar objects."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:396
+msgid ""
+"The alignment of the radar object and the LiDAR data in the bird's-eye-"
+"view fusion image shows the accuracy of the extrinsic parameter. If most "
+"of the targets coincide, it is satisfactory. However, if over 40% targets"
+" (especially vehicles) ***do not*** align, it is ***not*** satisfactory "
+"and you need to re-calibrate."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:398
+msgid ""
+"**Examples:**  As shown in the following examples, Figure 6 meets the "
+"precision requirements of the extrinsic parameter, and Figure 7 does not."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:401
+msgid "![](images/calibration/sensor_calibration/radar_cam_good.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:404
+msgid "![](images/calibration/sensor_calibration/radar_cam_error.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:407
+msgid "**Radar LiDAR Visualizer Projection Tool**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:410
+msgid ""
+"To obtain the fusion image of the radar data and the LiDAR point cloud, "
+"the calibration process automatically (if using `bash "
+"sensor_calibration.sh all`) or manually (if using `bash "
+"sensor_calibration.sh visualizer`) calls another projection tool, the "
+"`radar_lidar_visualizer`. The projection tool loads the extrinsic files "
+"of the Radar-to-Camera and the Camera-to-LiDAR."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:412
+msgid ""
+"**IMPORTANT:** Before the projection tool starts, make sure that the two "
+"extrinsic parameters are well calibrated and exist in the specific path "
+"set in the configuration file (`radar_camera_extrinsics_filename` and "
+"`camera_lidar_extrinsics_filename`)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:414
+msgid "Run the `radar_lidar_visualizer` program using these commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:421
+msgid ""
+"Note the saved location of the configuration file of "
+"`radar_lidar_visualizer`:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:427
+msgid ""
+"Table 8 identifies and describes each element in the projection tool "
+"configuration file."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:429
+msgid "**Table 8. Projection Tool Radar-to-LiDAR Configuration Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Configuration File"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "radar_topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Radar data topic"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "radar_camera_extrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Calibrated extrinsic of Radar-to-Camera"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "camera_lidar_extrinsics_filename"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Calibrated extrinsic of Camera-to-LiDAR"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md
+msgid "Validation results output path"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:439
+msgid "Note the location of the saved validation image:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_2_0_sensor_calibration_guide.md:441
+msgid "`[output]/validation`"
+msgstr ""
+

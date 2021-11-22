@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:1
+msgid "Apollo 3.0 快速入门指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:3
+msgid "该指南是帮助使用者在车辆上安装和启动Apollo 3.0软硬件套件的用户手册。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:5
+msgid ""
+"这个快速入门指南专注于Apollo 3.0新功能的介绍。对于Apollo的通用概念，请参考[Apollo 1.0 "
+"快速入门指南](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_1_0_quick_start_cn.md)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:7
+msgid "内容"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:9
+msgid "[Apollo 3.0 快速入门指南](#apollo-30-快速入门指南)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:10
+msgid "[内容](#内容)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:11
+msgid "[车辆校准指南](#车辆校准指南)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:12
+msgid "[硬件和软件安装](#硬件和软件安装)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:13
+msgid "[DreamView的使用](#dreamview的使用)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:14
+msgid "[上车测试](#上车测试)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:16
+msgid "车辆校准指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:18
+msgid ""
+"在进行车辆测试前必须确保已经校准了所有的传感器，关于传感器校准，请参考[Apollo 2.0 "
+"传感器标定方法使用指南](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_0_sensor_calibration_guide_cn.md)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:20
+msgid "硬件和软件安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:22
+msgid ""
+"请参考[Apollo 3.0 "
+"硬件与系统安装指南](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_3_0_hardware_system_installation_guide_cn.md)获取安装硬件组件的步骤，参考[Apollo软件安装指南](https://github.com/ApolloAuto/apollo/blob/r3.0.0/docs/quickstart/apollo_software_installation_guide_cn.md)获取软件安装步骤。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:24
+msgid "DreamView的使用"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:26
+msgid "关于DreamView使用时的相关问题请参考[DreamView用法介绍](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/dreamview_usage_table_cn.md)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:28
+msgid "上车测试"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:30
+msgid "将一个外部磁盘驱动器接入主机任一可用USB接口。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:31
+msgid "首先启动车辆，然后启动主机。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:32
+msgid "启动发布版本的Docker容器。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:33
+msgid "启动DreamView。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:35
+msgid "打开浏览器（譬如Chrome）然后在地址栏输入 <http://localhost:8888>"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:37
+msgid "![dreamview_2_5](images/dreamview_2_5.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:37
+msgid "dreamview_2_5"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:39
+msgid "选择模式、车辆和地图。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:41
+msgid "![dreamview_2_5_setup_profile](images/dreamview_2_5_setup_profile.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:41
+msgid "dreamview_2_5_setup_profile"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:43
+msgid ""
+"附注：在进行任何测试前会要求使用者设置参数。点击下拉列表并选择想要使用的导航模式，高清地图和车辆。该列表数据在[HMI config "
+"file](https://raw.githubusercontent.com/ApolloAuto/apollo/master/modules/dreamview/conf/hmi.conf)中定义。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:45
+msgid "附注：允许使用者在HMI的右侧面板中更改参数，但是需要点击右上角的Reset All按钮重启该系统以使参数生效。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:47
+msgid "启动模块。 点击 `Setup`按钮。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:50
+msgid "![dreamview_2_5_setup](images/dreamview_2_5_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:50
+msgid "dreamview_2_5_setup"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:52
+msgid ""
+"附注：进入 **Module Controller** 面板，检查是否所有的模块和硬件已经准备好（在离线环境中，某些硬件模块如GPS， "
+"CANBus， Velodyne，Camera和Radar不会显示）（为了获得更佳的GPS信号，可能需要车辆运行一段距离。）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:54
+msgid "在 `Default Routing`中选择期望的路线。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:56
+msgid "在Tasks面板中，点击 `Start Auto`（将要进入自动驾驶模式时需要十分小心谨慎）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:58
+msgid "![dreamview_2_5_start_auto](images/dreamview_2_5_start_auto.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:58
+msgid "dreamview_2_5_start_auto"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:60
+msgid "自动驾驶测试结束后，在Tasks面板中点击 `Reset All`，关闭所有窗口，关闭主机。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_3_0_quick_start_cn.md:62
+msgid "移除磁盘驱动器。"
+msgstr ""
+

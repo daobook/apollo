@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/README.md:1
+msgid "Apollo documents"
+msgstr ""
+
+#: ../../docs/README.md:3
+msgid "Quick Start Guide"
+msgstr ""
+
+#: ../../docs/README.md:5
+msgid ""
+"[README](quickstart/README.md) - A hardware and software guide to setting"
+" up Apollo, segregated by versions"
+msgstr ""
+
+#: ../../docs/README.md:7
+msgid "Technical Tutorial"
+msgstr ""
+
+#: ../../docs/README.md:9
+msgid ""
+"[README](technical_tutorial/README.md) - Everything you need to know "
+"about Apollo. Written as individual versions with links to every document"
+" related to that version."
+msgstr ""
+
+#: ../../docs/README.md:11
+msgid "Cyber"
+msgstr ""
+
+#: ../../docs/README.md:13
+msgid "[README](cyber/README.md) - All you need to know about Apollo Cyber"
+msgstr ""
+
+#: ../../docs/README.md:15
+msgid "Specs"
+msgstr ""
+
+#: ../../docs/README.md:17
+msgid ""
+"[README](specs/README.md) - A Deep dive into Apollo's Hardware and "
+"Software specifications (only recommended for expert level developers "
+"that have successfully installed and launched Apollo)"
+msgstr ""
+
+#: ../../docs/README.md:19
+msgid "Howto Guides"
+msgstr ""
+
+#: ../../docs/README.md:21
+msgid ""
+"[README](howto/README.md) - Brief technical solutions to common problems "
+"that developers face during the installation and use of the Apollo "
+"platform"
+msgstr ""
+
+#: ../../docs/README.md:23
+msgid "FAQs"
+msgstr ""
+
+#: ../../docs/README.md:25
+msgid ""
+"[README](FAQs/README.md) - Commonly asked questions about Apollo's setup "
+"and modules"
+msgstr ""
+
+#: ../../docs/README.md:27
+msgid "Technical Documents"
+msgstr ""
+
+#: ../../docs/README.md:29
+msgid ""
+"[README](technical_documents/README.md) - Some documents helping "
+"developers on code reading and algorithm understanding"
+msgstr ""
+

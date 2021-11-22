@@ -1,0 +1,1073 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1
+msgid "Cyber RT API tutorial"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:4
+msgid ""
+"This document provides an extensive technical deep dive into how to "
+"create, manipulate and use Cyber RT's API."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:6
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:8
+msgid "[Talker-Listener](#Talker-Listener)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:9
+msgid "[Service Creation and Use](#Service-Creation-and-Use)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:10
+msgid "[Param parameter service](#Param-parameter-service)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:11
+msgid "[Log API](#LOG-API)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:12
+msgid ""
+"[Building a module based on Component](#Building-a-module-based-on-"
+"Component)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:13
+msgid "[Launch](#Launch)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:14
+msgid "[Timer](#timer)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:15
+msgid "[Time API](#use-of-time)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:16
+msgid "[Record file: Read and Write](#Record-file-Read-and-Write)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:17
+msgid "[C++ API Directory](##API-Directory)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:18
+msgid "[Node](#node-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:19
+msgid "[Writer](#writer-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:20
+msgid "[Client](#client-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:21
+msgid "[Parameter](#parameter-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:22
+msgid "[Timer](#timer-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:23
+msgid "[Time](#timer-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:24
+msgid "[Duration](#duration-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:25
+msgid "[Rate](#rate-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:26
+msgid "[RecordReader](#recordreader-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:27
+msgid "[RecordWriter](#recordwriter-api)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:29
+msgid "Talker-Listener"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:31
+msgid ""
+"The first part of demonstrating CyberRT API is to understand the "
+"Talker/Listener example. Following are three essential concepts: node "
+"(basic unit), reader(facility to read message) and writer(facility to "
+"write message) of the example."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:33
+msgid "Create a node"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:35
+msgid ""
+"In the CyberRT framework, the node is the most fundamental unit, similar "
+"to the role of a `handle`. When creating a specific functional object "
+"(writer, reader, etc.), you need to create it based on an existing node "
+"instance. The node creation interface is as follows:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:42
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:66
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:92
+msgid "Parameters:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:43
+msgid "node_name: name of the node, globally unique identifier"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:44
+msgid "name_space: name of the space where the node is located"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:46
+msgid ""
+"name_space is empty by default. It is the name of the space concatenated "
+"with node_name. The format is `/namespace/node_name`"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:48
+msgid "Return value - An exclusive smart pointer to Node"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:49
+msgid ""
+"Error Conditions - when `cyber::Init()` has not called, the system is in "
+"an uninitialized state, unable to create a node, return nullptr"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:51
+msgid "Create a writer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:53
+msgid ""
+"The writer is the basic facility used in CyberRT to send messages. Every "
+"writer corresponds to a channel with a specific data type. The writer is "
+"created by the `CreateWriter` interface in the node class. The interfaces"
+" are listed as below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:67
+msgid "channel_name: the name of the channel to write to"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:68
+msgid "MessageT: The type of message to be written out"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:69
+msgid "Return value - Shared pointer to the Writer object"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:71
+msgid "Create a reader"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:73
+msgid ""
+"The reader is the basic facility used in cyber to receive messages. "
+"Reader has to be bound to a callback function when it is created. When a "
+"new message arrives in the channel, the callback will be called. The "
+"reader is created by the `CreateReader` interface of the node class. The "
+"interfaces are listed as below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:93
+msgid "MessageT: The type of message to read"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:94
+msgid "channel_name: the name of the channel to receive from"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:95
+msgid "reader_func: callback function to process the messages"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:97
+msgid "Return value - Shared pointer to the Reader object"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:99
+msgid "Code Example"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:101
+msgid "Talker (cyber/examples/talker.cc)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:135
+msgid "Listener (cyber/examples/listener.cc)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:159
+msgid "Bazel BUILD file(cyber/samples/BUILD)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:181
+msgid "Build and Run"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:183
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:501
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:961
+msgid "Build: bazel build cyber/examples/…"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:184
+msgid "Run talker/listener in different terminals:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:185
+msgid "./bazel-bin/cyber/examples/talker"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:186
+msgid "./bazel-bin/cyber/examples/listener"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:187
+msgid "Examine the results: you should see message printing out on listener."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:189
+msgid "Service Creation and Use"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:191
+msgid "Introduction"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:193
+msgid ""
+"In an autonomous driving system, there are many scenarios that require "
+"more from module communication than just sending or receiving messages. "
+"Service is another way of communication between nodes. Unlike channel, "
+"service implements `two-way` communication, e.g. a node obtains a "
+"response by sending a request. This section introduces the `service` "
+"module in CyberRT API with examples."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:195
+msgid "Demo - Example"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:197
+msgid ""
+"Problem: create a client-server model that pass Driver.proto back and "
+"forth. When a request is sent in by the client, the server "
+"parses/processes the request and returns the response."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:200
+msgid "The implementation of the demo mainly includes the following steps."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:202
+msgid "Define request and response messages"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:204
+msgid ""
+"All messages in cyber are in the `protobuf` format. Any protobuf message "
+"with serialize/deserialize interfaces can be used as the service request "
+"and response message. `Driver` in examples.proto is used as service "
+"request and response in this example:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:217
+msgid "Create a service and a client"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:258
+msgid "Bazel build file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:271
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:499
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:719
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:959
+msgid "Build and run"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:273
+msgid "Build service/client: bazel build cyber/examples/…"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:274
+msgid "Run: ./bazel-bin/cyber/examples/service"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:275
+msgid ""
+"Examining result: you should see content below in "
+"apollo/data/log/service.INFO"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:290
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:726
+msgid "Precautions"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:292
+msgid ""
+"When registering a service, note that duplicate service names are not "
+"allowed"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:293
+msgid ""
+"The node name applied when registering the server and client should not "
+"be duplicated either"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:295
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:400
+msgid "Parameter Service"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:297
+msgid ""
+"The Parameter Service is used for shared data between nodes, and provides"
+" basic operations such as `set`, `get`, and `list`. The Parameter Service"
+" is based on the `Service` implementation and contains service and "
+"client."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:299
+msgid "Parameter Object"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:301
+msgid "Supported Data types"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:303
+msgid ""
+"All parameters passed through cyber are `apollo::cyber::Parameter` "
+"objects, the table below lists the 5 supported parameter types."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "Parameter type"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "C++ data type"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "protobuf data type"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::INT"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "int64_t"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "int64"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::DOUBLE"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "double"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::BOOL"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "bool"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::STRING"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "std::string"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "string"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::PROTOBUF"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "apollo::cyber::proto::ParamType::NOT_SET"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md
+msgid "-"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:314
+msgid ""
+"Besides the 5 types above, Parameter also supports interface with "
+"protobuf object as incoming parameter. Post performing serialization "
+"processes the object and converts it to the STRING type for transfer."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:316
+msgid "Creating the Parameter Object"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:318
+msgid "Supported constructors:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:336
+msgid "Sample code of using Parameter object:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:354
+msgid "Interface and Data Reading"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:356
+msgid "Interface list:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:385
+msgid "An example of how to use those interfaces:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:402
+msgid ""
+"If a node wants to provide a Parameter Service to other nodes, then you "
+"need to create a `ParameterService`."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:413
+msgid ""
+"Since all parameters are stored in the parameter service object, the "
+"parameters can be manipulated directly in the ParameterService without "
+"sending a service request."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:415
+msgid "**Setting parameters:**"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:426
+msgid "**Getting parameters:**"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:440
+msgid "**Getting the list of parameters:**"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:453
+msgid "Parameter Client"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:455
+msgid ""
+"If a node wants to use parameter services of other nodes, you need to "
+"create a `ParameterClient`."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:467
+msgid ""
+"You could also perform `SetParameter`, `GetParameter` and "
+"`ListParameters` mentioned under [Parameter Service](#Parameter-Service)."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:469
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:820
+msgid "Demo - example"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:502
+msgid "Run: ./bazel-bin/cyber/examples/paramserver"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:504
+msgid "Log API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:506
+msgid "Log library"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:508
+msgid ""
+"Cyber log library is built on top of glog. The following header files "
+"need to be included:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:515
+msgid "Log configuration"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:517
+msgid "Default global config path: cyber/setup.bash"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:519
+msgid "The configs below could be modified by devloper:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:528
+msgid "Log initialization"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:530
+msgid "Call the Init method at the code entry to initialize the log:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:537
+msgid "Log output macro"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:539
+msgid ""
+"Log library is encapsulated in Log printing macros. The related log "
+"macros are used as follows:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:550
+msgid "Log format"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:552
+msgid "The format is `<MODULE_NAME>.log.<LOG_LEVEL>.<datetime>.<process_id>`"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:554
+msgid "About log files"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:556
+msgid ""
+"Currently, the only different output behavior from default glog is that "
+"different log levels of a module will be written into the same log file."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:558
+msgid "Building a module based on Component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:560
+msgid "Key concepts"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:562
+msgid "1. Component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:564
+msgid ""
+"The component is the base class that Cyber RT provides to build "
+"application modules. Each specific application module can inherit the "
+"Component class and define its own `Init` and `Proc` functions so that it"
+" can be loaded into the Cyber framework."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:566
+msgid "2. Binary vs Component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:568
+msgid "There are two options to use Cyber RT framework for applications:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:570
+msgid ""
+"Binary based: the application is compiled separately into a binary, which"
+" communicates with other cyber modules by creating its own `Reader` and "
+"`Writer`."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:571
+msgid ""
+"Component based: the application is compiled into a Shared Library. By "
+"inheriting the Component class and writing the corresponding dag "
+"description file, the Cyber RT framework will load and run the "
+"application dynamically."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:573
+msgid "The essential Component interface"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:575
+msgid ""
+"The component's `Init()` function is like the main function that does "
+"some initialization of the algorithm."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:576
+msgid ""
+"Component's `Proc()` function works like Reader's callback function that "
+"is called by the framework when a message arrives."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:578
+msgid "Advantages of using Component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:580
+msgid ""
+"Component can be loaded into different processes through the launch file,"
+" and the deployment is flexible."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:581
+msgid ""
+"Component can change the received channel name by modifying the dag file "
+"without recompiling."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:582
+msgid "Component supports receiving multiple types of data."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:583
+msgid "Component supports providing multiple fusion strategies."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:585
+msgid "3. Dag file format"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:587
+msgid "An example dag file:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:612
+msgid ""
+"**module_library**: If you want to load the .so library the root "
+"directory is the working directory of cyber (the same directory of "
+"`setup.bash`)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:613
+msgid ""
+"**components & timer_component**: Select the base component class type "
+"that needs to be loaded."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:614
+msgid "**class_name**: the name of the component class to load"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:615
+msgid "**name**: the loaded class_name as the identifier of the loading example"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:616
+msgid ""
+"**readers**: Data received by the current component, supporting 1-3 "
+"channels of data."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:618
+msgid "Demo - examples"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:620
+msgid "Common_component_example(cyber/examples/common_component_example/*)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:622
+msgid "Header definition(common_component_example.h)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:644
+msgid "Cpp file implementation(common_component_example.cc)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:665
+msgid "Timer_component_example(cyber/examples/timer_component_example/*)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:667
+msgid "Header definition(timer_component_example.h)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:694
+msgid "Cpp file implementation(timer_component_example.cc)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:721
+msgid "Use timertestcomponent as example:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:723
+msgid "Build: bazel build cyber/examples/timer_component_smaple/…"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:724
+msgid "Run: mainboard -d cyber/examples/timer_component_smaple/timer.dag"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:728
+msgid ""
+"Component needs to be registered to load the class through SharedLibrary."
+" The registration interface looks like:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:734
+msgid ""
+"If you use a namespace when registering, you also need to add a namespace"
+" when you define it in the dag file."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:736
+msgid ""
+"The configuration files of the Component and TimerComponent are "
+"different, please be careful not to mix the two up."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:738
+msgid "Launch"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:740
+msgid ""
+"**cyber_launch** is the launcher of the Cyber RT framework. It starts "
+"multiple mainboards according to the launch file, and loads different "
+"components into different mainboards according to the dag file. "
+"cyber_launch supports two scenarios for dynamically loading components or"
+" starting Binary programs in a child process."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:743
+msgid "Launch File Format"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:767
+msgid "**Module**: Each loaded component or binary is a module"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:770
+msgid "**name** is the loaded module name"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:771
+msgid "**dag_conf** is the name of the corresponding dag file of the component"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:772
+msgid ""
+"**process_name** is the name of the mainboard process once started, and "
+"the same component of process_name will be loaded and run in the same "
+"process."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:773
+msgid ""
+"**exception_handler** is the handler method when the exception occurs in "
+"the process. The value can be exit or respawn listed below."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:774
+msgid ""
+"exit, which means that the entire process needs to stop running when the "
+"current process exits abnormally."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:775
+msgid ""
+"respawn, the current process needs to be restarted after abnormal exit. "
+"Start this process. If there is no such thing as it is empty, it means no"
+" treatment. Can be controlled by the user according to the specific "
+"conditions of the process"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:777
+msgid "Timer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:779
+msgid ""
+"Timer can be used to create a timed task to run on a periodic basis, or "
+"to run only once"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:781
+msgid "Timer Interface"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:795
+msgid "Or you could encapsulate the parameters into a timer option as follows:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:812
+msgid "Start Timer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:814
+msgid ""
+"After creating a Timer instance, you must call `Timer::Start()` to start "
+"the timer."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:816
+msgid "Stop Timer"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:818
+msgid ""
+"When you need to manually stop a timer that has already started, you can "
+"call the `Timer::Stop()` interface."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:837
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1128
+msgid "Time API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:839
+msgid ""
+"Time is a class used to manage time; it can be used for current time "
+"acquisition, time-consuming calculation, time conversion, and so on."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:841
+msgid "The time interfaces are as follows:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:858
+msgid "A code example can be seen below:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:877
+msgid "Record file: Read and Write"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:879
+msgid "Reading the Reader file"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:881
+msgid ""
+"**RecordReader** is the component used to read messages in the cyber "
+"framework. Each RecordReader can open an existing record file through the"
+" `Open` method, and the thread will asynchronously read the information "
+"in the record file. The user only needs to execute ReadMessage to extract"
+" the latest message in RecordReader, and then get the message information"
+" through GetCurrentMessageChannelName, GetCurrentRawMessage, "
+"GetCurrentMessageTime."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:883
+msgid ""
+"**RecordWriter** is the component used to record messages in the cyber "
+"framework. Each RecordWriter can create a new record file through the "
+"Open method. The user only needs to execute WriteMessage and WriteChannel"
+" to write message and channel information, and the writing process is "
+"asynchronous."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:885
+msgid "Demo - example(cyber/examples/record.cc)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:887
+msgid ""
+"Write 100 RawMessage to`TEST_FILE` through `test_write` method, then read"
+" them out through `test_read` method."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:962
+msgid "Run: ./bazel-bin/cyber/examples/record"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:963
+msgid "Examining result:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:977
+msgid "API Directory"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:979
+msgid "Node API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:981
+msgid "For additional information and examples, refer to [Node](#node)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:983
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1018
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1028
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1118
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1132
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1156
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1176
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1192
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1210
+msgid "API List"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1014
+msgid "Writer API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1016
+msgid "For additional information and examples, refer to [Writer](#writer)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1024
+msgid "Client API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1026
+msgid ""
+"For additional information and examples, refer to [Client](#service-"
+"creation-and-use)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1037
+msgid "Parameter API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1039
+msgid "The interface that the user uses to perform parameter related operations:"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1041
+msgid "Set the parameter related API."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1042
+msgid "Read the parameter related API."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1043
+msgid ""
+"Create a ParameterService to provide parameter service related APIs for "
+"other nodes."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1044
+msgid ""
+"Create a ParameterClient that uses the parameters provided by other nodes"
+" to service related APIs."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1046
+msgid ""
+"For additional information and examples, refer to [Parameter](##param-"
+"parameter-service)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1048
+msgid "API List - Setting parameters"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1066
+msgid "API List - Reading parameters"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1095
+msgid "API List - Creating parameter service"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1104
+msgid "API List - Creating parameter client"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1113
+msgid "Timer API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1115
+msgid ""
+"You can set the parameters of the Timer and call the start and stop "
+"interfaces to start the timer and stop the timer. For additional "
+"information and examples, refer to [Timer](#timer)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1130
+msgid "For additional information and examples, refer to [Time](#use-of-time)"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1152
+msgid "Duration API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1154
+msgid ""
+"Interval-related interface, used to indicate the time interval, can be "
+"initialized according to the specified nanosecond or second."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1172
+msgid "Rate API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1174
+msgid ""
+"The frequency interface is generally used to initialize the time of the "
+"sleep frequency after the object is initialized according to the "
+"specified frequency."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1188
+msgid "RecordReader API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1190
+msgid ""
+"The interface for reading the record file is used to read the message and"
+" channel information in the record file."
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1206
+msgid "RecordWriter API"
+msgstr ""
+
+#: ../../cyber/doxy-docs/source/CyberRT_API_for_Developers.md:1208
+msgid ""
+"The interface for writing the record file, used to record the message and"
+" channel information into the record file."
+msgstr ""
+

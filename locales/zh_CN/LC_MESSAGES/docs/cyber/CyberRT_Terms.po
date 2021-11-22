@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/cyber/CyberRT_Terms.md:1
+msgid "Apollo Cyber RT Terminologies"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:3
+msgid ""
+"This page describes the definitions of the most commonly used "
+"terminologies in Cyber RT."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:5
+msgid "Component"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:7
+msgid ""
+"In an autonomous driving system, modules(like perception, localization, "
+"control systems...) exist in the form of components under Cyber RT. Each "
+"component communicates with the others through Cyber channels. The "
+"component concept not only decouples modules but also provides the "
+"flexibility for modules to be divided into components based individual "
+"module design."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:9
+msgid "Channel"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:11
+msgid ""
+"Channels are used to manage data communication in Cyber RT. Users can "
+"publish/subscribe to the same channel to achieve p2p communication."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:13
+msgid "Task"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:15
+msgid ""
+"Task is the abstract description of an asynchronous computation task in "
+"Cyber RT."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:17
+msgid "Node"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:19
+msgid ""
+"Node is the fundamental building block of Cyber RT; every module contains"
+" and communicates through the node. A module can have different types of "
+"communication by defining read/write and/or service/client in a node."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:21
+msgid "Reader/Writer"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:23
+msgid ""
+"Message read/write class from/to channel. Reader/Writer are normally "
+"created within a node as the major message transfer interface in Cyber "
+"RT."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:25
+msgid "Service/Client"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:27
+msgid ""
+"Besides Reader/writer, Cyber RT also provides service/client pattern for "
+"module communication. It supports two-way communication between nodes. A "
+"client node will receive a response when a request is made to a service."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:29
+msgid "Parameter"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:31
+msgid ""
+"Parameter service provides a global parameter access interface in Cyber "
+"RT. It's built based on the service/client pattern."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:33
+msgid "Service discovery"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:35
+msgid ""
+"As a decentralized design framework, Cyber RT does not have a "
+"master/central node for service registration. All nodes are treated "
+"equally and can find other service nodes through `service discovery`. "
+"`UDP` is used in Service discovery."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:37
+msgid "CRoutine"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:39
+msgid ""
+"Referred to as Coroutine concept, Cyber RT implemented CRoutine to "
+"optimize thread usage and system resource allocation."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:41
+msgid "Scheduler"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:43
+msgid ""
+"To better support autonomous driving scenarios, Cyber RT provides "
+"different kinds of resource scheduling algorithms for developers to "
+"choose from."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:45
+msgid "Message"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:47
+msgid ""
+"Message is the data unit used in Cyber RT for data transfer between "
+"modules."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:49
+msgid "Dag file"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:51
+msgid ""
+"Dag file is the config file of module topology. You can define components"
+" used and upstream/downstream channels in the dag file."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:53
+msgid "Launch files"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:55
+msgid ""
+"The Launch file provides an easy way to start modules. By defining one or"
+" multiple dag files in the launch file, you can start multiple modules at"
+" the same time."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:57
+msgid "Record file"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Terms.md:59
+msgid ""
+"The Record file is used to record messages sent/received to/from channels"
+" in Cyber RT. Reply record files can help reproduce the behavior of "
+"previous operations of Cyber RT."
+msgstr ""
+

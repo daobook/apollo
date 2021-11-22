@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:1
+msgid "路径评估决策"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:2
+msgid "目录"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:6
+msgid "概览"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:8
+msgid "`路径评估决策`是规划模块的任务，属于task中的decider类别。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:10
+msgid "规划模块的运动总体流程图如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:12
+msgid "![总体流程图](../images/task/lane_follow.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:12
+msgid "总体流程图"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:14
+msgid ""
+"总体流程图以[lane "
+"follow](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/conf/scenario/lane_follow_config.pb.txt)场景为例子进行说明。task的主要功能位于`Process`函数中。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:16
+msgid "Fig.1的具体运行过程可以参考[path_bounds_decider]()。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:18
+msgid "路径评估决策相关代码及对应版本"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:20
+msgid "本节说明path assessment decider的代码流程。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:22
+msgid ""
+"请参考代码[Apollo r6.0.0 "
+"path_assessment_decider](https://github.com/ApolloAuto/apollo/tree/r6.0.0/modules/planning/tasks/deciders/path_assessment_decider)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:24
+msgid "输入"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:26
+msgid ""
+"`Status PathAssessmentDecider::Process(Frame* const frame, "
+"ReferenceLineInfo* const reference_line_info)`"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:28
+msgid "输入Frame，reference_line_info。具体解释可以参考[path_bounds_decider]()。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:30
+msgid "输出"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:32
+msgid "路径排序之后，选择第一个路径。结果保存在reference_line_info中。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:34
+msgid "路径评估决策代码流程及框架"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:36
+msgid "代码主体流程如下图："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:38
+msgid "![流程图](../images/task/path_assessment/path_assessment.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:38
+msgid "流程图"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:40
+msgid "路径重复使用"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:50
+msgid "去掉无效路径"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:75
+msgid "其中fallback的无效路径是偏离参考线以及道路的路径。regular的无效路径是偏离参考线、道路，碰撞，停在相邻的逆向车道的路径。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:77
+msgid "分析并加入重要信息"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:135
+msgid ""
+"这一步骤的代码执行流程如下： 1). 去掉空的路径 2). 从尾部开始剪掉lane-"
+"borrow路径，从尾部开始向前搜索，剪掉如下类型path_point： &emsp; (1) OUT_ON_FORWARD_LANE "
+"&emsp; (2) OUT_ON_REVERSE_LANE &emsp; (3) 未知类型 3). 找到自车道的障碍物id，用于车道选择 4)."
+" 如果没有有效路径，返回错误码"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:144
+msgid "排序并选出最有路径"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:146
+msgid "这一步请看最后一章`相关算法解析`"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:148
+msgid "更新必要信息"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:232
+msgid "更新必要信息："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:234
+msgid ""
+"1.更新adc前方静态障碍物的信息 2.更新自车道使用信息"
+"3.更新旁车道的方向 (1) "
+"根据PathDeciderStatus是RIGHT_BORROW或LEFT_BORROW判断是从左侧借道，还是从右侧借道"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:238
+msgid "路径排序算法解析"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:240
+msgid "最后这里说明排序算法。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:265
+msgid "排序算法的流程具体如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:267
+msgid "`ComparePathData(lhs, rhs, …)`"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:269
+msgid "路径排序：（道路评估的优劣通过排序获得）"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:270
+msgid "1.空的路径永远排在后面"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:271
+msgid "2.regular > fallback"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:272
+msgid ""
+"3.如果self-lane有一个存在，选择那个。如果都存在，选择较长的.如果长度接近，选择self-lane"
+"如果self-lane都不存在，选择较长的路径"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:273
+msgid "4.如果路径长度接近，且都要借道:"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:274
+msgid "(1) 都要借逆向车道，选择距离短的"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:275
+msgid "(2) 针对具有两个借道方向的情况:"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:276
+msgid "有障碍物，选择合适的方向，左或右借道"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:277
+msgid "无障碍物，根据adc的位置选择借道方向"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:278
+msgid "(3) 路径长度相同，相邻车道都是前向的，选择较早返回自车道的路径"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:279
+msgid "(4) 如果路径长度相同，前向借道，返回自车道时间相同，选择从左侧借道的路径"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_assessment_decider_cn.md:280
+msgid ""
+"5.最后如果两条路径相同，则 lhs is not < rhl"
+"排序之后：选择最优路径，即第一个路径"
+msgstr ""
+

@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/third_party_perception/README.md:1
+msgid "Third Party Perception"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:4
+msgid ""
+"In Apollo 2.5, the third_party_perception module incorporates third-party"
+" sensors like Mobileye and Conti/Delphi Radar output with simple fusion "
+"and creates a similar perception output produced as obstacle/lane "
+"detection information as defined in [Perception Obstacles "
+"Interface](https://github.com/ApolloAuto/apollo/blob/master/modules/perception/proto/perception_obstacle.proto)."
+" This module was only intend to serve for the Prediction/Planning/Control"
+" algorithm in real vehicle before perception modules fully ready before "
+"2.5. We recommend using 'modules/perception' instead for your own test "
+"purpose after Apollo 2.5 officially released."
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:6
+msgid "Input"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:8
+msgid "The perception module inputs are:"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:10
+msgid ""
+"Radar data (ROS topic _/apollo/sensor/conti_radar_ or "
+"_/apollo/sensor/delphi_esr_ )"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:11
+msgid "Mobileye data (ROS topic _/apollo/sensor/mobileye_)"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:13
+msgid "Output"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:15
+msgid "The perception module outputs are:"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:17
+msgid ""
+"The 3D obstacle tracks with the heading, velocity and classification "
+"information (ROS topic _/apollo/perception/obstacles_)"
+msgstr ""
+
+#: ../../modules/third_party_perception/README.md:18
+msgid ""
+"The lane marker information with fitted curve parameter, spatial "
+"information(l0,r0, etc) as well as semantic information (lane type) (ROS "
+"topic _/apollo/perception/obstacles_)"
+msgstr ""
+

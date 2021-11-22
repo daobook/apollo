@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/map/relative_map/README.md:1
+msgid "Relative Map"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:4
+msgid ""
+"Relative map module is a middle layer connecting HDMap/Perception module "
+"and planning module. This module generates real-time relative map in the "
+"body coordinate system (FLU) and a reference line for planning. The "
+"inputs for relative map module have two parts: offline and online. The "
+"offline part is navigation line (human driving path) and the HDMap "
+"information on and near navigation line. And the online part is the "
+"traffic sign related information from perception module, e.g., lane "
+"marker, crosswalk, traffic light etc. The generation of relative map can "
+"leverage both online and offline parts. It also works with either online "
+"or offline part only."
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:6
+msgid "Inputs"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:7
+msgid "NavigationInfo from dreamview module"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:8
+msgid "LaneMarker from perception module"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:9
+msgid "Localization from localization module"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:11
+msgid "Output"
+msgstr ""
+
+#: ../../modules/map/relative_map/README.md:12
+msgid "Relative map follows map format defined in modules/map/proto/map.proto"
+msgstr ""
+

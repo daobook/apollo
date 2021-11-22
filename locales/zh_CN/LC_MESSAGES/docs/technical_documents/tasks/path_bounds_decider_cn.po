@@ -1,0 +1,406 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:1
+msgid "路径边界决策"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:2
+msgid "目录"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:6
+msgid "概览"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:8
+msgid "`路径边界决策`是规划模块的任务，属于task中的decider类别。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:10
+msgid "规划模块的运动总体流程图如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:12
+msgid "![总体流程图](../images/task/lane_follow.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:12
+msgid "总体流程图"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:14
+msgid ""
+"总体流程图以[lane "
+"follow](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/conf/scenario/lane_follow_config.pb.txt)场景为例子进行说明。这里只说明主体的流程，不涉及到所有细节。task的主要功能位于`Process`函数中。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:16
+msgid "第一，规划模块的入口函数是PlanningComponent的[Proc](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/planning_component.cc#L118)。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:18
+msgid "第二，以规划模式OnLanePlanning，执行[RunOnce](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/on_lane_planning.cc#L205)。在RunOnce中先执行交通规则，再规划轨迹。规划轨迹的函数是[Plan](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/on_lane_planning.cc#L487)。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:20
+msgid ""
+"第三，进入到PublicRoadPlanner中的[Plan](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/planner/public_road/public_road_planner.cc#L33)函数，进行轨迹规划。ScenarioManager的[Update](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/scenarios/scenario_manager.cc#L798)函数根据当前的scenario_type选择合适的场景。这里的流程图是以lane"
+" follow为例。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:22
+msgid ""
+"第四，选择lane "
+"follow的场景后，执行[Process](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/scenarios/scenario.cc#L66)函数。然后，执行LaneFollowStage中的[Process](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/scenarios/lane_follow/lane_follow_stage.cc#L93)函数，在[PlanOnReferenceLine](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/scenarios/lane_follow/lane_follow_stage.cc#L153)中执行LaneFollowStage中的所有的task。通过调用[Excute](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/scenarios/lane_follow/lane_follow_stage.cc#L167)函数执行task，Excute调用了task的[Process](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/tasks/deciders/decider.cc#L37)（以decider为例子）函数。最后一个图中，TaskType指的不是具体的类名称，代表所有的task类型。虚线的箭头，表示在LaneFollowStage中按照vector中的顺序执行所有的任务。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:24
+msgid "最后，Task的流程都在Process函数中。之后对task的讲解都从Process函数开始。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:26
+msgid "路径边界决策代码及对应版本"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:28
+msgid "本节说明path_bounds_decider任务。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:30
+msgid ""
+"请参考 [Apollo r6.0.0 "
+"path_bounds_decider](https://github.com/ApolloAuto/apollo/tree/r6.0.0/modules/planning/tasks/deciders/path_bounds_decider)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:32
+msgid "类关系"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:34
+msgid "![path_bounds_decider_task](../images/task/path_bounds_decider/task.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:34
+msgid "path_bounds_decider_task"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:36
+msgid "（1）继承关系"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:38
+msgid ""
+"① "
+"`PathBoundsDecider`类继承`Decider`类，实现了`Process`方法，路径边界决策主要的执行过程就在`process`方法中。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:45
+msgid ""
+"② "
+"`Decider`类继承`Task`类，实现类Excute方法，主要是给两个变量赋值：`frame`和`reference_line_info`，并且执行**Process**方法。对应了上述的**Process**方法"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:64
+msgid "③ `Task`类，定义类保护类型的变量，是路径边界决策的输入"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:85
+msgid "（2）调用"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:87
+msgid "主要描述task在stage中是如何创建和调用的"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:89
+msgid "① `TaskFactory`类，注册所有的task，包括decider、optimizer和other（E2E的task）。工厂模式"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:100
+msgid "② stage中task的创建与执行"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:102
+msgid "创建：在stage的构造函数中根据stage配置创建task。并将指针放入到task_和task_list_中"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:103
+msgid "使用：在具体的stage中，重写Process方法。调用Process方法，进而调用ExecuteTask*方法（ExecuteTaskOnReferenceLine），最后调用相应的task的Process方法"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:136
+msgid "路径边界决策数据"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:138
+msgid "`PathBoundsDecider`类主要的输入、输出，数据结构，变量设置。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:141
+msgid "（1）输入和输出"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:143
+msgid "① 输入有两个：`frame`与`reference_line_info`"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:145
+msgid "**frame**"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:147
+msgid "frame中包含的一次规划所需要的所有的数据"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:206
+msgid "**reference_line_info**"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:208
+msgid "reference_line_info包含了有关reference_line的所有的数据"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:283
+msgid "② 输出："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:289
+msgid "Process 函数定义，最终结果保存到了`reference_line_info`中"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:291
+msgid "（2）参数设置"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:311
+msgid "（3）数据结构"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:324
+msgid "路径边界决策代码流程及框架"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:326
+msgid "Fig.2是路径边界决策的流程图。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:328
+msgid "![path_bounds_decider](../images/task/path_bounds_decider/path_bounds_decider.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:328
+msgid "path_bounds_decider"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:330
+msgid ""
+"在**Process**方法中，分四种场景对路径边界进行计算，按照处理的顺序分别是：fallback，pull-over，lane-"
+"change，regular。 其中regular场景根据是否借道又分为LEFT_BORROW, NO_BORROW, RIGHT_BORROW。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:333
+msgid "fallback场景的path bounds一定会生成，另外三种看情况，都是需要if判断。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:335
+msgid "路径边界决策算法解析"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:337
+msgid "1.fallback"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:339
+msgid "![fallback](../images/task/path_bounds_decider/fallback.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:339
+msgid "fallback"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:342
+msgid "fallback场景生成过程如上图所示。 fallback只考虑adc信息和静态道路信息，主要调用两个函数"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:346
+msgid "InitPathBoundary"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:366
+msgid "GetBoundaryFromLanesAndADC"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:450
+msgid "2.pull over"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:452
+msgid "![pull_over](../images/task/path_bounds_decider/pull_over.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:452
+msgid "pull_over"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:454
+msgid "（1）GetBoundaryFromRoads"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:455
+msgid "与`GetBoundaryFromLanesAndADC`不同，`GetBoundaryFromRoads`函数根据道路信息计算出边界:"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:456
+msgid "获取参考线信息"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:457
+msgid "对路径上的点，逐点计算"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:458
+msgid "边界"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:459
+msgid "更新"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:462
+msgid "（2）GetBoundaryFromStaticObstacles"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:463
+msgid "根据障碍车调整边界："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:464
+msgid "计算障碍车在frenet坐标系下的坐标"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:465
+msgid "扫描线排序，S方向扫描"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:466
+msgid "只关注在路径边界内的障碍物"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:467
+msgid "只关注在adc前方的障碍物"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:468
+msgid "将障碍物分解为两个边界，开始和结束"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:469
+msgid "映射障碍物ID"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:470
+msgid "Adc能从左边通过为True，否则为False"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:471
+msgid "逐个点的检查path路径上的障碍物"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:472
+msgid "根据新来的障碍物"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:473
+msgid "根据已有的障碍物"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:475
+msgid "（3）SearchPullOverPosition"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:477
+msgid "搜索pull over位置的过程："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:478
+msgid ""
+"根据pull_over_status.pull_over_type()判断是前向搜索（pull over开头第一个点），还是后向搜索（pull "
+"over末尾后一个点）"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:479
+msgid "两层循环，外层控制搜索的索引idx，内层控制进一步的索引（前向idx+1，后向idx-1）。"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:480
+msgid "根据内外两层循环的索引，判断搜索到的空间是否满足宽度和长度要求，判断是否可以pull over"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:482
+msgid "代码如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:554
+msgid "3.lane change"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:556
+msgid "![lane_change](../images/task/path_bounds_decider/lane_change.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:556
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:673
+msgid "lane_change"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:558
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:675
+msgid "代码流程如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:587
+msgid "GetBoundaryFromLaneChangeForbiddenZone函数是lane change重要的函数。运行过程如下："
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:588
+msgid "如果当前位置可以变道，则直接变道"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:589
+msgid "如果有一个lane-change的起点，则直接使用它"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:590
+msgid "逐个检查变道前的点的边界，改变边界的值（如果已经过了变道点，则返回）"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:671
+msgid "4.Regular"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:673
+msgid "![lane_change](../images/task/path_bounds_decider/regular.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/tasks/path_bounds_decider_cn.md:699
+msgid "流程和上面的几个基本类似，借道有三种类型"
+msgstr ""
+

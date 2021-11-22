@@ -1,0 +1,1787 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:1
+msgid "Apollo 1.0 Hardware and System Installation Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:3
+msgid "[关于本篇指南](#关于本篇指南)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:4
+msgid "[文档编写规则](#文档编写规则)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:5
+msgid "[引言](#引言)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:6
+msgid "[文档说明](#文档说明)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:7
+msgid "[核心硬件部件](#核心硬件部件)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:8
+msgid "[额外的部件](#额外的部件)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:9
+msgid "[车载计算机系统-IPC](#车载计算机系统-ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:10
+msgid "[IPC 的配置](#ipc的配置)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:11
+msgid "[IPC 前后视图](#ipc前后视图)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:12
+msgid "[控制器局域网络（CAN）卡](#控制器局域网络（-can）卡)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:13
+msgid "[全球定位系统(GPS)和惯性测量装置(IMU)](<#全球定位系统(gps)和惯性测量装置(imu)>)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:14
+msgid "[选项 1: NovAtel SPAN-IGM-A1](#选项1:nocatel-span--igm--a1)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:15
+msgid ""
+"[选项 2: NovAtel SPAN ProPak6 和 NovAtel IMU-IGM-A1](#选项2:novatel-span-"
+"propak6和-imu--igm--a1)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:16
+msgid "[GPS 接收器和天线](#gps接收器和天线)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:17
+msgid "[安装任务概览](#安装任务概览)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:18
+msgid "[安装任务步骤](#安装任务步骤)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:19
+msgid "[上车前的准备工作](#上车前的准备工作)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:20
+msgid "[IPC 的准备工作](#ipc的准备工作)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:21
+msgid "[为 IPC 安装软件](#为ipc安装软件)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:22
+msgid "[上车安装](#上车安装)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:23
+msgid "[前提条件](#前提条件)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:24
+msgid "[主要部件安装图](#主要部件安装图)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:25
+msgid "[安装 GPS 的接收器和天线](#安装gps的接收器和天线)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:26
+msgid "[安装 IPC](#安装ipc)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:27
+msgid "[配置 GPS 和 IMU](#配置gps和imu)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:28
+msgid "[配置网络](#配置网络)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:29
+msgid "[一些建议](#一些建议)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:30
+msgid "[其它安装任务](#其它安装任务)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:31
+msgid "[下一步](#下一步)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:33
+msgid "关于本篇指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:35
+msgid "本篇指南提供了所有安装硬件部分和 Apollo 项目所需的教程。系统安装信息包括下载和安 装 Apollo Linux 内核的过程。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:38
+msgid "文档编写规则"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:40
+msgid "下表列出了本文使用的编写规则："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**图标**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**描述**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**加粗**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "强调。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "`Mono-space 字体`"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "代码, 类型数据。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "_斜体_"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "文件、段落和标题中术语的用法。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "![信息](images/info_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:47
+msgid "信息"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**信息** 提供了可能有用的信息。忽略此信息可能会产生不可预知的后果。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "![提示](images/tip_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:48
+msgid "提示"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**提醒** 包含有用的提示或者可以帮助你完成安装的快捷步骤。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "![在线](images/online_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:49
+msgid "在线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**在线** 提供指向特定网站的链接，您可以在其中获取更多信息。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "![警告](images/warning_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:50
+msgid "警告"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md
+msgid "**警告** 包含 **不能** 被忽略的内容，如果忽略，当前安装步骤可能会失败。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:52
+msgid "引言"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:54
+msgid ""
+"**Apollo**项目旨在为汽车和自动驾驶行业的合作伙伴提供开放，完整和可靠的软件平台。 该项目的目的是使这些企业能够开发基于 Apollo "
+"软件栈的自动驾驶系统。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:57
+msgid "文档说明"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:59
+msgid "以下文档适用于 Apollo 1.0:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:61
+msgid ""
+"**_<u>[Apollo Hardware and System Installation Guide]</u>_** ─ 提供用于安装车 "
+"辆的硬件部件和系统软件的教程:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:64
+msgid "**车辆**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:66
+msgid "工业用计算机 (IPC)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:67
+msgid "全球定位系统 (GPS)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:68
+msgid "惯性测量单元 (IMU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:69
+msgid "控制器局域网络 (CAN) 卡"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:70
+msgid "硬盘"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:71
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:236
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:489
+msgid "GPS 天线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:72
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:238
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:491
+msgid "GPS 接收器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:74
+msgid "**软件**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:75
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:260
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:368
+msgid "Ubuntu Linux"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:76
+msgid "Apollo Linux Kernel"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:78
+msgid ""
+"**_<u>[Apollo Quick Start Guide]</u>_** ─ 文档和蓝图的组合提供了完整的端到端教 "
+"程。本文还提供了一些其它文档链接描述了如何将一辆普通汽车改装成一辆自动驾驶车辆 。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:82
+msgid "核心硬件部件"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:84
+msgid "需要安装的核心硬件部件包括:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:86
+msgid "车载计算机系统 ─ Neousys Nuvo-5095GC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:87
+msgid "CAN 卡 ─ ESD CAN-PCIe/402-1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:88
+msgid "GPS 和 IMU ─ 可选项如下:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:89
+msgid "NovAtel SPN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:90
+msgid "NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:92
+msgid "额外的部件"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:94
+msgid "你需要额外的部件支持以下任务："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:96
+msgid "联网需要 4G 路由器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:97
+msgid "在车上调试需要显示器，键盘和鼠标"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:98
+msgid "VGA 连接器，DVI 线（可选）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:99
+msgid "苹果 iPad Pro: 9.7 寸, Wi-Fi (可选）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:101
+msgid "核心硬件部件的功能将在后续章节中介绍。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:103
+msgid "车载计算机系统-IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:105
+msgid ""
+"车载计算机系统是用于自动驾驶车辆的工业 PC（IPC），并使用由第六代 Intel Skylake core i7-6700 CPU 强力驱动的 "
+"**NeousysNuvo-5095GC**。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:108
+msgid "Neousys Nuvo-5095GC 是自动驾驶系统（ADS）的中心单元。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:110
+msgid "IPC 的配置"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:112
+msgid "IPC 配置如下："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:114
+msgid "32GB DDR4 RAM"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:115
+msgid "MezIO-V20-EP module (具有车用点火装置)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:116
+msgid "PO-160W-OW 160W 交流、直流电源适配器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:117
+msgid "CSM2 module (x16 PCIe expansion Gen3 8-lane cassette)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:119
+msgid "IPC 前后视图"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:121
+msgid "安装了 GPU 的 IPC 前后视图如下:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:123
+msgid "Nuvo-5095GC 的前视图:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:125
+msgid "![ipc_front](images/ipc_front.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:125
+msgid "ipc_front"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:127
+msgid "Nuvo-5095GC 的后视图:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:129
+msgid "![ipc_back](images/ipc_back.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:129
+msgid "ipc_back"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:131
+msgid "更多关于 Nuvo-5095GC 的信息，请参考:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:133
+msgid "![online](images/online_icon.png) Neousys Nuvo-5095GC 的产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:133
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:135
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:147
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:167
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:184
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:188
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:203
+msgid "online"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:135
+msgid ""
+"[http://www.neousys-tech.com/en/product/application/gpu-computing/product"
+"/nuvo-5095gc-gpu-computer](http://www.neousys-"
+"tech.com/en/product/application/gpu-computing/product/nuvo-5095gc-gpu-"
+"computer) ![online](images/online_icon.png) Neousys Nuvo-5095GC-手册: "
+"[http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual](http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:139
+msgid "控制器局域网络（CAN）卡"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:141
+msgid "IPC 中使用的 CAN 卡型号是 **ESD** **CAN-PCIe/402**."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:143
+msgid "![can_card](images/can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:143
+msgid "can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:145
+msgid "更多 CAN-PCIe/402 的信息，请参考:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:147
+msgid "![online](images/online_icon.png) ESD CAN-PCIe/402 产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:149
+msgid ""
+"[https://esd.eu/en/products/can-pcie402](https://esd.eu/en/products/can-"
+"pcie402)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:151
+msgid "##全球定位系统(GPS)和惯性测量装置(IMU)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:153
+msgid "有 **两种** GPS-IMU **选择** ，您只需根据您的需求进行选择:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:155
+msgid "**选项 1: NovAtel SPAN-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:156
+msgid "**选项 2: NovAtel SPAN® ProPak6™ 和 NovAtel IMU-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:158
+msgid "###选项 1: NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:160
+msgid ""
+"NovAtel SPAN-IGM-A1 是一个集成的，单盒的解决方案，提供紧密耦合的全球导航卫星系统 （GNSS）定位和具有 NovAtel "
+"OEM615 接收机的惯性导航功能。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:163
+msgid "![novatel_imu](images/Novatel_imu.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:163
+msgid "novatel_imu"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:165
+msgid "更多关于 NovAtel SPAN-IGM-A1 的信息，请参考:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:167
+msgid "![online](images/online_icon.png) NovAtel SPAN-IGM-A1 产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:169
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:711
+msgid ""
+"[https://www.novatel.com/products/span-gnss-inertial-systems/span-"
+"combined-systems/span-igm-a1/](https://www.novatel.com/products/span-"
+"gnss-inertial-systems/span-combined-systems/span-igm-a1/)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:171
+msgid "###选项 2: NovAtel SPAN ProPak6 和 NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:173
+msgid ""
+"NovAtel ProPak6 是独立的 GNSS 接收机，它与 NovAtel 提供的独立 IMU（本例中为 NovAtel IMU-"
+"IGM-A1）相融合以提供定位。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:176
+msgid "ProPak6 提供由 NovAtel 生产的最新最先进的外壳产品。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:178
+msgid "IMU-IGM-A1 是与支持 SPAN 的 GNSS 接收器（如 SPAN ProPak6）配对的 IMU。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:180
+msgid "![novatel_pp6](images/Novatel_pp6.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:180
+msgid "novatel_pp6"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:182
+msgid "更多关于 NovAtel SPAN ProPak6 和 the IMU-IGM-A1 的信息，请参考:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:184
+msgid "![online](images/online_icon.png) NovAtel ProPak6 安装与操作手册:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:186
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:631
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:707
+msgid "[https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf](https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:188
+msgid "![online](images/online_icon.png) NovAtel IMU-IGM-A1 产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:190
+msgid ""
+"[https://www.novatel.com/products/span-gnss-inertial-systems/span-imus"
+"/span-mems-imus/imu-igm-a1/#overview](https://www.novatel.com/products"
+"/span-gnss-inertial-systems/span-imus/span-mems-imus/imu-"
+"igm-a1/#overview)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:192
+msgid "GPS 接收器和天线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:194
+msgid "GPS-IMU 组件的 GPS 接收器、天线使用的是 **NovAtel GPS-703-GGG-HV**。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:196
+msgid "**注意:** GPS NovAtelGPS-703-GGG-HV 与上文中提到的两个 GPS-IMU 选项的任一型号配 合使用。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:199
+msgid "![gps_receiver](images/gps_receiver.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:199
+msgid "gps_receiver"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:201
+msgid "更多关于 NovAtel GPS-703-GGG-HV 的信息，请参考:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:203
+msgid "![online](images/online_icon.png) NovAtel GPS-703-GGG-HV 产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:205
+msgid ""
+"[https://www.novatel.com/products/gnss-antennas/high-performance-gnss-"
+"antennas/gps-703-ggg-hv/](https://www.novatel.com/products/gnss-antennas"
+"/high-performance-gnss-antennas/gps-703-ggg-hv/)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:207
+msgid "安装任务概览"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:209
+msgid "安装硬件和软件组件涉及以下任务："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:211
+msgid "**上车前的准备工作**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:213
+msgid ""
+"准备 IPC： a. 检查图形处理单元（GPU）磁带，以确定是否需要卸下 GPU 卡（如果已 预安装） b. 在将卡插入插槽之前，首先重新定位 "
+"CAN 卡端接跳线，准备并安装控制器 局域网（CAN）卡。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:217
+msgid "IPC（如果未预装）安装硬盘，推荐安装固态硬盘； 如果你愿意，也可以更换预装的硬 盘；"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:220
+msgid "**推荐** :"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:222
+msgid "为了更好的可靠性，安装固态硬盘；"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:223
+msgid "如果需要收集驾驶数据，需要使用大容量硬盘；"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:225
+msgid "准备 IPC 加电： a. 将电源线连接到电源连接器（接线端子） b. 将显示器，以太网， 键盘和鼠标连接到 IPC c. 将 IPC 连接到电源"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:228
+msgid "在 IPC 安装软件（需要部分 Linux 经验）： a. 安装 Ubuntu Linux. b. 安装 Apollo Linux kernel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:231
+msgid "**上车安装:**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:233
+msgid "确保所有在前提条件中列出的对车辆的修改，都已执行。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:235
+msgid "安装主要的组件："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:237
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:490
+msgid "IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:240
+msgid "安装所有硬件和软件组件的实际步骤详见安装任务步骤。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:242
+msgid "安装任务步骤"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:244
+msgid "该部分包含："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:246
+msgid "关键组件的安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:247
+msgid "车辆硬件的安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:249
+msgid "上车前的准备工作"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:251
+msgid "有如下任务:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:253
+msgid "准备 IPC："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:255
+msgid "安装 CAN 卡"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:256
+msgid "安装或者替换硬盘"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:257
+msgid "准备为 IPC 供电"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:259
+msgid "为 IPC 安装软件："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:261
+msgid "Apollo Kernel"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:263
+msgid "IPC 的准备工作"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:265
+msgid "有如下步骤："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:267
+msgid "在 IPC 中，检查 GPU 卡槽，如果有预先装好的 GPU 卡，需要先把它移除："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:269
+msgid "a. 在 IPC 底部找到四个固定 GPU 卡槽的螺丝并拧下来（如图中紫框内所示）:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:271
+msgid "![ipc_gpu_cassette](images/ipc_gpu_cassette.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:271
+msgid "ipc_gpu_cassette"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:273
+msgid "b. 把 GPU 卡槽从 IPC 上取出:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:275
+msgid "![ipc_gpu_cassette_remove](images/ipc_gpu_cassette_remove.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:275
+msgid "ipc_gpu_cassette_remove"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:277
+msgid "c. 把 GPU 卡槽从 IPC 上取下来：拧下底部其它三个螺丝以打开盒盖（如图中紫框所示 ）："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:280
+msgid "![ipc_gpu_cassette_unscrew](images/ipc_gpu_cassette_unscrew.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:280
+msgid "ipc_gpu_cassette_unscrew"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:282
+msgid "d. 取下 GPU 卡（如果安装了）："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:284
+msgid "![ipc_gpu_remove](images/ipc_gpu_remove.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:284
+msgid "ipc_gpu_remove"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:286
+msgid "准备并安装 CAN 卡"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:288
+msgid ""
+"a. 通过从其默认位置移除红色跳线帽（以黄色圆圈显示）并将其放置在其终止位置，设 置 CAN 卡端接跳线： "
+"![prepare_can_card](images/prepare_can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:288
+msgid "prepare_can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:291
+msgid "**![warning](images/warning_icon.png)WARNING**: 如果端接跳线设置不正确，CAN 卡将无法正常工作。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:291
+msgid "warning"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:294
+msgid "b. 将 CAN 卡插入 IPC 的插槽:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:296
+msgid "![insert_can_card](images/insert_can_card.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:296
+msgid "insert_can_card"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:298
+msgid "c. 把 GPU 卡槽重新装回 IPC："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:300
+msgid "![reinstall_gpu_cassette](images/reinstall_gpu_cassette.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:300
+msgid "reinstall_gpu_cassette"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:302
+msgid "安装或替换硬盘"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:304
+msgid "IPC（如果未预装）安装硬盘，您需要安装 1 至 2 个 2.5”的 SSD 或硬盘。推荐安装固 态硬盘； 如果您愿意，也可以更换预装的硬盘；"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:307
+msgid ""
+"![tip_icon](images/tip_icon.png) 为了更好的可靠性，强烈推荐您安装 SSD。如果您 "
+"需要手机数据，建议您使用大容量硬盘。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:307
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:318
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:346
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:371
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:383
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:385
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:412
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:800
+msgid "tip_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:310
+msgid "安装硬盘："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:312
+msgid "a. 拧下三个螺丝（如图紫框内所示），打开盖子"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:314
+msgid "![hard_drive_unscrew](images/hard_drive_unscrew.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:314
+msgid "hard_drive_unscrew"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:316
+msgid "b. 把硬盘装上（图内为 Intel SSD）:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:318
+msgid ""
+"![tip_icon](images/tip_icon.png) 观察把硬盘装进盒子里的方式，串行高级技术附件 "
+"（SATA）和电源连接器应放置在面向有 **两个**螺孔的那端。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:321
+msgid "![hard_drive](images/hard_drive.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:321
+msgid "hard_drive"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:323
+msgid "现在硬盘就装好了："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:325
+msgid "![hard_drive_connect](images/hard_drive_connect.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:325
+msgid "hard_drive_connect"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:327
+msgid "c. 把 SSD 重新装入 IPC 中："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:329
+msgid "![reinstall_ssd](images/reinstall_ssd.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:329
+msgid "reinstall_ssd"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:331
+msgid "准备 IPC 启动:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:333
+msgid "a. 将电源线连接到 IPC 的电源连接器（接线端子）："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:335
+msgid ""
+"![warning_icon](images/warning_icon.png)**WARNING**: 确保电源线的正极（红色用 "
+"**R**表示）和负极（黑色用 **B**表示）正确的插入电源端子块上的插孔中。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:335
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:495
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:767
+msgid "warning_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:338
+msgid "![ipc_power_RB](images/ipc_power_RB.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:338
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:639
+msgid "ipc_power_RB"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:340
+msgid "b. 连接显示器，以太网线，键盘和鼠标到 IPC 上："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:342
+msgid "![ipc_power_back](images/ipc_power_back.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:342
+msgid "ipc_power_back"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:344
+msgid "​"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:346
+msgid "![tip_icon](images/tip_icon.png)出于以下原因，建议您为显示器使用视频图形阵列 （VGA）连接器："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:349
+msgid ""
+"如果在 IPC 启动时没有看到任何屏幕显示，请切换到 VGA 输入。 即使没有连接显示器 ，Neousys Nuvo-5095GC IPC 也 "
+"**总是**输出到 VGA 端口。 因此，Linux 安装程序可 能“选择”输出到 **VGA 端口**而不是 DVI 端口。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:352
+msgid ""
+"如果在使用双显示器设置时在安装过程中没有看到对话窗口，请尝试在 VGA 和 DVI 之间 切换以找到它。 Linux "
+"安装程序可能会检测到两个监视器并同时使用它们。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:355
+msgid "为了获得更好的显示质量，您可以选择："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:357
+msgid "使用 DVI 线或带 DVI-HMI 适配器的高清晰度多媒体接口（HMI）连接到另一台显示器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:358
+msgid "使用同一台显示器上的 DVI / HDMI 端口"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:360
+msgid "c. 连接电源:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:362
+msgid "![ipc_connect_power](images/ipc_connect_power.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:362
+msgid "ipc_connect_power"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:364
+msgid "为 IPC 安装软件"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:366
+msgid "这部分主要描述以下的安装步骤："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:369
+msgid "Apollo 内核"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:371
+msgid ""
+"![tip_icon](images/tip_icon.png)您最好具有使用 Linux 成功安装软件的经验，如果这 "
+"是您的第一次安装，有可能会失败。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:374
+msgid "安装 Ubuntu Linux"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:376
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:635
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:789
+msgid "步骤如下："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:378
+msgid "创建一个可以引导启动的 Ubantu Linux USB 闪存驱动器："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:380
+msgid "下载 Ubuntu（或 Xubuntu 等分支版本），并按照在线说明创建可引导启动的 USB 闪存 驱动器。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:383
+msgid "![tip_icon](images/tip_icon.png) 推荐使用 **Ubuntu 14.04.3**."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:385
+msgid ""
+"![tip_icon](images/tip_icon.png)开机按 F2 进入 BIOS 设置菜单，建议禁用 BIOS 中的 "
+"快速启动和静默启动，以便捕捉引导启动过程中的问题。 建议您在 BIOS 中禁用“快速启动 ”和“安静启动”，以便了解启动过程中遇到的问题。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:389
+msgid "获取更多 Ubuntu 信息，可访问: ![online_icon](images/online_icon.png) Ubuntu 桌面 站点:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:389
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:559
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:573
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:629
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:654
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:705
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:709
+msgid "online_icon"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:392
+msgid "[https://www.ubuntu.com/desktop](https://www.ubuntu.com/desktop)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:394
+msgid "安装 Ubuntu Linux:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:396
+msgid "a. 将 Ubuntu 安装驱动器插入 USB 端口并启动 IPC。 b. 按照屏幕上的说明安装 Linux。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:399
+msgid ""
+"执行软件更新与安装: a. 安装完成，重启进入 Linux。 b. 执行软件更新器（Software "
+"Updater）更新最新软件包，或在终端执行以下命令完成更新。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:406
+msgid "c. 打开终端，输入以下命令，安装 Linux 4.4 内核："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:412
+msgid ""
+"![tip_icon](images/tip_icon.png)IPC 必须接入网络以便更新与安装软件，所以请确认网 "
+"线插入并连接，如果连接网络没有使用动态分配（DHCP），需要更改网络配置。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:415
+msgid "安装 Apollo 内核"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:417
+msgid ""
+"车上运行 Apollo 需要 [Apollo Kernel](https://github.com/ApolloAuto/apollo-"
+"kernel). 强烈建议安装预编译 内核。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:421
+msgid "使用预编译的 Apollo 内核"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:423
+msgid "你可以依照如下步骤获取、安装预编译的内核。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:425
+msgid "从 realease 文件夹下载发布的包"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:431
+msgid "安装内核 After having the release package downloaded:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:439
+msgid "使用 `reboot`命令重启系统；"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:440
+msgid ""
+"根 据[ESDCAN-README.md](https://github.com/ApolloAuto/apollo-"
+"kernel/blob/master/linux/ESDCAN-README.md)编 译 ESD CAN 驱动器源代码"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:444
+msgid "构建你自己的内核"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:446
+msgid "如果内核被改动过，或预编译内核不是你最佳的平台，你可以通过如下方法构建你自己的内 核："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:449
+msgid "从代码仓库克隆代码："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:456
+msgid ""
+"根据 [ESDCAN-README.md](https://github.com/ApolloAuto/apollo-"
+"kernel/blob/master/linux/ESDCAN-README.md)添 加 ESD CAN 驱动源代码。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:460
+msgid "按照如下指令编译："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:466
+msgid "使用同样的方式安装内核。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:468
+msgid "可选：测试 ESD CAN 设备端"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:470
+msgid "在重启有新内核的 IPC 以后："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:472
+msgid "a. 使用以下指令创建 CAN 硬件节点："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:478
+msgid "b. 使用从 ESD Electronics 获取到得的 ESD CAN 软件包的一部分的测试程序来测试 CAN 设备节点。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:481
+msgid "至此，IPC 就可以被装载到车辆上了。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:483
+msgid "上车安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:485
+msgid "执行以下任务："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:487
+msgid "根据先决条件列表中的所述，对车辆进行必要的修改"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:488
+msgid "安装主要的组件：Install the major components:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:493
+msgid "前提条件"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:495
+msgid ""
+"**![warning_icon](images/warning_icon.png)WARNING**: 在将主要部件（GPS 天线，IPC 和 "
+"GPS 接收器）安装在车辆之前，必须按照先决条件列表所述执行必要修改。 列表中所述 强制性更改的部分，不属于本文档的范围。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:499
+msgid "安装的前提条件如下："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:501
+msgid "车辆必须由专业服务公司修改为“线控”技术。 此外，必须在要安装 IPC 的中继线上提供 CAN 接口连接。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:503
+msgid ""
+"必须在后备箱中安装电源插板，为 IPC 和 GPS-IMU 提供电源。电源插板还需要服务于车 上的其他硬件，比如 4G "
+"的路由器。电源插板应连接到车辆的电源系统。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:505
+msgid "必须安装定制的机架，将 GPS-IMU 天线安装在车辆的顶部。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:506
+msgid "必须安装定制的机架，以便将 GPS-IMU 安装在后背箱中。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:507
+msgid ""
+"必须将 4G LTE 路由器安装在后备箱中才能为 IPC 提供 Internet 访问。路由器必须具 有内置 Wi-Fi "
+"接入点（AP）功能，以连接到其他设备（如 iPad），以与自主驾驶（AD） 系统相连接。例如，用户将能够使用移动设备来启动 AD 模式或监视 AD"
+" 状态。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:511
+msgid "主要部件安装图"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:513
+msgid "以下两图显示车辆上应安装三个主要组件（GPS 天线，IPC，GPS 接收机和 LiDAR）的位置 ： 示例图："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:516
+msgid "![major_component_side_view](images/major_component_side_view.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:516
+msgid "major_component_side_view"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:518
+msgid "车辆与后备箱侧视图"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:520
+msgid "![major_component_rear_view](images/major_component_rear_view.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:520
+msgid "major_component_rear_view"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:522
+msgid "车辆与后备箱后视图"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:524
+msgid "安装 GPS 的接收器与天线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:526
+msgid "以下组件 **二选一**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:528
+msgid "**选项 1:** GPS-IMU: **NovAtel SPAN-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:529
+msgid "**选项 2:** GPS-IMU: **NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:531
+msgid "选项 1：安装 NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:533
+msgid "安装说明描述了安装，连接和采取 GPS-IMU NovAtel SPAN-IGM-A1 的杠杆臂测量的过程。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:535
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:602
+msgid "安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:537
+msgid "可以将 GPS-IMU NovAtel SPAN-IGM-A1 放置在车辆的大部分地方，但建议您遵循以下建议 ："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:540
+msgid "将 NovAtel SPAN-IGM-A1 放置并固定在行李箱内，Y 轴指向前方。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:541
+msgid "将 NovAtel GPS-703-GGG-HV 天线安装在位于车辆顶部的视野范围内。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:543
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:615
+msgid "接线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:545
+msgid "您必须连接的两根电缆："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:547
+msgid "天线电缆 - 将 GNSS 天线连接到 SPAN-IGM-A1 的天线端口"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:548
+msgid "主电缆："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:549
+msgid "将其 15 针端连接到 SPAN-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:550
+msgid "将其电源线连接到 10 至 30V 直流电源"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:551
+msgid "将其串行端口连接到 IPC。如果电源来自车载电池，请添加辅助电池（推荐）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:553
+msgid "![imu_main_cable_connection](images/imu_main_cable_connection.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:553
+msgid "imu_main_cable_connection"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:555
+msgid "主电缆连接"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:557
+msgid "更多信息参见 _SPAN-IGM™ 快速入门指南_, 第三页, 详细图:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:559
+msgid "![online_icon](images/online_icon.png)SPAN-IGM™ 快速入门指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:561
+msgid "[http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:563
+msgid "采取杠杆臂测量"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:565
+msgid ""
+"当 SPAN-IGM-A1 和 GPS 天线就位时，必须测量从 SPAN-IGM-A1 到 GPS 天线的距离。 该 距离标识为：X 偏移，Y "
+"偏移和 Z 偏移。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:568
+msgid "偏移误差必须在 1 厘米以内才能实现高精度。 有关详细信息，请参阅 _ SPAN-IGM™ 快速 入门指南_，第 5 页，详细图。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:571
+msgid "更多有关 SPAN-IGM-A1 的信息参见:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:573
+msgid "![online_icon](images/online_icon.png)SPAN-IGM™ 用户手册:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:575
+msgid "[http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf](http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:577
+msgid "选项 2：NovAtel SPAN® ProPak6™ 和 NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:579
+msgid ""
+"安装说明描述了安装，连接和采取 GPS NovAtelSPAN®ProPak6™**和** NovAtel IMU-IGM-A1 "
+"的杠杆臂测量的步骤。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:582
+msgid "组件"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:584
+msgid "安装所需的组件包括："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:586
+msgid "NovAtel GPS SPAN ProPak6"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:588
+msgid "NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:590
+msgid "NovAtel GPS-703-GGG-HV 天线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:592
+msgid "NovAtel GPS-C006 电缆（将天线连接到 GPS）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:594
+msgid "NovAtel 01019014 主电缆（将 GPS 连接到 IPC 的串行端口）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:596
+msgid "数据传输单元（DTU） - 类似于 4G 路由器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:598
+msgid "磁性适配器（用于天线和 DTU）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:600
+msgid "DB9 直通电缆"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:604
+msgid "你可以将 ProPak6 和 IMU 放置在车辆以下建议的位置："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:606
+msgid "将 ProPak6 和 IMU 并排固定在行李箱内，Y 轴指向前方。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:607
+msgid "将 NovAtel GPS-703-GGG-HV 天线安装在车辆顶部或行李箱盖顶部，如图所示："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:609
+msgid "![gps_receiver_on_car](images/gps_receiver_on_car.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:609
+msgid "gps_receiver_on_car"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:611
+msgid "使用磁性适配器将天线紧固到行李箱盖上。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:612
+msgid "通过打开主干并将电缆放置在行李箱盖和车身之间的空间中，将天线电缆安装在主干箱中 。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:617
+msgid "按照以下步骤将 ProPak6 GNSS 接收器和 IMU 连接到 Apollo 系统："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:619
+msgid "使用 IMU-IGM-A1 附带的分接电缆连接 IMU 主端口和 ProPak6 COM3/IMU 端口。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:620
+msgid "使用 USB-MicroUSB 转换线，连接 IPC 的 USB 端口和 ProPak6 的 MicroUSB 端口。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:621
+msgid "将 IMU-IGM-A1 分离电缆的另一端连接到车辆电源。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:622
+msgid "将 GNSS 天线连接到 Propak6。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:623
+msgid "连接 Propak6 电源线。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:625
+msgid "![wiring](images/wiring.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:625
+msgid "wiring"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:627
+msgid "更多有关 NovAtel SPAN ProPak6 的信息, 参见:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:629
+msgid "![online_icon](images/online_icon.png)NovAtel ProPak6 安装操作手册:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:633
+msgid "安装 IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:637
+msgid "用电源线把 IPC 连接到车辆电源上："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:639
+msgid ""
+"将其电源连接器作为一端![ipc_power_RB](images/ipc_power_RB.png)，另一端连接至车上 "
+"的电源板面（参见前提条件部分）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:642
+msgid "把 5059GC 车载计算系统放在车上（推荐）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:644
+msgid ""
+"例如，Apollo 1.0 使用 4x4 自攻螺钉将 5059GC 固定在后备箱里。 ![IPC-bolt_down-"
+"936x720](images/IPC-bolt_down-936x720.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:644
+msgid "IPC-bolt_down-936x720"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:647
+msgid "安装 IPC，使其正面和背面（所有端口都在背面）面向后备箱的右侧（乘客那侧）和左 侧（驾驶员那侧）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:650
+msgid "这样放置更容易连接所有电缆线。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:652
+msgid "如需更多信息，请参考"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:654
+msgid "![online_icon](images/online_icon.png)Neousys Nuvo-5095GC – 手册:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:656
+msgid ""
+"[http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual](http://www.neousys-"
+"tech.com/en/support/resources/category/162-manual)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:658
+msgid "连接所有线，包括:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:660
+msgid "电源线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:662
+msgid "CAN 线"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:664
+msgid "用以太网线将 4G 路由器连接到 IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:666
+msgid "将 GPS 接收器连接到 IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:668
+msgid "（可选）显示器，键盘，鼠标"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:670
+msgid "a. 将电源线连接至 IPC（如图所示）:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:672
+msgid "![IPC-power-842x636](images/IPC-power-842x636.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:672
+msgid "IPC-power-842x636"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:674
+msgid "b. 将电源线的另一端连至车辆电池（如图所示）："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:676
+msgid "![IPC-power-cable](images/IPC-power-cable.jpg)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:676
+msgid "IPC-power-cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:678
+msgid "c. 将 DB9 线连接到 IPC，使它可以与 CAN 交流："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:680
+msgid "![DB9_cable](images/DB9_cable.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:680
+msgid "DB9_cable"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:682
+msgid "d. 连接:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:684
+msgid "从 4G 路由器到 IPC 的以太网电缆（标签上写着“Router”）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:686
+msgid "从 GPS 接收器到 IPC 的线缆（标签上写着“GPSIMU”）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:688
+msgid "（可选)显示器（标签上写着“Monitor”）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:690
+msgid "![ipc_other_cables](images/ipc_other_cables.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:690
+msgid "ipc_other_cables"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:692
+msgid "杠杆臂测量"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:694
+msgid "步骤如下:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:696
+msgid "在接受测量之前，打开 IPC。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:698
+msgid "当 IMU 和 GPS 天线就位时，必须测量从 IMU 到 GPS 天线的距离。距离测量应为：X 偏移，yoffset，和 Z 偏移。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:701
+msgid "偏移误差必须在一厘米以内，以达到定位和定位的高精度。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:703
+msgid "更多信息，参见："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:705
+msgid "![online_icon](images/online_icon.png) NovAtel ProPak6 安装操作手册:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:709
+msgid "![online_icon](images/online_icon.png) NovAtel SPAN-IGM-A1 产品页:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:713
+msgid "配置 GPS 和 IMU"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:715
+msgid "GPS 和 IMU 配置如下："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:741
+msgid "ProPak6 配置如下:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:767
+msgid ""
+"**![warning_icon](images/warning_icon.png) 警告:** 基于真实的测量值（GPS 天线 、IMU "
+"的偏移量）修改 **<u>SETIMUTOANTOFFSE</u>T** 行"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:770
+msgid "例如："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:776
+msgid "配置网络"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:778
+msgid "本节提供了一种建立网络的建议。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:780
+msgid ""
+"运行 Apollo 软件的 IPC 必须访问互联网获取实时运动学（RTK）数据，以便精确定位。移 动设备还需要连接到 IPC 来运行 Apollo"
+" 软件。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:783
+msgid "推荐配置"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:785
+msgid "建议您根据下图设置网络："
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:787
+msgid "![4G_network_setup](images/4G_network_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:787
+msgid "4G_network_setup"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:791
+msgid "安装并配置 4G 网络"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:793
+msgid "通过以太网线连接 IPC 到路由器"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:795
+msgid "配置路由器使用 LTE 蜂窝网络接入互联网"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:797
+msgid "配置 LTE 路由器的 AP 功能，使 iPad Pro 或其他移动设备可以连接到路由器，然后 连接到 IPC"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:800
+msgid ""
+"![tip_icon](images/tip_icon.png) 建议您配置一个固定的 IP，而不是在 IPC 上使用 "
+"DHCP，以使它更容易从移动终端被连接。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:803
+msgid "其它安装任务"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:805
+msgid "需要使用自己提供的组件来执行以下任务:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:807
+msgid "使用 DVI 或 HDMI 电缆连接显示器，并连接键盘和鼠标，以便在现场的汽车上执行调 试任务。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:810
+msgid "在 Apple iPad Pro 上建立 Wi-Fi 连接，以访问 HMI 并控制 IPC 上运行的 Apollo ADS。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:813
+msgid "下一步"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:815
+msgid ""
+"完成硬件部分的安装之后，可以参考快速入门的教程 [Apollo Quick Start](apollo_1_0_quick_start.md) "
+"完成软件部分的安装。"
+msgstr ""
+

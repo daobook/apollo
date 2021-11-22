@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/FAQs/Hardware_FAQs.md:1
+msgid "Hardware FAQs"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:3
+msgid "What hardware is needed for Apollo?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:5
+msgid ""
+"The required hardware for each version of Apollo can be found at the "
+"following links:"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:8
+msgid ""
+"[Hardware for Apollo "
+"1.0](../quickstart/apollo_1_0_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:9
+msgid ""
+"[Hardware for Apollo "
+"1.5](../quickstart/apollo_1_5_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:10
+msgid ""
+"[Hardware for Apollo "
+"2.0](../quickstart/apollo_2_0_hardware_system_installation_guide_v1.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:11
+msgid ""
+"[Hardware for Apollo "
+"2.5](../quickstart/apollo_2_5_hardware_system_installation_guide_v1.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:12
+msgid ""
+"[Hardware for Apollo "
+"3.0](../quickstart/apollo_3_0_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:16
+msgid "Which types of vehicles can Apollo be run on?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:18
+msgid ""
+"Currently, the Apollo control algorithm is configured for our default "
+"vehicle, which is a Lincoln MKZ. If you would like to use a different "
+"vehicle type, please visit [this](../howto/how_to_add_a_new_vehicle.md) "
+"page."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:24
+msgid "Which types of LiDAR are supported by Apollo?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:26
+msgid ""
+"In Apollo 1.5, only Velodyne 64 is supported. Users are welcome to add "
+"drivers to ROS in order to support other models of LiDAR."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:31
+msgid "Do you have a list of Hardware devices that are compatible with Apollo"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:33
+msgid ""
+"Refer to the [Hardware Installation Guide "
+"3.0](../quickstart/apollo_3_0_hardware_system_installation_guide.md) for "
+"information on all devices that are compatible with Apollo 3.0. If you "
+"are looking for a different version of Apollo, refer to that version's "
+"Hardware Installation guide found under `docs/quickstart`"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:41
+msgid ""
+"What is the difference between Apollo Platform Supported devices and "
+"Apollo Hardware Development Platform Supported device?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:43
+msgid "Apollo Platform Supported means"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:44
+msgid "The device is part of the Apollo hardware reference design"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:45
+msgid ""
+"One or more device(s) has/have been tested and passed to become a fully "
+"functional module of the corresponding hardware category, which provides "
+"adequate support for upper software layers"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:48
+msgid ""
+"Apollo Hardware Development Platform supported means one or more "
+"device(s) has/have been tested and passed for data collection purpose "
+"only. Please note, that in order to collect useful data, it is required "
+"for the device to work with the rest of necessary hardware devices listed"
+" in the Apollo Reference Design. In order to achieve the same performance"
+" in Perception and other upper software modules, it would require extra "
+"effort from the developers’ side, including the creation of new model(s),"
+" annotation of the data, training the new models, etc."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:59
+msgid "I do not have an IMU, now what?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:61
+msgid ""
+"Without an IMU, the localization would depend on GPS system which only "
+"updates once per second. On top of that, you wouldn't have velocity and "
+"heading information of your vehicle. That is probably not a good idea "
+"unless you have other solutions."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:68
+msgid ""
+"I have only VLP16, can I work with it? The documentation advises me to "
+"use HDL64"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:70
+msgid ""
+"HDL64 provides a much denser point cloud than VLP-16 can. It gives a "
+"further detection range for obstacles. That is why we recommend it in the"
+" reference design. Whether VLP-16 works for your project, you will need "
+"to find out."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:76
+msgid "Is HDL32 (Velodyne 32 line LiDAR) compatible with Apollo?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:78
+msgid ""
+"Apollo can work successfully for HDL32 Lidars. You could follow the [Puck"
+" Series Guide](../specs/Lidar/VLP_Series_Installation_Guide.md) alongwith"
+" the following "
+"[modification](https://github.com/ApolloAuto/apollo/commit/df37d2c79129434fb90353950a65671278a4229e"
+"#diff-cb9767ab272f7dc5b3e0d870a324be51). However, please note that you "
+"would need to change the intrinsics for HDL32 in order to avoid [the "
+"following error](https://github.com/ApolloAuto/apollo/issues/5244)."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:88
+msgid "How to set the USB cameras to provide valid time stamp?"
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:90
+msgid ""
+"First use time_sync.sh script to sync the system clock to NTP servers. "
+"Then reset UVCVideo module with clock set to realtime with root access."
+msgstr ""
+
+#: ../../docs/FAQs/Hardware_FAQs.md:99
+msgid "**More Hardware FAQs to follow.**"
+msgstr ""
+

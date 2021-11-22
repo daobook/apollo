@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:1
+msgid "如何在本地运行RTK定位模块"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:3
+msgid "本文档提供了如何在本地运行RTK定位模块的方法。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:5
+msgid "1. 事先准备"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:6
+msgid "从[GitHub网站](https://github.com/ApolloAuto/apollo)下载Apollo源代码"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:7
+msgid "按照[教程](../quickstart/apollo_software_installation_guide.md)设置Docker环境"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:8
+#, python-format
+msgid ""
+"从[Apollo数据平台](http://data.apollo.auto/?name=sensor%20data&data_key=multisensor&data_type=1&locale"
+"=en-us&lang=en)下载多传感器融合定位demo数据包（仅限美国地区），使用其中*apollo3.5*文件夹下的数据。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:10
+msgid "2. 编译apollo工程"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:12
+msgid "2.1 启动并进入Apollo开发版Docker容器"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:19
+msgid "2.2 编译工程"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:27
+msgid "3. 运行RTK模式定位"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:32
+msgid "在/apollo/data/log目录下，可以看到定位模块输出的相关log文件。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:34
+msgid "localization.INFO : INFO级别的log信息"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:35
+msgid "localization.WARNING : WARNING级别的log信息"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:36
+msgid "localization.ERROR : ERROR级别的log信息"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:37
+msgid "localization.out : 标准输出重定向文件"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:38
+msgid "localizaiton.flags : 启动localization模块使用的配置"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:40
+msgid "4. 播放record文件"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:42
+msgid "在下载好的定位demo数据中，找到一个名为\"apollo3.5\"的文件夹，假设该文件夹所在路径为DATA_PATH。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:48
+msgid "6. 可视化定位结果（可选）"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:50
+msgid "可视化定位结果"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:51
+msgid "运行可视化工具"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:56
+msgid "该可视化工具首先根据定位地图生成用于可视化的缓存文件，存放在/apollo/cyber/data/map_visual目录下。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:58
+msgid "然后接收以下topic并进行可视化绘制。"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:60
+msgid "/apollo/sensor/lidar128/compensator/PointCloud2"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:61
+msgid "/apollo/localization/pose"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:63
+msgid "可视化效果如下 ![1](images/rtk_localization/online_visualizer.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.md:63
+msgid "1"
+msgstr ""
+

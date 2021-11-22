@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:1
+msgid "二次规划（QP）样条路径优化"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:3
+msgid ""
+"_**Tip**: "
+"为了更好的展示本文档中的等式，我们建议使用者使用带有[插件](https://chrome.google.com/webstore/detail"
+"/tex-all-the-"
+"things/cbimabofgmfdkicghcadidpemeenbffn)的Chrome浏览器，或者将Latex等式拷贝到[在线编辑公式网站](http://www.hostmath.com/)进行浏览。_"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:5
+msgid "二次规划（QP）+样条插值"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:7
+msgid "1.  目标函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:9
+msgid "1.1  获得路径长度"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:11
+msgid "路径定义在station-lateral坐标系中。**s**的变化区间为从车辆当前位置点到默认路径的长度。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:13
+msgid "1.2   获得样条段"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:15
+msgid "将路径划分为**n**段，每段路径用一个多项式来表示。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:17
+msgid "1.3  定义样条段函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:19
+msgid "每个样条段 ***i*** 都有沿着参考线的累加距离$d_i$。每段的路径默认用5介多项式表示。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:28
+msgid "1.4  定义每个样条段优化目标函数"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:36
+msgid "1.5  将开销（cost）函数转换为QP公式"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:38
+msgid "QP公式:"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:49
+msgid "下面是将开销（cost）函数转换为QP公式的例子："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:59
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:70
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:174
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:183
+msgid "且"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:83
+msgid "然后得到，"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:99
+msgid "从聚合函数中提取出常量得到，"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:128
+msgid "最后得到，"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:147
+msgid "请注意我们最后得到一个6介的矩阵来表示5介样条插值的衍生开销。 应用同样的推理方法可以得到2介，3介样条插值的衍生开销。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:150
+msgid "2  约束条件"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:152
+msgid "2.1  初始点约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:154
+msgid ""
+"假设第一个点为 ($s_0$, $l_0$), ($s_0$, $l'_0$) and ($s_0$, $l''_0$)，其中$l_0$ , "
+"$l'_0$ and $l''_0$表示横向的偏移，并且规划路径的起始点的第一，第二个点的衍生开销可以从$f_i(s)$, $f'_i(s)$, "
+"$f_i(s)''$计算得到。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:156
+msgid "将上述约束转换为QP约束等式，使用等式："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:164
+msgid "下面是转换的具体步骤："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:192
+msgid "其中，i是包含$s_0$的样条段的索引值。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:194
+msgid "2.2  终点约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:196
+msgid "和起始点相同，终点$(s_e, l_e)$ 也应当按照起始点的计算方法生成约束条件。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:198
+msgid "将起始点和终点组合在一起，得出约束等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:224
+msgid "2.3  平滑节点约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:226
+msgid ""
+"该约束的目的是使样条的节点更加平滑。假设两个段$seg_k$ "
+"和$seg_{k+1}$互相连接，且$seg_k$的累计值s为$s_k$。计算约束的等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:233
+msgid "下面是计算的具体步骤："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:253
+msgid "然后"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:266
+msgid "将$s_0$ = 0代入等式。"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:268
+msgid "同样地，可以为下述等式计算约束等式："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:279
+msgid "2.4  点采样边界约束"
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:281
+msgid "在路径上均匀的取样**m**个点，检查这些点上的障碍物边界。将这些约束转换为QP约束不等式，使用不等式："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:289
+msgid "首先基于道路宽度和周围的障碍物找到点 $(s_j, l_j)$的下边界$l_{lb,j}$，且$j\\in[0, m]$。计算约束的不等式为："
+msgstr ""
+
+#: ../../docs/specs/qp_spline_path_optimizer_cn.md:310
+msgid "同样地，对上边界$l_{ub,j}$，计算约束的不等式为："
+msgstr ""
+

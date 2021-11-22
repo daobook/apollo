@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/perception_apollo_2.5.md:1
+msgid "Perception"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:2
+msgid "Apollo 2.5 April 19, 2018"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:5
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:6
+msgid ""
+"Apollo 2.5 aims for Level-2 autonomous driving with low cost sensors. An "
+"autonomous vehicle will stay in the lane and keep a distance with a "
+"closest in-path vehicle (CIPV) using a single front-facing camera and a "
+"frontal radar. Apollo 2.5 supports high-speed autonomous driving on "
+"highway without any map. The deep network was learned to process an image"
+" data. The performance of the deep network will be improved over time as "
+"collecting more data."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:9
+msgid "***Safety alert***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:11
+msgid ""
+"Apollo 2.5 *does not* support a high curvature road, a road without lane "
+"marks including local roads and intersections. The perception module is "
+"based on the visual detection using a deep network with limited data. "
+"Therefor, before we release a better network, the driver should be "
+"careful in driving and always be ready to disengage the autonomous "
+"driving by turning the wheel to the right direction. Please perform the "
+"test drive at the safe and restricted area."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:13
+msgid "***Recommended road***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:14
+msgid "***Road with clear white lane lines on both sides***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:16
+msgid "***Avoid***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:17
+msgid "***High curvature road***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:18
+msgid "***Road without lane line marks***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:19
+msgid "***Intersection***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:20
+msgid "***Butt dots or dotted lane lines***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:21
+msgid "***Public road***"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:23
+msgid "Perception modules"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:24
+msgid "The flow chart of each module is shown below."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:26
+msgid "![Image](images/perception_flow_chart_apollo_2.5.png)"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:26
+msgid "Image"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:28
+msgid "**Figure 1: Flow diagram of lane keeping system**"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:30
+msgid "Deep network"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:31
+msgid ""
+"Deep network ingests an image and provides two detection outputs, lane "
+"lines and objects for Apollo 2.5. There is an ongoing debate on "
+"individual task and co-trained task for deep learning. Individual "
+"networks such as a lane detection network or an object detection network "
+"usually perform better than one co-trained multi-task network. However, "
+"with given limited resources, multiple individual networks will be costly"
+" and consume more time in processing. Therefore, for the economic design,"
+" co-train is inevitable with some compromise in performance. In Apollo "
+"2.5, YOLO [1][2] was used as a base network of object and lane detection."
+" The object has vehicle, truck, cyclist, and pedestrian categories and "
+"represented by a 2-D bounding box with orientation information. The lane "
+"lines are detected by segmentation using the same network with some "
+"modification."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:33
+msgid "Network optimization"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:34
+msgid ""
+"In literature, there are multiple approaches of network optimization for "
+"real time processing of high framerate images. Rather than using 32bit "
+"float, a network with INT8 was implemented to achieve real-time "
+"implementation. TensorRT may be used to optimize the network."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:36
+msgid "Object detection/tracking"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:37
+msgid ""
+"In a traffic scene, there are two kinds of objects: stationary objects "
+"and dynamic objects. Stationary objects include lane lines, traffic "
+"lights, and thousands of traffic signs written in different languages. "
+"Other than driving, there are multiple landmarks on the road mostly for "
+"visual localization including streetlamp, barrier, bridge on top of the "
+"road, or any skyline. For stationary object, we will detect only lane "
+"lines in Apollo 2.5."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:39
+msgid ""
+"Among dynamic objects, we care passenger vehicles, trucks, cyclists, "
+"pedestrians, or any other object including animal or body parts on the "
+"road. We can also categorize object based on which lane the object is in."
+" The most important object is CIPV (closest object in our path). Next "
+"important objects would be the one in neighbor lanes."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:41
+msgid "2D-to-3D bounding box"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:43
+msgid ""
+"Given a 2D box, with its 3D size and orientation in camera, this module "
+"searches the 3D position in a camera coordinate system and estimates an "
+"accurate 3D distance using either the width, the height, or the 2D area "
+"of that 2D box. The module works without accurate extrinsic camera "
+"parameters."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:45
+msgid "Object tracking"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:47
+msgid ""
+"The object tracking module utilizes multiple cues such as 3D position, 2D"
+" image patches, 2D boxes, or deep learning ROI features. The tracking "
+"problem is formulated as multiple hypothesis data association by "
+"combining the cues efficiently to provide the most correct association "
+"between tracks and detected object, thus obtaining correct ID association"
+" for each object."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:49
+msgid "Lane detection/tracking"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:50
+msgid ""
+"Among static objects, we will handle lane lines only in Apollo 2.5. The "
+"lane is for both longitudinal and lateral control. A lane itself guides "
+"lateral control and an object in the lane guides longitudinal control."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:52
+msgid "Lane lines"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:54
+msgid ""
+"The lane can be represented by multiple sets of polylines such as next "
+"left lane line, left line, right line, and next right line. Given a "
+"heatmap of lane lines from the deep network, the segmented binary image "
+"is generated by thresholding. The method first finds the connected "
+"components and detects the inner contours. Then it generates lane marker "
+"points based on the contour edges in the ground space of ego-vehicle "
+"coordinate system. After that, it associates these lane markers into "
+"several lane line objects with corresponding relative spatial (e.g., "
+"left(L0), right(R0), next left(L1), next right(L2), etc.) labels."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:56
+msgid "CIPV (Closest-In Path Vehicle)"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:57
+msgid ""
+"A CIPV is the closest vehicle in our ego-lane. An object is represented "
+"by 3D bounding box and its 2D projection from the top-down view localizes"
+" the object on the ground. Then, each object will be checked if it is in "
+"the ego-lane or not. Among the objects in our ego-lane, the closest one "
+"will be selected as a CIPV."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:59
+msgid "Radar + camera fusion"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:60
+msgid ""
+"Given multiple sensors, their output should be combined in a synergic "
+"fashion. Apollo 2.5. introduces a sensor set with a radar and a camera. "
+"For this process, both sensors need to be calibrated. Each sensor will be"
+" calibrated using the same method introduced in Apollo 2.0. After "
+"calibration, the output will be represented in a 3-D world coordinate and"
+" each output will be fused by their similarity in location, size, time "
+"and the utility of each sensor. After learning the utility function of "
+"each sensor, the camera contributes more on lateral distance and the "
+"radar contributes more on longitudinal distance measurement."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:62
+msgid "Virtual lane"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:63
+msgid ""
+"All lane detection results will be combined spatially and temporarily to "
+"induce the virtual lane which will be fed to planning and control. Some "
+"lane lines would be incorrect or missing in a certain frame. To provide "
+"the smooth lane line output, the history of lane lines using vehicle "
+"odometry is used. As the vehicle moves, the odometer of each frame is "
+"saved and lane lines in previous frames will be also saved in the history"
+" buffer. The detected lane line which does not match with the history "
+"lane lines will be removed and the history output will replace the lane "
+"line and be provided to the planning module."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:65
+msgid "Output of perception"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:66
+msgid ""
+"The input of PnC will be quite different with that of the previous lidar-"
+"based system."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:68
+msgid "Lane line output"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:69
+msgid "Polyline and/or a polynomial curve"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:70
+msgid ""
+"Lane type by position: L1(next left lane line), L0(left lane line), "
+"R0(right lane line), R1(next right lane line)"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:72
+msgid "Object output"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:73
+msgid "3D rectangular cuboid"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:74
+msgid "Relative velocity and direction"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:75
+msgid "Type: CIPV, PIHP, others"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:76
+msgid "Classification type: car, truck, bike, pedestrian"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:78
+msgid ""
+"The world coordinate will be ego-coordinate in 3D where the rear center "
+"axle is an origin."
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:80
+msgid "References"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:81
+msgid ""
+"[1] J Redmon, S Divvala, R Girshick, A Farhadi, \"You only look once: "
+"Unified, real-time object detection,\" CVPR 2016"
+msgstr ""
+
+#: ../../docs/specs/perception_apollo_2.5.md:83
+msgid ""
+"[2] J Redmon, A Farhadi, \"YOLO9000: Better, Faster, Stronger,\" arXiv "
+"preprint"
+msgstr ""
+

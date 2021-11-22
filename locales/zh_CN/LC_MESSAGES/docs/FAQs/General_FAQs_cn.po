@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/FAQs/General_FAQs_cn.md:1
+msgid "General FAQs_cn"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:3
+msgid "请问我怎么样使用pull request？"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:4
+msgid "使用pull request非常简单。"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:5
+msgid "将Apollo Repository fork到你自己的Github中。"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:6
+msgid "在你的Repository中建立一个开发者 Branch。"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:7
+msgid "在开发者Branch中commit你做的任何的改变"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:8
+msgid "在你的github网页中使用pull request"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:9
+msgid "注释需要写在Doxygen中吗？"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:10
+msgid "目前所有的注释都应写在Doxygen中。"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs_cn.md:12
+msgid "**参考更多的FAQs**"
+msgstr ""
+

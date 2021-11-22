@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/cyber/CyberRT_Docker.md:1
+msgid "How to Develop Cyber RT inside Docker on Both x86_64 and ARM64"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:3
+msgid ""
+"To make life easier, Apollo maintains Cyber Docker images and a number of"
+" scripts to help developers build and play with Cyber RT framework."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:6
+msgid ""
+"Cyber Docker images are built upon Ubuntu 18.04, and comes with full "
+"support for Cyber RT framework. For those who are interested in Cyber RT "
+"only, this would be the ideal point to start with."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:10
+msgid ""
+"**Note: Apollo team also maintains ARM64 Cyber Docker images which was "
+"tested on Jetson AGX Xavier. The same set of scripts are provided to run "
+"both on x86_64 and ARM64 platforms.**"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:14
+msgid ""
+"In the next section, we will show you how to play with Cyber Docker "
+"images."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:16
+msgid "Build and Test Cyber RT inside Docker"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:18
+msgid "Run the following command to start Cyber Docker container:"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:24
+msgid "Or if you are in China, run:"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:30
+msgid "A Docker container named `apollo_cyber_$USER` will be started."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:32
+msgid ""
+"**Note**: You will lose all your previous changes in the container if you"
+" have ran this command before. Unless you would like to start a fresh "
+"Docker environment."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:36
+msgid "To log into the newly started Cyber container:"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:42
+msgid ""
+"**Note**: you can login and logout Cyber container multiple times as you "
+"wish, the Docker environment will stay there until the next time you "
+"start another Cyber container."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:46
+msgid "To build Cyber RT only and run unit tests:"
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:53
+msgid "Or run with `--config=opt` for an optimized build/test."
+msgstr ""
+
+#: ../../docs/cyber/CyberRT_Docker.md:60
+msgid "You should be able to see that all the testcases passed."
+msgstr ""
+
