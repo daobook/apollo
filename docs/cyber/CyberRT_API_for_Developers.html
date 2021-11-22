@@ -1,84 +1,2819 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber RT API for Developers &mdash; Apollo Auto alpha 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/tabs.js"></script>
-        <script src="../../_static/translations.js"></script>
-        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-        <script>mermaid.initialize({startOnLoad:true});</script>
-    <script src="../../_static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber RT API for Developers &#8212; Apollo Auto alpha 文档</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Apollo Cyber RT Developer Tools" href="CyberRT_Developer_Tools.html" />
-    <link rel="prev" title="软件 FAQ" href="../FAQs/Software_FAQs_cn.html" /> 
-</head>
+    <link rel="prev" title="软件 FAQ" href="../FAQs/Software_FAQs_cn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: skyblue" >
-            <a href="../../index.html" class="icon icon-home"> Apollo Auto
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Apollo Auto alpha 文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Apollo Auto 自述
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Apollo Auto 文档
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/00_cyber.html">
+   Cyber
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/README.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
+       How to Create and Run a new Component in Cyber RT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
+       Cyber RT Terms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
+       F.A.Q.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
+       Cyber RT API tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
+       Python API tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
+       Apollo Cyber RT Developer Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
+       How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
+       Migration guide from Apollo ROS
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
+       C++ API
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+         cyber/node/node.h
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
+       Python API
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+         python/cyber_py/cyber.py
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
+     Cyber RT API tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
+     Apollo Cyber RT Developer Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
+     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
+     F.A.Q.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
+     Migration guide from Apollo ROS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
+     Python API tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
+     How to Create and Run a new Component in Cyber RT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
+     Cyber RT Terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+     cyber/node/node.h
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
+     C++ API
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+       cyber/node/node.h
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+     python/cyber_py/cyber.py
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
+     Python API
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+       python/cyber_py/cyber.py
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/examples/common_component_example/README.html">
+     Common Component Example of the CyberRT framework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/python/README.html">
+     Cyber RT Python API : An Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../_toc/01_docs.html">
+   Apollo Auto 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../README.html">
+     Apollo documents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Control_Auto_Tuning/README.html">
+     Control Parameter Auto-Tuning Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Control_Profiling/README.html">
+     Control Profiling Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Dynamic_Model/README.html">
+     Vehicle Dynamic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Open_Space_Planner_Profiling/README.html">
+     Open Space Planner Profiling Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Perception_Lidar_Model_Training/README.html">
+     Open Perception Lidar Model Training Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.html">
+     Prediction Pedestrian Model Training Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Vehicle_Calibration_Online/README.html">
+     Vehicle Calibration Online Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/apply_bos_account_cn.html">
+     百度云对象存储BOS注册与基本使用向导
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/apply_fuel_account_cn.html">
+     1. 开通云服务账号向导
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/perception_configuration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/sensor_calibration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知设备标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/sensor_integration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/start_auto_driving_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/perception_configuration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/planning_configuration_cn.html">
+     封闭园区自动驾驶搭建–规划适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/sensor_calibration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知设备标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/sensor_integration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/virtual_lane_generation_cn.html">
+     封闭园区自动驾驶搭建–虚拟车道线制作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/perception_configuration_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/sensor_integration_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/start_auto_driving_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Advanced/Quick_Start_V01.html">
+     快速介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.html">
+     <strong>
+      Apollo传感器集成说明
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Quick_Start_V03.html">
+     <strong>
+      本文档适用于车辆编号为：2019051~2019080
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Quick_Start_V04.html">
+     <strong>
+      本文档适用于车辆编号为：”2019091-2019095”之间和“2020001之后”的车辆
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/readme.html">
+     概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Standard/Quick_Start_V01.html">
+     <strong>
+      快速介绍
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/readme.html">
+     概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/apollo_installation_cn.html">
+     循迹搭建–Apollo系统安装
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/control_profiling_online_cn.html">
+     车辆控制评测分析云服务的应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/localization_configuration_cn.html">
+     循迹搭建–定位模块配置
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/reinstall_my_apollo_system_cn.html">
+     循迹搭建–Apollo系统重装
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/start_waypoint_following_cn.html">
+     循迹搭建–车辆循迹演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/vehicle_calibration_online_cn.html">
+     循迹搭建–车辆动力学云标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/vehicle_integration_cn.html">
+     循迹搭建–车辆集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/readme.html">
+     概览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Calibration_FAQs.html">
+     Calibration FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Calibration_FAQs_cn.html">
+     传感器标定 FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/CyberRT_FAQs.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Dreamview_FAQs.html">
+     DreamView FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/General_FAQs.html">
+     General FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/General_FAQs_cn.html">
+     General FAQs_cn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Hardware_FAQs.html">
+     Hardware FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Hardware_FAQs_cn.html">
+     硬件 FAQs：
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Perception_FAQs.html">
+     Perception FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/README.html">
+     FAQs Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Software_FAQs.html">
+     Software FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Software_FAQs_cn.html">
+     软件 FAQ
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Cyber RT API for Developers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Developer_Tools.html">
+     Apollo Cyber RT Developer Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Docker.html">
+     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_FAQs.html">
+     Apollo Cyber RT FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Migration_Guide.html">
+     Migration guide from Apollo ROS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Python_API.html">
+     Cyber RT Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Python_API_cn.html">
+     CyberRT Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Quick_Start.html">
+     How to Create and Run a new Component in Cyber RT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Quick_Start_cn.html">
+     如何使用 Cyber RT 创建新的组件
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Scheduler_cn.html">
+     Cyber RT 调度
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CyberRT_Terms.html">
+     Apollo Cyber RT Terminologies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="README.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demo_guide/README.html">
+     Run Simulation with Offline Record
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demo_guide/README_cn.html">
+     运行线下演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/README.html">
+     Howto Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/arch/apollo1.5_adapter_arch_study_notes_cn.html">
+     adapter设计架构代码分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/arch/apollo1.5_top_study_notes_cn.html">
+     Apollo 系统架构代码分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_gps_receiver.html">
+     How to add a new GPS Receiver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_gps_receiver_cn.html">
+     如何添加新的GPS接收器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_detector_algorithm.html">
+     How to add a new camera detector algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_detector_algorithm_cn.html">
+     如何添加新的camera检测算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_tracker_algorithm.html">
+     How to add a new camera tracker algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_tracker_algorithm_cn.html">
+     如何添加新的camera匹配算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_can_card.html">
+     How to Add a New CAN Card
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_can_card_cn.html">
+     如何添加新的CAN卡
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_control_algorithm.html">
+     How to Add a New Control Algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_control_algorithm_cn.html">
+     如何添加新的控制算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_evaluator_in_prediction_module.html">
+     How to add a new evaluator in Prediction module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_evaluator_in_prediction_module_cn.html">
+     如何在预测模块中添加新评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_fusion_system.html">
+     How to add a new fusion system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_fusion_system_cn.html">
+     如何添加新的fusion融合系统
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_detector_algorithm.html">
+     How to add a new lidar detector algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_detector_algorithm_cn.html">
+     如何添加新的lidar检测算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_driver.html">
+     How to add a new Lidar driver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_driver_cn.html">
+     fr
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_tracker_algorithm.html">
+     How to add a new lidar tracker algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_tracker_algorithm_cn.html">
+     如何添加新的lidar匹配算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_predictor_in_prediction_module.html">
+     How to add a new Predictor in Prediction module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_predictor_in_prediction_module_cn.html">
+     如何在预测模块中添加一个预测器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_vehicle.html">
+     How to Add a New Vehicle to Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_vehicle_cn.html">
+     如何在Apollo中添加新的车辆
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_an_external_dependency.html">
+     How to Add a New External Dependency
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_build_and_run_python_app.html">
+     How to Build, Test and Run your Python Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_clone_apollo_repo_from_china.html">
+     How to Clone Apollo Repository from China
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_clone_apollo_repo_from_china_cn.html">
+     国内环境下如何克隆 Apollo 仓库
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_create_pull_request.html">
+     How to Create a Pull Request
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_create_pull_request_cn.html">
+     如何创建合入请求(Pull Request)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_debug.html">
+     How to Debug Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_do_performance_profiling.html">
+     How to do performance profiling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_document_code.html">
+     How to Document Source Code in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_generate_local_map_for_MSF_localization_module.html">
+     How to Generate Local Map For MSF Localization Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_generate_local_map_for_MSF_localization_module_cn.html">
+     如何生产多传感器融合定位模块所需的地图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_install_apollo_kernel.html">
+     How to Install Low-Latency / Realtime Kernel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_install_apollo_kernel_cn.html">
+     如何为 Apollo 安装低时延/实时内核
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_launch_and_run_apollo.html">
+     How to Launch and Run Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_leverage_rtk_mode.html">
+     How to Leverage Apollo’s RTK mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_leverage_scenario_editor.html">
+     How to Leverage Scenario Editor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_monitor_perf_with_oprofile_on_tx2.html">
+     rf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.html">
+     ff
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_prepare_bazel_dist_dir.html">
+     How to Prepare Bazel Distribution Directory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_prepare_bazel_dist_dir_cn.html">
+     如何准备 Bazel 的依赖缓存目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_MSF_localization_module_on_your_local_computer.html">
+     How to Run MSF Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_MSF_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行多传感器融合定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_NDT_localization_module_on_your_local_computer.html">
+     How to Run NDT Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_NDT_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行基于NDT点云匹配的定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_RTK_localization_module_on_your_local_computer.html">
+     How to Run RTK Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行RTK定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_map_verification_tool.html">
+     How to run the Map Data Verification Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_perception_module_on_your_local_computer.html">
+     How to Run Perception Module on Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_save_and_load_docker_image.html">
+     How to Save and Load Apollo Docker Images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_setup_dual_ipc.html">
+     How to set up Apollo 3.5’s software on Dual-IPCs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_solve_slow_pull_from_cn.html">
+     国内环境 GitHub 拉取仓库速度慢的缓解方案
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_train_prediction_mlp_model.html">
+     How to train the MLP Deep Learning Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_train_prediction_mlp_model_cn.html">
+     训练预测MLP深度学习模型
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_troubleshoot_esdcan.html">
+     How to troubleshoot ESD CAN device?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_troubleshoot_esdcan_cn.html">
+     如何解决ESD CAN设备的故障？
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_tune_control_parameters.html">
+     How to Tune Control Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_tune_control_parameters_cn.html">
+     如何调节控制参数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_understand_architecture_and_workflow.html">
+     HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_update_vehicle_calibration.html">
+     How to Update Vehicle Calibration for Throttle and Brakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_update_vehicle_calibration_cn.html">
+     如何标定车辆油门和制动
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_apollo_2.5_navigation_mode.html">
+     How to use Apollo 2.5 navigation mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_apollo_2.5_navigation_mode_cn.html">
+     Apollo 2.5版导航模式的使用方法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_ci_result.html">
+     How to Use CI Result in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_ci_result_cn.html">
+     在Apollo中如何使用CI结果
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_HDmap_study_notes_cn.html">
+     HD map 使用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_localization_module_study_notes_cn.html">
+     Localization module 分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_perception_module_study_notes_cn.html">
+     Perception Module 分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_prediction_module_study_notes_cn.html">
+     Prediction模块分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_routing_module_study_notes_cn.html">
+     routing模块分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/README.html">
+     Quick Start Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_hardware_system_installation_guide.html">
+     Apollo 1.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_hardware_system_installation_guide_cn.html">
+     Apollo 1.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start.html">
+     Apollo 1.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start_cn.html">
+     Apollo 快速入门指南  1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start_developer.html">
+     Apollo 1.0 Quick Start Guide for Developers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_hardware_system_installation_guide.html">
+     Apollo 1.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_hardware_system_installation_guide_cn.html">
+     关于本指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_lidar_calibration_guide_cn.html">
+     ff
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_quick_start.html">
+     Apollo 1.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_quick_start_cn.html">
+     Apollo 1.5 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_hardware_system_installation_guide_v1.html">
+     Apollo 2.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_hardware_system_installation_guide_v1_cn.html">
+     Apollo 2.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_quick_start.html">
+     Apollo 2.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_quick_start_cn.html">
+     Apollo 2.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_sensor_calibration_guide.html">
+     Apollo 2.0 Sensor Calibration Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_sensor_calibration_guide_cn.html">
+     Apollo 2.0 传感器标定方法使用指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_hardware_system_installation_guide_v1.html">
+     Apollo 2.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_hardware_system_installation_guide_v1_cn.html">
+     Apollo 2.5 硬件与系统安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_map_collection_guide.html">
+     Apollo 2.5 map collection guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_map_collection_guide_cn.html">
+     Apollo 2.5 地图采集功能使用指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_quick_start.html">
+     Apollo 2.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_quick_start_cn.html">
+     Apollo 2.5 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_hardware_system_installation_guide.html">
+     Apollo 3.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_hardware_system_installation_guide_cn.html">
+     Apollo 3.0 硬件与系统安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_quick_start.html">
+     Apollo 3.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_quick_start_cn.html">
+     Apollo 3.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_hardware_system_installation_guide.html">
+     Apollo 3.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_map_collection_guidelines.html">
+     Apollo 3.5 Map Collection Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_quick_start.html">
+     Apollo 3.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_5_0_quick_start.html">
+     Apollo 5.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_5_5_quick_start.html">
+     Apollo 5.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_6_0_quick_start.html">
+     Apollo 6.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_6_0_quick_start_cn.html">
+     Apollo 6.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_software_installation_guide.html">
+     Apollo Software Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_software_installation_guide_cn.html">
+     Apollo软件安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_updated_hardware_system_installation_guide.html">
+     Apollo Upgraded Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/multiple_lidar_gnss_calibration_guide.html">
+     Multiple-LiDAR GNSS Calibration Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/multiple_lidar_gnss_calibration_guide_cn.html">
+     多激光雷达全球导航卫星系统(Multiple-LiDAR GNSS)校准指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/3d_obstacle_perception.html">
+     3D Obstacle Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/3d_obstacle_perception_cn.html">
+     3D 障碍物感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_2.0_Software_Architecture.html">
+     Apollo 2.0 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_3.0_Software_Architecture.html">
+     Apollo 3.0 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_3.0_Software_Architecture_cn.html">
+     Apollo 3.0 软件架构
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_3.5_Software_Architecture.html">
+     Apollo 3.5 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_5.5_Software_Architecture.html">
+     Apollo 5.5 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide.html">
+     Guide for Apollo Sensor Unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide_cn.html">
+     Apollo传感器单元（ASU）安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide.html">
+     Guide for LI-USB30-AZ023WDRB
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.html">
+     LI-USB30-AZ023WDRB指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/README.html">
+     Apollo Cameras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/README_cn.html">
+     Apollo摄像头
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Truly_Argus_Camera_Installation_Guide.html">
+     Guide for Argus Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Truly_Argus_Camera_Installation_Guide_cn.html">
+     Argus摄像头指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Wissen_Camera_Installation_Guide.html">
+     Guide for Wissen Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Camera/Wissen_Camera_Installation_Guide_cn.html">
+     Wissen摄像头指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Class_Architecture_Planning.html">
+     Class Architecture and Overview – Planning Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Class_Architecture_Planning_cn.html">
+     Planning模块架构和概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Dreamland_introduction.html">
+     Dreamland
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Guideline_sensor_Installation_apollo_2.5.html">
+     Guideline of sensor Installation for Apollo 2.5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Guideline_sensor_Installation_apollo_3.0.html">
+     Guideline of sensor Installation for Apollo 3.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Guideline_sensor_Installation_apollo_3.0_cn.html">
+     Apollo 3.0传感器安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/IPC/Nuvo-6108GC_Installation_Guide.html">
+     Guide on Nuvo-6108GC Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/IPC/Nuvo-6108GC_Installation_Guide_cn.html">
+     Nuvo-6108GC配置和安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/HDL64E_S3_Installation_Guide.html">
+     Installation guide of Velodyne HDL64E-S3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/HDL64E_S3_Installation_Guide_cn.html">
+     Velodyne HDL64E-S3安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/Hesai_Pandora_Installation_Guide.html">
+     Installation guide of Pandora
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/Hesai_Pandora_Installation_Guide_cn.html">
+     Pandora安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/Innovusion_Note.html">
+     Installation guide of Innovusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/Innovusion_Note_cn.html">
+     Innovusion安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/README.html">
+     Apollo LiDAR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/README_cn.html">
+     Apollo激光雷达
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/VLP_Series_Installation_Guide.html">
+     Installation guide of the Puck Series LiDAR (and HDL32)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/VLP_Series_Installation_Guide_cn.html">
+     Puck系列LiDAR (和HDL32)安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Lidar/VLS_128_Installation_Guide.html">
+     Installation guide of Velodyne VLS-128
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.html">
+     Apollo 6.0 Microphone Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/Navtech_NV-GI120_Installation_Guide.html">
+     Guide for Navtech NV-GI120
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.html">
+     Navtech_NV-GI120安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/Npos320_guide.html">
+     Npos320 Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide.html">
+     Installation Guide of NovAtel Propak6 and NovAtel IMU-IGM-A1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.html">
+     NovAtel Propak6 和 NovAtel IMU-IGM-A1 安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/PwrPak7_Installation_Guide.html">
+     Installation Guide of NovAtel PwrPak7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/PwrPak7_installation_Guide_cn.html">
+     NovAtel PwrPak7 安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/README.html">
+     Apollo Navigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/README_cn.html">
+     Apollo导航
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/SPAN-IGM-A1_Installation_Guide.html">
+     Installation Guide of SPAN-IGM-A1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Navigation/SPAN-IGM-A1_Installation_Guide_cn.html">
+     SPAN-IGM-A1安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Open_Space_Planner.html">
+     Open Space Planner Algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/README.html">
+     Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/README_cn.html">
+     Apollo具体内容说明
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Radar/Continental_ARS408-21_Radar_Installation_Guide.html">
+     Installation Guide of Continental ARS-408-21 Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Radar/README.html">
+     Apollo Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/Radar/Racobit_B01HC_Radar_Installation_Guide.html">
+     Installation Guide of Racobit B01HC Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/apollo_build_and_test_explained.html">
+     Apollo Build and Test Explained
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/apollo_lidar_imu_calibration_guide.html">
+     Apollo LiDAR - IMU Calibration Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/apollo_secure_upgrade_user_guide.html">
+     Apollo Secure Upgrade SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/apollo_secure_upgrade_user_guide_cn.html">
+     Apollo安全更新SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/bazel_in_apollo_an_overview.html">
+     Bazel in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/bridge_header_protocol.html">
+     Bridge Header Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/coordination_cn.html">
+     Apollo坐标系统
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/dreamview_usage_table.html">
+     Dreamview Usage Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/dreamview_usage_table_cn.html">
+     DreamView用法介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/dynamic_model.html">
+     Dynamic Model - Control-in-loop Simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/linters_and_formatters.html">
+     Linters and Formatters used in Apollo 6.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/perception_apollo_2.5.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/perception_apollo_3.0.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/perception_apollo_3.0_cn.html">
+     感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/perception_apollo_5.0.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/prerequisite_software_installation_guide.html">
+     Pre-requisite Software Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/qp_spline_path_optimizer.html">
+     QP-Spline-Path Optimizer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/qp_spline_path_optimizer_cn.html">
+     二次规划（QP）样条路径优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/qp_spline_st_speed_optimizer.html">
+     QP-Spline-ST-Speed Optimizer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/qp_spline_st_speed_optimizer_cn.html">
+     二次规划ST速度优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/reference_line_smoother.html">
+     Reference Line Smoother
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/reference_line_smoother_cn.html">
+     参考线平滑设定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/traffic_light.html">
+     Traffic Light Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../specs/traffic_light_cn.html">
+     交通信号灯感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/README.html">
+     Technical Docunments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/hybrid_a_star_en.html">
+     GENERATE COARSE TRAJECTORY IN THE OPEN SPACE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/jointly_prediction_planning_evaluator.html">
+     JOINTLY PREDICTION PLANNING EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/jointly_prediction_planning_evaluator_cn.html">
+     预测规划交互评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_decider.html">
+     OPEN SPACE DECIDER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_optimizer_en.html">
+     OPTIMIZE COARSE TRAJECTORY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_partition.html">
+     OPEN SPACE TRAJECTORY PARTITION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_provider_en.html">
+     GENERATE FINAL TRAJECTORY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/parking_scenario.html">
+     PARKING SCENARIO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_component.html">
+     Planning Component Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.html">
+     Planning Piecewise Jerk Nonlinear Speed Optimizer Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_speed_bounds_decider.html">
+     Planning Speed Bounds Decider Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/prediction_evaluator.html">
+     PREDICTION EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/prediction_predictor.html">
+     PREDICTION PREDICTOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_assessment_decider_cn.html">
+     路径评估决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_bounds_decider_cn.html">
+     路径边界决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_decider_cn.html">
+     路径决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/piece_wise_jerk_path_cn.html">
+     分段加加速度路径优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/rule_based_stop_decider_cn.html">
+     基于规则的停止决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/template_cn.html">
+     标题(替换此处)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/template_en.html">
+     Title(replace it)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/vectornet_lstm_evaluator.html">
+     VECTORNET_LSTM_EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/vectornet_lstm_evaluator_cn.html">
+     VECTORNET LSTM 评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/README.html">
+     Technical Tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_2.5_technical_tutorial.html">
+     Apollo 2.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.0_technical_tutorial.html">
+     Apollo 3.0 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.0_technical_tutorial_cn.html">
+     Apollo 3.0 技术指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.5_technical_tutorial.html">
+     Apollo 3.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_5.0_technical_tutorial.html">
+     Apollo 5.0 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_5.5_technical_tutorial.html">
+     Apollo 5.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_best_coding_practice.html">
+     Apollo Best Coding Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_best_coding_practice_cn.html">
+     Apollo 编码最佳实践
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_vehicle_adaption_tutorial_cn.html">
+     Apollo车辆适配教程
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/intro_to_apollo_release_build.html">
+     Introduction to Apollo Release Build
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/intro_to_apollo_release_build_cn.html">
+     Apollo Release Build 简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/navigation_mode_tutorial_cn.html">
+     Apollo导航模式教程
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT.html">
+     Apollo Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT_cn.html">
+     Apollo 行为准则
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../RELEASE.html">
+     Release 6.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MANIFESTO.html">
+     Apollo Governance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CONTRIBUTING.html">
+     How to Contribute to Apollo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/other.html">
+   临时目录
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/can_card_library/esd_can/README.html">
+     ESD CAN Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/gpus/README.html">
+     CUDA Support for Bazel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/tf2/CHANGELOG.html">
+     Changelog for package tf2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/tf2/README.html">
+     tf2-apollo
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../third_party/tf2/index.html">
+     tf2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../third_party/tf2/README.html">
+       tf2-apollo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/audio/README.html">
+     Audio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/audio/tools/README.html">
+     Dump audio to wave
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/bridge/README.html">
+     Bridge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/calibration/data/README.html">
+     Vehicle Calibration Configs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/canbus/README.html">
+     Canbus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/canbus/README_cn.html">
+     CAN总线
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/common/README.html">
+     Common - Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/common/README_cn.html">
+     通用模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/cyber_bridge/README.html">
+     Apollo Cyber bridge for the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       master
+      </span>
+     </code>
+     branch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/e2e/README.html">
+     e2e
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/elo/README.html">
+     Download
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/lgsvl_msgs/CHANGELOG.html">
+     Changelog for package lgsvl_msgs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/lgsvl_msgs/README.html">
+     Protobuf Package lgsvl_msgs for LG SVL Automotive Simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/control/README.html">
+     Control
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/control/README_cn.html">
+     控制
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/data/tools/smart_recorder/README.html">
+     Smart Recorder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/README.html">
+     Dreamview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/backend/hmi/README.html">
+     Customize Your Own HMI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/backend/teleop/README.html">
+     Dreamview for Teleoperation (Remote Control)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/conf/hmi_modes/README.html">
+     Vehicle Modes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/AUTHORS.html">
+     AUTHORS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/CHANGELOG.html">
+     Changelog for package usb_cam
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/README.html">
+     Driver for V4L USB Cameras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/README_cn.html">
+     Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/CHANGELOG.html">
+     Changelog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/README.html">
+     <strong>
+      Robosense LiDAR Driver
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/README_cn.html">
+     <strong>
+      Robosense LiDAR Driver
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/doc/parameter_intro.html">
+     Parameter Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/velodyne/README.html">
+     Velodyne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/velodyne/README_cn.html">
+     velodyne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/microphone/README.html">
+     microphone
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/conti_radar/README_cn.html">
+     conti_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/racobit_radar/README_cn.html">
+     racobit_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/ultrasonic_radar/README_cn.html">
+     ultrasonic_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/README.html">
+     Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/README_cn.html">
+     定位
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/msf/README.html">
+     Multi-sensor Fusion Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/ndt/README.html">
+     NDT-based Lidar Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/data/README.html">
+     Map Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/relative_map/README.html">
+     Relative Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/relative_map/tools/navigator.html">
+     Navigator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/monitor/README.html">
+     Monitor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/Perception_README_3_5.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/README.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/README.html">
+     Camera Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/tools/obstacle_detection/data/yolo/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/tools/offline/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README.html">
+     Lidar Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README_6.0.html">
+     Lidar Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README_CN.html">
+     激光雷达感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/production/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/camera/app/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/lidar/lib/segmentation/mst/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/tool/benchmark/lidar/ctpl/README.html">
+     CTPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/planning/README.html">
+     Planning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/planning/README_cn.html">
+     规划
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/prediction/README.html">
+     Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/prediction/README_cn.html">
+     预测
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/routing/README.html">
+     Routing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/routing/README_cn.html">
+     路由
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/storytelling/README.html">
+     Storytelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/third_party_perception/README.html">
+     Third Party Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/README.html">
+     Apollo Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/gen_vehicle_protocol/README.html">
+     Gen Vehicle Protocol Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/mapshow/README.html">
+     Map Show
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/mapviewers/README.html">
+     MapViewers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigation/config/README.html">
+     Navi Config
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigator/README.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigator/dbmap/README.html">
+     Driving Behavior Map (DBMap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_analyzer/README.html">
+     Record Analyzer Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_parse_save/README.html">
+     Apollo cyber-record file parser (Python based)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_play/README.html">
+     Record and Play Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/restore_video_record/README.html">
+     Video Records Restoring Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/style.html">
+   风格
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/issues.html">
+     Issues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/bug_report.html">
+     Bug report
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/feature_request.html">
+     Feature request
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Apollo Auto</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Cyber RT API for Developers</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/docs/cyber/CyberRT_API_for_Developers.md.txt" rel="nofollow"> 查看页面源码</a>
-      </li>
-  </ul>
-  <hr/>
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section class="tex2jax_ignore mathjax_ignore" id="cyber-rt-api-for-developers">
-<h1>Cyber RT API for Developers<a class="headerlink" href="#cyber-rt-api-for-developers" title="永久链接至标题"></a></h1>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/cyber/CyberRT_API_for_Developers.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#talker-listener">
+   Talker-Listener
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-node">
+     Create a node
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-writer">
+     Create a writer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-reader">
+     Create a reader
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-example">
+     Code Example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#talker-cyber-examples-talker-cc">
+       Talker (cyber/examples/talker.cc)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#listener-cyber-examples-listener-cc">
+       Listener (cyber/examples/listener.cc)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bazel-build-file-cyber-samples-build">
+       Bazel BUILD file(cyber/samples/BUILD)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#build-and-run">
+       Build and Run
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#service-creation-and-use">
+   Service Creation and Use
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     Introduction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo-example">
+     Demo - Example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#define-request-and-response-messages">
+       Define request and response messages
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-service-and-a-client">
+       Create a service and a client
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bazel-build-file">
+       Bazel build file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Build and run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precautions">
+     Precautions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-service">
+   Parameter Service
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-object">
+     Parameter Object
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#supported-data-types">
+       Supported Data types
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-the-parameter-object">
+       Creating the Parameter Object
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#interface-and-data-reading">
+       Interface and Data Reading
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Parameter Service
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-client">
+     Parameter Client
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Demo - example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Build and run
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-api">
+   Log API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-library">
+     Log library
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-configuration">
+     Log configuration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-initialization">
+     Log initialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-output-macro">
+     Log output macro
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-format">
+     Log format
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-log-files">
+     About log files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-a-module-based-on-component">
+   Building a module based on Component
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-concepts">
+     Key concepts
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#component">
+       1. Component
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#binary-vs-component">
+       2. Binary vs Component
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-essential-component-interface">
+         The essential Component interface
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#advantages-of-using-component">
+         Advantages of using Component
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dag-file-format">
+       3. Dag file format
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo-examples">
+     Demo - examples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#common-component-example-cyber-examples-common-component-example">
+       Common_component_example(cyber/examples/common_component_example/*)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#timer-component-example-cyber-examples-timer-component-example">
+       Timer_component_example(cyber/examples/timer_component_example/*)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Build and run
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Precautions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#launch">
+   Launch
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-file-format">
+     Launch File Format
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timer">
+   Timer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timer-interface">
+     Timer Interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#start-timer">
+     Start Timer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stop-timer">
+     Stop Timer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Demo - example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-api">
+   Time API
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#record-file-read-and-write">
+   Record file: Read and Write
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-the-reader-file">
+     Reading the Reader file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo-example-cyber-examples-record-cc">
+     Demo - example(cyber/examples/record.cc)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Build and run
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#api-directory">
+   API Directory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node-api">
+     Node API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-list">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writer-api">
+   Writer API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#client-api">
+   Client API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameter-api">
+   Parameter API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-list-setting-parameters">
+     API List - Setting parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-list-reading-parameters">
+     API List - Reading parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-list-creating-parameter-service">
+     API List - Creating parameter service
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-list-creating-parameter-client">
+     API List - Creating parameter client
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#timer-api">
+   Timer API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   Time API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#duration-api">
+   Duration API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rate-api">
+   Rate API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recordreader-api">
+   RecordReader API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recordwriter-api">
+   RecordWriter API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     API List
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cyber-rt-api-for-developers">
+<h1>Cyber RT API for Developers<a class="headerlink" href="#cyber-rt-api-for-developers" title="永久链接至标题">¶</a></h1>
 <p>This document provides an extensive technical deep dive into how to create, manipulate and use Cyber RT’s API.</p>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="永久链接至标题"></a></h2>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="#Talker-Listener">Talker-Listener</a></p></li>
 <li><p><a class="reference external" href="#Service-Creation-and-Use">Service Creation and Use</a></p></li>
@@ -104,12 +2839,12 @@
 </ul>
 </li>
 </ul>
-</section>
-<section id="talker-listener">
-<h2>Talker-Listener<a class="headerlink" href="#talker-listener" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="talker-listener">
+<h2>Talker-Listener<a class="headerlink" href="#talker-listener" title="永久链接至标题">¶</a></h2>
 <p>The first part of demonstrating CyberRT API is to understand the Talker/Listener example. Following are three essential concepts: node (basic unit), reader(facility to read message) and writer(facility to write message) of the example.</p>
-<section id="create-a-node">
-<h3>Create a node<a class="headerlink" href="#create-a-node" title="永久链接至标题"></a></h3>
+<div class="section" id="create-a-node">
+<h3>Create a node<a class="headerlink" href="#create-a-node" title="永久链接至标题">¶</a></h3>
 <p>In the CyberRT framework, the node is the most fundamental unit, similar to the role of a <code class="docutils literal notranslate"><span class="pre">handle</span></code>. When creating a specific functional object (writer, reader, etc.), you need to create it based on an existing node instance.
 The node creation interface is as follows:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span><span class="w"> </span><span class="n">apollo</span><span class="o">::</span><span class="n">cyber</span><span class="o">::</span><span class="n">CreateNode</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">node_name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name_space</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
@@ -128,9 +2863,9 @@ The node creation interface is as follows:</p>
 <li><p>Return value - An exclusive smart pointer to Node</p></li>
 <li><p>Error Conditions - when <code class="docutils literal notranslate"><span class="pre">cyber::Init()</span></code> has not called, the system is in an uninitialized state, unable to create a node, return nullptr</p></li>
 </ul>
-</section>
-<section id="create-a-writer">
-<h3>Create a writer<a class="headerlink" href="#create-a-writer" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="create-a-writer">
+<h3>Create a writer<a class="headerlink" href="#create-a-writer" title="永久链接至标题">¶</a></h3>
 <p>The writer is the basic facility used in CyberRT to send messages. Every writer corresponds to a channel with a specific data type.
 The writer is created by the <code class="docutils literal notranslate"><span class="pre">CreateWriter</span></code> interface in the node class. The interfaces are listed as below:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">MessageT</span><span class="o">&gt;</span><span class="w"></span>
@@ -150,9 +2885,9 @@ The writer is created by the <code class="docutils literal notranslate"><span cl
 </li>
 <li><p>Return value - Shared pointer to the Writer object</p></li>
 </ul>
-</section>
-<section id="create-a-reader">
-<h3>Create a reader<a class="headerlink" href="#create-a-reader" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="create-a-reader">
+<h3>Create a reader<a class="headerlink" href="#create-a-reader" title="永久链接至标题">¶</a></h3>
 <p>The reader is the basic facility used in cyber to receive messages. Reader has to be bound to a callback function when it is created. When a new message arrives in the channel, the callback will be called.
 The reader is created by the <code class="docutils literal notranslate"><span class="pre">CreateReader</span></code> interface of the node class. The interfaces are listed as below:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">MessageT</span><span class="o">&gt;</span><span class="w"></span>
@@ -180,11 +2915,11 @@ The reader is created by the <code class="docutils literal notranslate"><span cl
 </li>
 <li><p>Return value - Shared pointer to the Reader object</p></li>
 </ul>
-</section>
-<section id="code-example">
-<h3>Code Example<a class="headerlink" href="#code-example" title="永久链接至标题"></a></h3>
-<section id="talker-cyber-examples-talker-cc">
-<h4>Talker (cyber/examples/talker.cc)<a class="headerlink" href="#talker-cyber-examples-talker-cc" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="code-example">
+<h3>Code Example<a class="headerlink" href="#code-example" title="永久链接至标题">¶</a></h3>
+<div class="section" id="talker-cyber-examples-talker-cc">
+<h4>Talker (cyber/examples/talker.cc)<a class="headerlink" href="#talker-cyber-examples-talker-cc" title="永久链接至标题">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/cyber.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/proto/chatter.pb.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/time/rate.h&quot;</span><span class="cp"></span>
@@ -216,9 +2951,9 @@ The reader is created by the <code class="docutils literal notranslate"><span cl
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="listener-cyber-examples-listener-cc">
-<h4>Listener (cyber/examples/listener.cc)<a class="headerlink" href="#listener-cyber-examples-listener-cc" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="listener-cyber-examples-listener-cc">
+<h4>Listener (cyber/examples/listener.cc)<a class="headerlink" href="#listener-cyber-examples-listener-cc" title="永久链接至标题">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/cyber.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/proto/chatter.pb.h&quot;</span><span class="cp"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">MessageCallback</span><span class="p">(</span><span class="w"></span>
@@ -240,9 +2975,9 @@ The reader is created by the <code class="docutils literal notranslate"><span cl
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="bazel-build-file-cyber-samples-build">
-<h4>Bazel BUILD file(cyber/samples/BUILD)<a class="headerlink" href="#bazel-build-file-cyber-samples-build" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="bazel-build-file-cyber-samples-build">
+<h4>Bazel BUILD file(cyber/samples/BUILD)<a class="headerlink" href="#bazel-build-file-cyber-samples-build" title="永久链接至标题">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cc_binary</span><span class="p">(</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;talker&quot;</span><span class="p">,</span>
     <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;talker.cc&quot;</span><span class="p">,</span> <span class="p">],</span>
@@ -262,9 +2997,9 @@ The reader is created by the <code class="docutils literal notranslate"><span cl
 <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="build-and-run">
-<h4>Build and Run<a class="headerlink" href="#build-and-run" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="build-and-run">
+<h4>Build and Run<a class="headerlink" href="#build-and-run" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>Build: bazel build cyber/examples/…</p></li>
 <li><p>Run talker/listener in different terminals:</p>
@@ -275,22 +3010,22 @@ The reader is created by the <code class="docutils literal notranslate"><span cl
 </li>
 <li><p>Examine the results: you should see message printing out on listener.</p></li>
 </ul>
-</section>
-</section>
-</section>
-<section id="service-creation-and-use">
-<h2>Service Creation and Use<a class="headerlink" href="#service-creation-and-use" title="永久链接至标题"></a></h2>
-<section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="service-creation-and-use">
+<h2>Service Creation and Use<a class="headerlink" href="#service-creation-and-use" title="永久链接至标题">¶</a></h2>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h3>
 <p>In an autonomous driving system, there are many scenarios that require more from module communication than just sending or receiving messages. Service is another way of communication between nodes. Unlike channel, service implements <code class="docutils literal notranslate"><span class="pre">two-way</span></code> communication, e.g. a node obtains a response by sending a request. This section introduces the <code class="docutils literal notranslate"><span class="pre">service</span></code> module in CyberRT API with examples.</p>
-</section>
-<section id="demo-example">
-<h3>Demo - Example<a class="headerlink" href="#demo-example" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="demo-example">
+<h3>Demo - Example<a class="headerlink" href="#demo-example" title="永久链接至标题">¶</a></h3>
 <p>Problem: create a client-server model that pass Driver.proto back and forth.
 When a request is sent in by the client, the server parses/processes the request and returns the response.</p>
 <p>The implementation of the demo mainly includes the following steps.</p>
-<section id="define-request-and-response-messages">
-<h4>Define request and response messages<a class="headerlink" href="#define-request-and-response-messages" title="永久链接至标题"></a></h4>
+<div class="section" id="define-request-and-response-messages">
+<h4>Define request and response messages<a class="headerlink" href="#define-request-and-response-messages" title="永久链接至标题">¶</a></h4>
 <p>All messages in cyber are in the <code class="docutils literal notranslate"><span class="pre">protobuf</span></code> format. Any protobuf message with serialize/deserialize interfaces can be used as the service request and response message. <code class="docutils literal notranslate"><span class="pre">Driver</span></code> in examples.proto is used as service request and response in this example:</p>
 <div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="c1">// filename: examples.proto</span>
 <span class="k">syntax</span> <span class="o">=</span> <span class="s">&quot;proto2&quot;</span><span class="p">;</span>
@@ -302,9 +3037,9 @@ When a request is sent in by the client, the server parses/processes the request
 <span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="create-a-service-and-a-client">
-<h4>Create a service and a client<a class="headerlink" href="#create-a-service-and-a-client" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="create-a-service-and-a-client">
+<h4>Create a service and a client<a class="headerlink" href="#create-a-service-and-a-client" title="永久链接至标题">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// filename: cyber/examples/service.cc</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/cyber.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/examples/proto/examples.pb.h&quot;</span><span class="cp"></span>
@@ -343,9 +3078,9 @@ When a request is sent in by the client, the server parses/processes the request
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="bazel-build-file">
-<h4>Bazel build file<a class="headerlink" href="#bazel-build-file" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="bazel-build-file">
+<h4>Bazel build file<a class="headerlink" href="#bazel-build-file" title="永久链接至标题">¶</a></h4>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cc_binary</span><span class="p">(</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;service&quot;</span><span class="p">,</span>
     <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;service.cc&quot;</span><span class="p">,</span> <span class="p">],</span>
@@ -356,9 +3091,9 @@ When a request is sent in by the client, the server parses/processes the request
 <span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="id1">
-<h4>Build and run<a class="headerlink" href="#id1" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id1">
+<h4>Build and run<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>Build service/client: bazel build cyber/examples/…</p></li>
 <li><p>Run: ./bazel-bin/cyber/examples/service</p></li>
@@ -376,25 +3111,25 @@ I1124 16:36:48.572634 14969 service.cc:30] [service] server: i am driver server
 I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5 timestamp: 0
 </pre></div>
 </div>
-</section>
-</section>
-<section id="precautions">
-<h3>Precautions<a class="headerlink" href="#precautions" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="precautions">
+<h3>Precautions<a class="headerlink" href="#precautions" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>When registering a service, note that duplicate service names are not allowed</p></li>
 <li><p>The node name applied when registering the server and client should not be duplicated either</p></li>
 </ul>
-</section>
-</section>
-<section id="parameter-service">
-<h2>Parameter Service<a class="headerlink" href="#parameter-service" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="parameter-service">
+<h2>Parameter Service<a class="headerlink" href="#parameter-service" title="永久链接至标题">¶</a></h2>
 <p>The Parameter Service is used for shared data between nodes, and provides basic operations such as <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">get</span></code>, and <code class="docutils literal notranslate"><span class="pre">list</span></code>. The Parameter Service is based on the <code class="docutils literal notranslate"><span class="pre">Service</span></code> implementation and contains service and client.</p>
-<section id="parameter-object">
-<h3>Parameter Object<a class="headerlink" href="#parameter-object" title="永久链接至标题"></a></h3>
-<section id="supported-data-types">
-<h4>Supported Data types<a class="headerlink" href="#supported-data-types" title="永久链接至标题"></a></h4>
+<div class="section" id="parameter-object">
+<h3>Parameter Object<a class="headerlink" href="#parameter-object" title="永久链接至标题">¶</a></h3>
+<div class="section" id="supported-data-types">
+<h4>Supported Data types<a class="headerlink" href="#supported-data-types" title="永久链接至标题">¶</a></h4>
 <p>All parameters passed through cyber are <code class="docutils literal notranslate"><span class="pre">apollo::cyber::Parameter</span></code> objects, the table below lists the 5 supported parameter types.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Parameter type</p></th>
 <th class="text-align:left head"><p>C++ data type</p></th>
@@ -429,9 +3164,9 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 </tbody>
 </table>
 <p>Besides the 5 types above, Parameter also supports interface with protobuf object as incoming parameter. Post performing serialization processes the object and converts it to the STRING type for transfer.</p>
-</section>
-<section id="creating-the-parameter-object">
-<h4>Creating the Parameter Object<a class="headerlink" href="#creating-the-parameter-object" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="creating-the-parameter-object">
+<h4>Creating the Parameter Object<a class="headerlink" href="#creating-the-parameter-object" title="永久链接至标题">¶</a></h4>
 <p>Supported constructors:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Parameter</span><span class="p">();</span><span class="w">  </span><span class="c1">// Name is empty, type is NOT_SET</span>
 <span class="k">explicit</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Parameter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
@@ -464,9 +3199,9 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 <span class="n">Parameter</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="s">&quot;chatter&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">msg_str</span><span class="p">,</span><span class="w"> </span><span class="n">Chatter</span><span class="o">::</span><span class="n">descriptor</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">full_name</span><span class="p">(),</span><span class="w"> </span><span class="n">msg_desc</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="interface-and-data-reading">
-<h4>Interface and Data Reading<a class="headerlink" href="#interface-and-data-reading" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="interface-and-data-reading">
+<h4>Interface and Data Reading<a class="headerlink" href="#interface-and-data-reading" title="永久链接至标题">¶</a></h4>
 <p>Interface list:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kr">inline</span><span class="w"> </span><span class="n">ParamType</span><span class="w"> </span><span class="nf">type</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">TypeName</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
@@ -507,10 +3242,10 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 <span class="k">auto</span><span class="w"> </span><span class="n">chatter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">.</span><span class="n">value</span><span class="o">&lt;</span><span class="n">Chatter</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id2">
-<h3>Parameter Service<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Parameter Service<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>If a node wants to provide a Parameter Service to other nodes, then you need to create a <code class="docutils literal notranslate"><span class="pre">ParameterService</span></code>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @brief Construct a new ParameterService object</span>
@@ -553,9 +3288,9 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 <span class="kt">bool</span><span class="w"> </span><span class="nf">ListParameters</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Parameter</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">parameters</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="parameter-client">
-<h3>Parameter Client<a class="headerlink" href="#parameter-client" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="parameter-client">
+<h3>Parameter Client<a class="headerlink" href="#parameter-client" title="永久链接至标题">¶</a></h3>
 <p>If a node wants to use parameter services of other nodes, you need to create a <code class="docutils literal notranslate"><span class="pre">ParameterClient</span></code>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @brief Construct a new ParameterClient object</span>
@@ -567,9 +3302,9 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 </pre></div>
 </div>
 <p>You could also perform <code class="docutils literal notranslate"><span class="pre">SetParameter</span></code>, <code class="docutils literal notranslate"><span class="pre">GetParameter</span></code> and <code class="docutils literal notranslate"><span class="pre">ListParameters</span></code> mentioned under <a class="reference external" href="#Parameter-Service">Parameter Service</a>.</p>
-</section>
-<section id="id3">
-<h3>Demo - example<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id3">
+<h3>Demo - example<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/cyber.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/parameter/parameter_client.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/parameter/parameter_server.h&quot;</span><span class="cp"></span>
@@ -597,46 +3332,46 @@ I1124 16:36:48.573030 14949 service.cc:43] [service] client: response: msg_id: 5
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="id4">
-<h4>Build and run<a class="headerlink" href="#id4" title="永久链接至标题"></a></h4>
+<div class="section" id="id4">
+<h4>Build and run<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>Build: bazel build cyber/examples/…</p></li>
 <li><p>Run: ./bazel-bin/cyber/examples/paramserver</p></li>
 </ul>
-</section>
-</section>
-</section>
-<section id="log-api">
-<h2>Log API<a class="headerlink" href="#log-api" title="永久链接至标题"></a></h2>
-<section id="log-library">
-<h3>Log library<a class="headerlink" href="#log-library" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="log-api">
+<h2>Log API<a class="headerlink" href="#log-api" title="永久链接至标题">¶</a></h2>
+<div class="section" id="log-library">
+<h3>Log library<a class="headerlink" href="#log-library" title="永久链接至标题">¶</a></h3>
 <p>Cyber log library is built on top of glog. The following header files need to be included:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/common/log.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/init.h&quot;</span><span class="cp"></span>
 </pre></div>
 </div>
-</section>
-<section id="log-configuration">
-<h3>Log configuration<a class="headerlink" href="#log-configuration" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="log-configuration">
+<h3>Log configuration<a class="headerlink" href="#log-configuration" title="永久链接至标题">¶</a></h3>
 <p>Default global config path: cyber/setup.bash</p>
 <p>The configs below could be modified by devloper:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">GLOG_log_dir</span><span class="o">=/</span><span class="n">apollo</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">log</span>
-<span class="n">export</span> <span class="n">GLOG_alsologtostderr</span><span class="o">=</span><span class="mi">0</span>
-<span class="n">export</span> <span class="n">GLOG_colorlogtostderr</span><span class="o">=</span><span class="mi">1</span>
-<span class="n">export</span> <span class="n">GLOG_minloglevel</span><span class="o">=</span><span class="mi">0</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="n">GLOG_log_dir</span><span class="o">=/</span><span class="n">apollo</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">log</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">GLOG_alsologtostderr</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">GLOG_colorlogtostderr</span><span class="o">=</span><span class="mi">1</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">GLOG_minloglevel</span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="log-initialization">
-<h3>Log initialization<a class="headerlink" href="#log-initialization" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="log-initialization">
+<h3>Log initialization<a class="headerlink" href="#log-initialization" title="永久链接至标题">¶</a></h3>
 <p>Call the Init method at the code entry to initialize the log:</p>
 <div class="highlight-cpp++ notranslate"><div class="highlight"><pre><span></span>apollo::cyber::cyber::Init(argv[0]) is initialized.
 If no macro definition is made in the previous component, the corresponding log is printed to the binary log.
 </pre></div>
 </div>
-</section>
-<section id="log-output-macro">
-<h3>Log output macro<a class="headerlink" href="#log-output-macro" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="log-output-macro">
+<h3>Log output macro<a class="headerlink" href="#log-output-macro" title="永久链接至标题">¶</a></h3>
 <p>Log library is encapsulated in Log printing macros. The related log macros are used as follows:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ADEBUG</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello cyber.&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="n">AINFO</span><span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello cyber.&quot;</span><span class="p">;</span><span class="w"></span>
@@ -645,50 +3380,50 @@ If no macro definition is made in the previous component, the corresponding log 
 <span class="n">AFATAL</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello cyber.&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="log-format">
-<h3>Log format<a class="headerlink" href="#log-format" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="log-format">
+<h3>Log format<a class="headerlink" href="#log-format" title="永久链接至标题">¶</a></h3>
 <p>The format is <code class="docutils literal notranslate"><span class="pre">&lt;MODULE_NAME&gt;.log.&lt;LOG_LEVEL&gt;.&lt;datetime&gt;.&lt;process_id&gt;</span></code></p>
-</section>
-<section id="about-log-files">
-<h3>About log files<a class="headerlink" href="#about-log-files" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="about-log-files">
+<h3>About log files<a class="headerlink" href="#about-log-files" title="永久链接至标题">¶</a></h3>
 <p>Currently, the only different output behavior from default glog is that different log levels of a module will be written into the same log file.</p>
-</section>
-</section>
-<section id="building-a-module-based-on-component">
-<h2>Building a module based on Component<a class="headerlink" href="#building-a-module-based-on-component" title="永久链接至标题"></a></h2>
-<section id="key-concepts">
-<h3>Key concepts<a class="headerlink" href="#key-concepts" title="永久链接至标题"></a></h3>
-<section id="component">
-<h4>1. Component<a class="headerlink" href="#component" title="永久链接至标题"></a></h4>
+</div>
+</div>
+<div class="section" id="building-a-module-based-on-component">
+<h2>Building a module based on Component<a class="headerlink" href="#building-a-module-based-on-component" title="永久链接至标题">¶</a></h2>
+<div class="section" id="key-concepts">
+<h3>Key concepts<a class="headerlink" href="#key-concepts" title="永久链接至标题">¶</a></h3>
+<div class="section" id="component">
+<h4>1. Component<a class="headerlink" href="#component" title="永久链接至标题">¶</a></h4>
 <p>The component is the base class that Cyber RT provides to build application modules. Each specific application module can inherit the Component class and define its own <code class="docutils literal notranslate"><span class="pre">Init</span></code> and <code class="docutils literal notranslate"><span class="pre">Proc</span></code> functions so that it can be loaded into the Cyber framework.</p>
-</section>
-<section id="binary-vs-component">
-<h4>2. Binary vs Component<a class="headerlink" href="#binary-vs-component" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="binary-vs-component">
+<h4>2. Binary vs Component<a class="headerlink" href="#binary-vs-component" title="永久链接至标题">¶</a></h4>
 <p>There are two options to use Cyber RT framework for applications:</p>
 <ul class="simple">
 <li><p>Binary based: the application is compiled separately into a binary, which communicates with other cyber modules by creating its own <code class="docutils literal notranslate"><span class="pre">Reader</span></code> and <code class="docutils literal notranslate"><span class="pre">Writer</span></code>.</p></li>
 <li><p>Component based: the application is compiled into a Shared Library. By inheriting the Component class and writing the corresponding dag description file, the Cyber RT framework will load and run the application dynamically.</p></li>
 </ul>
-<section id="the-essential-component-interface">
-<h5>The essential Component interface<a class="headerlink" href="#the-essential-component-interface" title="永久链接至标题"></a></h5>
+<div class="section" id="the-essential-component-interface">
+<h5>The essential Component interface<a class="headerlink" href="#the-essential-component-interface" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>The component’s <code class="docutils literal notranslate"><span class="pre">Init()</span></code> function is like the main function that does some initialization of the algorithm.</p></li>
 <li><p>Component’s <code class="docutils literal notranslate"><span class="pre">Proc()</span></code> function works like Reader’s callback function that is called by the framework when a message arrives.</p></li>
 </ul>
-</section>
-<section id="advantages-of-using-component">
-<h5>Advantages of using Component<a class="headerlink" href="#advantages-of-using-component" title="永久链接至标题"></a></h5>
+</div>
+<div class="section" id="advantages-of-using-component">
+<h5>Advantages of using Component<a class="headerlink" href="#advantages-of-using-component" title="永久链接至标题">¶</a></h5>
 <ul class="simple">
 <li><p>Component can be loaded into different processes through the launch file, and the deployment is flexible.</p></li>
 <li><p>Component can change the received channel name by modifying the dag file without recompiling.</p></li>
 <li><p>Component supports receiving multiple types of data.</p></li>
 <li><p>Component supports providing multiple fusion strategies.</p></li>
 </ul>
-</section>
-</section>
-<section id="dag-file-format">
-<h4>3. Dag file format<a class="headerlink" href="#dag-file-format" title="永久链接至标题"></a></h4>
+</div>
+</div>
+<div class="section" id="dag-file-format">
+<h4>3. Dag file format<a class="headerlink" href="#dag-file-format" title="永久链接至标题">¶</a></h4>
 <p>An example dag file:</p>
 <div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span># Define all coms in DAG streaming.
 module_config {
@@ -719,12 +3454,12 @@ module_config {
 <li><p><strong>name</strong>: the loaded class_name as the identifier of the loading example</p></li>
 <li><p><strong>readers</strong>: Data received by the current component, supporting 1-3 channels of data.</p></li>
 </ul>
-</section>
-</section>
-<section id="demo-examples">
-<h3>Demo - examples<a class="headerlink" href="#demo-examples" title="永久链接至标题"></a></h3>
-<section id="common-component-example-cyber-examples-common-component-example">
-<h4>Common_component_example(cyber/examples/common_component_example/*)<a class="headerlink" href="#common-component-example-cyber-examples-common-component-example" title="永久链接至标题"></a></h4>
+</div>
+</div>
+<div class="section" id="demo-examples">
+<h3>Demo - examples<a class="headerlink" href="#demo-examples" title="永久链接至标题">¶</a></h3>
+<div class="section" id="common-component-example-cyber-examples-common-component-example">
+<h4>Common_component_example(cyber/examples/common_component_example/*)<a class="headerlink" href="#common-component-example-cyber-examples-common-component-example" title="永久链接至标题">¶</a></h4>
 <p>Header definition(common_component_example.h)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 
@@ -764,9 +3499,9 @@ module_config {
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="timer-component-example-cyber-examples-timer-component-example">
-<h4>Timer_component_example(cyber/examples/timer_component_example/*)<a class="headerlink" href="#timer-component-example-cyber-examples-timer-component-example" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="timer-component-example-cyber-examples-timer-component-example">
+<h4>Timer_component_example(cyber/examples/timer_component_example/*)<a class="headerlink" href="#timer-component-example-cyber-examples-timer-component-example" title="永久链接至标题">¶</a></h4>
 <p>Header definition(timer_component_example.h)</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 
@@ -815,18 +3550,18 @@ module_config {
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="id5">
-<h4>Build and run<a class="headerlink" href="#id5" title="永久链接至标题"></a></h4>
+</div>
+<div class="section" id="id5">
+<h4>Build and run<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
 <p>Use timertestcomponent as example:</p>
 <ul class="simple">
 <li><p>Build: bazel build cyber/examples/timer_component_smaple/…</p></li>
 <li><p>Run: mainboard -d cyber/examples/timer_component_smaple/timer.dag</p></li>
 </ul>
-</section>
-</section>
-<section id="id6">
-<h3>Precautions<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Precautions<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p>Component needs to be registered to load the class through SharedLibrary. The registration interface looks like:</p></li>
 </ul>
@@ -837,14 +3572,14 @@ module_config {
 <ul class="simple">
 <li><p>The configuration files of the Component and TimerComponent are different, please be careful not to mix the two up.</p></li>
 </ul>
-</section>
-</section>
-<section id="launch">
-<h2>Launch<a class="headerlink" href="#launch" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="launch">
+<h2>Launch<a class="headerlink" href="#launch" title="永久链接至标题">¶</a></h2>
 <p><strong>cyber_launch</strong> is the launcher of the Cyber RT framework. It starts multiple mainboards according to the launch file, and loads different components into different mainboards according to the dag file.
 cyber_launch supports two scenarios for dynamically loading components or starting Binary programs in a child process.</p>
-<section id="launch-file-format">
-<h3>Launch File Format<a class="headerlink" href="#launch-file-format" title="永久链接至标题"></a></h3>
+<div class="section" id="launch-file-format">
+<h3>Launch File Format<a class="headerlink" href="#launch-file-format" title="永久链接至标题">¶</a></h3>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;cyber&gt;</span>
     <span class="nt">&lt;module&gt;</span>
         <span class="nt">&lt;name&gt;</span>driver<span class="nt">&lt;/name&gt;</span>
@@ -879,13 +3614,13 @@ Each loaded component or binary is a module</p>
 </ul>
 </li>
 </ul>
-</section>
-</section>
-<section id="timer">
-<h2>Timer<a class="headerlink" href="#timer" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="timer">
+<h2>Timer<a class="headerlink" href="#timer" title="永久链接至标题">¶</a></h2>
 <p>Timer can be used to create a timed task to run on a periodic basis, or to run only once</p>
-<section id="timer-interface">
-<h3>Timer Interface<a class="headerlink" href="#timer-interface" title="永久链接至标题"></a></h3>
+<div class="section" id="timer-interface">
+<h3>Timer Interface<a class="headerlink" href="#timer-interface" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @brief Construct a new Timer object</span>
 <span class="cm"> *</span>
@@ -912,17 +3647,17 @@ Each loaded component or binary is a module</p>
 <span class="k">explicit</span><span class="w"> </span><span class="n">Timer</span><span class="p">(</span><span class="n">TimerOption</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="start-timer">
-<h3>Start Timer<a class="headerlink" href="#start-timer" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="start-timer">
+<h3>Start Timer<a class="headerlink" href="#start-timer" title="永久链接至标题">¶</a></h3>
 <p>After creating a Timer instance, you must call <code class="docutils literal notranslate"><span class="pre">Timer::Start()</span></code> to start the timer.</p>
-</section>
-<section id="stop-timer">
-<h3>Stop Timer<a class="headerlink" href="#stop-timer" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="stop-timer">
+<h3>Stop Timer<a class="headerlink" href="#stop-timer" title="永久链接至标题">¶</a></h3>
 <p>When you need to manually stop a timer that has already started, you can call the <code class="docutils literal notranslate"><span class="pre">Timer::Stop()</span></code> interface.</p>
-</section>
-<section id="id7">
-<h3>Demo - example<a class="headerlink" href="#id7" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id7">
+<h3>Demo - example<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;cyber/cyber.h&quot;</span><span class="cp"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -937,10 +3672,10 @@ Each loaded component or binary is a module</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="time-api">
-<h2>Time API<a class="headerlink" href="#time-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="time-api">
+<h2>Time API<a class="headerlink" href="#time-api" title="永久链接至标题">¶</a></h2>
 <p>Time is a class used to manage time; it can be used for current time acquisition, time-consuming calculation, time conversion, and so on.</p>
 <p>The time interfaces are as follows:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// constructor, passing in a different value to construct Time</span>
@@ -972,16 +3707,16 @@ Each loaded component or binary is a module</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="record-file-read-and-write">
-<h2>Record file: Read and Write<a class="headerlink" href="#record-file-read-and-write" title="永久链接至标题"></a></h2>
-<section id="reading-the-reader-file">
-<h3>Reading the Reader file<a class="headerlink" href="#reading-the-reader-file" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="record-file-read-and-write">
+<h2>Record file: Read and Write<a class="headerlink" href="#record-file-read-and-write" title="永久链接至标题">¶</a></h2>
+<div class="section" id="reading-the-reader-file">
+<h3>Reading the Reader file<a class="headerlink" href="#reading-the-reader-file" title="永久链接至标题">¶</a></h3>
 <p><strong>RecordReader</strong> is the component used to read messages in the cyber framework. Each RecordReader can open an existing record file through the <code class="docutils literal notranslate"><span class="pre">Open</span></code> method, and the thread will asynchronously read the information in the record file. The user only needs to execute ReadMessage to extract the latest message in RecordReader, and then get the message information through GetCurrentMessageChannelName, GetCurrentRawMessage, GetCurrentMessageTime.</p>
 <p><strong>RecordWriter</strong> is the component used to record messages in the cyber framework. Each RecordWriter can create a new record file through the Open method. The user only needs to execute WriteMessage and WriteChannel to write message and channel information, and the writing process is asynchronous.</p>
-</section>
-<section id="demo-example-cyber-examples-record-cc">
-<h3>Demo - example(cyber/examples/record.cc)<a class="headerlink" href="#demo-example-cyber-examples-record-cc" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="demo-example-cyber-examples-record-cc">
+<h3>Demo - example(cyber/examples/record.cc)<a class="headerlink" href="#demo-example-cyber-examples-record-cc" title="永久链接至标题">¶</a></h3>
 <p>Write 100 RawMessage to<code class="docutils literal notranslate"><span class="pre">TEST_FILE</span></code> through <code class="docutils literal notranslate"><span class="pre">test_write</span></code> method, then read them out through <code class="docutils literal notranslate"><span class="pre">test_read</span></code> method.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 
@@ -1052,35 +3787,35 @@ Each loaded component or binary is a module</p>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-<section id="id8">
-<h4>Build and run<a class="headerlink" href="#id8" title="永久链接至标题"></a></h4>
+<div class="section" id="id8">
+<h4>Build and run<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h4>
 <ul class="simple">
 <li><p>Build: bazel build cyber/examples/…</p></li>
 <li><p>Run: ./bazel-bin/cyber/examples/record</p></li>
 <li><p>Examining result:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248200</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc0</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">888</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248227</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc1</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">889</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248239</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc2</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">890</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248252</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc3</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">891</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248297</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc4</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">892</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.248378</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">msg</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">-&gt;</span> <span class="n">channel</span> <span class="n">name</span><span class="p">:</span> <span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span> <span class="n">content</span><span class="p">:</span> <span class="n">abc5</span><span class="p">;</span> <span class="n">msg</span> <span class="n">time</span><span class="p">:</span> <span class="mi">893</span>
-<span class="o">...</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.250422</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">73</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">static</span> <span class="n">msg</span><span class="o">=================</span>
-<span class="n">I1124</span> <span class="mi">16</span><span class="p">:</span><span class="mi">56</span><span class="p">:</span><span class="mf">27.250434</span> <span class="mi">15118</span> <span class="n">record</span><span class="o">.</span><span class="n">cc</span><span class="p">:</span><span class="mi">74</span><span class="p">]</span> <span class="p">[</span><span class="n">record</span><span class="p">]</span> <span class="n">MSG</span> <span class="n">validmsg</span><span class="p">:</span><span class="n">totalcount</span><span class="p">:</span> <span class="mi">100</span><span class="p">:</span><span class="mi">100</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248200</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc0</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">888</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248227</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc1</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">889</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248239</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc2</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">890</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248252</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc3</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">891</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248297</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc4</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">892</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.248378</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">msg</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">channel1</span><span class="p">;</span><span class="w"> </span><span class="nl">content</span><span class="p">:</span><span class="w"> </span><span class="n">abc5</span><span class="p">;</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="nl">time</span><span class="p">:</span><span class="w"> </span><span class="mi">893</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.250422</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">73</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">msg</span><span class="o">=================</span><span class="w"></span>
+<span class="n">I1124</span><span class="w"> </span><span class="mi">16</span><span class="o">:</span><span class="mi">56</span><span class="o">:</span><span class="mf">27.250434</span><span class="w"> </span><span class="mi">15118</span><span class="w"> </span><span class="n">record</span><span class="p">.</span><span class="nl">cc</span><span class="p">:</span><span class="mi">74</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="n">record</span><span class="p">]</span><span class="w"> </span><span class="n">MSG</span><span class="w"> </span><span class="nl">validmsg</span><span class="p">:</span><span class="nl">totalcount</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="o">:</span><span class="mi">100</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
-<section id="api-directory">
-<h2>API Directory<a class="headerlink" href="#api-directory" title="永久链接至标题"></a></h2>
-<section id="node-api">
-<h3>Node API<a class="headerlink" href="#node-api" title="永久链接至标题"></a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="api-directory">
+<h2>API Directory<a class="headerlink" href="#api-directory" title="永久链接至标题">¶</a></h2>
+<div class="section" id="node-api">
+<h3>Node API<a class="headerlink" href="#node-api" title="永久链接至标题">¶</a></h3>
 <p>For additional information and examples, refer to <a class="reference external" href="#node">Node</a></p>
-</section>
-<section id="api-list">
-<h3>API List<a class="headerlink" href="#api-list" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="api-list">
+<h3>API List<a class="headerlink" href="#api-list" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//create writer with user-define attr and message type</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">CreateWriter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">proto</span><span class="o">::</span><span class="n">RoleAttributes</span><span class="o">&amp;</span><span class="w"> </span><span class="n">role_attr</span><span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">transport</span><span class="o">::</span><span class="n">Writer</span><span class="o">&lt;</span><span class="n">MessageT</span><span class="o">&gt;&gt;</span><span class="p">;</span><span class="w"></span>
@@ -1108,33 +3843,33 @@ Each loaded component or binary is a module</p>
 <span class="w">    </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">service</span><span class="o">::</span><span class="n">Client</span><span class="o">&lt;</span><span class="n">Request</span><span class="p">,</span><span class="w"> </span><span class="n">Response</span><span class="o">&gt;&gt;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="writer-api">
-<h2>Writer API<a class="headerlink" href="#writer-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="writer-api">
+<h2>Writer API<a class="headerlink" href="#writer-api" title="永久链接至标题">¶</a></h2>
 <p>For additional information and examples, refer to <a class="reference external" href="#writer">Writer</a></p>
-<section id="id9">
-<h3>API List<a class="headerlink" href="#id9" title="永久链接至标题"></a></h3>
+<div class="section" id="id9">
+<h3>API List<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">Write</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">MessageT</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="client-api">
-<h2>Client API<a class="headerlink" href="#client-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="client-api">
+<h2>Client API<a class="headerlink" href="#client-api" title="永久链接至标题">¶</a></h2>
 <p>For additional information and examples, refer to <a class="reference external" href="#service-creation-and-use">Client</a></p>
-<section id="id10">
-<h3>API List<a class="headerlink" href="#id10" title="永久链接至标题"></a></h3>
+<div class="section" id="id10">
+<h3>API List<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">SharedResponse</span><span class="w"> </span><span class="nf">SendRequest</span><span class="p">(</span><span class="n">SharedRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"></span>
 <span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="o">&amp;</span><span class="w"> </span><span class="n">timeout_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
 <span class="n">SharedResponse</span><span class="w"> </span><span class="nf">SendRequest</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Request</span><span class="o">&amp;</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"></span>
 <span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="o">&amp;</span><span class="w"> </span><span class="n">timeout_s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="parameter-api">
-<h2>Parameter API<a class="headerlink" href="#parameter-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="parameter-api">
+<h2>Parameter API<a class="headerlink" href="#parameter-api" title="永久链接至标题">¶</a></h2>
 <p>The interface that the user uses to perform parameter related operations:</p>
 <ul class="simple">
 <li><p>Set the parameter related API.</p></li>
@@ -1143,8 +3878,8 @@ Each loaded component or binary is a module</p>
 <li><p>Create a ParameterClient that uses the parameters provided by other nodes to service related APIs.</p></li>
 </ul>
 <p>For additional information and examples, refer to <a class="reference external" href="##param-parameter-service">Parameter</a></p>
-<section id="api-list-setting-parameters">
-<h3>API List - Setting parameters<a class="headerlink" href="#api-list-setting-parameters" title="永久链接至标题"></a></h3>
+<div class="section" id="api-list-setting-parameters">
+<h3>API List - Setting parameters<a class="headerlink" href="#api-list-setting-parameters" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Parameter</span><span class="p">();</span><span class="w">  </span><span class="c1">// Name is empty, type is NOT_SET</span>
 <span class="k">explicit</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Parameter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
 <span class="k">explicit</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span><span class="w">  </span><span class="c1">// Type is NOT_SET</span>
@@ -1160,9 +3895,9 @@ Each loaded component or binary is a module</p>
 <span class="n">Parameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">google</span><span class="o">::</span><span class="n">protobuf</span><span class="o">::</span><span class="n">Message</span><span class="o">&amp;</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="api-list-reading-parameters">
-<h3>API List - Reading parameters<a class="headerlink" href="#api-list-reading-parameters" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="api-list-reading-parameters">
+<h3>API List - Reading parameters<a class="headerlink" href="#api-list-reading-parameters" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kr">inline</span><span class="w"> </span><span class="n">ParamType</span><span class="w"> </span><span class="nf">type</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">TypeName</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 <span class="kr">inline</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">Descriptor</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
@@ -1189,32 +3924,32 @@ Each loaded component or binary is a module</p>
 <span class="n">value</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="api-list-creating-parameter-service">
-<h3>API List - Creating parameter service<a class="headerlink" href="#api-list-creating-parameter-service" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="api-list-creating-parameter-service">
+<h3>API List - Creating parameter service<a class="headerlink" href="#api-list-creating-parameter-service" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">explicit</span><span class="w"> </span><span class="n">ParameterService</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">SetParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Parameter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">GetParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param_name</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">*</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">ListParameters</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Parameter</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">parameters</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-<section id="api-list-creating-parameter-client">
-<h3>API List - Creating parameter client<a class="headerlink" href="#api-list-creating-parameter-client" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="api-list-creating-parameter-client">
+<h3>API List - Creating parameter client<a class="headerlink" href="#api-list-creating-parameter-client" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ParameterClient</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">service_node_name</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">SetParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Parameter</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">GetParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param_name</span><span class="p">,</span><span class="w"> </span><span class="n">Parameter</span><span class="o">*</span><span class="w"> </span><span class="n">parameter</span><span class="p">);</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">ListParameters</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Parameter</span><span class="o">&gt;*</span><span class="w"> </span><span class="n">parameters</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="timer-api">
-<h2>Timer API<a class="headerlink" href="#timer-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="timer-api">
+<h2>Timer API<a class="headerlink" href="#timer-api" title="永久链接至标题">¶</a></h2>
 <p>You can set the parameters of the Timer and call the start and stop interfaces to start the timer and stop the timer.
 For additional information and examples, refer to <a class="reference external" href="#timer">Timer</a></p>
-<section id="id11">
-<h3>API List<a class="headerlink" href="#id11" title="永久链接至标题"></a></h3>
+<div class="section" id="id11">
+<h3>API List<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Timer</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">oneshot</span><span class="p">);</span><span class="w"></span>
 <span class="n">Timer</span><span class="p">(</span><span class="n">TimerOption</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">SetTimerOption</span><span class="p">(</span><span class="n">TimerOption</span><span class="w"> </span><span class="n">opt</span><span class="p">);</span><span class="w"></span>
@@ -1222,13 +3957,13 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="kt">void</span><span class="w"> </span><span class="nf">Stop</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="id12">
-<h2>Time API<a class="headerlink" href="#id12" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>Time API<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 <p>For additional information and examples, refer to <a class="reference external" href="#use-of-time">Time</a></p>
-<section id="id13">
-<h3>API List<a class="headerlink" href="#id13" title="永久链接至标题"></a></h3>
+<div class="section" id="id13">
+<h3>API List<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Time</span><span class="w"> </span><span class="n">MAX</span><span class="p">;</span><span class="w"></span>
 <span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Time</span><span class="w"> </span><span class="n">MIN</span><span class="p">;</span><span class="w"></span>
 <span class="n">Time</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
@@ -1246,13 +3981,13 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="kt">bool</span><span class="w"> </span><span class="nf">IsZero</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="duration-api">
-<h2>Duration API<a class="headerlink" href="#duration-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="duration-api">
+<h2>Duration API<a class="headerlink" href="#duration-api" title="永久链接至标题">¶</a></h2>
 <p>Interval-related interface, used to indicate the time interval, can be initialized according to the specified nanosecond or second.</p>
-<section id="id14">
-<h3>API List<a class="headerlink" href="#id14" title="永久链接至标题"></a></h3>
+<div class="section" id="id14">
+<h3>API List<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Duration</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 <span class="n">Duration</span><span class="p">(</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">nanoseconds</span><span class="p">);</span><span class="w"></span>
 <span class="n">Duration</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">nanoseconds</span><span class="p">);</span><span class="w"></span>
@@ -1266,13 +4001,13 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="kt">void</span><span class="w"> </span><span class="nf">Sleep</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="rate-api">
-<h2>Rate API<a class="headerlink" href="#rate-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="rate-api">
+<h2>Rate API<a class="headerlink" href="#rate-api" title="永久链接至标题">¶</a></h2>
 <p>The frequency interface is generally used to initialize the time of the sleep frequency after the object is initialized according to the specified frequency.</p>
-<section id="id15">
-<h3>API List<a class="headerlink" href="#id15" title="永久链接至标题"></a></h3>
+<div class="section" id="id15">
+<h3>API List<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Rate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">frequency</span><span class="p">);</span><span class="w"></span>
 <span class="n">Rate</span><span class="p">(</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">nanoseconds</span><span class="p">);</span><span class="w"></span>
 <span class="n">Rate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Duration</span><span class="o">&amp;</span><span class="p">);</span><span class="w"></span>
@@ -1282,13 +4017,13 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="n">Duration</span><span class="w"> </span><span class="nf">ExpectedCycleTime</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">expected_cycle_time_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="recordreader-api">
-<h2>RecordReader API<a class="headerlink" href="#recordreader-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="recordreader-api">
+<h2>RecordReader API<a class="headerlink" href="#recordreader-api" title="永久链接至标题">¶</a></h2>
 <p>The interface for reading the record file is used to read the message and channel information in the record file.</p>
-<section id="id16">
-<h3>API List<a class="headerlink" href="#id16" title="永久链接至标题"></a></h3>
+<div class="section" id="id16">
+<h3>API List<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">RecordReader</span><span class="p">();</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">Open</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">begin_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
 <span class="w">          </span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">end_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UINT64_MAX</span><span class="p">);</span><span class="w"></span>
@@ -1300,13 +4035,13 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="kt">uint64_t</span><span class="w"> </span><span class="nf">CurrentMessageTime</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="recordwriter-api">
-<h2>RecordWriter API<a class="headerlink" href="#recordwriter-api" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="recordwriter-api">
+<h2>RecordWriter API<a class="headerlink" href="#recordwriter-api" title="永久链接至标题">¶</a></h2>
 <p>The interface for writing the record file, used to record the message and channel information into the record file.</p>
-<section id="id17">
-<h3>API List<a class="headerlink" href="#id17" title="永久链接至标题"></a></h3>
+<div class="section" id="id17">
+<h3>API List<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">RecordWriter</span><span class="p">();</span><span class="w"></span>
 <span class="kt">bool</span><span class="w"> </span><span class="nf">Open</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">file</span><span class="p">);</span><span class="w"></span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">Close</span><span class="p">();</span><span class="w"></span>
@@ -1320,39 +4055,51 @@ For additional information and examples, refer to <a class="reference external" 
 <span class="kt">bool</span><span class="w"> </span><span class="nf">SetIntervalOfFileSegmentation</span><span class="p">(</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">time_sec</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../FAQs/Software_FAQs_cn.html" class="btn btn-neutral float-left" title="软件 FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="CyberRT_Developer_Tools.html" class="btn btn-neutral float-right" title="Apollo Cyber RT Developer Tools" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; 版权所有 2021, xinetzone.</p>
-  </div>
-
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
-
-</footer>
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../FAQs/Software_FAQs_cn.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">软件 FAQ</p>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class='right-next' id="next-link" href="CyberRT_Developer_Tools.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Apollo Cyber RT Developer Tools</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By xinetzone<br/>
+        
+            &copy; Copyright 2021, xinetzone.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
 
-</body>
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
 </html>

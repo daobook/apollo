@@ -1,81 +1,2430 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="zh-CN" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3D 障碍物感知 &mdash; Apollo Auto alpha 文档</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/tabs.js"></script>
-        <script src="../../_static/translations.js"></script>
-        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-        <script>mermaid.initialize({startOnLoad:true});</script>
-    <script src="../../_static/js/theme.js"></script>
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D 障碍物感知 &#8212; Apollo Auto alpha 文档</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/translations.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Apollo 2.0 Software Architecture" href="Apollo_2.0_Software_Architecture.html" />
-    <link rel="prev" title="3D Obstacle Perception" href="3d_obstacle_perception.html" /> 
-</head>
+    <link rel="prev" title="3D Obstacle Perception" href="3d_obstacle_perception.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: skyblue" >
-            <a href="../../index.html" class="icon icon-home"> Apollo Auto
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="在文档中搜索" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../README.html">Apollo Auto 自述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../README.html">Apollo Auto 文档</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/index.html">cyber 文档</a></li>
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Apollo Auto alpha 文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Apollo Auto 自述
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Apollo Auto 文档
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/00_cyber.html">
+   Cyber
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/README.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
+     Introduction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
+       How to Create and Run a new Component in Cyber RT
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
+       Cyber RT Terms
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
+       F.A.Q.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
+       Cyber RT API tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
+       Python API tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
+       Apollo Cyber RT Developer Tools
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
+       How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
+       Migration guide from Apollo ROS
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
+       C++ API
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+      <label for="toctree-checkbox-3">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+         cyber/node/node.h
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
+       Python API
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+      <label for="toctree-checkbox-4">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+         python/cyber_py/cyber.py
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
+     Cyber RT API tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
+     Apollo Cyber RT Developer Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
+     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
+     F.A.Q.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
+     Migration guide from Apollo ROS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
+     Python API tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
+     How to Create and Run a new Component in Cyber RT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
+     Cyber RT Terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+     cyber/node/node.h
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
+     C++ API
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
+       cyber/node/node.h
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+     python/cyber_py/cyber.py
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
+     Python API
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
+       python/cyber_py/cyber.py
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/examples/common_component_example/README.html">
+     Common Component Example of the CyberRT framework
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cyber/python/README.html">
+     Cyber RT Python API : An Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../_toc/01_docs.html">
+   Apollo Auto 文档
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../README.html">
+     Apollo documents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Control_Auto_Tuning/README.html">
+     Control Parameter Auto-Tuning Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Control_Profiling/README.html">
+     Control Profiling Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Dynamic_Model/README.html">
+     Vehicle Dynamic Modeling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Open_Space_Planner_Profiling/README.html">
+     Open Space Planner Profiling Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Perception_Lidar_Model_Training/README.html">
+     Open Perception Lidar Model Training Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Prediction_Pedestrian_Model_Training/README.html">
+     Prediction Pedestrian Model Training Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/Vehicle_Calibration_Online/README.html">
+     Vehicle Calibration Online Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/apply_bos_account_cn.html">
+     百度云对象存储BOS注册与基本使用向导
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Apollo_Fuel/apply_fuel_account_cn.html">
+     1. 开通云服务账号向导
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/perception_configuration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/sensor_calibration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知设备标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/sensor_integration_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–感知设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Camera_Based_Auto_Driving/start_auto_driving_cn.html">
+     基于摄像头的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/perception_configuration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/planning_configuration_cn.html">
+     封闭园区自动驾驶搭建–规划适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/sensor_calibration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知设备标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/sensor_integration_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–感知设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.html">
+     基于激光雷达的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Lidar_Based_Auto_Driving/virtual_lane_generation_cn.html">
+     封闭园区自动驾驶搭建–虚拟车道线制作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/perception_configuration_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–感知适配
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/sensor_integration_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–设备集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Third_Party_Perception/start_auto_driving_cn.html">
+     基于双目感知的封闭园区自动驾驶搭建–自动驾驶演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Advanced/Quick_Start_V01.html">
+     快速介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.html">
+     <strong>
+      Apollo传感器集成说明
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Quick_Start_V03.html">
+     <strong>
+      本文档适用于车辆编号为：2019051~2019080
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/Quick_Start_V04.html">
+     <strong>
+      本文档适用于车辆编号为：”2019091-2019095”之间和“2020001之后”的车辆
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Lite/readme.html">
+     概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/D-KIT_Standard/Quick_Start_V01.html">
+     <strong>
+      快速介绍
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Vehicle_Guide/readme.html">
+     概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/apollo_installation_cn.html">
+     循迹搭建–Apollo系统安装
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/control_profiling_online_cn.html">
+     车辆控制评测分析云服务的应用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/localization_configuration_cn.html">
+     循迹搭建–定位模块配置
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/reinstall_my_apollo_system_cn.html">
+     循迹搭建–Apollo系统重装
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/start_waypoint_following_cn.html">
+     循迹搭建–车辆循迹演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/vehicle_calibration_online_cn.html">
+     循迹搭建–车辆动力学云标定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/Waypoint_Following/vehicle_integration_cn.html">
+     循迹搭建–车辆集成
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../D-kit/readme.html">
+     概览
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Calibration_FAQs.html">
+     Calibration FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Calibration_FAQs_cn.html">
+     传感器标定 FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/CyberRT_FAQs.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Dreamview_FAQs.html">
+     DreamView FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/General_FAQs.html">
+     General FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/General_FAQs_cn.html">
+     General FAQs_cn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Hardware_FAQs.html">
+     Hardware FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Hardware_FAQs_cn.html">
+     硬件 FAQs：
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Perception_FAQs.html">
+     Perception FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/README.html">
+     FAQs Index
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Software_FAQs.html">
+     Software FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../FAQs/Software_FAQs_cn.html">
+     软件 FAQ
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_API_for_Developers.html">
+     Cyber RT API for Developers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Developer_Tools.html">
+     Apollo Cyber RT Developer Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Docker.html">
+     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_FAQs.html">
+     Apollo Cyber RT FAQs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Migration_Guide.html">
+     Migration guide from Apollo ROS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Python_API.html">
+     Cyber RT Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Python_API_cn.html">
+     CyberRT Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Quick_Start.html">
+     How to Create and Run a new Component in Cyber RT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Quick_Start_cn.html">
+     如何使用 Cyber RT 创建新的组件
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Scheduler_cn.html">
+     Cyber RT 调度
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/CyberRT_Terms.html">
+     Apollo Cyber RT Terminologies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cyber/README.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demo_guide/README.html">
+     Run Simulation with Offline Record
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../demo_guide/README_cn.html">
+     运行线下演示
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/README.html">
+     Howto Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/arch/apollo1.5_adapter_arch_study_notes_cn.html">
+     adapter设计架构代码分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/arch/apollo1.5_top_study_notes_cn.html">
+     Apollo 系统架构代码分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_gps_receiver.html">
+     How to add a new GPS Receiver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_gps_receiver_cn.html">
+     如何添加新的GPS接收器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_detector_algorithm.html">
+     How to add a new camera detector algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_detector_algorithm_cn.html">
+     如何添加新的camera检测算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_tracker_algorithm.html">
+     How to add a new camera tracker algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_camera_tracker_algorithm_cn.html">
+     如何添加新的camera匹配算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_can_card.html">
+     How to Add a New CAN Card
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_can_card_cn.html">
+     如何添加新的CAN卡
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_control_algorithm.html">
+     How to Add a New Control Algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_control_algorithm_cn.html">
+     如何添加新的控制算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_evaluator_in_prediction_module.html">
+     How to add a new evaluator in Prediction module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_evaluator_in_prediction_module_cn.html">
+     如何在预测模块中添加新评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_fusion_system.html">
+     How to add a new fusion system
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_fusion_system_cn.html">
+     如何添加新的fusion融合系统
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_detector_algorithm.html">
+     How to add a new lidar detector algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_detector_algorithm_cn.html">
+     如何添加新的lidar检测算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_driver.html">
+     How to add a new Lidar driver
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_driver_cn.html">
+     fr
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_tracker_algorithm.html">
+     How to add a new lidar tracker algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_lidar_tracker_algorithm_cn.html">
+     如何添加新的lidar匹配算法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_predictor_in_prediction_module.html">
+     How to add a new Predictor in Prediction module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_predictor_in_prediction_module_cn.html">
+     如何在预测模块中添加一个预测器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_vehicle.html">
+     How to Add a New Vehicle to Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_a_new_vehicle_cn.html">
+     如何在Apollo中添加新的车辆
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_add_an_external_dependency.html">
+     How to Add a New External Dependency
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_build_and_run_python_app.html">
+     How to Build, Test and Run your Python Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_clone_apollo_repo_from_china.html">
+     How to Clone Apollo Repository from China
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_clone_apollo_repo_from_china_cn.html">
+     国内环境下如何克隆 Apollo 仓库
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_create_pull_request.html">
+     How to Create a Pull Request
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_create_pull_request_cn.html">
+     如何创建合入请求(Pull Request)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_debug.html">
+     How to Debug Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_do_performance_profiling.html">
+     How to do performance profiling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_document_code.html">
+     How to Document Source Code in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_generate_local_map_for_MSF_localization_module.html">
+     How to Generate Local Map For MSF Localization Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_generate_local_map_for_MSF_localization_module_cn.html">
+     如何生产多传感器融合定位模块所需的地图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_install_apollo_kernel.html">
+     How to Install Low-Latency / Realtime Kernel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_install_apollo_kernel_cn.html">
+     如何为 Apollo 安装低时延/实时内核
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_launch_and_run_apollo.html">
+     How to Launch and Run Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_leverage_rtk_mode.html">
+     How to Leverage Apollo’s RTK mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_leverage_scenario_editor.html">
+     How to Leverage Scenario Editor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_monitor_perf_with_oprofile_on_tx2.html">
+     rf
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.html">
+     ff
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_prepare_bazel_dist_dir.html">
+     How to Prepare Bazel Distribution Directory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_prepare_bazel_dist_dir_cn.html">
+     如何准备 Bazel 的依赖缓存目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_MSF_localization_module_on_your_local_computer.html">
+     How to Run MSF Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_MSF_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行多传感器融合定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_NDT_localization_module_on_your_local_computer.html">
+     How to Run NDT Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_NDT_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行基于NDT点云匹配的定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_RTK_localization_module_on_your_local_computer.html">
+     How to Run RTK Localization Module On Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_RTK_localization_module_on_your_local_computer_cn.html">
+     如何在本地运行RTK定位模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_map_verification_tool.html">
+     How to run the Map Data Verification Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_run_perception_module_on_your_local_computer.html">
+     How to Run Perception Module on Your Local Computer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_save_and_load_docker_image.html">
+     How to Save and Load Apollo Docker Images
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_setup_dual_ipc.html">
+     How to set up Apollo 3.5’s software on Dual-IPCs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_solve_slow_pull_from_cn.html">
+     国内环境 GitHub 拉取仓库速度慢的缓解方案
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_train_prediction_mlp_model.html">
+     How to train the MLP Deep Learning Model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_train_prediction_mlp_model_cn.html">
+     训练预测MLP深度学习模型
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_troubleshoot_esdcan.html">
+     How to troubleshoot ESD CAN device?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_troubleshoot_esdcan_cn.html">
+     如何解决ESD CAN设备的故障？
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_tune_control_parameters.html">
+     How to Tune Control Parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_tune_control_parameters_cn.html">
+     如何调节控制参数
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_understand_architecture_and_workflow.html">
+     HOW TO UNDERSTAND ARCHITECTURE AND WORKFLOW
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_update_vehicle_calibration.html">
+     How to Update Vehicle Calibration for Throttle and Brakes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_update_vehicle_calibration_cn.html">
+     如何标定车辆油门和制动
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_apollo_2.5_navigation_mode.html">
+     How to use Apollo 2.5 navigation mode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_apollo_2.5_navigation_mode_cn.html">
+     Apollo 2.5版导航模式的使用方法
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_ci_result.html">
+     How to Use CI Result in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/how_to_use_ci_result_cn.html">
+     在Apollo中如何使用CI结果
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_HDmap_study_notes_cn.html">
+     HD map 使用
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_localization_module_study_notes_cn.html">
+     Localization module 分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_perception_module_study_notes_cn.html">
+     Perception Module 分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_prediction_module_study_notes_cn.html">
+     Prediction模块分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../howto/modules/apollo1.5_routing_module_study_notes_cn.html">
+     routing模块分析
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/README.html">
+     Quick Start Guides
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_hardware_system_installation_guide.html">
+     Apollo 1.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_hardware_system_installation_guide_cn.html">
+     Apollo 1.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start.html">
+     Apollo 1.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start_cn.html">
+     Apollo 快速入门指南  1.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_0_quick_start_developer.html">
+     Apollo 1.0 Quick Start Guide for Developers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_hardware_system_installation_guide.html">
+     Apollo 1.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_hardware_system_installation_guide_cn.html">
+     关于本指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_lidar_calibration_guide_cn.html">
+     ff
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_quick_start.html">
+     Apollo 1.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_1_5_quick_start_cn.html">
+     Apollo 1.5 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_hardware_system_installation_guide_v1.html">
+     Apollo 2.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_hardware_system_installation_guide_v1_cn.html">
+     Apollo 2.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_quick_start.html">
+     Apollo 2.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_quick_start_cn.html">
+     Apollo 2.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_sensor_calibration_guide.html">
+     Apollo 2.0 Sensor Calibration Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_0_sensor_calibration_guide_cn.html">
+     Apollo 2.0 传感器标定方法使用指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_hardware_system_installation_guide_v1.html">
+     Apollo 2.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_hardware_system_installation_guide_v1_cn.html">
+     Apollo 2.5 硬件与系统安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_map_collection_guide.html">
+     Apollo 2.5 map collection guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_map_collection_guide_cn.html">
+     Apollo 2.5 地图采集功能使用指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_quick_start.html">
+     Apollo 2.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_2_5_quick_start_cn.html">
+     Apollo 2.5 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_hardware_system_installation_guide.html">
+     Apollo 3.0 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_hardware_system_installation_guide_cn.html">
+     Apollo 3.0 硬件与系统安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_quick_start.html">
+     Apollo 3.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_0_quick_start_cn.html">
+     Apollo 3.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_hardware_system_installation_guide.html">
+     Apollo 3.5 Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_map_collection_guidelines.html">
+     Apollo 3.5 Map Collection Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_3_5_quick_start.html">
+     Apollo 3.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_5_0_quick_start.html">
+     Apollo 5.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_5_5_quick_start.html">
+     Apollo 5.5 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_6_0_quick_start.html">
+     Apollo 6.0 Quick Start Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_6_0_quick_start_cn.html">
+     Apollo 6.0 快速入门指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_software_installation_guide.html">
+     Apollo Software Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_software_installation_guide_cn.html">
+     Apollo软件安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/apollo_updated_hardware_system_installation_guide.html">
+     Apollo Upgraded Hardware and System Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/multiple_lidar_gnss_calibration_guide.html">
+     Multiple-LiDAR GNSS Calibration Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../quickstart/multiple_lidar_gnss_calibration_guide_cn.html">
+     多激光雷达全球导航卫星系统(Multiple-LiDAR GNSS)校准指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="3d_obstacle_perception.html">
+     3D Obstacle Perception
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3D 障碍物感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_2.0_Software_Architecture.html">
+     Apollo 2.0 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_3.0_Software_Architecture.html">
+     Apollo 3.0 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_3.0_Software_Architecture_cn.html">
+     Apollo 3.0 软件架构
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_3.5_Software_Architecture.html">
+     Apollo 3.5 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_5.5_Software_Architecture.html">
+     Apollo 5.5 Software Architecture
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide.html">
+     Guide for Apollo Sensor Unit
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide_cn.html">
+     Apollo传感器单元（ASU）安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide.html">
+     Guide for LI-USB30-AZ023WDRB
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.html">
+     LI-USB30-AZ023WDRB指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/README.html">
+     Apollo Cameras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/README_cn.html">
+     Apollo摄像头
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Truly_Argus_Camera_Installation_Guide.html">
+     Guide for Argus Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Truly_Argus_Camera_Installation_Guide_cn.html">
+     Argus摄像头指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Wissen_Camera_Installation_Guide.html">
+     Guide for Wissen Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Camera/Wissen_Camera_Installation_Guide_cn.html">
+     Wissen摄像头指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Class_Architecture_Planning.html">
+     Class Architecture and Overview – Planning Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Class_Architecture_Planning_cn.html">
+     Planning模块架构和概述
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Dreamland_introduction.html">
+     Dreamland
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Guideline_sensor_Installation_apollo_2.5.html">
+     Guideline of sensor Installation for Apollo 2.5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Guideline_sensor_Installation_apollo_3.0.html">
+     Guideline of sensor Installation for Apollo 3.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Guideline_sensor_Installation_apollo_3.0_cn.html">
+     Apollo 3.0传感器安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IPC/Nuvo-6108GC_Installation_Guide.html">
+     Guide on Nuvo-6108GC Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="IPC/Nuvo-6108GC_Installation_Guide_cn.html">
+     Nuvo-6108GC配置和安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/HDL64E_S3_Installation_Guide.html">
+     Installation guide of Velodyne HDL64E-S3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/HDL64E_S3_Installation_Guide_cn.html">
+     Velodyne HDL64E-S3安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/Hesai_Pandora_Installation_Guide.html">
+     Installation guide of Pandora
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/Hesai_Pandora_Installation_Guide_cn.html">
+     Pandora安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/Innovusion_Note.html">
+     Installation guide of Innovusion
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/Innovusion_Note_cn.html">
+     Innovusion安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/README.html">
+     Apollo LiDAR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/README_cn.html">
+     Apollo激光雷达
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/VLP_Series_Installation_Guide.html">
+     Installation guide of the Puck Series LiDAR (and HDL32)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/VLP_Series_Installation_Guide_cn.html">
+     Puck系列LiDAR (和HDL32)安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lidar/VLS_128_Installation_Guide.html">
+     Installation guide of Velodyne VLS-128
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Microphone/Re_Speaker_USB_Mic_Array_Guide.html">
+     Apollo 6.0 Microphone Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/Navtech_NV-GI120_Installation_Guide.html">
+     Guide for Navtech NV-GI120
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/Navtech_NV-GI120_Installation_Guide_cn.html">
+     Navtech_NV-GI120安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/Npos320_guide.html">
+     Npos320 Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/Propak_6_IMU-IGM-A1_Installation_Guide.html">
+     Installation Guide of NovAtel Propak6 and NovAtel IMU-IGM-A1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.html">
+     NovAtel Propak6 和 NovAtel IMU-IGM-A1 安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/PwrPak7_Installation_Guide.html">
+     Installation Guide of NovAtel PwrPak7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/PwrPak7_installation_Guide_cn.html">
+     NovAtel PwrPak7 安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/README.html">
+     Apollo Navigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/README_cn.html">
+     Apollo导航
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/SPAN-IGM-A1_Installation_Guide.html">
+     Installation Guide of SPAN-IGM-A1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Navigation/SPAN-IGM-A1_Installation_Guide_cn.html">
+     SPAN-IGM-A1安装指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Open_Space_Planner.html">
+     Open Space Planner Algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="README.html">
+     Specs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="README_cn.html">
+     Apollo具体内容说明
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Radar/Continental_ARS408-21_Radar_Installation_Guide.html">
+     Installation Guide of Continental ARS-408-21 Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Radar/README.html">
+     Apollo Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Radar/Racobit_B01HC_Radar_Installation_Guide.html">
+     Installation Guide of Racobit B01HC Radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apollo_build_and_test_explained.html">
+     Apollo Build and Test Explained
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apollo_lidar_imu_calibration_guide.html">
+     Apollo LiDAR - IMU Calibration Service
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apollo_secure_upgrade_user_guide.html">
+     Apollo Secure Upgrade SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apollo_secure_upgrade_user_guide_cn.html">
+     Apollo安全更新SDK
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bazel_in_apollo_an_overview.html">
+     Bazel in Apollo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bridge_header_protocol.html">
+     Bridge Header Protocol
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="coordination_cn.html">
+     Apollo坐标系统
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dreamview_usage_table.html">
+     Dreamview Usage Table
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dreamview_usage_table_cn.html">
+     DreamView用法介绍
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dynamic_model.html">
+     Dynamic Model - Control-in-loop Simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="linters_and_formatters.html">
+     Linters and Formatters used in Apollo 6.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="perception_apollo_2.5.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="perception_apollo_3.0.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="perception_apollo_3.0_cn.html">
+     感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="perception_apollo_5.0.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="prerequisite_software_installation_guide.html">
+     Pre-requisite Software Installation Guide
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qp_spline_path_optimizer.html">
+     QP-Spline-Path Optimizer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qp_spline_path_optimizer_cn.html">
+     二次规划（QP）样条路径优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qp_spline_st_speed_optimizer.html">
+     QP-Spline-ST-Speed Optimizer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="qp_spline_st_speed_optimizer_cn.html">
+     二次规划ST速度优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference_line_smoother.html">
+     Reference Line Smoother
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference_line_smoother_cn.html">
+     参考线平滑设定
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="traffic_light.html">
+     Traffic Light Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="traffic_light_cn.html">
+     交通信号灯感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/README.html">
+     Technical Docunments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/hybrid_a_star_en.html">
+     GENERATE COARSE TRAJECTORY IN THE OPEN SPACE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/jointly_prediction_planning_evaluator.html">
+     JOINTLY PREDICTION PLANNING EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/jointly_prediction_planning_evaluator_cn.html">
+     预测规划交互评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_decider.html">
+     OPEN SPACE DECIDER
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_optimizer_en.html">
+     OPTIMIZE COARSE TRAJECTORY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_partition.html">
+     OPEN SPACE TRAJECTORY PARTITION
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/open_space_trajectory_provider_en.html">
+     GENERATE FINAL TRAJECTORY
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/parking_scenario.html">
+     PARKING SCENARIO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_component.html">
+     Planning Component Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.html">
+     Planning Piecewise Jerk Nonlinear Speed Optimizer Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/planning_speed_bounds_decider.html">
+     Planning Speed Bounds Decider Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/prediction_evaluator.html">
+     PREDICTION EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/prediction_predictor.html">
+     PREDICTION PREDICTOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_assessment_decider_cn.html">
+     路径评估决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_bounds_decider_cn.html">
+     路径边界决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/path_decider_cn.html">
+     路径决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/piece_wise_jerk_path_cn.html">
+     分段加加速度路径优化
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/tasks/rule_based_stop_decider_cn.html">
+     基于规则的停止决策
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/template_cn.html">
+     标题(替换此处)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/template_en.html">
+     Title(replace it)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/vectornet_lstm_evaluator.html">
+     VECTORNET_LSTM_EVALUATOR
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_documents/vectornet_lstm_evaluator_cn.html">
+     VECTORNET LSTM 评估器
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/README.html">
+     Technical Tutorials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_2.5_technical_tutorial.html">
+     Apollo 2.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.0_technical_tutorial.html">
+     Apollo 3.0 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.0_technical_tutorial_cn.html">
+     Apollo 3.0 技术指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_3.5_technical_tutorial.html">
+     Apollo 3.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_5.0_technical_tutorial.html">
+     Apollo 5.0 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_5.5_technical_tutorial.html">
+     Apollo 5.5 Technical Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_best_coding_practice.html">
+     Apollo Best Coding Practice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_best_coding_practice_cn.html">
+     Apollo 编码最佳实践
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/apollo_vehicle_adaption_tutorial_cn.html">
+     Apollo车辆适配教程
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/intro_to_apollo_release_build.html">
+     Introduction to Apollo Release Build
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/intro_to_apollo_release_build_cn.html">
+     Apollo Release Build 简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../technical_tutorial/navigation_mode_tutorial_cn.html">
+     Apollo导航模式教程
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT.html">
+     Apollo Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CODE_OF_CONDUCT_cn.html">
+     Apollo 行为准则
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../RELEASE.html">
+     Release 6.0
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../MANIFESTO.html">
+     Apollo Governance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../CONTRIBUTING.html">
+     How to Contribute to Apollo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/other.html">
+   临时目录
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/can_card_library/esd_can/README.html">
+     ESD CAN Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/gpus/README.html">
+     CUDA Support for Bazel
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/tf2/CHANGELOG.html">
+     Changelog for package tf2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../third_party/tf2/README.html">
+     tf2-apollo
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../third_party/tf2/index.html">
+     tf2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../third_party/tf2/README.html">
+       tf2-apollo
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/audio/README.html">
+     Audio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/audio/tools/README.html">
+     Dump audio to wave
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/bridge/README.html">
+     Bridge
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/calibration/data/README.html">
+     Vehicle Calibration Configs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/canbus/README.html">
+     Canbus
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/canbus/README_cn.html">
+     CAN总线
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/common/README.html">
+     Common - Module
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/common/README_cn.html">
+     通用模块
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/cyber_bridge/README.html">
+     Apollo Cyber bridge for the
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       master
+      </span>
+     </code>
+     branch
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/e2e/README.html">
+     e2e
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/elo/README.html">
+     Download
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/lgsvl_msgs/CHANGELOG.html">
+     Changelog for package lgsvl_msgs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/contrib/lgsvl_msgs/README.html">
+     Protobuf Package lgsvl_msgs for LG SVL Automotive Simulator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/control/README.html">
+     Control
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/control/README_cn.html">
+     控制
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/data/tools/smart_recorder/README.html">
+     Smart Recorder
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/README.html">
+     Dreamview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/backend/hmi/README.html">
+     Customize Your Own HMI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/backend/teleop/README.html">
+     Dreamview for Teleoperation (Remote Control)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/dreamview/conf/hmi_modes/README.html">
+     Vehicle Modes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/AUTHORS.html">
+     AUTHORS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/CHANGELOG.html">
+     Changelog for package usb_cam
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/README.html">
+     Driver for V4L USB Cameras
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/camera/README_cn.html">
+     Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/CHANGELOG.html">
+     Changelog
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/README.html">
+     <strong>
+      Robosense LiDAR Driver
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/README_cn.html">
+     <strong>
+      Robosense LiDAR Driver
+     </strong>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/robosense/doc/parameter_intro.html">
+     Parameter Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/velodyne/README.html">
+     Velodyne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/lidar/velodyne/README_cn.html">
+     velodyne
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/microphone/README.html">
+     microphone
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/conti_radar/README_cn.html">
+     conti_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/racobit_radar/README_cn.html">
+     racobit_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/drivers/radar/ultrasonic_radar/README_cn.html">
+     ultrasonic_radar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/README.html">
+     Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/README_cn.html">
+     定位
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/msf/README.html">
+     Multi-sensor Fusion Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/localization/ndt/README.html">
+     NDT-based Lidar Localization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/data/README.html">
+     Map Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/relative_map/README.html">
+     Relative Map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/map/relative_map/tools/navigator.html">
+     Navigator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/monitor/README.html">
+     Monitor
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/Perception_README_3_5.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/README.html">
+     Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/README.html">
+     Camera Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/tools/obstacle_detection/data/yolo/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/camera/tools/offline/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README.html">
+     Lidar Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README_6.0.html">
+     Lidar Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/lidar/README_CN.html">
+     激光雷达感知
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/production/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/camera/app/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/testdata/lidar/lib/segmentation/mst/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.html">
+     2018-09-02
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/perception/tool/benchmark/lidar/ctpl/README.html">
+     CTPL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/planning/README.html">
+     Planning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/planning/README_cn.html">
+     规划
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/prediction/README.html">
+     Prediction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/prediction/README_cn.html">
+     预测
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/routing/README.html">
+     Routing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/routing/README_cn.html">
+     路由
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/storytelling/README.html">
+     Storytelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/third_party_perception/README.html">
+     Third Party Perception
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/README.html">
+     Apollo Tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/gen_vehicle_protocol/README.html">
+     Gen Vehicle Protocol Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/mapshow/README.html">
+     Map Show
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/mapviewers/README.html">
+     MapViewers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigation/config/README.html">
+     Navi Config
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigator/README.html">
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/navigator/dbmap/README.html">
+     Driving Behavior Map (DBMap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_analyzer/README.html">
+     Record Analyzer Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_parse_save/README.html">
+     Apollo cyber-record file parser (Python based)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/record_play/README.html">
+     Record and Play Tool
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../modules/tools/restore_video_record/README.html">
+     Video Records Restoring Tool
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/style.html">
+   风格
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/issues.html">
+     Issues
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/bug_report.html">
+     Bug report
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../.github/ISSUE_TEMPLATE/feature_request.html">
+     Feature request
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: skyblue" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Apollo Auto</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>3D 障碍物感知</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/docs/specs/3d_obstacle_perception_cn.md.txt" rel="nofollow"> 查看页面源码</a>
-      </li>
-  </ul>
-  <hr/>
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section class="tex2jax_ignore mathjax_ignore" id="d">
-<h1>3D 障碍物感知<a class="headerlink" href="#d" title="永久链接至标题"></a></h1>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/specs/3d_obstacle_perception_cn.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#roi">
+   高精地图ROI过滤器
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     坐标转换
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roi-lut">
+     ROI LUT构造
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     ROI LUT点查询
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cnn">
+   基于CNN的障碍物分割
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     通道特征提取
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     基于卷积神经网络的障碍物预测
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     障碍物聚类
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     后期处理
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#minbox">
+   MinBox 障碍物边框构建
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hm">
+   HM对象跟踪
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#detection-to-track-association">
+     检测跟踪关联（Detection-to-Track Association）
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#track-motion-estimation">
+     跟踪动态预估 （Track Motion Estimation）
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   参考
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="d">
+<h1>3D 障碍物感知<a class="headerlink" href="#d" title="永久链接至标题">¶</a></h1>
 <p>Apollo解决的障碍物感知问题：</p>
 <ul class="simple">
 <li><p>高精地图ROI过滤器（HDMap ROI Filter）</p></li>
@@ -83,12 +2432,12 @@
 <li><p>MinBox 障碍物边框构建（MinBox Builder）</p></li>
 <li><p>HM对象跟踪（HM Object Tracker）</p></li>
 </ul>
-<section id="roi">
-<h2>高精地图ROI过滤器<a class="headerlink" href="#roi" title="永久链接至标题"></a></h2>
+<div class="section" id="roi">
+<h2>高精地图ROI过滤器<a class="headerlink" href="#roi" title="永久链接至标题">¶</a></h2>
 <p>ROI（The Region of Interest）指定从高精地图检索到包含路面、路口的可驾驶区域。高精地图 ROI 过滤器（往下简称“过滤器”）处理在ROI之外的激光雷达点，去除背景对象，如路边建筑物和树木等，剩余的点云留待后续处理。</p>
 <p>给定一个高精地图，每个激光雷达点的关系意味着它在ROI内部还是外部。
 每个激光雷达点可以查询一个车辆周围区域的2D量化的查找表（LUT）。过滤器模块的输入和输出汇总于下表。</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>输入</p></th>
 <th class="head"><p>输出</p></th>
@@ -109,20 +2458,20 @@
 <li><p>ROI LUT构造</p></li>
 <li><p>ROI LUT点查询</p></li>
 </ol>
-<section id="id1">
-<h3>坐标转换<a class="headerlink" href="#id1" title="永久链接至标题"></a></h3>
+<div class="section" id="id1">
+<h3>坐标转换<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
 <p>对于（高精地图ROI）过滤器来说，高精地图数据接口被定义为一系列多边形集合，每个集合由世界坐标系点组成有序点集。高精地图ROI点查询需要点云和多边形处在相同的坐标系，为此，Apollo将输入点云和HDMap多边形变换为来自激光雷达传感器位置的地方坐标系。</p>
-</section>
-<section id="roi-lut">
-<h3>ROI LUT构造<a class="headerlink" href="#roi-lut" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="roi-lut">
+<h3>ROI LUT构造<a class="headerlink" href="#roi-lut" title="永久链接至标题">¶</a></h3>
 <p>Apollo采用网格显示查找表（LUT），将ROI量化为俯视图2D网格，以此决定输入点是在ROI之内还是之外。</p>
 <p>如图1所示，该LUT覆盖了一个矩形区域，该区域位于高精地图边界上方，以普通视图周围的预定义空间范围为边界。它代表了与ROI关联网格的每个单元格（如用1/0表示在ROI的内部/外部）。 为了计算效率，Apollo使用 <strong>扫描线算法</strong>和 <strong>位图编码</strong>来构建ROI LUT。</p>
 <img src="images/3d_obstacle_perception/roi_lookup_table.png">
 <div align=center>图 1 ROI显示查找表（LUT）</div>
 <p>蓝色线条标出了高精地图ROI的边界，包含路标与路口。红色加粗点表示对应于激光雷达传感器位置的地方坐标系原始位置。2D网格由8*8个绿色正方形组成，在ROI中的单元格，为蓝色填充的正方形，而之外的是黄色填充的正方形。</p>
-</section>
-<section id="id2">
-<h3>ROI LUT点查询<a class="headerlink" href="#id2" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id2">
+<h3>ROI LUT点查询<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
 <p>基于ROI LUT，查询每个输入点的关系使用两步认证。对于点查询过程，Apollo数据编译输出如下，:</p>
 <ol class="simple">
 <li><p>检查点在ROI LUT矩形区域之内还是之外。</p></li>
@@ -130,7 +2479,7 @@
 <li><p>收集属于ROI的所有点，并输出其相对于输入点云的索引。</p></li>
 </ol>
 <p>用户定义的参数可在配置文件<code class="docutils literal notranslate"><span class="pre">modules/perception/model/hdmap_roi_filter.config</span></code>中设置，HDMap ROI Filter 参数使用参考如下表格：</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>参数名称</p></th>
 <th class="head"><p>使用</p></th>
@@ -152,12 +2501,12 @@
 </tr>
 </tbody>
 </table>
-</section>
-</section>
-<section id="cnn">
-<h2>基于CNN的障碍物分割<a class="headerlink" href="#cnn" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="cnn">
+<h2>基于CNN的障碍物分割<a class="headerlink" href="#cnn" title="永久链接至标题">¶</a></h2>
 <p>高精地图 ROI过滤之后，Apollo得到已过滤、只包含属于ROI内的点云，大部分背景障碍物，如路侧的建筑物、树木等均被移除，ROI内的点云被传递到分割模块。分割模块检测和划分前景障碍物，例如汽车，卡车，自行车和行人。</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>输入</p></th>
 <th class="head"><p>输出</p></th>
@@ -182,8 +2531,8 @@
 <li><p>后期处理</p></li>
 </ul>
 <p>卷积神经网络详细介绍如下：</p>
-<section id="id3">
-<h3>通道特征提取<a class="headerlink" href="#id3" title="永久链接至标题"></a></h3>
+<div class="section" id="id3">
+<h3>通道特征提取<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>给定一个点云框架，Apollo在地方坐标系中构建俯视图（即投影到X-Y平面）2D网格。 基于点的X、Y坐标，相对于LiDAR传感器原点的预定范围内，每个点被量化为2D网格的一个单元。 量化后，Apollo计算网格内每个单元格中点的8个统计测量，这将是下一步中传递给CNN的输入通道特征。</p>
 <p>计算的8个统计测量：</p>
 <ol class="simple">
@@ -196,9 +2545,9 @@
 <li><p>单元格中心与原点之间的距离</p></li>
 <li><p>二进制值标示单元格是空还是被占用</p></li>
 </ol>
-</section>
-<section id="id4">
-<h3>基于卷积神经网络的障碍物预测<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id4">
+<h3>基于卷积神经网络的障碍物预测<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
 <p>基于上述通道特征，Apollo使用深度完全卷积神经网络（FCNN）来预测单元格障碍物属性，包括潜在物体中心的偏移位移（称为中心偏移）、对象性
 积极性和物体高度。如图2所示，网络的输入为 <em>W</em> x <em>H</em> x <em>C</em> 通道图像，其中：</p>
 <ul class="simple">
@@ -215,9 +2564,9 @@
 <p>特征编码器将通道特征图像作为输入，并且随着特征抽取的增加而连续<strong>下采样</strong>其空间分辨率。 然后特征解码器逐渐对特征图像 <strong>上采样</strong>到输入2D网格的空间分辨率，可以恢复特征图像的空间细节，以促进单元格方向的障碍物位置、速度属性预测。 根据具有非线性激活（即ReLu）层的堆叠卷积/分散层来实现 <strong>下采样</strong>和 <strong>上采样</strong>操作。</p>
 <div align=center><img src="images/3d_obstacle_perception/FCNN.png" width="99%"></div>
 <div align=center>图 2 FCNN在单元格方向上的障碍物预测</div>
-</section>
-<section id="id5">
-<h3>障碍物聚类<a class="headerlink" href="#id5" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id5">
+<h3>障碍物聚类<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
 <p>在基于CNN的预测之后，Apollo获取单个单元格的预测信息。利用四个单元对象属性图像，其中包含：</p>
 <ul class="simple">
 <li><p>中心偏移</p></li>
@@ -234,13 +2583,13 @@
 <p>(b) 固体红色多边形内的单元格组成候选对象集群。</p>
 <p>由五角星填充的红色范围表示对应于连接组件子图的根节点（单元格）。</p>
 <p>一个候选对象集群可以由其根节点彼此相邻的多个相邻连接组件组成。</p>
-</section>
-<section id="id6">
-<h3>后期处理<a class="headerlink" href="#id6" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="id6">
+<h3>后期处理<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
 <p>聚类后，Apollo获得一组候选对象集，每个候选对象集包括若干单元格。</p>
 <p>在后期处理中，Apollo首先对所涉及的单元格的积极性和物体高度值，平均计算每个候选群体的检测置信度分数和物体高度。 然后，Apollo去除相对于预测物体高度太高的点，并收集每个候选集中的有效单元格的点。 最后，Apollo删除具有非常低的可信度分数或小点数的候选聚类，以输出最终的障碍物集/分段。</p>
 <p>用户定义的参数可以在<code class="docutils literal notranslate"><span class="pre">modules/perception/model/cnn_segmentation/cnnseg.conf</span></code>的配置文件中设置。 下表说明了CNN细分的参数用法和默认值：</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>参数名称</p></th>
 <th class="head"><p>使用说明</p></th>
@@ -291,24 +2640,24 @@
 </tbody>
 </table>
 <p><strong>注意：提供的模型是一个样例，仅限于实验所用。</strong></p>
-</section>
-</section>
-<section id="minbox">
-<h2>MinBox 障碍物边框构建<a class="headerlink" href="#minbox" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="minbox">
+<h2>MinBox 障碍物边框构建<a class="headerlink" href="#minbox" title="永久链接至标题">¶</a></h2>
 <p>对象构建器组件为检测到的障碍物建立一个边界框。因为LiDAR传感器的遮挡或距离，形成障碍物的点云可以是稀疏的，并且仅覆盖一部分表面。因此，盒构建器将恢复给定多边形点的完整边界框。即使点云稀疏，边界框的主要目的还是预估障碍物（例如，车辆）的方向。同样地，边框也用于可视化障碍物。</p>
 <p>算法背后的想法是找到给定多边形点边缘的所有区域。在以下示例中，如果AB是边缘，则Apollo将其他多边形点投影到AB上，并建立具有最大距离的交点对，这是属于边框的边缘之一。然后直接获得边界框的另一边。通过迭代多边形中的所有边，在以下图4所示，Apollo确定了一个6边界边框，将选择具有最小面积的方案作为最终的边界框。</p>
 <div align=center><img src="images/3d_obstacle_perception/object_building.png"></div>
 <div align=center>图 4 MinBox 对象构建</div>
-</section>
-<section id="hm">
-<h2>HM对象跟踪<a class="headerlink" href="#hm" title="永久链接至标题"></a></h2>
+</div>
+<div class="section" id="hm">
+<h2>HM对象跟踪<a class="headerlink" href="#hm" title="永久链接至标题">¶</a></h2>
 <p>HM对象跟踪器跟踪分段检测到的障碍物。通常，它通过将当前检测与现有跟踪列表相关联，来形成和更新跟踪列表，如不再存在，则删除旧的跟踪列表，并在识别出新的检测时生成新的跟踪列表。 更新后的跟踪列表的运动状态将在关联后进行估计。 在HM对象跟踪器中，<strong>匈牙利算法</strong>(Hungarian algorithm)用于检测到跟踪关联，并采用 <strong>鲁棒卡尔曼滤波器</strong>(Robust Kalman Filter) 进行运动估计。</p>
-<section id="detection-to-track-association">
-<h3>检测跟踪关联（Detection-to-Track Association）<a class="headerlink" href="#detection-to-track-association" title="永久链接至标题"></a></h3>
+<div class="section" id="detection-to-track-association">
+<h3>检测跟踪关联（Detection-to-Track Association）<a class="headerlink" href="#detection-to-track-association" title="永久链接至标题">¶</a></h3>
 <p>当将检测与现有跟踪列表相关联时，Apollo构建了一个二分图，然后使用 <strong>匈牙利算法</strong>以最小成本（距离）找到最佳检测跟踪匹配。</p>
 <p><strong>计算关联距离矩阵</strong></p>
 <p>首先，建立一个关联距离矩阵。根据一系列关联特征（包括运动一致性，外观一致性等）计算给定检测和一条轨迹之间的距离。HM跟踪器距离计算中使用的一些特征如下所示：</p>
-<table class="colwidths-auto docutils align-default">
+<table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>关联特征名称</p></th>
 <th class="head"><p>描述</p></th>
@@ -337,9 +2686,9 @@
 <p>给定关联距离矩阵，如图5所示，Apollo构造了一个二分图，并使用 <strong>匈牙利算法</strong>通过最小化距离成本找到最佳的检测跟踪匹配。它解决了O(n^3)时间复杂度中的赋值问题。 为了提高其计算性能，通过删除距离大于合理的最大距离阈值的顶点，将原始的二分图切割成子图后实现了匈牙利算法。</p>
 <div align=center><img src="images/3d_obstacle_perception/bipartite_graph_matching.png"></div>
 <div align=center>图 5 二分图匹配（Bipartite Graph Matching）</div>
-</section>
-<section id="track-motion-estimation">
-<h3>跟踪动态预估 （Track Motion Estimation）<a class="headerlink" href="#track-motion-estimation" title="永久链接至标题"></a></h3>
+</div>
+<div class="section" id="track-motion-estimation">
+<h3>跟踪动态预估 （Track Motion Estimation）<a class="headerlink" href="#track-motion-estimation" title="永久链接至标题">¶</a></h3>
 <p>在检测到跟踪关联之后，HM对象跟踪器使用 <strong>鲁棒卡尔曼滤波器</strong>来利用恒定速度运动模型估计当前跟踪列表的运动状态。 运动状态包括锚点和速度，分别对应于3D位置及其3D速度。 为了克服由不完美的检测引起的可能的分心，在跟踪器的滤波算法中实现了鲁棒统计技术。</p>
 <p><strong>观察冗余</strong></p>
 <p>在一系列重复观测中选择速度测量，即滤波算法的输入，包括锚点移位、边界框中心偏移、边界框角点移位等。冗余观测将为滤波测量带来额外的鲁棒性， 因为所有观察失败的概率远远小于单次观察失败的概率。</p>
@@ -353,47 +2702,59 @@
 <p>1）构造跟踪对象并将其转换为世界坐标。</p>
 <p>2）预测现有跟踪列表的状态，并对其匹配检测。</p>
 <p>3）在更新后的跟踪列表中更新运动状态，并收集跟踪结果。</p>
-</section>
-</section>
-<section id="id7">
-<h2>参考<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>参考<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://zh.wikipedia.org/zh-cn/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95">匈牙利算法</a></p></li>
 <li><p><a class="reference external" href="https://baike.baidu.com/item/%E5%9C%B0%E6%96%B9%E5%9D%90%E6%A0%87%E7%B3%BB/5154246">地方坐标系</a></p></li>
 <li><p><a class="reference external" href="https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf">Fully Convolutional Networks for Semantic Segmentation</a></p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="3d_obstacle_perception.html" class="btn btn-neutral float-left" title="3D Obstacle Perception" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="Apollo_2.0_Software_Architecture.html" class="btn btn-neutral float-right" title="Apollo 2.0 Software Architecture" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; 版权所有 2021, xinetzone.</p>
-  </div>
-
-  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
-    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
-   
-
-</footer>
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="3d_obstacle_perception.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">3D Obstacle Perception</p>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class='right-next' id="next-link" href="Apollo_2.0_Software_Architecture.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">Apollo 2.0 Software Architecture</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By xinetzone<br/>
+        
+            &copy; Copyright 2021, xinetzone.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
 
-</body>
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
 </html>
