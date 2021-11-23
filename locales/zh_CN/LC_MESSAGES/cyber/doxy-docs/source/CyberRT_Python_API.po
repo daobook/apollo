@@ -20,11 +20,11 @@ msgstr ""
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:1
 msgid "Python API tutorial"
-msgstr ""
+msgstr "Python API 教程"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:4
 msgid "1. Background"
-msgstr ""
+msgstr "背景"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:6
 msgid ""
@@ -32,10 +32,12 @@ msgid ""
 " python interfaces to help developers build their own utilities for "
 "specific projects."
 msgstr ""
+"Cyber RT 的核心功能是用 C++ 开发的。"
+"我们还提供了更多的 Python 接口，以帮助开发者为特定项目建立自己的实用程序"。
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:8
 msgid "2. Cyber RT Python Interfaces"
-msgstr ""
+msgstr "CyberRT RT Python 接口"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:10
 msgid ""
@@ -43,34 +45,36 @@ msgid ""
 "interfaces. The implementation doesn't rely on other third-party tools, "
 "e.g. swig, which makes it easier to maintain."
 msgstr ""
+"Cyber RT 的 Python 接口是对相应的 C++ 接口的封装。"
+"该实现不依赖其他第三方工具，如 swig，这使得它更容易维护。"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:12
 msgid "3. Overview of Python Interfaces in Cyber RT"
-msgstr ""
+msgstr "Cyber RT 中的 Python 接口概述"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:14
 msgid "So far, the python interfaces covers:"
-msgstr ""
+msgstr "到目前为止，python 接口涵盖："
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:16
 msgid "access the information of channels"
-msgstr ""
+msgstr "访问 channel 信息"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:17
 msgid "server/client communication"
-msgstr ""
+msgstr "server/client 通信"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:18
 msgid "query informatoin in record files"
-msgstr ""
+msgstr "record 信息查询"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:19
 msgid "read and write from/to record files"
-msgstr ""
+msgstr "record 文件读、写"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:20
 msgid "Time/Duration/Rate related operations"
-msgstr ""
+msgstr "Time/Duration/Rate 相关操作"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:21
 msgid "Timer"
@@ -78,86 +82,88 @@ msgstr ""
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:23
 msgid "3.1 Read/Write of Channels"
-msgstr ""
+msgstr "Channel 读写接口"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:25
 msgid "Steps shown as below:"
-msgstr ""
+msgstr "使用步骤是："
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:26
 msgid "First create a Node；"
-msgstr ""
+msgstr "首先创建 Node；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:27
 msgid "Create corresponding reader or writer;"
-msgstr ""
+msgstr "创建对应的 reader 或 writer；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:28
 msgid "If write to a channel, use write interface in writer."
-msgstr ""
+msgstr "如果是向 channel 写数据，调用 writer 的 write 接口；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:29
 msgid ""
 "If read from a channel, use the spin interface in the node, and process "
 "the messages in your callback function"
 msgstr ""
+"如果是从 channel 读数据，调用 node 的 spin，并在你的回调函数中处理消息"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:31
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:92
 msgid "The interfaces are shown below:"
-msgstr ""
+msgstr "接口定义如下："
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:80
 msgid "3.2 Record Interfaces"
-msgstr ""
+msgstr "Record 接口"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:82
 msgid "Read from record："
-msgstr ""
+msgstr "Record 读的操作是："
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:84
 msgid "Create a RecordReader;"
-msgstr ""
+msgstr "创建一个 RecordReader；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:85
 msgid "Read messages from Record;"
-msgstr ""
+msgstr "读取 Record 中的信息；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:87
 msgid "Write to record："
-msgstr ""
+msgstr "Record 写的操作是："
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:89
 msgid "Create a RecordWriter"
-msgstr ""
+msgstr "创建一个 RecordWriter"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:90
 msgid "Write messages to record；"
-msgstr ""
+msgstr "对 Record 进行写消息；"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:180
 msgid "3.3 Time Interfaces"
-msgstr ""
+msgstr "Time 接口"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:204
 msgid "3.4 Timer Interfaces"
-msgstr ""
+msgstr "Timer 接口"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:224
 msgid "4. Examples"
-msgstr ""
+msgstr "例子"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:226
 msgid "4.1 Read from Channel (in cyber/python/examples/listener.py)"
-msgstr ""
+msgstr "读 Channel （参见 cyber/python/examples/listener.py)"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:263
 msgid "4.2 Write to Channel(in cyber/python/examples/talker.py)"
-msgstr ""
+msgstr "写 channel（参见 cyber/python/examples/talker.py)"
 
 #: ../../cyber/doxy-docs/source/CyberRT_Python_API.md:299
 msgid ""
 "4.3 Read and Write Messages from/to Record File(in "
 "cyber/python/examples/record.py)"
 msgstr ""
+"读写消息到 Record 文件（参见 cyber/python/examples/record.py)"
 

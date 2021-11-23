@@ -2,7 +2,7 @@
 # Copyright (C) 2021, xinetzone
 # This file is distributed under the same license as the Apollo Auto
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# xinetzone <735613050@qq.com>, 2021.
 #
 #, fuzzy
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-22 19:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../cyber/README.md:1
 msgid "Introduction"
-msgstr "Cyber 自述"
+msgstr "简介"
 
 #: ../../cyber/README.md:3
 msgid ""
@@ -113,8 +113,7 @@ msgid ""
 "build and play with Cyber RT. On top of that, we officially support "
 "development of Cyber RT on both x86 and ARM platform."
 msgstr ""
-"***新！！*** [如何在 X86 和 ARM 平台的 Docker 环境内开发 Cyber RT]"
-"(/docs/cyber/CyberRT_Docker.md)："
+"***新！！*** [如何在 X86 和 ARM 平台的 Docker 环境内开发 Cyber RT](doxy-docs/source/CyberRT_Docker.md) ："
 "用于 Cyber RT 开发的官方 docker 镜像，这是构建和使用 Cyber RT 的最简单方法。"
 "除此之外，我们正式支持在 x86 和 ARM 平台上开发 Cyber RT。"
 
@@ -125,7 +124,7 @@ msgid ""
 " Everything you need to know about how to start developing your first "
 "application module on top of Apollo Cyber RT."
 msgstr ""
-"[Apollo Cyber RT 快速启动](/docs/cyber/CyberRT_Quick_Start.md)："
+"[Apollo Cyber RT 快速启动](doxy-docs/source/CyberRT_Quick_Start.md) ："
 "你需要知道的关于如何在 Apollo Cyber RT 之上开始开发你的第一个应用模块的一切。"
 
 #: ../../cyber/README.md:28
@@ -135,7 +134,7 @@ msgid ""
 " Detailed guidance on how to use the developer tools from Apollo Cyber "
 "RT."
 msgstr ""
-"[Apollo Cyber RT 开发工具](/docs/cyber/CyberRT_Developer_Tools.md):"
+"[Apollo Cyber RT 开发工具](doxy-docs/source/CyberRT_Developer_Tools.md) ："
 "关于如何使用 Apollo Cyber 的开发工具的详细指导。"
 
 #: ../../cyber/README.md:30
@@ -145,7 +144,7 @@ msgid ""
 " A comprehensive guide to explore all the APIs of Apollo Cyber RT, with "
 "many concrete examples in source code."
 msgstr ""
-"[面向开发者的 Apollo Cyber RT API](/docs/cyber/CyberRT_API_for_Developers.md)："
+"[面向开发者的 Apollo Cyber RT API](doxy-docs/source/CyberRT_API_for_Developers.md) ："
 "探索 Apollo Cyber RT 所有 API 的综合指南，其中有许多源代码中的具体例子。"
 
 #: ../../cyber/README.md:32
@@ -154,7 +153,7 @@ msgid ""
 "FAQs](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_FAQs.md):"
 " Answers to the most frequently asked questions about Apollo Cyber RT."
 msgstr ""
-"[Apollo Cyber RT 常见问题](/docs/cyber/CyberRT_FAQs.md)："
+"[Apollo Cyber RT 常见问题](doxy-docs/source/CyberRT_FAQs.md) ："
 " 关于 Apollo Cyber RT 最常见的问题的答案。"
 
 #: ../../cyber/README.md:34
@@ -163,7 +162,7 @@ msgid ""
 "Terms](https://github.com/ApolloAuto/apollo/tree/master/docs/cyber/CyberRT_Terms.md):"
 " Commonly used terminologies in Cyber RT documentation and code."
 msgstr ""
-"[Apollo Cyber RT 术语](/docs/cyber/CyberRT_Terms.md)："
+"[Apollo Cyber RT 术语](doxy-docs/source/CyberRT_Terms.md) ："
 " Cyber RT 文档和代码中常用的术语。"
 
 #: ../../cyber/README.md:36
@@ -171,7 +170,7 @@ msgid ""
 "[Apollo Cyber RT Python Wrapper](python/README.md): Develop projects in "
 "Python."
 msgstr ""
-"[Apollo Cyber RT Python 包装器](python/README.md)：用 Python 开发项目。"
+"[Apollo Cyber RT Python 包装器](python/README.md) ：用 Python 开发项目。"
 
 #: ../../cyber/README.md:38
 msgid "More documents to come soon!"

@@ -2,7 +2,7 @@
 # Copyright (C) 2021, xinetzone
 # This file is distributed under the same license as the Apollo Auto
 # package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# xinetzone <735613050@qq.com>, 2021.
 #
 #, fuzzy
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-22 19:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -20,23 +20,23 @@ msgstr ""
 
 #: ../../cyber/doxy-docs/source/index.rst:35
 msgid "QUICKSTART"
-msgstr ""
+msgstr "快速入门"
 
 #: ../../cyber/doxy-docs/source/index.rst:43
 msgid "TUTORIALS"
-msgstr ""
+msgstr "教程"
 
 #: ../../cyber/doxy-docs/source/index.rst:51
 msgid "ADVANCED TOPICS"
-msgstr ""
+msgstr "高级专题"
 
 #: ../../cyber/doxy-docs/source/index.rst:58
 msgid "API REFERENCE"
-msgstr ""
+msgstr "API 参考"
 
 #: ../../cyber/doxy-docs/source/index.rst:4
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../../cyber/doxy-docs/source/index.rst:6
 msgid ""
@@ -45,6 +45,8 @@ msgid ""
 "centralized computing model, it is greatly optimized for high "
 "concurrency, low latency, and high throughput in autonomous driving."
 msgstr ""
+"Apollo Cyber RT 是一个开源的高性能运行时框架，专门为自动驾驶场景设计。"
+"基于集中式计算模型，它为自动驾驶中的高并发、低延迟和高吞吐量进行了极大的优化。"
 
 #: ../../cyber/doxy-docs/source/index.rst:10
 msgid ""
@@ -57,56 +59,60 @@ msgid ""
 "perfecting Apollo Cyber RT, which addresses that requirements of "
 "autonomous driving solutions."
 msgstr ""
+"在过去几年自动驾驶技术的发展过程中，我们从以前与 Apollo 的经验中学到了很多。"
+"这个行业在发展，Apollo 也在发展。"
+"展望未来，Apollo 已经从开发转向产品化，随着现实世界中的批量部署，我们看到了对最高水平的稳健性和性能的要求。"
+"这就是为什么我们花了多年时间建立和完善 Apollo Cyber RT，它解决了自动驾驶解决方案的这一要求。"
 
 #: ../../cyber/doxy-docs/source/index.rst:17
 msgid "Key benefits of using Apollo Cyber RT:"
-msgstr ""
+msgstr "使用 Apollo Cyber RT 的主要优势："
 
 #: ../../cyber/doxy-docs/source/index.rst:19
 msgid "Accelerate development"
-msgstr ""
+msgstr "加速开发"
 
 #: ../../cyber/doxy-docs/source/index.rst:21
 msgid "Well defined task interface with data fusion"
-msgstr ""
+msgstr "带有数据融合的定义良好的任务接口"
 
 #: ../../cyber/doxy-docs/source/index.rst:22
 msgid "Array of development tools"
-msgstr ""
+msgstr "一系列的开发工具"
 
 #: ../../cyber/doxy-docs/source/index.rst:23
 msgid "Large set of sensor drivers"
-msgstr ""
+msgstr "大量的传感器驱动器集"
 
 #: ../../cyber/doxy-docs/source/index.rst:24
 msgid "Simplify deployment"
-msgstr ""
+msgstr "简化部署"
 
 #: ../../cyber/doxy-docs/source/index.rst:26
 msgid "Efficient and adaptive message communication"
-msgstr ""
+msgstr "高效和适应性强的消息通信"
 
 #: ../../cyber/doxy-docs/source/index.rst:27
 msgid "Configurable user level scheduler with resource awareness"
-msgstr ""
+msgstr "具有资源意识的可配置的用户级调度器"
 
 #: ../../cyber/doxy-docs/source/index.rst:28
 msgid "Portable with fewer dependencies"
-msgstr ""
+msgstr "更少的依赖性，可移植性强"
 
 #: ../../cyber/doxy-docs/source/index.rst:29
 msgid "Empower your own autonomous vehicles"
-msgstr ""
+msgstr "赋予你自己的自动驾驶车辆权力"
 
 #: ../../cyber/doxy-docs/source/index.rst:31
 msgid "The default open source runtime framework"
-msgstr ""
+msgstr "默认的开源运行时框架"
 
 #: ../../cyber/doxy-docs/source/index.rst:32
 msgid "Building blocks specifically designed for autonomous driving"
-msgstr ""
+msgstr "专门为自动驾驶设计的构件"
 
 #: ../../cyber/doxy-docs/source/index.rst:33
 msgid "Plug and play your own AD system"
-msgstr ""
+msgstr "即插即用你自己的 AD 系统"
 

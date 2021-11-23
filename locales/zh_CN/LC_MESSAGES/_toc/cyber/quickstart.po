@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo Auto \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 19:04+0800\n"
+"POT-Creation-Date: 2021-11-23 10:01+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../docs/cyber/README.md:2
-msgid ""
-"Please refer to the  [Apollo Cyber RT "
-"README](https://github.com/ApolloAuto/apollo/tree/master/cyber/README.md)"
-" under cyber directory."
+#: ../../_toc/cyber/quickstart.md:1
+msgid "快速入门"
 msgstr ""
 

@@ -35,13 +35,13 @@ extensions = [
     'breathe',
     "myst_parser",
     "sphinx_inline_tabs",
-    'sphinx.ext.autodoc', 
-    'sphinx.ext.doctest', 
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
     'sphinx.ext.todo',
-    'sphinx.ext.autosummary', 
+    'sphinx.ext.autosummary',
     'sphinx.ext.extlinks',
-    'sphinx.ext.intersphinx', 
-    'sphinx.ext.viewcode', 
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.viewcode',
     'sphinx.ext.inheritance_diagram'
 ]
 
@@ -56,7 +56,10 @@ language = 'zh_CN'
 
 # 相对于源目录的模式列表，在寻找源文件时，匹配的文件和目录会被忽略。
 # 这个模式也会影响 html_static_path 和 html_extra_path。
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+                    'cyber/doxy-docs/source/index.rst',
+                    'docs/cyber/**'
+                    ]
 
 # --  HTML 输出的选项  -------------------------------------------------
 
