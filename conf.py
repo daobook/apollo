@@ -21,7 +21,7 @@ copyright = '2021, xinetzone'
 author = 'xinetzone'
 
 # 完整版本，包括 alpha/beta/rc 标签
-release = 'alpha'
+release = '0.0.1'
 
 # -- 通用配置 ---------------------------------------------------
 
