@@ -7,7 +7,7 @@ README
 quickstart
 tutorials
 topics
-api
+api/index
 examples/common_component_example/README
 python/README
 ```

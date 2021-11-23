@@ -1,5 +1,3 @@
-
-
 C++ API
 ====================
 
@@ -8,4 +6,3 @@ Topological communication APIs is actually implemented in ``node`` and ``reader/
 .. toctree::
 
    cppapi
-

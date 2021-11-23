@@ -4,3 +4,4 @@ linkify-it-py
 sphinx-inline-tabs
 sphinx-book-theme
 breathe
+google

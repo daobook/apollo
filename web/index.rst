@@ -10,6 +10,7 @@ Welcome to Apollo 文档's documentation!
    :maxdepth: 2
    
    cyber/index
+   docs/howto/how_to_build_and_run_python_app
 
 Indices and tables
 ==================

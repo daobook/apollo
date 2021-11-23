@@ -65,6 +65,5 @@ bazel run //path/to:my_demo
 
 ## More Examples ...
 
-Learn more Cyber RT Python examples under the [examples](cyber_py3/examples/) and
-[tests](cyber_py3/test/) directory.
+Learn more Cyber RT Python examples under the {apollo-origin}`examples <cyber/python/cyber_py3/examples>` and {apollo-origin}`tests <cyber/python/cyber_py3/test/>` directory.
 
