@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:1
+msgid "Apollo 6.0 快速入门指南"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:3
+msgid ""
+"以下指南是用于在车辆上启动Apollo软硬件套件的用户手册， 整体内容与Apollo 5.5类似。本快速入门指南重点介绍新功能，对于 Apollo"
+" 的一般概念，请参阅[Apollo 5.5 快速入门指南](apollo_5_5_quick_start.md)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:5
+msgid "内容"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:7
+msgid "[Apollo 6.0 快速入门指南](#apollo-60-快速入门指南)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:8
+msgid "[内容](#内容)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:9
+msgid "[紧急车辆音频检测](#紧急车辆音频检测)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:10
+msgid "[硬件和软件安装](#硬件和软件安装)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:11
+msgid "[Dreamview的使用](#dreamview的使用)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:12
+msgid "[上车测试](#上车测试)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:14
+msgid "紧急车辆音频检测"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:16
+msgid "Apollo目前通过音频设备集成了紧急车辆检测功能。在自动驾驶车辆上安装麦克风采集周围的音频信号，并对记录的音频进行分析和处理，以检测周围的紧急车辆。模块详细信息在[这里](../../modules/audio)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:18
+msgid "Apollo集成了新的深度学习模型，包括使用PointPillars进行障碍物检测、使用语义地图进行行人预测以及基于学习的轨迹规划。请在对应的模块中寻找详细的信息。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:20
+msgid "硬件和软件安装"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:22
+msgid ""
+"Apollo 6.0的硬件设置与Apollo 3.5相同，请参阅[Apollo 3.5 "
+"硬件与系统安装指南](apollo_3_5_hardware_system_installation_guide.md)获取安装硬件组件的步骤，参阅[Apollo软件安装指南](apollo_software_installation_guide_cn.md)获取软件安装步骤。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:24
+msgid "Dreamview的使用"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:26
+msgid "关于Dreamview图标的问题，请参考[Dreamview用法介绍](../specs/dreamview_usage_table_cn.md)。关于Dreamland和场景编辑器的问题，请参考[Dreamland简介](../specs/Dreamland_introduction.md)。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:28
+msgid "上车测试"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:30
+msgid "将一个外部磁盘驱动器接入主机任一可用USB接口。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:32
+msgid "首先启动车辆，然后启动主机。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:34
+msgid "启动Dev版本的Docker容器。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:36
+msgid "启动Dreamview。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:38
+msgid "打开浏览器（譬如Chrome）然后在地址栏输入 <http://localhost:8888>"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:40
+msgid "![launch_dreamview](images/dreamview_2_5.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:40
+msgid "launch_dreamview"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:42
+msgid "选择模式、车辆和地图。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:44
+msgid "![select_mode](images/dreamview_2_5_setup_profile.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:44
+msgid "select_mode"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:46
+msgid ""
+"附注\\: "
+"在进行任何测试前会要求使用者设置参数。点击下拉列表并选择想要使用的导航模式，高清地图和车辆。该列表数据在[HMI配置文件目录](../../modules/dreamview/conf/hmi_modes)中定义。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:48
+msgid "附注\\: 允许使用者在HMI的右侧面板中更改参数，但是需要点击右上角的`Reset All`按钮重启该系统以使参数生效。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:50
+msgid "启动模块。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:52
+msgid "点击`Setup`按钮"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:54
+msgid "![start_module](images/dreamview_2_5_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:54
+msgid "start_module"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:56
+msgid ""
+"进入**Module Controller** "
+"面板，检查是否所有的模块和硬件已经准备好（在离线环境中，某些硬件模块如GPS、CANBus、Velodyne、Camera和Radar不会显示）（为了获得良好的GPS信号，可能需要车辆运行一段距离。）"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:58
+msgid "![module_controller](images/dreamview_2_5_module_controller.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:58
+msgid "module_controller"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:60
+msgid "在`Default Routing`中选择期望的路线。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:62
+msgid "在`Tasks`面板中，点击`Start Auto`。（将要进入自动驾驶模式时需要十分小心谨慎）。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:64
+msgid "![start_auto](images/dreamview_2_5_start_auto.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:64
+msgid "start_auto"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:66
+msgid "自动驾驶测试结束后，在`Tasks`面板中点击`Reset All`，关闭所有窗口，关闭主机。"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_6_0_quick_start_cn.md:68
+msgid "移除磁盘驱动器。"
+msgstr ""
+

@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:1
+msgid "基于双目感知的封闭园区自动驾驶搭建--设备集成"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:3
+msgid "前提条件"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:5
+msgid "完成了[循迹搭建--车辆循迹演示](../Waypoint_Following/start_waypoint_following_cn.md)"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:7
+msgid "主要步骤"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:9
+msgid "摄像头安装配置与数据验证。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:11
+msgid "摄像头型号说明"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:13
+msgid "摄像头型号：smartereye S1双目相机。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:15
+msgid "smartereye S1双目相机采用标准RJ45的网络接口，由北京中科慧眼科技有限公司制造。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:17
+msgid "更多详细参数可参考中科慧眼官网：[Smartereye S1](http://www.smartereye.com/product/S1)。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:19
+msgid "摄像头安装配置与数据验证"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:21
+msgid "牢固安装在小车结构架的竖杆上，水平安装，镜头保持清洁，避免影响图像采集。安装后的效果如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:23
+msgid "![camera_integration_installation](images/camera_integration_installation.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:23
+msgid "camera_integration_installation"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:25
+msgid "摄像头与工控机连接"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:27
+msgid "用车上的电源给相机供电。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:29
+msgid "用网线将设备连接在IPC的网络接口上。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:31
+msgid ""
+"向双目相机的供应厂询问设备的IP地址，例如设备的IP地址为192.168.1.251；在IPC的终端中ping "
+"192.168.1.251，能ping通则表示相机和IPC之间的网络是通的。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:33
+msgid ""
+"参考双目相机的官网文档对相机做一下相关的配置：[Smartereye "
+"S1](http://www.smartereye.com/product/S1)。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:35
+msgid "摄像头的启动"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:37
+msgid ""
+"运行`git clone https://github.com/ApolloAuto/apollo-contrib.git`命令将apollo-"
+"contrib仓库克隆至本地，然后将apollo-contrib文件夹下面的smartereye文件夹整体拷贝到/apollo目录下。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:39
+msgid "启动docker环境，在docker环境中输入以下命令："
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:45
+msgid "将smartereye的共享库拷贝至apollo的对应的位置。删除`/apollo/smartereye`文件夹。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:47
+msgid ""
+"将`/apollo/modules/dreamview/conf/hmi_modes/mkz_standard_debug.pb.txt`文件中的第四行的内容`dag_files:"
+" \"/apollo/modules/drivers/camera/dag/camera.dag\"`修改为`dag_files: "
+"\"/apollo/modules/drivers/smartereye/dag/smartereye.dag\"`并保存；将`/apollo/modules/common/data/global_flagfile.txt`文件中的末尾添加下面一行：`--image_short_topic=/apollo/sensor/smartereye/image/compressed`并保存。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:49
+msgid "确保apollo被正确编译。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:51
+msgid ""
+"启动DreamView： `bash "
+"/apollo/scripts/bootstrap.sh`，并在浏览器中输入DreamView地址：`http://localhost:8888/`"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:53
+msgid "在`Module Controller`标签栏下，打开`Camera`开关，开关位置如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:55
+msgid "![camera_integration_dreamview1](images/camera_integration_dreamview1.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:55
+msgid "camera_integration_dreamview1"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:57
+msgid ""
+"在`Tasks`标签栏下依次打开`SimControl`和`Camera Sensor`开关，`Camera "
+"Sensor`打开后，务必关闭`SimControl`。选择`Mkz Standard "
+"Debug`模式，开关在dreamview界面的位置如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:59
+msgid "![camera_integration_dreamview2](images/camera_integration_dreamview2.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:59
+msgid "camera_integration_dreamview2"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:61
+msgid "如果一切正常，则会在`DreamView`右下角出现摄像头采集的图像。"
+msgstr ""
+
+#: ../../docs/D-kit/Third_Party_Perception/sensor_integration_cn.md:63
+msgid "在正确完成上述步骤后，在`docker`环境内使用`cyber_monitor`工具，查看`/apollo/sensor/smartereye/image`、`/apollo/sensor/smartereye/image/compressed`是否有数据输出，且帧率是否稳定在15帧左右。"
+msgstr ""
+

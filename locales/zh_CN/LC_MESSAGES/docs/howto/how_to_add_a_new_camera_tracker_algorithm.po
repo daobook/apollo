@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:1
+msgid "How to add a new camera tracker algorithm"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:3
+msgid ""
+"The processing flow of camera perception module is shown below:     "
+"![camera overview](images/Camera_overview.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:3
+msgid "camera overview"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:6
+msgid ""
+"The 2 tracker algorithms introduced by this document were "
+"traffic_light_tracker and obstacle_tracker (lane_tracker is reserved but "
+"not used so far). These 2 trackers are located in their own component. "
+"The architecture of each component is showed below:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:8
+msgid ""
+"Traffic Light:     ![traffic light "
+"component](images/camera_traffic_light_detection.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:8
+msgid "traffic light component"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:11
+msgid "Obstacle:     ![obstacle component](images/camera_obstacle_detection.png)"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:11
+msgid "obstacle component"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:15
+msgid ""
+"As we can see clearly from above structure, each component has its own "
+"abstract class member `base_XXX_tracker`. Different derived tracker "
+"algorithms inherit `base_XXX_tracker` and implement their main flows to "
+"complete the deployment. Next, we will take `base_obstacle_tracker` as an"
+" example to introduce how to add a new camera tracker algorithm. You "
+"could also refer to this document if you want to add traffic light "
+"tracker."
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:18
+msgid ""
+"Apollo has provided one camera tracker algorithm in Obstacle Detection --"
+" OMTObstacleTracker. It could be easily changed or replaced by other "
+"algorithms. The input of algorithm should be objective obstacle data "
+"processed by previous detector, while the output should be matched and "
+"tracked objective obstacle data. This document will introduce how to add "
+"a new camera tracker algorithm, the basic task sequence is listed below："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:20
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:27
+msgid "Define a class that inherits `base_obstacle_tracker`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:21
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:109
+msgid "Implement the class `NewObstacleTracker`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:22
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:171
+msgid "Add param proto file for `NewObstacleTracker`"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:23
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:190
+msgid "Update config file to put your tracker into effect"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:25
+msgid "The steps are elaborated below for better understanding:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:29
+msgid ""
+"All the camera tracker algorithms shall inherit "
+"`base_obstacle_tracker`，which defines a set of interfaces. Here is an "
+"example of the tracker implementation:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:64
+msgid "The function signature of `base_obstacle_tracker` is pre-defined："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:111
+msgid ""
+"To ensure the new tracker could function properly, `NewObstacleTracker` "
+"should at least override the interface Init(), Track(), Name() defined in"
+" `base_obstacle_tracker` Init() is resposible for config loading, class "
+"member initialization, etc. And Track() will implement the basic logic of"
+" algorithm. A concrete `NewObstacleTracker.cc` example is shown："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:173
+msgid "Follow the steps below to add parameters for your new camera tracker:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:175
+msgid ""
+"Create the `proto` file for parameters according to the requirement of "
+"your tracker. If the parameters are compatible, you can use or just "
+"modify current `proto` directly. As an example, you can refer to the "
+"`proto` file from `omt Tracker` at "
+"`modules/perception/camera/lib/obstacle/tracker/omt/proto/omt.proto`. "
+"Remember to include the following content once you finished your "
+"definition:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:184
+msgid ""
+"Refer to `omt_obstacle_tracker` at "
+"`modules/perception/production/data/perception/camera/models/` and create"
+" your `new_obstacle_tracker` folder and `*.pt` file："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:192
+msgid ""
+"To use your new camera tracker algorithm in Apollo， you have to config "
+"the following files according to your demand:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:194
+msgid ""
+"Refer to the following content to update "
+"`modules/perception/production/conf/perception/camera/obstacle.pt`,put "
+"your `*.pt` file created in previous step to the load path:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:206
+msgid ""
+"If you want to modify the structure of `tracker_param` shown in step one "
+"or just add a new `_param`, your can do that at "
+"`modules/perception/camera/app/proto/perception.proto`:"
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:219
+msgid ""
+"If you create a new `*.pt` instead of using `obstacle.pt` given in step "
+"one， you also have to modify "
+"`modules/perception/production/conf/perception/camera/fusion_camera_detection_component.pb.txt`."
+" The corresponding `proto` file is "
+"`modules/perception/onboard/proto/fusion_camera_detection_component.proto`："
+msgstr ""
+
+#: ../../docs/howto/how_to_add_a_new_camera_tracker_algorithm.md:226
+msgid ""
+"Once you finished the above modifications, you new camera tracker should "
+"take effect in Apollo."
+msgstr ""
+

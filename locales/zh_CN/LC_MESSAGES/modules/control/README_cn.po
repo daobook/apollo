@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/control/README_cn.md:1
+msgid "控制"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:3
+msgid "介绍"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:5
+msgid "本模块基于规划和当前的汽车状态，使用不同的控制算法来生成舒适的驾驶体验。控制模块可以在正常模式和导航模式下工作。"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:7
+msgid "输入"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:9
+msgid "规划轨迹"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:10
+msgid "车辆状态"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:11
+msgid "定位"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:12
+msgid "Dreamview自动模式更改请求"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:13
+msgid "输出"
+msgstr ""
+
+#: ../../modules/control/README_cn.md:15
+msgid "给底盘的控制指令（转向，节流，刹车）。"
+msgstr ""
+

@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/planning/README.md:1
+msgid "Planning"
+msgstr ""
+
+#: ../../modules/planning/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../modules/planning/README.md:5
+msgid ""
+"Compared with previous versions, Apollo 7.0 adds a  new dead end "
+"scenario, adds the \"three-point turn\",  increases vehicle driving in "
+"and out ability, and expands the operation boundary of the urban road "
+"network. The \"three-point turn\" function is based on the open space "
+"planner framework and includes the following parts: scene conversion of "
+"dead ends, construction of open space ROI, and \"three-point turn\" "
+"trajectory planning."
+msgstr ""
+
+#: ../../modules/planning/README.md:7
+msgid "Input"
+msgstr ""
+
+#: ../../modules/planning/README.md:8
+msgid ""
+"Localization, Perception, Prediction, HD Map (in modules/map/data), "
+"routing, task_manager."
+msgstr ""
+
+#: ../../modules/planning/README.md:10
+msgid "Output"
+msgstr ""
+
+#: ../../modules/planning/README.md:11
+msgid "A collision-free and comfortable trajectory for control module to execute."
+msgstr ""
+
+#: ../../modules/planning/README.md:13
+msgid "Planning Scenario Architecture"
+msgstr ""
+
+#: ../../modules/planning/README.md:14
+msgid "![](images/DeadEndScenario.png)"
+msgstr ""
+
+#: ../../modules/planning/README.md:16
+msgid "Scenario Shows"
+msgstr ""
+
+#: ../../modules/planning/README.md:17
+msgid ""
+"![](images/EnterDeadEnd.png) ![](images/TuringAround1.png) "
+"![](images/TuringAround2.png) ![](images/OutDeadEnd.png)"
+msgstr ""
+

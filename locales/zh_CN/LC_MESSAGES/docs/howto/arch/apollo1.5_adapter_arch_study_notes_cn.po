@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:1
+msgid "adapter设计架构代码分析"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:2
+msgid "代码分析："
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:3
+msgid "主要文件：adapter_manager.cc, adapter_manager.h。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:5
+msgid "类AdapterManager分析："
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:6
+msgid ""
+"Init(AdapterManagerConfig "
+"&configs)函数：根据传入的AdapterManagerConfig类，配置ros节点，包括创建Nodehandle，创建订阅或者发布话题。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:7
+msgid ""
+"Init(const std::string "
+"&adapter_config_filename)函数：根据传入的配置文件路径，通过调用Init(AdapterManagerConfig "
+"&configs)函数，配置ros节点。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:8
+msgid "Initialized()函数：返回此ros nodehandle是否已经初始化，上两个函数中有设置。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:9
+msgid "CreateTimer()函数创建一个周期timer，以一个类成员函数作为超时函数，在RTK localization函数中有使用到。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:10
+msgid "node_handle_指针，指向node handle指针，后续话题的发布都是基于此。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:11
+msgid "Enable##name()函数：创建nodehandle和topic，也就是init调用的函数。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:12
+msgid "Add##name##Callback函数：添加回调函数。name换成相应的模块名字。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:13
+msgid "observers_变量和Observe()函数：//TODO"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:14
+msgid "类AdapterManager使用："
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:15
+msgid "adapter可用于创建node handle及其topic，可通过配置文件配置。"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:16
+msgid "使用时只需要创建相应的配置文件（可参考/apollo/modules/perception/conf/adapter.conf，及相应的BUILD文件），"
+msgstr ""
+
+#: ../../docs/howto/arch/apollo1.5_adapter_arch_study_notes_cn.md:17
+msgid "调用接口（可参考/apollo/modules/perception/perception.cc中的Init()函数）。"
+msgstr ""
+

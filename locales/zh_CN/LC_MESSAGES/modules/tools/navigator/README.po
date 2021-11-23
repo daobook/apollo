@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/tools/navigator/README.md:3
+msgid "Steps for"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:5
+msgid "Generating navigation data from bag and"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:6
+msgid "Manually sending the data to /apollo/navigation topic"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:8
+msgid "Step 1: In dev docker, extract path data from bags"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:15
+msgid "A path file will be generated in"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:21
+msgid "With format of"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:29
+msgid "Step2: (Optional) Verify the extracted path is correct"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:31
+msgid ""
+"dev_docker:/apollo/modules/tools/navigator$python viewer_raw.py "
+"path_[bag_name].bag.txt"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:33
+msgid "Step3: Smooth the path"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:39
+msgid ""
+"200 is the parameter for smooth length. If the smooth is failed, try to "
+"change this parameter to make the smooth pass. The preferred number is "
+"between 150 and 200."
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:41
+msgid ""
+"A smoothed data file, path_[first_bag_name].bag.txt.smoothed, is "
+"generated under folder"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:47
+msgid "Step4: (Optional) Verify the smoothed data"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:55
+msgid "Step5: Send /apollo/navigation topic"
+msgstr ""
+
+#: ../../modules/tools/navigator/README.md:57
+msgid "Run follow command to send /apollo/navigation  data"
+msgstr ""
+

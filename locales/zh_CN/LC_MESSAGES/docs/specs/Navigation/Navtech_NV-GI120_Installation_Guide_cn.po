@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:1
+msgid "Navtech_NV-GI120安装指南"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:12
+msgid "![navtech_pic](images/navtech_pic.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:12
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:18
+msgid "navtech_pic"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:14
+msgid "NV-GI120将GNSS接收器和MEMS IMU设备集成进一个小型的紧凑装置中，以提供高精度的定位结果。它支持双重天线配置和多频段频率的接收。"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:16
+msgid "安装"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:18
+msgid "![navtech_pic](images/navtech_cables.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:20
+msgid "可以通过SMA连接方式将天线和该设备进行连接"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:22
+msgid "一个数据线捆和该设备一起提供。该数据线捆可以分出多个连接器以处理通讯和配置工作"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:24
+msgid "配置工作和对Novatel设备的操作相同。请联系设备供应商获取详细的配置指令"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:26
+msgid "数据线上的标签和相对应的解释/翻译在下表中展示："
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Labels"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Explanations"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "PPS"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Pulse per second（每秒脉冲数）"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "导航"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "navigation output （replaceable by the ethernet)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "板卡"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "-------"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "里程"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Odometer connection"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "调试"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "configuration"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "网口"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "ethernet"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Two naked wire"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Power （red and blue)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "扩展"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md
+msgid "Extension"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:40
+msgid "免责声明"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Navtech_NV-GI120_Installation_Guide_cn.md:42
+msgid "This device is `Apollo Hardware Development Platform Supported`"
+msgstr ""
+

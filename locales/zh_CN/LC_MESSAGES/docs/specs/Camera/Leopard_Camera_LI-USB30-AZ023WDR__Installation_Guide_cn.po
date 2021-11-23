@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:1
+msgid "LI-USB30-AZ023WDRB指南"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:3
+msgid ""
+"摄像头LI-USB30-AR023ZWDR采用标准USB 3.0。由Leopard Imaging Inc.制造。该系列产品基于AZ023Z "
+"1080P传感器和安森美半导体的AP0202 ISP。它支持外部触发和软件触发。"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:5
+msgid "我们建议使用两个带 **6mm**镜头的摄像头和一个带 **25mm**镜头的摄像头，以达到交通灯检测应用所需的性能。"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:7
+msgid "![camera_image](images/LI-USB30-AZ023ZWDRB.png)"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:7
+msgid "camera_image"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:9
+msgid ""
+"该摄像头可通过USB 3.0电缆连接到IPC，用于电源和数据通信。外部触发信号可通过HR25-7TP-"
+"8P（72）连接器发送到摄像头。固件也需要更改以启用外部触发。有关外部触发器的更多详细信息，请联系Leopard Imaging "
+"Inc.获取更多说明。"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:11
+msgid "参考资料"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:13
+msgid ""
+"您可以在其[官网](https://leopardimaging.com/product/li-"
+"usb30-ar023zwdrb/)上找到有关Leopard Imaging Inc.摄像头的更多信息"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:15
+msgid "[数据表](https://www.leopardimaging.com/LI-USB30-AR023ZWDRB_datasheet.pdf)"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:16
+msgid "[触发电缆](https://leopardimaging.com/product/li-usb3-trig_cable/)"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:18
+msgid "免责声明"
+msgstr ""
+
+#: ../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide_cn.md:19
+msgid "该设备由`Apollo平台提供支持`"
+msgstr ""
+

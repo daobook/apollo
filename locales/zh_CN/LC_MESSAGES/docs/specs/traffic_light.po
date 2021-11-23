@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/traffic_light.md:1
+msgid "Traffic Light Perception"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:2
+msgid ""
+"This document provides the details about how traffic light perception "
+"functions in Apollo 2.0."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:5
+msgid ""
+"The Traffic Light Perception Module is designed to provide accurate and "
+"comprehensive traffic light status using cameras."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:7
+msgid "Typically, the traffic light has three states:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:9 ../../docs/specs/traffic_light.md:17
+msgid "Red"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:10 ../../docs/specs/traffic_light.md:18
+msgid "Yellow"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:11 ../../docs/specs/traffic_light.md:19
+msgid "Green"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:13
+msgid ""
+"However, if the traffic light is not working, it might display the color "
+"black or show a flashing red or yellow light. Sometimes the traffic light"
+" cannot be found in the camera's field of vision and the module fails to "
+"recognize its status."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:15
+msgid ""
+"To account for all situations, the Traffic Light Perception Module "
+"provides output for five states:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:20
+msgid "Black"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:21
+msgid "Unknown"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:23
+msgid ""
+"The module's HD-Map queries repeatedly to know whether there are lights "
+"present in front of the vehicle. The traffic light is represented by the "
+"four points on its boundary, which can be obtained by querying the HD-"
+"Map, given the car's location. The traffic light is projected from world "
+"coordinates to image coordinates if there is a light in front of the "
+"vehicle."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:25
+msgid ""
+"Apollo has determined that using a single camera, which has a constant "
+"field of vision, cannot see traffic lights everywhere. This limitation is"
+" due to the following factors:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:27
+msgid "The perception range should be above 100 meters"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:28
+msgid "The height of the traffic lights or the width of crossing varies widely"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:30
+msgid "Consequently, Apollo 2.0 uses two cameras to enlarge its perception range:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:32
+msgid ""
+"A **telephoto** **camera**, whose focus length is 25 mm, is installed to "
+"observe forward, distant traffic lights. Traffic lights that are captured"
+" in a telephoto camera are very large and easy to detect. However, the "
+"field of vision of a telephoto camera is quite limited. The lights are "
+"often outside of the image if the lane is not straight enough, or if the "
+"car is in very close proximity to the light."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:35
+msgid ""
+"A **wide-angle camera**, whose focus length is 6 mm, is equipped to "
+"provide a supplementary field of vision."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:37
+msgid ""
+"The module decides which camera to use adaptively based on the light "
+"projection. Although there are only two cameras on the Apollo car, the "
+"algorithm can handle multiple cameras."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:39
+msgid ""
+"The following photos show the detection of traffic lights using a "
+"telephoto camera (for the first photo) and a wide-angle camera (for the "
+"second photo)."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:41
+msgid "![telephoto camera](images/traffic_light/long.jpg)"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:41
+msgid "telephoto camera"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:44
+msgid "![wide angle camera](images/traffic_light/short.jpg)"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:44
+msgid "wide angle camera"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:46
+msgid "Pipeline"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:48
+msgid "The Pipeline has two main parts and is described in following sections:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:49 ../../docs/specs/traffic_light.md:58
+msgid "Pre-process"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:50
+msgid "Traffic light projection"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:51
+msgid "Camera selection"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:52
+msgid "Image and cached lights sync"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:53 ../../docs/specs/traffic_light.md:120
+msgid "Process"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:54
+msgid "Rectify — Provide the accurate traffic light bounding boxes"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:55
+msgid "Recognize — Provide the color of each bounding box"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:56
+msgid "Revise — Correct the color based on the time sequence"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:59
+msgid ""
+"There is no need to detect lights in every frame of an image. The status "
+"of a traffic light changes in low frequency and the computing resources "
+"are limited. Normally, images from different cameras would arrive almost "
+"simultaneously, and only one is fed to the Process part of the Pipeline. "
+"Therefore, the selection and the matching of images are necessary."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:61 ../../docs/specs/traffic_light.md:127
+msgid "Input/Output"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:63
+msgid ""
+"This section describes the input and the output of the Pre-process "
+"module. The input is obtained by subscribing to topic names from Apollo "
+"or directly reading them from locally stored files, and the output is fed"
+" to the successive Process module."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:65 ../../docs/specs/traffic_light.md:130
+msgid "Input"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:67
+msgid "Images from different cameras, acquired by subscribing to the topic name:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:69
+msgid "`/apollo/sensor/camera/traffic/image_long`"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:70
+msgid "`/apollo/sensor/camera/traffic/image_short`"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:72
+msgid "Localization, acquired by querying the topic:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:73
+msgid "`/tf`"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:75
+msgid "HD Map"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:77
+msgid "Calibration results"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:79 ../../docs/specs/traffic_light.md:135
+msgid "Output"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:81
+msgid "Image from the selected camera"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:82
+msgid ""
+"Traffic light bounding box projected from world coordinates to image "
+"coordinates"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:84
+msgid "Camera Selection"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:85
+msgid ""
+"The traffic light is represented by a unique ID and four points on its "
+"boundary, each of which is described as a 3D point in the world "
+"coordinate system."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:87
+msgid ""
+"The following example shows a typical entry for traffic light `signal "
+"info`. The four boundary points can be obtained by querying the HD Map, "
+"given the car's location."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:102
+msgid ""
+"The boundary points in the 3D world coordinates are then projected to the"
+" 2D image coordinates of each camera. For one traffic light, the bounding"
+" box described by the four projected points in the telephoto camera image"
+" has a larger area. It is better for detection than that in the wide-"
+"range image. Consequently,  the image from the camera with the longest "
+"focal length that can see all the lights will be selected as the output "
+"image. The traffic light bounding box projected on this image will be the"
+" output bounding box."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:104
+msgid "The selected camera ID with timestamp is cached in queue, as shown below:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:115
+msgid ""
+"Thus far, all the information that we need includes the localization, the"
+" calibration results, and the HD Map. The selection can be performed at "
+"any time as the projection is independent of the image content. The task "
+"of performing the selection when images arrive is just for simplicity. "
+"Moreover, image selection does not need to be performed upon the arrival "
+"of every image, and a time interval for the selection is set."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:117
+msgid "Image Sync"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:118
+msgid ""
+"Images arrive with a timestamp and a camera ID. The pairing of a "
+"timestamp and a camera ID is used to find the appropriate cached "
+"information. If the image can find a cached record with same camera ID "
+"and a small difference between timestamps, the image can be published to "
+"the Process module. All inappropriate images are abandoned."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:121
+msgid ""
+"The Process module is divided into three steps, with each step focusing "
+"on one task:"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:123
+msgid "Rectifier — Detects a traffic light bounding box in a ROI."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:124
+msgid "Recognizer— Classifies the bounding box's color."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:125
+msgid "Reviser — Correct color using sequential information."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:128
+msgid ""
+"This section describes the data input and output of the Process. The "
+"input is obtained from the Pre-process module and the output is published"
+" as a traffic light topic."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:132
+msgid "Image from a selected camera"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:133
+msgid "A set of bounding boxes"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:137
+msgid "A set of bounding boxes with color labels."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:139
+msgid "Rectifier"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:140
+msgid ""
+"The projected position, which is affected by the calibration, "
+"localization, and the HD-Map label, is ***not completely reliable***. A "
+"larger region of interest (ROI), calculated using the projected light's "
+"position, is used to find the accurate boundingbox for the traffic light."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:142
+msgid ""
+"In the photo below, the blue rectangle indicates the projected light "
+"bounding box, which has a large offset to the actual light. The big, "
+"yellow rectangle is the ROI."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:144
+msgid "![example](images/traffic_light/example.jpg)"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:144
+msgid "example"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:146
+msgid ""
+"The traffic light detection is implemented as a regular convolutional "
+"neural network (CNN) detection task. It receives an image with an ROI as "
+"input, and serial bounding boxes as output. There might be more lights in"
+" the ROI than those in input."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:148
+msgid ""
+"Apollo needs to select the proper lights according to the detection "
+"score, and the input lights' position and shape. If the CNN network "
+"cannot find any lights in the ROI, the status from the input lights is "
+"marked as unknown and the two remaining steps (Recognizer and Reviser) "
+"are skipped."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:150
+msgid "Recognizer"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:151
+msgid ""
+"The traffic light recognition is implemented as a typical CNN "
+"classification task. The network receives an image with a ROI and a list "
+"of bounding boxes as input. The output of network is a `$4\\times n$ "
+"vector`, representing four probabilities for each box to be black, red, "
+"yellow, and green."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:153
+msgid ""
+"The class with maximum probability will be regarded as the light's "
+"status, if and only if the probability is large enough. Otherwise, the "
+"light's status will be set to black, which means that the status is not "
+"certain."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:155
+msgid "Reviser"
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:156
+msgid ""
+"Because a traffic light can be flashing or shaded, and the Recognizer is "
+"***not*** perfect, the current status may fail to represent the real "
+"status. A Reviser that could correct the status is necessary."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:158
+msgid ""
+"If the Reviser receives a definitive status such as red or green, the "
+"Reviser saves and outputs the status directly. If the received status is "
+"black or unknown, the Reviser looks up the saved map. When the status of "
+"this light is certain for a period of time, the Reviser outputs this "
+"saved status. Otherwise, the status of black or unknown is sent as "
+"output."
+msgstr ""
+
+#: ../../docs/specs/traffic_light.md:160
+msgid ""
+"Because of the time sequence, yellow only exists ***after*** green and "
+"***before*** red. Any yellow ***after red*** is reset to red for the sake"
+" of safety until green displays."
+msgstr ""
+

@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:1
+msgid "Multiple-LiDAR GNSS Calibration Guide"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:7
+msgid ""
+"Welcome to use the Multiple-LiDAR GNSS calibration tool. This guide will "
+"show you the steps to successfully calibrate multiple LiDARs."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:9
+msgid "Contents"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:11
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:16
+msgid "Overview"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:12
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:19
+msgid "Preparation"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:13
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:25
+msgid "Using the Calibration Tool"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:14
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:121
+msgid "Results and Validation"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:17
+msgid ""
+"In many autonomous driving tasks such as HDMap production, the scans from"
+" multiple LiDARs need to be registered in a unified coordinate system. In"
+" this case, the extrinsic parameters of multiple LiDARs need to be "
+"carefully calibrated. This Multiple-LiDAR GNSS calibration tool is "
+"developed to solve this problem."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:21
+msgid ""
+"Download the [calibration "
+"tool](https://github.com/ApolloAuto/apollo/releases/download/v2.5.0/multi_lidar_gnss_calibrator_and_doc.zip),"
+" and extract files to `$APOLLO_HOME/modules/calibration`. APOLLO_HOME is "
+"the root directory of apollo repository."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:22
+msgid ""
+"Choose a calibration place according to the calibration guide provided in"
+" Apollo 1.5."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:23
+msgid ""
+"Make sure the GNSS is in a good status. To verify this, use `rostopic "
+"echo /apollo/sensor/gnss/best_pose` and check the number after keywords "
+"`latitude_std_dev`, `longitude_std_dev` and `height_std_dev`. The smaller"
+" the deviation, the better the calibration quality. *** We strongly "
+"recommend calibrating the sensors when deviations are smaller than "
+"0.02.***"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:27
+msgid "Record Calibration Data"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:29
+msgid ""
+"When the LiDARs and GNSS are ready, use "
+"`/apollo/modules/calibration/multi_lidar_gnss/record.sh` to record "
+"calibration data. Note that, this script is only for recording  velodyne "
+"HDL64 and VLP16. For other purpose, some modification of this script is "
+"needed or just use rosbag record to do the same thing. Usually, 2 minites"
+" length of data is sufficient. After data capture, run "
+"`/apollo/modules/calibration/multi_lidar_gnss/calibrate.sh` to calibrate "
+"sensors. The script is composed of the following two steps."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:31
+msgid "Export Data"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:33
+msgid ""
+"Once the calibration bag is recorded, use "
+"`/apollo/modules/calibration/exporter/export_msgs --config "
+"/apollo/modules/calibration/exporter/conf/export_config.yaml` to get "
+"sensor data. The only input of the exporter is a YAML configuration file "
+"as follow."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:46
+msgid ""
+"Other topics of PointCloud2 type also can be exported, if new topics are "
+"added to the file in the rule as follow."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:51
+msgid "Till now, we only support `ApolloOdometry` and `PointCloud2`."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:53
+msgid "Run the Calibration Tool"
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:54
+msgid ""
+"If all sensor data are exported, run "
+"`/apollo/modules/calibration/lidar_gnss_calibrator/multi_lidar_gnss_calibrator"
+" --config "
+"/apollo/modules/calibration/lidar_gnss_calibrator/conf/multi_lidar_gnss_calibrator_config.yaml`"
+" will get the results. The input of the tool is a YAML configuration file"
+" as follow."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:108
+msgid ""
+"The `data` section tells the tool where to get point clouds and odometry "
+"file, and also where to save the results. Note that, the keywords in "
+"`lidar` node will be recognized as frame id for the LiDARs."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:110
+msgid ""
+"The `calibration` section provides initial guess of the extrinsics. "
+"***All extrinsics are from LiDAR to GNSS***, which means this "
+"transformation maps the coordinates of a point defined in the LiDAR "
+"coordinate system to the coordinates of this point defined in the GNSS "
+"coordinate system. The initial guess requires the rotation angle error "
+"less than 5 degrees, and the translation error less than 0.1 meter."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:112
+msgid ""
+"The `steps` section specifies the calibration procedure. Each step is "
+"defined as follow and their meanings are in comments."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:123
+msgid "The calibration tool saves the results to `result` path as follow."
+msgstr ""
+
+#: ../../docs/quickstart/multiple_lidar_gnss_calibration_guide.md:134
+msgid ""
+"The two YAML files are extrinsics. To validate the results, use "
+"`pcl_viewer *_result.pcd` to check the registration quality. If the "
+"sensors are well calibrated, a large amount of details can be identified "
+"from the point cloud. For more details, please refer to the calibration "
+"guide in Apollo 1.5."
+msgstr ""
+

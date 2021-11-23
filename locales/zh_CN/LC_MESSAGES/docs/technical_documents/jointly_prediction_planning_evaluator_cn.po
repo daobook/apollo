@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:1
+msgid "预测规划交互评估器"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:3
+msgid "简介"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:5
+msgid ""
+"预测模块主要由四个子模块组成，分别是： Container（信息容器）, Scenario（场景选择器）, Evaluator（评估器） and "
+"Predictor（预测器）。"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:7
+msgid "评估器用于预测障碍物的速度和路径信息，通过给出路径置信度或短预测时域的轨迹信息，供后续的预测器进一步处理。评估器使用的模型文件存放在prediction/data/路径下。"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:9
+msgid "预测规划交互评估器是针对交互障碍物设计的评估器，主要解决交互场景下（会车，狭窄道路，路口）障碍物预测问题，使用Vectornet和LSTM，考虑主车轨迹信息进行障碍物轨迹预测。"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:11
+msgid "![Diagram](images/interaction_model_fig_1.png)"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:11
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:13
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:15
+msgid ""
+"可以参考 [jointly prediction planning "
+"evaluator代码](https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/evaluator/vehicle)."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:17
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:19
+msgid "Interaction filter"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:20
+msgid ""
+"Please refer [interaction "
+"filter代码](https://github.com/ApolloAuto/apollo/tree/master/modules/prediction/scenario/interaction_filter)."
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:21
+msgid "交互障碍物的获取是通过交互障碍物过滤器得到的，交互障碍物过滤器基于一定的规则筛选出与主车可能发生交互关系的障碍物。"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:23
+msgid "这些障碍物将被添加上交互标签，用于触发交互预测模型。"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:29
+msgid "Model inference"
+msgstr ""
+
+#: ../../docs/technical_documents/jointly_prediction_planning_evaluator_cn.md:30
+msgid "模型使用的编码器是Vectornet，因此在调用模型进行轨迹预测前，需要将障碍物和地图信息组合成编码器需求的格式。"
+msgstr ""
+

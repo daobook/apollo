@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:1
+msgid "概述"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:3
+msgid "本文件夹内主要提供了Apollo开发套件**车辆使用说明书**，介绍了底盘的整体结构，安全规范，电池使用、车辆上下电方法、遥控器使用方法，AEB功能等，以及车辆底盘故障排查方法等内容。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:4
+msgid "请您在收到开发套件后，第一时间阅读车辆的使用说明书，学习了解车辆的整体结构，车辆的操作使用方法等。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:6
+msgid "根据车辆型号，查询车辆使用手册"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:8
+msgid ""
+"如果您购买的是[**D-KIT "
+"Lite**（点击查看介绍）](https://apollo.auto/apollo_d_kit.html)开发套件，请您点击[D-KIT "
+"Lite车辆使用说明书（点击进入）](D-KIT_Lite/readme.md)，查询相应的车辆使用说明文档。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:10
+msgid ""
+"如果您购买的是[**D-KIT "
+"Standard**（点击查看介绍）](https://apollo.auto/apollo_d_kit.html)开发套件，请您点击[D-KIT"
+" Standard车辆使用说明书（点击进入）](D-KIT_Standard/Quick_Start_V01.md)，查询相应的车辆使用说明文档。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/readme.md:12
+msgid ""
+"如果您购买的是[**D-KIT "
+"Advanced**（点击查看介绍）](https://apollo.auto/apollo_d_kit.html)开发套件，请您点击[D-KIT"
+" Advanced车辆使用说明书（点击进入）](D-KIT_Advanced/Quick_Start_V01.md)，查询相应的车辆使用说明文档。"
+msgstr ""
+

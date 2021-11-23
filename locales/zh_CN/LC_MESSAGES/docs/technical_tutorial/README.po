@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_tutorial/README.md:1
+msgid "Technical Tutorials"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:3
+msgid ""
+"Refer these documents as a guide to all other relevant documents for the "
+"version of Apollo that you would like to build out."
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:5
+msgid "[Apollo 5.5](apollo_5.5_technical_tutorial.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:6
+msgid "[Apollo 5.0](apollo_5.0_technical_tutorial.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:7
+msgid "[Apollo 3.5](apollo_3.5_technical_tutorial.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:8
+msgid "[Apollo 3.0](apollo_3.0_technical_tutorial.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:9
+msgid "[Apollo 3.0 中文版](apollo_3.0_technical_tutorial_cn.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:10
+msgid "[Apollo 2.5](apollo_2.5_technical_tutorial.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:11
+msgid "[Navigation Mode in Apollo 2.5 中文版](navigation_mode_tutorial_cn.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:12
+msgid "[Apollo Best Coding Practice](apollo_best_coding_practice.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:13
+msgid "[Introduction to Apollo Release Build](intro_to_apollo_release_build.md)"
+msgstr ""
+
+#: ../../docs/technical_tutorial/README.md:14
+msgid ""
+"[Introduction to Apollo Release Build "
+"中文版](intro_to_apollo_release_build_cn.md)"
+msgstr ""
+

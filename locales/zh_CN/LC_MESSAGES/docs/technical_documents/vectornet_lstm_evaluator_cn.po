@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:1
+msgid "VECTORNET LSTM 评估器"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:3
+msgid "简介"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:5
+msgid ""
+"Vectornet lstm evaluator "
+"基于对环境和其他交通参与者的图网络编码。与基于卷积网络编码的语义地图模型相比，它有着更少的参数和更好的表现。"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:7
+msgid "![Diagram](images/vectornet.svg)"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:7
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:9
+msgid "代码流程及框架"
+msgstr ""
+
+#: ../../docs/technical_documents/vectornet_lstm_evaluator_cn.md:11
+msgid ""
+"线上推理代码 [vectornet "
+"evaluator](https://github.com/ApolloAuto/apollo/modules/prediction/evaluator/vehicle/vectornet_evaluator.h)"
+msgstr ""
+

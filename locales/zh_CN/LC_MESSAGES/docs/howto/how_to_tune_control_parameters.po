@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:2
+msgid "How to Tune Control Parameters"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:4
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:5
+msgid ""
+"The objective of the control module is to generate control commands to "
+"the vehicle based on planning trajectory and the current car status."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:7
+msgid "Background"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:9
+msgid "Input / Output"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:11
+msgid "Input"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:12
+msgid "Planning trajectory"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:13
+msgid "Current car status"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:14
+msgid "HMI driving mode change request"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:15
+msgid "Monitor System"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:17
+msgid "Output"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:18
+msgid ""
+"The output control command governs functions such as steering, throttle, "
+"and brake in the `canbus`."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:20
+msgid "Controller Introduction"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:21
+msgid ""
+"The controllers include a lateral controller that manages the steering "
+"commands and a longitudinal controller that manages the throttle and "
+"brakes commands ."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:23
+msgid "Lateral Controller"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:24
+msgid ""
+"The lateral controller is an LQR-Based Optimal Controller. The dynamic "
+"model of this controller is a simple bicycle model with side slip. It is "
+"divided into two categories, including a closed loop and an open loop."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:26
+msgid "The closed loop provides discrete feedback LQR controller with 4 states:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:27
+msgid "Lateral Error"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:28
+msgid "Lateral Error Rate"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:29
+msgid "Heading Error"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:30
+msgid "Heading Error Rate"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:31
+msgid ""
+"The open loop utilizes the path curvature information to cancel the "
+"constant steady state heading error."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:34
+msgid "Longitudinal Controller"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:35
+msgid ""
+"The longitudinal controller is configured as a cascaded PID + Calibration"
+" table. It is divided into two categories, including a closed loop and an"
+" open loop."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:37
+msgid ""
+"The closed loop is a cascaded PID (station PID + Speed PID), which takes "
+"the following data as controller input:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:38
+msgid "Station Error"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:39
+msgid "Speed Error"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:40
+msgid ""
+"The open loop provides a calibration table which maps acceleration onto "
+"throttle/brake percentages."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:43
+msgid "Controller Tuning"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:45
+msgid "Useful tools"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:46
+msgid ""
+"Tool like [diagnostics](../../modules/tools/diagnostics) and "
+"[realtime_plot](../../modules/tools/realtime_plot) are useful for "
+"controller tuning and can be found under `apollo/modules/tools/`."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:47
+msgid "Lateral Controller Tuning"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:48
+msgid ""
+"The lateral controller is designed for minimal tuning effort.  The basic "
+"lateral controller tuning steps for *all* vehicles are:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:50
+msgid "Set all elements in `matrix_q` to zero."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:52
+msgid ""
+"Increase the third element of `matrix_q`, which defines the heading error"
+" weighting, to minimize the heading error."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:54
+msgid ""
+"Increase the first element of `matrix_q`,  which defines the lateral "
+"error weighting to minimize the lateral error."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:56
+msgid "Tune a Lincoln MKZ"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:58
+msgid ""
+"For a Lincoln MKZ,  there are four elements that refer to the diagonal "
+"elements of the state weighting matrix Q:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:60
+msgid "Lateral error weighting"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:61
+msgid "Lateral error rate weighting"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:62
+msgid "Heading error weighting"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:63
+msgid "Heading error rate weighting"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:65
+msgid ""
+"Tune the weighting parameters by following the basic lateral controller "
+"tuning steps listed above in *Lateral Controller Tuning*.  An example is "
+"shown below."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:76
+msgid "Tune Additional Vehicle Types"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:78
+msgid ""
+"When tuning a vehicle type that is other than a Lincoln MKZ, first update"
+" the vehicle-related physical parameters as shown in the example below.  "
+"Then, follow the basic lateral controller tuning steps listed above in "
+"*Lateral Controller Tuning* and define the matrix Q parameters."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:80
+msgid "An example is shown below."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:96
+msgid "Longitudinal Controller Tuning"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:97
+msgid ""
+"The longitudinal controller is composed of Cascaded PID controllers that "
+"include one station controller and a high/low speed controller with "
+"different gains for different speeds.  Apollo manages tuning in open loop"
+" and closed loop by:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:99
+msgid ""
+"OpenLoop: Calibration table generation. Please refer to "
+"[how_to_update_vehicle_calibration.md](how_to_update_vehicle_calibration.md)"
+" for detailed steps."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:100
+msgid ""
+"Closeloop: Based on the order of High Speed Controller -> Low Speed "
+"Controller -> Station Controller."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:102
+msgid "High/Low Speed Controller Tuning"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:104
+msgid ""
+"The high speed controller code is used mainly to track the desired speed "
+"above a certain speed value.  For example:"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:115
+msgid "First set the values for `kp`, `ki`, and `kd` to zero."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:116
+msgid ""
+"Then start to increase `kp` to reduce the rising time of step response to"
+" velocity changes."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:117
+msgid "Finally, increase `ki` to reduce velocity controller steady state error."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:119
+msgid ""
+"Once you obtain relatively accurate speed tracking performance for the "
+"higher speed, you can start tuning the low speed PID controller for a "
+"comfortable acceleration rate from the start point."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:130
+msgid ""
+"*Note:*  Apollo usually sets the switch speed to be a coasting speed when"
+" the gear switches to *Drive*."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:132
+msgid "Station Controller Tuning"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:134
+msgid ""
+"Apollo uses the station controller for the vehicle to track the station "
+"error between the vehicle trajectory reference and the vehicle position."
+"  A station controller tuning example is shown below."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:144
+msgid "References"
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:145
+msgid ""
+"\"Vehicle dynamics and control.\" Rajamani, Rajesh. Springer Science & "
+"Business Media, 2011."
+msgstr ""
+
+#: ../../docs/howto/how_to_tune_control_parameters.md:147
+msgid ""
+"\"Optimal Trajectory generation for dynamic street scenarios in a Frenet "
+"Frame\", M. Werling et., ICRA2010"
+msgstr ""
+

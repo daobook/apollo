@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/FAQs/General_FAQs.md:1
+msgid "General FAQs"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:3
+msgid "I am new to the Apollo project, where do I start?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:5
+msgid "You have several options:"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:7
+msgid ""
+"To build apollo on your computer, start by reviewing [Apollo Software "
+"Installation Guide](../quickstart/apollo_software_installation_guide.md)"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:10
+msgid ""
+"To run the Apollo demo offline, go to: [Apollo "
+"README.md](../demo_guide/README.md)."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:13
+msgid ""
+"To install and build Apollo on a vehicle, go to: [Apollo 1.0 quick "
+"start](../quickstart/apollo_1_0_quick_start.md)."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:16
+msgid ""
+"To build the Apollo Kernel, the Robot Operating System (ROS), and Apollo,"
+" go to: "
+"[apollo/docs/quickstart/apollo_1_0_quick_start_developer.md](../quickstart/apollo_1_0_quick_start_developer.md)"
+" and refer to [build "
+"kernel](../quickstart/apollo_1_0_quick_start_developer.md#build-the-"
+"apollo-kernel)."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:24
+msgid "How do I send a pull request?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:26
+msgid "Sending a pull request is simple."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:28
+msgid "Fork the Apollo Repository into your GitHub."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:29
+msgid "Create a Developer Branch in your Repository."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:30
+msgid "Commit your change in your Developer Branch."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:31
+msgid "Send the pull request from your GitHub Repository Webpage."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:35
+msgid "Do comments need to be made in Doxygen?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:37
+msgid "Yes, currently all comments need to be made in Doxygen."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:41
+msgid "How to debug build problems?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:43
+msgid ""
+"Carefully review the instructions in the documentation for the option "
+"that you selected to get started with the Apollo project."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:46
+msgid ""
+"Make sure that you follow the steps in the document exactly as they are "
+"written."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:49
+msgid "Use Ubuntu 14.04 as the build can only be implemented using Linux."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:51
+msgid "Verify that the Internet setting is correct on your computer."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:53
+msgid ""
+"Allocate more than 1GB of memory, at the recommended minimum, for your "
+"computer."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:56
+msgid ""
+"If roscore cannot start in apollo docker, you may need to tune the master"
+" start timeout value in ROS. You may want to check a related user-"
+"reported [issue](https://github.com/ApolloAuto/apollo/issues/2500) for "
+"more details."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:62
+msgid ""
+"If I cannot solve my build problems, what is the most effective way to "
+"ask for help?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:64
+msgid "Many build problems are related to the environment settings."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:66
+msgid "Run the script to get your environment: `bash scripts/env.sh >& env.txt`"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:68
+msgid ""
+"Post the content of env.txt to our Github issues page and someone from "
+"our team will get in touch with you."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:73
+msgid "Which ports must be whitelisted to run Apollo in a public cloud instance?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:75
+msgid "Use these ports for HMI and Dreamview:"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:77
+msgid "8888: Dreamview"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:81
+msgid "Why there is no ROS environment in dev docker?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:83
+msgid ""
+"The ROS package is downloaded when you start to build apollo: `bash "
+"apollo.sh build`."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:86
+msgid ""
+"Run the following command inside Docker to set up the ROS environment "
+"after the build is complete: `source /apollo/scripts/apollo_base.sh`"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:89
+msgid "Run ROS-related commands such as rosbag, rostopic and so on."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:93
+msgid "How do I clean the existing build output?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:95 ../../docs/FAQs/General_FAQs.md:105
+msgid "Follow these steps:"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:97 ../../docs/FAQs/General_FAQs.md:107
+msgid "Log into Docker using the command: `bash docker/scripts/dev_into.sh`"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:99
+msgid "Run the command: `bash apollo.sh clean`"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:103
+msgid "How do I delete the downloaded third party dependent packages?"
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:109
+msgid ""
+"Run the command: `bazel clean --expunge` The build command, `bash "
+"apollo.sh build`, then downloads all of the dependent packages according "
+"to the _WORKSPACE_ file."
+msgstr ""
+
+#: ../../docs/FAQs/General_FAQs.md:113
+msgid "**More General FAQs to follow.**"
+msgstr ""
+

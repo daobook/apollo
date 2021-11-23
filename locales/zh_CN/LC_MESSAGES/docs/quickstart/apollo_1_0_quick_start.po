@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:1
+msgid "Apollo 1.0 Quick Start Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:2
+msgid "Contents"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:3
+msgid "[About This Guide](#about-this-guide)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:4
+msgid "[Document Conventions](#document-conventions)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:5
+msgid "[Overview of Apollo](#overview-of-apollo)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:6
+msgid ""
+"[Description of the Vehicle Environment](#description-of-the-vehicle-"
+"environment)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:7
+msgid "[Hardware Installation](#hardware-installation)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:8
+msgid "[Apollo Software Installation](#apollo-software-installation)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:9
+msgid "[Run the Demo on Vehicle](#run-the-demo-on-vehicle)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:10
+msgid ""
+"[Launch the Local Release Docker Image](#launch-the-local-release-env-"
+"docker-image)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:11
+msgid "[Record the Driving Trajectory](#record-driving-trajectory)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:12
+msgid "[Perform Autonomous Driving](#perform-autonomous-driving)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:13
+msgid "[Shut Down](#shut-down)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:14
+msgid "[Run Offline Demo](#run-offline-demo)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:16
+msgid "About This Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:18
+msgid ""
+"The _Apollo 1.0 Quick Start Guide_ provides all of the basic instructions"
+" to understand, install, and build Apollo."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:20
+msgid "Document Conventions"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:22
+msgid "The following table lists the conventions that are used in this document:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "**Icon**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "**Description**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "**Bold**"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "Emphasis"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "`Mono-space font`"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "Code, typed data"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "_Italic_"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "Titles of documents, sections, and headings Terms used"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "![info](images/info_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:29
+msgid "info"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid ""
+"**Info**  Contains information that might be useful.  Ignoring the Info "
+"icon has no negative consequences."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "![tip](images/tip_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:30
+msgid "tip"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid ""
+"**Tip**. Includes helpful hints or a shortcut that might assist you in "
+"completing a task."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "![online](images/online_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:31
+msgid "online"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid ""
+"**Online**. Provides a link to a particular web site where you can get "
+"more information."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid "![warning](images/warning_icon.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:32
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:79
+msgid "warning"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md
+msgid ""
+"**Warning**. Contains information that must **not** be ignored or you "
+"risk failure when you perform a certain task or step."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:34
+msgid "About Apollo 1.0"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:36
+msgid ""
+"Apollo 1.0, also referred to as the _Automatic GPS Waypoint Following_, "
+"works in an enclosed venue such as a test track or parking lot. It "
+"accurately replays a trajectory and the speed of that trajectory that a "
+"human driver has traveled in an enclosed, flat area on solid ground."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:38
+msgid ""
+"At this stage of development, Apollo 1.0 **cannot** perceive obstacles in"
+" close proximity, drive on public roads, or drive in areas without GPS "
+"signals."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:40
+msgid "Description of the Vehicle Environment"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:42
+msgid ""
+"The Lincoln MKZ, enhanced by Autonomous Stuff, provides users with an "
+"accessible autonomous vehicle platform. The platform supplies users with "
+"a comprehensive stack of hardware and software solutions."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:44
+msgid ""
+"Users gain direct access to vehicle controls such as gear selection, "
+"speed, and indicator lights. Software interfaces have been created for "
+"steering, braking, acceleration, and gear selection to provide Developers"
+" with a workable user interface."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:46
+msgid "Additional features include:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:48
+msgid "Power distributor terminals"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:49
+msgid "Integrated PC with ROS pre-installed and configured"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:50
+msgid "Emergency Stop using a drive-by-wire system"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:51
+msgid "Ethernet network and USB connections (to PC)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:53
+msgid "Hardware Installation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:55
+msgid ""
+"Please refer to [Apollo 1.0 Hardware and System Installation "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_1_0_hardware_system_installation_guide.md)"
+" for the steps to install the hardware components and the system "
+"software."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:58
+msgid "Apollo Software Installation"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:60
+msgid ""
+"Please refer to [Apollo Software Installation "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_software_installation_guide.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:62
+msgid "Run Demo on Vehicle"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:64
+msgid ""
+"This section provides the instructions to run the Apollo 1.0 Demo on "
+"Vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:65
+msgid "Set up the hardware:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:67
+msgid "Power-on the platform vehicle."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:68
+msgid "Power-on the Industrial PC (IPC).   ![](images/ipc_power_on.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:70
+msgid ""
+"Power-on the modem by pressing and holding the power button until the "
+"lights turn on."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:71
+msgid ""
+"Set up the network configuration for the IPC: static IP (for example, "
+"192.168.10.6), subnet mask (for example, 255.255.255.0), and gateway (for"
+" example, 192.168.10.1)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:72
+msgid "Configurate your DNS server IP (for example, 8.8.8.8)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:73
+msgid "Use a tablet to access **Settings** and connect to MKZ wifi:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:75
+msgid "![](images/ipad_config_wifi.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:77
+msgid "Start the HMI in Docker **using Chrome only**:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:79
+msgid ""
+"![warning](images/warning_icon.png)**Warning:** Make sure that you are "
+"not starting HMI from two Docker containers concurrently."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:81
+msgid "Launch the Local release env Docker Image"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:83
+msgid "Run the following commands:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:88
+msgid ""
+"When Docker starts, it creates a port mapping, which maps the Docker "
+"internal port 8887 to the host port 8887. You can then visit the HMI web "
+"service in your host machine browser:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:90
+msgid ""
+"Open the Chrome browser and start the Apollo HMI by going to "
+"**192.168.10.6:8887**.  ![](images/start_hmi.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:93
+msgid "Record the Driving Trajectory"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:95
+msgid "Follow these steps to record the driving trajectory:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:97
+msgid ""
+"In the Apollo HMI, under Quick Record, click **Setup** to start all "
+"modules and perform the hardware health check. "
+"![](images/hmi_record_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:99
+msgid ""
+"If the hardware health check passes, click the **Start** button to start "
+"to record the driver trajectory. ![](images/hmi_record_start.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:101
+msgid ""
+"After arriving at a destination, click the **Stop** button to stop "
+"recording. ![](images/hmi_record_stop.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:103
+msgid ""
+"If you want to record a *different* trajectory, click the **New** button "
+"to initiate recording again. ![](images/hmi_record_reset.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:106
+msgid "Perform Autonomous Driving"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:108
+msgid "Follow these steps to perform autonomous driving:"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:110
+msgid ""
+"In the Apollo HMI, under Quick Play, click **Setup** to start all modules"
+" and perform a hardware health check. ![](images/hmi_play_setup.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:113
+msgid ""
+"If the vehicle successfully passes the Setup step, it is ready to enter "
+"the Autonomous mode. **MAKE SURE DRIVER IS READY!**  Click the **Start** "
+"button to start the autonomous driving."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:115
+msgid "![](images/hmi_play_start.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:117
+msgid ""
+"After arriving at your destination,  click the **Stop** button to stop "
+"replaying the recorded trajectory. ![](images/hmi_play_stop.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:120
+msgid "Shut Down"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:122
+msgid "Shut down the system from a terminal:  ```sudo shutdown now```"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:125
+msgid ""
+"Power-off the IPC (locate the icon on the top right of the desktop to "
+"click **Shut Down**)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:127
+msgid ""
+"Turn off the modem by pressing and holding the power button until the "
+"lights turn off."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:129
+msgid "Turn off the car."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:131
+msgid "Run Offline Demo"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_0_quick_start.md:132
+msgid ""
+"See [Offline Demo "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/demo_guide/README.md)"
+msgstr ""
+

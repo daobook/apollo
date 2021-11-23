@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.md:1
+msgid "2018-09-02"
+msgstr ""
+
+#: ../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.md:3
+msgid "darknet.16c-16x-r1.3d-r4.v0.51_iter_160000.caffemodel -> deploy.model"
+msgstr ""
+
+#: ../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.md:5
+msgid "2018-05-28"
+msgstr ""
+
+#: ../../modules/perception/testdata/lidar/lib/segmentation/cnnseg/data/perception/camera/models/yolo_obstacle_detector/3d-r4-half/CHANGELOG.md:7
+msgid "darknet.16c-16x-r1.oscl3d.v0.10_iter_10000.caffemodel -> deploy.model"
+msgstr ""
+

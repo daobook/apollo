@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:1
+msgid "Installation guide of Velodyne HDL64E-S3"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:3
+msgid ""
+"Apollo uses the 64 line LiDar system **HDL-64E S3** from Velodyne LiDAR, "
+"Inc."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:5
+msgid "![](images/lidar_pic.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:7
+msgid "Key Features:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:9
+msgid "64 Channels"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:10
+msgid "120m range"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:11
+msgid "2.2 Million Points per Second"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:12
+msgid "360° Horizontal FOV"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:13
+msgid "26.9° Vertical FOV"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:14
+msgid "0.08° angular resolution (azimuth)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:15
+msgid "<2cm accuracy"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:16
+msgid "~0.4° Vertical Resolution"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:17
+msgid "User selectable frame rate"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:18
+msgid "Rugged DesignLidar/Velodyne/HDL64E-S3/"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:20
+msgid "Mounting"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:22
+msgid ""
+"A customized mounting structure is required to successfully mount an "
+"HDL64E S3 LiDAR on top of a vehicle. This structure must provide rigid "
+"support to the LiDAR system while raising the LiDAR to a certain height "
+"above the ground under driving conditions. This mounted height should "
+"prevent the laser beams from the LiDAR being blocked by the front and/or "
+"rear of the vehicle. The actual height needed for the LiDAR depends on "
+"the design of the vehicle and the mounting point of the LiDAR is relative"
+" to the vehicle being used. The vertical tilt angle of the lasers "
+"normally ranges from **+2~-24.8 degrees relative to the horizon**.  For a"
+" standard Lincoln MKZ, it is recommended that you mount the LiDAR at a "
+"minimum height of 1.8 meters (from ground to the base of the LiDAR), to "
+"use the angle range for detection effectively."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:29
+msgid "Wiring"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:31
+msgid ""
+"Each HDL-64E S3 LiDAR includes a cable bundle to connect the LiDAR to the"
+" power supply, the GPS timesync source and the computer (Ethernet for "
+"data transfer and a serial port for LiDAR configuration)."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:33
+msgid "![](images/HDL64_Cable_whitened_labeled.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:35
+msgid "**Connecting the LiDAR**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:37
+msgid "Connect the power and signal cable to the matching ports on the LiDAR"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:39
+msgid "![HDL64_Cabling](images/HDL64_Cabling.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:39
+msgid "HDL64_Cabling"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:41
+msgid "**Connecting the Power Source**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:43
+msgid ""
+"Two AWG 16 wires are used to power the HDL-64E S3 LiDAR. It requires "
+"about 3A at 12V. To connect the power source, make full contact with the "
+"wires and tighten the screws."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:45
+msgid "![HDL64_Power_Cable](images/HDL64_PowerCable.jpg)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:45
+msgid "HDL64_Power_Cable"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:47
+msgid "**Connecting the IPC**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:49
+msgid ""
+"The connection to the IPC is through an ethernet cable. Plug the ethernet"
+" connector in the cable bundle, to an ethernet port on the IPC."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:51
+msgid "**Connecting the GPS**:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:53
+msgid ""
+"The HDL64E S3 LiDAR requires the recommended minimum specific GPS/Transit"
+" data (GPRMC) and pulse per second (PPS) signal to synchronize to the GPS"
+" time. A customized connection is needed to establish the communication "
+"between the GPS receiver and the LiDAR, as follows:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:55
+msgid "**SPAN-IGM-A1**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:57
+msgid ""
+"If you configured the SPAN-IGM-A1 as specified in [Configuring the GPS "
+"and IMU](#configuring-the-gps-and-imu), the GPRMC signal is sent from the"
+" GPS receiver via the \"User Port\" cable from the \"Main\" port. The PPS"
+" signal is sent through the wire cables labeled as “PPS” and “PPS dgnd” "
+"from the AUX port. The dash-line boxes in the figure below show the "
+"available connections that come with the HDL64E S3 LiDAR and the SPAN-"
+"IGM-A1 GPS receiver. The remaining connections must be made by the user."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:59
+msgid "![Wiring_Schematics_IGM_A1](images/LiDAR_A1_wiring.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:59
+msgid "Wiring_Schematics_IGM_A1"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:61
+msgid "**Propak 6 and IMU-IGM-A1**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:63
+msgid ""
+"If you configured the Propak 6 as specified in [Configuring the GPS and "
+"IMU](#configuring-the-gps-and-imu), the GPRMC signal is sent from the GPS"
+" receiver via COM2 port. The PPS signal is sent through the IO port. The "
+"dash-line boxes in the figure below are available connections that comes "
+"with the HDL-64E S3 LiDAR and the Propak 6 GPS receiver. The remaining "
+"connections need to be made by the user."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:65
+msgid "![Wiring_Schematics_PP6](images/LiDAR_PP6_wiring.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:65
+msgid "Wiring_Schematics_PP6"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:67
+msgid "**Connection with a computer through serial port for LiDAR configuration**"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:69
+msgid ""
+"You can configure some of the low-level parameters through the serial "
+"port. Within the cable bundle provided by Velodyne LiDAR, Inc., there are"
+" two pairs of red/black cables as shown in the pinout table below. The "
+"thicker pair (AWG 16) is used to power the LiDAR system. The thinner pair"
+" is used for serial connection. Connect the black wire (Serial In) to RX,"
+" the red wire to the Ground wire of a serial cable. Connect the serial "
+"cable with a USB-serial adapter to your selected computer."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:71
+msgid "![pinout_table](images/pinout_table.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:71
+msgid "pinout_table"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:73
+msgid "Configuration"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:75
+msgid ""
+"By default, the HDL-64E S3 has the network IP address of 192.168.0.1. "
+"However, when you are setting up Apollo, change the network IP address to"
+" **192.168.20.13**. You can use the terminal application with Termite3.2 "
+"for this purpose. The IP address of the HDL-64E S3 can be configured "
+"using the following steps:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:77
+msgid "Connect one side of the serial cable to your laptop"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:78
+msgid "Connect the other side of the serial cable to HDL-64E S3’s serial wires"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:79
+msgid "Use the following default COM port settings:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:89
+msgid ""
+"Use the COM port application: Download Termite3.2 from the link below and"
+" install it on your laptop (Windows) - [Installation "
+"link](http://www.compuphase.com/software_termite.htm)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:91
+msgid ""
+"Use the serial cable connection for the COM port between the HDL-64E S3 "
+"and the laptop:"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:93
+msgid ""
+"![Serial cable connected to "
+"laptop.png](images/Serial_cable_connected_to_laptop.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:93
+msgid "Serial cable connected to laptop.png"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:95
+msgid "Launch **Termite 3.2** from your laptop"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:97
+msgid ""
+"Issue a serial command for setting up the HDL-64E S3’s IP addresses over "
+"serial port \"\\#HDLIPA192168020013192168020255\""
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:99
+msgid "The unit must be power cycled to adopt the new IP addresses"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:101
+msgid "![Issuing the serial command](images/Issuing_the_serial_command.png)"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:101
+msgid "Issuing the serial command"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:103
+msgid "References"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:105
+msgid ""
+"For additional information on Velodyne HDL-64E S3, please refer to their"
+"  [website here](http://velodynelidar.com/hdl-64e.html)."
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:108
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Lidar/HDL64E_S3_Installation_Guide.md:110
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

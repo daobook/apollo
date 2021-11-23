@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:1
+msgid "Planning Piecewise Jerk Nonlinear Speed Optimizer Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:5
+msgid ""
+"This is an introduction of piecewise jerk nonlinear speed optimizer. For "
+"trajectory planning problems, the following three aspects need to be "
+"considered: 1)Task accomplishment. 2)Safety. 3)Comfort.   After a smooth "
+"driving guide line is generated, the trajectory is under the constraints "
+"of velocity bounds, acceleration bounds, jerk bounds, etc. Here, we "
+"formulate this problem as a quadratic programming problem."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:8
+msgid "Where is the code"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:10
+msgid ""
+"Please refer "
+"[code](https://github.com/ApolloAuto/apollo/blob/master/modules/planning/tasks/optimizers/piecewise_jerk_speed/piecewise_jerk_speed_nonlinear_optimizer.cc)"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:12
+msgid "Code Reading"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:14
+msgid ""
+"![Diagram](images/planning_piecewise_jerk_nonlinear_speed_optimizer.png) "
+"PiecewiseJerkSpeedNonlinearOptimizer is a derived class whose base class "
+"is SpeedOptimizer. Thus, when task::Execute() is called in the task list,"
+" the Process() in PiecewiseJerkSpeedNonlinearOptimizer is actually doing "
+"the processing."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:14
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:32
+msgid "Diagram"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:16
+msgid "Input.   The input includes PathData and initial TrajectoryPoint."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:18
+msgid "Process."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:19
+msgid ""
+"Snaity Check. This ensures speed_data is not null and Speed Optimizer "
+"does not receive empty path data."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:20
+msgid ""
+"`const auto problem_setups_status = SetUpStatesAndBounds(path_data, "
+"*speed_data);` The qp problem is initialized here. The next code line "
+"will clear speed_data if it fails."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:21
+msgid ""
+"`const auto qp_smooth_status = OptimizeByQP(speed_data, &distance, "
+"&velocity, &acceleration);` It sloves the QP problem and the "
+"distance/velocity/acceleration are achieved. Still, speed_data is cleared"
+" if it fails."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:22
+msgid ""
+"`const bool speed_limit_check_status = CheckSpeedLimitFeasibility();` It "
+"checks first point of speed limit. Then the following four steps are "
+"processed: 1)Smooth Path Curvature 2)SmoothSpeedLimit 3)Optimize By NLP "
+"4)Record speed_constraint"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:23
+msgid "Add s/t/v/a/jerk into speed_data and add enough zeros to avoid fallback"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:24
+msgid ""
+"Output.   The output is SpeedData, which includes s/t/v/a/jerk of the "
+"trajectory."
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:27
+msgid "Algorithm Detail"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:28
+msgid "Paper Reference:"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:29
+msgid ""
+"Optimal  Trajectory  Generation  for  Autonomous  Vehicles  "
+"UnderCentripetal  Acceleration  Constraints  for  In-lane  Driving  "
+"Scenarios"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:30
+msgid ""
+"DL-IAPS and PJSO: A Path/Speed Decoupled Trajectory Optimization and its "
+"Application in Autonomous Driving"
+msgstr ""
+
+#: ../../docs/technical_documents/planning_piecewise_jerk_nonlinear_speed_optimizer.md:32
+msgid "![Diagram](images/planning_piecewise_jerk_speed_optimizer.png)"
+msgstr ""
+

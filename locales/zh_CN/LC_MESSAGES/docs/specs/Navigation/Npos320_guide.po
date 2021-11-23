@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:1
+msgid "Npos320 Guide"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:3
+msgid ""
+"BDStar Navigation NPOS is an integrated INS receiver, which has GNSS "
+"receiver and IMU included in the device."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:5
+msgid "![Npos320 main](images/Npos320_main.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:5
+msgid "Npos320 main"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:7
+msgid "Installation"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:9
+msgid "![Npos320 panel ](images/Npos320_panel.png)"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:9
+msgid "Npos320 panel "
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:12
+msgid "Data Protocol Parse"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:13
+msgid ""
+"Typical data protocols commonly used is `INSPVAXA` ，more detail about "
+"data protocol please see NovAtel《[OEM7 Commands and Logs Reference "
+"Manual](https://docs.novatel.com/OEM7/Content/PDFs/OEM7_Commands_Logs_Manual.pdf)》"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:15
+msgid "Npos320 Configration："
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:33
+msgid ""
+"**![warning_icon](images/warning_icon.png) WARNING:** Modify the "
+"**<u>SETINSTRANSLATION</u>T** line based on the actual measurement (of "
+"the antenna and the IMU offset). ANT1 is for primary antenna which is "
+"required, and ANT2 is for secondary antenna and it is optional."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:33
+msgid "warning_icon"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:35
+msgid "For example:"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:41
+msgid ""
+"The first 3 numbers indicate the result of the lever arm distance "
+"measurement. The last 3 numbers are the uncertainty of the measurement."
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:43
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../docs/specs/Navigation/Npos320_guide.md:45
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

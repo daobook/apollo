@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/howto/how_to_document_code.md:1
+msgid "How to Document Source Code in Apollo"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:3
+msgid ""
+"Apollo uses [Doxygen](https://www.doxygen.nl/index.html) for source code "
+"documentation. Developers who are not familiar with Doxygen can refer to "
+"official Doxygen Manual(https://www.doxygen.nl/manual/index.html) for an "
+"in-depth knowledge on documenting code with Doxygen. This document serves"
+" as a brief version of [Doxygen Manual: Documenting the "
+"code](https://www.doxygen.nl/manual/docblocks.html)) focusing specificly "
+"on C/C++ and Python."
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:11
+msgid ""
+"We will take "
+"[modules/common/math/kalman_filter.h](../../modules/common/math/kalman_filter.h)"
+" as an example to show you how to document code the Doxygen way. Note "
+"that Javadoc style is preferred rather than Qt style for comment blocks."
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:16
+msgid "File"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:25
+msgid "Namespace"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:38
+msgid "Class"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:56
+msgid "Function"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:78
+msgid "Public / protected class member variables"
+msgstr ""
+
+#: ../../docs/howto/how_to_document_code.md:86
+msgid ""
+"Note: There is no public/protected member variables for `KalmanFilter`. "
+"The code above serves for illustration purpose only."
+msgstr ""
+

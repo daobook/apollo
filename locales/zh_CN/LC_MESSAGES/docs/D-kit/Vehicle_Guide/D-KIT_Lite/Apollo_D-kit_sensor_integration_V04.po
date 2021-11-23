@@ -1,0 +1,441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:1
+msgid "**Apollo传感器集成说明**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:3
+msgid "传感器上车集成前，请优先或同步完成工控机的Apollo系统安装，教程详见“循迹搭建——Apollo系统安装”。工控机安装Apollo系统时开采用自带的直流电源模块供电，显示器可使用电脑显示器。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:5
+msgid "**快速介绍**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:7
+msgid "请您在传感器集成前仔细阅读本文档。本文档介绍了传感器供电线束安装的注意事项。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:9
+msgid "**Apollo上装电气原理图**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:11
+msgid "Apollo上装电气原理图如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:13
+msgid "![Apollo_electrical_schematic](./images/Apollo_electrical_schematic.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:13
+msgid "Apollo_electrical_schematic"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:16
+msgid "通过电气原理图可知，6108/8108工控机（IPC）由底盘独立提供24V电源，显示器、激光雷达、毫米波雷达、IMU和路由器则由底盘通过保险盒提供12V电源。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:18
+msgid "**1. 上装传感器供电线束简介**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:20
+msgid "Apollo电气原理图中的供电部分集成在了一条供电线束中，如下图所示。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:22
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:89
+msgid "![apollo_power_wire_harness](./images/apollo_power_wire_harness.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:22
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:89
+msgid "apollo_power_wire_harness"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:24
+msgid "保险丝盒取消了负极接线，负极回路集成在线束内部。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:26
+msgid "底盘后部电气面板如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:28
+msgid "![Electrical_panel](./images/Motor_Enable_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:28
+msgid "Electrical_panel"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:30
+msgid "上装供电插座的脚位定义如图所示:1、Pin1—12V+；2、Pin2—12V-；3、Pin3—24V+；4、Pin4—24V-。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:32
+msgid "![apollo_to_chassis](./images/apollo_to_chassis.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:32
+msgid "apollo_to_chassis"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:34
+msgid ""
+"底盘can口通过db9延长线与工控机相连。上装供电线通过4pin航插与底盘供电插座相连。 **<font color=#FF0000> "
+"提示：请在检查供电线束与传感器连接插头极性之后，再连接供电线束与底盘供电口的航插。</font>**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:37
+msgid "**2. 传感器电源接口介绍**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:39
+msgid "**1、工控机电源接口**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:41
+msgid "![8108_Power_1](./images/8108_Power_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:41
+msgid "8108_Power_1"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:43
+msgid "![8108_Power_2](./images/8108_Power_2.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:43
+msgid "8108_Power_2"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:45
+msgid "![8108_Power_3](./images/8108_Power_3.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:45
+msgid "8108_Power_3"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:48
+msgid "2、M2电源接口"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:50
+msgid "M2自带数据线缆为1分5线缆，一端为与工控机相连的航插接头，另一端为M2电源输入口，网口、激光雷达授时输出口，USB输出口，db9输出口（M2配置串口）。详细如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:52
+msgid "![M2_1](./images/M2_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:52
+msgid "M2_1"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:54
+msgid "注意：M2线缆电源输入口为白色2pin插头，红色为12V正极，蓝色为12V负极；上装线束M2供电插头为蓝色2pin插头，红色为12V正极，黑色色为12V负极，对插后红色对红色，黑色对蓝色。连接插头时请确认线色或用万用表检查线束端供电插头电源极性。连接如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:56
+msgid "![M2_2](./images/M2_2.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:56
+msgid "M2_2"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:58
+msgid "3、毫米波雷达电源接口"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:60
+msgid "毫米波雷达线束，一端为毫米波雷达连接插头，另一端是电源插头2pin凤凰端子和CAN口。"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:62
+msgid "![Radar_1](./images/Radar_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:62
+msgid "Radar_1"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:64
+msgid "![Radar_2](./images/Radar_2.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:64
+msgid "Radar_2"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:66
+msgid ""
+"**<font color=#FF0000 "
+">注意：毫米波雷达线束电源插头：红色正+，蓝色负-；线束供电端为红色正+，黑色负-；再插接时，保证红对红，黑对蓝。</font>**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:68
+msgid "4、激光雷达电源接口"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:70
+msgid "![Lidar_1](./images/Lidar_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:70
+msgid "Lidar_1"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:72
+msgid "![Lidar_2](./images/Lidar_2.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:72
+msgid "Lidar_2"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:74
+msgid "![Lidar_3](./images/Lidar_3.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:74
+msgid "Lidar_3"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:76
+msgid "![Lidar_4](./images/Lidar_4.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:76
+msgid "Lidar_4"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:79
+msgid "5、屏幕供电"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:81
+msgid "车载屏幕供电线为单独一段线束：1端为DJ7021-1.5-11插件（公头），连接供电线束端DJ7021-1.5-21（母头）；另一端为DC5.5mm插头，接口如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:83
+msgid "![power_line_of_display](./images/Display.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:83
+msgid "power_line_of_display"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:85
+msgid "6、路由器供电"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:87
+msgid "路由器线束断供电插头为DC5.5直流插头，如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:91
+msgid "**3. 传感器固定介绍**"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:93
+msgid "1、工控机固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:95
+msgid "![IPC_integration_1](./images/IPC_integration_1.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:95
+msgid "IPC_integration_1"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:97
+msgid "2、M2及线束保险丝盒固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:99
+msgid "![IMU_fusebox_integration](./images/IMU.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:99
+msgid "IMU_fusebox_integration"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:101
+msgid "3、激光雷达固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:103
+msgid "![lidar_integration_installation](./images/lidar_integration_installation.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:103
+msgid "lidar_integration_installation"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:105
+msgid "3.1激光雷达支架固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:107
+msgid "![lidar_bracket](./images/lidar_bracket.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:107
+msgid "lidar_bracket"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:109
+msgid "3.2激光雷达固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:111
+msgid "![lidar_integration_look](./images/lidar_integration_look.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:111
+msgid "lidar_integration_look"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:113
+msgid "![Lidar_integration](./images/Lidar_integration.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:113
+msgid "Lidar_integration"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:115
+msgid "![lidar_integration_slot](./images/lidar_integration_slot.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:115
+msgid "lidar_integration_slot"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:117
+msgid "4、摄像头固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:119
+msgid "摄像头安装位置如下图"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:121
+msgid "![camera_integration_installation](./images/camera_integration_installation.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:121
+msgid "camera_integration_installation"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:123
+msgid "![camera_integration_overview](./images/camera_integration_overview.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:123
+msgid "camera_integration_overview"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:125
+msgid "![camera_integration_look](./images/camera_integration_look.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:125
+msgid "camera_integration_look"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:127
+msgid "![camera_integration_bolting](./images/camera_integration_bolting.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:127
+msgid "camera_integration_bolting"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:129
+msgid "![camera_integration_line](./images/camera_integration_line.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:129
+msgid "camera_integration_line"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:131
+msgid "![camera_integration_background](./images/camera_integration_background.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:131
+msgid "camera_integration_background"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:133
+msgid "5、激光雷达与摄像头相对水平调整"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:135
+msgid "![Lidar_integration_levelling](./images/Lidar_integration_levelling.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:135
+msgid "Lidar_integration_levelling"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:137
+msgid "![camera_integration_levelling](./images/camera_integration_levelling.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:137
+msgid "camera_integration_levelling"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:139
+msgid "6、毫米波雷达固定"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:141
+msgid "![radar_look](./images/lidar_integration_radar_look.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:141
+msgid "radar_look"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:143
+msgid "![radar_integration](./images/radar_integration.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:143
+msgid "radar_integration"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:145
+msgid "![radar_installation_position](./images/lidar_integration_radar_installation_position.jpg)"
+msgstr ""
+
+#: ../../docs/D-kit/Vehicle_Guide/D-KIT_Lite/Apollo_D-kit_sensor_integration_V04.md:145
+msgid "radar_installation_position"
+msgstr ""
+

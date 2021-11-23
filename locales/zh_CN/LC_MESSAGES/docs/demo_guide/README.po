@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/demo_guide/README.md:1
+msgid "Run Simulation with Offline Record"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:3
+msgid ""
+"This document provides a step-by-step guide on how to run simulation with"
+" a demo offline record, in case you don't have the required hardware."
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:6
+msgid "Preparation Work"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:8
+msgid ""
+"Suppose you have followed the [Apollo Software Installation "
+"Guide](../quickstart/apollo_software_installation_guide.md). You have "
+"cloned Apollo's GitHub repo, all the software pre-requisites were "
+"installed correctly."
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:13
+msgid "Start and enter Apollo development Docker container"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:15
+msgid "The following commands are assumed to run from `$APOLLO_ROOT_DIR`."
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:22
+msgid "Build Apollo"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:24
+msgid "Run the following command to build Apollo inside Docker:"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:30 ../../docs/demo_guide/README.md:50
+msgid "Note:"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:32
+msgid ""
+"The script will auto-detect whether it was a CPU only build or a GPU "
+"build."
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:34
+msgid "Start Dreamview"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:36
+msgid "To start the Monitor module and Dreamview backend, run:"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:43
+msgid "Download and play the demo record"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:52
+msgid ""
+"The `--loop` option enables record to keep playing in a loop playback "
+"mode."
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:54
+msgid ""
+"Open <http://127.0.0.1:8888> in your favorate browser (e.g. Chrome) to "
+"access Apollo Dreamview"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:56
+msgid ""
+"The following screen should be shown to you and the car in Dreamview now "
+"moves around!"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:58
+msgid "![](images/dv_trajectory.png)"
+msgstr ""
+
+#: ../../docs/demo_guide/README.md:60
+msgid "Congratulations!"
+msgstr ""
+

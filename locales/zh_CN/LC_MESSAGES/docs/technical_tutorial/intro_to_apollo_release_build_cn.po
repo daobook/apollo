@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:1
+msgid "Apollo Release Build 简介"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:3
+msgid "背景"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:5
+msgid ""
+"基于 CyberRT 的 Apollo 在相当长的时间内一直没有二进制发布版本。用户需要先在 Apollo "
+"开发容器内自行完成对整个项目的编译构建才能运行 Apollo 中的模块和工具。这 种部署上的不足，在若干情形下对用户相当不便。SVL "
+"模拟器的开发者发现，将 Apollo 中 Docker 镜像、Docker 卷及 Bazel 缓存和构建查出加起来，足有 40 多 GB！"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:10
+msgid "Release Build 的实现原理"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:12
+msgid "这种部署上的不足的根本原因，在于 Bazel 缺少其他构建系统通常具备的开箱即用的「安 装」支持，如`make install`."
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:15
+msgid ""
+"为解决这一问题，我们借鉴了[Drake](https://github.com/RobotLocomotion/drake) 项目 "
+"中的「安装」实现，，利用 Starlark 语言，实现了 适用于 Apollo 的 Bazel「安装」扩 展，支持 Apollo "
+"中二进制程序、共享库、资源文件（配置、数据、DAG 文件等）以及文档 的安装。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:20
+msgid ""
+"单独完备的二进制程序的安装是简单的。然而，CyberRT 框架的核心概念即为将每个模块（ "
+"如感知、预测、规划）作为组件，以共享库的形式（`libX_component.so`）动态加载。在 目前的 Bazel "
+"构建下，`mainboard`二进制程序和`libX_component.so`链接了成千上百各 "
+"其他共享库对象。如，对规划模块运行如下`ldd`命令："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:29
+msgid "会输出如下消息："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:42
+msgid ""
+"如何实现对`libplanning_component.so` 及其链接的所有共享库（后缀为\".so\"）文件的「 "
+"安装」，成为实现`install`规则中最难的部分。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:45
+msgid ""
+"幸好有`patchelf`。利用 Bazel 中`runfiles_data`的概念来确定出链接的所有共享库文件 ，再利用`patchelf "
+"--force-rpath --set-rpath` 来修改其 RPATH 设置。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:48
+msgid "欲要更深入了解，请参考： [tools/install/install.bzl](../../tools/install/install.bzl)。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:51
+msgid "如何执行 Release Build 构建"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:53
+msgid "可运行如下命令以生成二进制发布构建产物："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:59
+msgid "其中，`-c`为可选参数，用于清理先前构建的残留。产物位于`/apollo/output`目录。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:61
+msgid "上述命令略等价于如下 Bazel 命令："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:68
+msgid "可输入`./apollo.sh release -h` 查看`apollo.sh release`子命令的更多用法。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:70
+msgid "通过二进制发布构建产物运行 Apollo"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:72
+msgid "在二进制发布产物根目录下，运行如下命令以启动 Apollo Runtime Docker 镜像："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:78
+msgid "国内用户可使用`-g cn`选项来加速 Docker 镜像的拉取。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:84
+msgid "运行如下命令以进入 Apollo Runtime Docker 环境："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:90
+msgid "启动 Dreaview："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:96
+msgid "如何将`install`规则应用到任一自定义模块"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:98
+msgid "欲实现自定义模块的*安装*，可参考 Apollo 代码中其他模块的示例，还是以规划模块为例 ："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:101
+msgid "这是最上层的[BUILD](../../BUILD) 文件的一部分："
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:115
+msgid "这是规划模块自身的 BUILD 文件 [modules/planning/BUILD](../../modules/planning/BUILD):"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:148
+msgid "`install`规则的参数列表"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:150
+msgid ""
+"`install`规则定义在 "
+"[tools/install/install.bzl](../../tools/install/install.bzl):"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:180
+msgid "其具体参数列举如下"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "参数"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "含义"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "deps"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "本规则依赖的其它安装规则"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "data"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "待安装的资源文件（平台无关）列表"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "data_dest"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "资源文件目标安装地址"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "data_strip_prefix"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "需去掉的资源文件路径前缀列表"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "targets"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "待安装目标"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "runtime_dest"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "可执行目标的目标安装地址，默认为 bin 目录"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "runtime_strip_prefix"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "需去掉可执行目标路径的前缀"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "rename"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md
+msgid "安装时的文件重命名"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:193
+msgid "局限性"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:195
+msgid "当前的 Release Build 实现"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:197
+msgid "只支持 C++，不支持 Python。"
+msgstr ""
+
+#: ../../docs/technical_tutorial/intro_to_apollo_release_build_cn.md:198
+msgid "只支持 x86_64 架构，Aarch64 支持尚待完善。"
+msgstr ""
+

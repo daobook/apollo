@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:1
+msgid "Apollo 1.5 Quick Start Guide"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:3
+msgid ""
+"This quick start focuses on Apollo 1.5 new features. For general Apollo "
+"concepts, please refer to [Apollo 1.0 Quick "
+"Start](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_1_0_quick_start.md)"
+" and [Apollo Software Installation "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_software_installation_guide.md)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:5
+msgid "Onboard Test"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:7
+msgid ""
+"For vehicle onboard test, make sure you have calibrated the extrinsic "
+"parameters between the LiDAR and the GNSS/INS. For sensor calibration, "
+"please refer to [Apollo 1.5 LiDAR calibration "
+"guide](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/apollo_lidar_imu_calibration_guide.md)"
+" before you proceed."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:9
+msgid "Launch Docker Release Container"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:11
+msgid "Launch HMI"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:13
+msgid ""
+"Use your favorite browser to access HMI web service in your host machine "
+"browser with URL http://localhost:8887"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:15
+msgid "Select Vehicle and Map"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:17
+msgid ""
+"You'll be required to setup profile before doing anything else. Click the"
+" dropdown menu to select your HDMap and vehicle in use. The list are "
+"defined in [HMI config "
+"file](https://raw.githubusercontent.com/ApolloAuto/apollo/master/modules/hmi/conf/config.pb.txt)."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:19
+msgid ""
+"*Note: It's also possible to change profile on the right panel of HMI, "
+"but just remember to click \"Reset All\" on the top-right corner to "
+"restart the system.*"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:21
+msgid "![](images/start_hmi.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:23
+msgid "Start Modules"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:25
+msgid "Set up the system by clicking the \"Setup\" button on left panel."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:27
+msgid "![](images/hmi_setup_1.5.png)"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:29
+msgid "(*New!*) Be Cautious When Starting Autonomous Driving"
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:31
+msgid ""
+"Make sure all modules are on and hardware is ready, and the vehicle is in"
+" a good state which is safe to enter auto mode to follow the traffic to "
+"destination."
+msgstr ""
+
+#: ../../docs/quickstart/apollo_1_5_quick_start.md:33
+msgid ""
+"Click the \"Start Auto\" button, then it will drive you there!  "
+"![](images/hmi_start_auto_following.png)"
+msgstr ""
+

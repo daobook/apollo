@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:1
+msgid "基于激光雷达的封闭园区自动驾驶搭建--自动驾驶演示"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:3
+msgid "[基于激光雷达的封闭园区自动驾驶搭建--自动驾驶演示](#基于激光雷达的封闭园区自动驾驶搭建--自动驾驶演示)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:4
+msgid "[概览](#概览)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:5
+msgid "[前提条件](#前提条件)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:6
+msgid "[启动流程](#启动流程)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:7
+msgid "[1. 启动can卡](#1-启动can卡)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:8
+msgid "[2. 编译项目，启动Dreamview](#2-编译项目启动dreamview)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:9
+msgid "[3. 启动所需模块](#3-启动所需模块)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:10
+msgid "[4. 检查lidar数据是否正确](#4-检查lidar数据是否正确)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:11
+msgid "[5. 检查各模块channel是否正确](#5-检查各模块channel是否正确)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:12
+msgid "[6. 启动Lidar感知](#6-启动lidar感知)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:13
+msgid "[7. 验证Lidar感知](#7-验证lidar感知)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:14
+msgid ""
+"[8. 启动 "
+"Canbus、Planning、Prediction、Routing、Control模块](#8-启动-canbusplanningpredictionroutingcontrol模块)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:15
+msgid ""
+"[9. "
+"验证Planning、Prediction、Routing、Control模块是否启动成功](#9-验证planningpredictionroutingcontrol模块是否启动成功)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:16
+msgid "[10. 启动自动驾驶](#10-启动自动驾驶)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:17
+msgid "[常见问题](#常见问题)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:18
+msgid "[1. 自动驾驶过程中车轮来回摆动，有画龙现象](#1-自动驾驶过程中车轮来回摆动有画龙现象)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:19
+msgid "[2. 车辆换道、停止等效果不理想](#2-车辆换道停止等效果不理想)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:21
+msgid "概览"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:22
+msgid ""
+"该用户手册旨在帮助用户完成基于Lidar感知的封闭园区自动驾驶。为了方便用户快速实现基于lidar的封闭园区自动驾驶演示，我们提供了`Dev "
+"kit Closeloop`模式，建议用户在进行基于lidar的封闭园区自动驾驶演示时使用该模式， 除此之外建议使用`Dev Kit "
+"Debug`模式。本文将以`Dev kit Closeloop`模式进行说明，如果用户选择使用`Dev Kit Debug`模式，操作方法相同。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:23
+msgid "前提条件"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:25
+msgid "正确完成了[封闭园区自动驾驶搭建--规划适配](planning_configuration_cn.md)。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:27
+msgid "确保在道路平整、车少人少等相对安全的情况下实验。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:29
+msgid "确保至少两人操作，一人操作工控机，一人操作遥控器，做好随时接管准备。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:31
+msgid "启动流程"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:32
+msgid "1. 启动can卡"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:34
+msgid "进入can卡目录启动can卡，用以下命令启动"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:39
+msgid "2. 编译项目，启动Dreamview"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:40
+msgid "进入docker环境，用gpu编译项目，启动Dreamview"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:48
+msgid "3. 启动所需模块"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:50
+msgid ""
+"在浏览器中打开`(http://localhost:8888)`，选择模式为`Dev Kit Debug`， "
+"根据车辆铭牌信息选择对应的车型(详情见下表)，选择对应的虚拟车道线或高精地图，在Module "
+"Controller标签页启动Canbus、GPS、Localization、Transform模块。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "铭牌信息"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "车型选择"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "Apollo D-KIT Lite"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "dev_kit"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "Apollo D-KIT Standard"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "dev_kit_standard"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "Apollo D-KIT Advanced(NE-S)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "dev_kit_advanced_ne-s"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "Apollo D-KIT Advanced(SNE-R)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "dev_kit_advanced_sne-r"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:59
+msgid "![lidar_adaption_closeloop](images/lidar_adaption_closeloop.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:59
+msgid "lidar_adaption_closeloop"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:61
+msgid ""
+"定位模块启动后，需要接收定位数据，需要等待约1分钟左右。打开新的终端，并使用`bash "
+"docker/scripts/dev_into.sh`命令进入docker环境，在新终端中输入`cyber_monitor`命令查看`tf`、`tf_static`、`/apollo/localization/pose`数据，这三个数据在cyber_monitor中均显示为绿色代表定位模块启动成功"
+" "
+"![lidar_integration_localization_check](images/lidar_integration_localization_check.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:61
+msgid "lidar_integration_localization_check"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:64
+msgid "在dreamview中启动`lidar`模块"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:66
+msgid "![lidar_integration_start_lidar_closeloop](images/lidar_integration_start_lidar_closeloop.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:66
+msgid "lidar_integration_start_lidar_closeloop"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:68
+msgid "4. 检查lidar数据是否正确"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:70
+msgid "使用`cyber_monitor`，查看激光雷达数据是否正常输出，并使用上下方向键选择channel，使用右方向键查看channel详细数据，数据无异常则说明激光雷达启动成功。(关于cyber_monitor更详细使用，请参考[CyberRT_Developer_Tools](../../cyber/CyberRT_Developer_Tools.md))"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:72
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:97
+msgid "单激光雷达用户用户，请检查如下channel是否正常输出"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "序号"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "channel"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "帧率"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "1"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "10Hz"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "2"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/Scan`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "3"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/compensator/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:80
+msgid "![lidar_integration_cyber_monitor](images/lidar_integration_cyber_monitor.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:80
+msgid "lidar_integration_cyber_monitor"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:82
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:111
+msgid "三激光雷达用户用户，请检查如下channel是否正常输出"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/back/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/left/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/right/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "4"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/lidar16/fusion/PointCloud2`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "10HZ"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "5"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:93
+msgid "5. 检查各模块channel是否正确"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:95
+msgid "在docker中输入`cyber_monitor`命令并检查以下channel（使用`上下方向键`选择channel，使用`右方向键`查看channel详细信息）："
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "channel_name"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "检查项目"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/localization/pose`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "确保能正常输出数据"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/sensor/gnss/best_pose`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "确保能正常输出数据、`sol_type:` 选项显示为`NARROW_INT`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/tf`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/tf_static`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/canbus/chassis`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md
+msgid "`/apollo/canbus/chassis_detail`"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:128
+msgid "6. 启动Lidar感知"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:129
+msgid ""
+"确认各模块正常启动且channel输出正常后，在DreamView上启动`Lidar "
+"Perception`，使用`cyber_monitor`查看`/apollo/perception/obstacles`是否正常输出 "
+"![lidar_adaption_dreamview_closeloop](images/lidar_adaption_dreamview_closeloop.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:129
+msgid "lidar_adaption_dreamview_closeloop"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:133
+msgid "7. 验证Lidar感知"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:134
+msgid "在DreamView上启动Perception模块，使用`cyber_monitor`查看`/apollo/perception/obstacles`是否正常输出，查看车前方10米处运动的人或者自行车（自行车上要有人），在DreamView上查看障碍物颜色以及位置速度信息（自行车青蓝色，行人黄色，车辆绿色），如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:136
+msgid "![lidar_adaptation_dreamview2](images/lidar_adaptation_dreamview2.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:136
+msgid "lidar_adaptation_dreamview2"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:138
+msgid "`/apollo/perception/obstacles`的数据如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:140
+msgid "![lidar_demonstration_obstacles1](images/lidar_demonstration_obstacles1.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:140
+msgid "lidar_demonstration_obstacles1"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:142
+msgid "![lidar_demonstration_obstacles2](images/lidar_demonstration_obstacles2.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:142
+msgid "lidar_demonstration_obstacles2"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:144
+msgid "确保在DreamView上能看到障碍物且`/apollo/perception/obstacles`有障碍物信息。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:146
+msgid "8. 启动 Canbus、Planning、Prediction、Routing、Control模块"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:147
+msgid ""
+"在Module Controller标签页启动Planning、Prediction、Routing、Control模块。 "
+"![lidar_adaptation_dreamview7_closeloop](images/lidar_adaptation_dreamview7_closeloop.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:147
+msgid "lidar_adaptation_dreamview7_closeloop"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:150
+msgid ""
+"在Routing Editor标签中点击Add Point of Interest按钮添加一个point， 然后选择Send Routing "
+"Request按钮发送添加的routing点"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:152
+msgid "![lidar_adaptation_dreamview1](images/lidar_adaptation_dreamview6.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:152
+msgid "lidar_adaptation_dreamview1"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:156
+msgid "9. 验证Planning、Prediction、Routing、Control模块是否启动成功"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:157
+msgid ""
+"从DreamView中查看会出现一个蓝色的线 以及一个红色的stop标志。如下图所示： "
+"![lidar_demonstration_routing1](images/lidar_demonstration_routing1.png) "
+"在车前方存在人或者自行车（车上有人）时，在task标签页查看planning轨迹线，正常情况下planning会重新规划轨迹，如下图所示："
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:157
+msgid "lidar_demonstration_routing1"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:161
+msgid "![lidar_demonstration_routing2](images/lidar_demonstration_routing2.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:161
+msgid "lidar_demonstration_routing2"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:163
+msgid "在docker环境中输入命令`cyber_monitor`并查看planning channel信息："
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:165
+msgid "![lidar_demonstration_channel](images/lidar_demonstration_channel.png)"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:165
+msgid "lidar_demonstration_channel"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:167
+msgid "如果出现上图所示轨迹线和topic信息，表示规划模块适配和开环测试通过，否则继续查看log信息进行调试。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:169
+msgid "10. 启动自动驾驶"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:170
+msgid ""
+"在附近没有人员和车的情况下，遥控器下放权限并在task标签页中点击start "
+"auto使车进入自动驾驶状态，在车自动驾驶这个过程中做好随时用遥控器接管确保安全的准备。"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:174
+msgid "常见问题"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:175
+msgid "1. 自动驾驶过程中车轮来回摆动，有画龙现象"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:176
+msgid "这种情况一般是车辆动力学标定没有做好，建议重新进行动力学标定"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:177
+msgid "2. 车辆换道、停止等效果不理想"
+msgstr ""
+
+#: ../../docs/D-kit/Lidar_Based_Auto_Driving/start_auto_driving_cn.md:178
+msgid ""
+"在保证感知、定位稳定的前提下，可以尝试修改planning配置文件中的相关参数进行调整，详情参考[封闭园区自动驾驶搭建--"
+"规划适配](planning_configuration_cn.md)"
+msgstr ""
+

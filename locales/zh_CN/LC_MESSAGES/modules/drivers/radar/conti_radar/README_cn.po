@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:1
+msgid "conti_radar"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:2
+msgid "该驱动基于Apollo cyber开发，支持continental ARS。"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:4
+msgid "配置"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:5
+msgid ""
+"radar的默认配置: "
+"[conf/conti_radar_conf.pb.txt](https://github.com/ApolloAuto/apollo/blob/master/modules/drivers/radar/conti_radar/conf/conti_radar_conf.pb.txt)"
+" "
+"radar启动时，会先根据上述配置文件，向can卡发送指令，对radar进行配置。当接收到的radar状态信息与用户配置信息一致时，才开始解析数据并发送消息。"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:8
+msgid "运行"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:9
+msgid "该驱动需要在apollo docker环境中运行。"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:20
+msgid "Topic"
+msgstr ""
+
+#: ../../modules/drivers/radar/conti_radar/README_cn.md:21
+msgid ""
+"**topic name**: /apollo/sensor/conti_radar **data type**:  "
+"apollo::drivers::ContiRadar **channel ID**: CHANNEL_ID_ONE **proto "
+"file**: "
+"[modules/drivers/proto/conti_radar.proto](https://github.com/ApolloAuto/apollo/blob/master/modules/drivers/proto/conti_radar.proto)"
+msgstr ""
+
