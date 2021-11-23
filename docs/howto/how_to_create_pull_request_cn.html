@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>如何创建合入请求(Pull Request) &#8212; Apollo Auto 0.0.1 文档</title>
+    <title>如何创建合入请求(Pull Request) &#8212; Apollo 文档 0.0.1 文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -64,7 +63,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Apollo Auto 0.0.1 文档</h1>
+      <h1 class="site-logo" id="site-title">Apollo 文档 0.0.1 文档</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -84,7 +83,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/00_cyber.html">
+  <a class="reference internal" href="../../_toc/cyber/index.html">
    Cyber
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -95,12 +94,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../cyber/README.html">
-     Cyber 自述
+     简介
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
-     Introduction
+    <a class="reference internal" href="../../_toc/cyber/quickstart.html">
+     快速入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -123,21 +122,45 @@
        F.A.Q.
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/tutorials.html">
+     教程
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-       Cyber RT API tutorial
+       1. Cyber RT API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       Python API tutorial
+       2. Python API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-       Apollo Cyber RT Developer Tools
+       3. Apollo Cyber RT Developer Tools
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/topics.html">
+     高级专题
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
        How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
@@ -148,12 +171,24 @@
        Migration guide from Apollo ROS
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/api.html">
+     API 参考
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
        C++ API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -169,8 +204,8 @@
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
        Python API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -181,90 +216,6 @@
         </a>
        </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-     Cyber RT API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
-     F.A.Q.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-     Python API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
-     Cyber RT Terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-     cyber/node/node.h
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
-     C++ API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-       cyber/node/node.h
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-     python/cyber_py/cyber.py
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
-     Python API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-       python/cyber_py/cyber.py
-      </a>
      </li>
     </ul>
    </li>
@@ -280,12 +231,34 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../_toc/01_docs.html">
+  <a class="reference internal" href="../../_toc/docs.html">
    Apollo Auto 文档
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -545,65 +518,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../FAQs/Software_FAQs_cn.html">
      软件 FAQ
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_API_for_Developers.html">
-     Cyber RT API for Developers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_FAQs.html">
-     Apollo Cyber RT FAQs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API.html">
-     Cyber RT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API_cn.html">
-     CyberRT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start_cn.html">
-     如何使用 Cyber RT 创建新的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Scheduler_cn.html">
-     Cyber RT 调度
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Terms.html">
-     Apollo Cyber RT Terminologies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/README.html">
     </a>
    </li>
    <li class="toctree-l2">
@@ -1789,33 +1703,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/docker.html">
-   Docker
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/build/README.html">
-     Apollo Docker Image Build Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/setup_host/README.html">
-     Host Setup
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../_toc/other.html">
    临时目录
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1844,8 +1736,8 @@
     <a class="reference internal" href="../../third_party/tf2/index.html">
      tf2
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2242,8 +2134,8 @@
   <a class="reference internal" href="../../_toc/style.html">
    风格
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -2409,64 +2301,64 @@
 <div><p>请用您的 GitHub 用户名替换以下描述中的”YOUR_USERNAME”。</p>
 </div></blockquote>
 <p>打开终端，输入以下任一命令：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span># 使用 SSH 方式
-git clone git@github.com:YOUR_USERNAME/apollo.git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用 SSH 方式</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
 
-# 使用 HTTPS 方式
-git clone https://github.com/YOUR_USERNAME/apollo.git
+<span class="c1"># 使用 HTTPS 方式</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>第三步：设置您的用户名和电子邮件地址<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="w">  </span><span class="s">&quot;My Name&quot;</span><span class="w"></span>
-<span class="n">git</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">email</span><span class="w"> </span><span class="s">&quot;myname@example.com&quot;</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span>  <span class="s2">&quot;My Name&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;myname@example.com&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="apollo-upstream">
 <h2>第四步： 将 Apollo 官方仓库设为 upstream 上游分支<a class="headerlink" href="#apollo-upstream" title="永久链接至标题">¶</a></h2>
 <p>设置上游分支以便后续同步远端 upstream 分支的代码变更，这可以通过如下命令完成：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span># 使用SSH
-git remote add upstream git@github.com:ApolloAuto/apollo.git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用SSH</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
 
-# 使用 HTTPS
-git remote add upstream https://github.com/ApolloAuto/apollo.git
+<span class="c1"># 使用 HTTPS</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
 <p>通过如下命令查看 upstream 是否设置成功：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="o">-</span><span class="n">v</span>
 </pre></div>
 </div>
 <p>如成功，则会显示如下的 remotes 列表：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>origin	git@github.com:YOUR_USERNAME/apollo.git (fetch)
-origin	git@github.com:YOUR_USERNAME/apollo.git (push)
-upstream	git@github.com:ApolloAuto/apollo.git (fetch)
-upstream	git@github.com:ApolloAuto/apollo.git (push)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YOUR_USERNAME</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<span class="n">upstream</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">upstream</span>	<span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>第五步：创建分支，做出修改，提交变更<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">checkout</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="n">my_dev</span><span class="w"> </span><span class="n">origin</span><span class="o">/</span><span class="n">master</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_dev</span> <span class="n">origin</span><span class="o">/</span><span class="n">master</span>
 
-<span class="cp"># 在您的my_dev分支修复问题，添加新功能，等等</span>
-<span class="cp"># ...</span>
+<span class="c1"># 在您的my_dev分支修复问题，添加新功能，等等</span>
+<span class="c1"># ...</span>
 
-<span class="cp"># 将代码变动提交到您的本地分支，注意提交消息格式</span>
-<span class="n">git</span><span class="w"> </span><span class="n">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="s">&quot;[module] brief description of the changes&quot;</span><span class="w"></span>
+<span class="c1"># 将代码变动提交到您的本地分支，注意提交消息格式</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;[module] brief description of the changes&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
 <h2>第六步：同步上游仓库变更<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">pull</span><span class="w"> </span><span class="o">--</span><span class="n">rebase</span><span class="w">  </span><span class="n">upstream</span><span class="w"> </span><span class="n">master</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span>  <span class="n">upstream</span> <span class="n">master</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id5">
 <h2>第七步：将您的本地修改推送到您个人的 Apollo 分支仓库<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">my_dev</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my_dev</span>
 </pre></div>
 </div>
 </div>

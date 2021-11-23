@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>循迹搭建–定位模块配置 &#8212; Apollo Auto 0.0.1 文档</title>
+    <title>循迹搭建–定位模块配置 &#8212; Apollo 文档 0.0.1 文档</title>
     
   <link href="../../../_static/css/theme.css" rel="stylesheet">
   <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
     
   <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -64,7 +63,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Apollo Auto 0.0.1 文档</h1>
+      <h1 class="site-logo" id="site-title">Apollo 文档 0.0.1 文档</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
@@ -84,7 +83,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../_toc/00_cyber.html">
+  <a class="reference internal" href="../../../_toc/cyber/index.html">
    Cyber
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -95,12 +94,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../../cyber/README.html">
-     Cyber 自述
+     简介
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/index.html">
-     Introduction
+    <a class="reference internal" href="../../../_toc/cyber/quickstart.html">
+     快速入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -123,21 +122,45 @@
        F.A.Q.
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_toc/cyber/tutorials.html">
+     教程
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-       Cyber RT API tutorial
+       1. Cyber RT API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       Python API tutorial
+       2. Python API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-       Apollo Cyber RT Developer Tools
+       3. Apollo Cyber RT Developer Tools
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_toc/cyber/topics.html">
+     高级专题
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Docker.html">
        How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
@@ -148,12 +171,24 @@
        Migration guide from Apollo ROS
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../_toc/cyber/api.html">
+     API 参考
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../../cyber/doxy-docs/source/api/cppapi_index.html">
        C++ API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -169,8 +204,8 @@
       <a class="reference internal" href="../../../cyber/doxy-docs/source/api/pythonapi_index.html">
        Python API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -181,90 +216,6 @@
         </a>
        </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-     Cyber RT API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_FAQs.html">
-     F.A.Q.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-     Python API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/CyberRT_Terms.html">
-     Cyber RT Terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/api/cppapi.html">
-     cyber/node/node.h
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/api/cppapi_index.html">
-     C++ API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../cyber/doxy-docs/source/api/cppapi.html">
-       cyber/node/node.h
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/api/pythonapi.html">
-     python/cyber_py/cyber.py
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../../cyber/doxy-docs/source/api/pythonapi_index.html">
-     Python API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../../cyber/doxy-docs/source/api/pythonapi.html">
-       python/cyber_py/cyber.py
-      </a>
      </li>
     </ul>
    </li>
@@ -280,12 +231,34 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../../_toc/01_docs.html">
+  <a class="reference internal" href="../../../_toc/docs.html">
    Apollo Auto 文档
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -545,65 +518,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../FAQs/Software_FAQs_cn.html">
      软件 FAQ
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_API_for_Developers.html">
-     Cyber RT API for Developers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_FAQs.html">
-     Apollo Cyber RT FAQs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Python_API.html">
-     Cyber RT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Python_API_cn.html">
-     CyberRT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Quick_Start_cn.html">
-     如何使用 Cyber RT 创建新的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Scheduler_cn.html">
-     Cyber RT 调度
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/CyberRT_Terms.html">
-     Apollo Cyber RT Terminologies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/README.html">
     </a>
    </li>
    <li class="toctree-l2">
@@ -1789,33 +1703,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../_toc/docker.html">
-   Docker
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../docker/build/README.html">
-     Apollo Docker Image Build Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../docker/setup_host/README.html">
-     Host Setup
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../../_toc/other.html">
    临时目录
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1844,8 +1736,8 @@
     <a class="reference internal" href="../../../third_party/tf2/index.html">
      tf2
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2242,8 +2134,8 @@
   <a class="reference internal" href="../../../_toc/style.html">
    风格
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -2516,62 +2408,62 @@
 </div>
 <div class="section" id="id6">
 <h2>导航模式配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">FineAlign</span><span class="p">,</span><span class="n">off</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">coarsealign</span><span class="p">,</span><span class="n">off</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">dynamicalign</span><span class="p">,</span><span class="n">on</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">gnss</span><span class="p">,</span><span class="kt">double</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">carmode</span><span class="p">,</span><span class="n">on</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">zupt</span><span class="p">,</span><span class="n">on</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">navmode</span><span class="p">,</span><span class="n">firmwareindex</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$cmd,set,navmode,FineAlign,off*ff
+$cmd,set,navmode,coarsealign,off*ff
+$cmd,set,navmode,dynamicalign,on*ff
+$cmd,set,navmode,gnss,double*ff
+$cmd,set,navmode,carmode,on*ff
+$cmd,set,navmode,zupt,on*ff
+$cmd,set,navmode,firmwareindex,0*ff
 </pre></div>
 </div>
 </div>
 <div class="section" id="usb">
 <h2>USB接口输出设置<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">$cmd</span><span class="p">,</span><span class="n">output</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">rawimub</span><span class="p">,</span><span class="mf">0.010</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">output</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">inspvab</span><span class="p">,</span><span class="mf">0.010</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">bestposb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">rangeb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">gpsephemb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">gloephemerisb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">bdsephemerisb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">through</span><span class="p">,</span><span class="n">usb0</span><span class="p">,</span><span class="n">headingb</span><span class="p">,</span><span class="mf">1.000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$cmd,output,usb0,rawimub,0.010*ff
+$cmd,output,usb0,inspvab,0.010*ff
+$cmd,through,usb0,bestposb,1.000*ff
+$cmd,through,usb0,rangeb,1.000*ff
+$cmd,through,usb0,gpsephemb,1.000*ff
+$cmd,through,usb0,gloephemerisb,1.000*ff
+$cmd,through,usb0,bdsephemerisb,1.000*ff
+$cmd,through,usb0,headingb,1.000*ff
 </pre></div>
 </div>
 </div>
 <div class="section" id="id7">
 <h2>网口配置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">localip</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">123</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">localmask</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">localgate</span><span class="p">,</span><span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">netipport</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">113</span><span class="p">,</span><span class="mi">114</span><span class="p">,</span><span class="mi">8000</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">netuser</span><span class="p">,</span><span class="nl">username</span><span class="p">:</span><span class="n">password</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">mountpoint</span><span class="p">,</span><span class="n">XMJL</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$cmd,set,localip,192,168,0,123*ff
+$cmd,set,localmask,255,255,255,0*ff
+$cmd,set,localgate,192,168,0,1*ff
+$cmd,set,netipport,111,112,113,114,8000*ff
+$cmd,set,netuser,username:password*ff
+$cmd,set,mountpoint,XMJL*ff
 </pre></div>
 </div>
 <p>假如您通过自建RTK基站或者购买RTK基站服务的方式拥有了一个RTK基站账号，账号信息如下：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="nl">ip</span><span class="p">:</span><span class="mf">203.107.45.154</span><span class="w"></span>
-<span class="nl">port</span><span class="p">:</span><span class="mi">8002</span><span class="w"></span>
-<span class="nl">mount_point</span><span class="p">:</span><span class="n">RTCM32_GGB</span><span class="w"></span>
-<span class="nl">user</span><span class="p">:</span><span class="n">qianxun1234</span><span class="w"></span>
-<span class="nl">password</span><span class="p">:</span><span class="n">abc123</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span><span class="p">:</span><span class="mf">203.107.45.154</span>
+<span class="n">port</span><span class="p">:</span><span class="mi">8002</span>
+<span class="n">mount_point</span><span class="p">:</span><span class="n">RTCM32_GGB</span>
+<span class="n">user</span><span class="p">:</span><span class="n">qianxun1234</span>
+<span class="n">password</span><span class="p">:</span><span class="n">abc123</span>
 </pre></div>
 </div>
 <p>这里我们假设您所使用的无线路由器的IP地址为192.168.0.1,那么我们将M2主机的IP地址设置为192.168.0.123，子网掩码为255.255.255.0，网关为192.168.0.1。netipport设置的是RTK基站的IP地址和端口号，具体到上面您购买的RTK基站账号中，在此处IP地址为：203.107.45.154，端口号为：8002；netuser设置的是RTK基站的用户名和密码，在此处用户名为：qianxun1234，密码为：abc123；在实际配置中，请以自己实际购买的基站账号的用户名和密码为准。mountpoint是RTK基站的挂载点，在这里我们选用RTCM32_GGB。注意：在M2的网络模块配置完成后，在IPC主机中应该是可以ping通IMU的ip地址的；否则，IMU无法正常联网，在后续的GNSS信号检查中会一直显示SINGLE而不是我们期望的NARROW_INT。</p>
 <p><strong>注意</strong>：当您升级了IMU的固件版本时，请用以下命令来查看IMU的网络相关的配置：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">$cmd</span><span class="p">,</span><span class="n">get</span><span class="p">,</span><span class="n">netpara</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$cmd,get,netpara*ff
 </pre></div>
 </div>
 <p>若输出的内容有<code class="docutils literal notranslate"><span class="pre">$cmd,set,ntrip,disable,disable*ff</span></code>相关的字样，则将以下命令输入IMU：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">$cmd</span><span class="p">,</span><span class="n">set</span><span class="p">,</span><span class="n">ntrip</span><span class="p">,</span><span class="n">enable</span><span class="p">,</span><span class="n">enable</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
-<span class="n">$cmd</span><span class="p">,</span><span class="n">save</span><span class="p">,</span><span class="n">config</span><span class="o">*</span><span class="n">ff</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$cmd,set,ntrip,enable,enable*ff
+$cmd,save,config*ff
 </pre></div>
 </div>
 </div>
 <div class="section" id="pps">
 <h2>PPS授时接口输出<a class="headerlink" href="#pps" title="永久链接至标题">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ppscontrol</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">com3</span><span class="w"> </span><span class="n">gprmc</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mf">0.25</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ppscontrol</span> <span class="n">enable</span> <span class="n">positive</span> <span class="mf">1.0</span> <span class="mi">10000</span>
+<span class="n">log</span> <span class="n">com3</span> <span class="n">gprmc</span> <span class="n">ontime</span> <span class="mi">1</span> <span class="mf">0.25</span>
 </pre></div>
 </div>
 <p>将所有配置逐条发送给设备，得到设备返回<code class="docutils literal notranslate"><span class="pre">$cmd,config,ok*ff</span></code>字段，说明配置成功，配置成功后要进行配置保存，发送<code class="docutils literal notranslate"><span class="pre">$cmd,save,config*ff</span></code>指令;也可以将以上的相关配置命令保存在<code class="docutils literal notranslate"><span class="pre">/apollo/docs/D-kit/sample/imu.conf</span></code>文件中,然后在cutecom中点击右边的<code class="docutils literal notranslate"><span class="pre">Send</span> <span class="pre">file...</span></code>按钮，在弹出的对话框中选择<code class="docutils literal notranslate"><span class="pre">imu.conf</span></code>文件后点击<code class="docutils literal notranslate"><span class="pre">Open</span></code>按钮后即可将文件中保存的配置命令全部发送给设备，一切正常的情况下，设备会返回25个<code class="docutils literal notranslate"><span class="pre">$cmd,config,ok*ff</span></code>字段，说明配置成功；切记在发送文件之前将自己的实际信息保存在文件中，比如杆臂值和<code class="docutils literal notranslate"><span class="pre">GNSS</span></code>的账号信息等。配置成功后将该设备断电后重新上电加载后即可使用。注意：PPS授时接口输出的两条配置命令是没有返回<code class="docutils literal notranslate"><span class="pre">$cmd,config,ok*ff</span></code>字段的，这是正常情况，不用担心。</p>
@@ -2657,21 +2549,21 @@ bash scripts/bootstrap.sh
 <div class="section" id="id13">
 <h2>常见问题<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <p>a.系统无法生成驱动设备<code class="docutils literal notranslate"><span class="pre">ttyACM0</span></code>，在<code class="docutils literal notranslate"><span class="pre">/apollo/data/log/gnss.INFO</span></code>里面会有类似报错提示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>open device /dev/ttyACM0 failed， error: no such file or directory
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>open device /dev/ttyACM0 failed， error: no such file or directory
 gnss driver connect failed, stream init failed
 </pre></div>
 </div>
 <p>docker内和docker外的/dev/下都没有<code class="docutils literal notranslate"><span class="pre">ttyACM0</span></code>设备，先退出docker，然后关闭docker，再执行如下命令：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">setup_host</span><span class="w"></span>
-<span class="n">bash</span><span class="w"> </span><span class="n">setup_host</span><span class="p">.</span><span class="n">sh</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">docker</span><span class="o">/</span><span class="n">setup_host</span>
+<span class="n">bash</span> <span class="n">setup_host</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>重启工控机，然后在/docker/外，/dev/下，就有<code class="docutils literal notranslate"><span class="pre">ttyACM0</span></code>，再进docker，再试gps，可以了。</p>
 <p>b.GPS打开后，发现best_pose, imu, localization/pose 信号没有收到</p>
-<p>运行bash gps.sh后，可以cyber_monitor中观察以下几个信号。(关于cyber_monitor更详细使用，请参考<a class="reference internal" href="../../cyber/CyberRT_Developer_Tools.html"><span class="doc std std-doc">CyberRT_Developer_Tools</span></a>)</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">best_pose</span><span class="w"></span>
-<span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">imu</span><span class="w"></span>
-<span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">localization</span><span class="o">/</span><span class="n">pose</span><span class="w"></span>
+<p>运行bash gps.sh后，可以cyber_monitor中观察以下几个信号。(关于cyber_monitor更详细使用，请参考<span class="xref myst">CyberRT_Developer_Tools</span>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">best_pose</span>
+<span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">sensor</span><span class="o">/</span><span class="n">gnss</span><span class="o">/</span><span class="n">imu</span>
+<span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">localization</span><span class="o">/</span><span class="n">pose</span>
 </pre></div>
 </div>
 <p>如果best_pose和imu没有，请检查gps和imu的配置。

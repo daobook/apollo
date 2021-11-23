@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apollo 2.0 Hardware and System Installation Guide &#8212; Apollo Auto 0.0.1 文档</title>
+    <title>Apollo 2.0 Hardware and System Installation Guide &#8212; Apollo 文档 0.0.1 文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -64,7 +63,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Apollo Auto 0.0.1 文档</h1>
+      <h1 class="site-logo" id="site-title">Apollo 文档 0.0.1 文档</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -84,7 +83,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/00_cyber.html">
+  <a class="reference internal" href="../../_toc/cyber/index.html">
    Cyber
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -95,12 +94,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../cyber/README.html">
-     Cyber 自述
+     简介
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
-     Introduction
+    <a class="reference internal" href="../../_toc/cyber/quickstart.html">
+     快速入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -123,21 +122,45 @@
        F.A.Q.
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/tutorials.html">
+     教程
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-       Cyber RT API tutorial
+       1. Cyber RT API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       Python API tutorial
+       2. Python API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-       Apollo Cyber RT Developer Tools
+       3. Apollo Cyber RT Developer Tools
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/topics.html">
+     高级专题
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
        How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
@@ -148,12 +171,24 @@
        Migration guide from Apollo ROS
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/api.html">
+     API 参考
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
        C++ API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -169,8 +204,8 @@
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
        Python API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -181,90 +216,6 @@
         </a>
        </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-     Cyber RT API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
-     F.A.Q.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-     Python API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
-     Cyber RT Terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-     cyber/node/node.h
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
-     C++ API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-       cyber/node/node.h
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-     python/cyber_py/cyber.py
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
-     Python API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-       python/cyber_py/cyber.py
-      </a>
      </li>
     </ul>
    </li>
@@ -280,12 +231,34 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../_toc/01_docs.html">
+  <a class="reference internal" href="../../_toc/docs.html">
    Apollo Auto 文档
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -545,65 +518,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../FAQs/Software_FAQs_cn.html">
      软件 FAQ
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_API_for_Developers.html">
-     Cyber RT API for Developers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_FAQs.html">
-     Apollo Cyber RT FAQs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API.html">
-     Cyber RT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API_cn.html">
-     CyberRT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start_cn.html">
-     如何使用 Cyber RT 创建新的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Scheduler_cn.html">
-     Cyber RT 调度
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Terms.html">
-     Apollo Cyber RT Terminologies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/README.html">
     </a>
    </li>
    <li class="toctree-l2">
@@ -1789,33 +1703,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/docker.html">
-   Docker
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/build/README.html">
-     Apollo Docker Image Build Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/setup_host/README.html">
-     Host Setup
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../_toc/other.html">
    临时目录
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1844,8 +1736,8 @@
     <a class="reference internal" href="../../third_party/tf2/index.html">
      tf2
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2242,8 +2134,8 @@
   <a class="reference internal" href="../../_toc/style.html">
    风格
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -3166,15 +3058,15 @@ b.   Launch the Software Updater to update to the latest software packages (for 
 <ol class="simple">
 <li><p>Download the release packages from the release section on GitHub:</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/ApolloAuto/apollo-kernel/releases</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">-</span><span class="n">kernel</span><span class="o">/</span><span class="n">releases</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Install the kernel after having downloading the release package:</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span><span class="w"> </span><span class="n">zxvf</span><span class="w"> </span><span class="n">linux</span><span class="mf">-4.4.32</span><span class="o">-</span><span class="n">apollo</span><span class="mf">-1.5.0</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="w"></span>
-<span class="n">cd</span><span class="w"> </span><span class="n">install</span><span class="w"></span>
-<span class="n">sudo</span><span class="w"> </span><span class="n">bash</span><span class="w"> </span><span class="n">install_kernel</span><span class="p">.</span><span class="n">sh</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">zxvf</span> <span class="n">linux</span><span class="o">-</span><span class="mf">4.4.32</span><span class="o">-</span><span class="n">apollo</span><span class="o">-</span><span class="mf">1.5.0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">cd</span> <span class="n">install</span>
+<span class="n">sudo</span> <span class="n">bash</span> <span class="n">install_kernel</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <ol class="simple">
@@ -3188,15 +3080,15 @@ b.   Launch the Software Updater to update to the latest software packages (for 
 <ol class="simple">
 <li><p>Clone the code from the repository</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/ApolloAuto/apollo-kernel.git</span>
-<span class="n">cd</span><span class="w"> </span><span class="n">apollo</span><span class="o">-</span><span class="n">kernel</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ApolloAuto</span><span class="o">/</span><span class="n">apollo</span><span class="o">-</span><span class="n">kernel</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">apollo</span><span class="o">-</span><span class="n">kernel</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Add the ESD CAN driver source code according to <a class="reference external" href="https://github.com/ApolloAuto/apollo-kernel/blob/master/linux/ESDCAN-README.md">ESDCAN-README.md</a></p></li>
 <li><p>Build the kernel using the following command.</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span><span class="w"> </span><span class="n">build</span><span class="p">.</span><span class="n">sh</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">build</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <ol class="simple">
@@ -3210,13 +3102,13 @@ b.   Launch the Software Updater to update to the latest software packages (for 
 <ol class="simple">
 <li><p>Download the installation files</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="c1">//us.download.nvidia.com/XFree86/Linux-x86_64/375.39/NVIDIA-Linux-x86_64-375.39.run</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">us</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">nvidia</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">XFree86</span><span class="o">/</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span><span class="mf">375.39</span><span class="o">/</span><span class="n">NVIDIA</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">375.39</span><span class="o">.</span><span class="n">run</span>
 </pre></div>
 </div>
 <ol class="simple">
 <li><p>Start the installation</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span><span class="w"> </span><span class="n">bash</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">NVIDIA</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="mf">-375.39</span><span class="p">.</span><span class="n">run</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">check</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="k">module</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">bash</span> <span class="o">./</span><span class="n">NVIDIA</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">375.39</span><span class="o">.</span><span class="n">run</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">check</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">s</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">kernel</span><span class="o">-</span><span class="n">module</span>
 </pre></div>
 </div>
 <div class="section" id="optional-test-the-esd-can-device-node">
@@ -3557,106 +3449,108 @@ sudo mknod –-mode<span class="o">=</span>a+rw can1 c <span class="m">52</span>
 <div class="section" id="configuring-the-gps-and-imu">
 <h3>Configuring the GPS and IMU<a class="headerlink" href="#configuring-the-gps-and-imu" title="永久链接至标题">¶</a></h3>
 <p>Configure the GPS and IMU as shown:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span><span class="w"> </span><span class="n">STATE</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">UNLOGALL</span><span class="w"> </span><span class="n">THISPORT</span><span class="w"></span>
-<span class="n">INSCOMMAND</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"></span>
-<span class="n">SETIMUORIENTATION</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-<span class="n">ALIGNMENTMODE</span><span class="w"> </span><span class="n">AUTOMATIC</span><span class="w">  </span>
-<span class="n">VEHICLEBODYROTATION</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">COM</span><span class="w"> </span><span class="n">COM1</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">OFF</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">COM</span><span class="w"> </span><span class="n">COM2</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">OFF</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">INTERFACEMODE</span><span class="w"> </span><span class="n">COM1</span><span class="w"> </span><span class="n">NOVATEL</span><span class="w"> </span><span class="n">NOVATEL</span><span class="w"> </span><span class="n">ON</span><span class="w"></span>
-<span class="n">PPSCONTROL</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
-<span class="n">MARKCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"></span>
-<span class="n">EVENTINCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="n">interfacemode</span><span class="w"> </span><span class="n">usb2</span><span class="w"> </span><span class="n">rtcmv3</span><span class="w"> </span><span class="n">none</span><span class="w"> </span><span class="n">off</span><span class="w"></span>
-<span class="n">rtksource</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
-<span class="n">psrdiffsource</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span> <span class="n">STATE</span> <span class="n">OFF</span>
+<span class="n">UNLOGALL</span> <span class="n">THISPORT</span>
+<span class="n">INSCOMMAND</span> <span class="n">ENABLE</span>
+<span class="n">SETIMUORIENTATION</span> <span class="mi">5</span>
+<span class="n">ALIGNMENTMODE</span> <span class="n">AUTOMATIC</span>  
+<span class="n">VEHICLEBODYROTATION</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">COM</span> <span class="n">COM1</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">COM</span> <span class="n">COM2</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">INTERFACEMODE</span> <span class="n">COM1</span> <span class="n">NOVATEL</span> <span class="n">NOVATEL</span> <span class="n">ON</span>
+<span class="n">PPSCONTROL</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mf">1.0</span> <span class="mi">10000</span>
+<span class="n">MARKCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span>
+<span class="n">EVENTINCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">0</span> <span class="mi">2</span>
+<span class="n">interfacemode</span> <span class="n">usb2</span> <span class="n">rtcmv3</span> <span class="n">none</span> <span class="n">off</span>
+<span class="n">rtksource</span> <span class="n">auto</span> <span class="nb">any</span>
+<span class="n">psrdiffsource</span> <span class="n">auto</span> <span class="nb">any</span>
 
-<span class="n">SETIMUTOANTOFFSET</span><span class="w"> </span><span class="mf">0.00</span><span class="w"> </span><span class="mf">1.10866</span><span class="w"> </span><span class="mf">1.14165</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.08</span><span class="w"></span>
-<span class="n">SETINSOFFSET</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">EVENTOUTCONTROL</span><span class="w"> </span><span class="n">MARK2</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">999999990</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
-<span class="n">EVENTOUTCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">500000000</span><span class="w"> </span><span class="mi">500000000</span><span class="w"></span>
+<span class="n">SETIMUTOANTOFFSET</span> <span class="mf">0.00</span> <span class="mf">1.10866</span> <span class="mf">1.14165</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+<span class="n">SETINSOFFSET</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK2</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">999999990</span> <span class="mi">10</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">500000000</span> <span class="mi">500000000</span>
 
 
-<span class="n">LOG</span><span class="w"> </span><span class="n">COM2</span><span class="w"> </span><span class="n">GPRMC</span><span class="w"> </span><span class="n">ONTIME</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">0.25</span><span class="w"></span>
-<span class="n">LOG</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">GPGGA</span><span class="w"> </span><span class="n">ONTIME</span><span class="w"> </span><span class="mf">1.0</span><span class="w"></span>
+<span class="n">LOG</span> <span class="n">COM2</span> <span class="n">GPRMC</span> <span class="n">ONTIME</span> <span class="mf">1.0</span> <span class="mf">0.25</span>
+<span class="n">LOG</span> <span class="n">USB1</span> <span class="n">GPGGA</span> <span class="n">ONTIME</span> <span class="mf">1.0</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestgnssposb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestgnssvelb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestposb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">INSPVAXB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">INSPVASB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mf">0.01</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">CORRIMUDATASB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mf">0.01</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">RAWIMUSXB</span><span class="w"> </span><span class="n">onnew</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">mark1pvab</span><span class="w"> </span><span class="n">onnew</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssvelb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVAXB</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">CORRIMUDATASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">RAWIMUSXB</span> <span class="n">onnew</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">mark1pvab</span> <span class="n">onnew</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">rangeb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bdsephemerisb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gpsephemb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gloephemerisb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bdsephemerisb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gpsephemb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gloephemerisb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">rangeb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">imutoantoffsetsb</span><span class="w"> </span><span class="n">once</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">vehiclebodyrotationb</span><span class="w"> </span><span class="n">onchanged</span><span class="w"></span>
-<span class="w"> </span>
-<span class="n">SAVECONFIG</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">imutoantoffsetsb</span> <span class="n">once</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">vehiclebodyrotationb</span> <span class="n">onchanged</span>
+ 
+<span class="n">SAVECONFIG</span>
+
+
 </pre></div>
 </div>
 <p>For ProPak6:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span><span class="w"> </span><span class="n">STATE</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">UNLOGALL</span><span class="w"> </span><span class="n">THISPORT</span><span class="w"></span>
-<span class="n">CONNECTIMU</span><span class="w"> </span><span class="n">COM3</span><span class="w"> </span><span class="n">IMU_ADIS16488</span><span class="w"></span>
-<span class="n">INSCOMMAND</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"></span>
-<span class="n">SETIMUORIENTATION</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-<span class="n">ALIGNMENTMODE</span><span class="w"> </span><span class="n">AUTOMATIC</span><span class="w">  </span>
-<span class="n">VEHICLEBODYROTATION</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">COM</span><span class="w"> </span><span class="n">COM1</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">OFF</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">COM</span><span class="w"> </span><span class="n">COM2</span><span class="w"> </span><span class="mi">9600</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="n">OFF</span><span class="w"> </span><span class="n">OFF</span><span class="w"></span>
-<span class="n">INTERFACEMODE</span><span class="w"> </span><span class="n">COM1</span><span class="w"> </span><span class="n">NOVATEL</span><span class="w"> </span><span class="n">NOVATEL</span><span class="w"> </span><span class="n">ON</span><span class="w"></span>
-<span class="n">PPSCONTROL</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mi">10000</span><span class="w"></span>
-<span class="n">MARKCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"></span>
-<span class="n">EVENTINCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="n">interfacemode</span><span class="w"> </span><span class="n">usb2</span><span class="w"> </span><span class="n">rtcmv3</span><span class="w"> </span><span class="n">none</span><span class="w"> </span><span class="n">off</span><span class="w"></span>
-<span class="n">rtksource</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
-<span class="n">psrdiffsource</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
-<span class="n">SETIMUTOANTOFFSET</span><span class="w"> </span><span class="mf">0.00</span><span class="w"> </span><span class="mf">1.10866</span><span class="w"> </span><span class="mf">1.14165</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.08</span><span class="w"></span>
-<span class="n">SETINSOFFSET</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">EVENTOUTCONTROL</span><span class="w"> </span><span class="n">MARK2</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">999999990</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
-<span class="n">EVENTOUTCONTROL</span><span class="w"> </span><span class="n">MARK1</span><span class="w"> </span><span class="n">ENABLE</span><span class="w"> </span><span class="n">POSITIVE</span><span class="w"> </span><span class="mi">500000000</span><span class="w"> </span><span class="mi">500000000</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WIFICONFIG</span> <span class="n">STATE</span> <span class="n">OFF</span>
+<span class="n">UNLOGALL</span> <span class="n">THISPORT</span>
+<span class="n">CONNECTIMU</span> <span class="n">COM3</span> <span class="n">IMU_ADIS16488</span>
+<span class="n">INSCOMMAND</span> <span class="n">ENABLE</span>
+<span class="n">SETIMUORIENTATION</span> <span class="mi">5</span>
+<span class="n">ALIGNMENTMODE</span> <span class="n">AUTOMATIC</span>  
+<span class="n">VEHICLEBODYROTATION</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">COM</span> <span class="n">COM1</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">COM</span> <span class="n">COM2</span> <span class="mi">9600</span> <span class="n">N</span> <span class="mi">8</span> <span class="mi">1</span> <span class="n">N</span> <span class="n">OFF</span> <span class="n">OFF</span>
+<span class="n">INTERFACEMODE</span> <span class="n">COM1</span> <span class="n">NOVATEL</span> <span class="n">NOVATEL</span> <span class="n">ON</span>
+<span class="n">PPSCONTROL</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mf">1.0</span> <span class="mi">10000</span>
+<span class="n">MARKCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span>
+<span class="n">EVENTINCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">0</span> <span class="mi">2</span>
+<span class="n">interfacemode</span> <span class="n">usb2</span> <span class="n">rtcmv3</span> <span class="n">none</span> <span class="n">off</span>
+<span class="n">rtksource</span> <span class="n">auto</span> <span class="nb">any</span>
+<span class="n">psrdiffsource</span> <span class="n">auto</span> <span class="nb">any</span>
+<span class="n">SETIMUTOANTOFFSET</span> <span class="mf">0.00</span> <span class="mf">1.10866</span> <span class="mf">1.14165</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
+<span class="n">SETINSOFFSET</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK2</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">999999990</span> <span class="mi">10</span>
+<span class="n">EVENTOUTCONTROL</span> <span class="n">MARK1</span> <span class="n">ENABLE</span> <span class="n">POSITIVE</span> <span class="mi">500000000</span> <span class="mi">500000000</span>
 
 
-<span class="n">LOG</span><span class="w"> </span><span class="n">COM2</span><span class="w"> </span><span class="n">GPRMC</span><span class="w"> </span><span class="n">ONTIME</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">0.25</span><span class="w"></span>
-<span class="n">LOG</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">GPGGA</span><span class="w"> </span><span class="n">ONTIME</span><span class="w"> </span><span class="mf">1.0</span><span class="w"></span>
+<span class="n">LOG</span> <span class="n">COM2</span> <span class="n">GPRMC</span> <span class="n">ONTIME</span> <span class="mf">1.0</span> <span class="mf">0.25</span>
+<span class="n">LOG</span> <span class="n">USB1</span> <span class="n">GPGGA</span> <span class="n">ONTIME</span> <span class="mf">1.0</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestgnssposb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestgnssvelb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bestposb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">INSPVAXB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">INSPVASB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mf">0.01</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">CORRIMUDATASB</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mf">0.01</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">RAWIMUSXB</span><span class="w"> </span><span class="n">onnew</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">mark1pvab</span><span class="w"> </span><span class="n">onnew</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestgnssvelb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bestposb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVAXB</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">INSPVASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">CORRIMUDATASB</span> <span class="n">ontime</span> <span class="mf">0.01</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">RAWIMUSXB</span> <span class="n">onnew</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">mark1pvab</span> <span class="n">onnew</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">rangeb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bdsephemerisb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gpsephemb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gloephemerisb</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">bdsephemerisb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gpsephemb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">gloephemerisb</span><span class="w"> </span><span class="n">ontime</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">rangeb</span> <span class="n">ontime</span> <span class="mi">1</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">bdsephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gpsephemb</span> <span class="n">ontime</span> <span class="mi">15</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">gloephemerisb</span> <span class="n">ontime</span> <span class="mi">15</span>
 
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">imutoantoffsetsb</span><span class="w"> </span><span class="n">once</span><span class="w"></span>
-<span class="n">log</span><span class="w"> </span><span class="n">USB1</span><span class="w"> </span><span class="n">vehiclebodyrotationb</span><span class="w"> </span><span class="n">onchanged</span><span class="w"></span>
-<span class="w"> </span>
-<span class="n">SAVECONFIG</span><span class="w"></span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">imutoantoffsetsb</span> <span class="n">once</span>
+<span class="n">log</span> <span class="n">USB1</span> <span class="n">vehiclebodyrotationb</span> <span class="n">onchanged</span>
+ 
+<span class="n">SAVECONFIG</span>
 </pre></div>
 </div>
 <p><strong><img alt="warning_icon" src="../../_images/warning_icon1.png" /> WARNING:</strong> Modify the <strong><u>SETIMUTOANTOFFSE</u>T</strong> line based on the actual measurement (of the antenna and the IMU offset).</p>
 <p>For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">SETIMUTOANTOFFSET</span><span class="w"> </span><span class="mf">-0.05</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.8</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.08</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SETIMUTOANTOFFSET</span> <span class="o">-</span><span class="mf">0.05</span> <span class="mf">0.5</span> <span class="mf">0.8</span> <span class="mf">0.05</span> <span class="mf">0.05</span> <span class="mf">0.08</span>
 </pre></div>
 </div>
 </div>

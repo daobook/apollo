@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apollo Docker Image Build Process &#8212; Apollo Auto 0.0.1 文档</title>
+    <title>Apollo Docker Image Build Process &#8212; Apollo 文档 0.0.1 文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -64,7 +63,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Apollo Auto 0.0.1 文档</h1>
+      <h1 class="site-logo" id="site-title">Apollo 文档 0.0.1 文档</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -84,7 +83,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/00_cyber.html">
+  <a class="reference internal" href="../../_toc/cyber/index.html">
    Cyber
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -95,12 +94,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../cyber/README.html">
-     Cyber 自述
+     简介
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
-     Introduction
+    <a class="reference internal" href="../../_toc/cyber/quickstart.html">
+     快速入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -123,21 +122,45 @@
        F.A.Q.
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/tutorials.html">
+     教程
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-       Cyber RT API tutorial
+       1. Cyber RT API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       Python API tutorial
+       2. Python API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-       Apollo Cyber RT Developer Tools
+       3. Apollo Cyber RT Developer Tools
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/topics.html">
+     高级专题
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
        How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
@@ -148,12 +171,24 @@
        Migration guide from Apollo ROS
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/api.html">
+     API 参考
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
        C++ API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -169,8 +204,8 @@
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
        Python API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -181,90 +216,6 @@
         </a>
        </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-     Cyber RT API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
-     F.A.Q.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-     Python API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
-     Cyber RT Terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-     cyber/node/node.h
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
-     C++ API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-       cyber/node/node.h
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-     python/cyber_py/cyber.py
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
-     Python API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-       python/cyber_py/cyber.py
-      </a>
      </li>
     </ul>
    </li>
@@ -280,12 +231,34 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/01_docs.html">
+  <a class="reference internal" href="../../_toc/docs.html">
    Apollo Auto 文档
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -545,65 +518,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../docs/FAQs/Software_FAQs_cn.html">
      软件 FAQ
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_API_for_Developers.html">
-     Cyber RT API for Developers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_FAQs.html">
-     Apollo Cyber RT FAQs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Python_API.html">
-     Cyber RT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Python_API_cn.html">
-     CyberRT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Quick_Start_cn.html">
-     如何使用 Cyber RT 创建新的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Scheduler_cn.html">
-     Cyber RT 调度
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/CyberRT_Terms.html">
-     Apollo Cyber RT Terminologies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docs/cyber/README.html">
     </a>
    </li>
    <li class="toctree-l2">
@@ -1788,34 +1702,12 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../_toc/docker.html">
-   Docker
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Apollo Docker Image Build Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../setup_host/README.html">
-     Host Setup
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../_toc/other.html">
    临时目录
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1844,8 +1736,8 @@
     <a class="reference internal" href="../../third_party/tf2/index.html">
      tf2
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2242,8 +2134,8 @@
   <a class="reference internal" href="../../_toc/style.html">
    风格
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -2409,44 +2301,44 @@ images.</p>
 <div class="section" id="build-cyberrt-image">
 <h2>Build CyberRT Image<a class="headerlink" href="#build-cyberrt-image" title="永久链接至标题">¶</a></h2>
 <p>Type <code class="docutils literal notranslate"><span class="pre">./build_docker.sh</span> <span class="pre">-h</span></code> for help message:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="nl">Usage</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Dockerfile</span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">Options</span><span class="p">]</span><span class="w"></span>
-<span class="n">Available</span><span class="w"> </span><span class="nl">options</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="o">--</span><span class="n">clean</span><span class="w">      </span><span class="n">Use</span><span class="w"> </span><span class="s">&quot;--no-cache=true&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">docker</span><span class="w"> </span><span class="n">build</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="o">--</span><span class="n">mode</span><span class="w">       </span><span class="s">&quot;build&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">everything</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">possible</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;download&quot;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="n">prebuilt</span><span class="w"> </span><span class="n">ones</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">g</span><span class="p">,</span><span class="o">--</span><span class="n">geo</span><span class="w">        </span><span class="n">Enable</span><span class="w"> </span><span class="n">geo</span><span class="o">-</span><span class="n">specific</span><span class="w"> </span><span class="n">mirrors</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="n">up</span><span class="w"> </span><span class="n">build</span><span class="p">.</span><span class="w"> </span><span class="n">Currently</span><span class="w"> </span><span class="s">&quot;cn&quot;</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="s">&quot;us&quot;</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">supported</span><span class="p">.</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">--</span><span class="n">dist</span><span class="w">       </span><span class="n">Whether</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">stable</span><span class="p">(</span><span class="s">&quot;stable&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">experimental</span><span class="p">(</span><span class="s">&quot;testing&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">Docker</span><span class="w"> </span><span class="n">images</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="o">--</span><span class="n">timestamp</span><span class="w">  </span><span class="n">Specify</span><span class="w"> </span><span class="n">Cyber</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="n">timestamp</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">Dev</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">it</span><span class="p">.</span><span class="w"> </span><span class="nl">Format</span><span class="p">:</span><span class="w"> </span><span class="n">yyyymmdd_hhmm</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="mi">20210205</span><span class="n">_1520</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">--</span><span class="n">dry</span><span class="w">           </span><span class="n">Dry</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="p">(</span><span class="k">for</span><span class="w"> </span><span class="n">testing</span><span class="w"> </span><span class="n">purpose</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="o">-</span><span class="n">h</span><span class="p">,</span><span class="o">--</span><span class="n">help</span><span class="w">       </span><span class="n">Show</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">exit</span><span class="w"></span>
-<span class="n">E</span><span class="p">.</span><span class="n">g</span><span class="p">.,</span><span class="w"></span>
-<span class="w">    </span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">cyber</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">cn</span><span class="w"></span>
-<span class="w">    </span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">dev</span><span class="p">.</span><span class="n">aarch64</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">download</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="n">testing</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span><span class="p">:</span>
+    <span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="n">Dockerfile</span><span class="o">&gt;</span> <span class="p">[</span><span class="n">Options</span><span class="p">]</span>
+<span class="n">Available</span> <span class="n">options</span><span class="p">:</span>
+    <span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="o">--</span><span class="n">clean</span>      <span class="n">Use</span> <span class="s2">&quot;--no-cache=true&quot;</span> <span class="k">for</span> <span class="n">docker</span> <span class="n">build</span>
+    <span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="o">--</span><span class="n">mode</span>       <span class="s2">&quot;build&quot;</span> <span class="k">for</span> <span class="n">build</span> <span class="n">everything</span> <span class="kn">from</span> <span class="nn">source</span> <span class="k">if</span> <span class="n">possible</span><span class="p">,</span> <span class="s2">&quot;download&quot;</span> <span class="k">for</span> <span class="n">using</span> <span class="n">prebuilt</span> <span class="n">ones</span>
+    <span class="o">-</span><span class="n">g</span><span class="p">,</span><span class="o">--</span><span class="n">geo</span>        <span class="n">Enable</span> <span class="n">geo</span><span class="o">-</span><span class="n">specific</span> <span class="n">mirrors</span> <span class="n">to</span> <span class="n">speed</span> <span class="n">up</span> <span class="n">build</span><span class="o">.</span> <span class="n">Currently</span> <span class="s2">&quot;cn&quot;</span> <span class="ow">and</span> <span class="s2">&quot;us&quot;</span> <span class="n">are</span> <span class="n">supported</span><span class="o">.</span>
+    <span class="o">-</span><span class="n">d</span><span class="p">,</span><span class="o">--</span><span class="n">dist</span>       <span class="n">Whether</span> <span class="n">to</span> <span class="n">build</span> <span class="n">stable</span><span class="p">(</span><span class="s2">&quot;stable&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">experimental</span><span class="p">(</span><span class="s2">&quot;testing&quot;</span><span class="p">)</span> <span class="n">Docker</span> <span class="n">images</span>
+    <span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="o">--</span><span class="n">timestamp</span>  <span class="n">Specify</span> <span class="n">Cyber</span> <span class="n">image</span> <span class="n">timestamp</span> <span class="n">to</span> <span class="n">build</span> <span class="n">Dev</span> <span class="n">image</span> <span class="kn">from</span> <span class="nn">it.</span> <span class="n">Format</span><span class="p">:</span> <span class="n">yyyymmdd_hhmm</span> <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">g</span> <span class="mi">20210205_1520</span><span class="p">)</span>
+    <span class="o">--</span><span class="n">dry</span>           <span class="n">Dry</span> <span class="n">run</span> <span class="p">(</span><span class="k">for</span> <span class="n">testing</span> <span class="n">purpose</span><span class="p">)</span>
+    <span class="o">-</span><span class="n">h</span><span class="p">,</span><span class="o">--</span><span class="n">help</span>       <span class="n">Show</span> <span class="n">this</span> <span class="n">message</span> <span class="ow">and</span> <span class="n">exit</span>
+<span class="n">E</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span>
+    <span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">cyber</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">dockerfile</span> <span class="o">-</span><span class="n">m</span> <span class="n">build</span> <span class="o">-</span><span class="n">g</span> <span class="n">cn</span>
+    <span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">dev</span><span class="o">.</span><span class="n">aarch64</span><span class="o">.</span><span class="n">dockerfile</span> <span class="o">-</span><span class="n">m</span> <span class="n">download</span> <span class="o">-</span><span class="n">d</span> <span class="n">testing</span>
 </pre></div>
 </div>
 <p>Here, the <code class="docutils literal notranslate"><span class="pre">-g/--geo</span></code> option is used to enable geo-location based settings (APT &amp;
 PYPI mirrors, etc.). Two codes (<code class="docutils literal notranslate"><span class="pre">us</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">cn</span></code>) are supported now, and the default
 is <code class="docutils literal notranslate"><span class="pre">us</span></code>.</p>
 <p>To build the latest CyberRT image, simply run:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">cyber</span><span class="p">.</span><span class="o">&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">cyber</span><span class="o">.&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;.</span><span class="n">dockerfile</span>
 </pre></div>
 </div>
 <p>Users of mainland China can specify <code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">cn</span></code> to speed up build process:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">cyber</span><span class="p">.</span><span class="o">&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"> </span><span class="o">-</span><span class="n">g</span><span class="w"> </span><span class="n">cn</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">cyber</span><span class="o">.&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;.</span><span class="n">dockerfile</span> <span class="o">-</span><span class="n">g</span> <span class="n">cn</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="build-apollo-dev-image">
 <h2>Build Apollo Dev Image<a class="headerlink" href="#build-apollo-dev-image" title="永久链接至标题">¶</a></h2>
 <p>Run the following command to build Apollo Dev image:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">dev</span><span class="p">.</span><span class="o">&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">dev</span><span class="o">.&lt;</span><span class="n">TARGET_ARCH</span><span class="o">&gt;.</span><span class="n">dockerfile</span>
 </pre></div>
 </div>
 <p>On success, output messages like the following will be shown at the bottom of
 your screen.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Successfully</span><span class="w"> </span><span class="n">built</span><span class="w"> </span><span class="n">baca71e567e6</span><span class="w"></span>
-<span class="n">Successfully</span><span class="w"> </span><span class="n">tagged</span><span class="w"> </span><span class="n">apolloauto</span><span class="o">/</span><span class="nl">apollo</span><span class="p">:</span><span class="n">dev</span><span class="o">-</span><span class="n">x86_64</span><span class="mf">-18.04</span><span class="mi">-20200824</span><span class="n">_0339</span><span class="w"></span>
-<span class="n">Built</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="n">apolloauto</span><span class="o">/</span><span class="nl">apollo</span><span class="p">:</span><span class="n">dev</span><span class="o">-</span><span class="n">x86_64</span><span class="mf">-18.04</span><span class="mi">-20200824</span><span class="n">_0339</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Successfully</span> <span class="n">built</span> <span class="n">baca71e567e6</span>
+<span class="n">Successfully</span> <span class="n">tagged</span> <span class="n">apolloauto</span><span class="o">/</span><span class="n">apollo</span><span class="p">:</span><span class="n">dev</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">18.04</span><span class="o">-</span><span class="mi">20200824_0339</span>
+<span class="n">Built</span> <span class="n">new</span> <span class="n">image</span> <span class="n">apolloauto</span><span class="o">/</span><span class="n">apollo</span><span class="p">:</span><span class="n">dev</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mf">18.04</span><span class="o">-</span><span class="mi">20200824_0339</span>
 </pre></div>
 </div>
 </div>
@@ -2455,15 +2347,15 @@ your screen.</p>
 <p>Apollo Runtime Docker was used in combination with Release Build output for easy
 deployment. You can run the following commands to build Apollo Runtime Docker
 image on your own.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp"># Generate required APT packages</span>
-<span class="p">.</span><span class="o">/</span><span class="n">apollo</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="n">release</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate required APT packages</span>
+<span class="o">./</span><span class="n">apollo</span><span class="o">.</span><span class="n">sh</span> <span class="n">release</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">r</span>
 
-<span class="n">cd</span><span class="w"> </span><span class="n">docker</span><span class="o">/</span><span class="n">build</span><span class="w"></span>
-<span class="cp"># Copy the generated package list for docker build</span>
-<span class="n">cp</span><span class="w"> </span><span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">syspkgs</span><span class="p">.</span><span class="n">txt</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="n">cd</span> <span class="n">docker</span><span class="o">/</span><span class="n">build</span>
+<span class="c1"># Copy the generated package list for docker build</span>
+<span class="n">cp</span> <span class="o">/</span><span class="n">apollo</span><span class="o">/</span><span class="n">output</span><span class="o">/</span><span class="n">syspkgs</span><span class="o">.</span><span class="n">txt</span> <span class="o">.</span>
 
-<span class="n">cp</span><span class="w"> </span><span class="n">runtime</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">dockerfile</span><span class="p">.</span><span class="n">sample</span><span class="w"> </span><span class="n">runtime</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"></span>
-<span class="n">bash</span><span class="w"> </span><span class="n">build_docker</span><span class="p">.</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="n">runtime</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">dockerfile</span><span class="w"></span>
+<span class="n">cp</span> <span class="n">runtime</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">dockerfile</span><span class="o">.</span><span class="n">sample</span> <span class="n">runtime</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">dockerfile</span>
+<span class="n">bash</span> <span class="n">build_docker</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">f</span> <span class="n">runtime</span><span class="o">.</span><span class="n">x86_64</span><span class="o">.</span><span class="n">dockerfile</span>
 </pre></div>
 </div>
 <blockquote>
@@ -2489,8 +2381,8 @@ URLs listed in the build log. Pay attention to their checksum.</p></li>
 <li><p>Change to that archive directory and start your local HTTP cache server at
 port <strong>8388</strong>.</p></li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="n">$HOME</span><span class="o">/</span><span class="n">archive</span><span class="w"></span>
-<span class="n">nohup</span><span class="w"> </span><span class="n">python3</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="n">http</span><span class="p">.</span><span class="n">server</span><span class="w"> </span><span class="mi">8388</span><span class="w"> </span><span class="o">&amp;</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd $HOME/archive
+nohup python3 -m http.server 8388 &amp;
 </pre></div>
 </div>
 <blockquote>

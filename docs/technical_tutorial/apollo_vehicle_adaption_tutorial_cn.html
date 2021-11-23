@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apollo车辆适配教程 &#8212; Apollo Auto 0.0.1 文档</title>
+    <title>Apollo车辆适配教程 &#8212; Apollo 文档 0.0.1 文档</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cyber/doxy-docs/source/main_stylesheet.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -64,7 +63,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Apollo Auto 0.0.1 文档</h1>
+      <h1 class="site-logo" id="site-title">Apollo 文档 0.0.1 文档</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -84,7 +83,7 @@
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/00_cyber.html">
+  <a class="reference internal" href="../../_toc/cyber/index.html">
    Cyber
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -95,12 +94,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../cyber/README.html">
-     Cyber 自述
+     简介
     </a>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/index.html">
-     Introduction
+    <a class="reference internal" href="../../_toc/cyber/quickstart.html">
+     快速入门
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
@@ -123,21 +122,45 @@
        F.A.Q.
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/tutorials.html">
+     教程
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-       Cyber RT API tutorial
+       1. Cyber RT API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       Python API tutorial
+       2. Python API tutorial
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-       Apollo Cyber RT Developer Tools
+       3. Apollo Cyber RT Developer Tools
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/topics.html">
+     高级专题
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
        How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
@@ -148,12 +171,24 @@
        Migration guide from Apollo ROS
       </a>
      </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../_toc/cyber/api.html">
+     API 参考
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
        C++ API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-      <label for="toctree-checkbox-3">
+      <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+      <label for="toctree-checkbox-6">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -169,8 +204,8 @@
       <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
        Python API
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-      <label for="toctree-checkbox-4">
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -181,90 +216,6 @@
         </a>
        </li>
       </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_API_for_Developers.html">
-     Cyber RT API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_FAQs.html">
-     F.A.Q.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-     Python API tutorial
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Terms.html">
-     Cyber RT Terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-     cyber/node/node.h
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi_index.html">
-     C++ API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/cppapi.html">
-       cyber/node/node.h
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-     python/cyber_py/cyber.py
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi_index.html">
-     Python API
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-    <label for="toctree-checkbox-6">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../cyber/doxy-docs/source/api/pythonapi.html">
-       python/cyber_py/cyber.py
-      </a>
      </li>
     </ul>
    </li>
@@ -280,12 +231,34 @@
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../_toc/docker.html">
+   Docker
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/build/README.html">
+     Apollo Docker Image Build Process
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../docker/setup_host/README.html">
+     Host Setup
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../_toc/01_docs.html">
+  <a class="reference internal" href="../../_toc/docs.html">
    Apollo Auto 文档
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -545,65 +518,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../FAQs/Software_FAQs_cn.html">
      软件 FAQ
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_API_for_Developers.html">
-     Cyber RT API for Developers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Developer_Tools.html">
-     Apollo Cyber RT Developer Tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Docker.html">
-     How to Develop Cyber RT inside Docker on Both x86_64 and ARM64
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_FAQs.html">
-     Apollo Cyber RT FAQs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Migration_Guide.html">
-     Migration guide from Apollo ROS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API.html">
-     Cyber RT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Python_API_cn.html">
-     CyberRT Python
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start.html">
-     How to Create and Run a new Component in Cyber RT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Quick_Start_cn.html">
-     如何使用 Cyber RT 创建新的组件
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Scheduler_cn.html">
-     Cyber RT 调度
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/CyberRT_Terms.html">
-     Apollo Cyber RT Terminologies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../cyber/README.html">
     </a>
    </li>
    <li class="toctree-l2">
@@ -1789,33 +1703,11 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../_toc/docker.html">
-   Docker
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/build/README.html">
-     Apollo Docker Image Build Process
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../docker/setup_host/README.html">
-     Host Setup
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../_toc/other.html">
    临时目录
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1844,8 +1736,8 @@
     <a class="reference internal" href="../../third_party/tf2/index.html">
      tf2
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-    <label for="toctree-checkbox-10">
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2242,8 +2134,8 @@
   <a class="reference internal" href="../../_toc/style.html">
    风格
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -2803,8 +2695,8 @@
 <p><code class="docutils literal notranslate"><span class="pre">sender_list：[</span> <span class="pre">]</span> </code>：发送列表，这里默认为空；</p>
 <p><code class="docutils literal notranslate"><span class="pre">sender</span></code>：此处修改为与DBC内定义的Apollo的名称一致，ge3的DBC内定义Apollo名称为SCU。</p>
 <p>（3）完成<code class="docutils literal notranslate"><span class="pre">ge3_conf.yml</span></code>配置文件设置，启动docker，进入Apollo的容器后，在<code class="docutils literal notranslate"><span class="pre">apollo/modules/tools/gen_vehicle_protocol</span></code>目录下，找到DBC转化工具<code class="docutils literal notranslate"><span class="pre">gen.py</span></code>，执行代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="n">modules</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">gen_vehicle_protocol</span><span class="w"></span>
-<span class="n">python</span><span class="w"> </span><span class="n">gen</span><span class="p">.</span><span class="n">py</span><span class="w"> </span><span class="n">ge3_conf</span><span class="p">.</span><span class="n">ymal</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">modules</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">gen_vehicle_protocol</span>
+<span class="n">python</span> <span class="n">gen</span><span class="o">.</span><span class="n">py</span> <span class="n">ge3_conf</span><span class="o">.</span><span class="n">ymal</span>
 </pre></div>
 </div>
 <p>执行完成上述脚本后，在终端内会显示生成了控制协议5个，反馈协议11个。
@@ -2812,7 +2704,7 @@
 这时在<code class="docutils literal notranslate"><span class="pre">apollo/modules/tools/gen_vehicle_protocol</span></code>目录下，会生成一个<code class="docutils literal notranslate"><span class="pre">output</span></code>文件夹，文件夹内有2个文件夹，一个是<code class="docutils literal notranslate"><span class="pre">proto</span></code>文件夹，一个是<code class="docutils literal notranslate"><span class="pre">vehicle</span></code>文件夹；这两个文件内的代码内容就是我们要适配canbus的基本代码模板了。我们需要把文件内的代码<strong>拷贝</strong>到apollo的canbus层内，进行代码适配添加。
 <img alt="output" src="../../_images/output.png" /></p>
 <p><strong>注意</strong>：把这个output文件夹内生成的代码模板拷贝至相应的apollo目录后，要删除该文件夹，如果不删除该文件夹，后期编译apollo时会报错。该文件夹有保护权限，请在apollo的docker内执行删除代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">rf</span><span class="w"> </span><span class="n">output</span><span class="o">/</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">output</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -2832,238 +2724,238 @@
 <div class="section" id="id13">
 <h3>3.实现新的车辆控制逻辑<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
 <p>实现新的车辆控制逻辑，在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/vehicle/ge3/ge3_controller.cc</span></code> 文件编写控制逻辑代码，主要包含将解析的底盘反馈报文的信息，通过<code class="docutils literal notranslate"><span class="pre">chassis</span></code>和<code class="docutils literal notranslate"><span class="pre">chassis_detail</span></code>广播出车辆底盘信息。<code class="docutils literal notranslate"><span class="pre">chassis</span></code>主要包括获取底盘的车速、轮速、发动机转速、踏板反馈、转角反馈等信息， <code class="docutils literal notranslate"><span class="pre">chassis_detail</span></code>是每一帧报文的实际信息，这一部分编写的代码如下所示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="c1">// 3</span>
-<span class="w">  </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_engine_started</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  // 3
+  chassis_.set_engine_started(true);
 
-<span class="w">  </span><span class="c1">// check if there is not ge3, no chassis detail can be retrieved and return</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">has_ge3</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;NO GE3 chassis information!&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">chassis_</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">Ge3</span><span class="w"> </span><span class="n">ge3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">ge3</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 5</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcs_3_308</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Scu_bcs_3_308</span><span class="w"> </span><span class="n">scu_bcs_3_308</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcs_3_308</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">has_bcs_rrwheelspd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_wheel_speed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_wheel_spd_rr_valid</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rrwheelspdvd</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_direction_rr</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="p">(</span><span class="n">WheelSpeed</span><span class="o">::</span><span class="n">WheelSpeedType</span><span class="p">)</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rrwheeldirection</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_spd_rr</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rrwheelspd</span><span class="p">());</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+  // check if there is not ge3, no chassis detail can be retrieved and return
+  if (!chassis_detail.has_ge3()) {
+    AERROR &lt;&lt; &quot;NO GE3 chassis information!&quot;;
+    return chassis_;
+  }
+  Ge3 ge3 = chassis_detail.ge3();
+  // 5
+  if (ge3.has_scu_bcs_3_308()) {
+    Scu_bcs_3_308 scu_bcs_3_308 = ge3.scu_bcs_3_308();
+    if (scu_bcs_3_308.has_bcs_rrwheelspd()) {
+      if (chassis_.has_wheel_speed()) {
+        chassis_.mutable_wheel_speed()-&gt;set_is_wheel_spd_rr_valid(
+            scu_bcs_3_308.bcs_rrwheelspdvd());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_direction_rr(
+            (WheelSpeed::WheelSpeedType)scu_bcs_3_308.bcs_rrwheeldirection());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_spd_rr(
+            scu_bcs_3_308.bcs_rrwheelspd());
+      }
+    }
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">has_bcs_rlwheelspd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_wheel_speed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_wheel_spd_rl_valid</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rlwheelspdvd</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_direction_rl</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="p">(</span><span class="n">WheelSpeed</span><span class="o">::</span><span class="n">WheelSpeedType</span><span class="p">)</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rlwheeldirection</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_spd_rl</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_rlwheelspd</span><span class="p">());</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+    if (scu_bcs_3_308.has_bcs_rlwheelspd()) {
+      if (chassis_.has_wheel_speed()) {
+        chassis_.mutable_wheel_speed()-&gt;set_is_wheel_spd_rl_valid(
+            scu_bcs_3_308.bcs_rlwheelspdvd());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_direction_rl(
+            (WheelSpeed::WheelSpeedType)scu_bcs_3_308.bcs_rlwheeldirection());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_spd_rl(
+            scu_bcs_3_308.bcs_rlwheelspd());
+      }
+    }
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">has_bcs_frwheelspd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_wheel_speed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_wheel_spd_fr_valid</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_frwheelspdvd</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_direction_fr</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="p">(</span><span class="n">WheelSpeed</span><span class="o">::</span><span class="n">WheelSpeedType</span><span class="p">)</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_frwheeldirection</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_spd_fr</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_frwheelspd</span><span class="p">());</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+    if (scu_bcs_3_308.has_bcs_frwheelspd()) {
+      if (chassis_.has_wheel_speed()) {
+        chassis_.mutable_wheel_speed()-&gt;set_is_wheel_spd_fr_valid(
+            scu_bcs_3_308.bcs_frwheelspdvd());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_direction_fr(
+            (WheelSpeed::WheelSpeedType)scu_bcs_3_308.bcs_frwheeldirection());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_spd_fr(
+            scu_bcs_3_308.bcs_frwheelspd());
+      }
+    }
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">has_bcs_flwheelspd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_wheel_speed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_wheel_spd_fl_valid</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_flwheelspdvd</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_direction_fl</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="p">(</span><span class="n">WheelSpeed</span><span class="o">::</span><span class="n">WheelSpeedType</span><span class="p">)</span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_flwheeldirection</span><span class="p">());</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_wheel_speed</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_wheel_spd_fl</span><span class="p">(</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcs_3_308</span><span class="p">.</span><span class="n">bcs_flwheelspd</span><span class="p">());</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+    if (scu_bcs_3_308.has_bcs_flwheelspd()) {
+      if (chassis_.has_wheel_speed()) {
+        chassis_.mutable_wheel_speed()-&gt;set_is_wheel_spd_fl_valid(
+            scu_bcs_3_308.bcs_flwheelspdvd());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_direction_fl(
+            (WheelSpeed::WheelSpeedType)scu_bcs_3_308.bcs_flwheeldirection());
+        chassis_.mutable_wheel_speed()-&gt;set_wheel_spd_fl(
+            scu_bcs_3_308.bcs_flwheelspd());
+      }
+    }
+  }
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcs_2_307</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcs_2_307</span><span class="p">().</span><span class="n">has_bcs_vehspd</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_speed_mps</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcs_2_307</span><span class="p">().</span><span class="n">bcs_vehspd</span><span class="p">()));</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_speed_mps</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  if (ge3.has_scu_bcs_2_307() &amp;&amp; ge3.scu_bcs_2_307().has_bcs_vehspd()) {
+    chassis_.set_speed_mps(
+        static_cast&lt;float&gt;(ge3.scu_bcs_2_307().bcs_vehspd()));
+  } else {
+    chassis_.set_speed_mps(0);
+  }
 
-<span class="w">  </span><span class="c1">// 7</span>
-<span class="w">  </span><span class="c1">// ge3 only has fuel percentage</span>
-<span class="w">  </span><span class="c1">// to avoid confusing, just don&#39;t set</span>
-<span class="w">  </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_fuel_range_m</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+  // 7
+  // ge3 only has fuel percentage
+  // to avoid confusing, just don&#39;t set
+  chassis_.set_fuel_range_m(0);
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_vcu_1_312</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_vcu_1_312</span><span class="p">().</span><span class="n">has_vcu_accpedact</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_throttle_percentage</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_vcu_1_312</span><span class="p">().</span><span class="n">vcu_accpedact</span><span class="p">()));</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_throttle_percentage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 9</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcs_1_306</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcs_1_306</span><span class="p">().</span><span class="n">has_bcs_brkpedact</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_brake_percentage</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcs_1_306</span><span class="p">().</span><span class="n">bcs_brkpedact</span><span class="p">()));</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_brake_percentage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 23, previously 10</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_vcu_1_312</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_vcu_1_312</span><span class="p">().</span><span class="n">has_vcu_gearact</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_vcu_1_312</span><span class="p">().</span><span class="n">vcu_gearact</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Scu_vcu_1_312</span><span class="o">::</span><span class="nl">VCU_GEARACT_INVALID</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Scu_vcu_1_312</span><span class="o">::</span><span class="nl">VCU_GEARACT_DRIVE</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_DRIVE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Scu_vcu_1_312</span><span class="o">::</span><span class="nl">VCU_GEARACT_NEUTRAL</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_NEUTRAL</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Scu_vcu_1_312</span><span class="o">::</span><span class="nl">VCU_GEARACT_REVERSE</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_REVERSE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">case</span><span class="w"> </span><span class="n">Scu_vcu_1_312</span><span class="o">::</span><span class="nl">VCU_GEARACT_PARK</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_PARKING</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_gear_location</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GEAR_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  if (ge3.has_scu_vcu_1_312() &amp;&amp; ge3.scu_vcu_1_312().has_vcu_accpedact()) {
+    chassis_.set_throttle_percentage(
+        static_cast&lt;float&gt;(ge3.scu_vcu_1_312().vcu_accpedact()));
+  } else {
+    chassis_.set_throttle_percentage(0);
+  }
+  // 9
+  if (ge3.has_scu_bcs_1_306() &amp;&amp; ge3.scu_bcs_1_306().has_bcs_brkpedact()) {
+    chassis_.set_brake_percentage(
+        static_cast&lt;float&gt;(ge3.scu_bcs_1_306().bcs_brkpedact()));
+  } else {
+    chassis_.set_brake_percentage(0);
+  }
+  // 23, previously 10
+  if (ge3.has_scu_vcu_1_312() &amp;&amp; ge3.scu_vcu_1_312().has_vcu_gearact()) {
+    switch (ge3.scu_vcu_1_312().vcu_gearact()) {
+      case Scu_vcu_1_312::VCU_GEARACT_INVALID: {
+        chassis_.set_gear_location(Chassis::GEAR_INVALID);
+      } break;
+      case Scu_vcu_1_312::VCU_GEARACT_DRIVE: {
+        chassis_.set_gear_location(Chassis::GEAR_DRIVE);
+      } break;
+      case Scu_vcu_1_312::VCU_GEARACT_NEUTRAL: {
+        chassis_.set_gear_location(Chassis::GEAR_NEUTRAL);
+      } break;
+      case Scu_vcu_1_312::VCU_GEARACT_REVERSE: {
+        chassis_.set_gear_location(Chassis::GEAR_REVERSE);
+      } break;
+      case Scu_vcu_1_312::VCU_GEARACT_PARK: {
+        chassis_.set_gear_location(Chassis::GEAR_PARKING);
+      } break;
+      default:
+        chassis_.set_gear_location(Chassis::GEAR_INVALID);
+        break;
+    }
+  } else {
+    chassis_.set_gear_location(Chassis::GEAR_INVALID);
+  }
 
-<span class="w">  </span><span class="c1">// 11</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_eps_311</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_eps_311</span><span class="p">().</span><span class="n">has_eps_steerangle</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_steering_percentage</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_eps_311</span><span class="p">().</span><span class="n">eps_steerangle</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"></span>
-<span class="w">                           </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">max_steer_angle</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1.80</span><span class="p">));</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_steering_percentage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  // 11
+  if (ge3.has_scu_eps_311() &amp;&amp; ge3.scu_eps_311().has_eps_steerangle()) {
+    chassis_.set_steering_percentage(
+        static_cast&lt;float&gt;(ge3.scu_eps_311().eps_steerangle() /
+                           vehicle_params_.max_steer_angle() * M_PI / 1.80));
+  } else {
+    chassis_.set_steering_percentage(0);
+  }
 
-<span class="w">  </span><span class="c1">// 13</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_epb_310</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_epb_310</span><span class="p">().</span><span class="n">has_epb_sysst</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_parking_brake</span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_epb_310</span><span class="p">().</span><span class="n">epb_sysst</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"></span>
-<span class="w">                               </span><span class="n">Scu_epb_310</span><span class="o">::</span><span class="n">EPB_SYSST_APPLIED</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">set_parking_brake</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  // 13
+  if (ge3.has_scu_epb_310() &amp;&amp; ge3.scu_epb_310().has_epb_sysst()) {
+    chassis_.set_parking_brake(ge3.scu_epb_310().epb_sysst() ==
+                               Scu_epb_310::EPB_SYSST_APPLIED);
+  } else {
+    chassis_.set_parking_brake(false);
+  }
 
-<span class="w">  </span><span class="c1">// 14, 15: ge3 light control</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcm_304</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcm_304</span><span class="p">().</span><span class="n">has_bcm_highbeamst</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">Scu_bcm_304</span><span class="o">::</span><span class="n">BCM_HIGHBEAMST_ACTIVE</span><span class="w"> </span><span class="o">==</span><span class="w"></span>
-<span class="w">          </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcm_304</span><span class="p">().</span><span class="n">bcm_highbeamst</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_signal</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_high_beam</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_signal</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_high_beam</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  // 14, 15: ge3 light control
+  if (ge3.has_scu_bcm_304() &amp;&amp; ge3.scu_bcm_304().has_bcm_highbeamst() &amp;&amp;
+      Scu_bcm_304::BCM_HIGHBEAMST_ACTIVE ==
+          ge3.scu_bcm_304().bcm_highbeamst()) {
+    if (chassis_.has_signal()) {
+      chassis_.mutable_signal()-&gt;set_high_beam(true);
+    }
+  } else {
+    if (chassis_.has_signal()) {
+      chassis_.mutable_signal()-&gt;set_high_beam(false);
+    }
+  }
 
-<span class="w">  </span><span class="c1">// 16, 17</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcm_304</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Scu_bcm_304</span><span class="w"> </span><span class="n">scu_bcm_304</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcm_304</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcm_304</span><span class="p">.</span><span class="n">has_bcm_leftturnlampst</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">Scu_bcm_304</span><span class="o">::</span><span class="n">BCM_LEFTTURNLAMPST_ACTIVE</span><span class="w"> </span><span class="o">==</span><span class="w"></span>
-<span class="w">            </span><span class="n">scu_bcm_304</span><span class="p">.</span><span class="n">bcm_leftturnlampst</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_turn_signal</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_LEFT</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_bcm_304</span><span class="p">.</span><span class="n">has_bcm_rightturnlampst</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">               </span><span class="n">Scu_bcm_304</span><span class="o">::</span><span class="n">BCM_RIGHTTURNLAMPST_ACTIVE</span><span class="w"> </span><span class="o">==</span><span class="w"></span>
-<span class="w">                   </span><span class="n">scu_bcm_304</span><span class="p">.</span><span class="n">bcm_rightturnlampst</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_turn_signal</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_RIGHT</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_turn_signal</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_NONE</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_turn_signal</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_NONE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// 18</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_bcm_304</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcm_304</span><span class="p">().</span><span class="n">has_bcm_hornst</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">Scu_bcm_304</span><span class="o">::</span><span class="n">BCM_HORNST_ACTIVE</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_bcm_304</span><span class="p">().</span><span class="n">bcm_hornst</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_horn</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_signal</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_horn</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  // 16, 17
+  if (ge3.has_scu_bcm_304()) {
+    Scu_bcm_304 scu_bcm_304 = ge3.scu_bcm_304();
+    if (scu_bcm_304.has_bcm_leftturnlampst() &amp;&amp;
+        Scu_bcm_304::BCM_LEFTTURNLAMPST_ACTIVE ==
+            scu_bcm_304.bcm_leftturnlampst()) {
+      chassis_.mutable_signal()-&gt;set_turn_signal(
+          common::VehicleSignal::TURN_LEFT);
+    } else if (scu_bcm_304.has_bcm_rightturnlampst() &amp;&amp;
+               Scu_bcm_304::BCM_RIGHTTURNLAMPST_ACTIVE ==
+                   scu_bcm_304.bcm_rightturnlampst()) {
+      chassis_.mutable_signal()-&gt;set_turn_signal(
+          common::VehicleSignal::TURN_RIGHT);
+    } else {
+      chassis_.mutable_signal()-&gt;set_turn_signal(
+          common::VehicleSignal::TURN_NONE);
+    }
+  } else {
+    chassis_.mutable_signal()-&gt;set_turn_signal(
+        common::VehicleSignal::TURN_NONE);
+  }
+  // 18
+  if (ge3.has_scu_bcm_304() &amp;&amp; ge3.scu_bcm_304().has_bcm_hornst() &amp;&amp;
+      Scu_bcm_304::BCM_HORNST_ACTIVE == ge3.scu_bcm_304().bcm_hornst()) {
+    chassis_.mutable_signal()-&gt;set_horn(true);
+  } else {
+    chassis_.mutable_signal()-&gt;set_horn(false);
+  }
 
-<span class="w">  </span><span class="c1">// vin number will be written into KVDB once.</span>
-<span class="w">  </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_vehicle_id</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_vin</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_1_301</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_2_302</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">has_scu_3_303</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Scu_1_301</span><span class="w"> </span><span class="n">scu_1_301</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_1_301</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">Scu_2_302</span><span class="w"> </span><span class="n">scu_2_302</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_2_302</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">Scu_3_303</span><span class="w"> </span><span class="n">scu_3_303</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ge3</span><span class="p">.</span><span class="n">scu_3_303</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin00</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin01</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin02</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin03</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin04</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin05</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin06</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">has_vin07</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin08</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin09</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin10</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin11</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin12</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin13</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin14</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">has_vin15</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">        </span><span class="n">scu_1_301</span><span class="p">.</span><span class="n">has_vin16</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin00</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin01</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin02</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin03</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin04</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin05</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin06</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_2_302</span><span class="p">.</span><span class="n">vin07</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin08</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin09</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin10</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin11</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin12</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin13</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin14</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_3_303</span><span class="p">.</span><span class="n">vin15</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">n</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scu_1_301</span><span class="p">.</span><span class="n">vin16</span><span class="p">();</span><span class="w"></span>
+  // vin number will be written into KVDB once.
+  chassis_.mutable_vehicle_id()-&gt;set_vin(&quot;&quot;);
+  if (ge3.has_scu_1_301() &amp;&amp; ge3.has_scu_2_302() &amp;&amp; ge3.has_scu_3_303()) {
+    Scu_1_301 scu_1_301 = ge3.scu_1_301();
+    Scu_2_302 scu_2_302 = ge3.scu_2_302();
+    Scu_3_303 scu_3_303 = ge3.scu_3_303();
+    if (scu_2_302.has_vin00() &amp;&amp; scu_2_302.has_vin01() &amp;&amp;
+        scu_2_302.has_vin02() &amp;&amp; scu_2_302.has_vin03() &amp;&amp;
+        scu_2_302.has_vin04() &amp;&amp; scu_2_302.has_vin05() &amp;&amp;
+        scu_2_302.has_vin06() &amp;&amp; scu_2_302.has_vin07() &amp;&amp;
+        scu_3_303.has_vin08() &amp;&amp; scu_3_303.has_vin09() &amp;&amp;
+        scu_3_303.has_vin10() &amp;&amp; scu_3_303.has_vin11() &amp;&amp;
+        scu_3_303.has_vin12() &amp;&amp; scu_3_303.has_vin13() &amp;&amp;
+        scu_3_303.has_vin14() &amp;&amp; scu_3_303.has_vin15() &amp;&amp;
+        scu_1_301.has_vin16()) {
+      int n[17];
+      n[0] = scu_2_302.vin00();
+      n[1] = scu_2_302.vin01();
+      n[2] = scu_2_302.vin02();
+      n[3] = scu_2_302.vin03();
+      n[4] = scu_2_302.vin04();
+      n[5] = scu_2_302.vin05();
+      n[6] = scu_2_302.vin06();
+      n[7] = scu_2_302.vin07();
+      n[8] = scu_3_303.vin08();
+      n[9] = scu_3_303.vin09();
+      n[10] = scu_3_303.vin10();
+      n[11] = scu_3_303.vin11();
+      n[12] = scu_3_303.vin12();
+      n[13] = scu_3_303.vin13();
+      n[14] = scu_3_303.vin14();
+      n[15] = scu_3_303.vin15();
+      n[16] = scu_1_301.vin16();
 
-<span class="w">      </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="p">[</span><span class="mi">17</span><span class="p">];</span><span class="w"></span>
-<span class="w">      </span><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">ch</span><span class="p">));</span><span class="w"></span>
-<span class="w">      </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">17</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">ch</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_vehicle_id</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_vehicle_id</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_vin</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+      char ch[17];
+      memset(&amp;ch, &#39;\0&#39;, sizeof(ch));
+      for (int i = 0; i &lt; 17; i++) {
+        ch[i] = static_cast&lt;char&gt;(n[i]);
+      }
+      if (chassis_.has_vehicle_id()) {
+        chassis_.mutable_vehicle_id()-&gt;set_vin(ch);
+      }
+    }
+  }
 
-<span class="w">  </span><span class="c1">// give engage_advice based on error_code and canbus feedback</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_error_mask_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_engage_advice</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_engage_advice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_advice</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">EngageAdvice</span><span class="o">::</span><span class="n">DISALLOW_ENGAGE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_engage_advice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_reason</span><span class="p">(</span><span class="s">&quot;Chassis error!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">parking_brake</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">CheckSafetyError</span><span class="p">(</span><span class="n">chassis_detail</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_engage_advice</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_engage_advice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_advice</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">EngageAdvice</span><span class="o">::</span><span class="n">DISALLOW_ENGAGE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_engage_advice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_reason</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="s">&quot;Vehicle is not in a safe state to engage!&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chassis_</span><span class="p">.</span><span class="n">has_engage_advice</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">chassis_</span><span class="p">.</span><span class="n">mutable_engage_advice</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_advice</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">apollo</span><span class="o">::</span><span class="n">common</span><span class="o">::</span><span class="n">EngageAdvice</span><span class="o">::</span><span class="n">READY_TO_ENGAGE</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+  // give engage_advice based on error_code and canbus feedback
+  if (chassis_error_mask_) {
+    if (chassis_.has_engage_advice()) {
+      chassis_.mutable_engage_advice()-&gt;set_advice(
+          apollo::common::EngageAdvice::DISALLOW_ENGAGE);
+      chassis_.mutable_engage_advice()-&gt;set_reason(&quot;Chassis error!&quot;);
+    }
+  } else if (chassis_.parking_brake() || CheckSafetyError(chassis_detail)) {
+    if (chassis_.has_engage_advice()) {
+      chassis_.mutable_engage_advice()-&gt;set_advice(
+          apollo::common::EngageAdvice::DISALLOW_ENGAGE);
+      chassis_.mutable_engage_advice()-&gt;set_reason(
+          &quot;Vehicle is not in a safe state to engage!&quot;);
+    }
+  } else {
+    if (chassis_.has_engage_advice()) {
+      chassis_.mutable_engage_advice()-&gt;set_advice(
+          apollo::common::EngageAdvice::READY_TO_ENGAGE);
+    }
+  }
 </pre></div>
 </div>
 <p>设置自动驾驶模式，编辑相关使能逻辑，在Apollo中，车辆的驾驶模式主要包含：</p>
@@ -3071,258 +2963,258 @@
 <p>横向自动驾驶模式（<code class="docutils literal notranslate"><span class="pre">AUTO_STEER_ONLY</span></code>）：横向使能，纵向不使能；</p>
 <p>纵向自动驾驶模式（<code class="docutils literal notranslate"><span class="pre">AUTO_SPEED_ONLY</span></code>）：横向不使能，纵向使能；</p>
 <p>车辆使能控制信号控制逻辑如下所示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Ge3Controller::EnableAutoMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;already in COMPLETE_AUTO_DRIVE mode&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_bcs_202_</span><span class="o">-&gt;</span><span class="n">set_pc_brkpedenable</span><span class="p">(</span><span class="n">Pc_bcs_202</span><span class="o">::</span><span class="n">PC_BRKPEDENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_accpedenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_ACCPEDENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_epb_203_</span><span class="o">-&gt;</span><span class="n">set_pc_epbenable</span><span class="p">(</span><span class="n">Pc_epb_203</span><span class="o">::</span><span class="n">PC_EPBENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_eps_204_</span><span class="o">-&gt;</span><span class="n">set_pc_steerenable</span><span class="p">(</span><span class="n">Pc_eps_204</span><span class="o">::</span><span class="n">PC_STEERENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ErrorCode Ge3Controller::EnableAutoMode() {
+  if (driving_mode() == Chassis::COMPLETE_AUTO_DRIVE) {
+    AINFO &lt;&lt; &quot;already in COMPLETE_AUTO_DRIVE mode&quot;;
+    return ErrorCode::OK;
+  }
+  pc_bcs_202_-&gt;set_pc_brkpedenable(Pc_bcs_202::PC_BRKPEDENABLE_ENABLE);
+  pc_vcu_205_-&gt;set_pc_accpedenable(Pc_vcu_205::PC_ACCPEDENABLE_ENABLE);
+  pc_vcu_205_-&gt;set_pc_gearenable(Pc_vcu_205::PC_GEARENABLE_ENABLE);
+  pc_epb_203_-&gt;set_pc_epbenable(Pc_epb_203::PC_EPBENABLE_ENABLE);
+  pc_eps_204_-&gt;set_pc_steerenable(Pc_eps_204::PC_STEERENABLE_ENABLE);
 
-<span class="w">  </span><span class="n">can_sender_</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">      </span><span class="n">CHECK_RESPONSE_STEER_UNIT_FLAG</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">CHECK_RESPONSE_SPEED_UNIT_FLAG</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CheckResponse</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to switch to COMPLETE_AUTO_DRIVE mode.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Emergency</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">set_chassis_error_code</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">CHASSIS_ERROR</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">CANBUS_ERROR</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// If the auto mode can be set normally, the harzad lamp should be off.</span>
-<span class="w">  </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_hazardlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HAZARDLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Switch to COMPLETE_AUTO_DRIVE mode ok.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+  can_sender_-&gt;Update();
+  const int32_t flag =
+      CHECK_RESPONSE_STEER_UNIT_FLAG | CHECK_RESPONSE_SPEED_UNIT_FLAG;
+  if (!CheckResponse(flag, true)) {
+    AERROR &lt;&lt; &quot;Failed to switch to COMPLETE_AUTO_DRIVE mode.&quot;;
+    Emergency();
+    set_chassis_error_code(Chassis::CHASSIS_ERROR);
+    return ErrorCode::CANBUS_ERROR;
+  }
+  set_driving_mode(Chassis::COMPLETE_AUTO_DRIVE);
+  // If the auto mode can be set normally, the harzad lamp should be off.
+  pc_bcm_201_-&gt;set_pc_hazardlampreq(Pc_bcm_201::PC_HAZARDLAMPREQ_NOREQ);
+  AINFO &lt;&lt; &quot;Switch to COMPLETE_AUTO_DRIVE mode ok.&quot;;
+  return ErrorCode::OK;
+}
 
-<span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Ge3Controller::DisableAutoMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">ResetProtocol</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="n">can_sender_</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_MANUAL</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">set_chassis_error_code</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">NO_ERROR</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Switch to COMPLETE_MANUAL OK.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+ErrorCode Ge3Controller::DisableAutoMode() {
+  ResetProtocol();
+  can_sender_-&gt;Update();
+  set_driving_mode(Chassis::COMPLETE_MANUAL);
+  set_chassis_error_code(Chassis::NO_ERROR);
+  AINFO &lt;&lt; &quot;Switch to COMPLETE_MANUAL OK.&quot;;
+  return ErrorCode::OK;
+}
 
-<span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Ge3Controller::EnableSteeringOnlyMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_STEER_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_STEER_ONLY</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Already in AUTO_STEER_ONLY mode&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_bcs_202_</span><span class="o">-&gt;</span><span class="n">set_pc_brkpedenable</span><span class="p">(</span><span class="n">Pc_bcs_202</span><span class="o">::</span><span class="n">PC_BRKPEDENABLE_DISABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_accpedenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_ACCPEDENABLE_DISABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARENABLE_DISABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_epb_203_</span><span class="o">-&gt;</span><span class="n">set_pc_epbenable</span><span class="p">(</span><span class="n">Pc_epb_203</span><span class="o">::</span><span class="n">PC_EPBENABLE_DISABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_eps_204_</span><span class="o">-&gt;</span><span class="n">set_pc_steerenable</span><span class="p">(</span><span class="n">Pc_eps_204</span><span class="o">::</span><span class="n">PC_STEERENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
+ErrorCode Ge3Controller::EnableSteeringOnlyMode() {
+  if (driving_mode() == Chassis::COMPLETE_AUTO_DRIVE ||
+      driving_mode() == Chassis::AUTO_STEER_ONLY) {
+    set_driving_mode(Chassis::AUTO_STEER_ONLY);
+    AINFO &lt;&lt; &quot;Already in AUTO_STEER_ONLY mode&quot;;
+    return ErrorCode::OK;
+  }
+  pc_bcs_202_-&gt;set_pc_brkpedenable(Pc_bcs_202::PC_BRKPEDENABLE_DISABLE);
+  pc_vcu_205_-&gt;set_pc_accpedenable(Pc_vcu_205::PC_ACCPEDENABLE_DISABLE);
+  pc_vcu_205_-&gt;set_pc_gearenable(Pc_vcu_205::PC_GEARENABLE_DISABLE);
+  pc_epb_203_-&gt;set_pc_epbenable(Pc_epb_203::PC_EPBENABLE_DISABLE);
+  pc_eps_204_-&gt;set_pc_steerenable(Pc_eps_204::PC_STEERENABLE_ENABLE);
 
-<span class="w">  </span><span class="n">can_sender_</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CheckResponse</span><span class="p">(</span><span class="n">CHECK_RESPONSE_STEER_UNIT_FLAG</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to switch to AUTO_STEER_ONLY mode.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Emergency</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">set_chassis_error_code</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">CHASSIS_ERROR</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">CANBUS_ERROR</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_STEER_ONLY</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// If the auto mode can be set normally, the harzad lamp should be off.</span>
-<span class="w">  </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_hazardlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HAZARDLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Switch to AUTO_STEER_ONLY mode ok.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+  can_sender_-&gt;Update();
+  if (!CheckResponse(CHECK_RESPONSE_STEER_UNIT_FLAG, true)) {
+    AERROR &lt;&lt; &quot;Failed to switch to AUTO_STEER_ONLY mode.&quot;;
+    Emergency();
+    set_chassis_error_code(Chassis::CHASSIS_ERROR);
+    return ErrorCode::CANBUS_ERROR;
+  }
+  set_driving_mode(Chassis::AUTO_STEER_ONLY);
+  // If the auto mode can be set normally, the harzad lamp should be off.
+  pc_bcm_201_-&gt;set_pc_hazardlampreq(Pc_bcm_201::PC_HAZARDLAMPREQ_NOREQ);
+  AINFO &lt;&lt; &quot;Switch to AUTO_STEER_ONLY mode ok.&quot;;
+  return ErrorCode::OK;
+}
 
-<span class="n">ErrorCode</span><span class="w"> </span><span class="nf">Ge3Controller::EnableSpeedOnlyMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Already in AUTO_SPEED_ONLY mode&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_bcs_202_</span><span class="o">-&gt;</span><span class="n">set_pc_brkpedenable</span><span class="p">(</span><span class="n">Pc_bcs_202</span><span class="o">::</span><span class="n">PC_BRKPEDENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_accpedenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_ACCPEDENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearenable</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_epb_203_</span><span class="o">-&gt;</span><span class="n">set_pc_epbenable</span><span class="p">(</span><span class="n">Pc_epb_203</span><span class="o">::</span><span class="n">PC_EPBENABLE_ENABLE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_eps_204_</span><span class="o">-&gt;</span><span class="n">set_pc_steerenable</span><span class="p">(</span><span class="n">Pc_eps_204</span><span class="o">::</span><span class="n">PC_STEERENABLE_DISABLE</span><span class="p">);</span><span class="w"></span>
+ErrorCode Ge3Controller::EnableSpeedOnlyMode() {
+  if (driving_mode() == Chassis::COMPLETE_AUTO_DRIVE ||
+      driving_mode() == Chassis::AUTO_SPEED_ONLY) {
+    set_driving_mode(Chassis::AUTO_SPEED_ONLY);
+    AINFO &lt;&lt; &quot;Already in AUTO_SPEED_ONLY mode&quot;;
+    return ErrorCode::OK;
+  }
+  pc_bcs_202_-&gt;set_pc_brkpedenable(Pc_bcs_202::PC_BRKPEDENABLE_ENABLE);
+  pc_vcu_205_-&gt;set_pc_accpedenable(Pc_vcu_205::PC_ACCPEDENABLE_ENABLE);
+  pc_vcu_205_-&gt;set_pc_gearenable(Pc_vcu_205::PC_GEARENABLE_ENABLE);
+  pc_epb_203_-&gt;set_pc_epbenable(Pc_epb_203::PC_EPBENABLE_ENABLE);
+  pc_eps_204_-&gt;set_pc_steerenable(Pc_eps_204::PC_STEERENABLE_DISABLE);
 
-<span class="w">  </span><span class="n">can_sender_</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">CheckResponse</span><span class="p">(</span><span class="n">CHECK_RESPONSE_SPEED_UNIT_FLAG</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to switch to AUTO_STEER_ONLY mode.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">Emergency</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">set_chassis_error_code</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">CHASSIS_ERROR</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">CANBUS_ERROR</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">set_driving_mode</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// If the auto mode can be set normally, the harzad lamp should be off.</span>
-<span class="w">  </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_hazardlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HAZARDLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Switch to AUTO_SPEED_ONLY mode ok.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+  can_sender_-&gt;Update();
+  if (!CheckResponse(CHECK_RESPONSE_SPEED_UNIT_FLAG, true)) {
+    AERROR &lt;&lt; &quot;Failed to switch to AUTO_STEER_ONLY mode.&quot;;
+    Emergency();
+    set_chassis_error_code(Chassis::CHASSIS_ERROR);
+    return ErrorCode::CANBUS_ERROR;
+  }
+  set_driving_mode(Chassis::AUTO_SPEED_ONLY);
+  // If the auto mode can be set normally, the harzad lamp should be off.
+  pc_bcm_201_-&gt;set_pc_hazardlampreq(Pc_bcm_201::PC_HAZARDLAMPREQ_NOREQ);
+  AINFO &lt;&lt; &quot;Switch to AUTO_SPEED_ONLY mode ok.&quot;;
+  return ErrorCode::OK;
+}
 </pre></div>
 </div>
 <p>添加控制信号的相关功能，必须要添加的控制信号包括车辆的油门、刹车踏板控制，转向控制，和档位控制；其它控制信号包括车大灯控制、喇叭控制、转向灯控制、电子手刹控制。代码如下所示：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// NEUTRAL, REVERSE, DRIVE</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Gear</span><span class="p">(</span><span class="n">Chassis</span><span class="o">::</span><span class="n">GearPosition</span><span class="w"> </span><span class="n">gear_position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;This drive mode no need to set gear.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">gear_position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_NEUTRAL</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_NEUTRAL</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_REVERSE</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_REVERSE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_DRIVE</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_DRIVE</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_PARKING</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_PARK</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_LOW</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_NONE</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="nl">GEAR_INVALID</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">AERROR</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Gear command is invalid!&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_gearreq</span><span class="p">(</span><span class="n">Pc_vcu_205</span><span class="o">::</span><span class="n">PC_GEARREQ_INVALID</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// NEUTRAL, REVERSE, DRIVE
+void Ge3Controller::Gear(Chassis::GearPosition gear_position) {
+  if (driving_mode() != Chassis::COMPLETE_AUTO_DRIVE &amp;&amp;
+      driving_mode() != Chassis::AUTO_SPEED_ONLY) {
+    AINFO &lt;&lt; &quot;This drive mode no need to set gear.&quot;;
+    return;
+  }
+  switch (gear_position) {
+    case Chassis::GEAR_NEUTRAL: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_NEUTRAL);
+      break;
+    }
+    case Chassis::GEAR_REVERSE: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_REVERSE);
+      break;
+    }
+    case Chassis::GEAR_DRIVE: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_DRIVE);
+      break;
+    }
+    case Chassis::GEAR_PARKING: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_PARK);
+      break;
+    }
+    case Chassis::GEAR_LOW: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_INVALID);
+      break;
+    }
+    case Chassis::GEAR_NONE: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_INVALID);
+      break;
+    }
+    case Chassis::GEAR_INVALID: {
+      AERROR &lt;&lt; &quot;Gear command is invalid!&quot;;
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_INVALID);
+      break;
+    }
+    default: {
+      pc_vcu_205_-&gt;set_pc_gearreq(Pc_vcu_205::PC_GEARREQ_INVALID);
+      break;
+    }
+  }
+}
 
-<span class="c1">// brake with new acceleration</span>
-<span class="c1">// acceleration:0.00~99.99, unit:</span>
-<span class="c1">// acceleration:0.0 ~ 7.0, unit:m/s^2</span>
-<span class="c1">// acceleration_spd:60 ~ 100, suggest: 90</span>
-<span class="c1">// -&gt; pedal</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Brake</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pedal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Update brake value based on mode</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The current drive mode does not need to set acceleration.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_bcs_202_</span><span class="o">-&gt;</span><span class="n">set_pc_brkpedreq</span><span class="p">(</span><span class="n">pedal</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+// brake with new acceleration
+// acceleration:0.00~99.99, unit:
+// acceleration:0.0 ~ 7.0, unit:m/s^2
+// acceleration_spd:60 ~ 100, suggest: 90
+// -&gt; pedal
+void Ge3Controller::Brake(double pedal) {
+  // Update brake value based on mode
+  if (driving_mode() != Chassis::COMPLETE_AUTO_DRIVE &amp;&amp;
+      driving_mode() != Chassis::AUTO_SPEED_ONLY) {
+    AINFO &lt;&lt; &quot;The current drive mode does not need to set acceleration.&quot;;
+    return;
+  }
+  pc_bcs_202_-&gt;set_pc_brkpedreq(pedal);
+}
 
-<span class="c1">// drive with old acceleration</span>
-<span class="c1">// gas:0.00~99.99 unit:</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Throttle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">pedal</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The current drive mode does not need to set acceleration.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_vcu_205_</span><span class="o">-&gt;</span><span class="n">set_pc_accpedreq</span><span class="p">(</span><span class="n">pedal</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+// drive with old acceleration
+// gas:0.00~99.99 unit:
+void Ge3Controller::Throttle(double pedal) {
+  if (driving_mode() != Chassis::COMPLETE_AUTO_DRIVE &amp;&amp;
+      driving_mode() != Chassis::AUTO_SPEED_ONLY) {
+    AINFO &lt;&lt; &quot;The current drive mode does not need to set acceleration.&quot;;
+    return;
+  }
+  pc_vcu_205_-&gt;set_pc_accpedreq(pedal);
+}
 
-<span class="c1">// ge3 default, -470 ~ 470, left:+, right:-</span>
-<span class="c1">// need to be compatible with control module, so reverse</span>
-<span class="c1">// steering with old angle speed</span>
-<span class="c1">// angle:-99.99~0.00~99.99, unit:, left:-, right:+</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Steer</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">||</span><span class="w"></span>
-<span class="w">        </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_STEER_ONLY</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The current driving mode does not need to set steer.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">real_angle</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">      </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">max_steer_angle</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_eps_204_</span><span class="o">-&gt;</span><span class="n">set_pc_steerangreq</span><span class="p">(</span><span class="n">real_angle</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">set_pc_steerspdreq</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+// ge3 default, -470 ~ 470, left:+, right:-
+// need to be compatible with control module, so reverse
+// steering with old angle speed
+// angle:-99.99~0.00~99.99, unit:, left:-, right:+
+void Ge3Controller::Steer(double angle) {
+  if (!(driving_mode() == Chassis::COMPLETE_AUTO_DRIVE ||
+        driving_mode() == Chassis::AUTO_STEER_ONLY)) {
+    AINFO &lt;&lt; &quot;The current driving mode does not need to set steer.&quot;;
+    return;
+  }
+  const double real_angle =
+      vehicle_params_.max_steer_angle() / M_PI * 180 * angle / 100.0;
+  pc_eps_204_-&gt;set_pc_steerangreq(real_angle)-&gt;set_pc_steerspdreq(500);
+}
 
-<span class="c1">// drive with acceleration/deceleration</span>
-<span class="c1">// acc:-7.0 ~ 5.0, unit:m/s^2</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Acceleration</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">acc</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_SPEED_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The current drive mode does not need to set acceleration.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// None</span>
-<span class="p">}</span><span class="w"></span>
+// drive with acceleration/deceleration
+// acc:-7.0 ~ 5.0, unit:m/s^2
+void Ge3Controller::Acceleration(double acc) {
+  if (driving_mode() != Chassis::COMPLETE_AUTO_DRIVE &amp;&amp;
+      driving_mode() != Chassis::AUTO_SPEED_ONLY) {
+    AINFO &lt;&lt; &quot;The current drive mode does not need to set acceleration.&quot;;
+    return;
+  }
+  // None
+}
 
-<span class="c1">// steering with new angle speed</span>
-<span class="c1">// angle:-99.99~0.00~99.99, unit:, left:-, right:+</span>
-<span class="c1">// angle_spd:0.00~99.99, unit:deg/s</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::Steer</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">angle</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">angle_spd</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">COMPLETE_AUTO_DRIVE</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">driving_mode</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Chassis</span><span class="o">::</span><span class="n">AUTO_STEER_ONLY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;The current driving mode does not need to set steer.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">real_angle</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">      </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">max_steer_angle</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100.0</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">real_angle_spd</span><span class="w"> </span><span class="o">=</span><span class="w"></span>
-<span class="w">      </span><span class="n">ProtocolData</span><span class="o">&lt;::</span><span class="n">apollo</span><span class="o">::</span><span class="n">canbus</span><span class="o">::</span><span class="n">ChassisDetail</span><span class="o">&gt;::</span><span class="n">BoundedValue</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">min_steer_angle_rate</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">max_steer_angle_rate</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="n">vehicle_params_</span><span class="p">.</span><span class="n">max_steer_angle_rate</span><span class="p">()</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">angle_spd</span><span class="w"> </span><span class="o">/</span><span class="w"></span>
-<span class="w">              </span><span class="mf">100.0</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="n">pc_eps_204_</span><span class="o">-&gt;</span><span class="n">set_pc_steerangreq</span><span class="p">(</span><span class="n">real_angle</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="o">-&gt;</span><span class="n">set_pc_steerspdreq</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">real_angle_spd</span><span class="p">));</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+// steering with new angle speed
+// angle:-99.99~0.00~99.99, unit:, left:-, right:+
+// angle_spd:0.00~99.99, unit:deg/s
+void Ge3Controller::Steer(double angle, double angle_spd) {
+  if (driving_mode() != Chassis::COMPLETE_AUTO_DRIVE &amp;&amp;
+      driving_mode() != Chassis::AUTO_STEER_ONLY) {
+    AINFO &lt;&lt; &quot;The current driving mode does not need to set steer.&quot;;
+    return;
+  }
+  const double real_angle =
+      vehicle_params_.max_steer_angle() / M_PI * 180 * angle / 100.0;
+  const double real_angle_spd =
+      ProtocolData&lt;::apollo::canbus::ChassisDetail&gt;::BoundedValue(
+          vehicle_params_.min_steer_angle_rate() / M_PI * 180,
+          vehicle_params_.max_steer_angle_rate() / M_PI * 180,
+          vehicle_params_.max_steer_angle_rate() / M_PI * 180 * angle_spd /
+              100.0);
+  pc_eps_204_-&gt;set_pc_steerangreq(real_angle)
+      -&gt;set_pc_steerspdreq(static_cast&lt;int&gt;(real_angle_spd));
+}
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::SetEpbBreak</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ControlCommand</span><span class="o">&amp;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">parking_brake</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_epb_203_</span><span class="o">-&gt;</span><span class="n">set_pc_epbreq</span><span class="p">(</span><span class="n">Pc_epb_203</span><span class="o">::</span><span class="n">PC_EPBREQ_APPLY</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_epb_203_</span><span class="o">-&gt;</span><span class="n">set_pc_epbreq</span><span class="p">(</span><span class="n">Pc_epb_203</span><span class="o">::</span><span class="n">PC_EPBREQ_RELEASE</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+void Ge3Controller::SetEpbBreak(const ControlCommand&amp; command) {
+  if (command.parking_brake()) {
+    pc_epb_203_-&gt;set_pc_epbreq(Pc_epb_203::PC_EPBREQ_APPLY);
+  } else {
+    pc_epb_203_-&gt;set_pc_epbreq(Pc_epb_203::PC_EPBREQ_RELEASE);
+  }
+}
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::SetBeam</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ControlCommand</span><span class="o">&amp;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">signal</span><span class="p">().</span><span class="n">high_beam</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_lowbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LOWBEAMREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_highbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HIGHBEAMREQ_REQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">signal</span><span class="p">().</span><span class="n">low_beam</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_lowbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LOWBEAMREQ_REQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_highbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HIGHBEAMREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_lowbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LOWBEAMREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_highbeamreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HIGHBEAMREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+void Ge3Controller::SetBeam(const ControlCommand&amp; command) {
+  if (command.signal().high_beam()) {
+    pc_bcm_201_-&gt;set_pc_lowbeamreq(Pc_bcm_201::PC_LOWBEAMREQ_NOREQ);
+    pc_bcm_201_-&gt;set_pc_highbeamreq(Pc_bcm_201::PC_HIGHBEAMREQ_REQ);
+  } else if (command.signal().low_beam()) {
+    pc_bcm_201_-&gt;set_pc_lowbeamreq(Pc_bcm_201::PC_LOWBEAMREQ_REQ);
+    pc_bcm_201_-&gt;set_pc_highbeamreq(Pc_bcm_201::PC_HIGHBEAMREQ_NOREQ);
+  } else {
+    pc_bcm_201_-&gt;set_pc_lowbeamreq(Pc_bcm_201::PC_LOWBEAMREQ_NOREQ);
+    pc_bcm_201_-&gt;set_pc_highbeamreq(Pc_bcm_201::PC_HIGHBEAMREQ_NOREQ);
+  }
+}
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::SetHorn</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ControlCommand</span><span class="o">&amp;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">signal</span><span class="p">().</span><span class="n">horn</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_hornreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HORNREQ_REQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_hornreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_HORNREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+void Ge3Controller::SetHorn(const ControlCommand&amp; command) {
+  if (command.signal().horn()) {
+    pc_bcm_201_-&gt;set_pc_hornreq(Pc_bcm_201::PC_HORNREQ_REQ);
+  } else {
+    pc_bcm_201_-&gt;set_pc_hornreq(Pc_bcm_201::PC_HORNREQ_NOREQ);
+  }
+}
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">Ge3Controller::SetTurningSignal</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ControlCommand</span><span class="o">&amp;</span><span class="w"> </span><span class="n">command</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// Set Turn Signal</span>
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">signal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">signal</span><span class="p">().</span><span class="n">turn_signal</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">signal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_LEFT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_leftturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LEFTTURNLAMPREQ_REQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_rightturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_RIGHTTURNLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">signal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">common</span><span class="o">::</span><span class="n">VehicleSignal</span><span class="o">::</span><span class="n">TURN_RIGHT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_leftturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LEFTTURNLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_rightturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_RIGHTTURNLAMPREQ_REQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_leftturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_LEFTTURNLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">pc_bcm_201_</span><span class="o">-&gt;</span><span class="n">set_pc_rightturnlampreq</span><span class="p">(</span><span class="n">Pc_bcm_201</span><span class="o">::</span><span class="n">PC_RIGHTTURNLAMPREQ_NOREQ</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+void Ge3Controller::SetTurningSignal(const ControlCommand&amp; command) {
+  // Set Turn Signal
+  auto signal = command.signal().turn_signal();
+  if (signal == common::VehicleSignal::TURN_LEFT) {
+    pc_bcm_201_-&gt;set_pc_leftturnlampreq(Pc_bcm_201::PC_LEFTTURNLAMPREQ_REQ);
+    pc_bcm_201_-&gt;set_pc_rightturnlampreq(Pc_bcm_201::PC_RIGHTTURNLAMPREQ_NOREQ);
+  } else if (signal == common::VehicleSignal::TURN_RIGHT) {
+    pc_bcm_201_-&gt;set_pc_leftturnlampreq(Pc_bcm_201::PC_LEFTTURNLAMPREQ_NOREQ);
+    pc_bcm_201_-&gt;set_pc_rightturnlampreq(Pc_bcm_201::PC_RIGHTTURNLAMPREQ_REQ);
+  } else {
+    pc_bcm_201_-&gt;set_pc_leftturnlampreq(Pc_bcm_201::PC_LEFTTURNLAMPREQ_NOREQ);
+    pc_bcm_201_-&gt;set_pc_rightturnlampreq(Pc_bcm_201::PC_RIGHTTURNLAMPREQ_NOREQ);
+  }
+}
 </pre></div>
 </div>
 <p>添加<code class="docutils literal notranslate"><span class="pre">CheckResponse</span></code>逻辑，Apollo程序内增加了对车辆底层是否在自动驾驶模式的监控，即车辆横向、驱动、制动模块的驾驶模式反馈是否处于自动驾驶状态，如果在一个<code class="docutils literal notranslate"><span class="pre">CheckResponse</span></code>周期内，车辆某个模块驾驶模块反馈处于接管或者手动驾驶模式，则Apollo会控制车辆使能为紧急停车模式（<code class="docutils literal notranslate"><span class="pre">Emergency</span></code>），即各模块均控制为手动模式，确保控制车辆时的安全。不同的车辆<code class="docutils literal notranslate"><span class="pre">CheckResponse</span></code>周期可能不同，需要开发者根据情况通过设置<code class="docutils literal notranslate"><span class="pre">retry_num</span></code>设定<code class="docutils literal notranslate"><span class="pre">check</span></code>周期。
@@ -3331,63 +3223,63 @@
 <p><code class="docutils literal notranslate"><span class="pre">is_vcu_online-&gt;驱动模式反馈信号</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">is_esp_online-&gt;制动模式反馈信号</span></code></p>
 <p>在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/vehicle/ge3/protocol/scu_eps_311.cc</span></code>文件内，增加以下代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_eps_online</span><span class="p">(</span><span class="n">eps_drvmode</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_eps_online</span><span class="p">(</span><span class="n">eps_drvmode</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/vehicle/ge3/protocol/scu_vcu_1_312.cc</span></code>文件内，增加以下代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_vcu_online</span><span class="p">(</span><span class="n">vcu_drvmode</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_vcu_online</span><span class="p">(</span><span class="n">vcu_drvmode</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/vehicle/ge3/protocol/scu_bcs_1_306.cc</span></code>文件内，增加以下代码：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_esp_online</span><span class="p">(</span><span class="n">bcs_drvmode</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chassis</span><span class="o">-&gt;</span><span class="n">mutable_check_response</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">set_is_esp_online</span><span class="p">(</span><span class="n">bcs_drvmode</span><span class="p">(</span><span class="nb">bytes</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">CheckResponse</span></code>实现代码如下：</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">Ge3Controller::CheckResponse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">flags</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">need_wait</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">retry_num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="n">ChassisDetail</span><span class="w"> </span><span class="n">chassis_detail</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_eps_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_vcu_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_esp_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span> <span class="n">Ge3Controller</span><span class="p">::</span><span class="n">CheckResponse</span><span class="p">(</span><span class="n">const</span> <span class="n">int32_t</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">need_wait</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">int32_t</span> <span class="n">retry_num</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+  <span class="n">ChassisDetail</span> <span class="n">chassis_detail</span><span class="p">;</span>
+  <span class="nb">bool</span> <span class="n">is_eps_online</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+  <span class="nb">bool</span> <span class="n">is_vcu_online</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
+  <span class="nb">bool</span> <span class="n">is_esp_online</span> <span class="o">=</span> <span class="n">false</span><span class="p">;</span>
 
-<span class="w">  </span><span class="k">do</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">message_manager_</span><span class="o">-&gt;</span><span class="n">GetSensorData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">chassis_detail</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">AERROR_EVERY</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;get chassis detail failed.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">check_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flags</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">CHECK_RESPONSE_STEER_UNIT_FLAG</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">is_eps_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">has_check_response</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">has_is_eps_online</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">is_eps_online</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">check_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">check_ok</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">is_eps_online</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+  <span class="n">do</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">message_manager_</span><span class="o">-&gt;</span><span class="n">GetSensorData</span><span class="p">(</span><span class="o">&amp;</span><span class="n">chassis_detail</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ErrorCode</span><span class="p">::</span><span class="n">OK</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">AERROR_EVERY</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;get chassis detail failed.&quot;</span><span class="p">;</span>
+      <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nb">bool</span> <span class="n">check_ok</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">CHECK_RESPONSE_STEER_UNIT_FLAG</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">is_eps_online</span> <span class="o">=</span> <span class="n">chassis_detail</span><span class="o">.</span><span class="n">has_check_response</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">has_is_eps_online</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">is_eps_online</span><span class="p">();</span>
+      <span class="n">check_ok</span> <span class="o">=</span> <span class="n">check_ok</span> <span class="o">&amp;&amp;</span> <span class="n">is_eps_online</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">flags</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">CHECK_RESPONSE_SPEED_UNIT_FLAG</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="n">is_vcu_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">has_check_response</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">has_is_vcu_online</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">is_vcu_online</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">is_esp_online</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">has_check_response</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">has_is_esp_online</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"></span>
-<span class="w">                      </span><span class="n">chassis_detail</span><span class="p">.</span><span class="n">check_response</span><span class="p">().</span><span class="n">is_esp_online</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="n">check_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">check_ok</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">is_vcu_online</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">is_esp_online</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">check_ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Need to check response again.&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">need_wait</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="o">--</span><span class="n">retry_num</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="w"></span>
-<span class="w">          </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">need_wait</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">retry_num</span><span class="p">);</span><span class="w"></span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">CHECK_RESPONSE_SPEED_UNIT_FLAG</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">is_vcu_online</span> <span class="o">=</span> <span class="n">chassis_detail</span><span class="o">.</span><span class="n">has_check_response</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">has_is_vcu_online</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">is_vcu_online</span><span class="p">();</span>
+      <span class="n">is_esp_online</span> <span class="o">=</span> <span class="n">chassis_detail</span><span class="o">.</span><span class="n">has_check_response</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">has_is_esp_online</span><span class="p">()</span> <span class="o">&amp;&amp;</span>
+                      <span class="n">chassis_detail</span><span class="o">.</span><span class="n">check_response</span><span class="p">()</span><span class="o">.</span><span class="n">is_esp_online</span><span class="p">();</span>
+      <span class="n">check_ok</span> <span class="o">=</span> <span class="n">check_ok</span> <span class="o">&amp;&amp;</span> <span class="n">is_vcu_online</span> <span class="o">&amp;&amp;</span> <span class="n">is_esp_online</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">check_ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">AINFO</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Need to check response again.&quot;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">need_wait</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">--</span><span class="n">retry_num</span><span class="p">;</span>
+      <span class="n">std</span><span class="p">::</span><span class="n">this_thread</span><span class="p">::</span><span class="n">sleep_for</span><span class="p">(</span>
+          <span class="n">std</span><span class="p">::</span><span class="n">chrono</span><span class="p">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="n">double</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">milli</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">need_wait</span> <span class="o">&amp;&amp;</span> <span class="n">retry_num</span><span class="p">);</span>
 
-<span class="w">  </span><span class="n">AINFO</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;check_response fail: is_eps_online:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">is_eps_online</span><span class="w"></span>
-<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, is_vcu_online:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">is_vcu_online</span><span class="w"></span>
-<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, is_esp_online:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">is_esp_online</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+  <span class="n">AINFO</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;check_response fail: is_eps_online:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">is_eps_online</span>
+        <span class="o">&lt;&lt;</span> <span class="s2">&quot;, is_vcu_online:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">is_vcu_online</span>
+        <span class="o">&lt;&lt;</span> <span class="s2">&quot;, is_esp_online:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">is_esp_online</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -3428,7 +3320,7 @@
 <div class="section" id="id18">
 <h4>teleop测试工具介绍<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
 <p>apollo里为开发者提供了一个teleop的测试工具，在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/tools/teleop.cc</span></code>，在term内输入</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span><span class="w"> </span><span class="n">scripts</span><span class="o">/</span><span class="n">canbus_teleop</span><span class="p">.</span><span class="n">sh</span><span class="w"></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">canbus_teleop</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>即可进入teleop界面，如下图所示：</p>
@@ -3494,8 +3386,8 @@
 <h3>诊断工具介绍<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
 <p>了解了teleop的基本操作后，开发者根据相应的指令，对车辆执行具体的控制命令，然后通过Apollo的可视化监控工具<code class="docutils literal notranslate"><span class="pre">diagnostic.sh（Apollo3.0及以前版本）/cyber_monitor</span></code> 进行查看车辆当前的反馈信号，确认控制下发后车辆的执行结果是否正确。
 在Apollo里提供了一个可视化的监控工具，可以用来监控底盘<code class="docutils literal notranslate"><span class="pre">chassis</span></code>和<code class="docutils literal notranslate"><span class="pre">chassis_detail</span></code>信息，通过执行</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span><span class="w"> </span><span class="n">scripts</span><span class="o">/</span><span class="n">diagnostic</span><span class="p">.</span><span class="n">sh</span><span class="w">    </span><span class="c1">//Apollo3.0及以前版本</span>
-<span class="n">cyber_monitor</span><span class="w">                 </span><span class="c1">//Apollo3.5版本</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">diagnostic</span><span class="o">.</span><span class="n">sh</span>    <span class="o">//</span><span class="n">Apollo3</span><span class="mf">.0</span><span class="n">及以前版本</span>
+<span class="n">cyber_monitor</span>                 <span class="o">//</span><span class="n">Apollo3</span><span class="mf">.5</span><span class="n">版本</span>
 </pre></div>
 </div>
 <p>在<code class="docutils literal notranslate"><span class="pre">apollo/modules/canbus/conf/canbus.conf</span></code>文件内：
@@ -3503,7 +3395,7 @@
 修改配置<code class="docutils literal notranslate"><span class="pre">--receive_guardian</span></code>为<code class="docutils literal notranslate"><span class="pre">--noreceive_guardian</span></code>，即可以关闭guardian模式，进入canbus的调试模式，这样teleop时就能够控制车辆了。如下图所示是修改<code class="docutils literal notranslate"><span class="pre">canbus_conf</span></code>配置文件。
 <img alt="canbus_conf" src="../../_images/canbus_conf.png" /></p>
 <p>打开<code class="docutils literal notranslate"><span class="pre">diagnostic</span></code>或<code class="docutils literal notranslate"><span class="pre">cyber_monitor</span></code>界面如下</p>
-<p><img alt="cyber_monitor" src="../../_images/cyber_monitor2.png" /></p>
+<p><img alt="cyber_monitor" src="../../_images/cyber_monitor1.png" /></p>
 <p>可以看到<code class="docutils literal notranslate"><span class="pre">chassis</span></code>和<code class="docutils literal notranslate"><span class="pre">chassis_detail</span></code>均有数据，频率约100Hz。<code class="docutils literal notranslate"><span class="pre">chassis</span></code>下数据主要是车辆的实际转速、实际踏板百分比的反馈，实际方向盘转角百分比，实际档位反馈等信息，在<code class="docutils literal notranslate"><span class="pre">chassis_detail</span></code>是底盘上传给apollo的反馈报文（即apollo接收底盘全部报文）的全部信息。
 如下图所示为<code class="docutils literal notranslate"><span class="pre">chassis</span></code>信息</p>
 <p><img alt="chassis" src="../../_images/chassis1.png" /></p>
