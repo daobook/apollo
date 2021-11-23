@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the Apollo 文档 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo 文档 \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-23 17:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../cyber/CyberRT_Migration_Guide.md:1
+msgid "Migration guide from Apollo ROS"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:4
+msgid ""
+"This article describes the essential changes for projects to migrate from"
+" Apollo ROS (Apollo 3.0 and before) to Apollo Cyber RT (Apollo 3.5 and "
+"after). We will be using the very first ROS project talker/listener as "
+"example to demonstrate step by step migration instruction."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:6
+msgid "Build system"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:8
+msgid ""
+"ROS use `CMake` as its build system but Cyber RT use `bazel`. In a ROS "
+"project, CmakeLists.txt and package.xml are required for defining build "
+"configs like build target, dependency, message files and so on. As for a "
+"Cyber RT component, a single bazel BUILD file covers. Some key build "
+"config mappings are listed below."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:10
+msgid "Cmake"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:25
+msgid "Bazel"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:46
+msgid ""
+"We can find the mapping easily from the 2 file snippets. For example, "
+"`pb_talker` and `src/talker.cpp` in cmake `add_executable` setting map to"
+" `name = \"talker\"` and `srcs = [\"talker.cc\"]` in BUILD file "
+"`cc_binary`."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:48
+msgid "Proto"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:50
+msgid ""
+"Apollo ROS has customized to support proto message formate that a "
+"separate section `add_proto_files` and "
+"projectName_proto(`pb_msgs_example_proto`) in `target_link_libraries` are"
+" required to send message in proto formate. For config proto message in "
+"Cyber RT, it's as simple as adding the target proto file path "
+"concantenated with name of `cc_proto_library` in `deps` setting. The "
+"`cc_proto_library` is set up in BUILD file under proto folder."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:67
+msgid ""
+"The package definition has also changed in Cyber RT. In Apollo ROS a "
+"fixed package `package pb_msgs;` is used for proto files, but in Cyber "
+"RT, the proto file path `package apollo.cyber.examples.proto;` is used "
+"instead."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:69
+msgid "Folder structure"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:71
+msgid ""
+"As shown below, Cyber RT remove the src folder and pull all source code "
+"in the same folder as BUILD file. BUILD file plays the same role as "
+"CMakeLists.txt plus package.xml. Both Cyber RT and Apollo ROS "
+"talker/listener example have a proto folder for message proto files but "
+"Cyber RT requires a separate BUILD file for proto folder to set up the "
+"proto library."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:73
+msgid "Apollo ROS"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:75
+msgid "CMakeLists.txt"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:76
+msgid "package.xml"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:77
+#: ../../cyber/CyberRT_Migration_Guide.md:88
+msgid "proto"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:78
+msgid "chatter.proto"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:79
+msgid "src"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:80
+msgid "listener.cpp"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:81
+msgid "talker.cpp"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+#: ../../cyber/CyberRT_Migration_Guide.md:83
+#: ../../cyber/CyberRT_Migration_Guide.md:96
+#: ../../cyber/CyberRT_Migration_Guide.md:154
+msgid "Cyber RT"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:85
+#: ../../cyber/CyberRT_Migration_Guide.md:89
+msgid "BUILD"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:86
+msgid "listener.cc"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:87
+msgid "talker.cc"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:90
+msgid "examples.proto (with chatter message)"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:92
+msgid "Update source code"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:94
+msgid "Listener"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+#: ../../cyber/CyberRT_Migration_Guide.md:122
+#: ../../cyber/CyberRT_Migration_Guide.md:185
+msgid "ROS"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:142
+msgid ""
+"You can see easily from the two listener code above that Cyber RT "
+"provides very similar API to for developers to migrate from ROS."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:144
+msgid "`ros::init(argc, argv, \"listener\");` --> `apollo::cyber::Init(argv[0]);`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:145
+msgid ""
+"`ros::NodeHandle n;` --> `auto listener_node = "
+"apollo::cyber::CreateNode(\"listener\");`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:146
+msgid ""
+"`ros::Subscriber pb_sub = n.subscribe(\"chatter\", 1000, "
+"MessageCallback);` --> `auto listener =     "
+"listener_node->CreateReader(\"channel/chatter\", MessageCallback);`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:148
+msgid "`ros::spin();` --> `apollo::cyber::WaitForShutdown();`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:150
+msgid ""
+"Note: for Cyber RT, a listener node has to use "
+"`node->CreateReader<messageType>(channelName, callback)` to read data "
+"from channel."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:152
+msgid "Talker"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:215
+msgid ""
+"Most of the mappings are illustrated in listener code above, the rest are"
+" listed here."
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:217
+msgid ""
+"`ros::Publisher chatter_pub = n.advertise<pb_msgs::Chatter>(\"chatter\", "
+"1000);` --> `auto talker = "
+"talker_node->CreateWriter<Chatter>(\"channel/chatter\");`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:219
+msgid "`chatter_pub.publish(msg);` --> ` talker->Write(msg);`"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:221
+msgid "Tools mapping"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "Note"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "rosbag"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "cyber_recorder"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "data file"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "scripts/diagnostics.sh"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "cyber_monitor"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "channel debug"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "offline_lidar_visualizer_tool"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "cyber_visualizer"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md
+msgid "point cloud visualizer"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:229
+msgid "ROS bag data migration"
+msgstr ""
+
+#: ../../cyber/CyberRT_Migration_Guide.md:231
+msgid ""
+"The data file changed from ROS bag to Cyber record in Cyber RT. Cyber RT "
+"has a data migration tool `rosbag_to_record` for users to easily migrate "
+"data files before Apollo 3.0 (ROS) to Cyber RT like the sample usage "
+"below."
+msgstr ""
+
