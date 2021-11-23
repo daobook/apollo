@@ -38,7 +38,7 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="How to Create and Run a new Component in Cyber RT" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html" />
+    <link rel="next" title="如何在 Cyber RT 中创建和运行新组件" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html" />
     <link rel="prev" title="简介" href="../../cyber/README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
@@ -109,7 +109,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">
-       How to Create and Run a new Component in Cyber RT
+       如何在 Cyber RT 中创建和运行新组件
       </a>
      </li>
      <li class="toctree-l3">
@@ -141,7 +141,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Python_API.html">
-       2. Python API tutorial
+       2. Python API 教程
       </a>
      </li>
      <li class="toctree-l3">
@@ -2235,24 +2235,24 @@
 <h1>快速入门<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">How to Create and Run a new Component in Cyber RT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#set-up-directry-layout">Set up directry layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#implement-the-sample-component-class">Implement the sample component class</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#header-file">Header file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#source-file">Source File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#build-file">BUILD file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html">如何在 Cyber RT 中创建和运行新组件</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#set-up-directry-layout">初始化目录布局</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#implement-the-sample-component-class">实现样例组件类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#header-file">头文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#source-file">源文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#build-file">创建 BUILD 文件</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#configuration-setup">Configuration setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#dag-file">DAG file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#launch-file">Launch file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#configuration-setup">设置配置文件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#dag-file">配置 DAG 文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#launch-file">配置 Launch 启动文件</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#launch-the-component">Launch the component</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#build">Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#environment-setup">Environment setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#id1">Launch the component</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#feed-channel-data-for-the-component-to-process"><em>Feed</em> channel data for the component to process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#launch-the-component">启动组件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#build">启动这个组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#environment-setup">环境设定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#id1">启动组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html#feed-channel-data-for-the-component-to-process"><em>提供</em> channel 数据给组件处理</a></li>
 </ul>
 </li>
 </ul>
@@ -2307,7 +2307,7 @@
     <a class='right-next' id="next-link" href="../../cyber/doxy-docs/source/CyberRT_Quick_Start.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">How to Create and Run a new Component in Cyber RT</p>
+        <p class="prev-next-title">如何在 Cyber RT 中创建和运行新组件</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
