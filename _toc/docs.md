@@ -6,9 +6,4 @@
 
 ../docs/*
 ../docs/**/*
-../CODE_OF_CONDUCT
-../CODE_OF_CONDUCT_cn
-../RELEASE
-../MANIFESTO
-../CONTRIBUTING
 ```
