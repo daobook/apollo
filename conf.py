@@ -17,7 +17,7 @@ sys.path.extend([Path('.').absolute().as_posix()])
 
 # -- Project information -----------------------------------------------------
 
-project = 'Apollo 文档'
+project = 'Apollo Auto'
 copyright = '2021, xinetzone'
 author = 'xinetzone'
 

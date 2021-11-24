@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo 文档 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"POT-Creation-Date: 2021-11-24 11:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../docs/technical_documents/README.md:1
-msgid "Technical Docunments"
-msgstr "技术文档"
-
-#: ../../docs/technical_documents/README.md:3
-msgid "This folder contains some available code readings or algorithm details"
-msgstr "这个文件夹包含一些可用的代码读物或算法细节"
+#: ../../_toc/technical-documents/index.md:1
+msgid "技术文档"
+msgstr ""
 

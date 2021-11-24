@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2021, xinetzone
 # This file is distributed under the same license as the Apollo 文档 package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# xinetzone <735613050@qq.com>, 2021.
 #
 #, fuzzy
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-23 19:11+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: xinetzone <735613050@qq.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../README.md:18
 msgid "Welcome to Apollo's GitHub page!"
-msgstr ""
+msgstr "欢迎来到 Apollo Github 页面"
 
 #: ../../README.md:20
 msgid ""
@@ -52,12 +52,14 @@ msgid ""
 " which accelerates the development, testing, and deployment of Autonomous"
 " Vehicles."
 msgstr ""
+"[Apollo](http://apollo.auto) 是一个高性能、灵活的架构，可以加速自动驾驶汽车的开发、测试和部署。"
 
 #: ../../README.md:22
 msgid ""
 "For business and partnership, please visit [our "
 "website](http://apollo.auto)."
 msgstr ""
+"关于业务和伙伴关系，请访问 [我们的网站](http://apollo.auto)。"
 
 #: ../../README.md:23
 msgid "目录"
@@ -65,7 +67,7 @@ msgstr ""
 
 #: ../../README.md:27
 msgid "Introduction"
-msgstr ""
+msgstr "简介"
 
 #: ../../README.md:29
 msgid ""
@@ -76,10 +78,13 @@ msgid ""
 "Apollo's architecture overview for a greater understanding of Apollo's "
 "core technology and platforms."
 msgstr ""
+"Apollo 加载了新的模块和功能，但在你使用它之前需要进行完美的校准和配置。"
+"请详细查看先决条件和安装步骤，以确保你有足够的能力建立和启动 Apollo。"
+"你也可以查看 Apollo 的架构概述，以进一步了解 Apollo 的核心技术和平台。"
 
 #: ../../README.md:31
 msgid "Prerequisites"
-msgstr ""
+msgstr "先决条件"
 
 #: ../../README.md:33
 msgid ""
@@ -87,34 +92,40 @@ msgid ""
 "with software packages and library dependencies of newer versions "
 "including:"
 msgstr ""
+"**[2021-01 新建]** Apollo 平台（稳定版）现在升级了较新版本的软件包和库依赖，包括："
 
 #: ../../README.md:36
 msgid ""
 "CUDA upgraded to version 11.1 to support Nvidia Ampere (30x0 series) "
 "GPUs, with NVIDIA driver >= 455.32"
 msgstr ""
+"CUDA 升级至 11.1 版本，以支持 Nvidia Ampere（30x0 系列）GPU，NVIDIA 驱动程序 >=455.32"
 
 #: ../../README.md:38
 msgid "LibTorch (both CPU and GPU version) bumped to version 1.7.0 accordingly."
-msgstr ""
+msgstr "LibTorch（包括 CPU 和 GPU 版本）相应地升至 1.7.0 版本。"
 
 #: ../../README.md:40
 msgid ""
 "We do not expect a disruption to your current work, but to ease your life"
 " of migratation, you would need to:"
 msgstr ""
+"我们不期望你目前的工作受到干扰，但为了减轻你的迁移生活，你需要："
 
 #: ../../README.md:43
 msgid ""
 "Update NVIDIA driver on your host to version >= 455.32. ([Web "
 "link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
 msgstr ""
+"将主机上的 NVIDIA 驱动程序更新为 >= 455.32 版本。"
+"（[网络链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)）"
 
 #: ../../README.md:45
 msgid ""
 "Pull latest code and run the following commands after restarting and "
 "logging into Apollo Development container:"
 msgstr ""
+"拉取最新的代码，在重启并登录到 Apollo 开发容器后运行以下命令："
 
 #: ../../README.md:58
 msgid ""
@@ -122,14 +133,16 @@ msgid ""
 "to brake-by-wire, steering-by-wire, throttle-by-wire and shift-by-wire "
 "(Apollo is currently tested on Lincoln MKZ)"
 msgstr ""
+"配备了线控系统的车辆，包括但不限于线控刹车、线控转向、线控油门和"
+"线控换挡（Apollo 目前在林肯 MKZ 上测试）"
 
 #: ../../README.md:60
 msgid "A machine with a 8-core processor and 16GB memory minimum"
-msgstr ""
+msgstr "一台配备 8 核处理器和 16GB 内存的机器，至少有 16GB 内存"
 
 #: ../../README.md:62
 msgid "NVIDIA Turing GPU is strongly recommended"
-msgstr ""
+msgstr "强烈建议使用英伟达图灵 GPU"
 
 #: ../../README.md:64
 msgid "Ubuntu 18.04"
@@ -140,18 +153,22 @@ msgid ""
 "NVIDIA driver version 455.32.00 and above ([Web "
 "link](https://www.nvidia.com/Download/index.aspx?lang=en-us))"
 msgstr ""
+"NVIDIA 驱动程序版本 455.32.00 及以上"
+"（[网络链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)）"
 
 #: ../../README.md:68
 msgid ""
 "Docker-CE version 19.03 and above ([Official "
 "doc](https://docs.docker.com/engine/install/ubuntu/))"
 msgstr ""
+"Docker-CE 19.03 版及以上（[官方文档](https://docs.docker.com/engine/install/ubuntu/)）"
 
 #: ../../README.md:70
 msgid ""
 "NVIDIA Container Toolkit ([Official doc](https://github.com/NVIDIA"
 "/nvidia-docker))"
 msgstr ""
+"NVIDIA 容器工具包（[官方文档](https://github.com/NVIDIA/nvidia-docker)）"
 
 #: ../../README.md:72
 msgid ""
@@ -163,16 +180,20 @@ msgid ""
 "progressing to a higher and more capable version for your safety and the "
 "safety of those around you."
 msgstr ""
+"**请注意**，建议你按照以下顺序安装 Apollo 的各个版本："
+"**1.0 -> 你想测试的那个版本**。"
+"这个建议背后的原因是，为了你和你周围人的安全，你需要确认个别硬件组件和模块是否正常运行，"
+"并在进展到更高和更有能力的版本之前清除各种版本测试案例。"
 
 #: ../../README.md:74
 msgid "Individual Versions:"
-msgstr ""
+msgstr "单独版本："
 
 #: ../../README.md:76
 msgid ""
 "The following diagram highlights the scope and features of each Apollo "
 "release:"
-msgstr ""
+msgstr "下图强调了每个 Apollo 版本的范围和功能："
 
 #: ../../README.md:78
 msgid "![](docs/demo_guide/images/Apollo_Roadmap_6_0.png)"
@@ -191,6 +212,8 @@ msgid ""
 "installation is necessary to ensure that Apollo works perfectly with your"
 " vehicle. The diagram below lists the various modules in Apollo 1.0."
 msgstr ""
+"Apollo 1.0 也被称为 \"自动 GPS 航点跟踪\"，在一个封闭的场所，如试车场或停车场内工作。"
+"这种安装是必要的，以确保 Apollo 与您的车辆完美配合。下图列出了 Apollo 1.0 中的各个模块。"
 
 #: ../../README.md:84
 msgid "![](docs/demo_guide/images/Apollo_1.png)"
@@ -210,6 +233,9 @@ msgid ""
 "safer maneuvering on its lane. Please note, the modules highlighted in "
 "Yellow are additions or upgrades for version 1.5."
 msgstr ""
+"Apollo 1.5 是为了固定车道巡航。随着 LiDAR 的加入，使用该版本的车辆现在对周围环境有了更好的感知，"
+"可以更好地绘制其当前位置并规划其轨迹，以便在其车道上更安全地进行机动。"
+"请注意，黄色突出显示的模块是 1.5 版本的新增或升级内容"。
 
 #: ../../README.md:90
 msgid "![](docs/demo_guide/images/Apollo_1_5.png)"
@@ -230,6 +256,9 @@ msgid ""
 "their destination.  Please note, the modules highlighted in Red are "
 "additions or upgrades for version 2.0."
 msgstr ""
+"Apollo 2.0 支持车辆在简单的城市道路上自主行驶。"
+"车辆能够在道路上安全巡航，避免与障碍物相撞，在红绿灯前停车，并在需要时改变车道以到达目的地。"
+"请注意，红色标注的模块是 2.0 版本的新增内容或升级。"
 
 #: ../../README.md:96
 msgid "![](docs/demo_guide/images/Apollo_2.png)"
@@ -247,6 +276,8 @@ msgid ""
 "with a camera for obstacle detection. Vehicles are able to maintain lane "
 "control, cruise and avoid collisions with vehicles ahead of them."
 msgstr ""
+"Apollo 2.5 允许车辆在有地理围栏的高速公路上自主运行，并有摄像头进行障碍物探测。"
+"车辆能够保持车道控制、巡航并避免与前面的车辆发生碰撞。"
 
 #: ../../README.md:108
 msgid "![](docs/demo_guide/images/Apollo_2_5.png)"
@@ -263,6 +294,8 @@ msgid ""
 "maintain lane control, cruise and avoid collisions with vehicles ahead of"
 " them."
 msgstr ""
+"Apollo 3.0 的主要重点是为开发者提供一个平台，以便在封闭的场地低速环境中进行开发。"
+"车辆能够保持车道控制、巡航并避免与前面的车辆发生碰撞"。
 
 #: ../../README.md:114
 msgid "![](docs/demo_guide/images/Apollo_3.0_diagram.png)"
@@ -282,6 +315,9 @@ msgid ""
 "including unprotected turns and narrow streets often found in residential"
 " areas and roads with stop signs."
 msgstr ""
+"Apollo 3.5 能够在复杂的驾驶场景中进行导航，如住宅区和市中心。"
+"该车现在拥有 360 度的可视性，同时升级了感知算法，以处理城市道路的变化情况，使该车更加安全和有意识。"
+"基于场景的规划可以通过复杂的场景进行导航，包括住宅区经常出现的无保护转弯和狭窄的街道以及有停止标志的道路。"
 
 #: ../../README.md:120
 msgid "![](docs/demo_guide/images/Apollo_3_5_Architecture.png)"
@@ -300,6 +336,9 @@ msgid ""
 "Scenario-based planning has been enhanced to support additional scenarios"
 " like pull over and crossing bare intersections."
 msgstr ""
+"Apollo 5.0 是为支持地理围栏式自动驾驶的批量生产所做的努力。"
+"该车现在拥有 360 度的可视性，同时升级了感知深度学习模型，以处理复杂道路场景的变化情况，使该车更加安全和有意识。"
+"基于场景的规划已经得到加强，以支持更多的场景，如靠边停车和穿越裸露的十字路口。"
 
 #: ../../README.md:127
 msgid "![](docs/demo_guide/images/Apollo_5_0_diagram1.png)"
@@ -319,6 +358,10 @@ msgid ""
 "brand new prediction model to handle the changing conditions of complex "
 "road and junction scenarios, making the car more secure and aware."
 msgstr ""
+"Apollo 5.5 通过引入路边驾驶支持，增强了之前 Apollo 版本的复杂城市道路自主驾驶能力。"
+"有了这个新的补充，Apollo 现在离完全自主的城市道路驾驶又近了一步。"
+"该车拥有完整的 360 度可视性，同时升级了感知深度学习模型和全新的预测模型，"
+"以处理复杂道路和路口场景的变化情况，使该车更加安全和有意识。"
 
 #: ../../README.md:133
 msgid "![](docs/demo_guide/images/Apollo_5_5_Architecture.png)"
@@ -337,6 +380,9 @@ msgid ""
 "features as a demonstration of our continuous exploration and "
 "experimentation efforts towards driverless technology."
 msgstr ""
+"Apollo 6.0 纳入了新的深度学习模型，以增强某些 Apollo 模块的能力。"
+"该版本与新增加的数据管道服务无缝衔接，更好地服务于 Apollo 开发者。"
+"Apollo 6.0 也是第一个整合某些功能的版本，作为我们对无人驾驶技术不断探索和实验的证明"。
 
 #: ../../README.md:139
 msgid "![](docs/demo_guide/images/Apollo_6_0.png)"
@@ -344,11 +390,11 @@ msgstr ""
 
 #: ../../README.md:141
 msgid "Architecture"
-msgstr ""
+msgstr "架构"
 
 #: ../../README.md:143
 msgid "**Hardware/ Vehicle Overview**"
-msgstr ""
+msgstr "**硬件/ 车辆 概述**"
 
 #: ../../README.md:145
 msgid "![](docs/demo_guide/images/Hardware_overview_3_5.png)"
@@ -356,7 +402,7 @@ msgstr ""
 
 #: ../../README.md:147
 msgid "**Hardware Connection Overview**"
-msgstr ""
+msgstr "**硬件连接概述**"
 
 #: ../../README.md:149
 msgid "![](docs/demo_guide/images/Hardware_connection_3_5_1.png)"
@@ -364,7 +410,7 @@ msgstr ""
 
 #: ../../README.md:151
 msgid "**Software Overview**"
-msgstr ""
+msgstr "**软件概述**"
 
 #: ../../README.md:153
 msgid "![](docs/demo_guide/images/Apollo_3_5_software_architecture.png)"
@@ -372,13 +418,15 @@ msgstr ""
 
 #: ../../README.md:155
 msgid "Installation"
-msgstr ""
+msgstr "安装"
 
 #: ../../README.md:157
 msgid ""
 "[Hardware installation "
 "guide](docs/quickstart/apollo_3_5_hardware_system_installation_guide.md)"
 msgstr ""
+"[硬件安装指南]"
+"(docs/quickstart/apollo_3_5_hardware_system_installation_guide.md)"
 
 #: ../../README.md:158
 msgid ""
@@ -386,10 +434,13 @@ msgid ""
 "guide](docs/quickstart/apollo_software_installation_guide.md) - **This "
 "step is required**"
 msgstr ""
+"[软件安装指南]"
+"(docs/quickstart/apollo_software_installation_guide.md)"
+" - **这一步是必须的**"
 
 #: ../../README.md:159
 msgid "[Launch and run Apollo](docs/howto/how_to_launch_and_run_apollo.md)"
-msgstr ""
+msgstr "[启动并运行 Apollo](docs/howto/how_to_launch_and_run_apollo.md)"
 
 #: ../../README.md:161
 msgid ""
@@ -397,50 +448,52 @@ msgid ""
 " If you do have a vehicle and hardware setup for a particular version, "
 "please pick the Quickstart guide most relevant to your setup:"
 msgstr ""
+"祝贺你！你已经成功地建立了没有硬件的 Apollo。"
+"如果你有一个特定版本的车辆和硬件设置，请选择与你的设置最相关的快速入门指南："
 
 #: ../../README.md:163
 msgid "Quick Starts:"
-msgstr ""
+msgstr "快速入门："
 
 #: ../../README.md:165
 msgid "[Apollo 6.0 QuickStart Guide](docs/quickstart/apollo_6_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 6.0 快速入门指南](docs/quickstart/apollo_6_0_quick_start.md)"
 
 #: ../../README.md:167
 msgid "[Apollo 5.5 QuickStart Guide](docs/quickstart/apollo_5_5_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 5.5 快速入门指南](docs/quickstart/apollo_5_5_quick_start.md)"
 
 #: ../../README.md:169
 msgid "[Apollo 5.0 QuickStart Guide](docs/quickstart/apollo_5_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 5.0 快速入门指南](docs/quickstart/apollo_5_0_quick_start.md)"
 
 #: ../../README.md:171
 msgid "[Apollo 3.5 QuickStart Guide](docs/quickstart/apollo_3_5_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 3.5 快速入门指南](docs/quickstart/apollo_3_5_quick_start.md)"
 
 #: ../../README.md:173
 msgid "[Apollo 3.0 QuickStart Guide](docs/quickstart/apollo_3_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 3.0 快速入门指南](docs/quickstart/apollo_3_0_quick_start.md)"
 
 #: ../../README.md:175
 msgid "[Apollo 2.5 QuickStart Guide](docs/quickstart/apollo_2_5_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 2.5 快速入门指南](docs/quickstart/apollo_2_5_quick_start.md)"
 
 #: ../../README.md:177
 msgid "[Apollo 2.0 QuickStart Guide](docs/quickstart/apollo_2_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 2.0 快速入门指南](docs/quickstart/apollo_2_0_quick_start.md)"
 
 #: ../../README.md:179
 msgid "[Apollo 1.5 QuickStart Guide](docs/quickstart/apollo_1_5_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 1.5 快速入门指南](docs/quickstart/apollo_1_5_quick_start.md)"
 
 #: ../../README.md:181
 msgid "[Apollo 1.0 QuickStart Guide](docs/quickstart/apollo_1_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 1.0 快速入门指南](docs/quickstart/apollo_1_0_quick_start.md)"
 
 #: ../../README.md:183
 msgid "Documents"
-msgstr ""
+msgstr "文档"
 
 #: ../../README.md:185
 msgid ""
@@ -448,6 +501,9 @@ msgid ""
 "need to know about Apollo. Written as individual versions with links to "
 "every document related to that version."
 msgstr ""
+"[技术教程](docs/technical_tutorial/README.md)："
+"你需要知道的关于 Apollo 的一切。"
+"编写成单独的版本，并附有与该版本相关的每个文档的链接。"
 
 #: ../../README.md:187
 msgid ""
@@ -455,6 +511,7 @@ msgid ""
 "common problems that developers face during the installation and use of "
 "the Apollo platform"
 msgstr ""
+"[操作指南](docs/howto/README.md)：对开发者在安装和使用 Apollo 平台时遇到的常见问题的简要技术解决方案"
 
 #: ../../README.md:189
 msgid ""
@@ -462,34 +519,37 @@ msgid ""
 "Software specifications (only recommended for expert level developers "
 "that have successfully installed and launched Apollo)"
 msgstr ""
+"[规格](docs/specs/README.md)：深入了解 Apollo 的硬件和软件规格（只推荐给已经成功安装和启动 Apollo 的专家级开发者）"
 
 #: ../../README.md:191
 msgid "[FAQs](docs/FAQs/README.md)"
-msgstr ""
+msgstr "[常见问题](docs/FAQs/README.md)"
 
 #: ../../README.md:193
 msgid "Questions"
-msgstr ""
+msgstr "问题解决"
 
 #: ../../README.md:195
 msgid ""
 "You are welcome to submit questions and bug reports as [GitHub "
 "Issues](https://github.com/ApolloAuto/apollo/issues)."
 msgstr ""
+"欢迎你以 [GitHub Issues](https://github.com/ApolloAuto/apollo/issues) 的形式提交问题和错误报告。"
 
 #: ../../README.md:197
 msgid "Copyright and License"
-msgstr ""
+msgstr "版权和许可"
 
 #: ../../README.md:199
 msgid ""
 "Apollo is provided under the [Apache-2.0 "
 "license](https://github.com/ApolloAuto/apollo/blob/master/LICENSE)."
 msgstr ""
+"Apollo 是根据 [Apache-2.0 许可证](https://github.com/ApolloAuto/apollo/blob/master/LICENSE) 提供的。"
 
 #: ../../README.md:201
 msgid "Disclaimer"
-msgstr ""
+msgstr "免责声明"
 
 #: ../../README.md:203
 msgid ""
@@ -498,22 +558,25 @@ msgid ""
 "defense strategy in the deployment for commercialization and "
 "productization."
 msgstr ""
+"Apollo 开源平台只有模型、算法和流程的源代码，在商业化和产品化的部署中，将与网络安全防御战略相结合。"
 
 #: ../../README.md:205
 msgid ""
 "Please refer to the Disclaimer of Apollo in [Apollo's official "
 "website](http://apollo.auto/docs/disclaimer.html)."
 msgstr ""
+"请参考 [Apollo 官方网站](http://apollo.auto/docs/disclaimer.html) 中的 Apollo 免责声明。"
 
 #: ../../README.md:207
 msgid "Connect with us"
-msgstr ""
+msgstr "联系我们"
 
 #: ../../README.md:208
 msgid ""
 "[Have suggestions for our GitHub "
 "page?](https://github.com/ApolloAuto/apollo/issues)"
 msgstr ""
+"[对我们的 GitHub 页面有建议吗？](https://github.com/ApolloAuto/apollo/issues)"
 
 #: ../../README.md:209
 msgid "[Twitter](https://twitter.com/apolloplatform)"
@@ -536,4 +599,4 @@ msgid ""
 "Interested in our turnKey solutions or partnering with us Mail us at: "
 "apollopartner@baidu.com"
 msgstr ""
-
+"对我们的 turnKey 解决方案感兴趣或与我们合作，请发邮件给我们：apollopartner@baidu.com"

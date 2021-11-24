@@ -1,12 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2021, xinetzone
-# This file is distributed under the same license as the Apollo 文档 package.
+# This file is distributed under the same license as the Apollo Auto
+# package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Apollo 文档 \n"
+"Project-Id-Version: Apollo Auto \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-24 12:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -17,10 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../_toc/docs.md:1
-msgid "Apollo Auto 文档"
+#: ../../_toc/technical-documents/tasks.md:1
+msgid "任务"
 msgstr ""
-
-#~ msgid "**/*"
-#~ msgstr ""
 
