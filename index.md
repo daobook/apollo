@@ -7,6 +7,7 @@
     
 README
 _toc/docs
+_toc/cyber/index
 _toc/modules/index
 _toc/third_party/index
 _toc/docker
