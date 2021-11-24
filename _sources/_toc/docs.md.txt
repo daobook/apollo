@@ -6,7 +6,6 @@
 ../docs/README
 quickstart/index
 technical-tutorial/index
-cyber/index
 specs/index
 howto/index
 faqs/index
