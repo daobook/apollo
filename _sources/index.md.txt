@@ -7,7 +7,6 @@
 :hidden:
 
 README
-_toc/index
 _toc/docs
 _toc/cyber/index
 _toc/modules/index
