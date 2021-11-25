@@ -5,7 +5,6 @@
 :maxdepth: 2
 :glob:
 
-*
-../../docs/D-kit/*
+../../docs/D-kit/readme
 *
 ```

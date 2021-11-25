@@ -5,5 +5,5 @@
 :maxdepth: 2
 :glob:
 
-../../docs/howto/modules/*
+../../../docs/howto/modules/*
 ```

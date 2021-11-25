@@ -1,8 +1,8 @@
-# map
+# CN
 
 ```{toctree}
 :maxdepth: 3
 :glob:
 
-../../modules/map/**/*
+*
 ```

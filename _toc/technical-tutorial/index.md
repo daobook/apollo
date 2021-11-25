@@ -4,7 +4,10 @@
 
 ```{toctree}
 :maxdepth: 3
-:glob:
 
-../../docs/technical_tutorial/*
+../../docs/technical_tutorial/README
+version
+../../docs/technical_tutorial/apollo_best_coding_practice
+../../docs/technical_tutorial/intro_to_apollo_release_build
+cn/index
 ```

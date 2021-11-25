@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/canbus/*
-../../modules/canbus/**/*
 ```

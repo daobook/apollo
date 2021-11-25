@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/prediction/*
-../../modules/prediction/**/*
 ```
