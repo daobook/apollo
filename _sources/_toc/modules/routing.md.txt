@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/routing/*
-../../modules/routing/**/*
 ```

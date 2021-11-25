@@ -4,6 +4,6 @@
 :maxdepth: 2
 :glob:
 
-../../docs/howto/arch/*
+../../../docs/howto/arch/*
 ```
             

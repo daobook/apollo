@@ -6,6 +6,14 @@
 :maxdepth: 2
 :glob:
 
-../../docs/howto/*
-*
+../../docs/howto/README
+build
+contribution
+debug
+models/index
+architecture/index
+tools
+ci/index
+other
+cn/index
 ```

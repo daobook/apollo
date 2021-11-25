@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/storytelling/*
-../../modules/storytelling/**/*
 ```
