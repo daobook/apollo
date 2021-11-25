@@ -6,8 +6,8 @@
 ../docs/README
 quickstart/index
 technical-tutorial/index
-specs/index
 howto/index
+specs/index
 faqs/index
 technical-documents/index
 Apollo_Fuel/index

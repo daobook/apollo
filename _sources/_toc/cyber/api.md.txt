@@ -3,8 +3,8 @@
 ```{toctree}
 :maxdepth: 3
 
-../../cyber/doxy-docs/source/api/cppapi_index
-../../cyber/doxy-docs/source/api/pythonapi_index
+../../docs/cyber/api/cppapi_index
+../../docs/cyber/api/pythonapi_index
 ```
 
 

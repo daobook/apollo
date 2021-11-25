@@ -3,6 +3,7 @@
 ```{toctree}
 :maxdepth: 3
 
-../../cyber/doxy-docs/source/CyberRT_Docker
-../../cyber/doxy-docs/source/CyberRT_Migration_Guide
+../../docs/cyber/CyberRT_Docker
+../../docs/cyber/CyberRT_Migration_Guide
+../../docs/cyber/CyberRT_Scheduler_cn
 ```

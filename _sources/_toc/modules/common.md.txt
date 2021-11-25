@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/common/*
-../../modules/common/**/*
 ```
