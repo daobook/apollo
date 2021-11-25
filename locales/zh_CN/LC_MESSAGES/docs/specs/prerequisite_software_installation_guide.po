@@ -19,39 +19,40 @@ msgstr ""
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:1
 msgid "Pre-requisite Software Installation Guide"
-msgstr ""
+msgstr "必备软件安装指南 "
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:3
 msgid ""
 "This article describes all the pre-requisite steps needed before "
 "installing Apollo."
-msgstr ""
+msgstr "本文描述了安装 Apollo 之前需要的所有前提步骤。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:6
 #: ../../docs/specs/prerequisite_software_installation_guide.md:14
 msgid "Installing Ubuntu Linux"
-msgstr ""
+msgstr "安装 Ubuntu Linux 系统"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:7
 #: ../../docs/specs/prerequisite_software_installation_guide.md:38
 msgid "Installing NVIDIA GPU Driver"
-msgstr ""
+msgstr "安装 NVIDIA GPU 驱动程序"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:8
 #: ../../docs/specs/prerequisite_software_installation_guide.md:89
 msgid "Installing Docker Engine"
-msgstr ""
+msgstr "安装 Docker 引擎"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:9
 #: ../../docs/specs/prerequisite_software_installation_guide.md:115
 msgid "Installing NVIDIA Container Toolkit"
-msgstr ""
+msgstr "安装 NVIDIA 容器工具包"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:11
 msgid ""
 "![tip_icon](images/tip_icon.png) Working knowledge of Linux is assumed "
 "for successful software installation in this guide."
 msgstr ""
+"![tip_icon](images/tip_icon.png) 在本指南中，为了成功安装软件，假定具有 Linux 的工作知识。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:11
 #: ../../docs/specs/prerequisite_software_installation_guide.md:130
@@ -65,6 +66,9 @@ msgid ""
 "Beaver)](https://releases.ubuntu.com/18.04.5/). So we would recommend "
 "using Ubuntu 18.04.5+ (including Ubuntu 20.04) as the host system."
 msgstr ""
+"尽管其他 Linux 发行版可能没有问题，但我们只在 Ubuntu 系统上测试了 Apollo。"
+"具体说来，[Ubuntu 18.04.5 LTS (Bionic Beaver)](https://releases.ubuntu.com/18.04.5/)。"
+"所以我们建议使用 Ubuntu 18.04.5 以上（包括 Ubuntu 20.04）作为主机系统。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:22
 msgid ""
@@ -73,10 +77,13 @@ msgid ""
 "/install-ubuntu-desktop). Please follow the guide there for a successful "
 "Ubuntu installation."
 msgstr ""
+"安装 Ubuntu 18.04+ 所需的步骤在 "
+"[来自 ubuntu.com 的关于如何安装 Ubuntu 的教程](https://ubuntu.com/tutorials/install-ubuntu-desktop)。"
+"请按照那里的指南成功安装 Ubuntu。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:26
 msgid "Don't forget to perform software updates after the installation is done:"
-msgstr ""
+msgstr "不要忘记在安装完成后执行软件更新。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:33
 msgid ""
@@ -86,10 +93,13 @@ msgid ""
 "for your host if the connected network is not using the Dynamic Host "
 "Configuration Protocol (DHCP)."
 msgstr ""
+"![](images/tip_icon.png) 软件更新成功需要互联网接入。"
+"确保 WiFi 或以太网电缆连接到一个可以上网的网络。"
+"如果连接的网络没有使用动态主机配置协议（DHCP），你可能需要为你的主机配置网络。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:40
 msgid "The Apollo runtime in the vehicle requires NVIDIA GPU Driver."
-msgstr ""
+msgstr "车辆中的 Apollo 运行时需要 NVIDIA GPU 驱动程序。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:42
 msgid ""
@@ -99,10 +109,14 @@ msgid ""
 "commands, or use an official \"runfile\" from [www.nvidia.com/en-"
 "us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/)"
 msgstr ""
+"根据 [如何安装 NVIDIA 驱动程序](https://github.com/NVIDIA/nvidia-docker/wiki/"
+"Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver)，"
+"建议 Ubuntu 使用 `apt-get` 命令，或者使用 [www.nvidia.com/en-us/drivers/unix/]"
+"(https://www.nvidia.com/en-us/drivers/unix/) 的官方 \"runfile\"。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:48
 msgid "For Ubuntu 18.04+, you can simply run:"
-msgstr ""
+msgstr "对于 Ubuntu 18.04+，你可以简单地运行："
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:57
 msgid ""
@@ -110,6 +124,8 @@ msgid ""
 " (You may restart your host for the changes to take effect.) On success, "
 "the following message will be shown."
 msgstr ""
+"你可以输入 `nvidia-smi` 来检查 NVIDIA GPU 在你的主机上是否工作正常。"
+"（你可能需要重新启动你的主机以使更改生效。）一旦成功，将显示以下信息。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:91
 msgid ""
@@ -118,12 +134,15 @@ msgid ""
 "Ubuntu](https://docs.docker.com/engine/install/ubuntu/) doc to install "
 "docker engine."
 msgstr ""
+"Apollo 6.0+ 需要 Docker 19.03+ 才能正常工作。"
+"只要按照 [在 Ubuntu 上安装 Docker 引擎](https://docs.docker.com/engine/install/ubuntu/) 文档"
+"来安装 docker 引擎就可以了。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:95
 msgid ""
 "Docker-CE on Ubuntu can also be setup using Docker’s official convenience"
 " script:"
-msgstr ""
+msgstr "Ubuntu 上的 Docker-CE 也可以用 Docker 的官方便利脚本来设置："
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:103
 msgid ""
@@ -136,6 +155,12 @@ msgid ""
 "Boot](https://docs.docker.com/engine/install/linux-postinstall"
 "/#configure-docker-to-start-on-boot)."
 msgstr ""
+"你可以选择你喜欢的任何一种方法。"
+"只是不要忘记 [Linux 的安装后操作](https://docs.docker.com/engine/install/linux-postinstall/)，"
+"特别是 [以非 root 用户身份管理 Docker]"
+"(https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) "
+"和 [配置 Docker 用 Boot 启动]"
+"(https://docs.docker.com/engine/install/linux-postinstall/#configure-docker-to-start-on-boot) 这一部分。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:110
 msgid ""
@@ -144,22 +169,26 @@ msgid ""
 "ease Docker installation, which works both for X86_64 and AArch64 "
 "platforms."
 msgstr ""
+"还有一个 {download}`专用的 bash 脚本 <../../docker/setup_host/install_docker.sh>` （`docker/setup_host/install_docker.sh`） Apollo 提供，"
+"以方便 Docker 的安装，它对 X86_64 和 AArch64 平台都适用。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:117
 msgid ""
 "The NVIDIA Container Toolkit for Docker is required to run Apollo's CUDA "
 "based Docker images."
 msgstr ""
+"运行 Apollo 基于 CUDA 的 Docker 镜像，需要 Docker 的 NVIDIA 容器工具包。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:120
 msgid "You can run the following to install NVIDIA Container Toolkit:"
-msgstr ""
+msgstr "你可以运行以下程序来安装 NVIDIA 容器工具包："
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:130
 msgid ""
 "![tip_icon](images/tip_icon.png) Don't forget to restart the Docker "
 "daemon for the changes above to take effect."
 msgstr ""
+"![tip_icon](images/tip_icon.png) 别忘了重启 Docker 守护进程，以使上述变化生效。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:137
 msgid ""
@@ -167,14 +196,16 @@ msgid ""
 "Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit"
 "/install-guide.html) for more."
 msgstr ""
+"更多内容请参考 [NVIDIA 容器工具包安装指南]"
+"(https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)。"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:141
 msgid "What's Next"
-msgstr ""
+msgstr "下一步工作"
 
 #: ../../docs/specs/prerequisite_software_installation_guide.md:143
 msgid ""
 "With successful installation of the pre-requisites above, you can now "
 "move to \"Git Clone Apollo Repo\" section now."
 msgstr ""
-
+"随着上述前提条件的成功安装，你现在可以移动到 \"Git 克隆 Apollo 仓库\" 部分了。"

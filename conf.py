@@ -34,6 +34,7 @@ extensions = [
     'sphinx_book_theme',
     'breathe',
     "myst_parser",
+    "sphinx_copybutton",
     "sphinx_inline_tabs",
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
@@ -60,10 +61,6 @@ language = 'zh_CN'
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'cyber/doxy-docs/**',
-                    'docs/cyber/README.md',
-                    'docs/cyber/CyberRT_Python_API_cn.md',
-                    'docs/cyber/CyberRT_Quick_Start_cn.md',
-                    'docs/specs/README_cn.md'
                     ]
 
 source_suffix = {

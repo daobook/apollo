@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:1
 msgid "Apollo Software Installation Guide"
-msgstr ""
+msgstr "Apollo 软件安装指南"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:3
 msgid ""
@@ -27,10 +27,12 @@ msgid ""
 "18.04.5 LTS (Bionic Beaver), the recommended Ubuntu release for Apollo "
 "6.0."
 msgstr ""
+"本文档介绍了在 Ubuntu 18.04.5 LTS（Bionic Beaver）"
+"（建议用于 Apollo 6.0 的 Ubuntu 版本）上安装 Apollo 软件所需的步骤。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:6
 msgid "Pre-requisites"
-msgstr ""
+msgstr "前期准备"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:8
 msgid ""
@@ -38,6 +40,8 @@ msgid ""
 " finished as described in the [Pre-requisite Software Installation "
 "Guide](../specs/prerequisite_software_installation_guide.md)."
 msgstr ""
+"在开始之前，请确保已按照 "
+"[必备软件安装指南](../specs/prerequisite_software_installation_guide.md) 中的说明完成了所有必备步骤。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:12
 msgid ""
@@ -45,20 +49,24 @@ msgid ""
 "to check the running status of Docker daemon, and type `systemctl start "
 "docker` to start Docker if needed."
 msgstr ""
+"同时也要确保 Docker 正在运行。"
+"键入 `systemctl status docker` 以检查 Docker 守护进程的运行状态，"
+"并根据需要键入 `systemctl start docker` 以启动  Docker。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:16
 msgid "Download Apollo Sources"
-msgstr ""
+msgstr "下载 Apollo 源文件"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:18
 msgid ""
 "Run the following commands to clone [Apollo's GitHub "
 "Repo](https://github.com/ApolloAuto/apollo.git)."
 msgstr ""
+"运行以下命令克隆 [Apollo 的 GitHub 仓库](https://github.com/ApolloAuto/apollo.git)。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:30
 msgid "And checkout the latest branch:"
-msgstr ""
+msgstr "切换到最新分支:"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:37
 msgid ""
@@ -66,18 +74,23 @@ msgid ""
 "China](../howto/how_to_clone_apollo_repo_from_china.md) if your have "
 "difficulty cloning from GitHub."
 msgstr ""
+"对于中国用户, 如果从 GitHub 克隆仓库有困难，"
+"可参考 [国内环境下如何克隆 Apollo 仓库](../howto/how_to_clone_apollo_repo_from_china_cn.md)。"
+
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:41
 msgid ""
 "(Optional) For convenience, you can set up environment variable "
 "`APOLLO_ROOT_DIR` to refer to Apollo root directory by running:"
 msgstr ""
+"（可选）为方便起见，可以在 Apollo 的根目录运行以下命令来设置指向该目录的环境变量 `APOLLO_ROOT_DIR`："
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:48
 msgid ""
 "![tip](images/tip_icon.png) In the following sections, we will refer to "
 "Apollo root directory as `$APOLLO_ROOT_DIR`"
 msgstr ""
+"![tip](images/tip_icon.png) 在下面的章节中，我们会把 Apollo 的根目录称为 `$APOLLO_ROOT_DIR`。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:48
 msgid "tip"
@@ -85,49 +98,49 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:51
 msgid "Start Apollo Development Docker Container"
-msgstr ""
+msgstr "启动 Docker 容器"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:53
 msgid "From the `${APOLLO_ROOT_DIR}` directory, type"
-msgstr ""
+msgstr "在 `${APOLLO_ROOT_DIR}` 目录，输入："
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:59
 msgid "to start Apollo development Docker container."
-msgstr ""
+msgstr "来启动 Apollo 的 Docker 开发容器。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:61
 msgid ""
 "If successful, you will see the following messages at the bottom of your "
 "screen:"
-msgstr ""
+msgstr "如果成功，你将在屏幕下方看到以下信息："
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:70
 msgid "Enter Apollo Development Docker Container"
-msgstr ""
+msgstr "进入 Apollo 的 Docker 容器"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:72
 msgid "Run the following command to login into the newly started container:"
-msgstr ""
+msgstr "运行以下命令以登录到新启动的容器："
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:78
 msgid "Build Apollo inside Container"
-msgstr ""
+msgstr "在容器内构建 Apollo"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:80
 msgid "From the `/apollo` directory inside Apollo Docker container, type:"
-msgstr ""
+msgstr "在 Docker 容器的 `/apollo` 目录中，输入:"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:86
 msgid "to build the whole Apollo project."
-msgstr ""
+msgstr "以构建整个 Apollo 工程。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:88
 msgid "Or type"
-msgstr ""
+msgstr "或者输入"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:94
 msgid "for an optimized build."
-msgstr ""
+msgstr "来进行优化模式的构建。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:96
 msgid ""
@@ -135,10 +148,11 @@ msgid ""
 "Explained](../specs/apollo_build_and_test_explained.md) for a thorough "
 "understanding of Apollo builds and tests."
 msgstr ""
+"可以参考 [Apollo 构建和测试说明](../specs/apollo_build_and_test_explained.md) 来全面了解 Apollo 的构建和测试。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:100
 msgid "Launch and Run Apollo"
-msgstr ""
+msgstr "启动并运行 Apollo"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:102
 msgid ""
@@ -146,20 +160,22 @@ msgid ""
 "#run-apollo) section of [How to Launch And Run "
 "Apollo](../howto/how_to_launch_and_run_apollo.md)."
 msgstr ""
+"请参考 [如何启动并运行 Apollo](../howto/how_to_launch_and_run_apollo.md) "
+"中的 [运行 Apollo](../howto/how_to_launch_and_run_apollo.md#run-apollo) 部分。
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:106
 msgid "(Optional) Support a new Vehicle in DreamView"
-msgstr ""
+msgstr "（可选）在 Dreamview 中支持新的车型"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:108
 msgid ""
 "In order to support a new vehicle in DreamView, please follow the steps "
 "below:"
-msgstr ""
+msgstr "为了在 Dreamview 中支持新的车型，请按照以下步骤操作："
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:110
 msgid "Create a new folder for your vehicle under `modules/calibration/data`"
-msgstr ""
+msgstr "在 `modules/calibration/data` 目录下为你的车型创建一个新文件夹。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:112
 msgid ""
@@ -168,10 +184,12 @@ msgid ""
 "configuration files in the same file structure as “mkz_example”. Remember"
 " to update the configuration files with your own parameters if needed."
 msgstr ""
+"在 `modules/calibration/data` 文件夹中已经有一个叫作 `mkz_example` 的示例文件夹。"
+"请参考此结构，并以此结构包含所有必需的配置文件。如果需要的话，请记得使用自己的参数更新配置文件。"
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:117
 msgid ""
 "Restart DreamView and you will be able to see your new vehicle (name is "
 "the same as your newly created folder) in the selected vehicle."
 msgstr ""
-
+"重启 Dreamview，你将能够在可选车型列表中看到你的新车型（名称与你创建的文件夹相同）。"
