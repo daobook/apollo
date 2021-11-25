@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo 文档 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"POT-Creation-Date: 2021-11-25 10:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../index.md:6
-msgid "Apollo Auto 自述"
+#: ../../index.md:1
+msgid "Apollo Auto 项目剖析"
 msgstr ""
 
-#: ../../index.md:1 ../../index.md:6
-msgid "Apollo Auto 文档"
+#: ../../index.md:17
+msgid "项目完善"
 msgstr ""
 
-#: ../../index.md:4
+#: ../../index.md:19
 msgid "欢迎加入文档完善的工作。"
+msgstr ""
+
+#: ../../index.md:21
+msgid "索引和表格"
+msgstr ""
+
+#: ../../index.md:23
+msgid "{ref}`genindex`"
+msgstr ""
+
+#: ../../index.md:24
+msgid "{ref}`modindex`"
+msgstr ""
+
+#: ../../index.md:25
+msgid "{ref}`search`"
 msgstr ""
 
 #~ msgid "Welcome to Apollo 文档's documentation!"
@@ -42,5 +58,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid ":ref:`search`"
+#~ msgstr ""
+
+#~ msgid "Apollo Auto 自述"
+#~ msgstr ""
+
+#~ msgid "Apollo Auto 文档"
 #~ msgstr ""
 

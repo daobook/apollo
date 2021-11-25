@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo 文档 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"POT-Creation-Date: 2021-11-25 10:37+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/quickstart/README.md:1
 msgid "Quick Start Guides"
-msgstr ""
+msgstr "快速入门指南"
 
 #: ../../docs/quickstart/README.md:3
 msgid "Apollo 6.0"
@@ -27,11 +27,12 @@ msgstr ""
 
 #: ../../docs/quickstart/README.md:5
 msgid "[Apollo 6.0 quick start](apollo_6_0_quick_start.md)"
-msgstr ""
+msgstr "[Apollo 6.0 quick start](apollo_6_0_quick_start.md)"
 
 #: ../../docs/quickstart/README.md:6
+#, fuzzy
 msgid "[Apollo 6.0 quick start cn](apollo_6_0_quick_start_cn.md)"
-msgstr ""
+msgstr "[Apollo 6.0 quick start](apollo_6_0_quick_start.md)"
 
 #: ../../docs/quickstart/README.md:7 ../../docs/quickstart/README.md:14
 #: ../../docs/quickstart/README.md:23
@@ -260,4 +261,7 @@ msgid ""
 "[Apollo software installation guide "
 "cn](apollo_software_installation_guide_cn.md)"
 msgstr ""
+
+#~ msgid "[Apollo 6.0 快速入门中文版](apollo_6_0_quick_start_cn.md)"
+#~ msgstr ""
 

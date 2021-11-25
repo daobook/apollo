@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:1
 msgid "Apollo 1.0 Hardware and System Installation Guide"
-msgstr ""
+msgstr "Apollo 1.0 硬件和系统安装指南"
 
 #: ../../docs/quickstart/apollo_1_0_hardware_system_installation_guide_cn.md:3
 msgid "[关于本篇指南](#关于本篇指南)"

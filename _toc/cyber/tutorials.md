@@ -4,7 +4,8 @@
 :maxdepth: 3
 :numbered:
 
-../../cyber/doxy-docs/source/CyberRT_API_for_Developers
-../../cyber/doxy-docs/source/CyberRT_Python_API
-../../cyber/doxy-docs/source/CyberRT_Developer_Tools
+../../docs/cyber/CyberRT_API_for_Developers
+../../docs/cyber/CyberRT_Python_API
+../../docs/cyber/CyberRT_Developer_Tools
+../../docs/cyber/CyberRT_Scheduler_cn
 ```

@@ -3,7 +3,7 @@
 ```{toctree}
 :maxdepth: 3
 
-../../cyber/doxy-docs/source/CyberRT_Quick_Start
-../../cyber/doxy-docs/source/CyberRT_Terms
-../../cyber/doxy-docs/source/CyberRT_FAQs
+../../docs/cyber/CyberRT_Quick_Start
+../../docs/cyber/CyberRT_Terms
+../../docs/cyber/CyberRT_FAQs
 ```

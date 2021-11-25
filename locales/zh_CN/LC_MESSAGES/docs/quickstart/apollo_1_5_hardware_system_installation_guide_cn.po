@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_1_5_hardware_system_installation_guide_cn.md:1
 msgid "关于本指南"
-msgstr ""
+msgstr "Apollo 1.5 硬件和系统安装指南"
 
 #: ../../docs/quickstart/apollo_1_5_hardware_system_installation_guide_cn.md:2
 msgid "*Apollo1.5硬件与系统安装指南* 详细介绍了Apollo计划的硬件组件、系统软件安装，安装过程包含下载和安装Apollo Linux内核。"

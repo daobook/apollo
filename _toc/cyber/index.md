@@ -7,7 +7,6 @@
 quickstart
 tutorials
 topics
+demo/index
 api
-../../cyber/examples/common_component_example/README
-../../cyber/python/README
 ```

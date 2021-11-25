@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:1
 msgid "Apollo 3.5 Hardware and System Installation Guide"
-msgstr ""
+msgstr "Apollo 3.5 硬件和系统安装指南"
 
 #: ../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:3
 msgid ""

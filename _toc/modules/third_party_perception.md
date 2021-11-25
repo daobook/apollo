@@ -5,5 +5,4 @@
 :glob:
 
 ../../modules/third_party_perception/*
-../../modules/third_party_perception/**/*
 ```

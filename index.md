@@ -1,6 +1,4 @@
-# Apollo Auto 文档
-
-欢迎加入文档完善的工作。
+# Apollo Auto 项目剖析
 
 ```{toctree}
 :maxdepth: 3
@@ -15,6 +13,10 @@ _toc/docker
 _toc/style
 _toc/about
 ```
+
+## 项目完善
+
+欢迎加入文档完善的工作。
 
 ## 索引和表格
 

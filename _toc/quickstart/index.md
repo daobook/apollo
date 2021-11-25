@@ -1,8 +1,12 @@
 # 快速入门
 
 ```{toctree}
-:maxdepth: 2
-:glob:
+:maxdepth: 3
 
-../../docs/quickstart/*
+../../docs/quickstart/README
+setup
+quickstart
+sensor
+lidar
+map
 ```
