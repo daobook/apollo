@@ -161,7 +161,7 @@ msgid ""
 "Apollo](../howto/how_to_launch_and_run_apollo.md)."
 msgstr ""
 "请参考 [如何启动并运行 Apollo](../howto/how_to_launch_and_run_apollo.md) "
-"中的 [运行 Apollo](../howto/how_to_launch_and_run_apollo.md#run-apollo) 部分。
+"中的 [运行 Apollo](../howto/how_to_launch_and_run_apollo.html#run-apollo) 部分。
 
 #: ../../docs/quickstart/apollo_software_installation_guide.md:106
 msgid "(Optional) Support a new Vehicle in DreamView"
