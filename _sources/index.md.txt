@@ -1,18 +1,18 @@
 # Apollo Auto 项目剖析
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 4
+:caption: 导航
 :hidden:
 
 README
-_toc/docs
-_toc/cyber/index
-_toc/modules/index
-_toc/third_party/index
-_toc/docker
-_toc/style
-_toc/about
-_toc/cn/index
+web/docs
+web/cyber/index
+web/modules/index
+web/third_party/index
+web/docker
+web/about
+web/cn/index
 ```
 
 ## 项目完善
