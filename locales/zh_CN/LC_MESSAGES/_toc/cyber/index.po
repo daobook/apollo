@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo 文档 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 19:11+0800\n"
+"POT-Creation-Date: 2021-11-26 09:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,9 @@ msgstr ""
 
 #: ../../_toc/cyber/index.md:1
 msgid "Cyber"
+msgstr ""
+
+#: ../../_toc/cyber/index.md:3
+msgid "你需要知道的关于 Apollo Cyber 的一切。"
 msgstr ""
 

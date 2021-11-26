@@ -60,7 +60,9 @@ language = 'zh_CN'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
+                    '.cache/**',
                     'cyber/doxy-docs/**',
+                    'docs/cyber/README.md'
                     ]
 
 source_suffix = {
@@ -81,9 +83,9 @@ html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 
 # breathe setup
-breathe_projects = { 
+breathe_projects = {
     'Cyber RT Documents': "xml/",
- }
+}
 breathe_default_project = 'Cyber RT Documents'
 
 

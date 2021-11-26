@@ -12,6 +12,7 @@ _toc/third_party/index
 _toc/docker
 _toc/style
 _toc/about
+_toc/cn/index
 ```
 
 ## 项目完善

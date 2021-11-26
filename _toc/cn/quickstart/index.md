@@ -1,7 +1,6 @@
-# 快速入门(CN)
+# 快速入门
 
 ```{toctree}
-:maxdepth: 3
 :glob:
 
 ../../../docs/quickstart/apollo_software_installation_guide_cn

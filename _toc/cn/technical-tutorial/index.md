@@ -1,4 +1,4 @@
-# CN
+# 技术基础
 
 ```{toctree}
 :maxdepth: 2

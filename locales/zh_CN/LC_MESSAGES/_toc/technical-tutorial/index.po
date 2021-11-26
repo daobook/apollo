@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Apollo 文档 \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-24 11:22+0800\n"
+"POT-Creation-Date: 2021-11-26 09:26+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,5 +19,9 @@ msgstr ""
 
 #: ../../_toc/technical-tutorial/index.md:1
 msgid "技术教程"
+msgstr ""
+
+#: ../../_toc/technical-tutorial/index.md:3
+msgid "你需要知道的关于 Apollo 的一切。编写成单独的版本，并附有与该版本相关的每个文档的链接。"
 msgstr ""
 

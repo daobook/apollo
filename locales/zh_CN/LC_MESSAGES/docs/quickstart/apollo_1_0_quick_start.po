@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:1
 msgid "Apollo 1.0 Quick Start Guide"
-msgstr ""
+msgstr "Apollo 快速入门指南 1.0"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:2
 msgid "Contents"
-msgstr ""
+msgstr "目录"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:3
 msgid "[About This Guide](#about-this-guide)"
@@ -79,53 +79,54 @@ msgstr ""
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:16
 msgid "About This Guide"
-msgstr ""
+msgstr "关于这个文档"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:18
 msgid ""
 "The _Apollo 1.0 Quick Start Guide_ provides all of the basic instructions"
 " to understand, install, and build Apollo."
 msgstr ""
+"_Apollo 快速入门指南 1.0_ 提供了所有关于了解、安装以及构建 Apollo 的基本说明"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:20
 msgid "Document Conventions"
-msgstr ""
+msgstr "文档规约"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:22
 msgid "The following table lists the conventions that are used in this document:"
-msgstr ""
+msgstr "下表列出了本文档中使用的规约："
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "**Icon**"
-msgstr ""
+msgstr "**图标**"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "**Description**"
-msgstr ""
+msgstr "描述"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "**Bold**"
-msgstr ""
+msgstr "**粗体**"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "Emphasis"
-msgstr ""
+msgstr "粗体"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "`Mono-space font`"
-msgstr ""
+msgstr "`等宽字体`"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "Code, typed data"
-msgstr ""
+msgstr "代码，类型数据"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "_Italic_"
-msgstr ""
+msgstr "_斜体_"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "Titles of documents, sections, and headings Terms used"
-msgstr ""
+msgstr "文档标题，章节和标题使用的术语"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "![info](images/info_icon.png)"
@@ -140,6 +141,7 @@ msgid ""
 "**Info**  Contains information that might be useful.  Ignoring the Info "
 "icon has no negative consequences."
 msgstr ""
+"**Info** 包含可能有用的信息。忽略信息图标没有消极的后果。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "![tip](images/tip_icon.png)"
@@ -154,6 +156,7 @@ msgid ""
 "**Tip**. Includes helpful hints or a shortcut that might assist you in "
 "completing a task."
 msgstr ""
+"**Tip** 包括有用的提示或可能有助于您完成任务的捷径。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "![online](images/online_icon.png)"
@@ -168,6 +171,7 @@ msgid ""
 "**Online**. Provides a link to a particular web site where you can get "
 "more information."
 msgstr ""
+"**Online** 提供指向特定网站的链接，您可以在其中获取更多信息"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md
 msgid "![warning](images/warning_icon.png)"
@@ -183,10 +187,11 @@ msgid ""
 "**Warning**. Contains information that must **not** be ignored or you "
 "risk failure when you perform a certain task or step."
 msgstr ""
+"**Warning** 包含不能忽略的信息，或者执行某个任务或步骤时，您将面临失败风险"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:34
 msgid "About Apollo 1.0"
-msgstr ""
+msgstr "关于 Apollo 1.0"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:36
 msgid ""
@@ -195,6 +200,8 @@ msgid ""
 "accurately replays a trajectory and the speed of that trajectory that a "
 "human driver has traveled in an enclosed, flat area on solid ground."
 msgstr ""
+"Apollo 1.0，也被称为 _Automatic GPS Waypoint Following_ （自动 GPS 航点跟随），使用在封闭的区域内，如测试轨道或停车场。"
+"它准确地重现了人类驾驶员在一个封闭的、平坦的地面上行驶的轨迹和该轨迹的速度。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:38
 msgid ""
@@ -202,10 +209,11 @@ msgid ""
 " close proximity, drive on public roads, or drive in areas without GPS "
 "signals."
 msgstr ""
+"在这个开发阶段，Apollo 1.0 无法察觉到邻近的障碍物，不要在公共道路或没有 GPS 信号的区域行驶。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:40
 msgid "Description of the Vehicle Environment"
-msgstr ""
+msgstr "车辆环境描述"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:42
 msgid ""
@@ -213,6 +221,8 @@ msgid ""
 "accessible autonomous vehicle platform. The platform supplies users with "
 "a comprehensive stack of hardware and software solutions."
 msgstr ""
+"林肯 MKZ，通过 Autonomous Stuff 的加强，为用户提供了一个无障碍的自主车辆平台。"
+"该平台为用户提供了一个全面的硬件和软件解决方案堆栈。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:44
 msgid ""
@@ -221,30 +231,32 @@ msgid ""
 "steering, braking, acceleration, and gear selection to provide Developers"
 " with a workable user interface."
 msgstr ""
+"用户可以直接获得车辆某些模块控制权限，如档位，速度和指示灯。"
+"平台已经为转向，刹车，加速和档位创建了接口，为开发人员提供了可使用的用户界面。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:46
 msgid "Additional features include:"
-msgstr ""
+msgstr "包含的其他功能："
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:48
 msgid "Power distributor terminals"
-msgstr ""
+msgstr "电源分配器终端"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:49
 msgid "Integrated PC with ROS pre-installed and configured"
-msgstr ""
+msgstr "集成 PC 与 ROS 预安装和配置"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:50
 msgid "Emergency Stop using a drive-by-wire system"
-msgstr ""
+msgstr "线控驱动的紧急停止系统"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:51
 msgid "Ethernet network and USB connections (to PC)"
-msgstr ""
+msgstr "以太网和 USB 连接（针对 PC）"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:53
 msgid "Hardware Installation"
-msgstr ""
+msgstr "硬件安装"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:55
 msgid ""
@@ -253,44 +265,47 @@ msgid ""
 " for the steps to install the hardware components and the system "
 "software."
 msgstr ""
+"请参考 [Apollo 1.0 硬件和系统安装指南](apollo_1_0_hardware_system_installation_guide.md) 中的步骤来安装硬件组件以及系统软件"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:58
 msgid "Apollo Software Installation"
-msgstr ""
+msgstr "Apollo 软件安装"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:60
 msgid ""
 "Please refer to [Apollo Software Installation "
 "Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_software_installation_guide.md)."
 msgstr ""
+"请参考 [Apollo 软件安装指南](apollo_software_installation_guide.md)"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:62
 msgid "Run Demo on Vehicle"
-msgstr ""
+msgstr "在车辆上运行示例"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:64
 msgid ""
 "This section provides the instructions to run the Apollo 1.0 Demo on "
 "Vehicle."
-msgstr ""
+msgstr "本节提供运行 Apollo 1.0 Demo on Vehicle 的说明。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:65
 msgid "Set up the hardware:"
-msgstr ""
+msgstr "设置硬件："
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:67
 msgid "Power-on the platform vehicle."
-msgstr ""
+msgstr "打开平台车辆。"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:68
 msgid "Power-on the Industrial PC (IPC).   ![](images/ipc_power_on.png)"
-msgstr ""
+msgstr "打开工业 PC 机（IPC）。 ![](images/ipc_power_on.png)"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:70
 msgid ""
 "Power-on the modem by pressing and holding the power button until the "
 "lights turn on."
 msgstr ""
+"通过按住电源按钮打开调制解调器电源，直到指示灯亮起"
 
 #: ../../docs/quickstart/apollo_1_0_quick_start.md:71
 msgid ""
