@@ -11,5 +11,4 @@ tutorials
 topics
 demo/index
 api
-cn/index
 ```

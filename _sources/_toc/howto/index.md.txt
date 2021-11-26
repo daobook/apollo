@@ -13,7 +13,6 @@ debug
 models/index
 architecture/index
 tools
-ci/index
 other
-cn/index
+ci/index
 ```

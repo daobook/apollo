@@ -9,5 +9,4 @@
 version
 ../../docs/technical_tutorial/apollo_best_coding_practice
 ../../docs/technical_tutorial/intro_to_apollo_release_build
-cn/index
 ```

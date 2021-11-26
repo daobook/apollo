@@ -13,5 +13,4 @@ perception
 hmi
 algorithm
 general
-cn/index
 ```
