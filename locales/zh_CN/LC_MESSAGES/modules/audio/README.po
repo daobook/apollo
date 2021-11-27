@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../modules/audio/README.md:1
+msgid "Audio"
+msgstr ""
+
+#: ../../../modules/audio/README.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../modules/audio/README.md:4
+msgid ""
+"The Audio module detect the siren sound coming from the active emergency "
+"vehicle. It detects and output siren on/off status, moving status and the"
+" relative position of the siren. When active emergency vehicles detected,"
+" you can also see active alerts on Dreamview."
+msgstr ""
+
+#: ../../../modules/audio/README.md:7
+msgid "Input"
+msgstr ""
+
+#: ../../../modules/audio/README.md:8
+msgid "Audio signal data (cyber channel `/apollo/sensor/microphone`)"
+msgstr ""
+
+#: ../../../modules/audio/README.md:10
+msgid "Output"
+msgstr ""
+
+#: ../../../modules/audio/README.md:11
+msgid ""
+"Audio detection result, including the siren active/inactive status, "
+"moving status(approaching/departing/stationary), and the positions (cyber"
+" channel `apollo/audio/audio_detection`)."
+msgstr ""
+

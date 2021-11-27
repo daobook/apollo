@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:1
+msgid "Apollo 2.0 Software Architecture"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:5
+msgid ""
+"Core software modules running on the Apollo 2.0 powered autonomous "
+"vehicle include:"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:7
+msgid ""
+"**Perception** — The perception module identifies the world surrounding "
+"the autonomous vehicle. There are two important submodules inside "
+"perception: obstacle detection and traffic light detection."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:8
+msgid ""
+"**Prediction** — The prediction module anticipates the future motion "
+"trajectories of the perceived obstacles."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:9
+msgid ""
+"**Routing** — The routing module tells the autonomous vehicle how to "
+"reach its destination via a series of lanes or roads."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:10
+msgid ""
+"**Planning** — The planning module plans the spatio-temporal trajectory "
+"for the autonomous vehicle to take."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:11
+msgid ""
+"**Control** — The control module executes the planned spatio-temporal "
+"trajectory by generating control commands such as throttle, brake, and "
+"steering."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:12
+msgid ""
+"**CanBus** — The CanBus is the interface that passes control commands to "
+"the vehicle hardware. It also passes chassis information to the software "
+"system."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:13
+msgid ""
+"**HD-Map** — This module is similar to a library. Instead of publishing "
+"and subscribing messages, it frequently functions as query engine support"
+" to provide ad-hoc structured information regarding the roads."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:14
+msgid ""
+"**Localization** — The localization module leverages various information "
+"sources such as GPS, LiDAR and IMU to estimate where the autonomous "
+"vehicle is located."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:16
+msgid "The interactions of these modules are illustrated in the picture below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:18
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/Apollo_2_0_Software_Arch.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:18
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:30
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:40
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:44
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:50
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:62
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:64
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:70
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:74
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:80
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:84
+msgid "img"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:20
+msgid ""
+"Every module is running as a separate CarOS-based ROS node. Each module "
+"node publishes and subscribes certain topics. The subscribed topics serve"
+" as data input while the published topics serve as data output. The "
+"detailed interactions are described in the following sections."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:22
+msgid "Perception"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:24
+msgid ""
+"Perception depends on the raw sensor data such as LiDAR point cloud data "
+"and camera data. In addition to these raw sensor data inputs, traffic "
+"light detection also depends on the localization data as well as the HD-"
+"Map. Because real-time ad-hoc traffic light detection is computationally "
+"infeasible,  traffic light detection needs localization to determine when"
+" and where to start detecting traffic lights through the camera captured "
+"pictures."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:26
+msgid "Prediction"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:28
+msgid ""
+"The prediction module estimates the future motion trajectories for all "
+"the perceived obstacles. The output prediction message wraps the "
+"perception information. Prediction subscribes to both localization and "
+"perception obstacle messages as shown below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:30
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/prediction.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:32
+msgid ""
+"When a localization update is received, the prediction module updates its"
+" internal status. The actual prediction is triggered when perception "
+"sends out its published perception obstacle message."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:34
+msgid "Localization"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:36
+msgid ""
+"The routing module aggregates various data to locate the autonomous "
+"vehicle. There are two types of localization modes: OnTimer and Multiple "
+"SensorFusion."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:38
+msgid ""
+"The first localization method is RTK-based, with a timer-based callback "
+"function `OnTimer`, as shown below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:40
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/localization.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:42
+msgid ""
+"The other localization method is the Multiple Sensor Fusion (MSF) method,"
+" where a bunch of event-triggered callback functions are registered, as "
+"shown  below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:44
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/localization_2.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:46
+msgid "Routing"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:48
+msgid ""
+"The routing module needs to know the routing start point and routing end "
+"point, to compute the passage lanes and roads. Usually the routing start "
+"point is the autonomous vehicle location. The important data interface is"
+" an event triggered function called `OnRoutingRequest`, in which "
+"`RoutingResponse` is computed and published as shown below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:50
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/routing.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:52
+msgid "Planning"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:54
+msgid ""
+"Apollo 2.0 uses several information sources to plan a safe and collision "
+"free trajectory, so the planning module interacts with almost every other"
+" module."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:56
+msgid ""
+"Initially, the planning module takes the prediction output. Because the "
+"prediction output wraps the original perceived obstacle, the planning "
+"module subscribes to the traffic light detection output rather than the "
+"perception obstacles output."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:58
+msgid ""
+"Then, the planning module takes the routing output. Under certain "
+"scenarios, the planning module might also trigger a new routing "
+"computation by sending a routing request if the current route cannot be "
+"faithfully followed."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:60
+msgid ""
+"Finally, the planning module needs to know the location (Localization: "
+"where I am) as well as the current autonomous vehicle information "
+"(Chassis: what is my status).  The planning module is also triggered by a"
+" fixed frequency, and the main data interface is the `OnTimer` callback "
+"function that invokes the `RunOnce` function."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:62
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/planning_1.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:64
+msgid ""
+"The data dependencies such as chassis, localization, traffic light, and "
+"prediction are managed through the `AdapterManager` class. The core "
+"software modules are similarly managed.  For example, localization is "
+"managed through `AdapterManager::GetLocalization()` as shown "
+"below.![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/planning_2.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:66
+msgid "Control"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:68
+msgid ""
+"As described in the planning module, control takes the planned trajectory"
+" as input, and generates the control command to pass to CanBus.  It has "
+"three main data interfaces: OnPad, OnMonitor, and OnTimer."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:70
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/control_1.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:72
+msgid ""
+"The `OnPad` and `OnMonitor` are routine interactions with the PAD-based "
+"human interface and simulations. The main data interface is the `OnTimer`"
+" interface, which periodically produces the actual control commands as "
+"shown below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:74
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/control_2.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:76
+msgid "CanBus"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:78
+msgid "The CanBus has two data interfaces as shown below."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:80
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/canbus_1.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:82
+msgid ""
+"The first data interface is a timer-based publisher with the callback "
+"function `OnTimer`. This data interface periodically publishes the "
+"chassis information as well as chassis details, if enabled."
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:84
+msgid "![img](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/images/canbus_2.png)"
+msgstr ""
+
+#: ../../../docs/specs/Apollo_2.0_Software_Architecture.md:86
+msgid ""
+"The second data interface is an event-based publisher with a callback "
+"function `OnControlCommand`, which is triggered when the CanBus module "
+"receives control commands."
+msgstr ""
+

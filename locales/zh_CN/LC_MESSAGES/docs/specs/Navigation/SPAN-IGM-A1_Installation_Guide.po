@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:1
+msgid "Installation Guide of SPAN-IGM-A1"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:3
+msgid ""
+"The NovAtel SPAN-IGM-A1 is an integrated, single-box solution that offers"
+" tightly coupled Global Navigation Satellite System (GNSS) positioning "
+"and inertial navigation featuring the NovAtel OEM615 receiver."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:5
+msgid "![novatel_imu](images/Novatel_imu.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:5
+msgid "novatel_imu"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:7
+msgid ""
+"The GPS Receiver/Antenna used with the GPS-IMU component is the **NovAtel"
+" GPS-703-GGG-HV**."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:13
+msgid "![gps_receiver](images/gps_receiver.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:13
+msgid "gps_receiver"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:15
+msgid "Installing the GPS Receiver and Antenna"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:17
+msgid ""
+"The installation instructions describe the procedure to mount, connect, "
+"and take the lever arm measurements for the GPS-IMU NovAtel SPAN-IGM-A1."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:19
+msgid "Mounting"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:21
+msgid ""
+"You can place the GPS-IMU NovAtel SPAN-IGM-A1 in most places in the "
+"vehicle but it is suggested that you follow these recommendations:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:23
+msgid ""
+"Place and secure the NovAtel SPAN-IGM-A1 inside the trunk with the Y-axis"
+" pointing forward."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:24
+msgid ""
+"Mount the NovAtel GPS-703-GGG-HV antenna in an unobstructed location on "
+"top of the vehicle."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:26
+msgid "Wiring"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:28
+msgid "There are three cables that need to be connected"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:30
+msgid ""
+"The antenna cable connects the GNSS antenna to the antenna port of the "
+"SPAN-IGM-A1"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:31
+msgid "The main cable:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:32
+msgid "Connect the 15-pin end to the SPAN-IGM-A1"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:33
+msgid "Connect the power wires to a power supply of 10-to-30V DC"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:34
+msgid "Connects the user port to the IPC."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:35
+msgid ""
+"If the power comes from a vehicle battery, add an auxiliary battery "
+"(recommended)."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:36
+msgid "The AUX cable:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:37
+msgid "Connect the AUX cable to the 15-pin Aux port"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:38
+msgid ""
+"Connect the USB cable to the IPC, if the USB port is used for data "
+"transferring."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:40
+msgid "Refer to the diagram below for reference:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:42
+msgid "![imu_main_cable_connection](images/imu_main_cable_connection.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:42
+msgid "imu_main_cable_connection"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:44
+msgid ""
+"For additional information, visit Page 3 of [the SPAN-IGM™ Quick Start "
+"Guide](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf) "
+"to view the detailed diagram."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:46
+msgid "Taking the Lever Arm Measurement"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:48
+msgid ""
+"When the SPAN-IGM-A1 and the GPS Antenna are in position, the distance "
+"from the SPAN-IGM-A1 to the GPS Antenna must be measured. The distance "
+"should be measured as: X offset, Y offset, and Z offset."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:50
+msgid ""
+"The center of the IMU and the center of the antenna are labeled on the "
+"exterior of the devices."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:52
+msgid ""
+"For additional information, visit Page 5 of [the SPAN-IGM™ Quick Start "
+"Guide](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf) "
+"to view the detailed diagram."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:54
+msgid "Configuring the GPS and IMU"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:56
+msgid ""
+"Configure the SPAN-IGM-A1 as shown below. The setting can be configured "
+"by keying in the following command or loading a batch file in Novatel "
+"Connect:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:107
+msgid ""
+"**![warning_icon](images/warning_icon.png) WARNING:** Modify the "
+"**<u>SETIMUTOANTOFFSET</u>** line based on the actual measurement (of the"
+" antenna and the SPAN-IGM-A1 offset)."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:107
+msgid "warning_icon"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:109
+msgid "For example:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:114
+msgid ""
+"The first 3 numbers indicate the result of the lever arm distance "
+"measurement. The last 3 numbers are the uncertainty of the measurement."
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:116
+msgid "References"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:118
+msgid "For additional information on the NovAtel SPAN-IGM-A1:"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:120
+msgid ""
+"[NovAtel SPAN-IGM-A1 Product Page](https://www.novatel.com/products/span-"
+"gnss-inertial-systems/span-combined-systems/span-igm-a1/)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:122
+msgid ""
+"[NovAtel GPS-703-GGG-HV Product page](https://www.novatel.com/products"
+"/gnss-antennas/high-performance-gnss-antennas/gps-703-ggg-hv/)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:124
+msgid ""
+"[SPAN-IGM™ Quick Start "
+"Guide](http://www.novatel.com/assets/Documents/Manuals/GM-14915114.pdf)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:126
+msgid ""
+"[SPAN-IGM™ User "
+"Manual](http://www.novatel.com/assets/Documents/Manuals/OM-20000141.pdf)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:128
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/SPAN-IGM-A1_Installation_Guide.md:130
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

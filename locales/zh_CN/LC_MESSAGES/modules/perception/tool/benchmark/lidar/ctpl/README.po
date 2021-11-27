@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:1
+msgid "CTPL"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:4
+msgid "Modern and efficient C++ Thread Pool Library"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:7
+msgid ""
+"A thread pool is a programming pattern for parallel execution of jobs, "
+"http://en.wikipedia.org/wiki/Thread_pool_pattern."
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:9
+msgid ""
+"More specifically, there are some threads dedicated to the pool and a "
+"container of jobs. The jobs come to the pool dynamically. A job is "
+"fetched and deleted from the container when there is an idle thread. The "
+"job is then run on that thread."
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:11
+msgid ""
+"A thread pool is helpful when you want to minimize time of loading and "
+"destroying threads and when you want to limit the number of parallel jobs"
+" that run simultaneously. For example, time consuming event handlers may "
+"be processed in a thread pool to make UI more responsive."
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:13
+msgid "Features:"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:14
+msgid ""
+"standard c++ language, tested to compile on MS Visual Studio 2013 "
+"(2012?), gcc 4.8.2 and mingw 4.8.1(with posix threads)"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:15
+msgid ""
+"simple but effiecient solution, one header only, no need to compile a "
+"binary library"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:16
+msgid "query the number of idle threads and resize the pool dynamically"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:17
+msgid ""
+"one API to push to the thread pool any collable object: lambdas, "
+"functors, functions, result of bind expression"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:18
+msgid ""
+"collable objects with variadic number of parameters plus index of the "
+"thread running the object"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:19
+msgid "automatic template argument deduction"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:20
+msgid "get returned value of any type with standard c++ futures"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:21
+msgid "get fired exceptions with standard c++ futures"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:22
+msgid "use for any purpose under Apache license"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:23
+msgid ""
+"two variants, one depends on Boost Lockfree Queue library, "
+"http://boost.org, which is a header only library"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:26
+msgid "Sample usage"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:28
+msgid ""
+"<code>void first(int id) {     std::cout << \"hello from \" << id << "
+"'\\n'; }</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:32
+msgid ""
+"<code>&#32;&#32;struct Second {     void operator()(int id) const {"
+"         std::cout << \"hello from \" << id << '\\n';     } } second;"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:38
+msgid "<code>void third(int id, const std::string & additional_param) {}</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:41
+msgid "<code>int main () {</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:43
+msgid ""
+"<code>&#32;&#32;&#32;&#32;ctpl::thread_pool p(2 /* two threads in the "
+"pool */);</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:45
+msgid "<code>&#32;&#32;&#32;&#32;p.push(first);  // function</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:47
+msgid "<code>&#32;&#32;&#32;&#32;p.push(third, \"additional_param\");</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:49
+msgid ""
+"<code>&#32;&#32;&#32;&#32;p.push( &#91;&#93; (int id){   std::cout << "
+"\"hello from \" << id << '\\n'; });  // lambda</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:53
+msgid ""
+"<code>&#32;&#32;&#32;&#32;p.push(std::ref(second));  // functor, "
+"reference</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:55
+msgid ""
+"<code>&#32;&#32;&#32;&#32;p.push(const_cast&#60;const Second "
+"&&#62;(second));  // functor, copy ctor</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:57
+msgid ""
+"<code>&#32;&#32;&#32;&#32;p.push(std::move(second));  // functor, move "
+"ctor</code>"
+msgstr ""
+
+#: ../../../modules/perception/tool/benchmark/lidar/ctpl/README.md:59
+msgid "<code>}</code>"
+msgstr ""
+

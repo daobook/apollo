@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:1
+msgid "Localization module 分析"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:2
+msgid "作用："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:3
+msgid "实时确定车辆的位置。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:5
+msgid "Localization节点流图："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:6
+msgid "节点数据流图："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:7
+msgid "![localization data flow](images/localization_node_arch.bmp)"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:7
+msgid "localization data flow"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:8
+msgid "输入："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:9
+msgid "Imu数据：/apollo/sensor/gnss/corrected_imu。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:10
+msgid "Gps数据：/apollo/sensor/gnss/odometry。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:12
+msgid "输出："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:13
+msgid "定位信息：/apollo/localization/pose。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:14
+msgid "监视信息：/apollo/localization/。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:16
+msgid "代码分析："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:17
+msgid "主要文件：localization.cc,localization.h,localization_base.h。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:18
+msgid "Localization类:"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:19
+msgid "继承于ApolloApp类，有三个数据，localization_具体的定位算法实例指针，localization_factory_存储定位算法类，config_存储配置文件信息。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:20
+msgid "Init()函数注册RTKLocalization类到localization_factory_，此类基于RTK算法实现定位算法；读取配置文件到config_。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:21
+msgid "Name()函数返回模块名字。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:22
+msgid "Start()函数，用localization_factory_类实例化一个定位算法对象，用localization_直向。若创建成功，调用定位算法的start()函数。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:24
+msgid "LocalizationBase类："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:25
+msgid "定位算法的基类。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:26
+msgid "Start()函数启动定位算法。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:27
+msgid "Stop()函数终止定位算法。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:29
+msgid "RTKLocalization类："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:30
+msgid "继承LocalizationBase类。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:31
+msgid "Start()函数：创建timer，检测gps和imu是否有数据。超时执行OnTimer()函数。OnTimer()函数检查gps和imu是否有数据，然后调用PublishLocalization()发布定位信息，并更新数据接收时间。在PublishLocalization()函数中先调用PrepareLocalizationMsg()函数计算定位信息，并填充发布数据结构localization；然后调用AdapterManager::PublishLocalization发布定位topic。PrepareLocalizationMsg(&localization)函数首先获取gps数据，然后根据gps数据时间戳获取imu数据，然后调用ComposeLocalizationMsg()函数，进行数据融合以定位，其实所谓的数据融合也就是在最终的定位信息中分别使用gps和imu测得数据设置定位信息，唯一由两个器件融合的量只有线速度。所谓RTK算法应该单指由gps数据获取gps定位信息，在localization阶段其实是使用这个定位信息，真正RTK算法应该是作用在gps数据的处理上。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:32
+msgid "Stop()函数停止timer，即退出定位模式。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:34
+msgid "疑惑："
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:35
+msgid "定位信息给出的应该是车辆在世界中的的绝对位置，因为采用gps数据，那么这个位置如何与地图建立关系的？"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:37
+msgid "答：地图中的点也可能是世界中的绝对位置。"
+msgstr ""
+
+#: ../../../docs/howto/modules/apollo1.5_localization_module_study_notes_cn.md:39
+msgid "map_offset这个量的作用：//TODO"
+msgstr ""
+

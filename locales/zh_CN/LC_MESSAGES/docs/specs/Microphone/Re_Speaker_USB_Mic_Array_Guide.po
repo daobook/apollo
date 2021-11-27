@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:1
+msgid "Apollo 6.0 Microphone Installation"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:3
+msgid "Supported Devices"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:5
+msgid ""
+"The Re-Speaker USB Mic Array https://wiki.seeedstudio.com/ReSpeaker-USB-"
+"Mic-Array/"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:8
+msgid "![Microphone](images/ReSpeaker-USB-Mics-box-preview.jpg)"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:8
+msgid "Microphone"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:10
+msgid "Connection"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:11
+msgid ""
+"Use the provided USB cable and connect the microphone to a USB port on "
+"the machine which is running Apollo. A USB extension cable may be needed "
+"depending on the application."
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:13
+msgid "Setup"
+msgstr ""
+
+#: ../../../docs/specs/Microphone/Re_Speaker_USB_Mic_Array_Guide.md:14
+msgid ""
+"Follow the instructions provided [here](https://wiki.seeedstudio.com"
+"/ReSpeaker-USB-Mic-Array/#update-firmware) to update the firmware on the "
+"ReSpeaker to `48k_6_channels_firmware.bin`"
+msgstr ""
+

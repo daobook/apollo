@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:1
+msgid "How to run the Map Data Verification Tool"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:3
+msgid ""
+"The Map Data Verification tool is designed to help Apollo developers "
+"detect any issues in their map data collection process before the data is"
+" used for HD Map creation. The benefit of using this tool is to ensure "
+"that all issues are detected prior to map creation and also ensures that "
+"data can be efficiently recollected based on the suggestions in the tool."
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:5
+msgid "Running the tool"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:7
+msgid "In order to run your data on this tool, please follow the steps below:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:9
+msgid ""
+"Build Apollo as recommended in the [Build "
+"Guide](../quickstart/apollo_software_installation_guide.md) until the "
+"`./apollo.sh build` step."
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:10
+msgid ""
+"Once instde dev docker and after running `./apollo.sh build` please go to"
+" the folder `modules/tools/map_datachecker/`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:11
+msgid "Starting the server:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:15
+msgid ""
+"Note: You should see the following message displayed `Server has been "
+"started successfully`. If not, please resolve the errors before trying "
+"again"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:17
+msgid "Start the record verification:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:21
+msgid ""
+"Note: Do not close your terminal window throughout this process.  If the "
+"verification is successful, you will not see any error messages."
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:24
+msgid "Static alignment verification:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:28
+msgid "Note: The window will display the progress of the static alignment."
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:30
+msgid "Figure 8 verification:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:34
+msgid "Note: Your window displays the progress of the Figure 8 verification"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:36
+msgid "Laps verification:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:40
+msgid "Note: Run this command post data collection to check the number of laps"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:42
+msgid ""
+"Figure 8 verification: This is repeated to verify that the extrinsic "
+"parameters have not been changed"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:44
+msgid ""
+"Static alignment verification: Similar to 5, it is preferable to repeat "
+"this verification to ensure high accuracy"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:46
+msgid "Stop record verification:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:50
+msgid "Clean the intermediate results"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:55
+msgid "Tips"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:57
+msgid "The default value of `cmd` is `start`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_run_map_verification_tool.md:58
+msgid ""
+"All error messages will be printed to help better prepare your map data. "
+"Please follow the error messages exactly as recommended"
+msgstr ""
+

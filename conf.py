@@ -64,7 +64,8 @@ exclude_patterns = ['_build',
                     '.cache/**',
                     'cyber/doxy-docs/**',
                     'docs/cyber/README.md',
-                    '.github/**'
+                    '.github/**',
+                    'third_party/**'
                     ]
 
 source_suffix = {

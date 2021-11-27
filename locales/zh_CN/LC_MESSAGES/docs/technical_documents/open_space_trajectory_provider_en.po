@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:1
+msgid "GENERATE FINAL TRAJECTORY"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:4
+msgid ""
+"The goal of this part is to generate the final trajectory in the open "
+"space. Open_space_trajectory_provider is very important to control the "
+"flow and call the hybrid a star and trajectory smoothing algorithm."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:6
+msgid "Where is the code"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:7
+msgid ""
+"Please refer to "
+"[open_space_trajectory_provider.cc](https://github.com/ApolloAuto/apollo/tree/master/modules/planning/tasks/optimizers/open_space_trajectory_generation/open_space_trajectory_provider.cc)"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:9
+msgid "Code Reading"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:10
+msgid ""
+"Input: open_space_trajectory_provider::Process() is called by the "
+"OPEN_SPACE_TRAJECTORY_PROVIDER task of VALET_PARKING_PARKING stage, "
+"please refer to "
+"[valet_parking_config.pb.txt](https://github.com/ApolloAuto/apollo/blob/master/modules/planning/conf/scenario/valet_parking_config.pb.txt)."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:12
+msgid ""
+"There is a stop trajectory which generated in the park and go check "
+"stage. In order to ensure safety, it is necessary in this case."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:23
+msgid ""
+"Start thread when getting in Process() for the first time. This will call"
+" the GenerateTrajectoryThread() function to plan the first trajectory and"
+" will update three kinds of trajectory state: trajectory_updated_, "
+"trajectory_skipped_, trajectory_error_."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:30
+msgid ""
+"Whether vehicle is stoped due to fallback is determined by the "
+"IsVehicleStopDueToFallBack() function. This determines the final "
+"trajectory planning."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:31
+msgid ""
+"If vehicle is stopped due to fallback, replan stitching trajectory by "
+"ComputeReinitStitchingTrajectory() function. If not, replan stitching "
+"trajectory by ComputeStitchingTrajectory(), please refer to "
+"[trajectory_stitcher.cc](https://github.com/ApolloAuto/apollo/blob/master/modules/planning/common/trajectory_stitcher.cc)."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:32
+msgid ""
+"Generate trajectory depends on the "
+"FLAGS_enable_open_space_planner_thread. A stop trajectory is generated in"
+" the following cases:"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:33
+msgid "Planning thread is stopped."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:34
+msgid "The vehicle arrives near the destination."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:35
+msgid "trajectory_error_ is triggered for more than 10 seconds."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:36
+msgid "Previous frame planning failed."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:37
+msgid ""
+"If the trajectory can be updated normally, the optimized trajectory is "
+"output normally."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:39
+msgid "Output: the optput is final trajectory information."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:41
+msgid "Algorithm Detail"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:47
+msgid ""
+"Parameter: The input parameter is fallback flag of previous frame and "
+"vehicle states."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:48
+msgid "Introduction: The flag and vehicle state can be used to design the logic."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:49
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:65
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:85
+msgid "Process detail:"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:50
+msgid "Fallback flag judgment: if the flag is false, then return false."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:51
+msgid ""
+"When the vehicle speed and acceleration are less than the threshold, the "
+"result is true, indicating that it is caused by fall        back."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:62
+msgid ""
+"The function is used to stitch trajectory and is used to replan based on "
+"some unreasonable case."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:63
+msgid ""
+"Parameter: Vehicle state, current_timestamp, planning cycle time, "
+"replan_by_offset, previous trajectory and the reason of replanning."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:64
+msgid ""
+"Introduction: Handle some unreasonable case by replanning, stitch "
+"trajectory and post process."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:66
+msgid "It will re-plan the trajectory in following cases:"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:67
+msgid "Stitching trajectory is disabled by gflag."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:68
+msgid "There is no previous trajectory."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:69
+msgid "Not in autopilot mode."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:70
+msgid "The number of points in the previous frame is zero."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:71
+msgid ""
+"The current time is less than the trajectory start time of the previous "
+"frame."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:72
+msgid ""
+"The current time is more than the trajetory end time of the previous "
+"frame."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:73
+msgid "The matching path point is empty."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:74
+msgid ""
+"The horizontal and vertical deviation of the projection point is greater "
+"than the threshold."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:75
+msgid ""
+"Stitch trajectory according to the planning period and the position of "
+"the projection point."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:76
+msgid ""
+"Determine whether each trajectory point of the stitching trajectory is "
+"empty, and if it is empty, it will replan."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:82
+msgid ""
+"The function is used to initialize stitching trajectory and get the "
+"initial point."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:83
+msgid "Parameter: The planned cycle time and vehicle state"
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:84
+msgid ""
+"Introduction: The function can get the diffrent initial point based on "
+"the different logic."
+msgstr ""
+
+#: ../../../docs/technical_documents/open_space_trajectory_provider_en.md:86
+msgid ""
+"When the vehicle speed and acceleration are less than the threshold, the "
+"message of initial point is from vehicle state.           2. When the "
+"vehicle speed and acceleration satisfy the threshold, the vehicle state "
+"is calculated based on the kinematics model."
+msgstr ""
+

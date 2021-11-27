@@ -1,0 +1,1018 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:3
+msgid "Changelog for package usb_cam"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:6
+msgid "0.3.4 (2015-08-18)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:7
+msgid "Installs launch files"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:8
+msgid ""
+"Merge pull request #37 from tzutalin/develop Add a launch file for easy "
+"test"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:10
+msgid "Add a launch file for easy test"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:11
+msgid "Contributors: Russell Toris, tzu.ta.lin"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:14
+msgid "0.3.3 (2015-05-14)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:15
+msgid "Merge pull request #36 from jsarrett/develop add gain parameter"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:17
+msgid "add gain parameter"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:18
+msgid "Contributors: James Sarrett, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:21
+msgid "0.3.2 (2015-03-24)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:22
+msgid ""
+"Merge pull request #34 from eliasm/develop fixed check whether "
+"calibration file exists"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:24
+msgid "fixed check whether calibration file exists"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:25
+msgid "Contributors: Elias Mueggler, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:28
+msgid "0.3.1 (2015-02-20)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:29
+msgid ""
+"Merge pull request #32 from kmhallen/mono8 Publish YUVMONO10 images as "
+"mono8 instead of rgb8"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:31
+msgid "Publish YUVMONO10 images as mono8 instead of rgb8"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:32
+msgid "Contributors: Kevin Hallenbeck, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:35
+msgid "0.3.0 (2015-01-26)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:36
+msgid ""
+"Merge pull request #30 from mitchellwills/develop Removed global state "
+"from usb_cam by encapsulating it inside an object"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:38
+msgid "Made device name a std::string instead of const char*"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:39
+msgid "Added usb_cam namespace"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:40
+msgid "Added underscore sufix to class fields"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:41
+msgid "Removed ``camera_`` prefix from methods"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:42
+msgid "Moved methods to parse pixel_format and io_method from string to UsbCam"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:43
+msgid "Moved camera_image_t struct to be private in UsbCam"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:44
+msgid "Cleaned up parameter assignment"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:45
+msgid "Made set_v4l_parameters a non-static function"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:46
+msgid "Moved set_v4l_parameters to UsbCam object"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:47
+msgid ""
+"Removed global state from usb_cam by encapsulating it inside an object "
+"function and structions in usb_cam.h became public and everything else is"
+" private"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:49
+msgid ""
+"Merge pull request #28 from mitchellwills/develop Fix installation of "
+"header files"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:51
+msgid "Fix installation of header files"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:52
+msgid "Contributors: Mitchell Wills, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:55
+msgid "0.2.0 (2015-01-16)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:56
+msgid "Bug fix in camera info settings."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:57
+msgid "Update .travis.yml"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:58
+msgid ""
+"Merge pull request #27 from bosch-ros-pkg/default_camera_info sets "
+"default camera info"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:60
+msgid "sets default camera info"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:61
+#: ../../../modules/drivers/camera/CHANGELOG.rst:132
+#: ../../../modules/drivers/camera/CHANGELOG.rst:183
+#: ../../../modules/drivers/camera/CHANGELOG.rst:189
+msgid "Contributors: Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:64
+msgid "0.1.13 (2014-12-02)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:65
+msgid ""
+"Merge pull request #25 from blutack/patch-1 Warn rather than error if "
+"framerate can't be set"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:67
+msgid ""
+"Warn rather than error if framerate can't be set The driver doesn't "
+"currently work with em28xx based devices as they don't allow the "
+"framerate to be set directly and the node exits with an error. Changing "
+"to a warning allows these devices to be used."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:69
+#: ../../../modules/drivers/camera/CHANGELOG.rst:196
+#: ../../../modules/drivers/camera/CHANGELOG.rst:197
+#: ../../../modules/drivers/camera/CHANGELOG.rst:198
+#: ../../../modules/drivers/camera/CHANGELOG.rst:199
+#: ../../../modules/drivers/camera/CHANGELOG.rst:200
+#: ../../../modules/drivers/camera/CHANGELOG.rst:202
+msgid "Update README.md"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:70
+msgid ""
+"Merge pull request #24 from rjw57/do-not-touch-parameters-unless-asked do"
+" not modify parameters unless explicitly set"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:72
+msgid ""
+"do not modify parameters unless explicitly set The contrast, saturation, "
+"brightness, sharpness and focus parameters were recently added to "
+"usb_cam. This caused a regression (sigproc/robotic_surgery#17) whereby "
+"the default settings for a webcam are overridden in all cases by the "
+"hard-coded defaults in usb_cam. In the absence of a know good set of "
+"\"default\" values, leave the parameters unset unless the user has "
+"explicitly set them in the launch file."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:80
+msgid "Contributors: Rich Wareham, Russell Toris, blutack"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:83
+msgid "0.1.12 (2014-11-05)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:84
+msgid "Merge pull request #22 from dekent/develop White balance parameters"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:86
+msgid "Parameter to enable/disable auto white balance"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:87
+msgid "Added parameters for white balance"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:88
+msgid "uses version major to check for av_codec"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:89
+msgid "uses version header to check for AV_CODEC_ID_MJPEG"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:90
+#: ../../../modules/drivers/camera/CHANGELOG.rst:100
+msgid "Contributors: David Kent, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:93
+msgid "0.1.11 (2014-10-30)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:94
+msgid "Merge pull request #20 from dekent/develop More Parameters"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:96
+msgid "bug fix"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:97
+msgid "Setting focus when autofocus is disabled"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:98
+msgid "Parameter adjusting"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:99
+msgid ""
+"Added parameter setting for absolute focus, brightness, contrast, "
+"saturation, and sharpness"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:103
+msgid "0.1.10 (2014-10-24)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:104
+msgid ""
+"Merge pull request #19 from bosch-ros-pkg/av_codec_id Removed deprecated "
+"CODEC_ID"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:106
+msgid "added legacy macro constants for libav 10"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:107
+msgid ""
+"Renamed deprecated CODEC_ID constants to AV_CODEC_ID to fix compilation "
+"for libav 10"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:108
+msgid "Contributors: Andrzej Pronobis, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:111
+msgid "0.1.9 (2014-08-26)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:112
+msgid "Uses ros::Rate to enforce software framerate instead of custom time check"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:113
+msgid ""
+"Merge pull request #16 from liangfok/feature/app_level_framerate_control "
+"Modified to enforce framerate control at the application level in "
+"additi..."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:115
+msgid ""
+"Modified to enforce framerate control at the application level in "
+"addition to at the driver level.  This is necessary since the drivers for"
+" my webcam did not obey the requested framerate."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:116
+msgid "Contributors: Russell Toris, liang"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:119
+msgid "0.1.8 (2014-08-21)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:120
+msgid "autoexposure and exposure settings now exposed via ROS parameters"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:121
+msgid "added ability to call v4l-utils as well as correctly set autofocus"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:122
+msgid "cleanup of output"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:123
+msgid ""
+"Merge pull request #15 from mistoll/develop added support for RGB24 pixel"
+" format"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:125
+msgid "Added RGB24 as pixel format"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:126
+msgid "Contributors: Michael Stoll, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:129
+msgid "0.1.7 (2014-08-20)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:130
+msgid "changelog fixed"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:131
+msgid "minor cleanup and ability to change camera name and info"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:135
+msgid "0.1.6 (2014-08-15)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:136
+msgid ""
+"Merge pull request #14 from KaijenHsiao/master added support for 10-bit "
+"mono cameras advertising as YUV"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:138
+msgid ""
+"added support for 10-bit mono cameras advertising as YUV (such as Leopard"
+" Imaging's LI-USB30-V034)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:139
+msgid "Update CHANGELOG.rst"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:140
+msgid "changelog updated"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:141
+msgid ""
+"Merge pull request #13 from vrabaud/develop add a a ros::spinOnce to get "
+"set_camera_info working"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:143
+msgid ""
+"add a a ros::spinOnce to get set_camera_info working This is explained in"
+" the docs of CameraInfoManager https://github.com/ros-"
+"perception/image_common/blob/hydro-"
+"devel/camera_info_manager/include/camera_info_manager/camera_info_manager.h#L71"
+" Also, this fixes https://github.com/ros-"
+"perception/image_pipeline/issues/78"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:147
+msgid "Contributors: Kaijen Hsiao, Russell Toris, Vincent Rabaud, sosentos"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:150
+msgid "0.1.5 (2014-07-28)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:151
+msgid "auto format"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:152
+msgid "cleanup of readme and such"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:153
+msgid "Merge branch 'hydro-devel' of github.com:bosch-ros-pkg/usb_cam"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:154
+msgid ""
+"Merge pull request #11 from pronobis/hydro-devel Fixed a bug with av_free"
+" missing by adding a proper include."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:156
+msgid ""
+"Fixed a bug with av_free missing by adding a proper include on Ubuntu "
+"14.04."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:157
+msgid ""
+"Merge pull request #7 from cottsay/groovy-devel Use pkg-config to find "
+"avcodec and swscale"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:159
+msgid ""
+"Merge pull request #5 from FriedCircuits/hydro-devel Remove requirments "
+"for self_test"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:161
+msgid "Use pkg-config to find avcodec and swscale"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:162
+#: ../../../modules/drivers/camera/CHANGELOG.rst:193
+msgid "Update package.xml"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:163
+#: ../../../modules/drivers/camera/CHANGELOG.rst:164
+msgid "Remove selftest"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:165
+msgid "Update usb_cam_node.cpp"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:166
+msgid ""
+"Merge pull request #2 from jonbinney/7_17 swap out deprecated libavcodec "
+"functions"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:168
+msgid "swap out deprecated libavcodec functions"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:169
+msgid ""
+"Contributors: Andrzej Pronobis, Jon Binney, Russell Toris, Scott K Logan,"
+" William"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:172
+msgid "0.1.3 (2013-07-11)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:173
+msgid "Merge pull request #1 from jonbinney/rosify Bag of improvements"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:175
+msgid "add framerate parameter"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:176
+msgid "use ROS_* for output"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:177
+msgid "use camera_info_manager"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:178
+msgid "Contributors: Jon Binney, Russell Toris"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:181
+msgid "0.1.2 (2013-05-06)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:182
+msgid "installs usb_cam_node"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:186
+msgid "0.1.1 (2013-05-02)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:187
+msgid "cmake fixed"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:188
+msgid "ffmpeg added"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:192
+msgid "0.1.0 (2013-05-01)"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:194
+msgid "minor cleanup"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:195
+msgid "inital merge"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:201
+msgid "Update CLONE_SETUP.sh"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:203
+msgid "Updated the README.md."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:204
+msgid "Updated the installation instructions."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:205
+msgid "Fixed syntax in the README."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:206
+msgid "Updated README for ARDUINO support."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:207
+msgid "Fixed update script."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:208
+msgid "Updated the readme and updating scripts."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:209
+msgid "Updating for installation on Robot."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:210
+msgid "Updated installs and README for ROS."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:211
+msgid "Make sure the User knows to source the devel/setup.sh."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:212
+msgid "Getting rid of subtrees and Catkinized USB CAM."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:213
+msgid "Updating home to use ROSWS."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:214
+msgid "Fixing the launch file for video1."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:215
+msgid ""
+"Merge commit '0bc3322966e4c0ed259320827dd1f5cc8460efce' Conflicts: "
+"src/sofie_ros/package.xml"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:218
+msgid "Removed unnecessary file."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:219
+msgid "Compiles."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:220
+msgid "Adding the Catkin build scripts."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:221
+msgid ""
+"Merge commit 'b2c739cb476e1e01425947e46dc2431464f241b3' as "
+"'src/ar_track_alvar'"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:222
+msgid ""
+"Squashed 'src/ar_track_alvar/' content from commit 9ecca95 git-subtree-"
+"dir: src/ar_track_alvar git-subtree-split: "
+"9ecca9558edc7d3a9e692eacc93e082bf1e9a3e6"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:225
+msgid "Merge commit '9feb470d0ebdaa51e426be4d58f419b45928a671' as 'src/sofie_ros'"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:226
+msgid ""
+"Squashed 'src/sofie_ros/' content from commit 3ca5edf git-subtree-dir: "
+"src/sofie_ros git-subtree-split: 3ca5edfba496840b41bfe01dfdff883cacff1a97"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:229
+msgid "Removing stackts."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:230
+msgid "Removing submodules."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:231
+msgid "Fixed submodules."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:232
+msgid "Removing old package."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:233
+msgid "Merge branch 'catkin' Conflicts: README.md cmake_install.cmake"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:237
+msgid "Brancing package down to stack base."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:238
+msgid "Catkininizing."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:239
+msgid "(catkin)Catkininizing."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:240
+msgid "Modifying the setup of roshome."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:241
+msgid "Starting to Catkininize the project."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:242
+msgid "(catkin)Starting to Catkininize the project."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:243
+msgid "Going to catinize it."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:244
+msgid "(catkin)Going to catinize it."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:245
+msgid "Modified to new version of sofie_ros."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:246
+msgid "Renamed import_csv_data.py to fileUtils.py, because it does more now."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:247
+msgid ""
+"(catkin)Renamed import_csv_data.py to fileUtils.py, because it does more "
+"now."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:248
+msgid ""
+"Updating to use a csv file specified by the user. Separating PyTables "
+"path manipulation into SOFIEHDFFORMAT."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:249
+msgid ""
+"(catkin)Updating to use a csv file specified by the user. Separating "
+"PyTables path manipulation into SOFIEHDFFORMAT."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:250
+msgid "Merge branch 'release/0.0.2'"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:251
+msgid "Created the install script."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:252
+msgid "Removed the Python Packages as submodules."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:253
+msgid "Merge branch 'release/0.0.1'"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:254
+msgid "Update the Git submodules."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:255
+msgid "Modified the README and CLONE_SETUP.sh"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:256
+msgid "Added SOFIEHDFFORMAT as a submodule."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:257
+msgid "Added the ExperimentControl Repo as a submodule."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:258
+msgid "Working the CLONE install."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:259
+msgid "Modifiying install script."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:260
+msgid "Added a script to update the gitmodules for read-only clones."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:261
+msgid "Merge branch 'master' of github.com:agcooke/roshome"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:262
+#: ../../../modules/drivers/camera/CHANGELOG.rst:325
+msgid "Initial commit"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:263
+msgid "Added the modules."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:264
+msgid "Added usb_cam,"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:265
+msgid "Updating to Groovy."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:266
+msgid "(catkin)Updating to Groovy."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:267
+msgid "Added another potential launch file for exporting video from rosbag."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:268
+msgid ""
+"(catkin)Added another potential launch file for exporting video from "
+"rosbag."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:269
+msgid "Added a launcher to ros bag the usb_cam, for later playback."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:270
+msgid "(catkin)Added a launcher to ros bag the usb_cam, for later playback."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:271
+msgid "Added some files that were possibly not correct"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:272
+msgid "(catkin)Added some files that were possibly not correct"
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:273
+msgid "Fixed bugs with the importing."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:274
+msgid "(catkin)Fixed bugs with the importing."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:275
+msgid ""
+"Added forgotten __init__.py file and changed to importdata sofiehdfformat"
+" funciton."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:276
+msgid ""
+"(catkin)Added forgotten __init__.py file and changed to importdata "
+"sofiehdfformat funciton."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:277
+msgid ""
+"Refractoring to make it possible to log to CSV. There were problems "
+"handling concurrent writing to pytables files. The package now logs to "
+"CSV and then provides a function to post import the data into "
+"SOFIEHDFFORMAT."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:282
+msgid ""
+"(catkin)Refractoring to make it possible to log to CSV. There were "
+"problems handling concurrent writing to pytables files. The package now "
+"logs to CSV and then provides a function to post import the data into "
+"SOFIEHDFFORMAT."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:287
+msgid "Exporting to a CSV. Does not work yet."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:288
+msgid "(catkin)Exporting to a CSV. Does not work yet."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:289
+msgid "Added a close on terminate signal handler."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:290
+msgid "(catkin)Added a close on terminate signal handler."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:291
+msgid "Made the marker size be set via a parameter to the launch file."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:292
+msgid "(catkin)Made the marker size be set via a parameter to the launch file."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:293
+msgid "Changed the Callibration data."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:294
+msgid "(catkin)Changed the Callibration data."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:295
+msgid "The ar_pose listener."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:296
+msgid "(catkin)The ar_pose listener."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:297
+msgid ""
+"Changed the sofie driver to directly safe the ar_pose data. We are going "
+"to perform experiments and this means that the extra data might be useful"
+" at a later stage."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:300
+msgid ""
+"(catkin)Changed the sofie driver to directly safe the ar_pose data. We "
+"are going to perform experiments and this means that the extra data might"
+" be useful at a later stage."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:303
+msgid "Changed the size of the marker."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:304
+msgid "Updated the usb_cam config to work for home camera."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:305
+msgid "Added callibration files and launch files."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:306
+msgid "Turned off history."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:307
+msgid "(catkin)Added some comments and renamed."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:308
+msgid "Added some comments and renamed."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:309
+msgid ""
+"(catkin)The Quaternions were mixed around. Fixed the launch file to log "
+"to file instead of screen."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:310
+msgid ""
+"The Quaternions were mixed around. Fixed the launch file to log to file "
+"instead of screen."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:311
+msgid "(catkin)Updating the README's."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:312
+msgid "Updating the README's."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:313
+msgid "Updated the launch file to launch ar_pose and rviz for debugging."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:314
+msgid "(catkin)Added arguments to the launch script."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:315
+msgid "Added arguments to the launch script."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:316
+msgid "Added the Stack formating files."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:317
+msgid "(catkin)Organising into a stack instead of separate packages."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:318
+msgid "Organising into a stack instead of separate packages."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:319
+msgid "Trying to figure out how to start and stop the node."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:320
+msgid "Adding simple parameters."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:321
+msgid "Added the ROS files."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:322
+msgid ""
+"Basic driver now works for listening on a channel that broadcasts "
+"geometry_msgs.msg.QuaternionStamped messages."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:323
+msgid "Working on the listerner that will write to HDFFormat."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:324
+msgid "Creating a listerner that can write to sofiehdfformat files."
+msgstr ""
+
+#: ../../../modules/drivers/camera/CHANGELOG.rst:326
+msgid "Contributors: Adrian Cooke, Russell Toris, ¨Adrian"
+msgstr ""
+

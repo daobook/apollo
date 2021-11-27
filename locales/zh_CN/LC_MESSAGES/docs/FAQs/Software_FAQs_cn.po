@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:1
+msgid "软件 FAQ"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:3
+msgid "除了 Ubuntu 之外，能用其它操作系统吗？"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:5
+msgid ""
+"我们只对 Ubuntu 进行了测试，这意味着它是我们目前正式支持的唯一操作系统。欢迎开发 "
+"者尝试不同的操作系统，如果能够成功地使用它们，可以分享补丁与社区。"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:8
+msgid "在链接到 localhost：8888（DreamView）时有问题"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:10
+msgid ""
+"Dreamview 网页服务器由 Dreamview 节点提供。在访问 Dreamview 页面之前，您需要按 照[Apollo "
+"软件安装指南](../quickstart/apollo_software_installation_guide.md) 编 译 DOCKER "
+"容器内的系统（包括 Dreamview 节点）。一旦编译成功，Dreamview 节点将在 步骤 `bash "
+"scripts/bootstrap.sh` 中启动。"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:15
+msgid "因此，如果你不能访问 Dreamview，请检查："
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:17
+msgid ""
+"确保您的 Dreamview 进程正确运行。在最新版本中，如果 Dreamview 无法启动 ，`bash "
+"scripts/bootstrap.sh`会报告`dreamview: ERROR (spawn error)`。或使用命 令检查： `ps "
+"aux | grep dreamview`。"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:20
+msgid "确保地址和端口不被防火墙拦截。"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:21
+msgid ""
+"如果您是通过其它主机访问 Dreamview 页面，确保您使用的是 `<apollo_host_ip>:8888` 而不是 "
+"`localhost:8888`。"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:24
+msgid "我如何进行分步调试？"
+msgstr ""
+
+#: ../../../docs/FAQs/Software_FAQs_cn.md:26
+msgid "大多数 bug 可以通过日志记录找到（使用 AERROR, AINFO, ADEBUG）。如果需要一步一步 的调试，我们建议使用 GDB."
+msgstr ""
+

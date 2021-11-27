@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:1
+msgid "NovAtel Propak6 和 NovAtel IMU-IGM-A1 安装指南"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:3
+msgid "NovAtel ProPak6 是一个独立的GNSS接收器。它和一个单独的 NovAtel-supported IMU 协同工作提供定位功能。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:5
+msgid "IMU-IGM-A1是一个IMU（惯性计算单元）并与一个SPAN-enabled GNSS接收器例如SPAN ProPak6相互配对进行工作。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:7
+msgid "![novatel_pp6](images/Novatel_pp6.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:7
+msgid "novatel_pp6"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:9
+msgid "和GPS-IMU一同使用的GPS接收器/天线是 **NovAtel GPS-703-GGG-HV**。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:11
+msgid "![gps_receiver](images/gps_receiver.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:11
+msgid "gps_receiver"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:13
+msgid "安装GPS接收器和天线"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:15
+msgid ""
+"本安装指令描述了挂载、连接和为 **GPS NovAtel SPAN® ProPak6™** 与 **NovAtel IMU-IGM-A1** "
+"量取和设置控制杆尺寸的步骤"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:17
+msgid "安装需要的组件"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:19
+msgid "在安装过程中需要的组件包括："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:21
+msgid "NovAtel GPS SPAN ProPak6"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:22
+msgid "NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:23
+msgid "NovAtel GPS-703-GGG-HV Antenna"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:24
+msgid "NovAtel GPS-C006 Cable (将天线连接到GPS)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:25
+msgid "NovAtel 01019014 Main Cable (连接GPS到IPC上的串口)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:26
+msgid "Data Transport Unit (DTU) – 和4G路由器相同"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:27
+msgid "磁性适配器 (固定天线和DTU)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:28
+msgid "DB9 直通网线"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:30
+msgid "挂载"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:32
+msgid "使用者可以将装置 ProPak6 和IMU放置在车辆上的大部分位置，但是我们建议使用者采用下述的建议方案："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:34
+msgid "将ProPak6和IMU 并列放置并固定在车辆内部，同时使Y轴指向前方。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:35
+msgid "将NovAtel GPS-703-GGG-HV 天线挂载在车辆上方，或者车辆盖子的上面 ，如下图所示："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:37
+msgid "![gps_receiver_on_car](images/gps_receiver_on_car.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:37
+msgid "gps_receiver_on_car"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:39
+msgid "使用一个磁性适配器将天线牢固的固定在车辆盖子上。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:40
+msgid "打开车辆盖子，将天线的数据线放置在车辆盖子和车身之间的空闲区域。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:42
+msgid "配线"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:44
+msgid "执行如下步骤将ProPak6 GNSS接收器和IMU连接到Apollo系统："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:46
+msgid "使用为IMU-IGM-A1设备分配的分股数据线连接IMU Main端口和ProPak6 COM3/IMU端口。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:47
+msgid "使用一个USB-A-to-MicroUSB数据线连接IPC的USB端口和ProPak6的MicroUSB端口。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:48
+msgid "将IMU-IGM-A1分股数据线的其他端接口连接到车辆的电源系统。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:49
+msgid "连接GNSS天线到Propak6。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:50
+msgid "连接Propak6的电源线。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:52
+msgid "![wiring](images/wiring.png)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:52
+msgid "wiring"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:54
+msgid "量取控制臂长度"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:56
+msgid "参考下述步骤："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:58
+msgid "在量取尺寸前需要启动IPC"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:59
+msgid "当IMU和GPS天线处在正确位置时量取IMU到GPS天线的距离。IMU 的中点和天线的中点标记在设备的外部。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:60
+msgid "距离被测量并记录为X轴偏移、Y轴偏移和Z轴偏移。 坐标轴由IMU的位置确定。偏移量的误差应该被控制在一厘米以内以获取高精度的定位信息。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:62
+msgid "配置GPS和IMU"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:64
+msgid "下面展现了配置GPS和IMU的方法。该配置过程可以通过键入命令或从NovAtel Connect下载批量配置文件完成。"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:115
+msgid ""
+"**![warning_icon](images/warning_icon.png) WARNING：** "
+"基于对IMU和天线偏移值的实际测量数据修改 **<u>SETIMUTOANTOFFSET</u>** 行对应的参数"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:115
+msgid "warning_icon"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:117
+msgid "例如："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:123
+msgid "前3个数字表示控制杆的测距结果。后3个数字表示测量的不确定性（误差）"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:125
+msgid "参考资料"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:127
+msgid "获取更多关于NovAtel SPAN ProPak6和IMU-IGM-A1的信息，请参考："
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:128
+msgid ""
+"[NovAtel ProPak6 Installation & Operation "
+"Manual](https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:129
+msgid ""
+"[NovAtel IMU-IGM-A1 Product Page](https://www.novatel.com/products/span-"
+"gnss-inertial-systems/span-imus/span-mems-imus/imu-igm-a1/#overview)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:131
+msgid ""
+"[NovAtel GPS-703-GGG-HV](https://www.novatel.com/products/gnss-antennas"
+"/high-performance-gnss-antennas/gps-703-ggg-hv/)"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:133
+msgid "免责声明"
+msgstr ""
+
+#: ../../../docs/specs/Navigation/Propak_6_IMU-IGM-A1_Installation_Guide_cn.md:135
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

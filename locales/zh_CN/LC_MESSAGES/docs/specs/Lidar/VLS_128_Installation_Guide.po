@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:1
+msgid "Installation guide of Velodyne VLS-128"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:3
+msgid ""
+"Apollo master uses the latest 128 line LiDAR system **VLS-128** from "
+"Velodyne LiDAR, Inc."
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:5
+msgid "![](images/VLS_128.png)"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:7
+msgid "Key Features:"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:9
+msgid "360° Horizontal FOV"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:10
+msgid "+15° to -25° Vertical FOV"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:11
+msgid "Up to 300m Range"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:12
+msgid "Minimum Angular Resolution: 0.11°"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:13
+msgid "Up to 4 Return Modes"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:14
+msgid "Up to ~9.6 Million Points per Second"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:15
+msgid "Environmental Protection: IP67"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:16
+msgid "Connectors: RJ45 / M12"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:17
+msgid "High Volume, Automotive Grade Contract Pricing"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:20
+msgid "Mounting"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:22
+msgid ""
+"A customized mounting structure is required to successfully mount an "
+"VLS-128 LiDAR on top of a vehicle. This structure must provide rigid "
+"support to the LiDAR system while raising the LiDAR to a certain height "
+"above the ground under driving conditions. This mounted height should "
+"prevent the laser beams from the LiDAR being blocked by the front and/or "
+"rear of the vehicle. The actual height needed for the LiDAR depends on "
+"the design of the vehicle and the mounting point of the LiDAR is relative"
+" to the vehicle being used. The LiDAR must be mounted straight without "
+"tilting.  For a standard Lincoln MKZ, it is recommended that you mount "
+"the LiDAR at a minimum height of **1.8 meters** (from ground to the base "
+"of the LiDAR), to use the angle range for detection effectively."
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:29
+msgid "Wiring"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:31
+msgid ""
+"Each VLS-128 LiDAR includes a cable bundle to connect the LiDAR to the "
+"power supply, and the GPS timesync source."
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:33
+msgid "![](images/power_cable.jpg)"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:35
+msgid "**Connecting the LiDAR**"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:37
+msgid "Connect the power and signal cable to the matching ports on the LiDAR"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:39
+msgid "![](images/Connectors.jpg)"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:41
+msgid "References"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:43
+msgid ""
+"For additional information on Velodyne VLS-128, please refer to their  "
+"[website here](https://velodynelidar.com/vls-128.html)."
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:46
+msgid "Disclaimer"
+msgstr ""
+
+#: ../../../docs/specs/Lidar/VLS_128_Installation_Guide.md:48
+msgid "This device is `Apollo Platform Supported`"
+msgstr ""
+

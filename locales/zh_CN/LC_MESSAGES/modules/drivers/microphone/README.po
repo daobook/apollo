@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../modules/drivers/microphone/README.md:1
+msgid "microphone"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:2
+msgid "This serves as the audio driver folder"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:4
+msgid "Microphone Configuration"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:6
+msgid "**microphone_model**: currently only support `RESPEAKER`."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:7
+msgid "**chunk**: number of frames per buffer from hardware to memory each time."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:8
+msgid "**record_seconds**: number of seconds each time."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:9
+msgid "**channel_type**"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:10
+msgid "May be ASR (Audio Speech Recognition), RAW (Raw Audio Data) or Playback."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:11
+msgid "**sample_rate**"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:12
+msgid "Number of frames that are recorded per second."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:13
+msgid "**sample_width**"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:14
+msgid "Number of bytes per sample (1, 2, 3, or 4)."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:16
+msgid ""
+"For example, if there are 6 channels with 16000 Hz rate and 2 bytes "
+"width, then 4 second recording is"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:17
+msgid "Number of frames: 16000"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:18
+msgid "Number of \"samples\": 16000 * 6"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:19
+msgid ""
+"I use the term \"samples\" here just to make it easy for understanding, "
+"which is seldom used in this context."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:20
+msgid "Total size: 6 × 16,000 x 4 × 2 = 768,000 bytes."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:22
+msgid "You might see other metrics elsewhere as follows:"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:24
+msgid "**BIT DEPTH** same to sample_width except that the unit is bit."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:25
+msgid ""
+"**BIT RATE** number of bits encoded per second (kbps or k) -- for "
+"compressed format like mp3."
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:27
+msgid "Output"
+msgstr ""
+
+#: ../../../modules/drivers/microphone/README.md:28
+msgid "Raw microphone data (cyber channel `apollo/sensor/microphone`)."
+msgstr ""
+

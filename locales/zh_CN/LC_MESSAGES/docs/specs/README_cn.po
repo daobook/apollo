@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/specs/README_cn.md:1
+msgid "Apollo具体内容说明"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:3
+msgid "软件"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:4
+msgid "[Apollo 2.0软件系统架构](Apollo_2.0_Software_Architecture.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:5
+msgid "[Apollo 3.0软件系统架构](Apollo_3.0_Software_Architecture_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:6
+msgid "[Planning模块架构概述](Class_Architecture_Planning_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:8
+msgid "Apollo硬件开发平台"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:10
+msgid "我们强烈建议使用者在阅读硬件开发平台文档前浏览我们的免责声明。"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:12
+msgid "[Apollo传感器单元（ASU）](Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:13
+msgid "[摄像机](Camera/README.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:14
+msgid "[激光雷达](Lidar/README.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:15
+msgid "[雷达](Radar/README.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:16
+msgid "[导航](Navigation/README_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:17
+msgid "[IPC](IPC/Nuvo-6108GC_Installation_Guide_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:18
+msgid "[安装前的准备工作](prerequisite_software_installation_guide.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:20
+msgid "感知"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:22
+msgid "[Apollo 2.5感知系统](perception_apollo_2.5.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:23
+msgid "[Apollo 2.5传感器安装指南](Guideline_sensor_Installation_apollo_2.5.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:24
+msgid "[Apollo 3.0感知系统](perception_apollo_3.0_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:25
+msgid "[Apollo 3.0传感器安装指南](Guideline_sensor_Installation_apollo_3.0_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:26
+msgid "[激光雷达校准英文版](lidar_calibration.pdf)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:27
+msgid "[激光雷达校准中文版](lidar_calibration_cn.pdf)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:29
+msgid "HMI"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:30
+msgid "[Dreamview使用方法](dreamview_usage_table_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:32
+msgid "算法"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:33
+msgid "[三维障碍物感知英文版](3d_obstacle_perception.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:34
+msgid "[三维障碍物感知中文版](3d_obstacle_perception_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:35
+msgid "[二次规划路径样条优化](qp_spline_path_optimizer_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:36
+msgid "[二次规划st速度样条优化](qp_spline_st_speed_optimizer_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:37
+msgid "[参考线平滑设定](reference_line_smoother_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:38
+msgid "[交通信号灯感知](traffic_light_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:40
+msgid "其他通用知识"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:41
+msgid "[坐标系统](coordination_cn.md)"
+msgstr ""
+
+#: ../../../docs/specs/README_cn.md:42
+msgid "[Apollo安全更新SDK用户指南](apollo_secure_upgrade_user_guide_cn.md)"
+msgstr ""
+

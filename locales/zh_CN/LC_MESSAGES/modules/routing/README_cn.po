@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../modules/routing/README_cn.md:1
+msgid "路由"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:3
+msgid "介绍"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:5
+msgid "路由模块根据请求生成高级导航信息。"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:7
+msgid "路由模块依赖于路由拓扑文件，通常称为Apollo中的routing_map.*。路由地图可以通过命令来生成。"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:11
+msgid "输入"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:13
+msgid "地图数据"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:14
+msgid "路由请求（开始和结束位置）"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:15
+msgid "输出"
+msgstr ""
+
+#: ../../../modules/routing/README_cn.md:17
+msgid "路由导航信息"
+msgstr ""
+

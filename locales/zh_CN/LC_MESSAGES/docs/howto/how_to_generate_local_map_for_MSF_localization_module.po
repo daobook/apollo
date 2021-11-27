@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:1
+msgid "How to Generate Local Map For MSF Localization Module"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:3
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:4
+msgid ""
+"Download source code of Apollo from "
+"[GitHub](https://github.com/ApolloAuto/apollo)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:5
+msgid ""
+"Follow the tutorial to set up [docker "
+"environment](../quickstart/apollo_software_installation_guide.md)."
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:6
+#, python-format
+msgid ""
+"~~Download localization data from the [Multi-Sensor Fusion Localization "
+"Data](http://data.apollo.auto/help?name=sensor%20data&data_key=multisensor&data_type=1&locale"
+"=en-us&lang=en)（US only).~~"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:7
+msgid ""
+"Download localization dataset: please contact Yao Zhou, "
+"zhouyao@baidu.com, to request the dataset. Requests need contain the "
+"following: (1) Email address and affiliation (business or school); (2) "
+"Application purpose."
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:9
+msgid "Build Apollo"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:11
+msgid ""
+"First check to make sure you are in development docker container before "
+"you proceed. Now you will need to build from source:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:20
+msgid "Generate Localization Map"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:21
+msgid ""
+"In the downloaded data, look for a folder named *apollo3.5*. Let's assume"
+" the path of this folder to be DATA_PATH."
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:27
+msgid ""
+"After the script is finished, you can find the produced localization map "
+"named *local_map* in the output folder."
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:29
+msgid ""
+"The scripts also stores the visualization of each generated map node in "
+"the map's subfolder named `image`. The visualization of a map node filled"
+" with LiDAR data looks like this:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:31
+msgid "![1](images/msf_localization/map_node_image.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_generate_local_map_for_MSF_localization_module.md:31
+msgid "1"
+msgstr ""
+

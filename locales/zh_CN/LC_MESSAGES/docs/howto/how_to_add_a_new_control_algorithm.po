@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:1
+msgid "How to Add a New Control Algorithm"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:3
+msgid ""
+"The control algorithm in Apollo consists of one or more controllers that "
+"can be easily changed or replaced with different algorithms. Each "
+"controller outputs one or more control commands to `CANbus`. The default "
+"control algorithm in Apollo contains a lateral controller (LatController)"
+" and a longitudinal controller (LonController). They are responsible for "
+"the vehicle control in the lateral and longitudinal directions "
+"respectively."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:5
+msgid ""
+"The new control algorithm does not have to follow the default pattern, "
+"e.g., one lateral controller + one longitudinal controller. It could be a"
+" single controller or a combination of any number of controllers."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:7
+msgid "Complete the following task sequence to add a new control algorithm:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:9
+msgid "Create a controller"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:10
+msgid "Add the new controller configuration into the `control_config` file"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:11
+msgid "Register the new controller"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:13
+msgid "The steps are elaborated below for better understanding:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:15
+msgid "Create a Controller"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:17
+msgid ""
+"All controllers must inherit the base class `Controller`, which defines a"
+" set of interfaces. Here is an example of a controller implementation:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:42
+msgid "Add a New Controller Configuration to the control_config File"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:44
+msgid "To add the new controller configuration complete the following steps:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:46
+msgid ""
+"Define a `proto` for the new controller configurations and parameters "
+"based on the algorithm requirements. An example `proto` definition of "
+"`LatController` can be found at:  "
+"`modules/control/proto/lat_controller_conf.proto`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:47
+msgid ""
+"After defining the new controller `proto`, e.g., "
+"`new_controller_conf.proto`, type the following:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:60
+msgid ""
+"Update `control_conf.proto` at  "
+"`modules/control/proto/control_conf.proto`:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:66
+msgid "Update `ControllerType` in this file:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:76
+msgid ""
+"When the `protobuf` definition is complete, update the control "
+"configuration file accordingly at "
+"`modules/control/conf/control_conf.pb.txt`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:82
+msgid "Register the New Controller"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:84
+msgid ""
+"To activate a new controller in the Apollo system, register the new "
+"controller in `ControllerAgent`.  Go to:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:86
+msgid "modules/control/controller/controller_agent.cc"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:88
+msgid "Type your registration information in the shell. For example:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_control_algorithm.md:98
+msgid ""
+"After this code update sequence is complete, you new controller should "
+"take effect in the Apollo system."
+msgstr ""
+

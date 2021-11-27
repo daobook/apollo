@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:1
+msgid "DreamView FAQs"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:3
+msgid "I had difficulty connecting to <http://localhost:8888> (Dreamview Web UI)."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:5
+msgid ""
+"The Dreamview web server is provided by the dreamview node (A node is an "
+"executable in CyberRT terminology). Before accessing Dreamview Web UI, "
+"make sure Apollo is built within Apollo development Docker container "
+"following [Apollo Software Installation "
+"Guide](../quickstart/apollo_software_installation_guide.md). Once built, "
+"dreamview node will be started by running `bash scripts/bootstrap.sh`."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:12
+msgid "So if you can not access Dreamview, please check:"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:14
+msgid ""
+"Make sure you have the Dreamview process running correctly. In the latest"
+" version, `bash scripts/bootstrap.sh` will report `dreamview: ERROR "
+"(spawn error)` if dreamview fails to start. You can also check with "
+"command: `ps aux | grep dreamview`."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:18
+msgid "Make sure the address and port are not blocked by the firewall."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:19
+msgid ""
+"Make sure you're using `<apollo_host_ip>:8888` instead of "
+"`localhost:8888` if you are accessing the Dreamview UI through another "
+"host."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:24
+msgid "Dreamview does not open up if I install more than 1 version of Apollo?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:26
+msgid ""
+"This issue occured because of port conflict error. Even though you setup "
+"two different docker environments, both of them are still trying to use "
+"port 8888 on your machine, therefore causing a port conflict issue. If "
+"you'd like to run both versions at the same time, please make sure "
+"different ports are set."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:31
+msgid "To do so,"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:33
+msgid ""
+"Open `dreamview.conf` file under modules/dreamview/conf add "
+"`--server_ports=<PORT_NUMBER>` to the end of the file. Ex: "
+"--flagfile=modules/common/data/global_flagfile.txt --server_ports=5555"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:36
+msgid "Restart apollo"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:38
+msgid ""
+"This way, dreamview can be accessed from http://localhost:<PORT_NUMBER> "
+"(http://localhost:5555 for this example)"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:43
+msgid "Dreamview is too slow. How do I resolve it?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:45
+msgid ""
+"If you feel Dreamview is taking too long to load/work, please run both "
+"the [WebGL reports](http://webglreport.com/?v=1). If there are any "
+"missing drivers, please install them"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:51
+msgid "How to draw anything in Dreamview (e.g. an arrow)"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:53
+msgid ""
+"Dreamview uses https://github.com/mrdoob/three.js as graphics library. "
+"You can modify the frontend code to draw an arrow using the corresponding"
+" API of the library. After that you need to run a `./apollo.sh build_fe` "
+"to compile."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:59
+msgid "How can I test planning algorithms offline?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:61
+msgid ""
+"Use dreamview and enable sim_control on dreamview to test your planning "
+"algorithm."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:66
+msgid "Adding a new point of interest permanently in the Dreamview interface"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:68
+msgid ""
+"There's a default_end_way_point file for each map to specify point of "
+"interest, you can refer to [the following "
+"file](../../modules/map/data/demo/default_end_way_point.txt)."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:74
+msgid "What's the function of sim_control in the backend of dreamview"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:76
+msgid ""
+"It simulates a SDC's control module, and moves the car based on planning "
+"result. This is a really convenient way to visualize and test planning "
+"module"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:81
+msgid "How do I turn on Sim Control?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:83
+msgid ""
+"Purpose of sim control: drive the car based on the planning trajectory. "
+"Good for debugging planning algorithms."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:86
+msgid ""
+"**Apollo 2.5 or after**: simply turning on the SimControl switch as seen "
+"in the image below:"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:89
+msgid "![](images/sim_control_2.5.png)"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:91
+msgid ""
+"**Apollo 2.0 or older**: you would need to enable the sim control "
+"manually, which can be performed as follows:"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:94
+msgid "Open `modules/dreamview/conf/dreamview.conf`"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:95
+msgid "Add **“--enable_sim_control=true”** to the second line of the file"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:96
+msgid "Restart apollo using our bootstrap script"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:103
+msgid ""
+"**Please note**, planning and routing modules (see image below) should be"
+" ON while using SimControl. To navigate the ego-car, select either “route"
+" editing” or “default routing” from the side bar to define a route. You "
+"can turn the sim_control on and off from the toggle. However, a new "
+"routing request is needed each time the sim_control is restarted. "
+"![](images/sim_control_2.0.png)"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:111
+msgid "I want to plot my own graphs for my algorithms, where should I go?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:113
+msgid ""
+"Go to the PnC Monitor section in [Dreamview "
+"Doc](../specs/dreamview_usage_table.md)."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:118
+msgid "What is Dreamland?"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:120
+msgid ""
+"Dreamland is Apollo's web-based simulation platform. Based on an enormous"
+" amount of driving scenario data and large-scale cloud computing "
+"capacity, Apollo simulation engine creates a powerful testing environment"
+" for the development of an autonomous driving system, from algorithms to "
+"grading, and then back to improved algorithms. It enables the developers "
+"and start-ups to run millions of miles of simulation daily, which "
+"dramatically accelerates the development cycle."
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:127
+msgid ""
+"To access Dreamland, please visit [our Simulation "
+"website](http://apollo.auto/platform/simulation.html) and join now!"
+msgstr ""
+
+#: ../../../docs/FAQs/Dreamview_FAQs.md:133
+msgid "**More DreamView FAQs to follow.**"
+msgstr ""
+

@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:1
+msgid "How to Add a New CAN Card"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:4
+msgid ""
+"The Controller Area Network (CAN) is a network used intensively in many "
+"microcontrollers and devices to transfer data between devices without the"
+" assistance of a host computer."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:6
+msgid ""
+"The default CAN card used in Apollo is the **ESD CAN-PCIe card**. You can"
+" add a new CAN card using the steps below:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:8
+msgid "Adding a New CAN Card"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:9
+msgid "Complete the following required task sequence to add a new CAN card:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:11
+msgid "Implement the `CanClient` class of the new CAN card."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:12
+msgid "Register the new CAN card in `CanClientFactory`."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:13
+msgid "Update the config file."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:15
+msgid ""
+"The steps below show how you can add a new CAN card -- EXAMPLE CAN card "
+"to your stack."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:17
+msgid "Step 1"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:19
+msgid ""
+"Let us Implement the CanClient Class of the New CAN Card Use the "
+"following code to implement the specific `CANClient` class:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:105
+msgid "Step 2"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:106
+msgid ""
+"To register the New CAN Card in CanClientFactory, add the following code "
+"to `CanClientFactory`:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:119
+msgid "Step 3"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:121
+msgid ""
+"Next, you would need to update the config File Add the EXAMPLE_CAN into "
+"`/modules/drivers/canbus/proto/can_card_parameter.proto`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:134
+msgid "Update `/modules/canbus/conf/canbus_conf.pb.txt`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_a_new_can_card.md:146
+msgid ""
+"If you use radar, like Conti radar in apollo, its' canbus configuration "
+"file should alse be modified. Update "
+"`/modules/drivers/radar/conti_radar/conf/conti_radar_conf.pb.txt`"
+msgstr ""
+

@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:1
+msgid "How to Add a New External Dependency"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:3
+msgid ""
+"The bazel files about third-party dependencies are all in the folder "
+"[third_party](../../third_party) which has a structure as following."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:33
+msgid ""
+"For each external denpendency library, there is a seperate folder that "
+"contains a `BUILD` file with the contents of:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:42
+msgid "Further, libraries can be divided into several categories."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:44
+msgid "1. Library that supports bazel"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:46
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:122
+msgid "For example,"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:48
+msgid "[Abseil](https://github.com/abseil/abseil-cpp)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:49
+msgid "[Google Test](https://github.com/google/googletest)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:51
+msgid "Import it into workspace.bzl:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:67
+msgid "2. Library with handcrafted BUILD file"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:69
+msgid "It's pretty common to do so. But it needs very solid knowledge with bazel."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:71
+msgid "[workspace.bzl](../../third_party/yaml_cpp/workspace.bzl):"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:91
+msgid "[yaml.BUILD](../../third_party/yaml_cpp/yaml.BUILD):"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:113
+msgid "3. Library which is pre-installed into the operating system"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:115
+msgid ""
+"It's NOT recommended, as it breaks the rule of a self-contained bazel "
+"WORKSPACE. However, some libraries are very complicated to build with "
+"bazel, while the operating system, such as Ubuntu, provides easy "
+"installation."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:119
+msgid ""
+"Please do raise a discussion before doing so. Then we can add it to the "
+"docker image."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:124
+msgid "[Poco](https://github.com/pocoproject/poco)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:126
+msgid "[workspace.bzl](../../third_party/poco/workspace.bzl):"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:140
+msgid "[poco.BUILD](../../third_party/poco/poco.BUILD):"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:159
+msgid ""
+"Note that in such case, you should include the headers like `#include "
+"<Poco/SharedLibrary.h>` instead of `#include \"Poco/SharedLibrary.h\"` as"
+" they are in the system path."
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:163
+msgid "Note"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:165
+msgid ""
+"For all of the above types of external dependencies, we also need to add "
+"them into [tools/workspace.bzl](../../tools/workspace.bzl)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:169
+msgid "References"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:171
+msgid ""
+"For a detailed description on adding a dependency with Bazel, refer to "
+"the following:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:174
+msgid ""
+"[Workspace "
+"Rules](https://bazel.build/versions/master/docs/be/workspace.html)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_add_an_external_dependency.md:175
+msgid ""
+"[Working with external "
+"dependencies](https://docs.bazel.build/versions/master/external.html)."
+msgstr ""
+

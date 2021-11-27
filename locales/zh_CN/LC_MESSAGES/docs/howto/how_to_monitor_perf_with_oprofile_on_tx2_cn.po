@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:1
+msgid "ff"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:3
+msgid ""
+"oprofile是运行在linux系统上对应用程序进行性能测试的工具。linux系统中已经自带了oprofile的相关工具，但是oprofile "
+"module在arm平台没有支持，所以我们需要手动安装oprofile。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:5
+msgid "oprofile对多线程支持良好，可以对函数调用次数及源码进行分析，所以非常适合在TX2上使用。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:7
+msgid "下载"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:8
+msgid "下载最新版本的oprofile"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:14
+msgid "安装oprofile"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:21
+msgid "测试"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:22
+msgid "安装好后，执行`operf`命令查看能否正常获取cpu信息。如果出现如下报错："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:24
+msgid "`unable to open /sys/devices/system/cpu/cpu0/online`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:26
+msgid "这是因为默认TX2只开启了4个CPU，有2个CPU处于未开启状态。 执行如下命令开启额外的两个CPU："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:32
+msgid "使用方法"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:33
+msgid ""
+"oprofile提供了多种命令，通常情况下我们使用比较多的是`operf`，`opreport`和`opannotate`。 "
+"以测试perception模块为例。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:35
+msgid "1.修改`script/apollo_bash.sh`脚本，文件第239行的`nohup`后面增加`operf`指令，如图："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:37
+msgid "![operf_command](images/TX2/operf_command.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:37
+msgid "operf_command"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:39
+msgid "2.使用脚本如`./script/perception.sh`启动perception模块"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:41
+msgid "这样operf就会进行perception进程的运行数据统计。使用任意方法停止perception进程即可停止数据收集。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:43
+msgid "测试数据查看"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:44
+msgid "停止perception进程后，在当前文件夹下将生成文件夹oprofile_data。 使用指令`opreport`查看模块的总体占比："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:49
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:61
+msgid "结果示例为："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:51
+msgid "![opreport_](images/TX2/opreport_.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:51
+msgid "opreport_"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:53
+msgid "使用`opreport`查看函数占比："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:57
+msgid "因为输出信息很多，所以需要将上述结果保存为文本文件"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:63
+msgid "![opreport_file](images/TX2/opreport_file.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:63
+msgid "opreport_file"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:65
+msgid "使用`opannotate`查看详细的源码数据统计："
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:70
+msgid "注意事项：同时只能运行一个operf进程，所以对perception进行数据统计时无法再用operf启动其他模块。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:72
+msgid ""
+"oprofile官方网站： "
+"[http://oprofile.sourceforge.net/news/](http://oprofile.sourceforge.net/news/)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_monitor_perf_with_oprofile_on_tx2_cn.md:75
+msgid ""
+"oprofile用户手册： "
+"[http://oprofile.sourceforge.net/doc/index.html](http://oprofile.sourceforge.net/doc/index.html)"
+msgstr ""
+

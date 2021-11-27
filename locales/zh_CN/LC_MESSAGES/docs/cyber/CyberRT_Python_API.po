@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 10:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:1
+msgid "Cyber RT Python"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:3
+msgid "1. Background"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:5
+msgid ""
+"The core functions of Cyber RT are developed in C++. We also provide more"
+" python interfaces to help developers build their own utilities for "
+"specific projects."
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:7
+msgid "2. Cyber RT Python Interfaces"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:9
+msgid ""
+"The python interfaces of Cyber RT are wrapper the corresponding C++ "
+"interfaces. The implementation doesn't rely on other third-party tools, "
+"e.g. swig, which makes it easier to maintain."
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:11
+msgid "3. Overview of Python Interfaces in Cyber RT"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:13
+msgid "So far, the python interfaces covers:"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:15
+msgid "access the information of channels"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:16
+msgid "server/client communication"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:17
+msgid "query informatoin in record files"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:18
+msgid "read and write from/to record files"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:19
+msgid "Time/Duration/Rate related operations"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:20
+msgid "Timer"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:22
+msgid "3.1 Read/Write of Channels"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:24
+msgid "Steps shown as below:"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:25
+msgid "First create a Node；"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:26
+msgid "Create corresponding reader or writer;"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:27
+msgid "If write to a channel, use write interface in writer."
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:28
+msgid ""
+"If read from a channel, use the spin interface in the node, and process "
+"the messages in your callback function"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:30
+#: ../../../docs/cyber/CyberRT_Python_API.md:91
+msgid "The interfaces are shown below:"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:79
+msgid "3.2 Record Interfaces"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:81
+msgid "Read from record："
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:83
+msgid "Create a RecordReader;"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:84
+msgid "Read messages from Record;"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:86
+msgid "Write to record："
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:88
+msgid "Create a RecordWriter"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:89
+msgid "Write messages to record；"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:179
+msgid "3.3 Time Interfaces"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:203
+msgid "3.4 Timer Interfaces"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:223
+msgid "4. Examples"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:225
+msgid "4.1 Read from Channel (in cyber/python/cyber_py3/examples/listener.py)"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:258
+msgid "4.2 Write to Channel(in cyber/python/cyber_py3/examples/talker.py)"
+msgstr ""
+
+#: ../../../docs/cyber/CyberRT_Python_API.md:297
+msgid ""
+"4.3 Read and Write Messages from/to Record File(in "
+"cyber/python/cyber_py3/examples/record.py)"
+msgstr ""
+
