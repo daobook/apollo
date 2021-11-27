@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../cyber/examples/common_component_example/README.md:1
+msgid "Common Component Example of the CyberRT framework"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:4
+msgid "How to Build"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:10
+msgid "Or if you use Bazel directly,"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:16
+msgid "How to Run"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:18
+msgid "Enable logging to stderr"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:20
+msgid "Change `GLOG_alsologtostderr` from `0` to `1` in `cyber/setup.bash`"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:21
+msgid "Run `source cyber/setup.bash` in current console."
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:27
+msgid "Start the sample component"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:33
+msgid "Or"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:39
+msgid "Start the writer nodes"
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:41
+msgid "Open two more terminals, run the following commands respectively."
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:47
+msgid "and ..."
+msgstr ""
+
+#: ../../../cyber/examples/common_component_example/README.md:53
+msgid ""
+"Now you should see console output of the `CommonComponentSample` example "
+"from the first terminal."
+msgstr ""
+

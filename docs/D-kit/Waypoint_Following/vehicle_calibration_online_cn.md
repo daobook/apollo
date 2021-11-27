@@ -211,7 +211,7 @@
 
 ## 标定数据采集
 
-### 准备
+## 准备
 
 完成配置文件修改后，将车辆移动至适合标定的场地后，启动apollo，并执行以下命令：
 ```
@@ -220,7 +220,7 @@
 ```
 在浏览器打开`DreamView(http://localhost:8888)`，进行下述步骤：
 
-##### 1、选择模式，选择车型
+### 1、选择模式，选择车型
 
 在`--setup mode--`内，选择`vehicle calibration`（车辆标定）选项， 在`--vehicle--`选择车型，根据车辆铭牌信息选择对应的车型(见下表)，如使用Apollo D-KIT Lite，则在`--vehicle--`选择车型`Dev Kit`；
 
@@ -234,7 +234,7 @@
 
 ![vehicle_calibration_select_vehicle](images/vehicle_calibration_select_vehicle.png)
 
-##### 2、启动标定所需要的软件模块
+### 2、启动标定所需要的软件模块
 
 在进行标定前，需要采集包含车辆底盘、定位信息的数据作为输入，可以通过`DreamView`界面上的模块开关启动相关模块软件，在`DreamView`界面左侧边栏选择`Module Controller`标签，然后在主界面启动`Canbus`、`GPS`、`Localization`模块，如下图所示：
 
@@ -244,7 +244,7 @@
 
 ![vehicle_calibration_check_components.png](images/vehicle_calibration_check_components.png)
 
-##### 3、进入采集界面
+### 3、进入采集界面
 
 在确认上一步已经启动的软件模块状态`OK`后，点击`DreamView`界面左侧边栏`TASK`标签，在`Others`区域，打开`Fuel Client`开关启动云服务采集界面，然后在界面右上侧选择`Go Straight`标签，查看
 
@@ -252,7 +252,7 @@
 
 ![vehicle_calibration_fuel_cleint](images/vehicle_calibration_fuel_cleint.png)
 
-### 开始采集
+## 开始采集
 
 在`DreamView`界面点击左侧边栏，选择`Module Controller`，这时点击`Recorder`开关，开始录制标定数据，这时Apollo系统就开始录制记录车辆标定数据了。
 
@@ -277,7 +277,7 @@
 
 ## 标定任务提交
 
-#### 1. 上传预处理后的数据至BOS
+### 1. 上传预处理后的数据至BOS
 
 在上传数据之前，请注意以下几点：
 
@@ -309,7 +309,7 @@
 
 ![vehicle_calibration_upload_bos](images/vehicle_calibration_upload_bos.png)
 
-#### 2. 提交标定任务
+### 2. 提交标定任务
 
 首先进入[Apollo云服务任务页面](http://bce.apollo.auto/login)，选择使用百度账号登录，在左侧框中选择`Apollo Fuel-->任务`，点击`新建任务`，然后在下拉框内选择`车辆标定`，然后输入相应要评测的数据路径，在`输入数据路径`中填写到根目录，在本示例中填写为`task001`（因为“task001”在BOS的根目录）。如下图所示：
 
@@ -321,11 +321,11 @@
 
 ![vehicle_calibration_submit_task4](images/vehicle_calibration_submit_task4.png)
 
-#### 3. 获取标定结果及标定表
+### 3. 获取标定结果及标定表
 
 - 云标定任务完成后，将在注册的邮箱（请与商务联系）中收到一封标定结果邮件。如果标定任务成功，将包含标定表及标定结果图片。
 
-#### 4. 将标定表写入控制配置文件中
+### 4. 将标定表写入控制配置文件中
 
 - 生成的标定表以 `车型_calibration_table.pb.txt`命名，将标定表内的标定数据为calibration_table字段，把全部数据拷贝替换至`apollo/modules/calibration/data/dev_kit/control_conf.pb.txt`下对应的`lon_controller_conf`字段下面的`calibration_table`段内。
 
@@ -372,7 +372,7 @@
 
 ## 常见问题
 
-#### 1.在进行车辆标定时，收到如下报错邮件，数据完整性检查出现错误
+### 1.在进行车辆标定时，收到如下报错邮件，数据完整性检查出现错误
 ![vehicle_calibration_online_error1](images/vehicle_calibration_online_error1.png)
 
 排查方法：

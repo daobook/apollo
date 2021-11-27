@@ -1,22 +1,24 @@
+# ff
+
 oprofile是运行在linux系统上对应用程序进行性能测试的工具。linux系统中已经自带了oprofile的相关工具，但是oprofile module在arm平台没有支持，所以我们需要手动安装oprofile。
 
 oprofile对多线程支持良好，可以对函数调用次数及源码进行分析，所以非常适合在TX2上使用。
 
-#### 下载
+## 下载
 下载最新版本的oprofile
 ```bash
 $ wget http://prdownloads.sourceforge.net/oprofile/oprofile-1.4.0.tar.gz
 $ tar zxvf oprofile-1.4.0.tar.gz
 $ cd oprofile-1.4.0
 ```
-#### 安装oprofile
+## 安装oprofile
 ```bash
 $ sudo apt-get install libpopt-dev libiberty-dev binutils-dev
 $ ./configure
 $ make -j4
 $ sudo make install
 ```
-#### 测试
+## 测试
 安装好后，执行`operf`命令查看能否正常获取cpu信息。如果出现如下报错：
 
 `unable to open /sys/devices/system/cpu/cpu0/online`
@@ -27,7 +29,7 @@ $ sudo make install
 $ sudo nvpmodel -m 0
 ```
 
-#### 使用方法
+## 使用方法
 oprofile提供了多种命令，通常情况下我们使用比较多的是`operf`，`opreport`和`opannotate`。
 以测试perception模块为例。
 * 1.修改`script/apollo_bash.sh`脚本，文件第239行的`nohup`后面增加`operf`指令，如图：
@@ -38,7 +40,7 @@ oprofile提供了多种命令，通常情况下我们使用比较多的是`operf
 
 这样operf就会进行perception进程的运行数据统计。使用任意方法停止perception进程即可停止数据收集。
 
-#### 测试数据查看
+## 测试数据查看
 停止perception进程后，在当前文件夹下将生成文件夹oprofile_data。
 使用指令`opreport`查看模块的总体占比：
 ```bash

@@ -13,7 +13,7 @@ We will take
 as an example to show you how to document code the Doxygen way. Note that
 Javadoc style is preferred rather than Qt style for comment blocks.
 
-### File
+## File
 
 ```c++
 /**
@@ -22,7 +22,7 @@ Javadoc style is preferred rather than Qt style for comment blocks.
  */
 ```
 
-### Namespace
+## Namespace
 
 ```
 /**
@@ -35,7 +35,7 @@ namespace common {
 namespace math {
 ```
 
-### Class
+## Class
 
 ```
 /**
@@ -53,7 +53,7 @@ class KalmanFilter {
  ...
 ```
 
-### Function
+## Function
 
 ```
   /**
@@ -75,7 +75,7 @@ class KalmanFilter {
 
 ```
 
-### Public / protected class member variables
+## Public / protected class member variables
 
 ```
  protected:

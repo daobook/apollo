@@ -1,11 +1,11 @@
-## How to troubleshoot ESD CAN device?
+# How to troubleshoot ESD CAN device?
 
 
-### Problem
+## Problem
 
 Can’t communicate through ESD CAN card.
 
-### Troubleshooting Steps:
+## Troubleshooting Steps:
 1. Make sure CAN driver (kernel module) is loaded, run: ```lsmod |grep can```; you should see information regarding the kernel driver such as version number if CAN driver has been loaded.
 2. Make sure CAN device is present and has the right permission set, run: ```ls -l /dev/can0```.
 3. Check kernel log (run ```dmesg |grep -i can```) and syslog (run ```grep -i can /var/log/syslog```), see if there are error messages related to CAN.

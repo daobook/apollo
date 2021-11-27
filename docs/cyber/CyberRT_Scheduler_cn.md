@@ -1,3 +1,4 @@
+# Cyber RT 调度
 ## 1. 调度策略
 
 调度系统调度策略分为classic策略和choreography策略。  
@@ -85,8 +86,8 @@ scheduler_conf {
 例如拓扑结构为下图所示，对应2.1中的配置文件，那么A、B、C、D任务在第一个group中执行，E在第二个group中执行，对于没有出现在配置中的任务，比如F默认会放到第一个group中执行。
 而且配置中我们对于任务进行了优先级设置，A、B、C、D优先级依次增大，正好对应下图的拓扑依赖关系，在链路中越靠后的任务优先级越高。这样设置的目的是解决任务优先级反转的问题。
 
-<img src="images/topo_sched.png" width="30%" height="30%" />
-
+<!-- <img src="images/topo_sched.png" width="30%" height="30%" /> -->
+<img src="images/topo_sched.png" />
 
 ## 3. choreography策略
 ### 3.1 choreography策略配置示例

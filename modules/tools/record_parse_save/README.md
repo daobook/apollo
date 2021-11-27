@@ -1,6 +1,6 @@
-## Apollo cyber-record file parser (Python based)
+# Apollo cyber-record file parser (Python based)
 
-#### Introduction
+## Introduction
 
 This tool presents multiple examples of how to parse data from a record file and
 save using predefined format. The tool has been built on example provided within
@@ -15,16 +15,16 @@ The samples provided here illustrate cases for, parsing data from:
 - camera: based on
   [Leopard Imaging Inc's Camera - LI-USB30-AZ023WDRB](../../../docs/specs/Camera/Leopard_Camera_LI-USB30-AZ023WDR__Installation_Guide.md)
 
-#### Files and functions:
+## Files and functions:
 
 The files/functions provided are as follows:
 
-- [`record_parse_save.py`](./record_parse_save.py): main function that parses
+- {file}`record_parse_save.py`: main function that parses
   record files from and saves extracted data to specified location
-- [`parse_lidar.py`](./parse_lidar.py): function to parse lidar data
-- [`parse_radar.py`](./parse_radar.py): function to parse radar data
-- [`parse_camera.py`](./parse_camera.py): function to parse camera data
-- [`parser_params.yaml`](./parser_params.yaml): YAML file with details of
+- {file}`parse_lidar.py`: function to parse lidar data
+- {file}`parse_radar.py`: function to parse radar data
+- {file}`parse_camera.py`: function to parse camera data
+- {file}`parser_params.yaml`: YAML file with details of
   record-file location, where the output files should be saved and what sensor
   data should be parsed along with specific channel-names associated with
   particular sensor, it's configuration and it's location.
@@ -38,11 +38,13 @@ The files/functions provided are as follows:
 
 ![alt text](./images/sample_cyber_info.jpg)
 
-#### Dependency
+## Dependency
 
-> sudo pip install pyyaml
+```sh
+sudo pip install pyyaml
+```
 
-#### How-to-use:
+## How-to-use:
 
 - It is assumed that the user is within Apollo docker environment and has
   successfully built it. Please check documentation on
@@ -57,7 +59,7 @@ The files/functions provided are as follows:
 - parsed sensor data will be saved in new folder along with associated capture
   or scan timestamps in a text file.
 
-#### NOTES
+## NOTES
 
 - In the example setup here, parsed data is saved within the parent folder
   containing the records-file's folder. Every saved file has associated

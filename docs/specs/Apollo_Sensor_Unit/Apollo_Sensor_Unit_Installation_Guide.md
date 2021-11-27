@@ -1,4 +1,4 @@
-## Guide for Apollo Sensor Unit
+# Guide for Apollo Sensor Unit
 
 Apollo Sensor Unit (ASU) is designed to work with Industrial PC (IPC) to implement sensor fusion, vehicle control and network access in Apollo's autonomous driving platform.
 
@@ -10,16 +10,16 @@ In addition, Lidar connectivity via Ethernet, WWAN gateway via 4G LTE module, an
 
 ![ASU_pic](images/ASU_pic.jpg)
 
-### System Connectors
+## System Connectors
 
-#### Front Panel Connectors
+### Front Panel Connectors
 
 1. External GPS PPS / GPRMC Input Port
 2. FAKRA Camera Data Input Port (5 ports)
 3. 100 Base-TX/1000 Base-T Ethernet Port (2 Ports)
 4. KL-15 (AKA Car Ignition) Signal Input Port
 
-#### Rear Panel Connectors
+### Rear Panel Connectors
 
 1. General purpose UART port(reserved)
 2. External PCI Express Port (Support X4 or X8) For connections to IPC, please use EXTN port.
@@ -28,11 +28,11 @@ In addition, Lidar connectivity via Ethernet, WWAN gateway via 4G LTE module, an
 5. CAN Bus (4 Ports)
 6. Main Power Input Connector
 
-### Purchase Channels
+## Purchase Channels
 
 The Apollo Sensor Unit is currently only provided to our Partners and certain developers. Questions regarding the availability and access to ASU should be directed to  apollo-hw@baidu.com
 
-### Installation
+## Installation
 
 1. Power Cable
 

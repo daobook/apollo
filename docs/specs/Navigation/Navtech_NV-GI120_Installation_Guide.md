@@ -1,4 +1,4 @@
-## Guide for Navtech NV-GI120
+# Guide for Navtech NV-GI120
 
 ```
 NV-GI120 is a position and orientation system for automatic drive of NAV Technology. With the
@@ -13,7 +13,7 @@ for post-processing high-precision resolution.
 
 NV-GI120 integrates the GNSS receiver and MEMS IMU device into a compact package to provide high precision localization  results. It supports dual antenna configuration and multi-frequency reception. 
 
-### Installation
+## Installation
 
 ![navtech_pic](images/navtech_cables.png)
 

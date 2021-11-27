@@ -1,10 +1,10 @@
-## Pandora安装指南
+# Pandora安装指南
 
 Pandora是一款用于自动驾驶汽车环境感应的一体化传感器套件。 它将摄像头，LiDAR和数据处理能力集成到同一模块中，具有同步和校准解决方案。
 
 ![lidar_image](images/hesai_pandora.png)
 
-#### 安装
+## 安装
 
 Pandora套件需定制的结构才能安装在车辆顶部。该结构必须能为Pandora系统提供刚性支撑，同时在驾驶条件下将Pandora升高到地面以上的某个高度。该高度应保证来自Pandora的激光束不被车辆的前部和/或后部阻挡。Pandora所需的实际高度取决于车辆的设计和其相对于车辆的安装点。在规划安装高度和角度时，请仔细阅读手册以获取更多详细信息。
 
@@ -12,7 +12,7 @@ Pandora套件需定制的结构才能安装在车辆顶部。该结构必须能�
 如果由于某种原因，LiDAR光束必须被车辆阻挡，则在处理接收的数据时可能需要应用滤波器来移除这些点。
 ```
 
-#### 布线
+### 布线
 
 每个Pandora都包括一个电缆连接盒和一个相应的电缆束，用于连接电源、计算机（以太网）和GPS时间同步源。
 
@@ -41,7 +41,7 @@ Pandora套件需定制的结构才能安装在车辆顶部。该结构必须能�
    | 5     | Output       | GND for external GPS unit                       |
    | 6     | Output       | TX serial port for external GPS unit            |
 
-#### 配置
+## 配置
 
 详细的配置步骤可以在Hesai Technologies官方网站上提供的手册中找到。
 
@@ -49,7 +49,7 @@ Pandora套件需定制的结构才能安装在车辆顶部。该结构必须能�
 
 * [英文版](https://drive.google.com/file/d/1THtxhlrzmyVpV_IZufRsYUBudmHTd8Ge/view)
 
-#### 参考资料
+## 参考资料
 
 * Pandora的详细规格表可在 [这里](http://www.hesaitech.com/en/pandora.html)找到
 

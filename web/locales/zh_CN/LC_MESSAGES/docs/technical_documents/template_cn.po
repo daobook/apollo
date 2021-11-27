@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/technical_documents/template_cn.md:1
+msgid "标题(替换此处)"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:3
+msgid ""
+"_**Tip**: "
+"为了更好的展示本文档中的等式，我们建议使用者使用带有[插件](https://chrome.google.com/webstore/detail"
+"/tex-all-the-"
+"things/cbimabofgmfdkicghcadidpemeenbffn)的Chrome浏览器，或者将Latex等式拷贝到[在线编辑公式网站](http://www.hostmath.com/)进行浏览。_"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:5
+msgid "概览"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:7
+msgid "这是一段概览"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:9
+msgid "相关代码及对应版本"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:11
+msgid ""
+"请参考 "
+"[代码地址](https://github.com/ApolloAuto/apollo/blob/r1.0.0/docs/quickstart/apollo_1_0_hardware_system_installation_guide.md)"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:13
+msgid "代码流程及框架"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:15
+#: ../../../docs/technical_documents/template_cn.md:24
+msgid "![流程图](images/example.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:15
+#: ../../../docs/technical_documents/template_cn.md:24
+msgid "流程图"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:17
+msgid "输入"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:18
+msgid "过程, ```某一行代码 i++;```， 不要直接点名行数"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:19
+#: ../../../docs/technical_documents/template_cn.md:29
+msgid "。。。"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:20
+msgid "输出"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:22
+msgid "相关算法解析"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:26
+msgid "参数介绍"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:27
+msgid "思想"
+msgstr ""
+
+#: ../../../docs/technical_documents/template_cn.md:28
+msgid "过程"
+msgstr ""
+

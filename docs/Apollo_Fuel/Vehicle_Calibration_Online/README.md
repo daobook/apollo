@@ -1,6 +1,6 @@
 # Vehicle Calibration Online Service
 
-### Note:
+## Note:
 
 1. Please refer to [Apply_BOS_Account](../../Apollo_Fuel/apply_bos_account_cn.md) for account setup before you can use the service.
 
@@ -12,7 +12,7 @@ vehicle calibration system automatically generates calibration table for differe
 
 <!-- # Table of Contents 1\. [Frontend](#frontend) 2\. [Data](#data) - [Upload Tool](#upload) - [Download Tool](#download) 3\. [Visulization](#visulization) -->
 
- ## Frontend
+## Frontend
 
 In DreamView, a data collection monitor is presented for monitoring the data calibration process. In vehicle calibration mode, collected data frames are visualized in the data calibration monitor. Data frames are categorized into different driving conditions according to their chassis information. The amount of collected data frames are indicated as progress bars.
 

@@ -1,23 +1,25 @@
+# rf
+
 oprofile is a performance monitoring tool that runs on linux system. Generally, oprofile has been included in linux system modules, but oprofile module is not supported on ARM, so we have to install it manually.
 
 oprofile supports multi-thread program. It records the number of function calls, and can also output the source code to show results user-friendly. So it fits well to performance monitoring on TX2.
 
 
-#### Download
+## Download
 Download the newest version of oprofile
 ```bash
 $ wget http://prdownloads.sourceforge.net/oprofile/oprofile-1.4.0.tar.gz
 $ tar zxvf oprofile-1.4.0.tar.gz
 $ cd oprofile-1.4.0
 ```
-#### Installation 
+## Installation 
 ```bash
 $ sudo apt-get install libpopt-dev libiberty-dev binutils-dev
 $ ./configure
 $ make -j4
 $ sudo make install
 ```
-#### Test
+## Test
 After installation，perform command `operf` to see if it could get CPU information normally. If it fails and the output is like this:
 
 `unable to open /sys/devices/system/cpu/cpu0/online`
@@ -28,7 +30,7 @@ Use below command to open the other two CPU cores:
 $ sudo nvpmodel -m 0
 ```
 
-#### How to use
+## How to use
 oprofile provides variety of commands, the commands `operf`, `opreport` and `opannotate` are used more often.
 Take testing perception as an example.
 
@@ -40,7 +42,7 @@ Take testing perception as an example.
 
 And now, operf is collecting data of perception program. Stopping perception program in any approach can stop the collecting process.
 
-#### Output
+## Output
 After stopping perception program, a directory named oprofile_data is generated in current directory.
 Use command `opreport` to show the total statistics:
 ```bash

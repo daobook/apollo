@@ -1,0 +1,780 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:1
+msgid "循迹搭建--车辆动力学云标定"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:3
+msgid "[循迹搭建--车辆动力学云标定](#循迹搭建--车辆动力学云标定)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:4
+msgid "[概览](#概览)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:5
+msgid "[前提条件](#前提条件)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:6
+msgid "[主要步骤](#主要步骤)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:7
+msgid "[修改配置文件](#修改配置文件)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:8
+msgid "[标定数据采集](#标定数据采集)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:9
+msgid "[准备](#准备)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:10
+msgid "[1、选择模式，选择车型](#1选择模式选择车型)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:11
+msgid "[2、启动标定所需要的软件模块](#2启动标定所需要的软件模块)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:12
+msgid "[3、进入采集界面](#3进入采集界面)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:13
+msgid "[开始采集](#开始采集)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:14
+msgid "[标定任务提交](#标定任务提交)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:15
+msgid "[文件夹结构要求](#文件夹结构要求)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:16
+msgid "[1. 上传预处理后的数据至BOS](#1-上传预处理后的数据至bos)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:17
+msgid "[2. 提交标定任务](#2-提交标定任务)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:18
+msgid "[3. 获取标定结果及标定表](#3-获取标定结果及标定表)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:19
+msgid "[4. 将标定表写入控制配置文件中](#4-将标定表写入控制配置文件中)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:20
+msgid "[结果显示](#结果显示)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:21
+msgid "[NEXT](#next)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:22
+msgid "[常见问题](#常见问题)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:25
+msgid "概览"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:27
+msgid "车辆云标定是通过采集车辆底盘油门踏板量、刹车踏板量、车辆速度、加速度作为车辆纵向动力模型的输入，通过机器学习的方式，生成相应车辆的踏板标定表，生成的标定表数据量大，精度高，提高车辆的控制精度。车辆踏板标定系统主要包括三个部分："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:29
+msgid "在`DreamView`数据采集监视器内采集标定数据；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:31
+msgid "数据本地预处理；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:33
+msgid "标定数据上传至BOS云盘，提交标定任务；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:35
+msgid "生成用于性能评估的可视化标定结果。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:38
+msgid "前提条件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:40
+msgid "[循迹搭建--车辆集成](vehicle_integration_cn.md)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:42
+msgid "[循迹搭建--定位模块配置](localization_configuration_cn.md)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:44
+msgid "[循迹搭建--Apollo系统安装](apollo_installation_cn.md)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:46
+msgid "[开通云服务账号](../../Apollo_Fuel/apply_fuel_account_cn.md)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:49
+msgid "主要步骤"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:51
+msgid "修改标定配置文件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:53
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:212
+msgid "标定数据采集"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:55
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:278
+msgid "标定任务提交"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:57
+msgid "可视化结果分析"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:60
+msgid "修改配置文件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:62
+msgid "在开始标定前，需要根据实际车辆的最大速度、速度、油门、刹车踏板的限制，进行用于车辆踏板标定的数据采集配置，来适配车辆的标定，满足标定数据能够尽可能多的覆盖车辆踏板的有效范围。我们设置了开发套件的默认车辆标定数据采集配置文件，在文件`apollo/modules/calibration/data/$vehicle_type/dreamview_conf/data_collection_table.pb.txt`内。对于不同的车型，配置文件的位置不同，主要由车型参数`$vehicle_type`决定，根据车辆铭牌信息选择对应的车型，如下表所示。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "铭牌信息"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "$vehicle_type"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "Apollo D-KIT Lite"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "dev_kit"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "Apollo D-KIT Standard"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "dev_kit_standard"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "Apollo D-KIT Advanced(NE-B)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "dev_kit_advanced_ne-b"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "Apollo D-KIT Advanced(NE-S)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "dev_kit_advanced_ne-s"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "Apollo D-KIT Advanced(SNE-R)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "dev_kit_advanced_sne-r"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:72
+msgid ""
+"**下面以Apollo D-KIT Lite（dev_kit)举例说明。**，Apollo D-KIT "
+"Lite标定配置文件在`apollo/modules/calibration/data/dev_kit/dreamview_conf/data_collection_table.pb.txt`内。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:74
+msgid "开发者在了解了标定文件构成后，如有需要可以自行修改需要的数据采集配置文件，通常情况下使用默认标定配置可以覆盖小车大部分踏板控制范围，**建议开发者不需要单独修改此配置文件，使用默认标定配置即可**。默认标定配置文件内主要设计了小车的标定条件如下："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:76
+msgid "车辆前进模型"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:78
+msgid "速度条件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:80
+msgid "低速 0 ～ 2.5m/s"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:81
+msgid "高速 >= 2.5m/s"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:83
+msgid "油门条件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:85
+msgid "小油门 Throttle deadzone ~ 24%"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:86
+msgid "大油门 Throttle >= 24%"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:88
+msgid "刹车条件"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:90
+msgid "缓刹车 Brake deadzone ~ 28%"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:91
+msgid "急刹车 Brake >= 28%"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:93
+msgid ""
+"上述的`Throttle "
+"deadzone`表示车辆油门踏板的不产生加速度的无效区段，一般设在车辆刚能起步的附近，**开发套件给出的默认值是5%，开发者可以根据实际车辆的情况修改此参数**；`Brake"
+" "
+"deadzone`表示车辆刹车踏板的不产生减速度的无效区段，一般设在较低的踏板开度时，**开发套件给出的默认值是3%，开发者可以根据实际车辆的情况修改此参数**。此参数设置在`apollo/modules/calition/data/dev_kit/vehicle_param.pb.txt`文件内`throttle_deadzone`和`brake_deadzone`，在标定开始前，就要先把改参数确定好，后面进行数据训练时上传的配置文件，也需要对应使用该参数。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:95
+msgid "根据如上标定条件，即可匹配出车辆的所有标定条件，共8种条件，分别为："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:97
+msgid "低速小油门"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:98
+msgid "低速大油门"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:99
+msgid "高速小油门"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:100
+msgid "高速大油门"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:101
+msgid "低速缓刹车"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:102
+msgid "低速急刹车"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:103
+msgid "高速缓刹车"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:104
+msgid "高速急刹车"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:106
+msgid ""
+"确认好上述标定条件后，通常情况下使用默认标定配置可以覆盖小车大部分踏板控制范围，如果需要修改配置文件，则需要将`apollo/modules/calibration/data/dev_kit/dreamview_conf/data_collection_table.pb.txt`"
+" 中`Go "
+"Straight`部分配置进行修改，其它部分配置代码无需修改，无需删除，通过启动`DreamView`后重新选择车辆后配置生效，具体修改代码如下："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:214
+msgid "准备"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:216
+msgid "完成配置文件修改后，将车辆移动至适合标定的场地后，启动apollo，并执行以下命令："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:221
+msgid "在浏览器打开`DreamView(http://localhost:8888)`，进行下述步骤："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:223
+msgid "1、选择模式，选择车型"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:225
+msgid ""
+"在`--setup mode--`内，选择`vehicle calibration`（车辆标定）选项， "
+"在`--vehicle--`选择车型，根据车辆铭牌信息选择对应的车型(见下表)，如使用Apollo D-KIT "
+"Lite，则在`--vehicle--`选择车型`Dev Kit`；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md
+msgid "选择车型"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:235
+msgid "![vehicle_calibration_select_vehicle](images/vehicle_calibration_select_vehicle.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:235
+msgid "vehicle_calibration_select_vehicle"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:237
+msgid "2、启动标定所需要的软件模块"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:239
+msgid ""
+"在进行标定前，需要采集包含车辆底盘、定位信息的数据作为输入，可以通过`DreamView`界面上的模块开关启动相关模块软件，在`DreamView`界面左侧边栏选择`Module"
+" Controller`标签，然后在主界面启动`Canbus`、`GPS`、`Localization`模块，如下图所示："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:241
+msgid "![vehicle_calibration_launch_modules](images/vehicle_calibratio_launch_modules.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:241
+msgid "vehicle_calibration_launch_modules"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:243
+msgid "通过左侧`Components`查看`Canbus`、`GPS`、`RTK`状态，直到信号都达到`OK`才能够进行下一步。`Localization`启动后，需要等待1~2分钟，`RTK`状态才能变成OK。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:245
+msgid "![vehicle_calibration_check_components.png](images/vehicle_calibration_check_components.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:245
+msgid "vehicle_calibration_check_components.png"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:247
+msgid "3、进入采集界面"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:249
+msgid ""
+"在确认上一步已经启动的软件模块状态`OK`后，点击`DreamView`界面左侧边栏`TASK`标签，在`Others`区域，打开`Fuel "
+"Client`开关启动云服务采集界面，然后在界面右上侧选择`Go Straight`标签，查看"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:251
+msgid "如下图所示，为标定数据采集面板。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:253
+msgid "![vehicle_calibration_fuel_cleint](images/vehicle_calibration_fuel_cleint.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:253
+msgid "vehicle_calibration_fuel_cleint"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:255
+msgid "开始采集"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:257
+msgid ""
+"在`DreamView`界面点击左侧边栏，选择`Module "
+"Controller`，这时点击`Recorder`开关，开始录制标定数据，这时Apollo系统就开始录制记录车辆标定数据了。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:259
+msgid "（如果在打开Recorder开关之前，右侧的数据采集器的进度条已经有一些增加，没有关系，因为在打开`Recorder`开关后会清除进度条的采集量，重新开始记录）"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:261
+msgid "<**记录数据时请注意**>：建议在第一次打开`Recorder`开关后，一次性把所有的标定case数据全部采集完之后再关闭`Recorder`开关，通常一次标定采集数据所用时间为20-40分钟，根据熟练程度、场地大小等决定。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:263
+msgid "**（请务必切记先打开`Recorder`开关，再进行标定数据采集操作，实际情况常常会因未打开`Recorder`开关造成数据未记录保存，影响效率）**"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:265
+msgid "![vehicle_calibration_launch_recorder.png](images/vehicle_calibration_launch_recorder.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:265
+msgid "vehicle_calibration_launch_recorder.png"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:267
+msgid "这时，我们使用遥控器遥控车辆，根据`Dreamview`右侧数据采集监视器，采集相应标定条件的车辆数据，每符合标定条件一次，则进度条增加一点，直至进度条增加满为止。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:269
+msgid "![vehicle_calibration_collect_data](images/vehicle_calibration_collect_data.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:269
+msgid "vehicle_calibration_collect_data"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:271
+msgid "待监视器内各标定条件进度条（**蓝色**）全部采集完成后，点击关闭`Recorder`开关，关闭数据记录，结束车辆标定数据采集。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:273
+msgid "**这里需要注意，原则上进度条全部采集完对标定结果的生成是最佳的；但开发者也可以根据实际情况采集进度条，实际根据场地大小限制，速度限制等，比如有些case很容易采集满，有些很难，对于很不好采集到的数据可以采集到60-80%的状态也可以。**"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:275
+msgid "![vehicle_calibration_collect_data_complete](images/vehicle_calibration_collect_data_complete.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:275
+msgid "vehicle_calibration_collect_data_complete"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:280
+msgid "1. 上传预处理后的数据至BOS"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:282
+msgid "在上传数据之前，请注意以下几点："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:284
+msgid "1）标定数据预处理："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:286
+msgid "采集完车辆的标定数据，关闭`Recorder`后,如图所示，点击右下角`「Preprocess」`按钮，进行标定数据预处理。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:288
+msgid "![vehicle_calibration_preprocess_data.png](images/vehicle_calibration_preprocess_data.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:288
+msgid "vehicle_calibration_preprocess_data.png"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:290
+msgid "2）查看预处理结果"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:292
+msgid ""
+"点击`「Preprocess」`按钮后，首先对标定数据进行数据完整检查(sanity "
+"check)，如果数据完整检查不通过，在进度条下方会有不通过的错误提示（通常情况下，只要按照文档上述步骤一步步做，完整性检查就不会有错）。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:294
+msgid "预处理按钮只需要点一次，不需要多次点击。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:296
+msgid "![vehicle_calibration_preprocess_data_complete](images/vehicle_calibration_preprocess_data_complete.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:296
+msgid "vehicle_calibration_preprocess_data_complete"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:298
+msgid "3）生成结果如下目录"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:300
+msgid "结束数据完整检查后，会提示将生成的预处理数据存入到`apollo/output/task-*******`，文件夹以当时处理的时间为命名，所以开发者在`apollo/output`目录下查找时间最近的task文件夹即可。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:302
+msgid "如下图所示，拷贝预处理完成后的文件夹`task-2021-01-04-18-12`，用于标定使用。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:304
+msgid "![vehicle_calibration_preprocess_data_folder](images/vehicle_calibration_preprocess_data_folder.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:304
+msgid "vehicle_calibration_preprocess_data_folder"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:306
+msgid "4）把生成的结果上传至BOS"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:308
+msgid "在[BOS](../../Apollo_Fuel/apply_bos_account_cn.md)的初始目录，上传上一步选择的文件夹`task-2021-01-04-18-12`。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:310
+msgid "![vehicle_calibration_upload_bos](images/vehicle_calibration_upload_bos.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:310
+msgid "vehicle_calibration_upload_bos"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:312
+msgid "2. 提交标定任务"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:314
+msgid ""
+"首先进入[Apollo云服务任务页面](http://bce.apollo.auto/login)，选择使用百度账号登录，在左侧框中选择`Apollo"
+" "
+"Fuel-->任务`，点击`新建任务`，然后在下拉框内选择`车辆标定`，然后输入相应要评测的数据路径，在`输入数据路径`中填写到根目录，在本示例中填写为`task001`（因为“task001”在BOS的根目录）。如下图所示："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:316
+msgid "![vehicle_calibration_submit_task1](images/vehicle_calibration_submit_task1.jpg)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:316
+msgid "vehicle_calibration_submit_task1"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:318
+msgid "![vehicle_calibration_submit_task2](images/vehicle_calibration_submit_task2.jpg)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:318
+msgid "vehicle_calibration_submit_task2"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:320
+msgid "![vehicle_calibration_submit_task3](images/vehicle_calibration_submit_task3.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:320
+msgid "vehicle_calibration_submit_task3"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:322
+msgid "![vehicle_calibration_submit_task4](images/vehicle_calibration_submit_task4.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:322
+msgid "vehicle_calibration_submit_task4"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:324
+msgid "3. 获取标定结果及标定表"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:326
+msgid "云标定任务完成后，将在注册的邮箱（请与商务联系）中收到一封标定结果邮件。如果标定任务成功，将包含标定表及标定结果图片。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:328
+msgid "4. 将标定表写入控制配置文件中"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:330
+msgid ""
+"生成的标定表以 "
+"`车型_calibration_table.pb.txt`命名，将标定表内的标定数据为calibration_table字段，把全部数据拷贝替换至`apollo/modules/calibration/data/dev_kit/control_conf.pb.txt`下对应的`lon_controller_conf`字段下面的`calibration_table`段内。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:332
+msgid "注：云标定数据片段示例（截取了前4段）"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:356
+msgid "结果显示"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:358
+msgid "标定表和结果，以邮件的形式，发送至与BOS存储绑定的电子邮箱中。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:360
+msgid "油门踏板标定结果"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:362
+msgid "![vehicle_calibration_online_throttle_result](images/vehicle_calibration_online_throttle_result.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:362
+msgid "vehicle_calibration_online_throttle_result"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:364
+msgid "刹车踏板标定结果"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:366
+msgid "![vehicle_calibration_online_brake_result](images/vehicle_calibration_online_brake_result.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:366
+msgid "vehicle_calibration_online_brake_result"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:368
+msgid "NEXT"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:369
+msgid "车辆云标定能够提供精度较高的车辆踏板标定表，对于自动驾驶的控制精度有显著提升。当然，目前车辆的出厂一致性较好，在对控制精度要求不高的前提下，`D-KIT`配置表内默认的标定数据，也可以进行正常循迹等闭环自动驾驶演示。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:371
+msgid "现在，您已经完成车辆动力学标定，接下来可以开始[车辆循迹演示](start_waypoint_following_cn.md)。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:373
+msgid "常见问题"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:375
+msgid "1.在进行车辆标定时，收到如下报错邮件，数据完整性检查出现错误"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:376
+msgid "![vehicle_calibration_online_error1](images/vehicle_calibration_online_error1.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:376
+msgid "vehicle_calibration_online_error1"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:378
+msgid "排查方法："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:380
+msgid "1.查看`文件夹结构`是否正确，一般数据预处理时，会自动生成文件夹目录，如果文件夹目录存在错误，可以手动参考如下图目录自行修改:"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:382
+msgid "所有采集的标定数据都保存在`apollo/data/bag/`目录下，找到以`年-月-日-时-分-秒`命名的文件夹，根据时间找到属于车辆标定采集的数据。我们可以分批采集数据，即每一次可以采集一部分数据，这样数据会记录在不同的`年-月-日-时-分-秒`文件夹，（**注意**：默认情况下，数据采集后会在`apollo/data/bag/`文件夹下生成2个`年月日时分秒相似`的文件夹，分别以`年-月-日-时-分-秒`和`年-月-日-时-分-秒_s`命名，开发者可以不用理会`_s`后缀的文件夹，只需要使用`年-月-日-时-分-秒`文件夹内录制的标定数据即可）也可以一次全部采集，这样所有的数据都记录在同一个文件夹内，通常完成上述标定条件的车辆标定数据采集需要20分钟左右。"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:384
+msgid "1）正确的文件夹结构如下图所示："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:386
+msgid "![vehicle_calibration_online_structure](images/vehicle_calibration_online_structure.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:386
+msgid "vehicle_calibration_online_structure"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:388
+msgid ""
+"2）`Origin "
+"Folder`确保是**BOS的根目录**，确保`task001`目录是在BOS根目录下创建的（根目录：登录BOS存储服务器后首先看到的目录即为根目录，一般是`Bucket"
+" name`目录）；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:390
+msgid ""
+"3）`task001、task002...`代表一次车辆标定任务文件夹，即每次标定任务提交时，会训练一个`task文件夹`内的车辆数据；`task文件夹`上一层（`Origin"
+" Folder`）可以是BOS根目录或其他目录；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:392
+msgid ""
+"3） "
+"`Vehicle1、Vehicle2...`代表标定的车辆文件夹，可以根据实际情况，按照车辆名称+编号的形式命名，如`ch01`、`ch02`等。一个task文件夹下内可以包含多个Vehicle车辆文件夹，在一次任务提交中标定多个车辆；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:394
+msgid "4）`Records`文件内导入采集的车辆标定数据，车辆的录制数据在`apollo/data/bag/`目录下；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:396
+msgid "**需要注意：**`Records`文件夹下需要有2层子文件夹，第一层为大时间（年-月-日），如上图`2019-04-19`，第二层文件夹是具体的record文件夹（年-月-日-时-分等），如上图`2019-04-19-12-45-01`等，提醒大家一定要注意`Records`文件夹下的文件夹结构还要有2层，不然后续会影响标定找不到文件数据，文件夹结构如上图所示；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:398
+msgid ""
+"5） `Configuration "
+"File`即为`vehicle_param.pb.txt`（车辆配置文件），该文件在`apollo/modules/calition/data/dev_kit`文件夹内，将该文件夹下的`vehicle_param.pb.txt`拷贝至BOS对应的车辆标定文件夹下，如上图`Vehicle2`文件夹内；"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:400
+msgid "6）总结上述文件夹结构："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:404
+msgid "2.查看是否在车辆文件夹内添加车辆配置文件（`vehicle_param.pb.txt`）"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:406
+msgid "3.查看录制数据包内是否存在标定需要的channel数据："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:408
+msgid "通过`cyber_recorder info xxxxxx.record.xxxxx` 检查采集数据内是否存在下面3个`channel`的数据："
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:411
+msgid "`/apollo/canbus/chassis`"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:412
+msgid "`/apollo/sensor/gnss/best_pose`"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:413
+msgid "`/apollo/localization/pose`"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:414
+msgid "下图为正确的数据包示意"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:416
+msgid "![vehicle_calibration_online_record_check](images/vehicle_calibration_online_record_check.png)"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:416
+msgid "vehicle_calibration_online_record_check"
+msgstr ""
+
+#: ../../../docs/D-kit/Waypoint_Following/vehicle_calibration_online_cn.md:418
+msgid "如果发现缺少了上述channel的某一项，请排查相关模块。"
+msgstr ""
+

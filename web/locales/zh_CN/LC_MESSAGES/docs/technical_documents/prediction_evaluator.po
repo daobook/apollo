@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:1
+msgid "PREDICTION EVALUATOR"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:3
+msgid "Introduction"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:5
+msgid ""
+"The prediction module comprises 4 main functionalities: Container, "
+"Scenario, Evaluator and Predictor."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:7
+msgid ""
+"The Evaluator predicts path and speed separately for any given obstacle. "
+"An evaluator evaluates a path by outputting a probability for it (lane "
+"sequence) using the given model stored in prediction/data/."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:9
+msgid "The list of available evaluators include:"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:11
+msgid "Cost evaluator: probability is calculated by a set of cost functions"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:13
+msgid "MLP evaluator: probability is calculated using an MLP model"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:15
+msgid "RNN evaluator: probability is calculated using an RNN model"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:17
+msgid ""
+"Cruise MLP + CNN-1d evaluator: probability is calculated using a mix of "
+"MLP and CNN-1d models for the cruise scenario"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:19
+msgid ""
+"Junction MLP evaluator: probability is calculated using a MLP model for "
+"junction scenario"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:21
+msgid ""
+"Junction Map evaluator: probability is calculated using an semantic map-"
+"based CNN model for junction scenario. This evaluator was created for "
+"caution level obstacles"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:23
+msgid ""
+"Social Interaction evaluator: this model is used for pedestrians, for "
+"short term trajectory prediction. It uses social LSTM. This evaluator was"
+" created for caution level obstacles"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:25
+msgid ""
+"Semantic LSTM evaluator: this evaluator is used in the new Caution "
+"Obstacle model to generate short term trajectory points which are "
+"calculated using CNN and LSTM. Both vehicles and pedestrians are using "
+"this same model, but with different parameters"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:28
+msgid "Where is the code"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:30
+msgid ""
+"Please refer [prediction "
+"evaluator](https://github.com/ApolloAuto/apollo/modules/prediction/evaluator)."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:32
+msgid "Code Reading"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:34
+msgid "Solcial interaction evaluator"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:35
+msgid ""
+"The evaluator uses social LSTM to predict short-term trajectroy for "
+"pedestrians with caution level. In the code, the evaluator is named by "
+"pedestrain interaction evalutor."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:37
+msgid "Extract features from obstacles."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:44
+msgid ""
+"Using social LSTM module to predict short-term trajectory by following "
+"steps:"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:45
+msgid "Get social embedding"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:46
+msgid "Get position embedding"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:47
+msgid "Conduct single LSTM and update hidden states"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:48
+msgid "Get a predicted trajectory"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:50
+msgid "Semantic LSTM evaluator"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:51
+msgid "Get and process feature map by obstacles'id."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:53
+msgid "Build input features for torch."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:55
+msgid ""
+"Get predicted trajectory with different parameters for different types of"
+" obstacles."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:57
+msgid "Junction map evaluator"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:58
+msgid ""
+"Only care about obstalces at intersections. Obstacles are not closed to "
+"any junction exit cannot be evaluated by this evaluator."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:60
+msgid ""
+"Take the obstacle as the center and the orientation as the reference "
+"direction, 12 fan-shaped areas are divided. "
+"![Diagram](images/prediction_evaluator_fig_1.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:60
+msgid "Diagram"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:63
+msgid ""
+"Since the juction exit is associated with these 12 fan-shaped areas, the "
+"probability can be calculated by solving the fan-shaped areas "
+"classification problem."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:65
+msgid "Assign all lane sequence probability."
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:67
+msgid "Junction mlp evaluator"
+msgstr ""
+
+#: ../../../docs/technical_documents/prediction_evaluator.md:68
+msgid ""
+"Using a MLP model to solve the classification problem mentioned in "
+"junction map evaluator."
+msgstr ""
+

@@ -1,0 +1,16 @@
+PROJECT_NAME      = "Apollo API"
+XML_OUTPUT        = web/xml
+INPUT             =  cyber modules third_party
+FILE_PATTERNS     = *cc, *.h, *.py
+RECURSIVE         = YES
+GENERATE_LATEX    = NO
+GENERATE_MAN      = NO
+GENERATE_RTF      = NO
+CASE_SENSE_NAMES  = YES
+GENERATE_HTML     = NO
+GENERATE_XML      = YES
+QUIET             = YES
+JAVADOC_AUTOBRIEF = YES
+WARN_IF_UNDOCUMENTED = NO
+MACRO_EXPANSION = YES
+

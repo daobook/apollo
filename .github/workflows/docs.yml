@@ -1,0 +1,53 @@
+name: deploy
+on:
+  push:
+    branches:
+      - xin
+      - xi
+
+jobs:
+  # 这个工作流程包含一个名为 "build" 的 job
+  build:
+    # job 将运行的运行器的类型
+    runs-on: ubuntu-latest
+
+    # steps 将作为工作的一部分而执行的任务序列
+    steps:
+      # 这个动作在 $GITHUB_WORKSPACE 下签出你的版本库，以便工作流就可以访问它
+      - uses: actions/checkout@v2
+      # 设定 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      # 设定 conda 环境
+      - uses: s-weigand/setup-conda@v1
+      - run: conda --version
+      - run: which python
+
+      - name: 安装依赖包
+        run: |
+          pip install -r web/requirements.txt
+          conda install ipykernel
+          python -m ipykernel install --user --name ai --display-name "ai"
+          sudo apt-get update
+          sudo apt-get install doxygen
+      
+      # - name: 构建 Cyber 文档
+      #   run: |
+      #     ./cyber/doxy-docs/build_doxy_sphinx.sh
+      #     mv -f cyber/doxy-docs/build/ _build/html/cyber
+
+      - name: 构建 Sphinx 文档
+        run: |
+          doxygen Doxyfile
+          sphinx-build -D language=zh_CN -b html ./ ./web/_build/html
+
+      # 部署 HTML 到 gh-pages 分支
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web/_build/html
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"

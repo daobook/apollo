@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:1
+msgid "基于规则的停止决策"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:2
+msgid "目录"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:6
+msgid "概览"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:8
+msgid "`基于规则的停止决策`是规划模块的任务，属于task中的decider类别。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:10
+msgid "规划模块的运动总体流程图如下："
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:12
+msgid "![总体流程图](../images/task/lane_follow.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:12
+msgid "总体流程图"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:14
+msgid ""
+"总体流程图以[lane "
+"follow](https://github.com/ApolloAuto/apollo/blob/r6.0.0/modules/planning/conf/scenario/lane_follow_config.pb.txt)场景为例子进行说明。task的主要功能位于`Process`函数中。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:16
+msgid "Fig.1的具体运行过程可以参考[path_bounds_decider]()。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:18
+msgid "相关代码及对应版本"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:20
+msgid "基于规则的停止决策根据一些规则来设置停止标志。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:22
+msgid ""
+"代码位于[Apollo r6.0.0 "
+"rule_based_stop_decider](https://github.com/ApolloAuto/apollo/tree/r6.0.0/modules/planning/tasks/deciders/rule_based_stop_decider)。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:24
+msgid "输入"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:26
+msgid ""
+"`apollo::common::Status RuleBasedStopDecider::Process(Frame *const frame,"
+" ReferenceLineInfo *const reference_line_info)`"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:28
+msgid "输入是frame和reference_line_info。具体解释可以参考[path_bounds_decider]()。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:30
+msgid "输出"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:32
+msgid "输出保存到reference_line_info中。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:35
+msgid "代码流程及框架"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:37
+msgid "代码的运行流程如下图。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:39
+msgid "![流程图](../images/task/rule_based_stop_decider/rule_based_stop_decider.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:39
+msgid "流程图"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:41
+msgid "代码结构比较清楚："
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:61
+msgid "相关算法解析"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:63
+msgid "对上图总流程的的每个部分拆分开分析。"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:65
+msgid "Stop on side pass"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:67
+msgid "![StopOnSidePass](../images/task/rule_based_stop_decider/stop_on_side_pass.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:67
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:126
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:190
+msgid "StopOnSidePass"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:69
+msgid "代码如下："
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:124
+msgid "Check lane change Urgency"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:126
+msgid "![StopOnSidePass](../images/task/rule_based_stop_decider/check_lane_change_urgency.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:128
+msgid "检查紧急换道，代码如下："
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:188
+msgid "Add path end stop"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:190
+msgid "![StopOnSidePass](../images/task/rule_based_stop_decider/add_path_end_stop.png)"
+msgstr ""
+
+#: ../../../docs/technical_documents/tasks/rule_based_stop_decider_cn.md:192
+msgid "在道路的尽头添加stop fence。代码如下："
+msgstr ""
+

@@ -1,19 +1,9 @@
 # 路径边界决策
 
-### *目录*
+```{contents}
+```
 
-- [概览](#概览)
-- [路径边界决策代码及对应版本](#路径边界决策代码及对应版本)
-  + [类关系](#类关系)
-  + [路径边界决策数据](#路径边界决策数据)
-- [路径边界决策代码流程及框架](#路径边界决策代码流程及框架)
-- [路径边界决策算法解析](#路径边界决策算法解析)
-  + [1.fallback](#1.fallback)
-  + [2.pull over](#2.pull-over)
-  + [3.lane change](#3.lane-change)
-  + [4.Regular](#4.Regular)
-
-# 概览
+## 概览
 
 `路径边界决策`是规划模块的任务，属于task中的decider类别。
 
@@ -33,17 +23,17 @@
 
 最后，Task的流程都在Process函数中。之后对task的讲解都从Process函数开始。
 
-# 路径边界决策代码及对应版本
+## 路径边界决策代码及对应版本
 
 本节说明path_bounds_decider任务。
 
 请参考 [Apollo r6.0.0 path_bounds_decider](https://github.com/ApolloAuto/apollo/tree/r6.0.0/modules/planning/tasks/deciders/path_bounds_decider)
 
-## 类关系
+### 类关系
 
 ![path_bounds_decider_task](../images/task/path_bounds_decider/task.png)
 
-### （1）继承关系
+#### （1）继承关系
 
 ① `PathBoundsDecider`类继承`Decider`类，实现了`Process`方法，路径边界决策主要的执行过程就在`process`方法中。
 ```C++
@@ -92,7 +82,7 @@ class Task {
 ... };
 ```
 
-### （2）调用
+#### （2）调用
 
 主要描述task在stage中是如何创建和调用的
 
@@ -143,12 +133,12 @@ class Stage {
 ...};
 ```
 
-## 路径边界决策数据
+### 路径边界决策数据
 
 `PathBoundsDecider`类主要的输入、输出，数据结构，变量设置。
 
 
-### （1）输入和输出
+#### （1）输入和输出
 
 ① 输入有两个：`frame`与`reference_line_info`
 
@@ -298,7 +288,7 @@ Status PathBoundsDecider::Process(
 
 Process 函数定义，最终结果保存到了`reference_line_info`中
 
-### （2）参数设置
+#### （2）参数设置
 
 ```C++
 // modules/planning/tasks/deciders/path_bounds_decider/path_bounds_decider.cc
@@ -318,7 +308,7 @@ constexpr double kPulloverLonSearchCoeff = 1.5;
 constexpr double kPulloverLatSearchCoeff = 1.25;
 ```
 
-### （3）数据结构
+#### （3）数据结构
 ```C++
 // modules/planning/tasks/deciders/path_bounds_decider/path_bounds_decider.cc
 namespace {
@@ -331,7 +321,7 @@ using ObstacleEdge = std::tuple<int, double, double, double, std::string>;
 }  // namespace
 ```
 
-# 路径边界决策代码流程及框架
+## 路径边界决策代码流程及框架
 
 Fig.2是路径边界决策的流程图。
 
@@ -342,9 +332,9 @@ Fig.2是路径边界决策的流程图。
 
 fallback场景的path bounds一定会生成，另外三种看情况，都是需要if判断。
 
-# 路径边界决策算法解析
+## 路径边界决策算法解析
 
-## 1.fallback
+### 1.fallback
 
 ![fallback](../images/task/path_bounds_decider/fallback.png)
 
@@ -457,11 +447,11 @@ bool PathBoundsDecider::GetBoundaryFromLanesAndADC(
 ... }
 ```
 
-## 2.pull over
+### 2.pull over
 
 ![pull_over](../images/task/path_bounds_decider/pull_over.png)
 
-### （1）GetBoundaryFromRoads
+#### （1）GetBoundaryFromRoads
 与`GetBoundaryFromLanesAndADC`不同，`GetBoundaryFromRoads`函数根据道路信息计算出边界:
 - 获取参考线信息
 - 对路径上的点，逐点计算
@@ -469,7 +459,7 @@ bool PathBoundsDecider::GetBoundaryFromLanesAndADC(
     + 更新
 
 
-### （2）GetBoundaryFromStaticObstacles
+#### （2）GetBoundaryFromStaticObstacles
 根据障碍车调整边界：
 - 计算障碍车在frenet坐标系下的坐标
 - 扫描线排序，S方向扫描
@@ -482,7 +472,7 @@ bool PathBoundsDecider::GetBoundaryFromLanesAndADC(
     + 根据新来的障碍物
     + 根据已有的障碍物
 
-### （3）SearchPullOverPosition
+#### （3）SearchPullOverPosition
 
 搜索pull over位置的过程：
 - 根据pull_over_status.pull_over_type()判断是前向搜索（pull over开头第一个点），还是后向搜索（pull over末尾后一个点）
@@ -561,7 +551,7 @@ bool PathBoundsDecider::SearchPullOverPosition(
 }
 ```
 
-## 3.lane change
+### 3.lane change
 
 ![lane_change](../images/task/path_bounds_decider/lane_change.png)
 
@@ -678,7 +668,7 @@ void PathBoundsDecider::GetBoundaryFromLaneChangeForbiddenZone(
 }
 ```
 
-## 4.Regular
+### 4.Regular
 
 ![lane_change](../images/task/path_bounds_decider/regular.png)
 

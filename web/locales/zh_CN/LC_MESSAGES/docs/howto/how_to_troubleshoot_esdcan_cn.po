@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:1
+msgid "如何解决ESD CAN设备的故障？"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:4
+msgid "问题"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:6
+msgid "不能通过ESD卡进行通信。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:8
+msgid "故障排除步骤："
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:10
+msgid ""
+"确保CAN驱动程序（内核模块）被加载，运行：```lsmod |grep can```; "
+"如果驱动程序已经加载，您应该看到关于内核驱动程序的信息，例如版本号。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:11
+msgid "确保CAN设备存在并具有正确的权限集，运行：```ls -l /dev/can0```."
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:12
+msgid ""
+"检查内核日志(运行 ```dmesg |grep -i can```) 和系统日志 (运行 ```grep -i can "
+"/var/log/syslog```), 查看是否存在与CAN相关的错误消息。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:13
+msgid ""
+"运行Apollo程序 ```esdcan_test_app``` (在```monitor/hwmonitor/hw/tools/```下), "
+"它将列出详细统计数据和状态信息。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:14
+msgid "了解这个工具，运行 ```esdcan_test_app --help```."
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:15
+msgid "列举其他详细信息, 运行 ```sudo esdcan_test_app --details=true```."
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:16
+msgid "[可选] 保存内核日志，系统日志（步骤4），并从步骤5的输出中进行离线分析。"
+msgstr ""
+
+#: ../../../docs/howto/how_to_troubleshoot_esdcan_cn.md:17
+msgid ""
+"必要时，检查系统环境温度。ESD CAN卡（CAN-"
+"PCIe/402-FD）的工作温度范围为0～75摄氏度，在该温度范围外可能无法工作。您还可以在ESD CAN（Altera "
+"FPGA芯片）上附加一个温度传感器到主IC芯片的表面，以监测芯片的表面温度，以确保其不会过热。"
+msgstr ""
+

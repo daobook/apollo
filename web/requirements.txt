@@ -1,0 +1,7 @@
+sphinx
+myst-parser
+linkify-it-py
+sphinx-inline-tabs
+sphinx-book-theme
+breathe
+sphinx-copybutton

@@ -1,11 +1,11 @@
-## 训练预测MLP深度学习模型
+# 训练预测MLP深度学习模型
 
-### 前提条件
+## 前提条件
 训练MLP深度学习模式有2个前提条件:
-#### 下载并安装Anaconda
+### 下载并安装Anaconda
 * 请从官网下载并安装Anaconda [website](https://www.anaconda.com/download)
 
-#### 安装依赖库
+### 安装依赖库
 * **安装 numpy**: `conda install numpy`
 * **安装 tensorflow**: `conda install tensorflow`
 * **安装 keras**: `conda install -c conda-forge keras`
@@ -13,7 +13,7 @@
 * **安装 protobuf**: `conda install -c conda-forge protobuf`
 * **安装 PyTorch**: `conda install -c pytorch pytorch`
 
-### 训练模型
+## 训练模型
 请按照以下步骤使用演示cyber record来训练MLP模型。为了方便起见，我们把`Apollo`作为本地Apollo的路径，例如，`/home/username/apollo`。
 
 1. 创建存储数据文件夹 `mkdir APOLLO/data/prediction`， 如果它不存在的话。

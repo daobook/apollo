@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:1
+msgid "How to Prepare Bazel Distribution Directory"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:3
+msgid ""
+"This document describes the steps to prepare Bazel [distribution "
+"directory](https://docs.bazel.build/versions/master/guide.html"
+"#distribution-files-directories) for Apollo."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:7
+msgid "Introduction"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:9
+msgid ""
+"According to [Bazel Docs: Running Bazel in an airgapped "
+"environment](https://docs.bazel.build/versions/master/guide.html#running-"
+"bazel-in-an-airgapped-environment), Bazel’s implicit dependencies are "
+"fetched over the network while running for the first time. However, this "
+"may cause problems when running Bazel in an airgapped environment or with"
+" unstable Internet access, even if you have vendored all of your "
+"WORKSPACE dependencies."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:16
+msgid ""
+"To solve that, the Apollo team decided to provide these dependencies for "
+"every Bazel binary version used in Apollo. Please do remember to do this "
+"once for every new Bazel binary version, since the implicit dependencies "
+"can be different for every Bazel release."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:21
+msgid ""
+"The section below describes the steps to prepare distribution directory "
+"using Apollo-provided tarballs."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:24
+msgid "Prepare Distribution Directory using Apollo-provided tarballs"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:26
+msgid ""
+"Check Bazel version used by Apollo by running `bazel version` from inside"
+" Apollo container."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:38
+msgid ""
+"Here the Bazel version used is `3.5.0`. In the sections below, we will "
+"refer to it as `BAZEL_VERSION`."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:41
+msgid "Download corresponding bazel-dependencies tarball by running:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:47
+msgid ""
+"Uncompress the tarball and move the dependencies into the distribution "
+"directory defined by the `${APOLLO_BAZEL_DIST_DIR}` environment variable:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:56
+msgid ""
+"In case that bazel-dependencies for the Bazel version you used were not "
+"provided by the Apollo team, you can build it on your own following the "
+"recipe below."
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:59
+msgid "Recipe to build Bazel's implicit dependencies"
+msgstr ""
+
+#: ../../../docs/howto/how_to_prepare_bazel_dist_dir.md:61
+msgid "The following is the recipe to produce Bazel's implicit dependencies:"
+msgstr ""
+

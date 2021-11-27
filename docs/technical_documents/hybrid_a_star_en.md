@@ -1,12 +1,12 @@
 # GENERATE COARSE TRAJECTORY IN THE OPEN SPACE
 
-# Introduction
+## Introduction
 The goal of htbrid_a_star is to generate the coarse trajectory in the open space. Hybrid_a_star contains node3d， grid_search， reeds_shepp_path and hybrid_a_star. hybrid_a_star is the most important component generating the coarse trajectory and call the grid_search and reeds_shepp_path.
 
-# Where is the code
+## Where is the code
 Please refer to [hybrid a star.cc](https://github.com/ApolloAuto/apollo/tree/master/modules/planning/open_space/coarse_trajectory_generator/hybrid_a_star.cc)
 
-# Code Reading
+## Code Reading
 1. Input: current point(planned start point), goal point(planned end point), ROI_xy_boundary(the maximum and minimum boundary value of x and y), obstacles vertices vector(the corner position information). The function is follow:
    ```  cpp
         bool HybridAStar::Plan(double sx, double sy, double sphi, 
@@ -56,7 +56,7 @@ The input HybridAStar::Plan() is called by the open_space_trajectory_provider.cc
    ```
 6. Output: The optput is partial trajectory information, which include x,y,phi,v,a,steer,s.
 
-# Algorithm Detail
+## Algorithm Detail
    ``` cpp
    bool HybridAStar::ValidityCheck(std::shared_ptr<Node3d> node)
    ```

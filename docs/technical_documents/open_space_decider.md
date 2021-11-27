@@ -1,18 +1,18 @@
 # OPEN SPACE DECIDER
 
-# Introduction
+## Introduction
 
 Apollo planning is scenario based, where each driving case is treated as a different driving scenario.
 
 Open space decider is used to process related infomation and provide information for subsequent optimizers. 
 
-# Where is the code
+## Where is the code
 
 Please refer [open space decider](https://github.com/ApolloAuto/apollo/modules/planning/tasks/deciders/open_space_decider/open_space_roi_decider.cc).
 
-# Code Reading
+## Code Reading
 
-## Open space roi decider
+### Open space roi decider
 
 1. Input : obstacles info \ vehicle info \ road info \ parking space info.
 
@@ -119,7 +119,7 @@ Please refer [open space decider](https://github.com/ApolloAuto/apollo/modules/p
 
 4. Output: open space roi boundary and boundary constraints 
 
-## Open space pre stop decider
+### Open space pre stop decider
 
 1. Input: obstacles info \ vehicle info \ road info \ parking space info
 
@@ -156,7 +156,7 @@ Please refer [open space decider](https://github.com/ApolloAuto/apollo/modules/p
 
 3. Output: pre stop fence for open space planner.
 
-## Open space fallback decider 
+### Open space fallback decider 
 1. Input: obstacles info \ vehicle info \ road info \ parking space info.
 
 2. Base on the prdicted trajectory of obstacles, the bounding box info of obstacles in each time interval is obtained, then we add it into predicted_bounding_rectangles.

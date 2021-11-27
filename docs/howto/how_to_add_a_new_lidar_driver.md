@@ -24,12 +24,12 @@ modules/drivers/proto/pointcloud.proto
 
 ## Steps to add a new Lidar driver
 
-#### 1. Get familiar with Apollo Cyber RT framework.
+### 1. Get familiar with Apollo Cyber RT framework.
 
 Please refer to the [manuals of Apollo Cyber RT](../cyber/README.md).
 
 
-#### 2. Define message for raw data
+### 2. Define message for raw data
 
 Apollo already define the format of pointcloud. For new lidar, you only need to define the protobuf message for the raw scannning data. Those raw data will be used for archive and offline development. Compared to processed pointcloud data, raw data saves a lot of storage spaces for long term. The new message of the scan data can be define as below:
 
@@ -47,7 +47,7 @@ message ScanData {
 
 In velodyne driver, the scan data message is define as [VelodyneScan](../../modules/drivers/lidar/velodyne/proto/velodyne.proto#L29).
 
-#### 3. Access the raw data
+### 3. Access the raw data
 
 Each seconds, Lidar will generate a lot of data, so it relied on UDP to efficiently transport the raw data. You need to create a DriverComponent class, which inherits the Component withotu any parameter. In its Init function, you need to start a async polling thread, whic will receive Lidar data from the specific port. Then depending on the Lidar's frequency, the DriverComponent needs to package all the packets in a fix period into a frame of ScanData. Eventually, the writer will send the ScanData through a corresponding channel.
 
@@ -82,7 +82,7 @@ class DriverComponent : public Component<> {
 CYBER_REGISTER_COMPONENT(DriverComponent)
 ```
 
-#### 4. Parse the scan data, convert to pointcloud
+### 4. Parse the scan data, convert to pointcloud
 
  If the new lidar driver already provides the pointcloud data in Cartesian coordinates system, then you just need to store those data in the protobuf format defined in Apollo.
 
@@ -130,11 +130,11 @@ class ParserComponent : public Component<ScanData> {
 CYBER_REGISTER_COMPONENT(ParserComponent)
 ```
 
-#### 5. Motion compensation for pointcloud
+### 5. Motion compensation for pointcloud
 
 Motion compensation is optional depends on lidar hardware design. E.g. if the the pointcloud information from lidar already have the motion error included, then no compensator needed as extra steps. Otherwise, you need your own compensator. However, if each cloud point in your lidar's output carries its own timestamp information, you can probably reuse the current compensator without any changes.
 
-#### 6. Configure the dag file
+### 6. Configure the dag file
 
 After done with each component, you just need to configure the DAG config file to add each component into the data processing pipeline. E.g.  lidar_driver.dag:
 
@@ -176,7 +176,7 @@ module_config {
 }
 ```
 
-#### 7. Run the lidar driver and visualize the pointlcoud output
+### 7. Run the lidar driver and visualize the pointlcoud output
 
 After finishing all the previous steps, you can use the following command to start your new lidar driver.
 

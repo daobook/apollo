@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/howto/how_to_debug.md:1
+msgid "How to Debug Apollo"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:3
+msgid "Debugging Apollo"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:5
+msgid ""
+"The Apollo project runs in Docker and cannot be used directly on the host"
+" machine. It must be created in Docker with GDBServer. Debug the service "
+"process, and then use GDB to connect to the debug service process in "
+"Docker on the host machine. The specific operation methods are as "
+"follows:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:10
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:12
+msgid ""
+"The main prerequisites contain collecting debugging information and "
+"installing the GDBServer if it is not already present in Docker"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:15
+msgid "Collecting debugging information"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:17
+msgid ""
+"When compiling Apollo projects, you will need to use debugging "
+"information options **build_dbg**. Optimization options such as "
+"**build_opt** or **build_opt_gpu** cannot be used."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:21
+msgid "Install GDBServer inside Docker"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:23
+msgid ""
+"After entering Docker, you can use the following command to view if the "
+"GDBServer is present:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:30
+msgid "If the prompt is similar to the following information:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:39
+msgid ""
+"It means that GDBServer has been installed inside Docker. You should be "
+"able to view the prompt below. But if the GDBServer is not present and if"
+" you are prompted with the following information:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:47
+msgid "Then you would need to install the GDBServer using"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:54
+msgid "Start the Dreamview daemon"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:56
+msgid "Go to Docker and start Dreamview. The command is as follows:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:68
+msgid "Start the module that needs to be debugged"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:70
+msgid ""
+"Start the module to be debugged, either by using the command line or by "
+"using the Dreamview interface. The following is an example of debugging "
+"the **Planning** module from the Dreamview interface."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:74
+msgid "Open URL: <http://localhost:8888/> in Chrome"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:75
+msgid "On Dreamview, click on the **SimControl** slider, as shown below:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:77
+msgid "![enable simcontrol](images/build_debug/enable_simcontrol.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:77
+msgid "enable simcontrol"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:79
+msgid ""
+"Click on the `Module Controler` tab on the left toolbar and select the "
+"`Routing` and `Planning` options as shown below:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:82
+msgid ""
+"![start routing and "
+"planning](images/build_debug/start_routing_and_planning.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:82
+msgid "start routing and planning"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:84
+msgid ""
+"Click the `Default Routing` tab on the left toolbar, select `Route: "
+"Reverse Early Change Lane` or any of these options, send a `Routing "
+"Request` request, and generate a global navigation path, as shown below:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:89
+msgid ""
+"![check route reverse early change "
+"lane](images/build_debug/check_route_reverse_early_change_lane.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:89
+msgid "check route reverse early change lane"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:91
+msgid "Viewing the \"Planning\" Process ID"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:93
+msgid "Use the following command to view the \"Planning\" process ID:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:99
+msgid ""
+"The result in the following figure is similar to the previous figure, you"
+" can see that the `Planning` process ID is 4147."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:102
+msgid "![plannning id ps](images/build_debug/planning_id_ps.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:102
+msgid "plannning id ps"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:104
+msgid "Debugging Planning module using GDBServer"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:106
+msgid ""
+"Next we need to carry out our key operations, using GDBServer to "
+"additionally debug the `Planning` process, the command is as follows:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:113
+msgid ""
+"In the command above, \":1111\" indicates that the debugging service "
+"process with the port \"1111\" is enabled, and \"4147\" indicates the "
+"\"Planning\" process ID. If the result is as shown below, the operation "
+"is successful."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:117
+msgid "![gdbserver attach debug](images/build_debug/gdbserver_attach_debug.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:117
+msgid "gdbserver attach debug"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:119
+msgid ""
+"After restarting a terminal and entering Docker, use the following "
+"command to see if the \"gdbserver\" process is running properly:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:126
+msgid "![view gdbserver process](images/build_debug/view_gdbserver_process.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:126
+msgid "view gdbserver process"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:128
+msgid "Starting GDBServer with a Script File"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:130
+msgid ""
+"`docker/scripts/dev_start_gdb_server.sh` can start GDBServer directly on "
+"the host (outside Docker)."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:133
+msgid ""
+"Assuming that while debugging the planning module, the port number is "
+"1111, the usage of `docker/scripts/dev_start_gdb_server.sh` is:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:141
+msgid "Possible Errors and their Solutions"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:143
+msgid "During the debugging process, you may encounter the following problems:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:145
+msgid "the network connection is not smooth, can not be debugged"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:147
+msgid "Solution"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:149
+msgid ""
+"The solution is to ensure the network is smooth, and disable the agent "
+"tool"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:151
+msgid "Remote debugging"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:153
+msgid ""
+"During the R&D process, we also need to debug the Apollo project remotely"
+" on the industrial computer inside the vehicle, that is, connect the in-"
+"vehicle industrial computer with the SSH service on the debugging "
+"computer, start the relevant process in the industrial computer, and then"
+" perform remote debugging on the debugging computer. The following is an "
+"example of debugging the planning module:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:160
+msgid "View the IP address of the industrial computer in the car"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:162
+msgid ""
+"On the industrial computer in the car, check the IP of the machine by the"
+" following command:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:169
+msgid ""
+"Open Dreamview in the browser of the debugging computer and start the "
+"module to be debugged"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:171
+msgid ""
+"Assuming that the IP address of the industrial computer LAN is: "
+"`192.168.3.137`, open URL: <http://192.168.3.137:8888/> on your machine "
+"and start the module (`Planning`) to debug as shown in [Start the module "
+"that needs debugging](#Start-the-module-that-needs-to-be-debugged) "
+"section."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:176
+msgid "![remote show dreamview](images/build_debug/remote_show_dreamview.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:176
+msgid "remote show dreamview"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:178
+msgid ""
+"Use the SSH Command to Remotely Log In to the Industrial PC and Start the"
+" Gdbserver Service of the Industrial PC"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:180
+msgid ""
+"Assume that the user name of the industrial computer in the car is "
+"`xxxxx`, and the IP address of the LAN is `192.168.3.137`. Use the "
+"following command to remotely log in to the industrial computer:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:188
+msgid ""
+"After successfully entering the IPC, assume that the Planning module "
+"needs to be debugged, and the port number is 1111, use the following "
+"command to start the gdbserver service of the in-vehicle IPC:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:199
+msgid ""
+"As shown in the figure below, if you see a prompt similar to Listening on"
+" port 1111, the gdbserver service starts successfully."
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:202
+msgid "![remote start gdbserver](images/build_debug/remote_start_gdbserver.png)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_debug.md:202
+msgid "remote start gdbserver"
+msgstr ""
+

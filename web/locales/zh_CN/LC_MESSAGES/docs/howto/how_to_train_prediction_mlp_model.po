@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:1
+msgid "How to train the MLP Deep Learning Model"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:3
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:4
+msgid "There are 2 prerequisites to training the MLP Deep Learning Model:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:5
+msgid "Download and Install Anaconda"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:6
+msgid ""
+"Please download and install Anaconda from its "
+"[website](https://www.anaconda.com/download)"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:8
+msgid "Install Dependencies"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:9
+msgid "Run the following commands to install the necessary dependencies:"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:10
+msgid "**Install numpy**: `conda install numpy`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:11
+msgid "**Install tensorflow**: `conda install tensorflow`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:12
+msgid "**Install keras**: `conda install -c conda-forge keras`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:13
+msgid "**Install h5py**: `conda install h5py`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:14
+msgid "**Install protobuf**: `conda install -c conda-forge protobuf`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:15
+msgid "**Install PyTorch**: `conda install -c pytorch pytorch`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:17
+msgid "Train the Model"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:18
+msgid ""
+"The following steps are to be followed in order to train the MLP model "
+"using the released demo data. For convenience, we denote `APOLLO` as the "
+"path of the local apollo repository, for example, `/home/username/apollo`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:20
+msgid ""
+"Create a folder to store offline prediction data using the command `mkdir"
+" APOLLO/data/prediction` if it does not exist"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:22
+msgid ""
+"Start dev docker using `bash docker/scripts/dev_start.sh` under the "
+"apollo folder"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:24
+msgid ""
+"Enter dev docker using `bash docker/scripts/dev_into.sh` under apollo "
+"folder"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:26
+msgid "In docker, under `/apollo/`, run `bash apollo.sh build` to compile"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:28
+msgid ""
+"In docker, under `/apollo/`, copy the demo record into "
+"`/apollo/data/prediction` by the command: `cp "
+"/apollo/docs/demo_guide/demo_3.5.record /apollo/data/prediction/`"
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:30
+msgid ""
+"In docker, under `/apollo/`, run the bash script for feature extraction: "
+"`bash modules/tools/prediction/mlp_train/feature_extraction.sh "
+"/apollo/data/prediction/ apollo/data/prediction/`, then the feature files"
+" will be generated in the folder `/apollo/data/prediction/`."
+msgstr ""
+
+#: ../../../docs/howto/how_to_train_prediction_mlp_model.md:32
+msgid ""
+"Exit docker, train the cruise model and junction model according to "
+"`APOLLO/modules/tools/prediction/mlp_train/cruiseMLP_train.py` and "
+"`APOLLO/modules/tools/prediction/mlp_train/junctionMLP_train.py`"
+msgstr ""
+

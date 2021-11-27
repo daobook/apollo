@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 16:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:2
+msgid "Gen Vehicle Protocol Tool"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:4
+msgid ""
+"It's a convinent tool to let you quickly generate a nearly complete code "
+"for a new vehicle. You only have to do is to have the dbc file (which is "
+"a communication protocol for the car, which is usually made by the "
+"vehicle integrated company), and write a less 10 lines config for "
+"generate an encode/decode `"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:7
+msgid "Dependency"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:13
+msgid "Usage:"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:15
+msgid "The tool's input is :"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:17
+msgid "`vehicle dbc file `: like lincoln's dbc file, put it under this folder"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:18
+msgid ""
+"`generator tool config file`: for an example, a lincoln's is "
+"lincoln_conf.yml, detail you can see the example file of lincoln_conf.yml"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:20
+msgid "Run:"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:26
+msgid "Tool Framework"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:28
+msgid ""
+"`gen.py` : a central control the overall generating progress and will "
+"call the scripts below"
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:29
+msgid ""
+"`extract_dbc_meta.py`: extract dbc info to an internal generator tool "
+"used yaml config, which will include a protocol name, id, how many vars "
+"in a protocol, every var's name, type, byte start, bit_start, bit_len "
+"etc. When we have these info, we can automitally generate code as we "
+"wish."
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:30
+msgid ""
+"`gen_protoco_file.py`: generate a proto file for this vehicle, which is "
+"used to store parsed info from CAN frame using these generated code."
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:31
+msgid ""
+"`gen_protocols.py`: generate protocol code (encoding and decoding CAN "
+"frame)according to the extract dbc meta."
+msgstr ""
+
+#: ../../../modules/tools/gen_vehicle_protocol/README.md:32
+msgid ""
+"`gen_vehicle_controller_and_manager`: generate vehicle controller and "
+"vehicle message manager according to our recent chassis canbus framework."
+msgstr ""
+

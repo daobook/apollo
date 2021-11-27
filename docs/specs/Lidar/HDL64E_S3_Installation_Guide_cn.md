@@ -1,10 +1,10 @@
-## Velodyne HDL64E-S3安装指南
+# Velodyne HDL64E-S3安装指南
 
 Apollo使用来自Velodyne LiDAR, Inc.的64线激光雷达系统 **HDL-64E S3**。
 
 ![](images/lidar_pic.png)
 
-### 主要特性:
+## 主要特性:
 
 - 64频道
 - 120米范围
@@ -17,7 +17,7 @@ Apollo使用来自Velodyne LiDAR, Inc.的64线激光雷达系统 **HDL-64E S3**�
 - 用户可选择的帧速率
 - 坚固耐用的DesignLidar / Velodyne / HDL64E-S3 /
 
-#### 安装
+### 安装
 
 HDL64E S3 LiDAR需要定制的结构才能安装在车辆顶部。该结构必须能为LiDAR系统提供刚性支撑，同时在驾驶条件下将LiDAR升高到地面以上的某个高度。该高度应保证来自LiDAR的激光束不被车辆的前部和/或后部阻挡。 LiDAR所需的实际高度取决于车辆的设计，并且LiDAR的安装点取决于所使用的车辆。激光器的垂直倾斜角通常在相对于地平线+2~-24.8度范围内。
 对于标准的林肯MKZ，建议您将LiDAR安装在1.8米的最小高度（从地面到激光雷达底座），以便有效地使用角度范围进行探测。
@@ -26,7 +26,7 @@ HDL64E S3 LiDAR需要定制的结构才能安装在车辆顶部。该结构必�
 如果由于某种原因，LiDAR光束必须被车辆阻挡，则在处理接收的数据时可能需要应用滤波器来移除这些点。
 ```
 
-#### 布线
+### 布线
 
 每个HDL-64E S3 LiDAR都包含一个电缆束，用于将LiDAR连接到电源、GPS时间同步源和计算机（用于数据传输的以太网和用于LiDAR配置的串行端口）。
 
@@ -70,7 +70,7 @@ HDL64E S3 LiDAR需要定制的结构才能安装在车辆顶部。该结构必�
 
    ![pinout_table](images/pinout_table.png)
 
-#### 配置
+## 配置
 
 默认情况下，HDL-64E S3的网络IP地址为192.168.0.1。 但是，在设置Apollo时，请将网络IP地址更改为 **192.168.20.13** 。 您可以将终端应用程序与Termite3.2一起使用。可以使用以下步骤配置HDL-64E S3的IP地址：
 
@@ -100,7 +100,7 @@ HDL64E S3 LiDAR需要定制的结构才能安装在车辆顶部。该结构必�
 
 ![Issuing the serial command](images/Issuing_the_serial_command.png)
 
-#### 参考资料
+## 参考资料
 
 有关Velodyne HDL-64E S3的更多信息，请参阅他们的[官网](http://velodynelidar.com/hdl-64e.html).
 

@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 16:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../third_party/can_card_library/esd_can/README.md:1
+msgid "ESD CAN Library"
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:3
+msgid ""
+"In the first release of Apollo software, ESD PCIe CAN is supported out of"
+" the box -- please refer to *Apollo 1.0 Hardware and System Installation "
+"Guide* for more information. However, you MUST obtain ESD's CAN library "
+"software from ESD Electronics to compile and use it in Apollo software "
+"stack."
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:5
+msgid ""
+"After/when you purchase CAN card from ESD Electronics, please contact "
+"support@esd.eu to obtain the supporting software package for Linux. The "
+"CAN card to use with the IPC is ESD CAN-PCIe/402. For more information "
+"about the CAN-PCIe/402, see the [ESD CAN-PCIe/402 Product "
+"Page](https://esd.eu/en/products/can-pcie402)"
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:8
+msgid ""
+"After unpacking the software package, please find and copy the following "
+"files to the specific sub-directories (under this directory):"
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:9
+msgid "Copy ntcan.h to include/"
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:10
+msgid "Copy 64-bit libntcan.so.4.0.1 to lib/"
+msgstr ""
+
+#: ../../../third_party/can_card_library/esd_can/README.md:11
+msgid "Do the following to add the necessary symbolic links:"
+msgstr ""
+

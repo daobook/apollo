@@ -1,4 +1,4 @@
-## Installation Guide of NovAtel Propak6 and NovAtel IMU-IGM-A1
+# Installation Guide of NovAtel Propak6 and NovAtel IMU-IGM-A1
 
 NovAtel ProPak6 is a standalone GNSS receiver. It works with a separate NovAtel-supported IMU (in this case, the NovAtel IMU-IGM-A1)to provide localization functionality.
 
@@ -11,11 +11,11 @@ The GPS Receiver/Antenna used with the GPS-IMU component is the **NovAtel GPS-70
 ![gps_receiver](images/gps_receiver.png)
 
 
-### Installing the GPS Receiver and Antenna
+## Installing the GPS Receiver and Antenna
 
 The installation instructions describe the procedure to mount, connect, and take the lever arm measurements for the GPS NovAtel SPAN® ProPak6™ **and** the NovAtel IMU-IGM-A1.
 
-##### Components for the Installation
+### Components for the Installation
 
 The components that are required for the installation include:
 
@@ -28,7 +28,7 @@ The components that are required for the installation include:
 - Magnetic adapters (for antenna and DTU)
 - DB9 straight through cable
 
-##### Mounting
+### Mounting
 
 You can place the two devices, the ProPak6 and the IMU in most places in the vehicle, but it is suggested that you follow these recommendations:
 
@@ -40,7 +40,7 @@ You can place the two devices, the ProPak6 and the IMU in most places in the veh
 - Use a magnetic adapter to tightly attach the antenna to the trunk lid.
 - Install the antenna cable in the trunk by opening the trunk and placing the cable in the space between the trunk lid and the body of the car.
 
-##### Wiring
+### Wiring
 
 Follow these steps to connect the ProPak6 GNSS Receiver and the IMU to the Apollo system:
 
@@ -52,7 +52,7 @@ Follow these steps to connect the ProPak6 GNSS Receiver and the IMU to the Apoll
 
 ![wiring](images/wiring.png)
 
-#### Taking the Lever Arm Measurement
+### Taking the Lever Arm Measurement
 
 Follow these steps:
 
@@ -60,7 +60,7 @@ Follow these steps:
 * When the IMU and the GPS Antenna are in position, the distance from the IMU to the GPS Antenna must be measured. The center of the IMU and the center of the antenna are labeled on the exterior of the devices.
 * The distance should be measured as: X offset, Y offset, and Z offset. The axis should be determined by the IMU. The error of offset must be within one centimeter to achieve high accuracy in positioning and localization. 
 
-### Configuring the GPS and IMU
+## Configuring the GPS and IMU
 
 Configure the GPS and IMU as shown below. This process can be done either by keying in the commands, or by loading batch configuraion file in NovAtel Connect.
 
@@ -123,7 +123,7 @@ SETIMUTOANTOFFSET -0.05 0.5 0.8 0.05 0.05 0.08
 
 The first 3 numbers indicate the result of the lever arm distance measurement. The last 3 numbers are the uncertainty of the measurement. 
 
-### References
+## References
 
 For more information about the NovAtel SPAN ProPak6 and the IMU-IGM-A1, see:
 * [NovAtel ProPak6 Installation & Operation Manual](https://www.novatel.com/assets/Documents/Manuals/OM-20000148.pdf)

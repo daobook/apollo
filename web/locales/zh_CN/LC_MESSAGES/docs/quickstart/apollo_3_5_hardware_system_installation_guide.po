@@ -1,0 +1,676 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C)
+# This file is distributed under the same license as the Apollo Auto
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Apollo Auto \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-26 14:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:1
+msgid "Apollo 3.5 Hardware and System Installation Guide"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:3
+msgid ""
+"[Apollo 3.5 Hardware and System Installation Guide](#apollo-35-hardware-"
+"and-system-installation-guide)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:4
+msgid "[About This Guide](#about-this-guide)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:5
+msgid "[Document Conventions](#document-conventions)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:6
+msgid "[Introduction](#introduction)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:7
+msgid "[Documentation](#documentation)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:8
+msgid "[Key Hardware Components](#key-hardware-components)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:9
+msgid "[Additional Components Required](#additional-components-required)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:10
+msgid "[Steps for the Installation Tasks](#steps-for-the-installation-tasks)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:11
+msgid "[At the Office](#at-the-office)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:12
+msgid "[In the Vehicle](#in-the-vehicle)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:13
+msgid "[Prerequisites](#prerequisites)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:14
+msgid ""
+"[Diagrams of the Major Component Installations](#diagrams-of-the-major-"
+"component-installations)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:15
+msgid "[Additional Tasks Required](#additional-tasks-required)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:16
+msgid "[Time Sync Script Setup [Optional]](#time-sync-script-setup-optional)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:17
+msgid "[Next Steps](#next-steps)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:19
+msgid "About This Guide"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:21
+msgid ""
+"The _Apollo master Hardware and System Installation Guide_ provides the "
+"instructions to install all of the hardware components and system "
+"software for the **Apollo Project**. The system installation information "
+"included pertains to the procedures to download and install the Apollo "
+"Linux Kernel."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:26
+msgid "Document Conventions"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:28
+msgid "The following table lists the conventions that are used in this document:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "**Icon**"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "**Description**"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "**Bold**"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "Emphasis"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "`Mono-space font`"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "Code, typed data"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "_Italic_"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "Titles of documents, sections, and headings Terms used"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "![info](images/info_icon.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:35
+msgid "info"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid ""
+"**Info** Contains information that might be useful. Ignoring the Info "
+"icon has no negative consequences."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "![tip](images/tip_icon.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:36
+msgid "tip"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid ""
+"**Tip**. Includes helpful hints or a shortcut that might assist you in "
+"completing a task."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "![online](images/online_icon.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:37
+msgid "online"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid ""
+"**Online**. Provides a link to a particular web site where you can get "
+"more information."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid "![warning](images/warning_icon.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:38
+msgid "warning"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md
+msgid ""
+"**Warning**. Contains information that must **not** be ignored or you "
+"risk failure when you perform a certain task or step."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:40
+msgid "Introduction"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:42
+msgid ""
+"The **Apollo Project** is an initiative that provides an open, complete, "
+"and reliable software platform for Apollo partners in the automotive and "
+"autonomous driving industries. The aim of this project is to enable these"
+" entities to develop their own self-driving systems based on the Apollo "
+"software stack."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:47
+msgid "Documentation"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:49
+msgid "The following set of documentation describes Apollo 3.0:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:51
+msgid ""
+"**_</u>[Apollo Hardware and System Installation Guide]</u>_** ─ Links to "
+"the Hardware Development Platform Documentation in Specs"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:54
+msgid "**Vehicle**:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:56
+msgid ""
+"[Industrial PC "
+"(IPC)](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/IPC"
+"/Nuvo-6108GC_Installation_Guide.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:57
+msgid ""
+"[Global Positioning System "
+"(GPS)](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Navigation/README.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:58
+msgid ""
+"[Inertial Measurement Unit "
+"(IMU)](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Navigation/README.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:59
+msgid "Controller Area Network (CAN) card"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:60
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:155
+msgid "GPS Antenna"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:61
+msgid "GPS Receiver"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:62
+msgid ""
+"[Light Detection and Ranging System "
+"(LiDAR)](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Lidar/README.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:63
+msgid "[Camera](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Camera/README.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:64
+msgid "[Radar](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Radar/README.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:65
+msgid ""
+"[Apollo Sensor Unit "
+"(ASU)](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Apollo_Sensor_Unit/Apollo_Sensor_Unit_Installation_Guide.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:66
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:113
+msgid "Apollo Extension Unit (AXU)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:68
+msgid ""
+"**Software**: Refer to the [Software Installation "
+"Guide](https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_software_installation_guide.md)"
+" for information on the following:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:71
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:142
+msgid "Ubuntu Linux"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:72
+msgid "Apollo Linux Kernel"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:73
+msgid "NVIDIA GPU Driver"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:75
+msgid ""
+"**_</u>[Apollo Quick Start Guide]</u>_** ─ The combination of a tutorial "
+"and a roadmap that provides the complete set of end-to-end instructions. "
+"The Quick Start Guide also provides links to additional documents that "
+"describe the conversion of a regular car to an autonomous-driving "
+"vehicle."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:80
+msgid "Key Hardware Components"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:82
+msgid "The key hardware components to install include:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:84
+msgid "Onboard computer system ─ Neousys Nuvo-6108GC (2)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:85
+msgid "Controller Area Network (CAN) Card ─ ESD CAN-PCIe/402-B4"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:86
+msgid ""
+"Global Positioning System (GPS) and Inertial Measurement Unit (IMU) ─ You"
+" can select one of the following options:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:88
+msgid "NovAtel SPAN-IGM-A1"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:89
+msgid "NovAtel SPAN® ProPak6™ and NovAtel IMU-IGM-A1"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:90
+msgid "NovAtel SPAN® PwrPak7™"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:91
+msgid "Navtech NV-GI120"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:92
+msgid ""
+"Light Detection and Ranging System (LiDAR) ─ You can select one of the "
+"following options, please note Apollo master uses VLS-128 LiDAR:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:94
+msgid ""
+"[Velodyne "
+"VLS-128](https://github.com/ApolloAuto/apollo/blob/master/docs/specs/Lidar/VLS_128_Installation_Guide.md)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:95
+msgid "Velodyne HDL-64E S3"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:96
+msgid "Velodyne Puck series"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:97
+msgid "Innovusion LiDAR"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:98
+msgid "Hesai's Pandora"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:99
+msgid "Cameras — You can select one of the following options:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:100
+msgid "Leopard Imaging LI-USB30-AR023ZWDR with USB 3.0 case"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:101
+msgid "Argus Camera (FPD-Link)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:102
+msgid "Wissen Camera"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:103
+msgid "Radar — You can select one of the following options:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:104
+msgid "Continental ARS408-21"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:105
+msgid "Racobit B01HC"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:107
+msgid "Additional Components Required"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:109
+msgid ""
+"You need to provide these additional components for the Additional Tasks "
+"Required:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:112
+msgid "Apollo Sensor Unit (ASU)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:114
+msgid "A 4G router for Internet access"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:115
+msgid "A USB hub for extra USB ports"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:116
+msgid "A monitor, keyboard, and mouse for debugging at the car onsite"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:117
+msgid ""
+"Cables: a Digital Visual Interface (DVI) cable (optional), a customized "
+"cable for GPS-LiDAR time synchronization"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:119
+msgid "Apple iPad Pro: 9.7-inch, Wi-Fi (optional)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:121
+msgid ""
+"The features of the key hardware components are presented in the "
+"subsequent sections."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:124
+msgid "Steps for the Installation Tasks"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:126
+msgid "This section describes the steps to install:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:128
+msgid "The key hardware and software components"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:129
+msgid "The hardware in the vehicle"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:131
+msgid "At the Office"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:133
+msgid "Perform the following tasks:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:135
+msgid "Prepare the IPC:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:137
+msgid "Install the CAN card"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:138
+msgid "Install or replace the hard drive"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:139
+msgid "Prepare the IPC for powering up"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:141
+msgid "Install the software for the IPC:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:143
+msgid "Apollo Kernel"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:144
+msgid "Nvidia GPU Driver"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:146
+msgid "The IPC is now ready to be mounted on the vehicle."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:148
+msgid "In the Vehicle"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:150
+msgid "Perform these tasks:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:152
+msgid ""
+"Make the necessary modifications to the vehicle as specified in the list "
+"of prerequisites"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:154
+msgid "Install the major components:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:156
+msgid "IPC"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:157
+msgid "GPS Receiver and IMU"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:158
+msgid "LiDAR"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:159
+msgid "Cameras"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:160
+msgid "Radar"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:162
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:164
+msgid ""
+"**![warning_icon](images/warning_icon.png)WARNING**: Prior to mounting "
+"the major components (GPS Antenna, IPC, and GPS Receiver) in the vehicle,"
+" perform certain modifications as specified in the list of prerequisites."
+" The instructions for making the mandatory changes in the list are "
+"outside the scope of this document."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:164
+msgid "warning_icon"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:169
+msgid "The list of prerequisites are as follows:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:171
+msgid ""
+"The vehicle must be modified for “drive-by-wire” technology by a "
+"professional service company. Also, a CAN interface hookup must be "
+"provided in the trunk where the IPC will be mounted."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:174
+msgid ""
+"A power panel must be installed in the trunk to provide power to the IPC "
+"and the GPS-IMU. The power panel would also service other devices in the "
+"vehicle such as a 4G LTE router. The power panel should be hooked up to "
+"the power system in the vehicle."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:178
+msgid ""
+"A custom-made rack must be installed to mount the GPS-IMU Antenna, the "
+"cameras and the LiDAR's on top of the vehicle."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:180
+msgid "A custom-made rack must be installed to mount the GPS-IMU in the trunk."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:181
+msgid ""
+"A custom-made rack must be installed in front of the vehicle to mount the"
+" front-facing radar."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:183
+msgid ""
+"A 4G LTE router must be mounted in the trunk to provide Internet access "
+"for the IPC. The router must have built-in Wi-Fi access point (AP) "
+"capability to connect to other devices, such as an iPad, to interface "
+"with the autonomous driving (AD) system. A user would be able to use the "
+"mobile device to start AD mode or monitor AD status, for example."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:189
+msgid "Diagrams of the Major Component Installations"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:191
+msgid ""
+"The following two diagrams indicate the locations of where the three "
+"major components (GPS Antenna, IPC, GPS Receiver and LiDAR) should be "
+"installed on the vehicle:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:195
+msgid "![major_component_side_view](images/Hardware_overview_3_5.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:195
+msgid "major_component_side_view"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:197
+msgid "![major_component_rear_view](images/car_rearview_3_5.png)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:197
+msgid "major_component_rear_view"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:199
+msgid "Additional Tasks Required"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:201
+msgid ""
+"Use the components that you were required to provide to perform the "
+"following tasks:"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:204
+msgid ""
+"Connect a monitor using the DVI or the HDMI cables and connect the "
+"keyboard and mouse to perform debugging tasks at the car onsite."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:207
+msgid ""
+"Establish a Wi-Fi connection on the Apple iPad Pro to access the HMI and "
+"control the Apollo ADS that is running on the IPC."
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:210
+msgid "Time Sync Script Setup [Optional]"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:212
+msgid ""
+"In order to sync the computer time with NTP servers on the internet, you "
+"could use the [Time Sync "
+"script](https://github.com/ApolloAuto/apollo/blob/master/scripts/time_sync.sh)"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:216
+msgid "Next Steps"
+msgstr ""
+
+#: ../../../docs/quickstart/apollo_3_5_hardware_system_installation_guide.md:218
+msgid ""
+"After you complete the hardware installation in the vehicle, see the "
+"[Apollo Quick Start](apollo_3_5_quick_start.md) for the steps to complete"
+" the software installation."
+msgstr ""
+

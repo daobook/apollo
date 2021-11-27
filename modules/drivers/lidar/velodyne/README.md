@@ -1,4 +1,4 @@
-## Velodyne
+# Velodyne
 velodyne driver runs as component, including:
 1. data packet processing --> /driver
 2. point cloud generation --> /convert
@@ -7,7 +7,7 @@ velodyne driver runs as component, including:
 
 Compensation relies on `tf` to query the coordination transform, so gnss_driver is required to run the velodyne components.
 
-### Output Channels
+## Output Channels
 1. data packet
   channel: /apollo/sensor/lidar128/Scan
   type: apollo::drivers::velodyne::VelodyneScan
@@ -21,19 +21,19 @@ Compensation relies on `tf` to query the coordination transform, so gnss_driver 
   type: apollo::drivers::PointCloud
   proto: [modules/drivers/proto/pointcloud.proto]https://github.com/ApolloAuto/apollo/blob/master/modules/drivers/proto/pointcloud.proto
 
-### Coordination
+## Coordination
 * world
 * novatel
 * velodyne128
 
-### Start
+## Start
 **Please change the parameters in the launch file for cars when you start**
 ```bash
 #in docker
 cyber_launch start velodyne.launch
 ```
 
-### FAQ
+## FAQ
 1. "basetime is zero"
   The position pack is not valid, please check gps signal.
 2. 'velodyne port 2368 poll() timeout'

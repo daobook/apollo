@@ -1,3 +1,5 @@
+# CyberRT Python
+
 ## 1. 背景
 
    Cyber 核心代码是由 C++ 开发，同时为了方便开发者，提供了 Python 接口。
@@ -300,8 +302,9 @@ if __name__ == '__main__':
 
 ### 4.3 读写消息到 Record 文件（参见 cyber/python/cyber_py3/examples/record.py)
 
-```python
-cyber/python/cyber_py3/examples/record.py)
+```sh
+cyber/python/cyber_py3/examples/record.py
+```
 
 ```python
 """

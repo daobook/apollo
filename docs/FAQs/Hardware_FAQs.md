@@ -1,6 +1,6 @@
 # Hardware FAQs
 
-### What hardware is needed for Apollo?
+## What hardware is needed for Apollo?
 
 The required hardware for each version of Apollo can be found at the following
 links:
@@ -13,7 +13,7 @@ links:
 
 ---
 
-### Which types of vehicles can Apollo be run on?
+## Which types of vehicles can Apollo be run on?
 
 Currently, the Apollo control algorithm is configured for our default vehicle,
 which is a Lincoln MKZ. If you would like to use a different vehicle type,
@@ -21,14 +21,14 @@ please visit [this](../howto/how_to_add_a_new_vehicle.md) page.
 
 ---
 
-### Which types of LiDAR are supported by Apollo?
+## Which types of LiDAR are supported by Apollo?
 
 In Apollo 1.5, only Velodyne 64 is supported. Users are welcome to add drivers
 to ROS in order to support other models of LiDAR.
 
 ---
 
-### Do you have a list of Hardware devices that are compatible with Apollo
+## Do you have a list of Hardware devices that are compatible with Apollo
 
 Refer to the
 [Hardware Installation Guide 3.0](../quickstart/apollo_3_0_hardware_system_installation_guide.md)
@@ -38,7 +38,7 @@ Installation guide found under `docs/quickstart`
 
 ---
 
-### What is the difference between Apollo Platform Supported devices and Apollo Hardware Development Platform Supported device?
+## What is the difference between Apollo Platform Supported devices and Apollo Hardware Development Platform Supported device?
 
 1. Apollo Platform Supported means
    - The device is part of the Apollo hardware reference design
@@ -56,7 +56,7 @@ Installation guide found under `docs/quickstart`
 
 ---
 
-### I do not have an IMU, now what?
+## I do not have an IMU, now what?
 
 Without an IMU, the localization would depend on GPS system which only updates
 once per second. On top of that, you wouldn't have velocity and heading
@@ -65,7 +65,7 @@ other solutions.
 
 ---
 
-### I have only VLP16, can I work with it? The documentation advises me to use HDL64
+## I have only VLP16, can I work with it? The documentation advises me to use HDL64
 
 HDL64 provides a much denser point cloud than VLP-16 can. It gives a further
 detection range for obstacles. That is why we recommend it in the reference
@@ -73,7 +73,7 @@ design. Whether VLP-16 works for your project, you will need to find out.
 
 ---
 
-### Is HDL32 (Velodyne 32 line LiDAR) compatible with Apollo?
+## Is HDL32 (Velodyne 32 line LiDAR) compatible with Apollo?
 
 Apollo can work successfully for HDL32 Lidars. You could follow the
 [Puck Series Guide](../specs/Lidar/VLP_Series_Installation_Guide.md) alongwith
@@ -85,7 +85,7 @@ order to avoid
 
 ---
 
-### How to set the USB cameras to provide valid time stamp?
+## How to set the USB cameras to provide valid time stamp?
 
 First use time_sync.sh script to sync the system clock to NTP servers. Then
 reset UVCVideo module with clock set to realtime with root access.

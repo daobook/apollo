@@ -5,7 +5,7 @@
 - [How to install apollo kernel](how_to_install_apollo_kernel.md)
 - [How to save and load docker image](how_to_save_and_load_docker_image.md)
 
-#### Chinese versions
+### Chinese versions
 - [How to install apollo kernel](how_to_install_apollo_kernel_cn.md)
 
 ## Contribution

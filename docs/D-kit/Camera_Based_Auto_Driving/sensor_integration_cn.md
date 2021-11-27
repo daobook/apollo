@@ -90,19 +90,19 @@
 	sudo reboot  //重启工控机
 	```
  
-### 摄像头的启动
-#### 1. 检查摄像头是否被系统识别  
+## 摄像头的启动
+### 1. 检查摄像头是否被系统识别  
 - 在摄像头与工控机正常连接的基础上，执行`ls /dev/video*`指令，查看摄像头是否被识别， 如果摄像头设备已经被识别，则会显示以`video`开头的设备名称，否则的话，请检查摄像头与工控机的连线是否可靠。
 - 在linux系统终端中输入`cheese`命令，打卡cheese工具查看图像是否正常输出。注意设置正确的相机分辨率。在屏幕左上角选择`cheese->preferences->webcam`来设置分辨率。开发套件相机默认的分辨率为1920*1080
 
 	![camera_integration_cheese](images/camera_integration_cheese.png)
 
 
-#### 2. 检查是否存在摄像头软连接文件
+### 2. 检查是否存在摄像头软连接文件
 检查`/dev/camera`目录是否存在，以及该目录下`front_6mm`、`front_12mm`两个软链接文件是否存在(根据规则文件配置不同，可能有1个或多个软链接文件)。如果使用`ls /dev/video*`命令能显示摄像头设备，但不存在软链接文件或者没有`camera`文件夹，请参照上文`摄像头规则文件的配置`章节，检查规则文件是否配置正确。
 
  
-#### 3. 编译项目，启动Dreamview
+### 3. 编译项目，启动Dreamview
 进入docker环境，用gpu编译项目，启动DreamView 
 
     cd /apollo
@@ -111,7 +111,7 @@
     bash apollo.sh build_opt_gpu
     bash scripts/bootstrap.sh 
     
-#### 4. 启动camera模块
+### 4. 启动camera模块
 
 
  - 在浏览器中打开`(http://localhost:8888)`，选择模式为`Dev Kit Debug`， 根据车辆铭牌信息选择对应的车型(详情见下表)，在Module Controller标签页启动`Camera`模块
@@ -128,7 +128,7 @@
  - 之后在`Tasks`标签栏下依次打开`SimControl`和`Camera Sensor`开关，`Camera Sensor`打开后，务必关闭`SimControl`。开关在dreamview界面的位置如下图所示：
  
 	![camera_integration_dreamview2](images/camera_integration_dreamview2.png)
-#### 5. 验证camera是否工作正常
+### 5. 验证camera是否工作正常
  - 如果一切正常，则会在`dreamview`右下角出现摄像头采集的图像。
  
  - 在`docker`环境内使用`cyber_monitor`工具，查看`/apollo/sensor/camera/front_6mm/image`、`/apollo/sensor/camera/front_12mm/image`是否有数据输出，且帧率是否稳定在15帧左右(关于cyber_monitor更详细使用，请参考[CyberRT_Developer_Tools](../../cyber/CyberRT_Developer_Tools.md))。
@@ -140,6 +140,6 @@
 ## NEXT
 现在，您已经完成摄像头感知设备集成，接下来可以开始[基于摄像头的封闭园区自动驾驶搭建--感知设备标定](sensor_calibration_cn.md)
 ## 常见问题
-#### 1. 规则文件修改后不显示软连接
+### 1. 规则文件修改后不显示软连接
 规则文件修改后需要重启工控机才能生效
 	

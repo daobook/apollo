@@ -2,7 +2,7 @@
 
 Navi Config is a tool to set parameters and flags in various modules for navigation mode.
 
-### usage
+## usage
 
 ```
 python navi_config.py default.ini
